@@ -1,8 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"104 ./motor_paso.h
-[; ;./motor_paso.h: 104: {
-[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2431 . lat tris ansel nibble index ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -13,31 +9,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
 [v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
 [p mainexit ]
-"150 ./motor_paso.h
-[; ;./motor_paso.h: 150: void Stepper_Init(Stepper *motor,
-[v _Stepper_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
-"48989 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48989: extern volatile unsigned char LATD __attribute__((address(0x4C1)));
-[v _LATD `Vuc ~T0 @X0 0 e@1217 ]
-"49331
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
-[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
-"41445
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"243 ./motor_paso.h
-[; ;./motor_paso.h: 243: void Stepper_fullTurn_CW(Stepper *motor);
-[v _Stepper_fullTurn_CW `(v ~T0 @X0 0 ef1`*S2431 ]
+"54 ./ws2812b.h
+[; ;./ws2812b.h: 54: void WS2812B_Init(void);
+[v _WS2812B_Init `(v ~T0 @X0 0 ef ]
+"94
+[; ;./ws2812b.h: 94: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
+[v _WS2812B_SetAll `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"113
+[; ;./ws2812b.h: 113: void WS2812B_Show(void);
+[v _WS2812B_Show `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"264 ./motor_paso.h
-[; ;./motor_paso.h: 264: void Stepper_fullTurn_CCW(Stepper *motor);
-[v _Stepper_fullTurn_CCW `(v ~T0 @X0 0 ef1`*S2431 ]
-"281
-[; ;./motor_paso.h: 281: void Stepper_Off(Stepper *motor);
-[v _Stepper_Off `(v ~T0 @X0 0 ef1`*S2431 ]
+"103 ./ws2812b.h
+[; ;./ws2812b.h: 103: void WS2812B_Clear(void);
+[v _WS2812B_Clear `(v ~T0 @X0 0 ef ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2737,93 +2724,87 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"5 maincode.c
-[; ;maincode.c: 5: Stepper motor1;
-[v _motor1 `S2431 ~T0 @X0 1 e ]
-"6
-[; ;maincode.c: 6: Stepper motor2;
-[v _motor2 `S2431 ~T0 @X0 1 e ]
-"8
-[; ;maincode.c: 8: void config(void) {
+"6 maincode.c
+[; ;maincode.c: 6: void config(void) {
 [v _config `(v ~T0 @X0 1 ef ]
 {
 [e :U _config ]
 [f ]
-"10
-[; ;maincode.c: 10:     OSCCON1 = 0x60;
+"8
+[; ;maincode.c: 8:     OSCCON1 = 0x60;
 [e = _OSCCON1 -> -> 96 `i `uc ]
-"11
-[; ;maincode.c: 11:     OSCFRQ = 0x07;
+"9
+[; ;maincode.c: 9:     OSCFRQ = 0x07;
 [e = _OSCFRQ -> -> 7 `i `uc ]
-"12
-[; ;maincode.c: 12:     OSCEN = 0x40;
+"10
+[; ;maincode.c: 10:     OSCEN = 0x40;
 [e = _OSCEN -> -> 64 `i `uc ]
-"15
-[; ;maincode.c: 15: }
-[e :UE 2432 ]
+"13
+[; ;maincode.c: 13: }
+[e :UE 2431 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"16
-[; ;maincode.c: 16: void main(void) {
+"14
+[; ;maincode.c: 14: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"17
-[; ;maincode.c: 17:     config();
+"15
+[; ;maincode.c: 15:     config();
 [e ( _config ..  ]
-"24
-[; ;maincode.c: 24:     Stepper_Init(&motor1, &LATD, &TRISD, &ANSELD, 0);
-[e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATD &U _TRISD &U _ANSELD -> -> 0 `i `uc ]
-"32
-[; ;maincode.c: 32:     Stepper_Init(&motor2, &LATD, &TRISD, &ANSELD, 1);
-[e ( _Stepper_Init (4 , , , , &U _motor2 &U _LATD &U _TRISD &U _ANSELD -> -> 1 `i `uc ]
-"34
-[; ;maincode.c: 34:     while(1)
-[e :U 2435 ]
-"35
-[; ;maincode.c: 35:     {
-{
-"39
-[; ;maincode.c: 39:         Stepper_fullTurn_CW(&motor1);
-[e ( _Stepper_fullTurn_CW (1 &U _motor1 ]
-"41
-[; ;maincode.c: 41:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"46
-[; ;maincode.c: 46:         Stepper_fullTurn_CW(&motor2);
-[e ( _Stepper_fullTurn_CW (1 &U _motor2 ]
-"48
-[; ;maincode.c: 48:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"53
-[; ;maincode.c: 53:         Stepper_fullTurn_CCW(&motor1);
-[e ( _Stepper_fullTurn_CCW (1 &U _motor1 ]
-"55
-[; ;maincode.c: 55:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"60
-[; ;maincode.c: 60:         Stepper_fullTurn_CCW(&motor2);
-[e ( _Stepper_fullTurn_CCW (1 &U _motor2 ]
-"62
-[; ;maincode.c: 62:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"67
-[; ;maincode.c: 67:         Stepper_Off(&motor1);
-[e ( _Stepper_Off (1 &U _motor1 ]
-"68
-[; ;maincode.c: 68:         Stepper_Off(&motor2);
-[e ( _Stepper_Off (1 &U _motor2 ]
-"70
-[; ;maincode.c: 70:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"71
-[; ;maincode.c: 71:     }
-}
+"16
+[; ;maincode.c: 16:    WS2812B_Init();
+[e ( _WS2812B_Init ..  ]
+"18
+[; ;maincode.c: 18:     while(1)
 [e :U 2434 ]
-[e $U 2435  ]
-[e :U 2436 ]
-"72
-[; ;maincode.c: 72: }
-[e :UE 2433 ]
+"19
+[; ;maincode.c: 19:     {
+{
+"23
+[; ;maincode.c: 23:         WS2812B_SetAll(255, 0, 0);
+[e ( _WS2812B_SetAll (3 , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"24
+[; ;maincode.c: 24:         WS2812B_Show();
+[e ( _WS2812B_Show ..  ]
+"25
+[; ;maincode.c: 25:         _delay((unsigned long)((500)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"30
+[; ;maincode.c: 30:         WS2812B_SetAll(0, 255, 0);
+[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc ]
+"31
+[; ;maincode.c: 31:         WS2812B_Show();
+[e ( _WS2812B_Show ..  ]
+"32
+[; ;maincode.c: 32:         _delay((unsigned long)((500)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"37
+[; ;maincode.c: 37:         WS2812B_SetAll(0, 0, 255);
+[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 255 `i `uc ]
+"38
+[; ;maincode.c: 38:         WS2812B_Show();
+[e ( _WS2812B_Show ..  ]
+"39
+[; ;maincode.c: 39:         _delay((unsigned long)((500)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"44
+[; ;maincode.c: 44:         WS2812B_Clear();
+[e ( _WS2812B_Clear ..  ]
+"45
+[; ;maincode.c: 45:         WS2812B_Show();
+[e ( _WS2812B_Show ..  ]
+"46
+[; ;maincode.c: 46:         _delay((unsigned long)((500)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"47
+[; ;maincode.c: 47:     }
+}
+[e :U 2433 ]
+[e $U 2434  ]
+[e :U 2435 ]
+"48
+[; ;maincode.c: 48: }
+[e :UE 2432 ]
 }

@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=maincode.c motor_paso.c
+SOURCEFILES_QUOTED_IF_SPACED=maincode.c ws2812b.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/motor_paso.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/maincode.p1.d ${OBJECTDIR}/motor_paso.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/maincode.p1.d ${OBJECTDIR}/ws2812b.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/motor_paso.p1
+OBJECTFILES=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1
 
 # Source Files
-SOURCEFILES=maincode.c motor_paso.c
+SOURCEFILES=maincode.c ws2812b.c
 
 
 
@@ -96,13 +96,13 @@ ${OBJECTDIR}/maincode.p1: maincode.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/maincode.d ${OBJECTDIR}/maincode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/maincode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/motor_paso.p1: motor_paso.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/ws2812b.p1: ws2812b.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/motor_paso.p1.d 
-	@${RM} ${OBJECTDIR}/motor_paso.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/motor_paso.p1 motor_paso.c 
-	@-${MV} ${OBJECTDIR}/motor_paso.d ${OBJECTDIR}/motor_paso.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/motor_paso.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/ws2812b.p1.d 
+	@${RM} ${OBJECTDIR}/ws2812b.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ws2812b.p1 ws2812b.c 
+	@-${MV} ${OBJECTDIR}/ws2812b.d ${OBJECTDIR}/ws2812b.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ws2812b.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/maincode.p1: maincode.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -113,13 +113,13 @@ ${OBJECTDIR}/maincode.p1: maincode.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/maincode.d ${OBJECTDIR}/maincode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/maincode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/motor_paso.p1: motor_paso.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/ws2812b.p1: ws2812b.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/motor_paso.p1.d 
-	@${RM} ${OBJECTDIR}/motor_paso.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/motor_paso.p1 motor_paso.c 
-	@-${MV} ${OBJECTDIR}/motor_paso.d ${OBJECTDIR}/motor_paso.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/motor_paso.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/ws2812b.p1.d 
+	@${RM} ${OBJECTDIR}/ws2812b.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ws2812b.p1 ws2812b.c 
+	@-${MV} ${OBJECTDIR}/ws2812b.d ${OBJECTDIR}/ws2812b.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ws2812b.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

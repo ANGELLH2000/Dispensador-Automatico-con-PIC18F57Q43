@@ -29631,7 +29631,7 @@ unsigned char __t3rd16on(void);
 
 #pragma config CP = OFF
 # 3 "maincode.c" 2
-# 1 "./motor_paso.h" 1
+# 1 "./ws2812b.h" 1
 
 
 
@@ -29690,40 +29690,15 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 5 "./motor_paso.h" 2
-# 103 "./motor_paso.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    uint8_t nibble;
-    uint8_t index;
-} Stepper;
-# 150 "./motor_paso.h"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble);
-# 168 "./motor_paso.h"
-void Stepper_Step_CW(Stepper *motor);
-# 182 "./motor_paso.h"
-void Stepper_Step_CCW(Stepper *motor);
-# 202 "./motor_paso.h"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 222 "./motor_paso.h"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 243 "./motor_paso.h"
-void Stepper_fullTurn_CW(Stepper *motor);
-# 264 "./motor_paso.h"
-void Stepper_fullTurn_CCW(Stepper *motor);
-# 281 "./motor_paso.h"
-void Stepper_Off(Stepper *motor);
+# 5 "./ws2812b.h" 2
+# 38 "./ws2812b.h"
+void WS2812B_Init(void);
+void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
+void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
+void WS2812B_Clear(void);
+void WS2812B_Show(void);
 # 4 "maincode.c" 2
 
-Stepper motor1;
-Stepper motor2;
 
 void config(void) {
 
@@ -29735,58 +29710,36 @@ void config(void) {
 }
 void main(void) {
     config();
-
-
-
-
-
-
-    Stepper_Init(&motor1, &LATD, &TRISD, &ANSELD, 0);
-
-
-
-
-
-
-
-    Stepper_Init(&motor2, &LATD, &TRISD, &ANSELD, 1);
+   WS2812B_Init();
 
     while(1)
     {
 
 
 
-        Stepper_fullTurn_CW(&motor1);
-
+        WS2812B_Clear();
+        WS2812B_Show();
         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
 
 
 
 
-        Stepper_fullTurn_CW(&motor2);
-
+        WS2812B_SetAll(20, 0, 0);
+        WS2812B_Show();
         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
 
 
 
 
-        Stepper_fullTurn_CCW(&motor1);
-
+        WS2812B_SetAll(0, 20, 0);
+        WS2812B_Show();
         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
 
 
 
 
-        Stepper_fullTurn_CCW(&motor2);
-
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-
-
-
-
-        Stepper_Off(&motor1);
-        Stepper_Off(&motor2);
-
+        WS2812B_SetAll(0, 0, 20);
+        WS2812B_Show();
         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
     }
 }

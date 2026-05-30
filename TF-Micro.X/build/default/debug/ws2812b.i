@@ -1,4 +1,4 @@
-# 1 "motor_paso.c"
+# 1 "ws2812b.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "motor_paso.c" 2
-# 1 "./motor_paso.h" 1
+# 1 "ws2812b.c" 2
+# 1 "./ws2812b.h" 1
 
 
 
@@ -29638,235 +29638,69 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 60 "./cabecera.h" 2
-# 5 "./motor_paso.h" 2
-# 103 "./motor_paso.h"
-typedef struct
+# 5 "./ws2812b.h" 2
+# 54 "./ws2812b.h"
+void WS2812B_Init(void);
+# 85 "./ws2812b.h"
+void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
+# 94 "./ws2812b.h"
+void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
+# 103 "./ws2812b.h"
+void WS2812B_Clear(void);
+# 113 "./ws2812b.h"
+void WS2812B_Show(void);
+# 2 "ws2812b.c" 2
+# 15 "ws2812b.c"
+static uint8_t ws2812b_red[3];
+static uint8_t ws2812b_green[3];
+static uint8_t ws2812b_blue[3];
+# 38 "ws2812b.c"
+static void WS2812B_NopDelay(uint8_t n)
 {
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    uint8_t nibble;
-    uint8_t index;
-} Stepper;
-# 150 "./motor_paso.h"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble);
-# 168 "./motor_paso.h"
-void Stepper_Step_CW(Stepper *motor);
-# 182 "./motor_paso.h"
-void Stepper_Step_CCW(Stepper *motor);
-# 202 "./motor_paso.h"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 222 "./motor_paso.h"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 243 "./motor_paso.h"
-void Stepper_fullTurn_CW(Stepper *motor);
-# 264 "./motor_paso.h"
-void Stepper_fullTurn_CCW(Stepper *motor);
-# 281 "./motor_paso.h"
-void Stepper_Off(Stepper *motor);
-# 2 "motor_paso.c" 2
-# 23 "motor_paso.c"
-static const uint8_t full_step_sequence[4] = {
-    0b1100,
-    0b0110,
-    0b0011,
-    0b1001
-};
-# 48 "motor_paso.c"
-static void Stepper_Write(Stepper *motor, uint8_t value)
+    while(n > 0)
+    {
+        __nop();
+        n--;
+    }
+}
+# 64 "ws2812b.c"
+static void WS2812B_SendBit(uint8_t bit_value)
+{
+    if(bit_value)
+    {
+
+
+
+        LATDbits.LATD0 = 1;
+        WS2812B_NopDelay(7);
+        LATDbits.LATD0 = 0;
+        WS2812B_NopDelay(3);
+    }
+    else
+    {
+
+
+
+        LATDbits.LATD0 = 1;
+        WS2812B_NopDelay(3);
+        LATDbits.LATD0 = 0;
+        WS2812B_NopDelay(7);
+    }
+}
+# 99 "ws2812b.c"
+static void WS2812B_SendByte(uint8_t data)
 {
     uint8_t mask;
-    uint8_t output_value;
 
-    if(motor->nibble == 0)
+    for(mask = 0x80; mask > 0; mask >>= 1)
     {
-
-
-
-
-        mask = 0x0F;
-
-
-
-
-        output_value = value & 0x0F;
-
-
-
-
-
-        *(motor->lat) = (uint8_t)((*(motor->lat) & (uint8_t)(~mask)) | output_value);
-    }
-    else
-    {
-
-
-
-
-        mask = 0xF0;
-
-
-
-
-        output_value = (uint8_t)((value & 0x0F) << 4);
-
-
-
-
-
-        *(motor->lat) = (uint8_t)((*(motor->lat) & (uint8_t)(~mask)) | output_value);
-    }
-}
-# 103 "motor_paso.c"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble)
-{
-
-
-
-
-    motor->lat = lat;
-    motor->tris = tris;
-    motor->ansel = ansel;
-
-
-
-
-    motor->nibble = nibble;
-
-
-
-
-    motor->index = 0;
-
-    if(motor->nibble == 0)
-    {
-
-
-
-
-
-
-
-        *(motor->tris) &= 0xF0;
-# 145 "motor_paso.c"
-        *(motor->ansel) &= 0xF0;
-
-
-
-
-        *(motor->lat) &= 0xF0;
-    }
-    else
-    {
-
-
-
-        *(motor->tris) &= 0x0F;
-
-
-
-
-        *(motor->ansel) &= 0x0F;
-
-
-
-
-        *(motor->lat) &= 0x0F;
-    }
-}
-# 178 "motor_paso.c"
-void Stepper_Step_CW(Stepper *motor)
-{
-
-
-
-    Stepper_Write(motor, full_step_sequence[motor->index]);
-
-
-
-
-    motor->index++;
-
-
-
-
-    if(motor->index >= 4)
-    {
-        motor->index = 0;
-    }
-}
-# 206 "motor_paso.c"
-void Stepper_Step_CCW(Stepper *motor)
-{
-
-
-
-    Stepper_Write(motor, full_step_sequence[motor->index]);
-
-
-
-
-    if(motor->index == 0)
-    {
-        motor->index = 3;
-    }
-    else
-    {
-        motor->index--;
-    }
-}
-# 233 "motor_paso.c"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-{
-    uint16_t i;
-    uint16_t j;
-
-    for(i = 0; i < steps; i++)
-    {
-
-
-
-        Stepper_Step_CW(motor);
-
-
-
-
-
-
-
-        for(j = 0; j < delay_ms; j++)
+        if(data & mask)
         {
-            _delay((unsigned long)((1)*(48000000UL/4000.0)));
+            WS2812B_SendBit(1);
         }
-    }
-}
-# 265 "motor_paso.c"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-{
-    uint16_t i;
-    uint16_t j;
-
-    for(i = 0; i < steps; i++)
-    {
-
-
-
-        Stepper_Step_CCW(motor);
-
-
-
-
-        for(j = 0; j < delay_ms; j++)
+        else
         {
-            _delay((unsigned long)((1)*(48000000UL/4000.0)));
+            WS2812B_SendBit(0);
         }
     }
 }
@@ -29876,26 +29710,101 @@ void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
 
 
 
-void Stepper_fullTurn_CW(Stepper *motor)
+
+void WS2812B_Init(void)
 {
-    Stepper_Move_CW(motor,
-                    2048,
-                    5);
+
+
+
+    ANSELDbits.ANSELD0 = 0;
+
+
+
+
+    TRISDbits.TRISD0 = 0;
+
+
+
+
+    LATDbits.LATD0 = 0;
+
+
+
+
+    WS2812B_Clear();
+
+
+
+
+    WS2812B_Show();
+}
+# 157 "ws2812b.c"
+void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
+{
+    if(led >= 3)
+    {
+        return;
+    }
+
+    ws2812b_red[led] = red;
+    ws2812b_green[led] = green;
+    ws2812b_blue[led] = blue;
 }
 
 
 
 
 
+void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
+{
+    uint8_t i;
 
-void Stepper_fullTurn_CCW(Stepper *motor)
-{
-    Stepper_Move_CCW(motor,
-                     2048,
-                     5);
+    for(i = 0; i < 3; i++)
+    {
+        WS2812B_SetPixel(i, red, green, blue);
+    }
 }
-# 319 "motor_paso.c"
-void Stepper_Off(Stepper *motor)
+
+
+
+
+
+void WS2812B_Clear(void)
 {
-    Stepper_Write(motor, 0x00);
+    WS2812B_SetAll(0, 0, 0);
+}
+# 205 "ws2812b.c"
+void WS2812B_Show(void)
+{
+    uint8_t i;
+
+
+
+
+
+    INTCON0bits.GIE = 0;
+
+    for(i = 0; i < 3; i++)
+    {
+
+
+
+
+        WS2812B_SendByte(ws2812b_green[i]);
+        WS2812B_SendByte(ws2812b_red[i]);
+        WS2812B_SendByte(ws2812b_blue[i]);
+    }
+
+
+
+
+    INTCON0bits.GIE = 1;
+
+
+
+
+
+
+    LATDbits.LATD0 = 0;
+    _delay((unsigned long)((80)*(48000000UL/4000000.0)));
 }

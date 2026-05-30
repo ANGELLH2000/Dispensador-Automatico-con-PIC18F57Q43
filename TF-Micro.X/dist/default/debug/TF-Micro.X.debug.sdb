@@ -63,143 +63,176 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"8 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+"6 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
 [v _config config `(v  1 e 1 0 ]
-"16
+"14
 [v _main main `(v  1 e 1 0 ]
-"48 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
-[v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
-"103
-[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
-"178
-[v _Stepper_Step_CW Stepper_Step_CW `(v  1 e 1 0 ]
-"206
-[v _Stepper_Step_CCW Stepper_Step_CCW `(v  1 e 1 0 ]
-"233
-[v _Stepper_Move_CW Stepper_Move_CW `(v  1 e 1 0 ]
-"265
-[v _Stepper_Move_CCW Stepper_Move_CCW `(v  1 e 1 0 ]
-"292
-[v _Stepper_fullTurn_CW Stepper_fullTurn_CW `(v  1 e 1 0 ]
-"304
-[v _Stepper_fullTurn_CCW Stepper_fullTurn_CCW `(v  1 e 1 0 ]
-"319
-[v _Stepper_Off Stepper_Off `(v  1 e 1 0 ]
+"38 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_NopDelay WS2812B_NopDelay `(v  1 s 1 WS2812B_NopDelay ]
+"64
+[v _WS2812B_SendBit WS2812B_SendBit `(v  1 s 1 WS2812B_SendBit ]
+"99
+[v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
+"122
+[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
+"157
+[v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
+"173
+[v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
+"187
+[v _WS2812B_Clear WS2812B_Clear `(v  1 e 1 0 ]
+"205
+[v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
 "5390
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @177 ]
 "5592
 [v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
-"41445
-[v _ANSELD ANSELD `VEuc  1 e 1 @1048 ]
-"48989
-[v _LATD LATD `VEuc  1 e 1 @1217 ]
-"49331
-[v _TRISD TRISD `VEuc  1 e 1 @1225 ]
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-"5 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
-[v _motor1 motor1 `S24  1 e 8 0 ]
-"6
-[v _motor2 motor2 `S24  1 e 8 0 ]
-"23 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
-[v _full_step_sequence full_step_sequence `C[4]uc  1 s 4 full_step_sequence ]
-"16 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[s S84 . 1 `uc 1 ANSELD0 1 0 :1:0 
+`uc 1 ANSELD1 1 0 :1:1 
+`uc 1 ANSELD2 1 0 :1:2 
+`uc 1 ANSELD3 1 0 :1:3 
+`uc 1 ANSELD4 1 0 :1:4 
+`uc 1 ANSELD5 1 0 :1:5 
+`uc 1 ANSELD6 1 0 :1:6 
+`uc 1 ANSELD7 1 0 :1:7 
+]
+"41462
+[u S93 . 1 `S84 1 . 1 0 ]
+"41462
+"41462
+[v _ANSELDbits ANSELDbits `VES93  1 e 1 @1048 ]
+[s S63 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"49006
+[u S72 . 1 `S63 1 . 1 0 ]
+"49006
+"49006
+[v _LATDbits LATDbits `VES72  1 e 1 @1217 ]
+[s S105 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"49348
+[u S114 . 1 `S105 1 . 1 0 ]
+"49348
+"49348
+[v _TRISDbits TRISDbits `VES114  1 e 1 @1225 ]
+[s S128 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"49855
+[s S136 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GIEH 1 0 :1:7 
+]
+"49855
+[u S139 . 1 `S128 1 . 1 0 `S136 1 . 1 0 ]
+"49855
+"49855
+[v _INTCON0bits INTCON0bits `VES139  1 e 1 @1238 ]
+"15 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _ws2812b_red ws2812b_red `[3]uc  1 s 3 ws2812b_red ]
+"16
+[v _ws2812b_green ws2812b_green `[3]uc  1 s 3 ws2812b_green ]
+"17
+[v _ws2812b_blue ws2812b_blue `[3]uc  1 s 3 ws2812b_blue ]
+"14 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
 [v _main main `(v  1 e 1 0 ]
 {
-"72
+"48
 } 0
-"8
+"6
 [v _config config `(v  1 e 1 0 ]
 {
-"15
+"13
 } 0
-"292 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
-[v _Stepper_fullTurn_CW Stepper_fullTurn_CW `(v  1 e 1 0 ]
+"122 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
 {
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_fullTurn_CW@motor motor `*.39S24  1 p 2 23 ]
-"297
+"148
 } 0
-"233
-[v _Stepper_Move_CW Stepper_Move_CW `(v  1 e 1 0 ]
+"205
+[v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
 {
-"236
-[v Stepper_Move_CW@j j `us  1 a 2 21 ]
-"235
-[v Stepper_Move_CW@i i `us  1 a 2 19 ]
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-"233
-[v Stepper_Move_CW@motor motor `*.39S24  1 p 2 12 ]
-[v Stepper_Move_CW@steps steps `us  1 p 2 14 ]
-[v Stepper_Move_CW@delay_ms delay_ms `us  1 p 2 16 ]
-"256
+"207
+[v WS2812B_Show@i i `uc  1 a 1 4 ]
+"238
 } 0
-"178
-[v _Stepper_Step_CW Stepper_Step_CW `(v  1 e 1 0 ]
+"99
+[v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
 {
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_Step_CW@motor motor `*.39S24  1 p 2 8 ]
-"197
-} 0
-"304
-[v _Stepper_fullTurn_CCW Stepper_fullTurn_CCW `(v  1 e 1 0 ]
-{
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_fullTurn_CCW@motor motor `*.39S24  1 p 2 23 ]
-"309
-} 0
-"265
-[v _Stepper_Move_CCW Stepper_Move_CCW `(v  1 e 1 0 ]
-{
-"268
-[v Stepper_Move_CCW@j j `us  1 a 2 21 ]
-"267
-[v Stepper_Move_CCW@i i `us  1 a 2 19 ]
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-"265
-[v Stepper_Move_CCW@motor motor `*.39S24  1 p 2 12 ]
-[v Stepper_Move_CCW@steps steps `us  1 p 2 14 ]
-[v Stepper_Move_CCW@delay_ms delay_ms `us  1 p 2 16 ]
-"285
-} 0
-"206
-[v _Stepper_Step_CCW Stepper_Step_CCW `(v  1 e 1 0 ]
-{
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_Step_CCW@motor motor `*.39S24  1 p 2 8 ]
-"224
-} 0
-"319
-[v _Stepper_Off Stepper_Off `(v  1 e 1 0 ]
-{
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_Off@motor motor `*.39S24  1 p 2 8 ]
-"322
-} 0
-"48
-[v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
-{
-"51
-[v Stepper_Write@output_value output_value `uc  1 a 1 7 ]
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-"48
-[v Stepper_Write@motor motor `*.39S24  1 p 2 0 ]
-[v Stepper_Write@value value `uc  1 p 1 2 ]
-"91
-} 0
+[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
+"101
+[v WS2812B_SendByte@mask mask `uc  1 a 1 3 ]
+"99
+[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
 "103
-[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
+[v WS2812B_SendByte@data data `uc  1 p 1 2 ]
+"114
+} 1
+"64
+[v _WS2812B_SendBit WS2812B_SendBit `(v  1 s 1 WS2812B_SendBit ]
 {
-[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_Init@motor motor `*.39S24  1 p 2 0 ]
-"104
-[v Stepper_Init@lat lat `*.39VEuc  1 p 2 2 ]
-"105
-[v Stepper_Init@tris tris `*.39VEuc  1 p 2 4 ]
-"106
-[v Stepper_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
-"107
-[v Stepper_Init@nibble nibble `uc  1 p 1 8 ]
-"169
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
+"66
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 1 ]
+"86
+} 1
+"38
+[v _WS2812B_NopDelay WS2812B_NopDelay `(v  1 s 1 WS2812B_NopDelay ]
+{
+[v WS2812B_NopDelay@n n `uc  1 p 1 wreg ]
+[v WS2812B_NopDelay@n n `uc  1 p 1 wreg ]
+[v WS2812B_NopDelay@n n `uc  1 p 1 0 ]
+"45
+} 1
+"187
+[v _WS2812B_Clear WS2812B_Clear `(v  1 e 1 0 ]
+{
+"190
 } 0
+"173
+[v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
+{
+[v WS2812B_SetAll@red red `uc  1 p 1 wreg ]
+"175
+[v WS2812B_SetAll@i i `uc  1 a 1 7 ]
+"173
+[v WS2812B_SetAll@red red `uc  1 p 1 wreg ]
+[v WS2812B_SetAll@green green `uc  1 p 1 4 ]
+[v WS2812B_SetAll@blue blue `uc  1 p 1 5 ]
+"177
+[v WS2812B_SetAll@red red `uc  1 p 1 6 ]
+"181
+} 1
+"157
+[v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
+{
+[v WS2812B_SetPixel@led led `uc  1 p 1 wreg ]
+[v WS2812B_SetPixel@led led `uc  1 p 1 wreg ]
+[v WS2812B_SetPixel@red red `uc  1 p 1 0 ]
+[v WS2812B_SetPixel@green green `uc  1 p 1 1 ]
+[v WS2812B_SetPixel@blue blue `uc  1 p 1 2 ]
+"159
+[v WS2812B_SetPixel@led led `uc  1 p 1 3 ]
+"167
+} 1

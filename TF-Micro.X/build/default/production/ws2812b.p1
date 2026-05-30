@@ -1,8 +1,61 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"104 ./motor_paso.h
-[; ;./motor_paso.h: 104: {
-[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2431 . lat tris ansel nibble index ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"48995 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48995:     struct {
+[s S2288 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2288 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"48994
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48994: typedef union {
+[u S2287 `S2288 1 ]
+[n S2287 . . ]
+"49006
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49006: extern volatile LATDbits_t LATDbits __attribute__((address(0x4C1)));
+[v _LATDbits `VS2287 ~T0 @X0 0 e@1217 ]
+"41451
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41451:     struct {
+[s S1948 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1948 . ANSELD0 ANSELD1 ANSELD2 ANSELD3 ANSELD4 ANSELD5 ANSELD6 ANSELD7 ]
+"41450
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41450: typedef union {
+[u S1947 `S1948 1 ]
+[n S1947 . . ]
+"41462
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41462: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0x418)));
+[v _ANSELDbits `VS1947 ~T0 @X0 0 e@1048 ]
+"49337
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49337:     struct {
+[s S2300 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2300 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"49336
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49336: typedef union {
+[u S2299 `S2300 1 ]
+[n S2299 . . ]
+"49348
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49348: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x4C9)));
+[v _TRISDbits `VS2299 ~T0 @X0 0 e@1225 ]
+"41 ./ws2812b.h
+[; ;./ws2812b.h: 41: void WS2812B_Clear(void);
+[v _WS2812B_Clear `(v ~T0 @X0 0 ef ]
+"42
+[; ;./ws2812b.h: 42: void WS2812B_Show(void);
+[v _WS2812B_Show `(v ~T0 @X0 0 ef ]
+"49841 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49841:     struct {
+[s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"49850
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49850:     struct {
+[s S2319 :7 `uc 1 :1 `uc 1 ]
+[n S2319 . . GIEH ]
+"49840
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49840: typedef union {
+[u S2317 `S2318 1 `S2319 1 ]
+[n S2317 . . . ]
+"49855
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
@@ -2642,430 +2695,383 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"23 motor_paso.c
-[; ;motor_paso.c: 23: static const uint8_t full_step_sequence[4] = {
-[v _full_step_sequence `Cuc ~T0 @X0 -> 4 `i s ]
-[i _full_step_sequence
-:U ..
--> -> 12 `i `uc
--> -> 6 `i `uc
--> -> 3 `i `uc
--> -> 9 `i `uc
-..
-]
-"48
-[; ;motor_paso.c: 48: static void Stepper_Write(Stepper *motor, uint8_t value)
-[v _Stepper_Write `(v ~T0 @X0 1 sf2`*S2431`uc ]
-"49
-[; ;motor_paso.c: 49: {
+"15 ws2812b.c
+[; ;ws2812b.c: 15: static uint8_t ws2812b_red[3];
+[v _ws2812b_red `uc ~T0 @X0 -> 3 `i s ]
+"16
+[; ;ws2812b.c: 16: static uint8_t ws2812b_green[3];
+[v _ws2812b_green `uc ~T0 @X0 -> 3 `i s ]
+"17
+[; ;ws2812b.c: 17: static uint8_t ws2812b_blue[3];
+[v _ws2812b_blue `uc ~T0 @X0 -> 3 `i s ]
+"38
+[; ;ws2812b.c: 38: static void WS2812B_NopDelay(uint8_t n)
+[v _WS2812B_NopDelay `(v ~T0 @X0 1 sf1`uc ]
+"39
+[; ;ws2812b.c: 39: {
 {
-[e :U _Stepper_Write ]
-"48
-[; ;motor_paso.c: 48: static void Stepper_Write(Stepper *motor, uint8_t value)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-[v _value `uc ~T0 @X0 1 r2 ]
-"49
-[; ;motor_paso.c: 49: {
+[e :U _WS2812B_NopDelay ]
+"38
+[; ;ws2812b.c: 38: static void WS2812B_NopDelay(uint8_t n)
+[v _n `uc ~T0 @X0 1 r1 ]
+"39
+[; ;ws2812b.c: 39: {
 [f ]
-"50
-[; ;motor_paso.c: 50:     uint8_t mask;
-[v _mask `uc ~T0 @X0 1 a ]
-"51
-[; ;motor_paso.c: 51:     uint8_t output_value;
-[v _output_value `uc ~T0 @X0 1 a ]
-"53
-[; ;motor_paso.c: 53:     if(motor->nibble == 0)
-[e $ ! == -> . *U _motor 3 `i -> 0 `i 2433  ]
-"54
-[; ;motor_paso.c: 54:     {
-{
-"59
-[; ;motor_paso.c: 59:         mask = 0x0F;
-[e = _mask -> -> 15 `i `uc ]
-"64
-[; ;motor_paso.c: 64:         output_value = value & 0x0F;
-[e = _output_value -> & -> _value `i -> 15 `i `uc ]
-"70
-[; ;motor_paso.c: 70:         *(motor->lat) = (uint8_t)((*(motor->lat) & (uint8_t)(~mask)) | output_value);
-[e = *U . *U _motor 0 -> | & -> *U . *U _motor 0 `i -> -> ~ -> _mask `i `uc `i -> _output_value `i `uc ]
-"71
-[; ;motor_paso.c: 71:     }
-}
-[e $U 2434  ]
-"72
-[; ;motor_paso.c: 72:     else
+"40
+[; ;ws2812b.c: 40:     while(n > 0)
+[e $U 2432  ]
 [e :U 2433 ]
-"73
-[; ;motor_paso.c: 73:     {
+"41
+[; ;ws2812b.c: 41:     {
 {
-"78
-[; ;motor_paso.c: 78:         mask = 0xF0;
-[e = _mask -> -> 240 `i `uc ]
-"83
-[; ;motor_paso.c: 83:         output_value = (uint8_t)((value & 0x0F) << 4);
-[e = _output_value -> << & -> _value `i -> 15 `i -> 4 `i `uc ]
-"89
-[; ;motor_paso.c: 89:         *(motor->lat) = (uint8_t)((*(motor->lat) & (uint8_t)(~mask)) | output_value);
-[e = *U . *U _motor 0 -> | & -> *U . *U _motor 0 `i -> -> ~ -> _mask `i `uc `i -> _output_value `i `uc ]
-"90
-[; ;motor_paso.c: 90:     }
+"42
+[; ;ws2812b.c: 42:         __nop();
+[e ( ___nop ..  ]
+"43
+[; ;ws2812b.c: 43:         n--;
+[e -- _n -> -> 1 `i `uc ]
+"44
+[; ;ws2812b.c: 44:     }
 }
+[e :U 2432 ]
+"40
+[; ;ws2812b.c: 40:     while(n > 0)
+[e $ > -> _n `i -> 0 `i 2433  ]
 [e :U 2434 ]
-"91
-[; ;motor_paso.c: 91: }
-[e :UE 2432 ]
+"45
+[; ;ws2812b.c: 45: }
+[e :UE 2431 ]
 }
-"103
-[; ;motor_paso.c: 103: void Stepper_Init(Stepper *motor,
-[v _Stepper_Init `(v ~T0 @X0 1 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
-"108
-[; ;motor_paso.c: 108: {
+"64
+[; ;ws2812b.c: 64: static void WS2812B_SendBit(uint8_t bit_value)
+[v _WS2812B_SendBit `(v ~T0 @X0 1 sf1`uc ]
+"65
+[; ;ws2812b.c: 65: {
 {
-[e :U _Stepper_Init ]
-"103
-[; ;motor_paso.c: 103: void Stepper_Init(Stepper *motor,
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"104
-[; ;motor_paso.c: 104:                   volatile uint8_t *lat,
-[v _lat `*Vuc ~T0 @X0 1 r2 ]
-"105
-[; ;motor_paso.c: 105:                   volatile uint8_t *tris,
-[v _tris `*Vuc ~T0 @X0 1 r3 ]
-"106
-[; ;motor_paso.c: 106:                   volatile uint8_t *ansel,
-[v _ansel `*Vuc ~T0 @X0 1 r4 ]
-"107
-[; ;motor_paso.c: 107:                   uint8_t nibble)
-[v _nibble `uc ~T0 @X0 1 r5 ]
-"108
-[; ;motor_paso.c: 108: {
+[e :U _WS2812B_SendBit ]
+"64
+[; ;ws2812b.c: 64: static void WS2812B_SendBit(uint8_t bit_value)
+[v _bit_value `uc ~T0 @X0 1 r1 ]
+"65
+[; ;ws2812b.c: 65: {
 [f ]
-"113
-[; ;motor_paso.c: 113:     motor->lat = lat;
-[e = . *U _motor 0 _lat ]
-"114
-[; ;motor_paso.c: 114:     motor->tris = tris;
-[e = . *U _motor 1 _tris ]
-"115
-[; ;motor_paso.c: 115:     motor->ansel = ansel;
-[e = . *U _motor 2 _ansel ]
-"120
-[; ;motor_paso.c: 120:     motor->nibble = nibble;
-[e = . *U _motor 3 _nibble ]
-"125
-[; ;motor_paso.c: 125:     motor->index = 0;
-[e = . *U _motor 4 -> -> 0 `i `uc ]
-"127
-[; ;motor_paso.c: 127:     if(motor->nibble == 0)
-[e $ ! == -> . *U _motor 3 `i -> 0 `i 2436  ]
-"128
-[; ;motor_paso.c: 128:     {
+"66
+[; ;ws2812b.c: 66:     if(bit_value)
+[e $ ! != -> _bit_value `i -> 0 `i 2436  ]
+"67
+[; ;ws2812b.c: 67:     {
 {
-"136
-[; ;motor_paso.c: 136:         *(motor->tris) &= 0xF0;
-[e =& *U . *U _motor 1 -> -> 240 `i `uc ]
-"145
-[; ;motor_paso.c: 145:         *(motor->ansel) &= 0xF0;
-[e =& *U . *U _motor 2 -> -> 240 `i `uc ]
-"150
-[; ;motor_paso.c: 150:         *(motor->lat) &= 0xF0;
-[e =& *U . *U _motor 0 -> -> 240 `i `uc ]
-"151
-[; ;motor_paso.c: 151:     }
+"71
+[; ;ws2812b.c: 71:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"73
+[; ;ws2812b.c: 73:         __nop();
+[e ( ___nop ..  ]
+"74
+[; ;ws2812b.c: 74:         __nop();
+[e ( ___nop ..  ]
+"75
+[; ;ws2812b.c: 75:         __nop();
+[e ( ___nop ..  ]
+"76
+[; ;ws2812b.c: 76:         __nop();
+[e ( ___nop ..  ]
+"77
+[; ;ws2812b.c: 77:         __nop();
+[e ( ___nop ..  ]
+"79
+[; ;ws2812b.c: 79:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"81
+[; ;ws2812b.c: 81:         __nop();
+[e ( ___nop ..  ]
+"82
+[; ;ws2812b.c: 82:         __nop();
+[e ( ___nop ..  ]
+"83
+[; ;ws2812b.c: 83:     }
 }
 [e $U 2437  ]
-"152
-[; ;motor_paso.c: 152:     else
+"84
+[; ;ws2812b.c: 84:     else
 [e :U 2436 ]
-"153
-[; ;motor_paso.c: 153:     {
+"85
+[; ;ws2812b.c: 85:     {
 {
-"157
-[; ;motor_paso.c: 157:         *(motor->tris) &= 0x0F;
-[e =& *U . *U _motor 1 -> -> 15 `i `uc ]
-"162
-[; ;motor_paso.c: 162:         *(motor->ansel) &= 0x0F;
-[e =& *U . *U _motor 2 -> -> 15 `i `uc ]
-"167
-[; ;motor_paso.c: 167:         *(motor->lat) &= 0x0F;
-[e =& *U . *U _motor 0 -> -> 15 `i `uc ]
-"168
-[; ;motor_paso.c: 168:     }
+"89
+[; ;ws2812b.c: 89:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"91
+[; ;ws2812b.c: 91:         __nop();
+[e ( ___nop ..  ]
+"92
+[; ;ws2812b.c: 92:         __nop();
+[e ( ___nop ..  ]
+"94
+[; ;ws2812b.c: 94:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"96
+[; ;ws2812b.c: 96:         __nop();
+[e ( ___nop ..  ]
+"97
+[; ;ws2812b.c: 97:         __nop();
+[e ( ___nop ..  ]
+"98
+[; ;ws2812b.c: 98:         __nop();
+[e ( ___nop ..  ]
+"99
+[; ;ws2812b.c: 99:         __nop();
+[e ( ___nop ..  ]
+"100
+[; ;ws2812b.c: 100:         __nop();
+[e ( ___nop ..  ]
+"101
+[; ;ws2812b.c: 101:     }
 }
 [e :U 2437 ]
-"169
-[; ;motor_paso.c: 169: }
+"102
+[; ;ws2812b.c: 102: }
 [e :UE 2435 ]
 }
-"178
-[; ;motor_paso.c: 178: void Stepper_Step_CW(Stepper *motor)
-[v _Stepper_Step_CW `(v ~T0 @X0 1 ef1`*S2431 ]
-"179
-[; ;motor_paso.c: 179: {
+"115
+[; ;ws2812b.c: 115: static void WS2812B_SendByte(uint8_t data)
+[v _WS2812B_SendByte `(v ~T0 @X0 1 sf1`uc ]
+"116
+[; ;ws2812b.c: 116: {
 {
-[e :U _Stepper_Step_CW ]
-"178
-[; ;motor_paso.c: 178: void Stepper_Step_CW(Stepper *motor)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"179
-[; ;motor_paso.c: 179: {
+[e :U _WS2812B_SendByte ]
+"115
+[; ;ws2812b.c: 115: static void WS2812B_SendByte(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"116
+[; ;ws2812b.c: 116: {
 [f ]
-"183
-[; ;motor_paso.c: 183:     Stepper_Write(motor, full_step_sequence[motor->index]);
-[e ( _Stepper_Write (2 , _motor *U + &U _full_step_sequence * -> . *U _motor 4 `ux -> -> # *U &U _full_step_sequence `ui `ux ]
-"188
-[; ;motor_paso.c: 188:     motor->index++;
-[e ++ . *U _motor 4 -> -> 1 `i `uc ]
-"193
-[; ;motor_paso.c: 193:     if(motor->index >= 4)
-[e $ ! >= -> . *U _motor 4 `i -> 4 `i 2439  ]
-"194
-[; ;motor_paso.c: 194:     {
+"117
+[; ;ws2812b.c: 117:     uint8_t mask;
+[v _mask `uc ~T0 @X0 1 a ]
+"119
+[; ;ws2812b.c: 119:     for(mask = 0x80; mask > 0; mask >>= 1)
 {
-"195
-[; ;motor_paso.c: 195:         motor->index = 0;
-[e = . *U _motor 4 -> -> 0 `i `uc ]
-"196
-[; ;motor_paso.c: 196:     }
-}
+[e = _mask -> -> 128 `i `uc ]
+[e $ > -> _mask `i -> 0 `i 2439  ]
+[e $U 2440  ]
 [e :U 2439 ]
-"197
-[; ;motor_paso.c: 197: }
+"120
+[; ;ws2812b.c: 120:     {
+{
+"121
+[; ;ws2812b.c: 121:         if(data & mask)
+[e $ ! != & -> _data `i -> _mask `i -> 0 `i 2442  ]
+"122
+[; ;ws2812b.c: 122:         {
+{
+"123
+[; ;ws2812b.c: 123:             WS2812B_SendBit(1);
+[e ( _WS2812B_SendBit (1 -> -> 1 `i `uc ]
+"124
+[; ;ws2812b.c: 124:         }
+}
+[e $U 2443  ]
+"125
+[; ;ws2812b.c: 125:         else
+[e :U 2442 ]
+"126
+[; ;ws2812b.c: 126:         {
+{
+"127
+[; ;ws2812b.c: 127:             WS2812B_SendBit(0);
+[e ( _WS2812B_SendBit (1 -> -> 0 `i `uc ]
+"128
+[; ;ws2812b.c: 128:         }
+}
+[e :U 2443 ]
+"129
+[; ;ws2812b.c: 129:     }
+}
+[e =>> _mask -> -> 1 `i `uc ]
+[e $ > -> _mask `i -> 0 `i 2439  ]
+[e :U 2440 ]
+}
+"130
+[; ;ws2812b.c: 130: }
 [e :UE 2438 ]
 }
-"206
-[; ;motor_paso.c: 206: void Stepper_Step_CCW(Stepper *motor)
-[v _Stepper_Step_CCW `(v ~T0 @X0 1 ef1`*S2431 ]
-"207
-[; ;motor_paso.c: 207: {
+"138
+[; ;ws2812b.c: 138: void WS2812B_Init(void)
+[v _WS2812B_Init `(v ~T0 @X0 1 ef ]
+"139
+[; ;ws2812b.c: 139: {
 {
-[e :U _Stepper_Step_CCW ]
-"206
-[; ;motor_paso.c: 206: void Stepper_Step_CCW(Stepper *motor)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"207
-[; ;motor_paso.c: 207: {
+[e :U _WS2812B_Init ]
 [f ]
-"211
-[; ;motor_paso.c: 211:     Stepper_Write(motor, full_step_sequence[motor->index]);
-[e ( _Stepper_Write (2 , _motor *U + &U _full_step_sequence * -> . *U _motor 4 `ux -> -> # *U &U _full_step_sequence `ui `ux ]
-"216
-[; ;motor_paso.c: 216:     if(motor->index == 0)
-[e $ ! == -> . *U _motor 4 `i -> 0 `i 2441  ]
-"217
-[; ;motor_paso.c: 217:     {
-{
-"218
-[; ;motor_paso.c: 218:         motor->index = 3;
-[e = . *U _motor 4 -> -> 3 `i `uc ]
-"219
-[; ;motor_paso.c: 219:     }
+"143
+[; ;ws2812b.c: 143:     ANSELDbits.ANSELD0 = 0;
+[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
+"148
+[; ;ws2812b.c: 148:     TRISDbits.TRISD0 = 0;
+[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
+"153
+[; ;ws2812b.c: 153:     LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"158
+[; ;ws2812b.c: 158:     WS2812B_Clear();
+[e ( _WS2812B_Clear ..  ]
+"163
+[; ;ws2812b.c: 163:     WS2812B_Show();
+[e ( _WS2812B_Show ..  ]
+"164
+[; ;ws2812b.c: 164: }
+[e :UE 2444 ]
 }
-[e $U 2442  ]
-"220
-[; ;motor_paso.c: 220:     else
-[e :U 2441 ]
-"221
-[; ;motor_paso.c: 221:     {
+"173
+[; ;ws2812b.c: 173: void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
+[v _WS2812B_SetPixel `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
+"174
+[; ;ws2812b.c: 174: {
 {
-"222
-[; ;motor_paso.c: 222:         motor->index--;
-[e -- . *U _motor 4 -> -> 1 `i `uc ]
-"223
-[; ;motor_paso.c: 223:     }
-}
-[e :U 2442 ]
-"224
-[; ;motor_paso.c: 224: }
-[e :UE 2440 ]
-}
-"233
-[; ;motor_paso.c: 233: void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-[v _Stepper_Move_CW `(v ~T0 @X0 1 ef3`*S2431`us`us ]
-"234
-[; ;motor_paso.c: 234: {
-{
-[e :U _Stepper_Move_CW ]
-"233
-[; ;motor_paso.c: 233: void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-[v _steps `us ~T0 @X0 1 r2 ]
-[v _delay_ms `us ~T0 @X0 1 r3 ]
-"234
-[; ;motor_paso.c: 234: {
+[e :U _WS2812B_SetPixel ]
+"173
+[; ;ws2812b.c: 173: void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
+[v _led `uc ~T0 @X0 1 r1 ]
+[v _red `uc ~T0 @X0 1 r2 ]
+[v _green `uc ~T0 @X0 1 r3 ]
+[v _blue `uc ~T0 @X0 1 r4 ]
+"174
+[; ;ws2812b.c: 174: {
 [f ]
-"235
-[; ;motor_paso.c: 235:     uint16_t i;
-[v _i `us ~T0 @X0 1 a ]
-"236
-[; ;motor_paso.c: 236:     uint16_t j;
-[v _j `us ~T0 @X0 1 a ]
-"238
-[; ;motor_paso.c: 238:     for(i = 0; i < steps; i++)
+"175
+[; ;ws2812b.c: 175:     if(led >= 3)
+[e $ ! >= -> _led `i -> 3 `i 2446  ]
+"176
+[; ;ws2812b.c: 176:     {
 {
-[e = _i -> -> 0 `i `us ]
-[e $U 2447  ]
-[e :U 2444 ]
-"239
-[; ;motor_paso.c: 239:     {
+"177
+[; ;ws2812b.c: 177:         return;
+[e $UE 2445  ]
+"178
+[; ;ws2812b.c: 178:     }
+}
+[e :U 2446 ]
+"180
+[; ;ws2812b.c: 180:     ws2812b_red[led] = red;
+[e = *U + &U _ws2812b_red * -> _led `ux -> -> # *U &U _ws2812b_red `ui `ux _red ]
+"181
+[; ;ws2812b.c: 181:     ws2812b_green[led] = green;
+[e = *U + &U _ws2812b_green * -> _led `ux -> -> # *U &U _ws2812b_green `ui `ux _green ]
+"182
+[; ;ws2812b.c: 182:     ws2812b_blue[led] = blue;
+[e = *U + &U _ws2812b_blue * -> _led `ux -> -> # *U &U _ws2812b_blue `ui `ux _blue ]
+"183
+[; ;ws2812b.c: 183: }
+[e :UE 2445 ]
+}
+"189
+[; ;ws2812b.c: 189: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
+[v _WS2812B_SetAll `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"190
+[; ;ws2812b.c: 190: {
 {
-"243
-[; ;motor_paso.c: 243:         Stepper_Step_CW(motor);
-[e ( _Stepper_Step_CW (1 _motor ]
-"251
-[; ;motor_paso.c: 251:         for(j = 0; j < delay_ms; j++)
+[e :U _WS2812B_SetAll ]
+"189
+[; ;ws2812b.c: 189: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
+[v _red `uc ~T0 @X0 1 r1 ]
+[v _green `uc ~T0 @X0 1 r2 ]
+[v _blue `uc ~T0 @X0 1 r3 ]
+"190
+[; ;ws2812b.c: 190: {
+[f ]
+"191
+[; ;ws2812b.c: 191:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"193
+[; ;ws2812b.c: 193:     for(i = 0; i < 3; i++)
 {
-[e = _j -> -> 0 `i `us ]
-[e $U 2451  ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 2448  ]
+[e $U 2449  ]
 [e :U 2448 ]
-"252
-[; ;motor_paso.c: 252:         {
+"194
+[; ;ws2812b.c: 194:     {
 {
-"253
-[; ;motor_paso.c: 253:             _delay((unsigned long)((1)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"254
-[; ;motor_paso.c: 254:         }
+"195
+[; ;ws2812b.c: 195:         WS2812B_SetPixel(i, red, green, blue);
+[e ( _WS2812B_SetPixel (4 , , , _i _red _green _blue ]
+"196
+[; ;ws2812b.c: 196:     }
 }
-[e ++ _j -> -> 1 `i `us ]
-[e :U 2451 ]
-[e $ < -> _j `ui -> _delay_ms `ui 2448  ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 2448  ]
 [e :U 2449 ]
 }
-"255
-[; ;motor_paso.c: 255:     }
+"197
+[; ;ws2812b.c: 197: }
+[e :UE 2447 ]
 }
-[e ++ _i -> -> 1 `i `us ]
-[e :U 2447 ]
-[e $ < -> _i `ui -> _steps `ui 2444  ]
-[e :U 2445 ]
-}
-"256
-[; ;motor_paso.c: 256: }
-[e :UE 2443 ]
-}
-"265
-[; ;motor_paso.c: 265: void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-[v _Stepper_Move_CCW `(v ~T0 @X0 1 ef3`*S2431`us`us ]
-"266
-[; ;motor_paso.c: 266: {
+"203
+[; ;ws2812b.c: 203: void WS2812B_Clear(void)
+[v _WS2812B_Clear `(v ~T0 @X0 1 ef ]
+"204
+[; ;ws2812b.c: 204: {
 {
-[e :U _Stepper_Move_CCW ]
-"265
-[; ;motor_paso.c: 265: void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-[v _steps `us ~T0 @X0 1 r2 ]
-[v _delay_ms `us ~T0 @X0 1 r3 ]
-"266
-[; ;motor_paso.c: 266: {
+[e :U _WS2812B_Clear ]
 [f ]
-"267
-[; ;motor_paso.c: 267:     uint16_t i;
-[v _i `us ~T0 @X0 1 a ]
-"268
-[; ;motor_paso.c: 268:     uint16_t j;
-[v _j `us ~T0 @X0 1 a ]
-"270
-[; ;motor_paso.c: 270:     for(i = 0; i < steps; i++)
+"205
+[; ;ws2812b.c: 205:     WS2812B_SetAll(0, 0, 0);
+[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"206
+[; ;ws2812b.c: 206: }
+[e :UE 2451 ]
+}
+"221
+[; ;ws2812b.c: 221: void WS2812B_Show(void)
+[v _WS2812B_Show `(v ~T0 @X0 1 ef ]
+"222
+[; ;ws2812b.c: 222: {
 {
-[e = _i -> -> 0 `i `us ]
-[e $U 2456  ]
+[e :U _WS2812B_Show ]
+[f ]
+"223
+[; ;ws2812b.c: 223:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"229
+[; ;ws2812b.c: 229:     INTCON0bits.GIE = 0;
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
+"231
+[; ;ws2812b.c: 231:     for(i = 0; i < 3; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 3 `i 2453  ]
+[e $U 2454  ]
 [e :U 2453 ]
-"271
-[; ;motor_paso.c: 271:     {
+"232
+[; ;ws2812b.c: 232:     {
 {
-"275
-[; ;motor_paso.c: 275:         Stepper_Step_CCW(motor);
-[e ( _Stepper_Step_CCW (1 _motor ]
-"280
-[; ;motor_paso.c: 280:         for(j = 0; j < delay_ms; j++)
-{
-[e = _j -> -> 0 `i `us ]
-[e $U 2460  ]
-[e :U 2457 ]
-"281
-[; ;motor_paso.c: 281:         {
-{
-"282
-[; ;motor_paso.c: 282:             _delay((unsigned long)((1)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"283
-[; ;motor_paso.c: 283:         }
+"237
+[; ;ws2812b.c: 237:         WS2812B_SendByte(ws2812b_green[i]);
+[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_green * -> _i `ux -> -> # *U &U _ws2812b_green `ui `ux ]
+"238
+[; ;ws2812b.c: 238:         WS2812B_SendByte(ws2812b_red[i]);
+[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_red * -> _i `ux -> -> # *U &U _ws2812b_red `ui `ux ]
+"239
+[; ;ws2812b.c: 239:         WS2812B_SendByte(ws2812b_blue[i]);
+[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_blue * -> _i `ux -> -> # *U &U _ws2812b_blue `ui `ux ]
+"240
+[; ;ws2812b.c: 240:     }
 }
-[e ++ _j -> -> 1 `i `us ]
-[e :U 2460 ]
-[e $ < -> _j `ui -> _delay_ms `ui 2457  ]
-[e :U 2458 ]
-}
-"284
-[; ;motor_paso.c: 284:     }
-}
-[e ++ _i -> -> 1 `i `us ]
-[e :U 2456 ]
-[e $ < -> _i `ui -> _steps `ui 2453  ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 3 `i 2453  ]
 [e :U 2454 ]
 }
-"285
-[; ;motor_paso.c: 285: }
+"245
+[; ;ws2812b.c: 245:     INTCON0bits.GIE = 1;
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"252
+[; ;ws2812b.c: 252:     LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"253
+[; ;ws2812b.c: 253:     _delay((unsigned long)((80)*(48000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000000.0 `ul ]
+"254
+[; ;ws2812b.c: 254: }
 [e :UE 2452 ]
-}
-"292
-[; ;motor_paso.c: 292: void Stepper_fullTurn_CW(Stepper *motor)
-[v _Stepper_fullTurn_CW `(v ~T0 @X0 1 ef1`*S2431 ]
-"293
-[; ;motor_paso.c: 293: {
-{
-[e :U _Stepper_fullTurn_CW ]
-"292
-[; ;motor_paso.c: 292: void Stepper_fullTurn_CW(Stepper *motor)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"293
-[; ;motor_paso.c: 293: {
-[f ]
-"294
-[; ;motor_paso.c: 294:     Stepper_Move_CW(motor,
-[e ( _Stepper_Move_CW (3 , , _motor -> -> 2048 `i `us -> -> 5 `i `us ]
-"297
-[; ;motor_paso.c: 297: }
-[e :UE 2461 ]
-}
-"304
-[; ;motor_paso.c: 304: void Stepper_fullTurn_CCW(Stepper *motor)
-[v _Stepper_fullTurn_CCW `(v ~T0 @X0 1 ef1`*S2431 ]
-"305
-[; ;motor_paso.c: 305: {
-{
-[e :U _Stepper_fullTurn_CCW ]
-"304
-[; ;motor_paso.c: 304: void Stepper_fullTurn_CCW(Stepper *motor)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"305
-[; ;motor_paso.c: 305: {
-[f ]
-"306
-[; ;motor_paso.c: 306:     Stepper_Move_CCW(motor,
-[e ( _Stepper_Move_CCW (3 , , _motor -> -> 2048 `i `us -> -> 5 `i `us ]
-"309
-[; ;motor_paso.c: 309: }
-[e :UE 2462 ]
-}
-"319
-[; ;motor_paso.c: 319: void Stepper_Off(Stepper *motor)
-[v _Stepper_Off `(v ~T0 @X0 1 ef1`*S2431 ]
-"320
-[; ;motor_paso.c: 320: {
-{
-[e :U _Stepper_Off ]
-"319
-[; ;motor_paso.c: 319: void Stepper_Off(Stepper *motor)
-[v _motor `*S2431 ~T0 @X0 1 r1 ]
-"320
-[; ;motor_paso.c: 320: {
-[f ]
-"321
-[; ;motor_paso.c: 321:     Stepper_Write(motor, 0x00);
-[e ( _Stepper_Write (2 , _motor -> -> 0 `i `uc ]
-"322
-[; ;motor_paso.c: 322: }
-[e :UE 2463 ]
 }

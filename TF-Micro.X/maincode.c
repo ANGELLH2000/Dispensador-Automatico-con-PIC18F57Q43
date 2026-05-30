@@ -1,9 +1,7 @@
 #include <xc.h>
 #include "cabecera.h"
-#include "motor_paso.h"
+#include "ws2812b.h"
 
-Stepper motor1;
-Stepper motor2;
 
 void config(void) {
     //conf mod de oscilador
@@ -15,58 +13,36 @@ void config(void) {
 }
 void main(void) {
     config();
-   /*
-     * Inicialización del motor 1.
-     *
-     * Motor 1 conectado al puerto D, parte baja:
-     * RD0, RD1, RD2 y RD3.
-     */
-    Stepper_Init(&motor1, &LATD, &TRISD, &ANSELD, STEPPER_LOW_NIBBLE);
-
-    /*
-     * Inicialización del motor 2.
-     *
-     * Motor 2 conectado al puerto D, parte alta:
-     * RD4, RD5, RD6 y RD7.
-     */
-    Stepper_Init(&motor2, &LATD, &TRISD, &ANSELD, STEPPER_HIGH_NIBBLE);
+   WS2812B_Init();
 
     while(1)
     {
         /*
-         * Ejecuta una vuelta completa del motor 1 en sentido horario.
+         * Apagado.
          */
-        Stepper_fullTurn_CW(&motor1);
-
+        WS2812B_Clear();
+        WS2812B_Show();
         __delay_ms(1000);
 
         /*
-         * Ejecuta una vuelta completa del motor 2 en sentido horario.
+         * Rojo con brillo bajo.
          */
-        Stepper_fullTurn_CW(&motor2);
-
+        WS2812B_SetAll(20, 0, 0);
+        WS2812B_Show();
         __delay_ms(1000);
 
         /*
-         * Ejecuta una vuelta completa del motor 1 en sentido antihorario.
+         * Verde con brillo bajo.
          */
-        Stepper_fullTurn_CCW(&motor1);
-
+        WS2812B_SetAll(0, 20, 0);
+        WS2812B_Show();
         __delay_ms(1000);
 
         /*
-         * Ejecuta una vuelta completa del motor 2 en sentido antihorario.
+         * Azul con brillo bajo.
          */
-        Stepper_fullTurn_CCW(&motor2);
-
-        __delay_ms(1000);
-
-        /*
-         * Desactiva ambos motores.
-         */
-        Stepper_Off(&motor1);
-        Stepper_Off(&motor2);
-
+        WS2812B_SetAll(0, 0, 20);
+        WS2812B_Show();
         __delay_ms(1000);
     }
 }
