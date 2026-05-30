@@ -57,5 +57,18 @@
 // Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
+#include <stdint.h>
 
+/*
+ * Frecuencia de trabajo del sistema.
+ *
+ * Esta constante debe coincidir con la configuración real del oscilador
+ * del PIC18F57Q43.
+ *
+ * Debe definirse una sola vez para todo el proyecto.
+ *
+ * Las funciones __delay_ms() y __delay_us() de XC8 utilizan esta constante
+ * para calcular los retardos.
+ */
+#define _XTAL_FREQ 48000000UL
 

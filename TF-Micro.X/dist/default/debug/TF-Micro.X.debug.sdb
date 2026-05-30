@@ -1,0 +1,240 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F57Q43 ]
+[d frameptr 1249 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"7 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[v _config config `(v  1 e 1 0 ]
+"15
+[v _main main `(v  1 e 1 0 ]
+"10 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
+"64
+[v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
+"87
+[v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
+"118
+[v _WS2812B_SendBit WS2812B_SendBit `(v  1 s 1 WS2812B_SendBit ]
+"168
+[v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
+"195
+[v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
+"224
+[v _WS2812B_Clear WS2812B_Clear `(v  1 e 1 0 ]
+"233
+[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
+"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
+"5390
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @177 ]
+"5592
+[v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
+[s S75 . 1 `uc 1 ANSELD0 1 0 :1:0 
+`uc 1 ANSELD1 1 0 :1:1 
+`uc 1 ANSELD2 1 0 :1:2 
+`uc 1 ANSELD3 1 0 :1:3 
+`uc 1 ANSELD4 1 0 :1:4 
+`uc 1 ANSELD5 1 0 :1:5 
+`uc 1 ANSELD6 1 0 :1:6 
+`uc 1 ANSELD7 1 0 :1:7 
+]
+"41462
+[u S84 . 1 `S75 1 . 1 0 ]
+"41462
+"41462
+[v _ANSELDbits ANSELDbits `VES84  1 e 1 @1048 ]
+[s S117 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"49006
+[u S126 . 1 `S117 1 . 1 0 ]
+"49006
+"49006
+[v _LATDbits LATDbits `VES126  1 e 1 @1217 ]
+[s S96 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"49348
+[u S105 . 1 `S96 1 . 1 0 ]
+"49348
+"49348
+[v _TRISDbits TRISDbits `VES105  1 e 1 @1225 ]
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+"5 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[v _tira1 tira1 `S24  1 e 91 0 ]
+"15
+[v _main main `(v  1 e 1 0 ]
+{
+"24
+[v main@i i `uc  1 a 1 22 ]
+"43
+} 0
+"7
+[v _config config `(v  1 e 1 0 ]
+{
+"14
+} 0
+"233 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
+{
+[v WS2812B_RGB@tira tira `*.39S24  1 p 2 15 ]
+"234
+[v WS2812B_RGB@red red `uc  1 p 1 17 ]
+"235
+[v WS2812B_RGB@green green `uc  1 p 1 18 ]
+"236
+[v WS2812B_RGB@blue blue `uc  1 p 1 19 ]
+"240
+} 0
+"10
+[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
+{
+"12
+[v WS2812B_Init@i i `uc  1 a 1 5 ]
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+"10
+[v WS2812B_Init@tira tira `*.39S24  1 p 2 0 ]
+[v WS2812B_Init@num_leds num_leds `uc  1 p 1 2 ]
+"58
+} 0
+"224
+[v _WS2812B_Clear WS2812B_Clear `(v  1 e 1 0 ]
+{
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+[v WS2812B_Clear@tira tira `*.39S24  1 p 2 15 ]
+"228
+} 0
+"195
+[v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
+{
+"197
+[v WS2812B_Show@i i `uc  1 a 1 7 ]
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+"195
+[v WS2812B_Show@tira tira `*.39S24  1 p 2 3 ]
+"218
+} 0
+"168
+[v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
+{
+[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
+"170
+[v WS2812B_SendByte@mask mask `uc  1 a 1 2 ]
+"168
+[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
+"172
+[v WS2812B_SendByte@data data `uc  1 p 1 1 ]
+"183
+} 1
+"118
+[v _WS2812B_SendBit WS2812B_SendBit `(v  1 s 1 WS2812B_SendBit ]
+{
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
+"120
+[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 0 ]
+"159
+} 1
+"87
+[v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
+{
+"92
+[v WS2812B_SetAll@i i `uc  1 a 1 14 ]
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+"87
+[v WS2812B_SetAll@tira tira `*.39S24  1 p 2 8 ]
+"88
+[v WS2812B_SetAll@red red `uc  1 p 1 10 ]
+"89
+[v WS2812B_SetAll@green green `uc  1 p 1 11 ]
+"90
+[v WS2812B_SetAll@blue blue `uc  1 p 1 12 ]
+"98
+} 0
+"64
+[v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
+{
+[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+[v WS2812B_SetPixel@tira tira `*.39S24  1 p 2 0 ]
+"65
+[v WS2812B_SetPixel@led led `uc  1 p 1 2 ]
+"66
+[v WS2812B_SetPixel@red red `uc  1 p 1 3 ]
+"67
+[v WS2812B_SetPixel@green green `uc  1 p 1 4 ]
+"68
+[v WS2812B_SetPixel@blue blue `uc  1 p 1 5 ]
+"81
+} 0
