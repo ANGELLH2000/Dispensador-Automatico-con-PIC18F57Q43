@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>cabecera.h</itemPath>
       <itemPath>ws2812b.h</itemPath>
+      <itemPath>motor_paso.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -21,6 +22,7 @@
                    projectFiles="true">
       <itemPath>maincode.c</itemPath>
       <itemPath>ws2812b.c</itemPath>
+      <itemPath>motor_paso.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
