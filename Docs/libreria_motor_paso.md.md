@@ -6,6 +6,7 @@ Esta documentación describe el funcionamiento, configuración y uso de la libre
 
 La librería está orientada principalmente al motor paso a paso **28BYJ-48 de 5 V**, utilizado normalmente con el driver **ULN2003**. Sin embargo, también puede emplearse con otros motores paso a paso que trabajen con cuatro señales de control, siempre que se utilice una etapa de potencia adecuada.
 
+![Motor Paso a Paso con Driver - Imagen](../Docs/img/28BYJ-48%20Motor%20de%20Pasos%20+%20Driver%20ULN2003.jpg)
 ---
 
 ## Archivos de la librería
