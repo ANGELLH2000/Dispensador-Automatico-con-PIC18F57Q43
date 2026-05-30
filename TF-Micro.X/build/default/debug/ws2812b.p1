@@ -1,19 +1,9 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"8 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"48995 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48995:     struct {
-[s S2288 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2288 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"48994
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48994: typedef union {
-[u S2287 `S2288 1 ]
-[n S2287 . . ]
-"49006
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49006: extern volatile LATDbits_t LATDbits __attribute__((address(0x4C1)));
-[v _LATDbits `VS2287 ~T0 @X0 0 e@1217 ]
-"41451
+"83 ./ws2812b.h
+[; ;./ws2812b.h: 83: {
+[s S2431 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
+[n S2431 . num_leds red green blue ]
+"41451 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41451:     struct {
 [s S1948 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1948 . ANSELD0 ANSELD1 ANSELD2 ANSELD3 ANSELD4 ANSELD5 ANSELD6 ANSELD7 ]
@@ -35,29 +25,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49348
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49348: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x4C9)));
 [v _TRISDbits `VS2299 ~T0 @X0 0 e@1225 ]
-"103 ./ws2812b.h
-[; ;./ws2812b.h: 103: void WS2812B_Clear(void);
-[v _WS2812B_Clear `(v ~T0 @X0 0 ef ]
-"113
-[; ;./ws2812b.h: 113: void WS2812B_Show(void);
-[v _WS2812B_Show `(v ~T0 @X0 0 ef ]
-"49841 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49841:     struct {
-[s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
-"49850
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49850:     struct {
-[s S2319 :7 `uc 1 :1 `uc 1 ]
-[n S2319 . . GIEH ]
-"49840
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49840: typedef union {
-[u S2317 `S2318 1 `S2319 1 ]
-[n S2317 . . . ]
-"49855
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
-[v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
+"48995
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48995:     struct {
+[s S2288 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2288 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"48994
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48994: typedef union {
+[u S2287 `S2288 1 ]
+[n S2287 . . ]
+"49006
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49006: extern volatile LATDbits_t LATDbits __attribute__((address(0x4C1)));
+[v _LATDbits `VS2287 ~T0 @X0 0 e@1217 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
+"20
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
 "7 ./cabecera.h
@@ -2695,353 +2678,455 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"15 ws2812b.c
-[; ;ws2812b.c: 15: static uint8_t ws2812b_red[3];
-[v _ws2812b_red `uc ~T0 @X0 -> 3 `i s ]
-"16
-[; ;ws2812b.c: 16: static uint8_t ws2812b_green[3];
-[v _ws2812b_green `uc ~T0 @X0 -> 3 `i s ]
-"17
-[; ;ws2812b.c: 17: static uint8_t ws2812b_blue[3];
-[v _ws2812b_blue `uc ~T0 @X0 -> 3 `i s ]
-"38
-[; ;ws2812b.c: 38: static void WS2812B_NopDelay(uint8_t n)
-[v _WS2812B_NopDelay `(v ~T0 @X0 1 sf1`uc ]
-"39
-[; ;ws2812b.c: 39: {
-{
-[e :U _WS2812B_NopDelay ]
-"38
-[; ;ws2812b.c: 38: static void WS2812B_NopDelay(uint8_t n)
-[v _n `uc ~T0 @X0 1 r1 ]
-"39
-[; ;ws2812b.c: 39: {
-[f ]
-"40
-[; ;ws2812b.c: 40:     while(n > 0)
-[e $U 2432  ]
-[e :U 2433 ]
-"41
-[; ;ws2812b.c: 41:     {
-{
-"42
-[; ;ws2812b.c: 42:         __nop();
-[e ( ___nop ..  ]
-"43
-[; ;ws2812b.c: 43:         n--;
-[e -- _n -> -> 1 `i `uc ]
-"44
-[; ;ws2812b.c: 44:     }
-}
-[e :U 2432 ]
-"40
-[; ;ws2812b.c: 40:     while(n > 0)
-[e $ > -> _n `i -> 0 `i 2433  ]
-[e :U 2434 ]
-"45
-[; ;ws2812b.c: 45: }
-[e :UE 2431 ]
-}
-"64
-[; ;ws2812b.c: 64: static void WS2812B_SendBit(uint8_t bit_value)
-[v _WS2812B_SendBit `(v ~T0 @X0 1 sf1`uc ]
-"65
-[; ;ws2812b.c: 65: {
-{
-[e :U _WS2812B_SendBit ]
-"64
-[; ;ws2812b.c: 64: static void WS2812B_SendBit(uint8_t bit_value)
-[v _bit_value `uc ~T0 @X0 1 r1 ]
-"65
-[; ;ws2812b.c: 65: {
-[f ]
-"66
-[; ;ws2812b.c: 66:     if(bit_value)
-[e $ ! != -> _bit_value `i -> 0 `i 2436  ]
-"67
-[; ;ws2812b.c: 67:     {
-{
-"71
-[; ;ws2812b.c: 71:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"72
-[; ;ws2812b.c: 72:         WS2812B_NopDelay(7);
-[e ( _WS2812B_NopDelay (1 -> -> 7 `i `uc ]
-"73
-[; ;ws2812b.c: 73:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"74
-[; ;ws2812b.c: 74:         WS2812B_NopDelay(3);
-[e ( _WS2812B_NopDelay (1 -> -> 3 `i `uc ]
-"75
-[; ;ws2812b.c: 75:     }
-}
-[e $U 2437  ]
-"76
-[; ;ws2812b.c: 76:     else
-[e :U 2436 ]
-"77
-[; ;ws2812b.c: 77:     {
-{
-"81
-[; ;ws2812b.c: 81:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"82
-[; ;ws2812b.c: 82:         WS2812B_NopDelay(3);
-[e ( _WS2812B_NopDelay (1 -> -> 3 `i `uc ]
-"83
-[; ;ws2812b.c: 83:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"84
-[; ;ws2812b.c: 84:         WS2812B_NopDelay(7);
-[e ( _WS2812B_NopDelay (1 -> -> 7 `i `uc ]
-"85
-[; ;ws2812b.c: 85:     }
-}
-[e :U 2437 ]
-"86
-[; ;ws2812b.c: 86: }
-[e :UE 2435 ]
-}
-"99
-[; ;ws2812b.c: 99: static void WS2812B_SendByte(uint8_t data)
-[v _WS2812B_SendByte `(v ~T0 @X0 1 sf1`uc ]
-"100
-[; ;ws2812b.c: 100: {
-{
-[e :U _WS2812B_SendByte ]
-"99
-[; ;ws2812b.c: 99: static void WS2812B_SendByte(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
-"100
-[; ;ws2812b.c: 100: {
-[f ]
-"101
-[; ;ws2812b.c: 101:     uint8_t mask;
-[v _mask `uc ~T0 @X0 1 a ]
-"103
-[; ;ws2812b.c: 103:     for(mask = 0x80; mask > 0; mask >>= 1)
-{
-[e = _mask -> -> 128 `i `uc ]
-[e $ > -> _mask `i -> 0 `i 2439  ]
-[e $U 2440  ]
-[e :U 2439 ]
-"104
-[; ;ws2812b.c: 104:     {
-{
-"105
-[; ;ws2812b.c: 105:         if(data & mask)
-[e $ ! != & -> _data `i -> _mask `i -> 0 `i 2442  ]
-"106
-[; ;ws2812b.c: 106:         {
-{
-"107
-[; ;ws2812b.c: 107:             WS2812B_SendBit(1);
-[e ( _WS2812B_SendBit (1 -> -> 1 `i `uc ]
-"108
-[; ;ws2812b.c: 108:         }
-}
-[e $U 2443  ]
-"109
-[; ;ws2812b.c: 109:         else
-[e :U 2442 ]
-"110
-[; ;ws2812b.c: 110:         {
-{
-"111
-[; ;ws2812b.c: 111:             WS2812B_SendBit(0);
-[e ( _WS2812B_SendBit (1 -> -> 0 `i `uc ]
-"112
-[; ;ws2812b.c: 112:         }
-}
-[e :U 2443 ]
-"113
-[; ;ws2812b.c: 113:     }
-}
-[e =>> _mask -> -> 1 `i `uc ]
-[e $ > -> _mask `i -> 0 `i 2439  ]
-[e :U 2440 ]
-}
-"114
-[; ;ws2812b.c: 114: }
-[e :UE 2438 ]
-}
-"122
-[; ;ws2812b.c: 122: void WS2812B_Init(void)
-[v _WS2812B_Init `(v ~T0 @X0 1 ef ]
-"123
-[; ;ws2812b.c: 123: {
+"10 ws2812b.c
+[; ;ws2812b.c: 10: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
+[v _WS2812B_Init `(v ~T0 @X0 1 ef2`*S2431`uc ]
+"11
+[; ;ws2812b.c: 11: {
 {
 [e :U _WS2812B_Init ]
+"10
+[; ;ws2812b.c: 10: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+[v _num_leds `uc ~T0 @X0 1 r2 ]
+"11
+[; ;ws2812b.c: 11: {
 [f ]
-"127
-[; ;ws2812b.c: 127:     ANSELDbits.ANSELD0 = 0;
-[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
-"132
-[; ;ws2812b.c: 132:     TRISDbits.TRISD0 = 0;
-[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"137
-[; ;ws2812b.c: 137:     LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"142
-[; ;ws2812b.c: 142:     WS2812B_Clear();
-[e ( _WS2812B_Clear ..  ]
-"147
-[; ;ws2812b.c: 147:     WS2812B_Show();
-[e ( _WS2812B_Show ..  ]
-"148
-[; ;ws2812b.c: 148: }
-[e :UE 2444 ]
+"12
+[; ;ws2812b.c: 12:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"17
+[; ;ws2812b.c: 17:     if(num_leds > 30)
+[e $ ! > -> _num_leds `i -> 30 `i 2433  ]
+"18
+[; ;ws2812b.c: 18:     {
+{
+"19
+[; ;ws2812b.c: 19:         tira->num_leds = 30;
+[e = . *U _tira 0 -> -> 30 `i `uc ]
+"20
+[; ;ws2812b.c: 20:     }
 }
-"157
-[; ;ws2812b.c: 157: void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
-[v _WS2812B_SetPixel `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
-"158
-[; ;ws2812b.c: 158: {
+[e $U 2434  ]
+"21
+[; ;ws2812b.c: 21:     else
+[e :U 2433 ]
+"22
+[; ;ws2812b.c: 22:     {
+{
+"23
+[; ;ws2812b.c: 23:         tira->num_leds = num_leds;
+[e = . *U _tira 0 _num_leds ]
+"24
+[; ;ws2812b.c: 24:     }
+}
+[e :U 2434 ]
+"33
+[; ;ws2812b.c: 33:     ANSELDbits.ANSELD0 = 0;
+[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
+"42
+[; ;ws2812b.c: 42:     TRISDbits.TRISD0 = 0;
+[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
+"47
+[; ;ws2812b.c: 47:     LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"52
+[; ;ws2812b.c: 52:     for(i = 0; i < tira->num_leds; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 2438  ]
+[e :U 2435 ]
+"53
+[; ;ws2812b.c: 53:     {
+{
+"54
+[; ;ws2812b.c: 54:         tira->red[i] = 0;
+[e = *U + &U . *U _tira 1 * -> _i `ux -> -> # *U &U . *U _tira 1 `ui `ux -> -> 0 `i `uc ]
+"55
+[; ;ws2812b.c: 55:         tira->green[i] = 0;
+[e = *U + &U . *U _tira 2 * -> _i `ux -> -> # *U &U . *U _tira 2 `ui `ux -> -> 0 `i `uc ]
+"56
+[; ;ws2812b.c: 56:         tira->blue[i] = 0;
+[e = *U + &U . *U _tira 3 * -> _i `ux -> -> # *U &U . *U _tira 3 `ui `ux -> -> 0 `i `uc ]
+"57
+[; ;ws2812b.c: 57:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 2438 ]
+[e $ < -> _i `i -> . *U _tira 0 `i 2435  ]
+[e :U 2436 ]
+}
+"58
+[; ;ws2812b.c: 58: }
+[e :UE 2432 ]
+}
+"64
+[; ;ws2812b.c: 64: void WS2812B_SetPixel(LED_WS2812B *tira,
+[v _WS2812B_SetPixel `(v ~T0 @X0 1 ef5`*S2431`uc`uc`uc`uc ]
+"69
+[; ;ws2812b.c: 69: {
 {
 [e :U _WS2812B_SetPixel ]
-"157
-[; ;ws2812b.c: 157: void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
-[v _led `uc ~T0 @X0 1 r1 ]
-[v _red `uc ~T0 @X0 1 r2 ]
-[v _green `uc ~T0 @X0 1 r3 ]
-[v _blue `uc ~T0 @X0 1 r4 ]
-"158
-[; ;ws2812b.c: 158: {
+"64
+[; ;ws2812b.c: 64: void WS2812B_SetPixel(LED_WS2812B *tira,
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+"65
+[; ;ws2812b.c: 65:                       uint8_t led,
+[v _led `uc ~T0 @X0 1 r2 ]
+"66
+[; ;ws2812b.c: 66:                       uint8_t red,
+[v _red `uc ~T0 @X0 1 r3 ]
+"67
+[; ;ws2812b.c: 67:                       uint8_t green,
+[v _green `uc ~T0 @X0 1 r4 ]
+"68
+[; ;ws2812b.c: 68:                       uint8_t blue)
+[v _blue `uc ~T0 @X0 1 r5 ]
+"69
+[; ;ws2812b.c: 69: {
 [f ]
-"159
-[; ;ws2812b.c: 159:     if(led >= 3)
-[e $ ! >= -> _led `i -> 3 `i 2446  ]
-"160
-[; ;ws2812b.c: 160:     {
+"73
+[; ;ws2812b.c: 73:     if(led >= tira->num_leds)
+[e $ ! >= -> _led `i -> . *U _tira 0 `i 2440  ]
+"74
+[; ;ws2812b.c: 74:     {
 {
-"161
-[; ;ws2812b.c: 161:         return;
-[e $UE 2445  ]
-"162
-[; ;ws2812b.c: 162:     }
+"75
+[; ;ws2812b.c: 75:         return;
+[e $UE 2439  ]
+"76
+[; ;ws2812b.c: 76:     }
 }
-[e :U 2446 ]
-"164
-[; ;ws2812b.c: 164:     ws2812b_red[led] = red;
-[e = *U + &U _ws2812b_red * -> _led `ux -> -> # *U &U _ws2812b_red `ui `ux _red ]
-"165
-[; ;ws2812b.c: 165:     ws2812b_green[led] = green;
-[e = *U + &U _ws2812b_green * -> _led `ux -> -> # *U &U _ws2812b_green `ui `ux _green ]
-"166
-[; ;ws2812b.c: 166:     ws2812b_blue[led] = blue;
-[e = *U + &U _ws2812b_blue * -> _led `ux -> -> # *U &U _ws2812b_blue `ui `ux _blue ]
-"167
-[; ;ws2812b.c: 167: }
-[e :UE 2445 ]
+[e :U 2440 ]
+"78
+[; ;ws2812b.c: 78:     tira->red[led] = red;
+[e = *U + &U . *U _tira 1 * -> _led `ux -> -> # *U &U . *U _tira 1 `ui `ux _red ]
+"79
+[; ;ws2812b.c: 79:     tira->green[led] = green;
+[e = *U + &U . *U _tira 2 * -> _led `ux -> -> # *U &U . *U _tira 2 `ui `ux _green ]
+"80
+[; ;ws2812b.c: 80:     tira->blue[led] = blue;
+[e = *U + &U . *U _tira 3 * -> _led `ux -> -> # *U &U . *U _tira 3 `ui `ux _blue ]
+"81
+[; ;ws2812b.c: 81: }
+[e :UE 2439 ]
 }
-"173
-[; ;ws2812b.c: 173: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
-[v _WS2812B_SetAll `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"174
-[; ;ws2812b.c: 174: {
+"87
+[; ;ws2812b.c: 87: void WS2812B_SetAll(LED_WS2812B *tira,
+[v _WS2812B_SetAll `(v ~T0 @X0 1 ef4`*S2431`uc`uc`uc ]
+"91
+[; ;ws2812b.c: 91: {
 {
 [e :U _WS2812B_SetAll ]
-"173
-[; ;ws2812b.c: 173: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
-[v _red `uc ~T0 @X0 1 r1 ]
-[v _green `uc ~T0 @X0 1 r2 ]
-[v _blue `uc ~T0 @X0 1 r3 ]
-"174
-[; ;ws2812b.c: 174: {
+"87
+[; ;ws2812b.c: 87: void WS2812B_SetAll(LED_WS2812B *tira,
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+"88
+[; ;ws2812b.c: 88:                     uint8_t red,
+[v _red `uc ~T0 @X0 1 r2 ]
+"89
+[; ;ws2812b.c: 89:                     uint8_t green,
+[v _green `uc ~T0 @X0 1 r3 ]
+"90
+[; ;ws2812b.c: 90:                     uint8_t blue)
+[v _blue `uc ~T0 @X0 1 r4 ]
+"91
+[; ;ws2812b.c: 91: {
 [f ]
-"175
-[; ;ws2812b.c: 175:     uint8_t i;
+"92
+[; ;ws2812b.c: 92:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"177
-[; ;ws2812b.c: 177:     for(i = 0; i < 3; i++)
+"94
+[; ;ws2812b.c: 94:     for(i = 0; i < tira->num_leds; i++)
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2448  ]
-[e $U 2449  ]
-[e :U 2448 ]
-"178
-[; ;ws2812b.c: 178:     {
+[e $U 2445  ]
+[e :U 2442 ]
+"95
+[; ;ws2812b.c: 95:     {
 {
-"179
-[; ;ws2812b.c: 179:         WS2812B_SetPixel(i, red, green, blue);
-[e ( _WS2812B_SetPixel (4 , , , _i _red _green _blue ]
-"180
-[; ;ws2812b.c: 180:     }
+"96
+[; ;ws2812b.c: 96:         WS2812B_SetPixel(tira, i, red, green, blue);
+[e ( _WS2812B_SetPixel (4 , , , , _tira _i _red _green _blue ]
+"97
+[; ;ws2812b.c: 97:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2448  ]
-[e :U 2449 ]
+[e :U 2445 ]
+[e $ < -> _i `i -> . *U _tira 0 `i 2442  ]
+[e :U 2443 ]
 }
-"181
-[; ;ws2812b.c: 181: }
-[e :UE 2447 ]
+"98
+[; ;ws2812b.c: 98: }
+[e :UE 2441 ]
 }
-"187
-[; ;ws2812b.c: 187: void WS2812B_Clear(void)
-[v _WS2812B_Clear `(v ~T0 @X0 1 ef ]
-"188
-[; ;ws2812b.c: 188: {
+"118
+[; ;ws2812b.c: 118: static void WS2812B_SendBit(uint8_t bit_value)
+[v _WS2812B_SendBit `(v ~T0 @X0 1 sf1`uc ]
+"119
+[; ;ws2812b.c: 119: {
 {
-[e :U _WS2812B_Clear ]
+[e :U _WS2812B_SendBit ]
+"118
+[; ;ws2812b.c: 118: static void WS2812B_SendBit(uint8_t bit_value)
+[v _bit_value `uc ~T0 @X0 1 r1 ]
+"119
+[; ;ws2812b.c: 119: {
 [f ]
-"189
-[; ;ws2812b.c: 189:     WS2812B_SetAll(0, 0, 0);
-[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"190
-[; ;ws2812b.c: 190: }
-[e :UE 2451 ]
+"120
+[; ;ws2812b.c: 120:     if(bit_value)
+[e $ ! != -> _bit_value `i -> 0 `i 2447  ]
+"121
+[; ;ws2812b.c: 121:     {
+{
+"125
+[; ;ws2812b.c: 125:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"127
+[; ;ws2812b.c: 127:         __nop();
+[e ( ___nop ..  ]
+"128
+[; ;ws2812b.c: 128:         __nop();
+[e ( ___nop ..  ]
+"129
+[; ;ws2812b.c: 129:         __nop();
+[e ( ___nop ..  ]
+"130
+[; ;ws2812b.c: 130:         __nop();
+[e ( ___nop ..  ]
+"131
+[; ;ws2812b.c: 131:         __nop();
+[e ( ___nop ..  ]
+"132
+[; ;ws2812b.c: 132:         __nop();
+[e ( ___nop ..  ]
+"133
+[; ;ws2812b.c: 133:         __nop();
+[e ( ___nop ..  ]
+"135
+[; ;ws2812b.c: 135:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"137
+[; ;ws2812b.c: 137:         __nop();
+[e ( ___nop ..  ]
+"138
+[; ;ws2812b.c: 138:         __nop();
+[e ( ___nop ..  ]
+"139
+[; ;ws2812b.c: 139:     }
 }
-"205
-[; ;ws2812b.c: 205: void WS2812B_Show(void)
-[v _WS2812B_Show `(v ~T0 @X0 1 ef ]
-"206
-[; ;ws2812b.c: 206: {
+[e $U 2448  ]
+"140
+[; ;ws2812b.c: 140:     else
+[e :U 2447 ]
+"141
+[; ;ws2812b.c: 141:     {
+{
+"145
+[; ;ws2812b.c: 145:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"147
+[; ;ws2812b.c: 147:         __nop();
+[e ( ___nop ..  ]
+"148
+[; ;ws2812b.c: 148:         __nop();
+[e ( ___nop ..  ]
+"150
+[; ;ws2812b.c: 150:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"152
+[; ;ws2812b.c: 152:         __nop();
+[e ( ___nop ..  ]
+"153
+[; ;ws2812b.c: 153:         __nop();
+[e ( ___nop ..  ]
+"154
+[; ;ws2812b.c: 154:         __nop();
+[e ( ___nop ..  ]
+"155
+[; ;ws2812b.c: 155:         __nop();
+[e ( ___nop ..  ]
+"156
+[; ;ws2812b.c: 156:         __nop();
+[e ( ___nop ..  ]
+"157
+[; ;ws2812b.c: 157:         __nop();
+[e ( ___nop ..  ]
+"158
+[; ;ws2812b.c: 158:     }
+}
+[e :U 2448 ]
+"159
+[; ;ws2812b.c: 159: }
+[e :UE 2446 ]
+}
+"168
+[; ;ws2812b.c: 168: static void WS2812B_SendByte(uint8_t data)
+[v _WS2812B_SendByte `(v ~T0 @X0 1 sf1`uc ]
+"169
+[; ;ws2812b.c: 169: {
+{
+[e :U _WS2812B_SendByte ]
+"168
+[; ;ws2812b.c: 168: static void WS2812B_SendByte(uint8_t data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"169
+[; ;ws2812b.c: 169: {
+[f ]
+"170
+[; ;ws2812b.c: 170:     uint8_t mask;
+[v _mask `uc ~T0 @X0 1 a ]
+"172
+[; ;ws2812b.c: 172:     for(mask = 0x80; mask > 0; mask >>= 1)
+{
+[e = _mask -> -> 128 `i `uc ]
+[e $ > -> _mask `i -> 0 `i 2450  ]
+[e $U 2451  ]
+[e :U 2450 ]
+"173
+[; ;ws2812b.c: 173:     {
+{
+"174
+[; ;ws2812b.c: 174:         if(data & mask)
+[e $ ! != & -> _data `i -> _mask `i -> 0 `i 2453  ]
+"175
+[; ;ws2812b.c: 175:         {
+{
+"176
+[; ;ws2812b.c: 176:             WS2812B_SendBit(1);
+[e ( _WS2812B_SendBit (1 -> -> 1 `i `uc ]
+"177
+[; ;ws2812b.c: 177:         }
+}
+[e $U 2454  ]
+"178
+[; ;ws2812b.c: 178:         else
+[e :U 2453 ]
+"179
+[; ;ws2812b.c: 179:         {
+{
+"180
+[; ;ws2812b.c: 180:             WS2812B_SendBit(0);
+[e ( _WS2812B_SendBit (1 -> -> 0 `i `uc ]
+"181
+[; ;ws2812b.c: 181:         }
+}
+[e :U 2454 ]
+"182
+[; ;ws2812b.c: 182:     }
+}
+[e =>> _mask -> -> 1 `i `uc ]
+[e $ > -> _mask `i -> 0 `i 2450  ]
+[e :U 2451 ]
+}
+"183
+[; ;ws2812b.c: 183: }
+[e :UE 2449 ]
+}
+"195
+[; ;ws2812b.c: 195: void WS2812B_Show(LED_WS2812B *tira)
+[v _WS2812B_Show `(v ~T0 @X0 1 ef1`*S2431 ]
+"196
+[; ;ws2812b.c: 196: {
 {
 [e :U _WS2812B_Show ]
+"195
+[; ;ws2812b.c: 195: void WS2812B_Show(LED_WS2812B *tira)
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+"196
+[; ;ws2812b.c: 196: {
 [f ]
-"207
-[; ;ws2812b.c: 207:     uint8_t i;
+"197
+[; ;ws2812b.c: 197:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"213
-[; ;ws2812b.c: 213:     INTCON0bits.GIE = 0;
-[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
-"215
-[; ;ws2812b.c: 215:     for(i = 0; i < 3; i++)
+"199
+[; ;ws2812b.c: 199:     for(i = 0; i < tira->num_leds; i++)
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2453  ]
-[e $U 2454  ]
-[e :U 2453 ]
-"216
-[; ;ws2812b.c: 216:     {
+[e $U 2459  ]
+[e :U 2456 ]
+"200
+[; ;ws2812b.c: 200:     {
 {
-"221
-[; ;ws2812b.c: 221:         WS2812B_SendByte(ws2812b_green[i]);
-[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_green * -> _i `ux -> -> # *U &U _ws2812b_green `ui `ux ]
-"222
-[; ;ws2812b.c: 222:         WS2812B_SendByte(ws2812b_red[i]);
-[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_red * -> _i `ux -> -> # *U &U _ws2812b_red `ui `ux ]
-"223
-[; ;ws2812b.c: 223:         WS2812B_SendByte(ws2812b_blue[i]);
-[e ( _WS2812B_SendByte (1 *U + &U _ws2812b_blue * -> _i `ux -> -> # *U &U _ws2812b_blue `ui `ux ]
-"224
-[; ;ws2812b.c: 224:     }
+"205
+[; ;ws2812b.c: 205:         WS2812B_SendByte(tira->green[i]);
+[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 2 * -> _i `ux -> -> # *U &U . *U _tira 2 `ui `ux ]
+"206
+[; ;ws2812b.c: 206:         WS2812B_SendByte(tira->red[i]);
+[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 1 * -> _i `ux -> -> # *U &U . *U _tira 1 `ui `ux ]
+"207
+[; ;ws2812b.c: 207:         WS2812B_SendByte(tira->blue[i]);
+[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 3 * -> _i `ux -> -> # *U &U . *U _tira 3 `ui `ux ]
+"208
+[; ;ws2812b.c: 208:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 2453  ]
-[e :U 2454 ]
+[e :U 2459 ]
+[e $ < -> _i `i -> . *U _tira 0 `i 2456  ]
+[e :U 2457 ]
 }
-"229
-[; ;ws2812b.c: 229:     INTCON0bits.GIE = 1;
-[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"236
-[; ;ws2812b.c: 236:     LATDbits.LATD0 = 0;
+"216
+[; ;ws2812b.c: 216:     LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"217
+[; ;ws2812b.c: 217:     _delay((unsigned long)((300)*(48000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 48000000 `ul `d .4000000.0 `ul ]
+"218
+[; ;ws2812b.c: 218: }
+[e :UE 2455 ]
+}
+"224
+[; ;ws2812b.c: 224: void WS2812B_Clear(LED_WS2812B *tira)
+[v _WS2812B_Clear `(v ~T0 @X0 1 ef1`*S2431 ]
+"225
+[; ;ws2812b.c: 225: {
+{
+[e :U _WS2812B_Clear ]
+"224
+[; ;ws2812b.c: 224: void WS2812B_Clear(LED_WS2812B *tira)
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+"225
+[; ;ws2812b.c: 225: {
+[f ]
+"226
+[; ;ws2812b.c: 226:     WS2812B_SetAll(tira, 0, 0, 0);
+[e ( _WS2812B_SetAll (4 , , , _tira -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"227
+[; ;ws2812b.c: 227:     WS2812B_Show(tira);
+[e ( _WS2812B_Show (1 _tira ]
+"228
+[; ;ws2812b.c: 228: }
+[e :UE 2460 ]
+}
+"233
+[; ;ws2812b.c: 233: void WS2812B_RGB(LED_WS2812B *tira,
+[v _WS2812B_RGB `(v ~T0 @X0 1 ef4`*S2431`uc`uc`uc ]
 "237
-[; ;ws2812b.c: 237:     _delay((unsigned long)((80)*(48000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000000.0 `ul ]
+[; ;ws2812b.c: 237: {
+{
+[e :U _WS2812B_RGB ]
+"233
+[; ;ws2812b.c: 233: void WS2812B_RGB(LED_WS2812B *tira,
+[v _tira `*S2431 ~T0 @X0 1 r1 ]
+"234
+[; ;ws2812b.c: 234:                  uint8_t red,
+[v _red `uc ~T0 @X0 1 r2 ]
+"235
+[; ;ws2812b.c: 235:                  uint8_t green,
+[v _green `uc ~T0 @X0 1 r3 ]
+"236
+[; ;ws2812b.c: 236:                  uint8_t blue)
+[v _blue `uc ~T0 @X0 1 r4 ]
+"237
+[; ;ws2812b.c: 237: {
+[f ]
 "238
-[; ;ws2812b.c: 238: }
-[e :UE 2452 ]
+[; ;ws2812b.c: 238:     WS2812B_SetAll(tira, red, green, blue);
+[e ( _WS2812B_SetAll (4 , , , _tira _red _green _blue ]
+"239
+[; ;ws2812b.c: 239:     WS2812B_Show(tira);
+[e ( _WS2812B_Show (1 _tira ]
+"240
+[; ;ws2812b.c: 240: }
+[e :UE 2461 ]
 }

@@ -29691,18 +29691,47 @@ unsigned char __t3rd16on(void);
 
 #pragma config CP = OFF
 # 5 "./ws2812b.h" 2
-# 54 "./ws2812b.h"
-void WS2812B_Init(void);
-# 85 "./ws2812b.h"
-void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
-# 94 "./ws2812b.h"
-void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
-# 103 "./ws2812b.h"
-void WS2812B_Clear(void);
-# 113 "./ws2812b.h"
-void WS2812B_Show(void);
+# 82 "./ws2812b.h"
+typedef struct
+{
+
+
+
+    uint8_t num_leds;
+    uint8_t red[30];
+    uint8_t green[30];
+    uint8_t blue[30];
+
+} LED_WS2812B;
+# 109 "./ws2812b.h"
+void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+# 118 "./ws2812b.h"
+void WS2812B_SetPixel(LED_WS2812B *tira,
+                      uint8_t led,
+                      uint8_t red,
+                      uint8_t green,
+                      uint8_t blue);
+# 131 "./ws2812b.h"
+void WS2812B_SetAll(LED_WS2812B *tira,
+                    uint8_t red,
+                    uint8_t green,
+                    uint8_t blue);
+# 146 "./ws2812b.h"
+void WS2812B_Show(LED_WS2812B *tira);
+
+
+
+
+
+void WS2812B_Clear(LED_WS2812B *tira);
+
+void WS2812B_RGB(LED_WS2812B *tira,
+                 uint8_t red,
+                 uint8_t green,
+                 uint8_t blue);
 # 4 "maincode.c" 2
 
+LED_WS2812B tira1;
 
 void config(void) {
 
@@ -29714,36 +29743,30 @@ void config(void) {
 }
 void main(void) {
     config();
-   WS2812B_Init();
+
+
+
+   WS2812B_Init(&tira1, 3);
 
     while(1)
     {
+        uint8_t i;
+
+        for(i = 0; i =< 25; i++)
+        {
+            WS2812B_RGB(&tira1, i*10, 0, 0);
+            _delay((unsigned long)((50)*(48000000UL/4000.0)));
+        }
+         WS2812B_RGB(&tira1, i*10, 0, 0);
+            _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+        for(i = 25; i > 0; i--)
+        {
+            WS2812B_RGB(&tira1, i*10, 0, 0);
+            _delay((unsigned long)((50)*(48000000UL/4000.0)));
+        }
 
 
-
-        WS2812B_SetAll(255, 0, 0);
-        WS2812B_Show();
-        _delay((unsigned long)((500)*(48000000UL/4000.0)));
-
-
-
-
-        WS2812B_SetAll(0, 255, 0);
-        WS2812B_Show();
-        _delay((unsigned long)((500)*(48000000UL/4000.0)));
-
-
-
-
-        WS2812B_SetAll(0, 0, 255);
-        WS2812B_Show();
-        _delay((unsigned long)((500)*(48000000UL/4000.0)));
-
-
-
-
-        WS2812B_Clear();
-        WS2812B_Show();
-        _delay((unsigned long)((500)*(48000000UL/4000.0)));
+        WS2812B_Clear(&tira1);
+        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
     }
 }

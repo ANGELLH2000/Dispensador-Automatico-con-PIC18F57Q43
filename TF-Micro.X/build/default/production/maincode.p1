@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"83 ./ws2812b.h
+[; ;./ws2812b.h: 83: {
+[s S2431 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
+[n S2431 . num_leds red green blue ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -9,22 +13,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
 [v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
 [p mainexit ]
-"38 ./ws2812b.h
-[; ;./ws2812b.h: 38: void WS2812B_Init(void);
-[v _WS2812B_Init `(v ~T0 @X0 0 ef ]
-"41
-[; ;./ws2812b.h: 41: void WS2812B_Clear(void);
-[v _WS2812B_Clear `(v ~T0 @X0 0 ef ]
-"42
-[; ;./ws2812b.h: 42: void WS2812B_Show(void);
-[v _WS2812B_Show `(v ~T0 @X0 0 ef ]
+"109 ./ws2812b.h
+[; ;./ws2812b.h: 109: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+[v _WS2812B_Init `(v ~T0 @X0 0 ef2`*S2431`uc ]
+"154
+[; ;./ws2812b.h: 154: void WS2812B_RGB(LED_WS2812B *tira,
+[v _WS2812B_RGB `(v ~T0 @X0 0 ef4`*S2431`uc`uc`uc ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"40 ./ws2812b.h
-[; ;./ws2812b.h: 40: void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
-[v _WS2812B_SetAll `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"152 ./ws2812b.h
+[; ;./ws2812b.h: 152: void WS2812B_Clear(LED_WS2812B *tira);
+[v _WS2812B_Clear `(v ~T0 @X0 0 ef1`*S2431 ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2724,87 +2725,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"6 maincode.c
-[; ;maincode.c: 6: void config(void) {
+"5 maincode.c
+[; ;maincode.c: 5: LED_WS2812B tira1;
+[v _tira1 `S2431 ~T0 @X0 1 e ]
+"7
+[; ;maincode.c: 7: void config(void) {
 [v _config `(v ~T0 @X0 1 ef ]
 {
 [e :U _config ]
 [f ]
-"8
-[; ;maincode.c: 8:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
 "9
-[; ;maincode.c: 9:     OSCFRQ = 0x07;
-[e = _OSCFRQ -> -> 7 `i `uc ]
+[; ;maincode.c: 9:     OSCCON1 = 0x60;
+[e = _OSCCON1 -> -> 96 `i `uc ]
 "10
-[; ;maincode.c: 10:     OSCEN = 0x40;
+[; ;maincode.c: 10:     OSCFRQ = 0x07;
+[e = _OSCFRQ -> -> 7 `i `uc ]
+"11
+[; ;maincode.c: 11:     OSCEN = 0x40;
 [e = _OSCEN -> -> 64 `i `uc ]
-"13
-[; ;maincode.c: 13: }
-[e :UE 2431 ]
+"14
+[; ;maincode.c: 14: }
+[e :UE 2432 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"14
-[; ;maincode.c: 14: void main(void) {
+"15
+[; ;maincode.c: 15: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"15
-[; ;maincode.c: 15:     config();
-[e ( _config ..  ]
 "16
-[; ;maincode.c: 16:    WS2812B_Init();
-[e ( _WS2812B_Init ..  ]
-"18
-[; ;maincode.c: 18:     while(1)
-[e :U 2434 ]
-"19
-[; ;maincode.c: 19:     {
-{
+[; ;maincode.c: 16:     config();
+[e ( _config ..  ]
+"20
+[; ;maincode.c: 20:    WS2812B_Init(&tira1, 3);
+[e ( _WS2812B_Init (2 , &U _tira1 -> -> 3 `i `uc ]
+"22
+[; ;maincode.c: 22:     while(1)
+[e :U 2435 ]
 "23
-[; ;maincode.c: 23:         WS2812B_Clear();
-[e ( _WS2812B_Clear ..  ]
+[; ;maincode.c: 23:     {
+{
 "24
-[; ;maincode.c: 24:         WS2812B_Show();
-[e ( _WS2812B_Show ..  ]
+[; ;maincode.c: 24:         WS2812B_RGB(&tira1, 200, 0, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 200 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "25
 [; ;maincode.c: 25:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"30
-[; ;maincode.c: 30:         WS2812B_SetAll(20, 0, 0);
-[e ( _WS2812B_SetAll (3 , , -> -> 20 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"31
-[; ;maincode.c: 31:         WS2812B_Show();
-[e ( _WS2812B_Show ..  ]
+"26
+[; ;maincode.c: 26:         WS2812B_RGB(&tira1, 0, 200, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 200 `i `uc -> -> 0 `i `uc ]
+"27
+[; ;maincode.c: 27:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"28
+[; ;maincode.c: 28:         WS2812B_RGB(&tira1, 0, 0, 2000);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 0 `i `uc -> -> 2000 `i `uc ]
+"29
+[; ;maincode.c: 29:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
 "32
-[; ;maincode.c: 32:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+[; ;maincode.c: 32:         WS2812B_Clear(&tira1);
+[e ( _WS2812B_Clear (1 &U _tira1 ]
+"33
+[; ;maincode.c: 33:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"37
-[; ;maincode.c: 37:         WS2812B_SetAll(0, 20, 0);
-[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 20 `i `uc -> -> 0 `i `uc ]
-"38
-[; ;maincode.c: 38:         WS2812B_Show();
-[e ( _WS2812B_Show ..  ]
-"39
-[; ;maincode.c: 39:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"44
-[; ;maincode.c: 44:         WS2812B_SetAll(0, 0, 20);
-[e ( _WS2812B_SetAll (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 20 `i `uc ]
-"45
-[; ;maincode.c: 45:         WS2812B_Show();
-[e ( _WS2812B_Show ..  ]
-"46
-[; ;maincode.c: 46:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"47
-[; ;maincode.c: 47:     }
+"34
+[; ;maincode.c: 34:     }
 }
-[e :U 2433 ]
-[e $U 2434  ]
-[e :U 2435 ]
-"48
-[; ;maincode.c: 48: }
-[e :UE 2432 ]
+[e :U 2434 ]
+[e $U 2435  ]
+[e :U 2436 ]
+"35
+[; ;maincode.c: 35: }
+[e :UE 2433 ]
 }

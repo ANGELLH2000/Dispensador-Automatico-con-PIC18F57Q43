@@ -29639,27 +29639,129 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 60 "./cabecera.h" 2
 # 5 "./ws2812b.h" 2
-# 38 "./ws2812b.h"
-void WS2812B_Init(void);
-void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
-void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue);
-void WS2812B_Clear(void);
-void WS2812B_Show(void);
-# 2 "ws2812b.c" 2
-# 15 "ws2812b.c"
-static uint8_t ws2812b_red[3];
-static uint8_t ws2812b_green[3];
-static uint8_t ws2812b_blue[3];
-# 38 "ws2812b.c"
-static void WS2812B_NopDelay(uint8_t n)
+# 82 "./ws2812b.h"
+typedef struct
 {
-    while(n > 0)
+
+
+
+    uint8_t num_leds;
+    uint8_t red[30];
+    uint8_t green[30];
+    uint8_t blue[30];
+
+} LED_WS2812B;
+# 109 "./ws2812b.h"
+void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+# 118 "./ws2812b.h"
+void WS2812B_SetPixel(LED_WS2812B *tira,
+                      uint8_t led,
+                      uint8_t red,
+                      uint8_t green,
+                      uint8_t blue);
+# 131 "./ws2812b.h"
+void WS2812B_SetAll(LED_WS2812B *tira,
+                    uint8_t red,
+                    uint8_t green,
+                    uint8_t blue);
+# 146 "./ws2812b.h"
+void WS2812B_Show(LED_WS2812B *tira);
+
+
+
+
+
+void WS2812B_Clear(LED_WS2812B *tira);
+
+void WS2812B_RGB(LED_WS2812B *tira,
+                 uint8_t red,
+                 uint8_t green,
+                 uint8_t blue);
+# 2 "ws2812b.c" 2
+
+
+
+
+
+
+
+
+void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
+{
+    uint8_t i;
+
+
+
+
+    if(num_leds > 30)
     {
-        __nop();
-        n--;
+        tira->num_leds = 30;
+    }
+    else
+    {
+        tira->num_leds = num_leds;
+    }
+# 33 "ws2812b.c"
+    ANSELDbits.ANSELD0 = 0;
+# 42 "ws2812b.c"
+    TRISDbits.TRISD0 = 0;
+
+
+
+
+    LATDbits.LATD0 = 0;
+
+
+
+
+    for(i = 0; i < tira->num_leds; i++)
+    {
+        tira->red[i] = 0;
+        tira->green[i] = 0;
+        tira->blue[i] = 0;
     }
 }
-# 64 "ws2812b.c"
+
+
+
+
+
+void WS2812B_SetPixel(LED_WS2812B *tira,
+                      uint8_t led,
+                      uint8_t red,
+                      uint8_t green,
+                      uint8_t blue)
+{
+
+
+
+    if(led >= tira->num_leds)
+    {
+        return;
+    }
+
+    tira->red[led] = red;
+    tira->green[led] = green;
+    tira->blue[led] = blue;
+}
+
+
+
+
+
+void WS2812B_SetAll(LED_WS2812B *tira,
+                    uint8_t red,
+                    uint8_t green,
+                    uint8_t blue)
+{
+    uint8_t i;
+
+    for(i = 0; i < tira->num_leds; i++)
+    {
+        WS2812B_SetPixel(tira, i, red, green, blue);
+    }
+}
+# 118 "ws2812b.c"
 static void WS2812B_SendBit(uint8_t bit_value)
 {
     if(bit_value)
@@ -29669,6 +29771,8 @@ static void WS2812B_SendBit(uint8_t bit_value)
 
         LATDbits.LATD0 = 1;
 
+        __nop();
+        __nop();
         __nop();
         __nop();
         __nop();
@@ -29697,9 +29801,10 @@ static void WS2812B_SendBit(uint8_t bit_value)
         __nop();
         __nop();
         __nop();
+        __nop();
     }
 }
-# 115 "ws2812b.c"
+# 168 "ws2812b.c"
 static void WS2812B_SendByte(uint8_t data)
 {
     uint8_t mask;
@@ -29716,101 +29821,22 @@ static void WS2812B_SendByte(uint8_t data)
         }
     }
 }
-
-
-
-
-
-
-
-void WS2812B_Init(void)
-{
-
-
-
-    ANSELDbits.ANSELD0 = 0;
-
-
-
-
-    TRISDbits.TRISD0 = 0;
-
-
-
-
-    LATDbits.LATD0 = 0;
-
-
-
-
-    WS2812B_Clear();
-
-
-
-
-    WS2812B_Show();
-}
-# 173 "ws2812b.c"
-void WS2812B_SetPixel(uint8_t led, uint8_t red, uint8_t green, uint8_t blue)
-{
-    if(led >= 3)
-    {
-        return;
-    }
-
-    ws2812b_red[led] = red;
-    ws2812b_green[led] = green;
-    ws2812b_blue[led] = blue;
-}
-
-
-
-
-
-void WS2812B_SetAll(uint8_t red, uint8_t green, uint8_t blue)
+# 195 "ws2812b.c"
+void WS2812B_Show(LED_WS2812B *tira)
 {
     uint8_t i;
 
-    for(i = 0; i < 3; i++)
-    {
-        WS2812B_SetPixel(i, red, green, blue);
-    }
-}
-
-
-
-
-
-void WS2812B_Clear(void)
-{
-    WS2812B_SetAll(0, 0, 0);
-}
-# 221 "ws2812b.c"
-void WS2812B_Show(void)
-{
-    uint8_t i;
-
-
-
-
-
-    INTCON0bits.GIE = 0;
-
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < tira->num_leds; i++)
     {
 
 
 
 
-        WS2812B_SendByte(ws2812b_green[i]);
-        WS2812B_SendByte(ws2812b_red[i]);
-        WS2812B_SendByte(ws2812b_blue[i]);
+        WS2812B_SendByte(tira->green[i]);
+        WS2812B_SendByte(tira->red[i]);
+        WS2812B_SendByte(tira->blue[i]);
     }
 
-
-
-
-    INTCON0bits.GIE = 1;
 
 
 
@@ -29818,5 +29844,27 @@ void WS2812B_Show(void)
 
 
     LATDbits.LATD0 = 0;
-    _delay((unsigned long)((80)*(48000000UL/4000000.0)));
+    _delay((unsigned long)((300)*(48000000UL/4000000.0)));
+}
+
+
+
+
+
+void WS2812B_Clear(LED_WS2812B *tira)
+{
+    WS2812B_SetAll(tira, 0, 0, 0);
+    WS2812B_Show(tira);
+}
+
+
+
+
+void WS2812B_RGB(LED_WS2812B *tira,
+                 uint8_t red,
+                 uint8_t green,
+                 uint8_t blue)
+{
+    WS2812B_SetAll(tira, red, green, blue);
+    WS2812B_Show(tira);
 }
