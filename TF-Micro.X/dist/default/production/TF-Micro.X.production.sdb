@@ -1,0 +1,205 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F57Q43 ]
+[d frameptr 1249 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"8 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[v _config config `(v  1 e 1 0 ]
+"16
+[v _main main `(v  1 e 1 0 ]
+"48 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
+[v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
+"103
+[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
+"178
+[v _Stepper_Step_CW Stepper_Step_CW `(v  1 e 1 0 ]
+"206
+[v _Stepper_Step_CCW Stepper_Step_CCW `(v  1 e 1 0 ]
+"233
+[v _Stepper_Move_CW Stepper_Move_CW `(v  1 e 1 0 ]
+"265
+[v _Stepper_Move_CCW Stepper_Move_CCW `(v  1 e 1 0 ]
+"292
+[v _Stepper_fullTurn_CW Stepper_fullTurn_CW `(v  1 e 1 0 ]
+"305
+[v _Stepper_fullTurn_CCW Stepper_fullTurn_CCW `(v  1 e 1 0 ]
+"321
+[v _Stepper_Off Stepper_Off `(v  1 e 1 0 ]
+"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
+"5390
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @177 ]
+"5592
+[v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
+"41445
+[v _ANSELD ANSELD `VEuc  1 e 1 @1048 ]
+"48989
+[v _LATD LATD `VEuc  1 e 1 @1217 ]
+"49331
+[v _TRISD TRISD `VEuc  1 e 1 @1225 ]
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+"5 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[v _motor1 motor1 `S24  1 e 8 0 ]
+"6
+[v _motor2 motor2 `S24  1 e 8 0 ]
+"23 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
+[v _full_step_sequence full_step_sequence `C[4]uc  1 s 4 full_step_sequence ]
+"16 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+[v _main main `(v  1 e 1 0 ]
+{
+"72
+} 0
+"8
+[v _config config `(v  1 e 1 0 ]
+{
+"15
+} 0
+"292 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
+[v _Stepper_fullTurn_CW Stepper_fullTurn_CW `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_fullTurn_CW@motor motor `*.39S24  1 p 2 23 ]
+"298
+} 0
+"233
+[v _Stepper_Move_CW Stepper_Move_CW `(v  1 e 1 0 ]
+{
+"236
+[v Stepper_Move_CW@j j `us  1 a 2 21 ]
+"235
+[v Stepper_Move_CW@i i `us  1 a 2 19 ]
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+"233
+[v Stepper_Move_CW@motor motor `*.39S24  1 p 2 12 ]
+[v Stepper_Move_CW@steps steps `us  1 p 2 14 ]
+[v Stepper_Move_CW@delay_ms delay_ms `us  1 p 2 16 ]
+"256
+} 0
+"178
+[v _Stepper_Step_CW Stepper_Step_CW `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_Step_CW@motor motor `*.39S24  1 p 2 8 ]
+"197
+} 0
+"305
+[v _Stepper_fullTurn_CCW Stepper_fullTurn_CCW `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_fullTurn_CCW@motor motor `*.39S24  1 p 2 23 ]
+"311
+} 0
+"321
+[v _Stepper_Off Stepper_Off `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_Off@motor motor `*.39S24  1 p 2 8 ]
+"324
+} 0
+"265
+[v _Stepper_Move_CCW Stepper_Move_CCW `(v  1 e 1 0 ]
+{
+"268
+[v Stepper_Move_CCW@j j `us  1 a 2 21 ]
+"267
+[v Stepper_Move_CCW@i i `us  1 a 2 19 ]
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+"265
+[v Stepper_Move_CCW@motor motor `*.39S24  1 p 2 12 ]
+[v Stepper_Move_CCW@steps steps `us  1 p 2 14 ]
+[v Stepper_Move_CCW@delay_ms delay_ms `us  1 p 2 16 ]
+"285
+} 0
+"206
+[v _Stepper_Step_CCW Stepper_Step_CCW `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_Step_CCW@motor motor `*.39S24  1 p 2 8 ]
+"224
+} 0
+"48
+[v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
+{
+"51
+[v Stepper_Write@output_value output_value `uc  1 a 1 7 ]
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+"48
+[v Stepper_Write@motor motor `*.39S24  1 p 2 0 ]
+[v Stepper_Write@value value `uc  1 p 1 2 ]
+"91
+} 0
+"103
+[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
+{
+[s S24 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_Init@motor motor `*.39S24  1 p 2 0 ]
+"104
+[v Stepper_Init@lat lat `*.39VEuc  1 p 2 2 ]
+"105
+[v Stepper_Init@tris tris `*.39VEuc  1 p 2 4 ]
+"106
+[v Stepper_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
+"107
+[v Stepper_Init@nibble nibble `uc  1 p 1 8 ]
+"169
+} 0
