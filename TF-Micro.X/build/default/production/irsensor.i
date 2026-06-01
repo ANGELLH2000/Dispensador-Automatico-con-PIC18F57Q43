@@ -1,4 +1,4 @@
-# 1 "ws2812b.c"
+# 1 "irsensor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ws2812b.c" 2
-# 1 "./ws2812b.h" 1
+# 1 "irsensor.c" 2
+# 1 "./irsensor.h" 1
 
 
 
@@ -29638,245 +29638,100 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 60 "./cabecera.h" 2
-# 5 "./ws2812b.h" 2
-# 121 "./ws2812b.h"
+# 5 "./irsensor.h" 2
+# 48 "./irsensor.h"
 typedef struct
 {
+    volatile uint8_t *port;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+
+    uint8_t pin_mask;
+
+} IRsensor;
+# 101 "./irsensor.h"
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask);
+# 121 "./irsensor.h"
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
+# 137 "./irsensor.h"
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor);
+# 2 "irsensor.c" 2
 
 
 
-    uint8_t num_leds;
 
 
 
 
-
-
-    uint8_t red[30];
-
-
-
-
-
-
-    uint8_t green[30];
-
-
-
-
-
-
-    uint8_t blue[30];
-
-} LED_WS2812B;
-# 174 "./ws2812b.h"
-void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
-# 206 "./ws2812b.h"
-void WS2812B_SetPixel(LED_WS2812B *tira,
-                      uint8_t led,
-                      uint8_t red,
-                      uint8_t green,
-                      uint8_t blue);
-# 237 "./ws2812b.h"
-void WS2812B_SetAll(LED_WS2812B *tira,
-                    uint8_t red,
-                    uint8_t green,
-                    uint8_t blue);
-# 263 "./ws2812b.h"
-void WS2812B_Show(LED_WS2812B *tira);
-# 277 "./ws2812b.h"
-void WS2812B_Clear(LED_WS2812B *tira);
-# 306 "./ws2812b.h"
-void WS2812B_RGB(LED_WS2812B *tira,
-                 uint8_t red,
-                 uint8_t green,
-                 uint8_t blue);
-# 2 "ws2812b.c" 2
-# 22 "ws2812b.c"
-void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask)
 {
-    uint8_t i;
 
 
 
 
-    if(num_leds > 30)
+
+    sensor->port = port;
+
+
+
+
+
+
+    sensor->tris = tris;
+
+
+
+
+
+
+    sensor->ansel = ansel;
+
+
+
+
+    sensor->pin_mask = pin_mask;
+# 50 "irsensor.c"
+    *(sensor->ansel) = (uint8_t)(*(sensor->ansel) & (uint8_t)(~sensor->pin_mask));
+# 61 "irsensor.c"
+    *(sensor->tris) = (uint8_t)(*(sensor->tris) | sensor->pin_mask);
+}
+# 75 "irsensor.c"
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor)
+{
+
+
+
+
+    if((*(sensor->port) & sensor->pin_mask) == 0)
     {
-        tira->num_leds = 30;
+        return 1;
     }
     else
     {
-        tira->num_leds = num_leds;
-    }
-# 49 "ws2812b.c"
-    ANSELDbits.ANSELD0 = 0;
-# 62 "ws2812b.c"
-    TRISDbits.TRISD0 = 0;
-
-
-
-
-
-
-
-    LATDbits.LATD0 = 0;
-
-
-
-
-
-
-
-    for(i = 0; i < tira->num_leds; i++)
-    {
-        tira->red[i] = 0;
-        tira->green[i] = 0;
-        tira->blue[i] = 0;
+        return 0;
     }
 }
-# 111 "ws2812b.c"
-void WS2812B_SetPixel(LED_WS2812B *tira,
-                      uint8_t led,
-                      uint8_t red,
-                      uint8_t green,
-                      uint8_t blue)
+# 102 "irsensor.c"
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor)
 {
-# 127 "ws2812b.c"
-    if(led >= tira->num_leds)
+
+
+
+
+    if((*(sensor->port) & sensor->pin_mask) != 0)
     {
-        return;
-    }
-# 139 "ws2812b.c"
-    tira->red[led] = red;
-    tira->green[led] = green;
-    tira->blue[led] = blue;
-}
-# 168 "ws2812b.c"
-void WS2812B_SetAll(LED_WS2812B *tira,
-                    uint8_t red,
-                    uint8_t green,
-                    uint8_t blue)
-{
-    uint8_t i;
-
-
-
-
-    for(i = 0; i < tira->num_leds; i++)
-    {
-
-
-
-        WS2812B_SetPixel(tira, i, red, green, blue);
-    }
-}
-# 219 "ws2812b.c"
-static void WS2812B_SendBit(uint8_t bit_value)
-{
-    if(bit_value)
-    {
-
-
-
-
-
-        LATDbits.LATD0 = 1;
-
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-
-        LATDbits.LATD0 = 0;
-
-        __nop();
-        __nop();
+        return 1;
     }
     else
     {
-
-
-
-
-
-        LATDbits.LATD0 = 1;
-
-        __nop();
-        __nop();
-
-        LATDbits.LATD0 = 0;
-
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
+        return 0;
     }
-}
-# 285 "ws2812b.c"
-static void WS2812B_SendByte(uint8_t data)
-{
-    uint8_t mask;
-# 298 "ws2812b.c"
-    for(mask = 0x80; mask > 0; mask >>= 1)
-    {
-
-
-
-
-
-
-        if(data & mask)
-        {
-            WS2812B_SendBit(1);
-        }
-        else
-        {
-            WS2812B_SendBit(0);
-        }
-    }
-}
-# 338 "ws2812b.c"
-void WS2812B_Show(LED_WS2812B *tira)
-{
-    uint8_t i;
-
-
-
-
-    for(i = 0; i < tira->num_leds; i++)
-    {
-
-
-
-
-
-
-
-        WS2812B_SendByte(tira->green[i]);
-        WS2812B_SendByte(tira->red[i]);
-        WS2812B_SendByte(tira->blue[i]);
-    }
-# 367 "ws2812b.c"
-    LATDbits.LATD0 = 0;
-    _delay((unsigned long)((300)*(48000000UL/4000000.0)));
-}
-# 383 "ws2812b.c"
-void WS2812B_Clear(LED_WS2812B *tira)
-{
-    WS2812B_SetAll(tira, 0, 0, 0);
-    WS2812B_Show(tira);
-}
-# 410 "ws2812b.c"
-void WS2812B_RGB(LED_WS2812B *tira,
-                 uint8_t red,
-                 uint8_t green,
-                 uint8_t blue)
-{
-    WS2812B_SetAll(tira, red, green, blue);
-    WS2812B_Show(tira);
 }

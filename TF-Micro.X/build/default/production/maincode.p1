@@ -1,8 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"83 ./ws2812b.h
-[; ;./ws2812b.h: 83: {
+"122 ./ws2812b.h
+[; ;./ws2812b.h: 122: {
 [s S2431 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
 [n S2431 . num_leds red green blue ]
+"49 ./irsensor.h
+[; ;./irsensor.h: 49: {
+[s S2432 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
+[n S2432 . port tris ansel pin_mask ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -13,19 +17,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
 [v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
 [p mainexit ]
-"109 ./ws2812b.h
-[; ;./ws2812b.h: 109: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+"174 ./ws2812b.h
+[; ;./ws2812b.h: 174: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
 [v _WS2812B_Init `(v ~T0 @X0 0 ef2`*S2431`uc ]
-"154
-[; ;./ws2812b.h: 154: void WS2812B_RGB(LED_WS2812B *tira,
+"101 ./irsensor.h
+[; ;./irsensor.h: 101: void IRSensor_Init(IRsensor *sensor,
+[v _IRSensor_Init `(v ~T0 @X0 0 ef5`*S2432`*Vuc`*Vuc`*Vuc`uc ]
+"49673 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49673: extern volatile unsigned char PORTD __attribute__((address(0x4D1)));
+[v _PORTD `Vuc ~T0 @X0 0 e@1233 ]
+"49331
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
+[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
+"41445
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
+[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
+"121 ./irsensor.h
+[; ;./irsensor.h: 121: uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
+[v _IRSensor_ReadActiveLow `(uc ~T0 @X0 0 ef1`*S2432 ]
+"306 ./ws2812b.h
+[; ;./ws2812b.h: 306: void WS2812B_RGB(LED_WS2812B *tira,
 [v _WS2812B_RGB `(v ~T0 @X0 0 ef4`*S2431`uc`uc`uc ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"152 ./ws2812b.h
-[; ;./ws2812b.h: 152: void WS2812B_Clear(LED_WS2812B *tira);
-[v _WS2812B_Clear `(v ~T0 @X0 0 ef1`*S2431 ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2725,78 +2741,155 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
 "5 maincode.c
 [; ;maincode.c: 5: LED_WS2812B tira1;
 [v _tira1 `S2431 ~T0 @X0 1 e ]
-"7
-[; ;maincode.c: 7: void config(void) {
+"6
+[; ;maincode.c: 6: IRsensor sensor_ir;
+[v _sensor_ir `S2432 ~T0 @X0 1 e ]
+"9
+[; ;maincode.c: 9: void config(void) {
 [v _config `(v ~T0 @X0 1 ef ]
 {
 [e :U _config ]
 [f ]
-"9
-[; ;maincode.c: 9:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
-"10
-[; ;maincode.c: 10:     OSCFRQ = 0x07;
-[e = _OSCFRQ -> -> 7 `i `uc ]
 "11
-[; ;maincode.c: 11:     OSCEN = 0x40;
+[; ;maincode.c: 11:     OSCCON1 = 0x60;
+[e = _OSCCON1 -> -> 96 `i `uc ]
+"12
+[; ;maincode.c: 12:     OSCFRQ = 0x07;
+[e = _OSCFRQ -> -> 7 `i `uc ]
+"13
+[; ;maincode.c: 13:     OSCEN = 0x40;
 [e = _OSCEN -> -> 64 `i `uc ]
-"14
-[; ;maincode.c: 14: }
-[e :UE 2432 ]
+"16
+[; ;maincode.c: 16: }
+[e :UE 2433 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15
-[; ;maincode.c: 15: void main(void) {
+"17
+[; ;maincode.c: 17: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
+"18
+[; ;maincode.c: 18: {
 {
 [e :U _main ]
 [f ]
-"16
-[; ;maincode.c: 16:     config();
-[e ( _config ..  ]
-"20
-[; ;maincode.c: 20:    WS2812B_Init(&tira1, 3);
-[e ( _WS2812B_Init (2 , &U _tira1 -> -> 3 `i `uc ]
-"22
-[; ;maincode.c: 22:     while(1)
-[e :U 2435 ]
-"23
-[; ;maincode.c: 23:     {
-{
-"24
-[; ;maincode.c: 24:         WS2812B_RGB(&tira1, 200, 0, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 200 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "25
-[; ;maincode.c: 25:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;maincode.c: 25:     config();
+[e ( _config ..  ]
 "26
-[; ;maincode.c: 26:         WS2812B_RGB(&tira1, 0, 200, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 200 `i `uc -> -> 0 `i `uc ]
+[; ;maincode.c: 26:     WS2812B_Init(&tira1, 3);
+[e ( _WS2812B_Init (2 , &U _tira1 -> -> 3 `i `uc ]
 "27
-[; ;maincode.c: 27:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"28
-[; ;maincode.c: 28:         WS2812B_RGB(&tira1, 0, 0, 2000);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 0 `i `uc -> -> 2000 `i `uc ]
-"29
-[; ;maincode.c: 29:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"32
-[; ;maincode.c: 32:         WS2812B_Clear(&tira1);
-[e ( _WS2812B_Clear (1 &U _tira1 ]
-"33
-[; ;maincode.c: 33:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"34
-[; ;maincode.c: 34:     }
-}
-[e :U 2434 ]
-[e $U 2435  ]
+[; ;maincode.c: 27:     IRSensor_Init(&sensor_ir,&PORTD,&TRISD,&ANSELD,0x02);
+[e ( _IRSensor_Init (4 , , , , &U _sensor_ir &U _PORTD &U _TRISD &U _ANSELD -> -> 2 `i `uc ]
+"31
+[; ;maincode.c: 31:     while(1)
 [e :U 2436 ]
+"32
+[; ;maincode.c: 32:     {
+{
+"33
+[; ;maincode.c: 33:        if(IRSensor_ReadActiveLow(&sensor_ir))
+[e $ ! != -> ( _IRSensor_ReadActiveLow (1 &U _sensor_ir `i -> 0 `i 2438  ]
+"34
+[; ;maincode.c: 34:         {
+{
 "35
-[; ;maincode.c: 35: }
-[e :UE 2433 ]
+[; ;maincode.c: 35:            WS2812B_RGB(&tira1, 100, 0, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 100 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"36
+[; ;maincode.c: 36:         }
+}
+[e $U 2439  ]
+"37
+[; ;maincode.c: 37:         else
+[e :U 2438 ]
+"38
+[; ;maincode.c: 38:         {
+{
+"39
+[; ;maincode.c: 39:             WS2812B_RGB(&tira1, 0, 100, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 100 `i `uc -> -> 0 `i `uc ]
+"40
+[; ;maincode.c: 40:         }
+}
+[e :U 2439 ]
+"41
+[; ;maincode.c: 41:        _delay((unsigned long)((100)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"42
+[; ;maincode.c: 42:     }
+}
+[e :U 2435 ]
+[e $U 2436  ]
+[e :U 2437 ]
+"43
+[; ;maincode.c: 43: }
+[e :UE 2434 ]
 }
