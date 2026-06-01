@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "irsensor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,70 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "irsensor.c" 2
+# 1 "./irsensor.h" 1
+
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,235 +29637,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 3 "maincode.c" 2
-# 1 "./ws2812b.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./ws2812b.h" 2
-# 121 "./ws2812b.h"
-typedef struct
-{
-
-
-
-    uint8_t num_leds;
-
-
-
-
-
-
-    uint8_t red[30];
-
-
-
-
-
-
-    uint8_t green[30];
-
-
-
-
-
-
-    uint8_t blue[30];
-
-} LED_WS2812B;
-# 174 "./ws2812b.h"
-void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
-# 206 "./ws2812b.h"
-void WS2812B_SetPixel(LED_WS2812B *tira,
-                      uint8_t led,
-                      uint8_t red,
-                      uint8_t green,
-                      uint8_t blue);
-# 237 "./ws2812b.h"
-void WS2812B_SetAll(LED_WS2812B *tira,
-                    uint8_t red,
-                    uint8_t green,
-                    uint8_t blue);
-# 263 "./ws2812b.h"
-void WS2812B_Show(LED_WS2812B *tira);
-# 277 "./ws2812b.h"
-void WS2812B_Clear(LED_WS2812B *tira);
-# 306 "./ws2812b.h"
-void WS2812B_RGB(LED_WS2812B *tira,
-                 uint8_t red,
-                 uint8_t green,
-                 uint8_t blue);
-# 4 "maincode.c" 2
-# 1 "./irsensor.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
+# 60 "./cabecera.h" 2
 # 5 "./irsensor.h" 2
 # 48 "./irsensor.h"
 typedef struct
@@ -29824,43 +29659,79 @@ void IRSensor_Init(IRsensor *sensor,
 uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
 # 137 "./irsensor.h"
 uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor);
-# 5 "maincode.c" 2
-LED_WS2812B tira1;
-IRsensor sensor_ir;
+# 2 "irsensor.c" 2
 
 
-void config(void) {
-
-    OSCCON1 = 0x60;
-    OSCFRQ = 0x07;
-    OSCEN = 0x40;
 
 
-}
-void main(void)
+
+
+
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask)
 {
 
 
 
 
 
-
-    config();
-    WS2812B_Init(&tira1, 3);
-    IRSensor_Init(&sensor_ir,&PORTD,&TRISD,&ANSELD,0x02);
+    sensor->port = port;
 
 
 
-    while(1)
+
+
+
+    sensor->tris = tris;
+
+
+
+
+
+
+    sensor->ansel = ansel;
+
+
+
+
+    sensor->pin_mask = pin_mask;
+# 50 "irsensor.c"
+    *(sensor->ansel) = (uint8_t)(*(sensor->ansel) & (uint8_t)(~sensor->pin_mask));
+# 61 "irsensor.c"
+    *(sensor->tris) = (uint8_t)(*(sensor->tris) | sensor->pin_mask);
+}
+# 75 "irsensor.c"
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor)
+{
+
+
+
+
+    if((*(sensor->port) & sensor->pin_mask) == 0)
     {
-       if(IRSensor_ReadActiveLow(&sensor_ir))
-        {
-           WS2812B_RGB(&tira1, 200, 0, 0);
-        }
-        else
-        {
-            WS2812B_RGB(&tira1, 0, 200, 0);
-        }
-       _delay((unsigned long)((2000)*(48000000UL/4000.0)));
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+# 102 "irsensor.c"
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor)
+{
+
+
+
+
+    if((*(sensor->port) & sensor->pin_mask) != 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
     }
 }

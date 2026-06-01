@@ -1,78 +1,139 @@
-/* Microchip Technology Inc. and its subsidiaries.  You may use this software 
- * and any derivatives exclusively with Microchip products. 
- * 
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER 
- * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
- * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A 
- * PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION 
- * WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION. 
+#ifndef IRSENSOR_H
+#define IRSENSOR_H
+
+#include "cabecera.h"
+
+/*
+ * Librería para lectura de sensor infrarrojo digital.
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
- * INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
- * WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
- * BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE.  TO THE 
- * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS 
- * IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF 
- * ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Esta librería permite leer sensores infrarrojos digitales con salida lógica,
+ * como módulos de obstáculo IR basados en comparador LM393.
  *
- * MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE 
- * TERMS. 
+ * Algunos sensores entregan nivel bajo cuando detectan.
+ * Otros sensores entregan nivel alto cuando detectan.
+ *
+ * Por ello, la librería proporciona dos funciones de lectura:
+ *
+ * IRSensor_ReadActiveLow():
+ * Retorna 1 cuando el sensor detecta en nivel bajo.
+ *
+ * IRSensor_ReadActiveHigh():
+ * Retorna 1 cuando el sensor detecta en nivel alto.
  */
 
-/* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+
+/*
+ * Estructura de configuración de un sensor infrarrojo digital.
+ *
+ * Cada sensor que se desee utilizar debe tener una variable propia
+ * de tipo IRsensor.
+ *
+ * Campos:
+ *
+ * port:
+ * Puntero al registro PORT del puerto utilizado.
+ * Se usa para leer el estado lógico real del pin.
+ *
+ * tris:
+ * Puntero al registro TRIS del puerto utilizado.
+ * Se usa para configurar el pin como entrada.
+ *
+ * ansel:
+ * Puntero al registro ANSEL del puerto utilizado.
+ * Se usa para configurar el pin como digital.
+ *
+ * pin_mask:
+ * Máscara del pin donde está conectada la salida digital del sensor.
  */
+typedef struct
+{
+    volatile uint8_t *port;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
 
-// This is a guard condition so that contents of this file are not included
-// more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+    uint8_t pin_mask;
 
-#include <xc.h> // include processor files - each processor file is guarded.  
+} IRsensor;
 
-// TODO Insert appropriate #include <>
 
-// TODO Insert C++ class definitions if appropriate
-
-// TODO Insert declarations
-
-// Comment a function and leverage automatic documentation with slash star star
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
-
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
+/*
+ * Inicializa un sensor infrarrojo digital.
+ *
+ * Esta función configura el pin seleccionado como entrada digital y guarda
+ * la configuración dentro de la estructura asociada al sensor.
+ *
+ * Parámetros:
+ *
+ * sensor:
+ * Dirección de la estructura IRsensor asociada al sensor.
+ *
+ * port:
+ * Dirección del registro PORT del puerto utilizado.
+ * Ejemplo: &PORTD
+ *
+ * tris:
+ * Dirección del registro TRIS del puerto utilizado.
+ * Ejemplo: &TRISD
+ *
+ * ansel:
+ * Dirección del registro ANSEL del puerto utilizado.
+ * Ejemplo: &ANSELD
+ *
+ * pin_mask:
+ * Máscara del pin donde está conectada la salida digital del sensor.
+ *
+ * Ejemplos para el puerto D:
+ *
+ * RD0 -> 0x01
+ * RD1 -> 0x02
+ * RD2 -> 0x04
+ * RD3 -> 0x08
+ * RD4 -> 0x10
+ * RD5 -> 0x20
+ * RD6 -> 0x40
+ * RD7 -> 0x80
+ *
+ * Ejemplo:
+ *
+ * IRsensor sensor1;
+ * IRSensor_Init(&sensor1, &PORTD, &TRISD, &ANSELD, 0x01);
  */
-// TODO Insert declarations or function prototypes (right here) to leverage 
-// live documentation
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask);
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
 
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
+/*
+ * Lee el sensor como activo en bajo.
+ *
+ * Esta función se usa cuando el sensor entrega 0 al detectar.
+ *
+ * Retorna:
+ *
+ * 1:
+ * El sensor detecta.
+ *
+ * 0:
+ * El sensor no detecta.
+ */
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
 
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+/*
+ * Lee el sensor como activo en alto.
+ *
+ * Esta función se usa cuando el sensor entrega 1 al detectar.
+ *
+ * Retorna:
+ *
+ * 1:
+ * El sensor detecta.
+ *
+ * 0:
+ * El sensor no detecta.
+ */
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor);
 
+#endif

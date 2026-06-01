@@ -1,47 +1,72 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"122 ./ws2812b.h
-[; ;./ws2812b.h: 122: {
-[s S2431 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
-[n S2431 . num_leds red green blue ]
 "49 ./irsensor.h
 [; ;./irsensor.h: 49: {
-[s S2432 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
-[n S2432 . port tris ansel pin_mask ]
-"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
-"5390
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5390: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@177 ]
-"5592
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-[p mainexit ]
-"174 ./ws2812b.h
-[; ;./ws2812b.h: 174: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
-[v _WS2812B_Init `(v ~T0 @X0 0 ef2`*S2431`uc ]
-"101 ./irsensor.h
-[; ;./irsensor.h: 101: void IRSensor_Init(IRsensor *sensor,
-[v _IRSensor_Init `(v ~T0 @X0 0 ef5`*S2432`*Vuc`*Vuc`*Vuc`uc ]
-"49673 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49673: extern volatile unsigned char PORTD __attribute__((address(0x4D1)));
-[v _PORTD `Vuc ~T0 @X0 0 e@1233 ]
-"49331
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
-[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
-"41445
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"121 ./irsensor.h
-[; ;./irsensor.h: 121: uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
-[v _IRSensor_ReadActiveLow `(uc ~T0 @X0 0 ef1`*S2432 ]
-"306 ./ws2812b.h
-[; ;./ws2812b.h: 306: void WS2812B_RGB(LED_WS2812B *tira,
-[v _WS2812B_RGB `(v ~T0 @X0 0 ef4`*S2431`uc`uc`uc ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
+[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
+[n S2431 . port tris ansel pin_mask ]
+"7 ./cabecera.h
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2613,283 +2638,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
+"9 irsensor.c
+[; ;irsensor.c: 9: void IRSensor_Init(IRsensor *sensor,
+[v _IRSensor_Init `(v ~T0 @X0 1 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
 "14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"5 maincode.c
-[; ;maincode.c: 5: LED_WS2812B tira1;
-[v _tira1 `S2431 ~T0 @X0 1 e ]
-"6
-[; ;maincode.c: 6: IRsensor sensor_ir;
-[v _sensor_ir `S2432 ~T0 @X0 1 e ]
+[; ;irsensor.c: 14: {
+{
+[e :U _IRSensor_Init ]
 "9
-[; ;maincode.c: 9: void config(void) {
-[v _config `(v ~T0 @X0 1 ef ]
-{
-[e :U _config ]
-[f ]
+[; ;irsensor.c: 9: void IRSensor_Init(IRsensor *sensor,
+[v _sensor `*S2431 ~T0 @X0 1 r1 ]
+"10
+[; ;irsensor.c: 10:                    volatile uint8_t *port,
+[v _port `*Vuc ~T0 @X0 1 r2 ]
 "11
-[; ;maincode.c: 11:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
+[; ;irsensor.c: 11:                    volatile uint8_t *tris,
+[v _tris `*Vuc ~T0 @X0 1 r3 ]
 "12
-[; ;maincode.c: 12:     OSCFRQ = 0x07;
-[e = _OSCFRQ -> -> 7 `i `uc ]
+[; ;irsensor.c: 12:                    volatile uint8_t *ansel,
+[v _ansel `*Vuc ~T0 @X0 1 r4 ]
 "13
-[; ;maincode.c: 13:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"16
-[; ;maincode.c: 16: }
-[e :UE 2433 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"17
-[; ;maincode.c: 17: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"18
-[; ;maincode.c: 18: {
-{
-[e :U _main ]
+[; ;irsensor.c: 13:                    uint8_t pin_mask)
+[v _pin_mask `uc ~T0 @X0 1 r5 ]
+"14
+[; ;irsensor.c: 14: {
 [f ]
-"25
-[; ;maincode.c: 25:     config();
-[e ( _config ..  ]
-"26
-[; ;maincode.c: 26:     WS2812B_Init(&tira1, 3);
-[e ( _WS2812B_Init (2 , &U _tira1 -> -> 3 `i `uc ]
+"20
+[; ;irsensor.c: 20:     sensor->port = port;
+[e = . *U _sensor 0 _port ]
 "27
-[; ;maincode.c: 27:     IRSensor_Init(&sensor_ir,&PORTD,&TRISD,&ANSELD,0x02);
-[e ( _IRSensor_Init (4 , , , , &U _sensor_ir &U _PORTD &U _TRISD &U _ANSELD -> -> 2 `i `uc ]
-"31
-[; ;maincode.c: 31:     while(1)
-[e :U 2436 ]
-"32
-[; ;maincode.c: 32:     {
-{
-"33
-[; ;maincode.c: 33:        if(IRSensor_ReadActiveLow(&sensor_ir))
-[e $ ! != -> ( _IRSensor_ReadActiveLow (1 &U _sensor_ir `i -> 0 `i 2438  ]
+[; ;irsensor.c: 27:     sensor->tris = tris;
+[e = . *U _sensor 1 _tris ]
 "34
-[; ;maincode.c: 34:         {
-{
-"35
-[; ;maincode.c: 35:            WS2812B_RGB(&tira1, 100, 0, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 100 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"36
-[; ;maincode.c: 36:         }
-}
-[e $U 2439  ]
-"37
-[; ;maincode.c: 37:         else
-[e :U 2438 ]
-"38
-[; ;maincode.c: 38:         {
-{
+[; ;irsensor.c: 34:     sensor->ansel = ansel;
+[e = . *U _sensor 2 _ansel ]
 "39
-[; ;maincode.c: 39:             WS2812B_RGB(&tira1, 0, 100, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 100 `i `uc -> -> 0 `i `uc ]
-"40
-[; ;maincode.c: 40:         }
+[; ;irsensor.c: 39:     sensor->pin_mask = pin_mask;
+[e = . *U _sensor 3 _pin_mask ]
+"50
+[; ;irsensor.c: 50:     *(sensor->ansel) = (uint8_t)(*(sensor->ansel) & (uint8_t)(~sensor->pin_mask));
+[e = *U . *U _sensor 2 -> & -> *U . *U _sensor 2 `i -> -> ~ -> . *U _sensor 3 `i `uc `i `uc ]
+"61
+[; ;irsensor.c: 61:     *(sensor->tris) = (uint8_t)(*(sensor->tris) | sensor->pin_mask);
+[e = *U . *U _sensor 1 -> | -> *U . *U _sensor 1 `i -> . *U _sensor 3 `i `uc ]
+"62
+[; ;irsensor.c: 62: }
+[e :UE 2432 ]
 }
-[e :U 2439 ]
-"41
-[; ;maincode.c: 41:        _delay((unsigned long)((100)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"42
-[; ;maincode.c: 42:     }
+"75
+[; ;irsensor.c: 75: uint8_t IRSensor_ReadActiveLow(IRsensor *sensor)
+[v _IRSensor_ReadActiveLow `(uc ~T0 @X0 1 ef1`*S2431 ]
+"76
+[; ;irsensor.c: 76: {
+{
+[e :U _IRSensor_ReadActiveLow ]
+"75
+[; ;irsensor.c: 75: uint8_t IRSensor_ReadActiveLow(IRsensor *sensor)
+[v _sensor `*S2431 ~T0 @X0 1 r1 ]
+"76
+[; ;irsensor.c: 76: {
+[f ]
+"81
+[; ;irsensor.c: 81:     if((*(sensor->port) & sensor->pin_mask) == 0)
+[e $ ! == & -> *U . *U _sensor 0 `i -> . *U _sensor 3 `i -> 0 `i 2434  ]
+"82
+[; ;irsensor.c: 82:     {
+{
+"83
+[; ;irsensor.c: 83:         return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 2433  ]
+"84
+[; ;irsensor.c: 84:     }
+}
+[e $U 2435  ]
+"85
+[; ;irsensor.c: 85:     else
+[e :U 2434 ]
+"86
+[; ;irsensor.c: 86:     {
+{
+"87
+[; ;irsensor.c: 87:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 2433  ]
+"88
+[; ;irsensor.c: 88:     }
 }
 [e :U 2435 ]
-[e $U 2436  ]
+"89
+[; ;irsensor.c: 89: }
+[e :UE 2433 ]
+}
+"102
+[; ;irsensor.c: 102: uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor)
+[v _IRSensor_ReadActiveHigh `(uc ~T0 @X0 1 ef1`*S2431 ]
+"103
+[; ;irsensor.c: 103: {
+{
+[e :U _IRSensor_ReadActiveHigh ]
+"102
+[; ;irsensor.c: 102: uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor)
+[v _sensor `*S2431 ~T0 @X0 1 r1 ]
+"103
+[; ;irsensor.c: 103: {
+[f ]
+"108
+[; ;irsensor.c: 108:     if((*(sensor->port) & sensor->pin_mask) != 0)
+[e $ ! != & -> *U . *U _sensor 0 `i -> . *U _sensor 3 `i -> 0 `i 2437  ]
+"109
+[; ;irsensor.c: 109:     {
+{
+"110
+[; ;irsensor.c: 110:         return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 2436  ]
+"111
+[; ;irsensor.c: 111:     }
+}
+[e $U 2438  ]
+"112
+[; ;irsensor.c: 112:     else
 [e :U 2437 ]
-"43
-[; ;maincode.c: 43: }
-[e :UE 2434 ]
+"113
+[; ;irsensor.c: 113:     {
+{
+"114
+[; ;irsensor.c: 114:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 2436  ]
+"115
+[; ;irsensor.c: 115:     }
+}
+[e :U 2438 ]
+"116
+[; ;irsensor.c: 116: }
+[e :UE 2436 ]
 }

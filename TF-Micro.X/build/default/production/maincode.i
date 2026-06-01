@@ -29744,8 +29744,90 @@ void WS2812B_RGB(LED_WS2812B *tira,
                  uint8_t green,
                  uint8_t blue);
 # 4 "maincode.c" 2
+# 1 "./irsensor.h" 1
 
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 5 "./irsensor.h" 2
+# 48 "./irsensor.h"
+typedef struct
+{
+    volatile uint8_t *port;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+
+    uint8_t pin_mask;
+
+} IRsensor;
+# 101 "./irsensor.h"
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask);
+# 121 "./irsensor.h"
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
+# 137 "./irsensor.h"
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor);
+# 5 "maincode.c" 2
 LED_WS2812B tira1;
+IRsensor sensor_ir;
+
 
 void config(void) {
 
@@ -29764,31 +29846,21 @@ void main(void)
 
 
     config();
-# 36 "maincode.c"
     WS2812B_Init(&tira1, 3);
+    IRSensor_Init(&sensor_ir,&PORTD,&TRISD,&ANSELD,0x02);
+
+
 
     while(1)
     {
-# 48 "maincode.c"
-        WS2812B_RGB(&tira1, 200, 0, 0);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-# 59 "maincode.c"
-        WS2812B_RGB(&tira1, 0, 200, 0);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-
-
-
-
-
-
-
-        WS2812B_RGB(&tira1, 0, 0, 200);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-
-
-
-
-        WS2812B_Clear(&tira1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+       if(IRSensor_ReadActiveLow(&sensor_ir))
+        {
+           WS2812B_RGB(&tira1, 100, 0, 0);
+        }
+        else
+        {
+            WS2812B_RGB(&tira1, 0, 100, 0);
+        }
+       _delay((unsigned long)((100)*(48000000UL/4000.0)));
     }
 }
