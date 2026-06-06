@@ -3,47 +3,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Libbuzzer.h: 92: {
 [s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
 [n S2431 . lat tris ansel pin_mask ]
-"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
-"5390
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5390: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@177 ]
-"5592
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-[p mainexit ]
-"135 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
-[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
-"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-"49145
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49145: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
-[v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
-"39957
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 39957: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
-"189 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 189: void Buzzer_ButtonClick(Buzzer *buzzer);
-[v _Buzzer_ButtonClick `(v ~T0 @X0 0 ef1`*S2431 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"198 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 198: void Buzzer_FinalCorrectClick(Buzzer *buzzer);
-[v _Buzzer_FinalCorrectClick `(v ~T0 @X0 0 ef1`*S2431 ]
-"207
-[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
-[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2431 ]
-"223
-[; ;./Libbuzzer.h: 223: void Buzzer_WarningSound(Buzzer *buzzer);
-[v _Buzzer_WarningSound `(v ~T0 @X0 0 ef1`*S2431 ]
-"233
-[; ;./Libbuzzer.h: 233: void Buzzer_ErrorSound(Buzzer *buzzer);
-[v _Buzzer_ErrorSound `(v ~T0 @X0 0 ef1`*S2431 ]
 "7 ./cabecera.h
 [p x FEXTOSC  =  OFF     ]
 "8
@@ -2679,152 +2642,457 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
+"10 Libbuzzer.c
+[; ;Libbuzzer.c: 10: static void Buzzer_PinHigh(Buzzer *buzzer)
+[v _Buzzer_PinHigh `(v ~T0 @X0 1 sf1`*S2431 ]
 "11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"4 maincode.c
-[; ;maincode.c: 4: Buzzer buzzer1;
-[v _buzzer1 `S2431 ~T0 @X0 1 e ]
-"6
-[; ;maincode.c: 6: void config(void)
-[v _config `(v ~T0 @X0 1 ef ]
-"7
-[; ;maincode.c: 7: {
+[; ;Libbuzzer.c: 11: {
 {
-[e :U _config ]
+[e :U _Buzzer_PinHigh ]
+"10
+[; ;Libbuzzer.c: 10: static void Buzzer_PinHigh(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"11
+[; ;Libbuzzer.c: 11: {
 [f ]
 "12
-[; ;maincode.c: 12:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
+[; ;Libbuzzer.c: 12:     *(buzzer->lat) = (uint8_t)(*(buzzer->lat) | buzzer->pin_mask);
+[e = *U . *U _buzzer 0 -> | -> *U . *U _buzzer 0 `i -> . *U _buzzer 3 `i `uc ]
 "13
-[; ;maincode.c: 13:     OSCFRQ = 0x07;
-[e = _OSCFRQ -> -> 7 `i `uc ]
-"14
-[; ;maincode.c: 14:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"15
-[; ;maincode.c: 15: }
+[; ;Libbuzzer.c: 13: }
 [e :UE 2432 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"17
-[; ;maincode.c: 17: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"18
-[; ;maincode.c: 18: {
+"22
+[; ;Libbuzzer.c: 22: static void Buzzer_PinLow(Buzzer *buzzer)
+[v _Buzzer_PinLow `(v ~T0 @X0 1 sf1`*S2431 ]
+"23
+[; ;Libbuzzer.c: 23: {
 {
-[e :U _main ]
+[e :U _Buzzer_PinLow ]
+"22
+[; ;Libbuzzer.c: 22: static void Buzzer_PinLow(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"23
+[; ;Libbuzzer.c: 23: {
 [f ]
-"19
-[; ;maincode.c: 19:     config();
-[e ( _config ..  ]
-"28
-[; ;maincode.c: 28:     Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
-"30
-[; ;maincode.c: 30:     while(1)
-[e :U 2435 ]
-"31
-[; ;maincode.c: 31:     {
-{
-"35
-[; ;maincode.c: 35:         Buzzer_ButtonClick(&buzzer1);
-[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
-"36
-[; ;maincode.c: 36:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"41
-[; ;maincode.c: 41:         Buzzer_FinalCorrectClick(&buzzer1);
-[e ( _Buzzer_FinalCorrectClick (1 &U _buzzer1 ]
-"42
-[; ;maincode.c: 42:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"47
-[; ;maincode.c: 47:         Buzzer_CorrectSound(&buzzer1);
-[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
-"48
-[; ;maincode.c: 48:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"53
-[; ;maincode.c: 53:         Buzzer_WarningSound(&buzzer1);
-[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
-"54
-[; ;maincode.c: 54:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"59
-[; ;maincode.c: 59:         Buzzer_ErrorSound(&buzzer1);
-[e ( _Buzzer_ErrorSound (1 &U _buzzer1 ]
-"60
-[; ;maincode.c: 60:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"61
-[; ;maincode.c: 61:     }
+"24
+[; ;Libbuzzer.c: 24:     *(buzzer->lat) = (uint8_t)(*(buzzer->lat) & (uint8_t)(~buzzer->pin_mask));
+[e = *U . *U _buzzer 0 -> & -> *U . *U _buzzer 0 `i -> -> ~ -> . *U _buzzer 3 `i `uc `i `uc ]
+"25
+[; ;Libbuzzer.c: 25: }
+[e :UE 2433 ]
 }
-[e :U 2434 ]
+"40
+[; ;Libbuzzer.c: 40: static void Buzzer_DelayUs(uint32_t time_us)
+[v _Buzzer_DelayUs `(v ~T0 @X0 1 sf1`ul ]
+"41
+[; ;Libbuzzer.c: 41: {
+{
+[e :U _Buzzer_DelayUs ]
+"40
+[; ;Libbuzzer.c: 40: static void Buzzer_DelayUs(uint32_t time_us)
+[v _time_us `ul ~T0 @X0 1 r1 ]
+"41
+[; ;Libbuzzer.c: 41: {
+[f ]
+"42
+[; ;Libbuzzer.c: 42:     while(time_us > 0)
 [e $U 2435  ]
 [e :U 2436 ]
-"62
-[; ;maincode.c: 62: }
-[e :UE 2433 ]
+"43
+[; ;Libbuzzer.c: 43:     {
+{
+"44
+[; ;Libbuzzer.c: 44:         _delay((unsigned long)((1)*(48000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `ul `d .4000000.0 `ul ]
+"45
+[; ;Libbuzzer.c: 45:         time_us--;
+[e -- _time_us -> -> -> 1 `i `l `ul ]
+"46
+[; ;Libbuzzer.c: 46:     }
+}
+[e :U 2435 ]
+"42
+[; ;Libbuzzer.c: 42:     while(time_us > 0)
+[e $ > _time_us -> -> -> 0 `i `l `ul 2436  ]
+[e :U 2437 ]
+"47
+[; ;Libbuzzer.c: 47: }
+[e :UE 2434 ]
+}
+"56
+[; ;Libbuzzer.c: 56: void Buzzer_Init(Buzzer *buzzer,
+[v _Buzzer_Init `(v ~T0 @X0 1 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
+"61
+[; ;Libbuzzer.c: 61: {
+{
+[e :U _Buzzer_Init ]
+"56
+[; ;Libbuzzer.c: 56: void Buzzer_Init(Buzzer *buzzer,
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"57
+[; ;Libbuzzer.c: 57:                  volatile uint8_t *lat,
+[v _lat `*Vuc ~T0 @X0 1 r2 ]
+"58
+[; ;Libbuzzer.c: 58:                  volatile uint8_t *tris,
+[v _tris `*Vuc ~T0 @X0 1 r3 ]
+"59
+[; ;Libbuzzer.c: 59:                  volatile uint8_t *ansel,
+[v _ansel `*Vuc ~T0 @X0 1 r4 ]
+"60
+[; ;Libbuzzer.c: 60:                  uint8_t pin_mask)
+[v _pin_mask `uc ~T0 @X0 1 r5 ]
+"61
+[; ;Libbuzzer.c: 61: {
+[f ]
+"65
+[; ;Libbuzzer.c: 65:     buzzer->lat = lat;
+[e = . *U _buzzer 0 _lat ]
+"66
+[; ;Libbuzzer.c: 66:     buzzer->tris = tris;
+[e = . *U _buzzer 1 _tris ]
+"67
+[; ;Libbuzzer.c: 67:     buzzer->ansel = ansel;
+[e = . *U _buzzer 2 _ansel ]
+"72
+[; ;Libbuzzer.c: 72:     buzzer->pin_mask = pin_mask;
+[e = . *U _buzzer 3 _pin_mask ]
+"81
+[; ;Libbuzzer.c: 81:     *(buzzer->ansel) = (uint8_t)(*(buzzer->ansel) & (uint8_t)(~buzzer->pin_mask));
+[e = *U . *U _buzzer 2 -> & -> *U . *U _buzzer 2 `i -> -> ~ -> . *U _buzzer 3 `i `uc `i `uc ]
+"90
+[; ;Libbuzzer.c: 90:     *(buzzer->tris) = (uint8_t)(*(buzzer->tris) & (uint8_t)(~buzzer->pin_mask));
+[e = *U . *U _buzzer 1 -> & -> *U . *U _buzzer 1 `i -> -> ~ -> . *U _buzzer 3 `i `uc `i `uc ]
+"95
+[; ;Libbuzzer.c: 95:     Buzzer_PinLow(buzzer);
+[e ( _Buzzer_PinLow (1 _buzzer ]
+"96
+[; ;Libbuzzer.c: 96: }
+[e :UE 2438 ]
+}
+"115
+[; ;Libbuzzer.c: 115: void Buzzer_Tone(Buzzer *buzzer,
+[v _Buzzer_Tone `(v ~T0 @X0 1 ef4`*S2431`us`us`uc ]
+"119
+[; ;Libbuzzer.c: 119: {
+{
+[e :U _Buzzer_Tone ]
+"115
+[; ;Libbuzzer.c: 115: void Buzzer_Tone(Buzzer *buzzer,
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"116
+[; ;Libbuzzer.c: 116:                  uint16_t freq,
+[v _freq `us ~T0 @X0 1 r2 ]
+"117
+[; ;Libbuzzer.c: 117:                  uint16_t time_ms,
+[v _time_ms `us ~T0 @X0 1 r3 ]
+"118
+[; ;Libbuzzer.c: 118:                  uint8_t duty)
+[v _duty `uc ~T0 @X0 1 r4 ]
+"119
+[; ;Libbuzzer.c: 119: {
+[f ]
+"120
+[; ;Libbuzzer.c: 120:     uint32_t period_us;
+[v _period_us `ul ~T0 @X0 1 a ]
+"121
+[; ;Libbuzzer.c: 121:     uint32_t high_time_us;
+[v _high_time_us `ul ~T0 @X0 1 a ]
+"122
+[; ;Libbuzzer.c: 122:     uint32_t low_time_us;
+[v _low_time_us `ul ~T0 @X0 1 a ]
+"123
+[; ;Libbuzzer.c: 123:     uint32_t cycles;
+[v _cycles `ul ~T0 @X0 1 a ]
+"124
+[; ;Libbuzzer.c: 124:     uint32_t i;
+[v _i `ul ~T0 @X0 1 a ]
+"129
+[; ;Libbuzzer.c: 129:     if(freq == 0)
+[e $ ! == -> _freq `ui -> -> 0 `i `ui 2440  ]
+"130
+[; ;Libbuzzer.c: 130:     {
+{
+"131
+[; ;Libbuzzer.c: 131:         return;
+[e $UE 2439  ]
+"132
+[; ;Libbuzzer.c: 132:     }
+}
+[e :U 2440 ]
+"140
+[; ;Libbuzzer.c: 140:     if(duty > 100)
+[e $ ! > -> _duty `i -> 100 `i 2441  ]
+"141
+[; ;Libbuzzer.c: 141:     {
+{
+"142
+[; ;Libbuzzer.c: 142:         duty = 100;
+[e = _duty -> -> 100 `i `uc ]
+"143
+[; ;Libbuzzer.c: 143:     }
+}
+[e :U 2441 ]
+"148
+[; ;Libbuzzer.c: 148:     period_us = 1000000UL / freq;
+[e = _period_us / -> 1000000 `ul -> _freq `ul ]
+"153
+[; ;Libbuzzer.c: 153:     high_time_us = (period_us * duty) / 100UL;
+[e = _high_time_us / * _period_us -> _duty `ul -> 100 `ul ]
+"154
+[; ;Libbuzzer.c: 154:     low_time_us = period_us - high_time_us;
+[e = _low_time_us - _period_us _high_time_us ]
+"160
+[; ;Libbuzzer.c: 160:     cycles = ((uint32_t)time_ms * 1000UL) / period_us;
+[e = _cycles / * -> _time_ms `ul -> 1000 `ul _period_us ]
+"165
+[; ;Libbuzzer.c: 165:     for(i = 0; i < cycles; i++)
+{
+[e = _i -> -> -> 0 `i `l `ul ]
+[e $U 2445  ]
+[e :U 2442 ]
+"166
+[; ;Libbuzzer.c: 166:     {
+{
+"167
+[; ;Libbuzzer.c: 167:         if(high_time_us > 0)
+[e $ ! > _high_time_us -> -> -> 0 `i `l `ul 2446  ]
+"168
+[; ;Libbuzzer.c: 168:         {
+{
+"169
+[; ;Libbuzzer.c: 169:             Buzzer_PinHigh(buzzer);
+[e ( _Buzzer_PinHigh (1 _buzzer ]
+"170
+[; ;Libbuzzer.c: 170:             Buzzer_DelayUs(high_time_us);
+[e ( _Buzzer_DelayUs (1 _high_time_us ]
+"171
+[; ;Libbuzzer.c: 171:         }
+}
+[e :U 2446 ]
+"173
+[; ;Libbuzzer.c: 173:         if(low_time_us > 0)
+[e $ ! > _low_time_us -> -> -> 0 `i `l `ul 2447  ]
+"174
+[; ;Libbuzzer.c: 174:         {
+{
+"175
+[; ;Libbuzzer.c: 175:             Buzzer_PinLow(buzzer);
+[e ( _Buzzer_PinLow (1 _buzzer ]
+"176
+[; ;Libbuzzer.c: 176:             Buzzer_DelayUs(low_time_us);
+[e ( _Buzzer_DelayUs (1 _low_time_us ]
+"177
+[; ;Libbuzzer.c: 177:         }
+}
+[e :U 2447 ]
+"178
+[; ;Libbuzzer.c: 178:     }
+}
+[e ++ _i -> -> -> 1 `i `l `ul ]
+[e :U 2445 ]
+[e $ < _i _cycles 2442  ]
+[e :U 2443 ]
+}
+"183
+[; ;Libbuzzer.c: 183:     Buzzer_PinLow(buzzer);
+[e ( _Buzzer_PinLow (1 _buzzer ]
+"184
+[; ;Libbuzzer.c: 184: }
+[e :UE 2439 ]
+}
+"192
+[; ;Libbuzzer.c: 192: void Buzzer_Off(Buzzer *buzzer)
+[v _Buzzer_Off `(v ~T0 @X0 1 ef1`*S2431 ]
+"193
+[; ;Libbuzzer.c: 193: {
+{
+[e :U _Buzzer_Off ]
+"192
+[; ;Libbuzzer.c: 192: void Buzzer_Off(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"193
+[; ;Libbuzzer.c: 193: {
+[f ]
+"194
+[; ;Libbuzzer.c: 194:     Buzzer_PinLow(buzzer);
+[e ( _Buzzer_PinLow (1 _buzzer ]
+"195
+[; ;Libbuzzer.c: 195: }
+[e :UE 2448 ]
+}
+"207
+[; ;Libbuzzer.c: 207: void Buzzer_ButtonClick(Buzzer *buzzer)
+[v _Buzzer_ButtonClick `(v ~T0 @X0 1 ef1`*S2431 ]
+"208
+[; ;Libbuzzer.c: 208: {
+{
+[e :U _Buzzer_ButtonClick ]
+"207
+[; ;Libbuzzer.c: 207: void Buzzer_ButtonClick(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"208
+[; ;Libbuzzer.c: 208: {
+[f ]
+"209
+[; ;Libbuzzer.c: 209:     Buzzer_Tone(buzzer, 2500, 20, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 2500 `i `us -> -> 20 `i `us -> -> 50 `i `uc ]
+"210
+[; ;Libbuzzer.c: 210:     Buzzer_Off(buzzer);
+[e ( _Buzzer_Off (1 _buzzer ]
+"211
+[; ;Libbuzzer.c: 211: }
+[e :UE 2449 ]
+}
+"223
+[; ;Libbuzzer.c: 223: void Buzzer_FinalCorrectClick(Buzzer *buzzer)
+[v _Buzzer_FinalCorrectClick `(v ~T0 @X0 1 ef1`*S2431 ]
+"224
+[; ;Libbuzzer.c: 224: {
+{
+[e :U _Buzzer_FinalCorrectClick ]
+"223
+[; ;Libbuzzer.c: 223: void Buzzer_FinalCorrectClick(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"224
+[; ;Libbuzzer.c: 224: {
+[f ]
+"225
+[; ;Libbuzzer.c: 225:     Buzzer_Tone(buzzer, 659, 45, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 659 `i `us -> -> 45 `i `us -> -> 50 `i `uc ]
+"226
+[; ;Libbuzzer.c: 226:     _delay((unsigned long)((15)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"228
+[; ;Libbuzzer.c: 228:     Buzzer_Tone(buzzer, 784, 65, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 784 `i `us -> -> 65 `i `us -> -> 50 `i `uc ]
+"229
+[; ;Libbuzzer.c: 229:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"231
+[; ;Libbuzzer.c: 231:     Buzzer_Off(buzzer);
+[e ( _Buzzer_Off (1 _buzzer ]
+"232
+[; ;Libbuzzer.c: 232: }
+[e :UE 2450 ]
+}
+"244
+[; ;Libbuzzer.c: 244: void Buzzer_CorrectSound(Buzzer *buzzer)
+[v _Buzzer_CorrectSound `(v ~T0 @X0 1 ef1`*S2431 ]
+"245
+[; ;Libbuzzer.c: 245: {
+{
+[e :U _Buzzer_CorrectSound ]
+"244
+[; ;Libbuzzer.c: 244: void Buzzer_CorrectSound(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"245
+[; ;Libbuzzer.c: 245: {
+[f ]
+"246
+[; ;Libbuzzer.c: 246:     Buzzer_Tone(buzzer, 523, 80, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 523 `i `us -> -> 80 `i `us -> -> 50 `i `uc ]
+"247
+[; ;Libbuzzer.c: 247:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"249
+[; ;Libbuzzer.c: 249:     Buzzer_Tone(buzzer, 659, 90, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 659 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
+"250
+[; ;Libbuzzer.c: 250:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"252
+[; ;Libbuzzer.c: 252:     Buzzer_Tone(buzzer, 784, 120, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 784 `i `us -> -> 120 `i `us -> -> 50 `i `uc ]
+"253
+[; ;Libbuzzer.c: 253:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"255
+[; ;Libbuzzer.c: 255:     Buzzer_Tone(buzzer, 1047, 180, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 1047 `i `us -> -> 180 `i `us -> -> 50 `i `uc ]
+"256
+[; ;Libbuzzer.c: 256:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"258
+[; ;Libbuzzer.c: 258:     Buzzer_Off(buzzer);
+[e ( _Buzzer_Off (1 _buzzer ]
+"259
+[; ;Libbuzzer.c: 259: }
+[e :UE 2451 ]
+}
+"278
+[; ;Libbuzzer.c: 278: void Buzzer_WarningSound(Buzzer *buzzer)
+[v _Buzzer_WarningSound `(v ~T0 @X0 1 ef1`*S2431 ]
+"279
+[; ;Libbuzzer.c: 279: {
+{
+[e :U _Buzzer_WarningSound ]
+"278
+[; ;Libbuzzer.c: 278: void Buzzer_WarningSound(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"279
+[; ;Libbuzzer.c: 279: {
+[f ]
+"280
+[; ;Libbuzzer.c: 280:     Buzzer_Tone(buzzer, 880, 90, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
+"281
+[; ;Libbuzzer.c: 281:     _delay((unsigned long)((80)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"283
+[; ;Libbuzzer.c: 283:     Buzzer_Tone(buzzer, 880, 90, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
+"284
+[; ;Libbuzzer.c: 284:     _delay((unsigned long)((80)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"286
+[; ;Libbuzzer.c: 286:     Buzzer_Tone(buzzer, 880, 90, 50);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
+"287
+[; ;Libbuzzer.c: 287:     _delay((unsigned long)((100)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"289
+[; ;Libbuzzer.c: 289:     Buzzer_Off(buzzer);
+[e ( _Buzzer_Off (1 _buzzer ]
+"290
+[; ;Libbuzzer.c: 290: }
+[e :UE 2452 ]
+}
+"303
+[; ;Libbuzzer.c: 303: void Buzzer_ErrorSound(Buzzer *buzzer)
+[v _Buzzer_ErrorSound `(v ~T0 @X0 1 ef1`*S2431 ]
+"304
+[; ;Libbuzzer.c: 304: {
+{
+[e :U _Buzzer_ErrorSound ]
+"303
+[; ;Libbuzzer.c: 303: void Buzzer_ErrorSound(Buzzer *buzzer)
+[v _buzzer `*S2431 ~T0 @X0 1 r1 ]
+"304
+[; ;Libbuzzer.c: 304: {
+[f ]
+"305
+[; ;Libbuzzer.c: 305:     Buzzer_Tone(buzzer, 392, 160, 60);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 392 `i `us -> -> 160 `i `us -> -> 60 `i `uc ]
+"306
+[; ;Libbuzzer.c: 306:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"308
+[; ;Libbuzzer.c: 308:     Buzzer_Tone(buzzer, 330, 180, 60);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 330 `i `us -> -> 180 `i `us -> -> 60 `i `uc ]
+"309
+[; ;Libbuzzer.c: 309:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"311
+[; ;Libbuzzer.c: 311:     Buzzer_Tone(buzzer, 262, 250, 70);
+[e ( _Buzzer_Tone (4 , , , _buzzer -> -> 262 `i `us -> -> 250 `i `us -> -> 70 `i `uc ]
+"312
+[; ;Libbuzzer.c: 312:     _delay((unsigned long)((60)*(48000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+"314
+[; ;Libbuzzer.c: 314:     Buzzer_Off(buzzer);
+[e ( _Buzzer_Off (1 _buzzer ]
+"315
+[; ;Libbuzzer.c: 315: }
+[e :UE 2453 ]
 }

@@ -63,15 +63,33 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"9 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\irsensor.c
-[v _IRSensor_Init IRSensor_Init `(v  1 e 1 0 ]
-"75
-[v _IRSensor_ReadActiveLow IRSensor_ReadActiveLow `(uc  1 e 1 0 ]
-"9 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+"10 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+[v _Buzzer_PinHigh Buzzer_PinHigh `(v  1 s 1 Buzzer_PinHigh ]
+"22
+[v _Buzzer_PinLow Buzzer_PinLow `(v  1 s 1 Buzzer_PinLow ]
+"40
+[v _Buzzer_DelayUs Buzzer_DelayUs `(v  1 s 1 Buzzer_DelayUs ]
+"56
+[v _Buzzer_Init Buzzer_Init `(v  1 e 1 0 ]
+"115
+[v _Buzzer_Tone Buzzer_Tone `(v  1 e 1 0 ]
+"192
+[v _Buzzer_Off Buzzer_Off `(v  1 e 1 0 ]
+"207
+[v _Buzzer_ButtonClick Buzzer_ButtonClick `(v  1 e 1 0 ]
+"223
+[v _Buzzer_FinalCorrectClick Buzzer_FinalCorrectClick `(v  1 e 1 0 ]
+"244
+[v _Buzzer_CorrectSound Buzzer_CorrectSound `(v  1 e 1 0 ]
+"278
+[v _Buzzer_WarningSound Buzzer_WarningSound `(v  1 e 1 0 ]
+"303
+[v _Buzzer_ErrorSound Buzzer_ErrorSound `(v  1 e 1 0 ]
+"6 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
 [v _config config `(v  1 e 1 0 ]
 "17
 [v _main main `(v  1 e 1 0 ]
-"48 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
+"48 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 [v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
 "178
 [v _Stepper_Step_CW Stepper_Step_CW `(v  1 e 1 0 ]
@@ -83,9 +101,7 @@
 [v _Stepper_Move_CCW Stepper_Move_CCW `(v  1 e 1 0 ]
 "321
 [v _Stepper_Off Stepper_Off `(v  1 e 1 0 ]
-"22 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
-[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
-"111
+"111 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
 [v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
 "168
 [v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
@@ -95,17 +111,15 @@
 [v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
 "338
 [v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
-"410
-[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
 "5390
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @177 ]
 "5592
 [v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
-"41445
-[v _ANSELD ANSELD `VEuc  1 e 1 @1048 ]
-[s S96 . 1 `uc 1 ANSELD0 1 0 :1:0 
+"39957
+[v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+[s S92 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -115,11 +129,13 @@
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "41462
-[u S105 . 1 `S96 1 . 1 0 ]
+[u S101 . 1 `S92 1 . 1 0 ]
 "41462
 "41462
-[v _ANSELDbits ANSELDbits `VES105  1 e 1 @1048 ]
-[s S138 . 1 `uc 1 LATD0 1 0 :1:0 
+[v _ANSELDbits ANSELDbits `VES101  1 e 1 @1048 ]
+"48803
+[v _LATA LATA `VEuc  1 e 1 @1214 ]
+[s S134 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -129,13 +145,13 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "49006
-[u S147 . 1 `S138 1 . 1 0 ]
+[u S143 . 1 `S134 1 . 1 0 ]
 "49006
 "49006
-[v _LATDbits LATDbits `VES147  1 e 1 @1217 ]
-"49331
-[v _TRISD TRISD `VEuc  1 e 1 @1225 ]
-[s S117 . 1 `uc 1 TRISD0 1 0 :1:0 
+[v _LATDbits LATDbits `VES143  1 e 1 @1217 ]
+"49145
+[v _TRISA TRISA `VEuc  1 e 1 @1222 ]
+[s S113 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -145,134 +161,145 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "49348
-[u S126 . 1 `S117 1 . 1 0 ]
+[u S122 . 1 `S113 1 . 1 0 ]
 "49348
 "49348
-[v _TRISDbits TRISDbits `VES126  1 e 1 @1225 ]
-"49673
-[v _PORTD PORTD `VEuc  1 e 1 @1233 ]
-[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-"5 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
-[v _tira1 tira1 `S24  1 e 91 0 ]
-[s S29 . 7 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-"6
-[v _sensor_ir sensor_ir `S29  1 e 7 0 ]
-"23 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\motor_paso.c
+[v _TRISDbits TRISDbits `VES122  1 e 1 @1225 ]
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+"4 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+[v _buzzer1 buzzer1 `S24  1 e 7 0 ]
+"23 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 [v _full_step_sequence full_step_sequence `C[4]uc  1 s 4 full_step_sequence ]
-"17 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\maincode.c
+"17 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
 [v _main main `(v  1 e 1 0 ]
 {
-"43
+"62
 } 0
-"9
+"6
 [v _config config `(v  1 e 1 0 ]
 {
-"16
+"15
 } 0
-"410 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\ws2812b.c
-[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
+"278 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+[v _Buzzer_WarningSound Buzzer_WarningSound `(v  1 e 1 0 ]
 {
-[v WS2812B_RGB@tira tira `*.39S24  1 p 2 15 ]
-"411
-[v WS2812B_RGB@red red `uc  1 p 1 17 ]
-"412
-[v WS2812B_RGB@green green `uc  1 p 1 18 ]
-"413
-[v WS2812B_RGB@blue blue `uc  1 p 1 19 ]
-"417
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_WarningSound@buzzer buzzer `*.39S24  1 p 2 52 ]
+"290
 } 0
-"338
-[v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
+"56
+[v _Buzzer_Init Buzzer_Init `(v  1 e 1 0 ]
 {
-"340
-[v WS2812B_Show@i i `uc  1 a 1 7 ]
-[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-"338
-[v WS2812B_Show@tira tira `*.39S24  1 p 2 3 ]
-"369
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_Init@buzzer buzzer `*.39S24  1 p 2 7 ]
+"57
+[v Buzzer_Init@lat lat `*.39VEuc  1 p 2 9 ]
+"58
+[v Buzzer_Init@tris tris `*.39VEuc  1 p 2 11 ]
+"59
+[v Buzzer_Init@ansel ansel `*.39VEuc  1 p 2 13 ]
+"60
+[v Buzzer_Init@pin_mask pin_mask `uc  1 p 1 15 ]
+"96
 } 0
-"285
-[v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
+"223
+[v _Buzzer_FinalCorrectClick Buzzer_FinalCorrectClick `(v  1 e 1 0 ]
 {
-[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
-"287
-[v WS2812B_SendByte@mask mask `uc  1 a 1 2 ]
-"285
-[v WS2812B_SendByte@data data `uc  1 p 1 wreg ]
-"298
-[v WS2812B_SendByte@data data `uc  1 p 1 1 ]
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_FinalCorrectClick@buzzer buzzer `*.39S24  1 p 2 52 ]
+"232
+} 0
+"303
+[v _Buzzer_ErrorSound Buzzer_ErrorSound `(v  1 e 1 0 ]
+{
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_ErrorSound@buzzer buzzer `*.39S24  1 p 2 52 ]
 "315
-} 1
-"219
-[v _WS2812B_SendBit WS2812B_SendBit `(v  1 s 1 WS2812B_SendBit ]
-{
-[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
-[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 wreg ]
-"221
-[v WS2812B_SendBit@bit_value bit_value `uc  1 p 1 0 ]
-"264
-} 1
-"168
-[v _WS2812B_SetAll WS2812B_SetAll `(v  1 e 1 0 ]
-{
-"173
-[v WS2812B_SetAll@i i `uc  1 a 1 14 ]
-[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-"168
-[v WS2812B_SetAll@tira tira `*.39S24  1 p 2 8 ]
-"169
-[v WS2812B_SetAll@red red `uc  1 p 1 10 ]
-"170
-[v WS2812B_SetAll@green green `uc  1 p 1 11 ]
-"171
-[v WS2812B_SetAll@blue blue `uc  1 p 1 12 ]
-"185
 } 0
-"111
-[v _WS2812B_SetPixel WS2812B_SetPixel `(v  1 e 1 0 ]
+"244
+[v _Buzzer_CorrectSound Buzzer_CorrectSound `(v  1 e 1 0 ]
 {
-[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-[v WS2812B_SetPixel@tira tira `*.39S24  1 p 2 0 ]
-"112
-[v WS2812B_SetPixel@led led `uc  1 p 1 2 ]
-"113
-[v WS2812B_SetPixel@red red `uc  1 p 1 3 ]
-"114
-[v WS2812B_SetPixel@green green `uc  1 p 1 4 ]
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_CorrectSound@buzzer buzzer `*.39S24  1 p 2 52 ]
+"259
+} 0
+"207
+[v _Buzzer_ButtonClick Buzzer_ButtonClick `(v  1 e 1 0 ]
+{
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_ButtonClick@buzzer buzzer `*.39S24  1 p 2 52 ]
+"211
+} 0
 "115
-[v WS2812B_SetPixel@blue blue `uc  1 p 1 5 ]
-"142
-} 0
-"22
-[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
+[v _Buzzer_Tone Buzzer_Tone `(v  1 e 1 0 ]
 {
-"24
-[v WS2812B_Init@i i `uc  1 a 1 5 ]
-[s S24 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-"22
-[v WS2812B_Init@tira tira `*.39S24  1 p 2 0 ]
-[v WS2812B_Init@num_leds num_leds `uc  1 p 1 2 ]
-"84
+"121
+[v Buzzer_Tone@high_time_us high_time_us `ul  1 a 4 48 ]
+"120
+[v Buzzer_Tone@period_us period_us `ul  1 a 4 44 ]
+"122
+[v Buzzer_Tone@low_time_us low_time_us `ul  1 a 4 40 ]
+"124
+[v Buzzer_Tone@i i `ul  1 a 4 36 ]
+"123
+[v Buzzer_Tone@cycles cycles `ul  1 a 4 32 ]
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+"115
+[v Buzzer_Tone@buzzer buzzer `*.39S24  1 p 2 25 ]
+"116
+[v Buzzer_Tone@freq freq `us  1 p 2 27 ]
+"117
+[v Buzzer_Tone@time_ms time_ms `us  1 p 2 29 ]
+"118
+[v Buzzer_Tone@duty duty `uc  1 p 1 31 ]
+"184
 } 0
-"75 C:\Users\Angel\Desktop\Dispensador Automatico de Pastillas con PIC18F57Q43\TF-Micro.X\irsensor.c
-[v _IRSensor_ReadActiveLow IRSensor_ReadActiveLow `(uc  1 e 1 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
 {
-[s S29 . 7 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v IRSensor_ReadActiveLow@sensor sensor `*.39S29  1 p 2 0 ]
-"89
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
 } 0
-"9
-[v _IRSensor_Init IRSensor_Init `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
-[s S29 . 7 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v IRSensor_Init@sensor sensor `*.39S29  1 p 2 0 ]
 "10
-[v IRSensor_Init@port port `*.39VEuc  1 p 2 2 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 20 ]
 "11
-[v IRSensor_Init@tris tris `*.39VEuc  1 p 2 4 ]
-"12
-[v IRSensor_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
+[v ___lldiv@counter counter `uc  1 a 1 24 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 12 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 16 ]
+"30
+} 0
+"10 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+[v _Buzzer_PinHigh Buzzer_PinHigh `(v  1 s 1 Buzzer_PinHigh ]
+{
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_PinHigh@buzzer buzzer `*.39S24  1 p 2 0 ]
 "13
-[v IRSensor_Init@pin_mask pin_mask `uc  1 p 1 8 ]
-"62
+} 0
+"40
+[v _Buzzer_DelayUs Buzzer_DelayUs `(v  1 s 1 Buzzer_DelayUs ]
+{
+[v Buzzer_DelayUs@time_us time_us `ul  1 p 4 0 ]
+"47
+} 0
+"192
+[v _Buzzer_Off Buzzer_Off `(v  1 e 1 0 ]
+{
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_Off@buzzer buzzer `*.39S24  1 p 2 7 ]
+"195
+} 0
+"22
+[v _Buzzer_PinLow Buzzer_PinLow `(v  1 s 1 Buzzer_PinLow ]
+{
+[s S24 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_PinLow@buzzer buzzer `*.39S24  1 p 2 0 ]
+"25
 } 0

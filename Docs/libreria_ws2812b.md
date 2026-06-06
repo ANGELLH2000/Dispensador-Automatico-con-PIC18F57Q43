@@ -6,7 +6,7 @@ Esta documentación describe el funcionamiento, configuración y uso de la libre
 
 La librería permite controlar varios LEDs WS2812B mediante una sola línea de datos. Cada LED puede recibir un color independiente en formato RGB, aunque internamente la WS2812B requiere que los datos se transmitan en orden **GRB**.
 
-![Motor Paso a Paso con Driver - Imagen](../Docs/img/ws2812b.webp)
+![Tira led ws2112b - Imagen](../Docs/img/ws2812b.webp)
 ---
 
 ## Archivos de la librería

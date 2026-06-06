@@ -8,7 +8,7 @@ Para el circuito y las pruebas del código se emplea el sensor infrarrojo digita
 
 La librería está orientada a sensores IR digitales con salida lógica, especialmente módulos como el **FC-51**. Su función principal es configurar el pin conectado a la salida digital del sensor como entrada digital y permitir al usuario interpretar la lectura según el comportamiento del módulo. En este tipo de sensores, la salida puede trabajar como **activo en bajo** o **activo en alto**, por lo que la librería incluye funciones separadas para ambos casos.
 
-![Motor Paso a Paso con Driver - Imagen](../Docs/img/sensor-de-obstaculos-infrarrojo-fc-51.jpg)
+![Sensor Ir - Imagen](../Docs/img/sensor-de-obstaculos-infrarrojo-fc-51.jpg)
 ---
 
 ## Archivos de la librería

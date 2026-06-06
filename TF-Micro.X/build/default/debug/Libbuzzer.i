@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "Libbuzzer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "Libbuzzer.c" 2
+# 1 "./Libbuzzer.h" 1
+
+
+
 # 1 "./cabecera.h" 1
 
 
@@ -29634,66 +29638,6 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 60 "./cabecera.h" 2
-# 2 "maincode.c" 2
-# 1 "./Libbuzzer.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
 # 5 "./Libbuzzer.h" 2
 # 91 "./Libbuzzer.h"
 typedef struct
@@ -29734,57 +29678,202 @@ void Buzzer_CorrectSound(Buzzer *buzzer);
 void Buzzer_WarningSound(Buzzer *buzzer);
 # 233 "./Libbuzzer.h"
 void Buzzer_ErrorSound(Buzzer *buzzer);
-# 3 "maincode.c" 2
+# 2 "Libbuzzer.c" 2
 
-Buzzer buzzer1;
 
-void config(void)
+
+
+
+
+
+
+static void Buzzer_PinHigh(Buzzer *buzzer)
+{
+    *(buzzer->lat) = (uint8_t)(*(buzzer->lat) | buzzer->pin_mask);
+}
+# 22 "Libbuzzer.c"
+static void Buzzer_PinLow(Buzzer *buzzer)
+{
+    *(buzzer->lat) = (uint8_t)(*(buzzer->lat) & (uint8_t)(~buzzer->pin_mask));
+}
+# 40 "Libbuzzer.c"
+static void Buzzer_DelayUs(uint32_t time_us)
+{
+    while(time_us > 0)
+    {
+        _delay((unsigned long)((1)*(48000000UL/4000000.0)));
+        time_us--;
+    }
+}
+# 56 "Libbuzzer.c"
+void Buzzer_Init(Buzzer *buzzer,
+                 volatile uint8_t *lat,
+                 volatile uint8_t *tris,
+                 volatile uint8_t *ansel,
+                 uint8_t pin_mask)
 {
 
 
 
+    buzzer->lat = lat;
+    buzzer->tris = tris;
+    buzzer->ansel = ansel;
 
-    OSCCON1 = 0x60;
-    OSCFRQ = 0x07;
-    OSCEN = 0x40;
+
+
+
+    buzzer->pin_mask = pin_mask;
+# 81 "Libbuzzer.c"
+    *(buzzer->ansel) = (uint8_t)(*(buzzer->ansel) & (uint8_t)(~buzzer->pin_mask));
+# 90 "Libbuzzer.c"
+    *(buzzer->tris) = (uint8_t)(*(buzzer->tris) & (uint8_t)(~buzzer->pin_mask));
+
+
+
+
+    Buzzer_PinLow(buzzer);
+}
+# 115 "Libbuzzer.c"
+void Buzzer_Tone(Buzzer *buzzer,
+                 uint16_t freq,
+                 uint16_t time_ms,
+                 uint8_t duty)
+{
+    uint32_t period_us;
+    uint32_t high_time_us;
+    uint32_t low_time_us;
+    uint32_t cycles;
+    uint32_t i;
+
+
+
+
+    if(freq == 0)
+    {
+        return;
+    }
+
+
+
+
+
+
+
+    if(duty > 100)
+    {
+        duty = 100;
+    }
+
+
+
+
+    period_us = 1000000UL / freq;
+
+
+
+
+    high_time_us = (period_us * duty) / 100UL;
+    low_time_us = period_us - high_time_us;
+
+
+
+
+
+    cycles = ((uint32_t)time_ms * 1000UL) / period_us;
+
+
+
+
+    for(i = 0; i < cycles; i++)
+    {
+        if(high_time_us > 0)
+        {
+            Buzzer_PinHigh(buzzer);
+            Buzzer_DelayUs(high_time_us);
+        }
+
+        if(low_time_us > 0)
+        {
+            Buzzer_PinLow(buzzer);
+            Buzzer_DelayUs(low_time_us);
+        }
+    }
+
+
+
+
+    Buzzer_PinLow(buzzer);
 }
 
-void main(void)
+
+
+
+
+
+
+void Buzzer_Off(Buzzer *buzzer)
 {
-    config();
-# 28 "maincode.c"
-    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
+    Buzzer_PinLow(buzzer);
+}
+# 207 "Libbuzzer.c"
+void Buzzer_ButtonClick(Buzzer *buzzer)
+{
+    Buzzer_Tone(buzzer, 2500, 20, 50);
+    Buzzer_Off(buzzer);
+}
+# 223 "Libbuzzer.c"
+void Buzzer_FinalCorrectClick(Buzzer *buzzer)
+{
+    Buzzer_Tone(buzzer, 659, 45, 50);
+    _delay((unsigned long)((15)*(48000000UL/4000.0)));
 
-    while(1)
-    {
+    Buzzer_Tone(buzzer, 784, 65, 50);
+    _delay((unsigned long)((20)*(48000000UL/4000.0)));
 
+    Buzzer_Off(buzzer);
+}
+# 244 "Libbuzzer.c"
+void Buzzer_CorrectSound(Buzzer *buzzer)
+{
+    Buzzer_Tone(buzzer, 523, 80, 50);
+    _delay((unsigned long)((20)*(48000000UL/4000.0)));
 
+    Buzzer_Tone(buzzer, 659, 90, 50);
+    _delay((unsigned long)((20)*(48000000UL/4000.0)));
 
-        Buzzer_ButtonClick(&buzzer1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+    Buzzer_Tone(buzzer, 784, 120, 50);
+    _delay((unsigned long)((20)*(48000000UL/4000.0)));
 
+    Buzzer_Tone(buzzer, 1047, 180, 50);
+    _delay((unsigned long)((40)*(48000000UL/4000.0)));
 
+    Buzzer_Off(buzzer);
+}
+# 278 "Libbuzzer.c"
+void Buzzer_WarningSound(Buzzer *buzzer)
+{
+    Buzzer_Tone(buzzer, 880, 90, 50);
+    _delay((unsigned long)((80)*(48000000UL/4000.0)));
 
+    Buzzer_Tone(buzzer, 880, 90, 50);
+    _delay((unsigned long)((80)*(48000000UL/4000.0)));
 
-        Buzzer_FinalCorrectClick(&buzzer1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
+    Buzzer_Tone(buzzer, 880, 90, 50);
+    _delay((unsigned long)((100)*(48000000UL/4000.0)));
 
+    Buzzer_Off(buzzer);
+}
+# 303 "Libbuzzer.c"
+void Buzzer_ErrorSound(Buzzer *buzzer)
+{
+    Buzzer_Tone(buzzer, 392, 160, 60);
+    _delay((unsigned long)((40)*(48000000UL/4000.0)));
 
+    Buzzer_Tone(buzzer, 330, 180, 60);
+    _delay((unsigned long)((40)*(48000000UL/4000.0)));
 
+    Buzzer_Tone(buzzer, 262, 250, 70);
+    _delay((unsigned long)((60)*(48000000UL/4000.0)));
 
-        Buzzer_CorrectSound(&buzzer1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-
-
-
-
-        Buzzer_WarningSound(&buzzer1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-
-
-
-
-        Buzzer_ErrorSound(&buzzer1);
-        _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-    }
+    Buzzer_Off(buzzer);
 }

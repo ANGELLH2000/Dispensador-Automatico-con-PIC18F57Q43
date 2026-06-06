@@ -1,43 +1,62 @@
-#include <xc.h>
 #include "cabecera.h"
-#include "ws2812b.h"
-#include "irsensor.h"
-LED_WS2812B tira1;
-IRsensor sensor_ir;
+#include "Libbuzzer.h"
 
+Buzzer buzzer1;
 
-void config(void) {
-    //conf mod de oscilador
-    OSCCON1 = 0x60;
-    OSCFRQ  = 0x07;
-    OSCEN = 0x40;
-    //Entradas y Salidas
-    
-}
-void main(void)
+void config(void)
 {
     /*
-     * Configuración inicial del sistema.
-     *
-     * Esta función debe configurar el oscilador y cualquier otro módulo
-     * necesario antes de iniciar la tira WS2812B.
+     * Configuración del oscilador interno.
+     * Debe coincidir con _XTAL_FREQ definido en cabecera.h.
      */
+    OSCCON1 = 0x60;
+    OSCFRQ = 0x07;
+    OSCEN  = 0x40;
+}
+
+void main(void)
+{
     config();
-    WS2812B_Init(&tira1, 3);
-    IRSensor_Init(&sensor_ir,&PORTD,&TRISD,&ANSELD,0x02);
-    
-   
-   
+
+    /*
+     * Inicializa el buzzer en RA0.
+     *
+     * Puerto usado: A.
+     * Pin usado: RA0.
+     * Máscara RA0: 0x01.
+     */
+    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
+
     while(1)
     {
-       if(IRSensor_ReadActiveLow(&sensor_ir))
-        {
-           WS2812B_RGB(&tira1, 100, 0, 0);
-        }
-        else
-        {
-            WS2812B_RGB(&tira1, 0, 100, 0);
-        }
-       __delay_ms(100);
+        /*
+         * Click simple de botón.
+         */
+        Buzzer_ButtonClick(&buzzer1);
+        __delay_ms(1000);
+
+        /*
+         * Confirmación corta final.
+         */
+        Buzzer_FinalCorrectClick(&buzzer1);
+        __delay_ms(1000);
+
+        /*
+         * Proceso completado correctamente.
+         */
+        Buzzer_CorrectSound(&buzzer1);
+        __delay_ms(1000);
+
+        /*
+         * Advertencia del sistema.
+         */
+        Buzzer_WarningSound(&buzzer1);
+        __delay_ms(1000);
+
+        /*
+         * Error del sistema.
+         */
+        Buzzer_ErrorSound(&buzzer1);
+        __delay_ms(1000);
     }
 }
