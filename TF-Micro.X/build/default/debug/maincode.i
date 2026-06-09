@@ -7,6 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "maincode.c" 2
+# 15 "maincode.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,7 +29575,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
+# 16 "maincode.c" 2
 
 # 1 "./cabecera.h" 1
 
@@ -29631,7 +29632,7 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 4 "maincode.c" 2
+# 18 "maincode.c" 2
 # 1 "./LCD.h" 1
 
 
@@ -29652,7 +29653,7 @@ void LEER_LCD(void);
 void BLINK_CURSOR(unsigned char val);
 void GENERACARACTER(const unsigned char *vector,unsigned char pos);
 void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 5 "maincode.c" 2
+# 19 "maincode.c" 2
 # 1 "./CNY70.h" 1
 # 24 "./CNY70.h"
 typedef struct
@@ -29684,209 +29685,15 @@ uint8_t CNY70_IsActive(CNY70 *sensor,
                        uint8_t mode);
 
 void CNY70_ResetChannel(void);
-# 6 "maincode.c" 2
-# 1 "./Libbuzzer.h" 1
+# 20 "maincode.c" 2
 
 
 
-# 1 "./cabecera.h" 1
+CNY70 sensorA3;
+CNY70 sensorA4;
 
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./Libbuzzer.h" 2
-# 91 "./Libbuzzer.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-
-    uint8_t pin_mask;
-
-} Buzzer;
-# 135 "./Libbuzzer.h"
-void Buzzer_Init(Buzzer *buzzer,
-                 volatile uint8_t *lat,
-                 volatile uint8_t *tris,
-                 volatile uint8_t *ansel,
-                 uint8_t pin_mask);
-# 169 "./Libbuzzer.h"
-void Buzzer_Tone(Buzzer *buzzer,
-                 uint16_t freq,
-                 uint16_t time_ms,
-                 uint8_t duty);
-
-
-
-
-
-
-
-void Buzzer_Off(Buzzer *buzzer);
-# 189 "./Libbuzzer.h"
-void Buzzer_ButtonClick(Buzzer *buzzer);
-# 198 "./Libbuzzer.h"
-void Buzzer_FinalCorrectClick(Buzzer *buzzer);
-# 207 "./Libbuzzer.h"
-void Buzzer_CorrectSound(Buzzer *buzzer);
-# 223 "./Libbuzzer.h"
-void Buzzer_WarningSound(Buzzer *buzzer);
-# 233 "./Libbuzzer.h"
-void Buzzer_ErrorSound(Buzzer *buzzer);
-# 7 "maincode.c" 2
-# 1 "./motor_paso.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./motor_paso.h" 2
-# 103 "./motor_paso.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    uint8_t nibble;
-    uint8_t index;
-} Stepper;
-# 150 "./motor_paso.h"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble);
-# 168 "./motor_paso.h"
-void Stepper_Step_CW(Stepper *motor);
-# 182 "./motor_paso.h"
-void Stepper_Step_CCW(Stepper *motor);
-# 202 "./motor_paso.h"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 222 "./motor_paso.h"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 243 "./motor_paso.h"
-void Stepper_fullTurn_CW(Stepper *motor);
-# 264 "./motor_paso.h"
-void Stepper_fullTurn_CCW(Stepper *motor);
-# 281 "./motor_paso.h"
-void Stepper_Off(Stepper *motor);
-# 8 "maincode.c" 2
-
-
-
-
-CNY70 sensorIR;
-Buzzer buzzer1;
-Stepper motor1;
-unsigned int resultado_ADC = 0;
-unsigned int contador = 0;
-
-unsigned char estado_bloqueado = 0;
-unsigned char sistema_listo = 0;
+unsigned int valor_A3 = 0;
+unsigned int valor_A4 = 0;
 
 void configuro(void)
 {
@@ -29914,9 +29721,10 @@ void configuro(void)
 
 
 
-    CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
-    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-    Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, 0);
+    CNY70_Init(&sensorA3, &TRISA, &ANSELA, 0x08, 0x03);
+
+
+    CNY70_Init(&sensorA4, &TRISA, &ANSELA, 0x10, 0x04);
 }
 
 void LCD_init(void)
@@ -29934,55 +29742,56 @@ void main(void)
     LCD_init();
 
     POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("CNY70 Lib", 9);
+    ESCRIBE_MENSAJE("CNY70 x2", 8);
 
     POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("RA3 / AN3", 9);
+    ESCRIBE_MENSAJE("A3 y A4", 7);
 
     _delay((unsigned long)((1500)*(64000000UL/4000.0)));
     BORRAR_LCD();
 
     while(1)
     {
-        resultado_ADC = CNY70_Read(&sensorIR);
+
+
+
+        valor_A3 = CNY70_Read(&sensorA3);
+
+
+
+
+
+
+        valor_A4 = CNY70_Read(&sensorA4);
+
+
+
 
         POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("ADC:", 4);
+        ESCRIBE_MENSAJE("A3:", 3);
 
-        ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
-        ENVIA_CHAR((resultado_ADC % 10) + 0x30);
+        ENVIA_CHAR((valor_A3 / 10000) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 10000) / 1000) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 1000) / 100) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor_A3 % 10) + 0x30);
 
         ESCRIBE_MENSAJE("   ", 3);
+
+
+
 
         POS_CURSOR(2, 0);
+        ESCRIBE_MENSAJE("A4:", 3);
 
-        if(resultado_ADC <= 750)
-        {
-            if((estado_bloqueado == 0) && (sistema_listo == 1))
-            {
-                contador++;
-                estado_bloqueado = 1;
-            }
-
-            ESCRIBE_MENSAJE("Pastillas: ", 11);
-        }
-        else
-        {
-            sistema_listo = 1;
-            estado_bloqueado = 0;
-            Buzzer_CorrectSound(&buzzer1);
-
-
-        }
-
-        ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((contador % 100) / 10) + 0x30);
-        ENVIA_CHAR((contador % 10) + 0x30);
+        ENVIA_CHAR((valor_A4 / 10000) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 10000) / 1000) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 1000) / 100) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor_A4 % 10) + 0x30);
 
         ESCRIBE_MENSAJE("   ", 3);
-        Stepper_Step_CW(&motor1);
+
+        _delay((unsigned long)((200)*(64000000UL/4000.0)));
     }
 }

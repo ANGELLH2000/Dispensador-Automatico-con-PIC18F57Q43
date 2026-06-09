@@ -1,28 +1,36 @@
+/*
+ * File:   maincode00.c
+ * Author: ALUMNOS
+ *
+ * Descripción:
+ * Ejemplo de uso de la librería CNY70 con dos sensores analógicos:
+ *
+ * Sensor 1: RA3 / AN3
+ * Sensor 2: RA4 / AN4
+ *
+ * La librería descarga el capacitor interno del ADC solamente cuando
+ * cambia de canal analógico.
+ */
+
 #include <xc.h>
 #include <stdint.h>
 #include "cabecera.h"
 #include "LCD.h"
 #include "CNY70.h"
-#include "Libbuzzer.h"
-#include "motor_paso.h"
+
 #define _XTAL_FREQ 64000000UL
 
-#define UMBRAL_IR 750
+CNY70 sensorA3;
+CNY70 sensorA4;
 
-CNY70 sensorIR;
-Buzzer buzzer1;
-Stepper motor1;
-unsigned int resultado_ADC = 0;
-unsigned int contador = 0;
-
-unsigned char estado_bloqueado = 0;
-unsigned char sistema_listo = 0;
+unsigned int valor_A3 = 0;
+unsigned int valor_A4 = 0;
 
 void configuro(void)
 {
     //================================================
     // Oscilador general del PIC
-    // Esto NO pertenece a la librería CNY70.
+    // Esto no pertenece a la librería CNY70.
     //================================================
     OSCCON1 = 0x60;
     OSCFRQ  = 0x08;
@@ -35,18 +43,19 @@ void configuro(void)
     ANSELD = 0x00;
 
     //================================================
-    // ADC configurado desde la librería
+    // Inicialización general del ADC desde la librería
     //================================================
     CNY70_ADC_Init_FOSC64();
 
     //================================================
-    // Sensor en RA3 / AN3
-    // RA3  -> 0x08
-    // AN3  -> 0x03
+    // Inicialización de sensores CNY70
     //================================================
-    CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
-    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-    Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, STEPPER_LOW_NIBBLE);
+
+    // Sensor conectado en RA3 / AN3
+    CNY70_Init(&sensorA3, &TRISA, &ANSELA, 0x08, 0x03);
+
+    // Sensor conectado en RA4 / AN4
+    CNY70_Init(&sensorA4, &TRISA, &ANSELA, 0x10, 0x04);
 }
 
 void LCD_init(void)
@@ -64,55 +73,56 @@ void main(void)
     LCD_init();
 
     POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("CNY70 Lib", 9);
+    ESCRIBE_MENSAJE("CNY70 x2", 8);
 
     POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("RA3 / AN3", 9);
+    ESCRIBE_MENSAJE("A3 y A4", 7);
 
     __delay_ms(1500);
     BORRAR_LCD();
 
     while(1)
     {
-        resultado_ADC = CNY70_Read(&sensorIR);
+        //================================================
+        // Primera lectura: sensor en RA3 / AN3
+        //================================================
+        valor_A3 = CNY70_Read(&sensorA3);
 
+        //================================================
+        // Segunda lectura: sensor en RA4 / AN4
+        // Aquí la librería detecta que cambió de AN3 a AN4,
+        // por lo tanto descarga el capacitor antes de leer.
+        //================================================
+        valor_A4 = CNY70_Read(&sensorA4);
+
+        //================================================
+        // Mostrar lectura de RA3
+        //================================================
         POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("ADC:", 4);
+        ESCRIBE_MENSAJE("A3:", 3);
 
-        ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
-        ENVIA_CHAR((resultado_ADC % 10) + 0x30);
+        ENVIA_CHAR((valor_A3 / 10000) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 10000) / 1000) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 1000) / 100) + 0x30);
+        ENVIA_CHAR(((valor_A3 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor_A3 % 10) + 0x30);
 
         ESCRIBE_MENSAJE("   ", 3);
 
+        //================================================
+        // Mostrar lectura de RA4
+        //================================================
         POS_CURSOR(2, 0);
+        ESCRIBE_MENSAJE("A4:", 3);
 
-        if(resultado_ADC <= UMBRAL_IR)
-        {
-            if((estado_bloqueado == 0) && (sistema_listo == 1))
-            {
-                contador++;
-                estado_bloqueado = 1;
-            }
-
-            ESCRIBE_MENSAJE("Pastillas: ", 11);
-        }
-        else
-        {
-            sistema_listo = 1;
-            estado_bloqueado = 0;
-            Buzzer_CorrectSound(&buzzer1);
-            //Si deseas desactiva el comentario, sin embargo en la lcd se ve muy rápido
-            //ESCRIBE_MENSAJE("Detectando ", 11);
-        }
-
-        ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((contador % 100) / 10) + 0x30);
-        ENVIA_CHAR((contador % 10) + 0x30);
+        ENVIA_CHAR((valor_A4 / 10000) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 10000) / 1000) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 1000) / 100) + 0x30);
+        ENVIA_CHAR(((valor_A4 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor_A4 % 10) + 0x30);
 
         ESCRIBE_MENSAJE("   ", 3);
-        Stepper_Step_CW(&motor1);
+
+        __delay_ms(200);
     }
 }
