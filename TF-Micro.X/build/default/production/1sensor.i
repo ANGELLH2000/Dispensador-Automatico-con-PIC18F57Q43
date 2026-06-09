@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "1sensor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "1sensor.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,7 +29574,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
+# 2 "1sensor.c" 2
 
 # 1 "./cabecera.h" 1
 
@@ -29631,7 +29631,7 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 4 "maincode.c" 2
+# 4 "1sensor.c" 2
 # 1 "./LCD.h" 1
 
 
@@ -29652,7 +29652,7 @@ void LEER_LCD(void);
 void BLINK_CURSOR(unsigned char val);
 void GENERACARACTER(const unsigned char *vector,unsigned char pos);
 void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 5 "maincode.c" 2
+# 5 "1sensor.c" 2
 # 1 "./CNY70.h" 1
 # 24 "./CNY70.h"
 typedef struct
@@ -29684,7 +29684,7 @@ uint8_t CNY70_IsActive(CNY70 *sensor,
                        uint8_t mode);
 
 void CNY70_ResetChannel(void);
-# 6 "maincode.c" 2
+# 6 "1sensor.c" 2
 # 1 "./Libbuzzer.h" 1
 
 
@@ -29784,7 +29784,7 @@ void Buzzer_CorrectSound(Buzzer *buzzer);
 void Buzzer_WarningSound(Buzzer *buzzer);
 # 233 "./Libbuzzer.h"
 void Buzzer_ErrorSound(Buzzer *buzzer);
-# 7 "maincode.c" 2
+# 7 "1sensor.c" 2
 # 1 "./motor_paso.h" 1
 
 
@@ -29874,7 +29874,7 @@ void Stepper_fullTurn_CW(Stepper *motor);
 void Stepper_fullTurn_CCW(Stepper *motor);
 # 281 "./motor_paso.h"
 void Stepper_Off(Stepper *motor);
-# 8 "maincode.c" 2
+# 8 "1sensor.c" 2
 
 
 

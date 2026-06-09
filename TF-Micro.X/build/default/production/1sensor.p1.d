@@ -1,5 +1,5 @@
-build/default/production/maincode.p1:  \
-maincode.c  \
+build/default/production/1sensor.p1:  \
+1sensor.c  \
 cabecera.h  \
 LCD.h  \
 CNY70.h  \

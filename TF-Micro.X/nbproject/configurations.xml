@@ -24,6 +24,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="Ejemplos CNY70" projectFiles="true">
+        <itemPath>1sensor.c</itemPath>
+        <itemPath>2sensores.c</itemPath>
+      </logicalFolder>
       <itemPath>maincode.c</itemPath>
       <itemPath>ws2812b.c</itemPath>
       <itemPath>motor_paso.c</itemPath>
@@ -79,6 +83,10 @@
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
+      <item path="1sensor.c" ex="true" overriding="false">
+      </item>
+      <item path="2sensores.c" ex="true" overriding="false">
+      </item>
       <HI-TECH-COMP>
         <property key="additional-warnings" value="true"/>
         <property key="asmlist" value="true"/>
