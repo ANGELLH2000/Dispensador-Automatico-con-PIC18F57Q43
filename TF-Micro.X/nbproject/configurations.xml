@@ -10,6 +10,7 @@
       <itemPath>irsensor.h</itemPath>
       <itemPath>Libbuzzer.h</itemPath>
       <itemPath>LCD.h</itemPath>
+      <itemPath>CNY70.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -29,6 +30,7 @@
       <itemPath>irsensor.c</itemPath>
       <itemPath>Libbuzzer.c</itemPath>
       <itemPath>LCD.c</itemPath>
+      <itemPath>CNY70.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

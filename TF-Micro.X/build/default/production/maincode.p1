@@ -1,8 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"25 ./CNY70.h
+[; ;./CNY70.h: 25: {
+[s S2431 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
+[n S2431 . tris_reg ansel_reg pin_mask adc_channel ]
 "92 ./Libbuzzer.h
 [; ;./Libbuzzer.h: 92: {
-[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
-[n S2431 . lat tris ansel pin_mask ]
+[s S2432 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
+[n S2432 . lat tris ansel pin_mask ]
+"104 ./motor_paso.h
+[; ;./motor_paso.h: 104: {
+[s S2433 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
+[n S2433 . lat tris ansel nibble index ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -12,102 +20,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5592
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
 [v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-[p mainexit ]
-"135 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
-[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
-"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-"49145
+"49331
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
+[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
+"41445
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
+[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
+"38 ./CNY70.h
+[; ;./CNY70.h: 38: void CNY70_ADC_Init_FOSC64(void);
+[v _CNY70_ADC_Init_FOSC64 `(v ~T0 @X0 0 ef ]
+"40
+[; ;./CNY70.h: 40: void CNY70_Init(CNY70 *sensor,
+[v _CNY70_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`uc`uc ]
+"49145 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49145: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
 [v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
 "39957
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 39957: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
 [v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
-"189 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 189: void Buzzer_ButtonClick(Buzzer *buzzer);
-[v _Buzzer_ButtonClick `(v ~T0 @X0 0 ef1`*S2431 ]
+"135 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
+[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2432`*Vuc`*Vuc`*Vuc`uc ]
+"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
+[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"150 ./motor_paso.h
+[; ;./motor_paso.h: 150: void Stepper_Init(Stepper *motor,
+[v _Stepper_Init `(v ~T0 @X0 0 ef5`*S2433`*Vuc`*Vuc`*Vuc`uc ]
+"48927 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48927: extern volatile unsigned char LATC __attribute__((address(0x4C0)));
+[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
+"49269
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49269: extern volatile unsigned char TRISC __attribute__((address(0x4C8)));
+[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
+"40949
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40949: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
+[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
+"13 ./LCD.h
+[; ;./LCD.h: 13: void LCD_CONFIG(void);
+[v _LCD_CONFIG `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"198 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 198: void Buzzer_FinalCorrectClick(Buzzer *buzzer);
-[v _Buzzer_FinalCorrectClick `(v ~T0 @X0 0 ef1`*S2431 ]
-"207
-[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
-[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2431 ]
-"223
-[; ;./Libbuzzer.h: 223: void Buzzer_WarningSound(Buzzer *buzzer);
-[v _Buzzer_WarningSound `(v ~T0 @X0 0 ef1`*S2431 ]
-"233
-[; ;./Libbuzzer.h: 233: void Buzzer_ErrorSound(Buzzer *buzzer);
-[v _Buzzer_ErrorSound `(v ~T0 @X0 0 ef1`*S2431 ]
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
+"12 ./LCD.h
+[; ;./LCD.h: 12: void BORRAR_LCD(void);
+[v _BORRAR_LCD `(v ~T0 @X0 0 ef ]
+"9
+[; ;./LCD.h: 9: void CURSOR_HOME(void);
+[v _CURSOR_HOME `(v ~T0 @X0 0 ef ]
+"10
+[; ;./LCD.h: 10: void CURSOR_ONOFF(unsigned char estado);
+[v _CURSOR_ONOFF `(v ~T0 @X0 0 ef1`uc ]
+[p mainexit ]
+"7
+[; ;./LCD.h: 7: void POS_CURSOR(unsigned char fila,unsigned char columna);
+[v _POS_CURSOR `(v ~T0 @X0 0 ef2`uc`uc ]
 "19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
+[; ;./LCD.h: 19: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
+[v _ESCRIBE_MENSAJE `(v ~T0 @X0 0 ef2`*Cuc`uc ]
+"46 ./CNY70.h
+[; ;./CNY70.h: 46: uint16_t CNY70_Read(CNY70 *sensor);
+[v _CNY70_Read `(us ~T0 @X0 0 ef1`*S2431 ]
+"11 ./LCD.h
+[; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
+[v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
+"207 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
+[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2432 ]
+"168 ./motor_paso.h
+[; ;./motor_paso.h: 168: void Stepper_Step_CW(Stepper *motor);
+[v _Stepper_Step_CW `(v ~T0 @X0 0 ef1`*S2433 ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2743,88 +2726,378 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"4 maincode.c
-[; ;maincode.c: 4: Buzzer buzzer1;
-[v _buzzer1 `S2431 ~T0 @X0 1 e ]
-"6
-[; ;maincode.c: 6: void config(void)
-[v _config `(v ~T0 @X0 1 ef ]
 "7
-[; ;maincode.c: 7: {
-{
-[e :U _config ]
-[f ]
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
 "12
-[; ;maincode.c: 12:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
+[p x PR1WAY  =  ON       ]
 "13
-[; ;maincode.c: 13:     OSCFRQ = 0x07;
-[e = _OSCFRQ -> -> 7 `i `uc ]
+[p x CSWEN  =  ON        ]
 "14
-[; ;maincode.c: 14:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"12 maincode.c
+[; ;maincode.c: 12: CNY70 sensorIR;
+[v _sensorIR `S2431 ~T0 @X0 1 e ]
+"13
+[; ;maincode.c: 13: Buzzer buzzer1;
+[v _buzzer1 `S2432 ~T0 @X0 1 e ]
+"14
+[; ;maincode.c: 14: Stepper motor1;
+[v _motor1 `S2433 ~T0 @X0 1 e ]
 "15
-[; ;maincode.c: 15: }
-[e :UE 2432 ]
+[; ;maincode.c: 15: unsigned int resultado_ADC = 0;
+[v _resultado_ADC `ui ~T0 @X0 1 e ]
+[i _resultado_ADC
+-> -> 0 `i `ui
+]
+"16
+[; ;maincode.c: 16: unsigned int contador = 0;
+[v _contador `ui ~T0 @X0 1 e ]
+[i _contador
+-> -> 0 `i `ui
+]
+"18
+[; ;maincode.c: 18: unsigned char estado_bloqueado = 0;
+[v _estado_bloqueado `uc ~T0 @X0 1 e ]
+[i _estado_bloqueado
+-> -> 0 `i `uc
+]
+"19
+[; ;maincode.c: 19: unsigned char sistema_listo = 0;
+[v _sistema_listo `uc ~T0 @X0 1 e ]
+[i _sistema_listo
+-> -> 0 `i `uc
+]
+"21
+[; ;maincode.c: 21: void configuro(void)
+[v _configuro `(v ~T0 @X0 1 ef ]
+"22
+[; ;maincode.c: 22: {
+{
+[e :U _configuro ]
+[f ]
+"27
+[; ;maincode.c: 27:     OSCCON1 = 0x60;
+[e = _OSCCON1 -> -> 96 `i `uc ]
+"28
+[; ;maincode.c: 28:     OSCFRQ = 0x08;
+[e = _OSCFRQ -> -> 8 `i `uc ]
+"29
+[; ;maincode.c: 29:     OSCEN = 0x40;
+[e = _OSCEN -> -> 64 `i `uc ]
+"34
+[; ;maincode.c: 34:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"35
+[; ;maincode.c: 35:     ANSELD = 0x00;
+[e = _ANSELD -> -> 0 `i `uc ]
+"40
+[; ;maincode.c: 40:     CNY70_ADC_Init_FOSC64();
+[e ( _CNY70_ADC_Init_FOSC64 ..  ]
+"47
+[; ;maincode.c: 47:     CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
+[e ( _CNY70_Init (4 , , , , &U _sensorIR &U _TRISA &U _ANSELA -> -> 8 `i `uc -> -> 3 `i `uc ]
+"48
+[; ;maincode.c: 48:     Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
+[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
+"49
+[; ;maincode.c: 49:     Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, 0);
+[e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATC &U _TRISC &U _ANSELC -> -> 0 `i `uc ]
+"50
+[; ;maincode.c: 50: }
+[e :UE 2434 ]
+}
+"52
+[; ;maincode.c: 52: void LCD_init(void)
+[v _LCD_init `(v ~T0 @X0 1 ef ]
+"53
+[; ;maincode.c: 53: {
+{
+[e :U _LCD_init ]
+[f ]
+"54
+[; ;maincode.c: 54:     LCD_CONFIG();
+[e ( _LCD_CONFIG ..  ]
+"55
+[; ;maincode.c: 55:     _delay((unsigned long)((16)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"56
+[; ;maincode.c: 56:     BORRAR_LCD();
+[e ( _BORRAR_LCD ..  ]
+"57
+[; ;maincode.c: 57:     CURSOR_HOME();
+[e ( _CURSOR_HOME ..  ]
+"58
+[; ;maincode.c: 58:     CURSOR_ONOFF(1);
+[e ( _CURSOR_ONOFF (1 -> -> 1 `i `uc ]
+"59
+[; ;maincode.c: 59: }
+[e :UE 2435 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"17
-[; ;maincode.c: 17: void main(void)
+"61
+[; ;maincode.c: 61: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"18
-[; ;maincode.c: 18: {
+"62
+[; ;maincode.c: 62: {
 {
 [e :U _main ]
 [f ]
-"19
-[; ;maincode.c: 19:     config();
-[e ( _config ..  ]
-"28
-[; ;maincode.c: 28:     Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
-"30
-[; ;maincode.c: 30:     while(1)
-[e :U 2435 ]
-"31
-[; ;maincode.c: 31:     {
+"63
+[; ;maincode.c: 63:     configuro();
+[e ( _configuro ..  ]
+"64
+[; ;maincode.c: 64:     LCD_init();
+[e ( _LCD_init ..  ]
+"66
+[; ;maincode.c: 66:     POS_CURSOR(1, 0);
+[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"67
+[; ;maincode.c: 67:     ESCRIBE_MENSAJE("CNY70 Lib", 9);
+[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 9 `i `uc ]
+"69
+[; ;maincode.c: 69:     POS_CURSOR(2, 0);
+[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"70
+[; ;maincode.c: 70:     ESCRIBE_MENSAJE("RA3 / AN3", 9);
+[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 9 `i `uc ]
+"72
+[; ;maincode.c: 72:     _delay((unsigned long)((1500)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"73
+[; ;maincode.c: 73:     BORRAR_LCD();
+[e ( _BORRAR_LCD ..  ]
+"75
+[; ;maincode.c: 75:     while(1)
+[e :U 2438 ]
+"76
+[; ;maincode.c: 76:     {
 {
-"35
-[; ;maincode.c: 35:         Buzzer_ButtonClick(&buzzer1);
-[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
-"36
-[; ;maincode.c: 36:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"41
-[; ;maincode.c: 41:         Buzzer_FinalCorrectClick(&buzzer1);
-[e ( _Buzzer_FinalCorrectClick (1 &U _buzzer1 ]
-"42
-[; ;maincode.c: 42:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"47
-[; ;maincode.c: 47:         Buzzer_CorrectSound(&buzzer1);
+"77
+[; ;maincode.c: 77:         resultado_ADC = CNY70_Read(&sensorIR);
+[e = _resultado_ADC -> ( _CNY70_Read (1 &U _sensorIR `ui ]
+"79
+[; ;maincode.c: 79:         POS_CURSOR(1, 0);
+[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"80
+[; ;maincode.c: 80:         ESCRIBE_MENSAJE("ADC:", 4);
+[e ( _ESCRIBE_MENSAJE (2 , :s 3C -> -> 4 `i `uc ]
+"82
+[; ;maincode.c: 82:         ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / _resultado_ADC -> -> 10000 `i `ui -> -> 48 `i `ui `uc ]
+"83
+[; ;maincode.c: 83:         ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 10000 `i `ui -> -> 1000 `i `ui -> -> 48 `i `ui `uc ]
+"84
+[; ;maincode.c: 84:         ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
+"85
+[; ;maincode.c: 85:         ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"86
+[; ;maincode.c: 86:         ENVIA_CHAR((resultado_ADC % 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + % _resultado_ADC -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"88
+[; ;maincode.c: 88:         ESCRIBE_MENSAJE("   ", 3);
+[e ( _ESCRIBE_MENSAJE (2 , :s 4C -> -> 3 `i `uc ]
+"90
+[; ;maincode.c: 90:         POS_CURSOR(2, 0);
+[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"92
+[; ;maincode.c: 92:         if(resultado_ADC <= 750)
+[e $ ! <= _resultado_ADC -> -> 750 `i `ui 2440  ]
+"93
+[; ;maincode.c: 93:         {
+{
+"94
+[; ;maincode.c: 94:             if((estado_bloqueado == 0) && (sistema_listo == 1))
+[e $ ! && == -> _estado_bloqueado `i -> 0 `i == -> _sistema_listo `i -> 1 `i 2441  ]
+"95
+[; ;maincode.c: 95:             {
+{
+"96
+[; ;maincode.c: 96:                 contador++;
+[e ++ _contador -> -> 1 `i `ui ]
+"97
+[; ;maincode.c: 97:                 estado_bloqueado = 1;
+[e = _estado_bloqueado -> -> 1 `i `uc ]
+"98
+[; ;maincode.c: 98:             }
+}
+[e :U 2441 ]
+"100
+[; ;maincode.c: 100:             ESCRIBE_MENSAJE("Pastillas: ", 11);
+[e ( _ESCRIBE_MENSAJE (2 , :s 5C -> -> 11 `i `uc ]
+"101
+[; ;maincode.c: 101:         }
+}
+[e $U 2442  ]
+"102
+[; ;maincode.c: 102:         else
+[e :U 2440 ]
+"103
+[; ;maincode.c: 103:         {
+{
+"104
+[; ;maincode.c: 104:             sistema_listo = 1;
+[e = _sistema_listo -> -> 1 `i `uc ]
+"105
+[; ;maincode.c: 105:             estado_bloqueado = 0;
+[e = _estado_bloqueado -> -> 0 `i `uc ]
+"106
+[; ;maincode.c: 106:             Buzzer_CorrectSound(&buzzer1);
 [e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
-"48
-[; ;maincode.c: 48:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"53
-[; ;maincode.c: 53:         Buzzer_WarningSound(&buzzer1);
-[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
-"54
-[; ;maincode.c: 54:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"59
-[; ;maincode.c: 59:         Buzzer_ErrorSound(&buzzer1);
-[e ( _Buzzer_ErrorSound (1 &U _buzzer1 ]
-"60
-[; ;maincode.c: 60:         _delay((unsigned long)((1000)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
-"61
-[; ;maincode.c: 61:     }
+"109
+[; ;maincode.c: 109:         }
 }
-[e :U 2434 ]
-[e $U 2435  ]
-[e :U 2436 ]
-"62
-[; ;maincode.c: 62: }
-[e :UE 2433 ]
+[e :U 2442 ]
+"111
+[; ;maincode.c: 111:         ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
+"112
+[; ;maincode.c: 112:         ENVIA_CHAR(((contador % 100) / 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"113
+[; ;maincode.c: 113:         ENVIA_CHAR((contador % 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + % _contador -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+"115
+[; ;maincode.c: 115:         ESCRIBE_MENSAJE("   ", 3);
+[e ( _ESCRIBE_MENSAJE (2 , :s 6C -> -> 3 `i `uc ]
+"116
+[; ;maincode.c: 116:         Stepper_Step_CW(&motor1);
+[e ( _Stepper_Step_CW (1 &U _motor1 ]
+"117
+[; ;maincode.c: 117:     }
 }
+[e :U 2437 ]
+[e $U 2438  ]
+[e :U 2439 ]
+"118
+[; ;maincode.c: 118: }
+[e :UE 2436 ]
+}
+[a 1C 67 78 89 55 48 32 76 105 98 0 ]
+[a 3C 65 68 67 58 0 ]
+[a 2C 82 65 51 32 47 32 65 78 51 0 ]
+[a 5C 80 97 115 116 105 108 108 97 115 58 32 0 ]
+[a 4C 32 32 32 0 ]
+[a 6C 32 32 32 0 ]

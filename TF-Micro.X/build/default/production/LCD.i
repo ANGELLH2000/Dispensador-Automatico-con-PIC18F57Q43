@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "LCD.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,64 +29575,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 4 "maincode.c" 2
+# 3 "LCD.c" 2
 # 1 "./LCD.h" 1
 
 
@@ -29652,337 +29596,163 @@ void LEER_LCD(void);
 void BLINK_CURSOR(unsigned char val);
 void GENERACARACTER(const unsigned char *vector,unsigned char pos);
 void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 5 "maincode.c" 2
-# 1 "./CNY70.h" 1
-# 24 "./CNY70.h"
-typedef struct
+# 4 "LCD.c" 2
+
+
+void POS_CURSOR(unsigned char fila,unsigned char columna)
 {
-    volatile unsigned char *tris_reg;
-    volatile unsigned char *ansel_reg;
-
-    unsigned char pin_mask;
-    unsigned char adc_channel;
-
-} CNY70;
-
-
-
-
-
-void CNY70_ADC_Init_FOSC64(void);
-
-void CNY70_Init(CNY70 *sensor,
-                volatile unsigned char *tris,
-                volatile unsigned char *ansel,
-                unsigned char pin_mask,
-                unsigned char adc_channel);
-
-uint16_t CNY70_Read(CNY70 *sensor);
-
-uint8_t CNY70_IsActive(CNY70 *sensor,
-                       uint16_t threshold,
-                       uint8_t mode);
-
-void CNY70_ResetChannel(void);
-# 6 "maincode.c" 2
-# 1 "./Libbuzzer.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./Libbuzzer.h" 2
-# 91 "./Libbuzzer.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-
-    uint8_t pin_mask;
-
-} Buzzer;
-# 135 "./Libbuzzer.h"
-void Buzzer_Init(Buzzer *buzzer,
-                 volatile uint8_t *lat,
-                 volatile uint8_t *tris,
-                 volatile uint8_t *ansel,
-                 uint8_t pin_mask);
-# 169 "./Libbuzzer.h"
-void Buzzer_Tone(Buzzer *buzzer,
-                 uint16_t freq,
-                 uint16_t time_ms,
-                 uint8_t duty);
-
-
-
-
-
-
-
-void Buzzer_Off(Buzzer *buzzer);
-# 189 "./Libbuzzer.h"
-void Buzzer_ButtonClick(Buzzer *buzzer);
-# 198 "./Libbuzzer.h"
-void Buzzer_FinalCorrectClick(Buzzer *buzzer);
-# 207 "./Libbuzzer.h"
-void Buzzer_CorrectSound(Buzzer *buzzer);
-# 223 "./Libbuzzer.h"
-void Buzzer_WarningSound(Buzzer *buzzer);
-# 233 "./Libbuzzer.h"
-void Buzzer_ErrorSound(Buzzer *buzzer);
-# 7 "maincode.c" 2
-# 1 "./motor_paso.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./motor_paso.h" 2
-# 103 "./motor_paso.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    uint8_t nibble;
-    uint8_t index;
-} Stepper;
-# 150 "./motor_paso.h"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble);
-# 168 "./motor_paso.h"
-void Stepper_Step_CW(Stepper *motor);
-# 182 "./motor_paso.h"
-void Stepper_Step_CCW(Stepper *motor);
-# 202 "./motor_paso.h"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 222 "./motor_paso.h"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 243 "./motor_paso.h"
-void Stepper_fullTurn_CW(Stepper *motor);
-# 264 "./motor_paso.h"
-void Stepper_fullTurn_CCW(Stepper *motor);
-# 281 "./motor_paso.h"
-void Stepper_Off(Stepper *motor);
-# 8 "maincode.c" 2
-
-
-
-
-CNY70 sensorIR;
-Buzzer buzzer1;
-Stepper motor1;
-unsigned int resultado_ADC = 0;
-unsigned int contador = 0;
-
-unsigned char estado_bloqueado = 0;
-unsigned char sistema_listo = 0;
-
-void configuro(void)
-{
-
-
-
-
-    OSCCON1 = 0x60;
-    OSCFRQ = 0x08;
-    OSCEN = 0x40;
-
-
-
-
-    TRISD = 0x00;
-    ANSELD = 0x00;
-
-
-
-
-    CNY70_ADC_Init_FOSC64();
-
-
-
-
-
-
-    CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
-    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-    Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, 0);
+ if(fila == 1)
+ {
+  ENVIA_LCD_CMD(0x80+columna);
+ }
+ else if(fila == 2)
+ {
+  ENVIA_LCD_CMD(0xC0+columna);
+ }
 }
 
-void LCD_init(void)
+void BLINK_CURSOR(unsigned char val)
 {
-    LCD_CONFIG();
-    _delay((unsigned long)((16)*(64000000UL/4000.0)));
-    BORRAR_LCD();
-    CURSOR_HOME();
-    CURSOR_ONOFF(1);
+ if(val == 1) ENVIA_LCD_CMD(0x0E);
+ if(val == 0 ) ENVIA_LCD_CMD(0x0F);
 }
 
-void main(void)
+void DISPLAY_ONOFF(unsigned char estado)
 {
-    configuro();
-    LCD_init();
+ if(estado == 0) ENVIA_LCD_CMD(0x0F);
+ if(estado == 1) ENVIA_LCD_CMD(0x08);
+}
 
-    POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("CNY70 Lib", 9);
+void CURSOR_HOME(void)
+{
+ ENVIA_LCD_CMD(0x02);
+}
 
-    POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("RA3 / AN3", 9);
+void CURSOR_ONOFF(unsigned char estado)
+{
+ if(estado == 0) ENVIA_LCD_CMD(0x0E);
+ if(estado == 1) ENVIA_LCD_CMD(0x0C);
+}
 
-    _delay((unsigned long)((1500)*(64000000UL/4000.0)));
-    BORRAR_LCD();
+void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam)
+{
+ unsigned char i = 0;
+ for(i = 0; i<tam; i++)
+ {
+  ENVIA_CHAR(cadena[i]);
+ }
+}
 
-    while(1)
-    {
-        resultado_ADC = CNY70_Read(&sensorIR);
+void ENVIA_CHAR(unsigned char dato)
+{
+ unsigned char aux;
+ LATDbits.LATD0 = 1;
+ LEER_LCD();
+ TRISD = 0x00;
+        _delay(1200);
 
-        POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("ADC:", 4);
+ LATDbits.LATD1 = 0;
+ LATDbits.LATD2 = 0;
+ LATDbits.LATD0 = 1;
+ aux = dato & 0xF0;
+ ENVIA_NIBBLE(aux);
+ aux = dato << 4;
+ ENVIA_NIBBLE(aux);
+}
 
-        ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
-        ENVIA_CHAR((resultado_ADC % 10) + 0x30);
+void BORRAR_LCD(void)
+{
+ ENVIA_LCD_CMD(0x01);
+}
 
-        ESCRIBE_MENSAJE("   ", 3);
+void LCD_CONFIG(void)
+{
+ LATDbits.LATD0 = 0;
+ LATDbits.LATD1 = 0;
+ ENVIA_NIBBLE(0x30);
+        _delay(24000);
+        _delay(24000);
 
-        POS_CURSOR(2, 0);
 
-        if(resultado_ADC <= 750)
+ ENVIA_NIBBLE(0x30);
+
+ _delay(1200);
+        ENVIA_NIBBLE(0x30);
+ ENVIA_NIBBLE(0x20);
+ ENVIA_LCD_CMD(0x01);
+ ENVIA_LCD_CMD(0x28);
+ ENVIA_LCD_CMD(0x0F);
+ ENVIA_LCD_CMD(0x06);
+ ENVIA_LCD_CMD(0x01);
+}
+
+void ENVIA_NIBBLE(unsigned char dato)
+{
+ LATD &= 0x0F;
+ dato &= 0xF0;
+ LATD|= dato;
+ LATDbits.LATD2 = 1;
+
+        _delay(1200);
+ LATDbits.LATD2 = 0;
+}
+
+void ENVIA_LCD_CMD(unsigned char dato)
+{
+ unsigned char aux;
+ LATDbits.LATD0 = 0;
+ LEER_LCD();
+ TRISD = 0b00000000;
+
+        _delay(1200);
+        LATDbits.LATD1 = 0;
+ LATDbits.LATD2 = 0;
+ LATDbits.LATD0 = 0;
+ aux = dato & 0xF0;
+ ENVIA_NIBBLE(aux);
+ aux = dato<<4;
+ ENVIA_NIBBLE(aux);
+}
+
+void LEER_LCD(void)
+{
+ unsigned char aux;
+ TRISD = 0xF8;
+ LATDbits.LATD0 = 0;
+ LATDbits.LATD1 = 1;
+ LATDbits.LATD2 = 1;
+        _delay(1200);
+
+ aux = PORTD;
+ LATDbits.LATD2 = 0;
+        _delay(1200);
+
+ LATDbits.LATD2 = 1;
+        _delay(1200);
+
+ LATDbits.LATD2 = 0;
+ aux = aux & 0x80;
+ while(aux == 0x80)
         {
-            if((estado_bloqueado == 0) && (sistema_listo == 1))
-            {
-                contador++;
-                estado_bloqueado = 1;
-            }
+            LATDbits.LATD2 = 1;
+            _delay(1200);
+            aux = PORTD;
+            LATDbits.LATD2 = 0;
+            _delay(1200);
+            LATDbits.LATD2 = 1;
+            _delay(1200);
+            LATDbits.LATD2 = 0;
+            aux = aux & 0x80;
+ }
+}
 
-            ESCRIBE_MENSAJE("Pastillas: ", 11);
-        }
-        else
-        {
-            sistema_listo = 1;
-            estado_bloqueado = 0;
-            Buzzer_CorrectSound(&buzzer1);
-
-
-        }
-
-        ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((contador % 100) / 10) + 0x30);
-        ENVIA_CHAR((contador % 10) + 0x30);
-
-        ESCRIBE_MENSAJE("   ", 3);
-        Stepper_Step_CW(&motor1);
-    }
+void GENERACARACTER(const unsigned char *vector,unsigned char pos)
+{
+ unsigned char i;
+ ENVIA_LCD_CMD(0x40+8*pos);
+ for(i=0;i<8;i++)
+ {
+  ENVIA_CHAR(vector[i]);
+ }
+ ENVIA_LCD_CMD(0x80);
 }
