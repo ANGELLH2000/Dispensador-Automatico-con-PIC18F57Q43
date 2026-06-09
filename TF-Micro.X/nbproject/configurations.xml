@@ -9,6 +9,7 @@
       <itemPath>motor_paso.h</itemPath>
       <itemPath>irsensor.h</itemPath>
       <itemPath>Libbuzzer.h</itemPath>
+      <itemPath>LCD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -27,6 +28,7 @@
       <itemPath>motor_paso.c</itemPath>
       <itemPath>irsensor.c</itemPath>
       <itemPath>Libbuzzer.c</itemPath>
+      <itemPath>LCD.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

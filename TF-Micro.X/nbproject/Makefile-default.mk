@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=maincode.c ws2812b.c motor_paso.c irsensor.c Libbuzzer.c
+SOURCEFILES_QUOTED_IF_SPACED=maincode.c ws2812b.c motor_paso.c irsensor.c Libbuzzer.c LCD.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1 ${OBJECTDIR}/motor_paso.p1 ${OBJECTDIR}/irsensor.p1 ${OBJECTDIR}/Libbuzzer.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/maincode.p1.d ${OBJECTDIR}/ws2812b.p1.d ${OBJECTDIR}/motor_paso.p1.d ${OBJECTDIR}/irsensor.p1.d ${OBJECTDIR}/Libbuzzer.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1 ${OBJECTDIR}/motor_paso.p1 ${OBJECTDIR}/irsensor.p1 ${OBJECTDIR}/Libbuzzer.p1 ${OBJECTDIR}/LCD.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/maincode.p1.d ${OBJECTDIR}/ws2812b.p1.d ${OBJECTDIR}/motor_paso.p1.d ${OBJECTDIR}/irsensor.p1.d ${OBJECTDIR}/Libbuzzer.p1.d ${OBJECTDIR}/LCD.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1 ${OBJECTDIR}/motor_paso.p1 ${OBJECTDIR}/irsensor.p1 ${OBJECTDIR}/Libbuzzer.p1
+OBJECTFILES=${OBJECTDIR}/maincode.p1 ${OBJECTDIR}/ws2812b.p1 ${OBJECTDIR}/motor_paso.p1 ${OBJECTDIR}/irsensor.p1 ${OBJECTDIR}/Libbuzzer.p1 ${OBJECTDIR}/LCD.p1
 
 # Source Files
-SOURCEFILES=maincode.c ws2812b.c motor_paso.c irsensor.c Libbuzzer.c
+SOURCEFILES=maincode.c ws2812b.c motor_paso.c irsensor.c Libbuzzer.c LCD.c
 
 
 
@@ -128,6 +128,14 @@ ${OBJECTDIR}/Libbuzzer.p1: Libbuzzer.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Libbuzzer.d ${OBJECTDIR}/Libbuzzer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Libbuzzer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/LCD.p1: LCD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LCD.p1.d 
+	@${RM} ${OBJECTDIR}/LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/LCD.p1 LCD.c 
+	@-${MV} ${OBJECTDIR}/LCD.d ${OBJECTDIR}/LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/maincode.p1: maincode.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -168,6 +176,14 @@ ${OBJECTDIR}/Libbuzzer.p1: Libbuzzer.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Libbuzzer.p1 Libbuzzer.c 
 	@-${MV} ${OBJECTDIR}/Libbuzzer.d ${OBJECTDIR}/Libbuzzer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Libbuzzer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/LCD.p1: LCD.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LCD.p1.d 
+	@${RM} ${OBJECTDIR}/LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/LCD.p1 LCD.c 
+	@-${MV} ${OBJECTDIR}/LCD.d ${OBJECTDIR}/LCD.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
