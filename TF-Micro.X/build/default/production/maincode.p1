@@ -1,16 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"25 ./CNY70.h
-[; ;./CNY70.h: 25: {
-[s S2431 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2431 . tris_reg ansel_reg pin_mask adc_channel ]
-"92 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 92: {
-[s S2432 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
-[n S2432 . lat tris ansel pin_mask ]
-"104 ./motor_paso.h
-[; ;./motor_paso.h: 104: {
-[s S2433 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2433 . lat tris ansel nibble index ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -26,36 +14,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41445
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
 [v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"38 ./CNY70.h
-[; ;./CNY70.h: 38: void CNY70_ADC_Init_FOSC64(void);
-[v _CNY70_ADC_Init_FOSC64 `(v ~T0 @X0 0 ef ]
-"40
-[; ;./CNY70.h: 40: void CNY70_Init(CNY70 *sensor,
-[v _CNY70_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`uc`uc ]
-"49145 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49145: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
-[v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
-"39957
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 39957: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
-"135 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
-[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2432`*Vuc`*Vuc`*Vuc`uc ]
-"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-"150 ./motor_paso.h
-[; ;./motor_paso.h: 150: void Stepper_Init(Stepper *motor,
-[v _Stepper_Init `(v ~T0 @X0 0 ef5`*S2433`*Vuc`*Vuc`*Vuc`uc ]
-"48927 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48927: extern volatile unsigned char LATC __attribute__((address(0x4C0)));
-[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
-"49269
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49269: extern volatile unsigned char TRISC __attribute__((address(0x4C8)));
-[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
-"40949
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40949: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
+"49275
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49275:     struct {
+[s S2298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2298 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"49274
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49274: typedef union {
+[u S2297 `S2298 1 ]
+[n S2297 . . ]
+"49286
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49286: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x4C8)));
+[v _TRISCbits `VS2297 ~T0 @X0 0 e@1224 ]
+"40955
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40955:     struct {
+[s S1932 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1932 . ANSELC0 ANSELC1 ANSELC2 ANSELC3 ANSELC4 ANSELC5 ANSELC6 ANSELC7 ]
+"40954
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40954: typedef union {
+[u S1931 `S1932 1 ]
+[n S1931 . . ]
+"40966
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40966: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x410)));
+[v _ANSELCbits `VS1931 ~T0 @X0 0 e@1040 ]
+"41017
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41017:     struct {
+[s S1934 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1934 . WPUC0 WPUC1 WPUC2 WPUC3 WPUC4 WPUC5 WPUC6 WPUC7 ]
+"41016
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41016: typedef union {
+[u S1933 `S1934 1 ]
+[n S1933 . . ]
+"41028
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41028: extern volatile WPUCbits_t WPUCbits __attribute__((address(0x411)));
+[v _WPUCbits `VS1933 ~T0 @X0 0 e@1041 ]
 "13 ./LCD.h
 [; ;./LCD.h: 13: void LCD_CONFIG(void);
 [v _LCD_CONFIG `(v ~T0 @X0 0 ef ]
@@ -79,18 +70,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19
 [; ;./LCD.h: 19: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
 [v _ESCRIBE_MENSAJE `(v ~T0 @X0 0 ef2`*Cuc`uc ]
-"46 ./CNY70.h
-[; ;./CNY70.h: 46: uint16_t CNY70_Read(CNY70 *sensor);
-[v _CNY70_Read `(us ~T0 @X0 0 ef1`*S2431 ]
+"12 ./EPROM_DFM.h
+[; ;./EPROM_DFM.h: 12: uint8_t EEPROM_ReadByte(uint16_t address);
+[v _EEPROM_ReadByte `(uc ~T0 @X0 0 ef1`us ]
 "11 ./LCD.h
 [; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
 [v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"207 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
-[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2432 ]
-"168 ./motor_paso.h
-[; ;./motor_paso.h: 168: void Stepper_Step_CW(Stepper *motor);
-[v _Stepper_Step_CW `(v ~T0 @X0 0 ef1`*S2433 ]
+"49617 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49617:     struct {
+[s S2310 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2310 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"49616
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49616: typedef union {
+[u S2309 `S2310 1 ]
+[n S2309 . . ]
+"49628
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49628: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x4D0)));
+[v _PORTCbits `VS2309 ~T0 @X0 0 e@1232 ]
+"13 ./EPROM_DFM.h
+[; ;./EPROM_DFM.h: 13: void EEPROM_UpdateByte(uint16_t address, uint8_t data);
+[v _EEPROM_UpdateByte `(v ~T0 @X0 0 ef2`us`uc ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2726,378 +2725,435 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"12 maincode.c
-[; ;maincode.c: 12: CNY70 sensorIR;
-[v _sensorIR `S2431 ~T0 @X0 1 e ]
-"13
-[; ;maincode.c: 13: Buzzer buzzer1;
-[v _buzzer1 `S2432 ~T0 @X0 1 e ]
-"14
-[; ;maincode.c: 14: Stepper motor1;
-[v _motor1 `S2433 ~T0 @X0 1 e ]
-"15
-[; ;maincode.c: 15: unsigned int resultado_ADC = 0;
-[v _resultado_ADC `ui ~T0 @X0 1 e ]
-[i _resultado_ADC
--> -> 0 `i `ui
-]
-"16
-[; ;maincode.c: 16: unsigned int contador = 0;
-[v _contador `ui ~T0 @X0 1 e ]
-[i _contador
--> -> 0 `i `ui
-]
-"18
-[; ;maincode.c: 18: unsigned char estado_bloqueado = 0;
-[v _estado_bloqueado `uc ~T0 @X0 1 e ]
-[i _estado_bloqueado
+"16 maincode.c
+[; ;maincode.c: 16: unsigned char valor0 = 0;
+[v _valor0 `uc ~T0 @X0 1 e ]
+[i _valor0
 -> -> 0 `i `uc
 ]
-"19
-[; ;maincode.c: 19: unsigned char sistema_listo = 0;
-[v _sistema_listo `uc ~T0 @X0 1 e ]
-[i _sistema_listo
+"17
+[; ;maincode.c: 17: unsigned char valor1 = 0;
+[v _valor1 `uc ~T0 @X0 1 e ]
+[i _valor1
 -> -> 0 `i `uc
 ]
-"21
-[; ;maincode.c: 21: void configuro(void)
+"18
+[; ;maincode.c: 18: unsigned char posicion = 0;
+[v _posicion `uc ~T0 @X0 1 e ]
+[i _posicion
+-> -> 0 `i `uc
+]
+"20
+[; ;maincode.c: 20: void configuro(void)
 [v _configuro `(v ~T0 @X0 1 ef ]
-"22
-[; ;maincode.c: 22: {
+"21
+[; ;maincode.c: 21: {
 {
 [e :U _configuro ]
 [f ]
-"27
-[; ;maincode.c: 27:     OSCCON1 = 0x60;
+"25
+[; ;maincode.c: 25:     OSCCON1 = 0x60;
 [e = _OSCCON1 -> -> 96 `i `uc ]
-"28
-[; ;maincode.c: 28:     OSCFRQ = 0x08;
+"26
+[; ;maincode.c: 26:     OSCFRQ = 0x08;
 [e = _OSCFRQ -> -> 8 `i `uc ]
-"29
-[; ;maincode.c: 29:     OSCEN = 0x40;
+"27
+[; ;maincode.c: 27:     OSCEN = 0x40;
 [e = _OSCEN -> -> 64 `i `uc ]
-"34
-[; ;maincode.c: 34:     TRISD = 0x00;
+"32
+[; ;maincode.c: 32:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"35
-[; ;maincode.c: 35:     ANSELD = 0x00;
+"33
+[; ;maincode.c: 33:     ANSELD = 0x00;
 [e = _ANSELD -> -> 0 `i `uc ]
+"38
+[; ;maincode.c: 38:     TRISCbits.TRISC0 = 1;
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"39
+[; ;maincode.c: 39:     TRISCbits.TRISC1 = 1;
+[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
 "40
-[; ;maincode.c: 40:     CNY70_ADC_Init_FOSC64();
-[e ( _CNY70_ADC_Init_FOSC64 ..  ]
+[; ;maincode.c: 40:     TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"42
+[; ;maincode.c: 42:     ANSELCbits.ANSELC0 = 0;
+[e = . . _ANSELCbits 0 0 -> -> 0 `i `uc ]
+"43
+[; ;maincode.c: 43:     ANSELCbits.ANSELC1 = 0;
+[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
+"44
+[; ;maincode.c: 44:     ANSELCbits.ANSELC3 = 0;
+[e = . . _ANSELCbits 0 3 -> -> 0 `i `uc ]
+"46
+[; ;maincode.c: 46:     WPUCbits.WPUC0 = 1;
+[e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
 "47
-[; ;maincode.c: 47:     CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
-[e ( _CNY70_Init (4 , , , , &U _sensorIR &U _TRISA &U _ANSELA -> -> 8 `i `uc -> -> 3 `i `uc ]
+[; ;maincode.c: 47:     WPUCbits.WPUC1 = 1;
+[e = . . _WPUCbits 0 1 -> -> 1 `i `uc ]
 "48
-[; ;maincode.c: 48:     Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
+[; ;maincode.c: 48:     WPUCbits.WPUC3 = 1;
+[e = . . _WPUCbits 0 3 -> -> 1 `i `uc ]
 "49
-[; ;maincode.c: 49:     Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, 0);
-[e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATC &U _TRISC &U _ANSELC -> -> 0 `i `uc ]
-"50
-[; ;maincode.c: 50: }
-[e :UE 2434 ]
+[; ;maincode.c: 49: }
+[e :UE 2431 ]
 }
-"52
-[; ;maincode.c: 52: void LCD_init(void)
+"51
+[; ;maincode.c: 51: void LCD_init(void)
 [v _LCD_init `(v ~T0 @X0 1 ef ]
-"53
-[; ;maincode.c: 53: {
+"52
+[; ;maincode.c: 52: {
 {
 [e :U _LCD_init ]
 [f ]
-"54
-[; ;maincode.c: 54:     LCD_CONFIG();
+"53
+[; ;maincode.c: 53:     LCD_CONFIG();
 [e ( _LCD_CONFIG ..  ]
-"55
-[; ;maincode.c: 55:     _delay((unsigned long)((16)*(64000000UL/4000.0)));
+"54
+[; ;maincode.c: 54:     _delay((unsigned long)((16)*(64000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 16 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"56
-[; ;maincode.c: 56:     BORRAR_LCD();
+"55
+[; ;maincode.c: 55:     BORRAR_LCD();
 [e ( _BORRAR_LCD ..  ]
-"57
-[; ;maincode.c: 57:     CURSOR_HOME();
+"56
+[; ;maincode.c: 56:     CURSOR_HOME();
 [e ( _CURSOR_HOME ..  ]
-"58
-[; ;maincode.c: 58:     CURSOR_ONOFF(1);
+"57
+[; ;maincode.c: 57:     CURSOR_ONOFF(1);
 [e ( _CURSOR_ONOFF (1 -> -> 1 `i `uc ]
-"59
-[; ;maincode.c: 59: }
-[e :UE 2435 ]
+"58
+[; ;maincode.c: 58: }
+[e :UE 2432 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"61
-[; ;maincode.c: 61: void main(void)
+"60
+[; ;maincode.c: 60: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"62
-[; ;maincode.c: 62: {
+"61
+[; ;maincode.c: 61: {
 {
 [e :U _main ]
 [f ]
-"63
-[; ;maincode.c: 63:     configuro();
+"62
+[; ;maincode.c: 62:     configuro();
 [e ( _configuro ..  ]
-"64
-[; ;maincode.c: 64:     LCD_init();
+"63
+[; ;maincode.c: 63:     LCD_init();
 [e ( _LCD_init ..  ]
-"66
-[; ;maincode.c: 66:     POS_CURSOR(1, 0);
+"64
+[; ;maincode.c: 64:     POS_CURSOR(1, 0);
 [e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"67
-[; ;maincode.c: 67:     ESCRIBE_MENSAJE("CNY70 Lib", 9);
-[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 9 `i `uc ]
-"69
-[; ;maincode.c: 69:     POS_CURSOR(2, 0);
+"65
+[; ;maincode.c: 65:     ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
+[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 16 `i `uc ]
+"66
+[; ;maincode.c: 66:     POS_CURSOR(2, 0);
 [e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"70
-[; ;maincode.c: 70:     ESCRIBE_MENSAJE("RA3 / AN3", 9);
-[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 9 `i `uc ]
+"67
+[; ;maincode.c: 67:     ESCRIBE_MENSAJE("Para:  ISABEL  ", 15);
+[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 15 `i `uc ]
+"68
+[; ;maincode.c: 68:     _delay((unsigned long)((2000)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "72
-[; ;maincode.c: 72:     _delay((unsigned long)((1500)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;maincode.c: 72:     valor0 = EEPROM_ReadByte(0);
+[e = _valor0 ( _EEPROM_ReadByte (1 -> -> 0 `i `us ]
 "73
-[; ;maincode.c: 73:     BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
+[; ;maincode.c: 73:     valor1 = EEPROM_ReadByte(1);
+[e = _valor1 ( _EEPROM_ReadByte (1 -> -> 1 `i `us ]
 "75
-[; ;maincode.c: 75:     while(1)
-[e :U 2438 ]
+[; ;maincode.c: 75:     if(valor0 == 0xFF)
+[e $ ! == -> _valor0 `i -> 255 `i 2434  ]
 "76
 [; ;maincode.c: 76:     {
 {
 "77
-[; ;maincode.c: 77:         resultado_ADC = CNY70_Read(&sensorIR);
-[e = _resultado_ADC -> ( _CNY70_Read (1 &U _sensorIR `ui ]
-"79
-[; ;maincode.c: 79:         POS_CURSOR(1, 0);
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"80
-[; ;maincode.c: 80:         ESCRIBE_MENSAJE("ADC:", 4);
-[e ( _ESCRIBE_MENSAJE (2 , :s 3C -> -> 4 `i `uc ]
-"82
-[; ;maincode.c: 82:         ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / _resultado_ADC -> -> 10000 `i `ui -> -> 48 `i `ui `uc ]
-"83
-[; ;maincode.c: 83:         ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 10000 `i `ui -> -> 1000 `i `ui -> -> 48 `i `ui `uc ]
-"84
-[; ;maincode.c: 84:         ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
-"85
-[; ;maincode.c: 85:         ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"86
-[; ;maincode.c: 86:         ENVIA_CHAR((resultado_ADC % 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + % _resultado_ADC -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"88
-[; ;maincode.c: 88:         ESCRIBE_MENSAJE("   ", 3);
-[e ( _ESCRIBE_MENSAJE (2 , :s 4C -> -> 3 `i `uc ]
-"90
-[; ;maincode.c: 90:         POS_CURSOR(2, 0);
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"92
-[; ;maincode.c: 92:         if(resultado_ADC <= 750)
-[e $ ! <= _resultado_ADC -> -> 750 `i `ui 2440  ]
-"93
-[; ;maincode.c: 93:         {
-{
-"94
-[; ;maincode.c: 94:             if((estado_bloqueado == 0) && (sistema_listo == 1))
-[e $ ! && == -> _estado_bloqueado `i -> 0 `i == -> _sistema_listo `i -> 1 `i 2441  ]
-"95
-[; ;maincode.c: 95:             {
-{
-"96
-[; ;maincode.c: 96:                 contador++;
-[e ++ _contador -> -> 1 `i `ui ]
-"97
-[; ;maincode.c: 97:                 estado_bloqueado = 1;
-[e = _estado_bloqueado -> -> 1 `i `uc ]
-"98
-[; ;maincode.c: 98:             }
+[; ;maincode.c: 77:         valor0 = 0;
+[e = _valor0 -> -> 0 `i `uc ]
+"78
+[; ;maincode.c: 78:     }
 }
-[e :U 2441 ]
-"100
-[; ;maincode.c: 100:             ESCRIBE_MENSAJE("Pastillas: ", 11);
-[e ( _ESCRIBE_MENSAJE (2 , :s 5C -> -> 11 `i `uc ]
+[e :U 2434 ]
+"80
+[; ;maincode.c: 80:     if(valor1 == 0xFF)
+[e $ ! == -> _valor1 `i -> 255 `i 2435  ]
+"81
+[; ;maincode.c: 81:     {
+{
+"82
+[; ;maincode.c: 82:         valor1 = 0;
+[e = _valor1 -> -> 0 `i `uc ]
+"83
+[; ;maincode.c: 83:     }
+}
+[e :U 2435 ]
+"85
+[; ;maincode.c: 85:     BORRAR_LCD();
+[e ( _BORRAR_LCD ..  ]
+"87
+[; ;maincode.c: 87:     while(1)
+[e :U 2437 ]
+"88
+[; ;maincode.c: 88:     {
+{
+"92
+[; ;maincode.c: 92:         POS_CURSOR(1, 0);
+[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"93
+[; ;maincode.c: 93:         ESCRIBE_MENSAJE("P0:", 3);
+[e ( _ESCRIBE_MENSAJE (2 , :s 3C -> -> 3 `i `uc ]
+"95
+[; ;maincode.c: 95:         ENVIA_CHAR((valor0 / 100) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / -> _valor0 `i -> 100 `i -> 48 `i `uc ]
+"96
+[; ;maincode.c: 96:         ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % -> _valor0 `i -> 100 `i -> 10 `i -> 48 `i `uc ]
+"97
+[; ;maincode.c: 97:         ENVIA_CHAR((valor0 % 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + % -> _valor0 `i -> 10 `i -> 48 `i `uc ]
+"99
+[; ;maincode.c: 99:         ESCRIBE_MENSAJE(" P1:", 4);
+[e ( _ESCRIBE_MENSAJE (2 , :s 4C -> -> 4 `i `uc ]
 "101
-[; ;maincode.c: 101:         }
+[; ;maincode.c: 101:         ENVIA_CHAR((valor1 / 100) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / -> _valor1 `i -> 100 `i -> 48 `i `uc ]
+"102
+[; ;maincode.c: 102:         ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + / % -> _valor1 `i -> 100 `i -> 10 `i -> 48 `i `uc ]
+"103
+[; ;maincode.c: 103:         ENVIA_CHAR((valor1 % 10) + 0x30);
+[e ( _ENVIA_CHAR (1 -> + % -> _valor1 `i -> 10 `i -> 48 `i `uc ]
+"105
+[; ;maincode.c: 105:         ESCRIBE_MENSAJE(" ", 1);
+[e ( _ESCRIBE_MENSAJE (2 , :s 5C -> -> 1 `i `uc ]
+"107
+[; ;maincode.c: 107:         POS_CURSOR(2, 0);
+[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"108
+[; ;maincode.c: 108:         ESCRIBE_MENSAJE("SEL:", 4);
+[e ( _ESCRIBE_MENSAJE (2 , :s 6C -> -> 4 `i `uc ]
+"109
+[; ;maincode.c: 109:         ENVIA_CHAR(posicion + 0x30);
+[e ( _ENVIA_CHAR (1 -> + -> _posicion `i -> 48 `i `uc ]
+"111
+[; ;maincode.c: 111:         ESCRIBE_MENSAJE("  GR:C1   ", 10);
+[e ( _ESCRIBE_MENSAJE (2 , :s 7C -> -> 10 `i `uc ]
+"116
+[; ;maincode.c: 116:         if(PORTCbits.RC0 == 0)
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 2439  ]
+"117
+[; ;maincode.c: 117:         {
+{
+"118
+[; ;maincode.c: 118:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"120
+[; ;maincode.c: 120:             if(PORTCbits.RC0 == 0)
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 2440  ]
+"121
+[; ;maincode.c: 121:             {
+{
+"122
+[; ;maincode.c: 122:                 if(posicion == 0)
+[e $ ! == -> _posicion `i -> 0 `i 2441  ]
+"123
+[; ;maincode.c: 123:                 {
+{
+"124
+[; ;maincode.c: 124:                     valor0++;
+[e ++ _valor0 -> -> 1 `i `uc ]
+"125
+[; ;maincode.c: 125:                 }
 }
 [e $U 2442  ]
-"102
-[; ;maincode.c: 102:         else
-[e :U 2440 ]
-"103
-[; ;maincode.c: 103:         {
+"126
+[; ;maincode.c: 126:                 else
+[e :U 2441 ]
+"127
+[; ;maincode.c: 127:                 {
 {
-"104
-[; ;maincode.c: 104:             sistema_listo = 1;
-[e = _sistema_listo -> -> 1 `i `uc ]
-"105
-[; ;maincode.c: 105:             estado_bloqueado = 0;
-[e = _estado_bloqueado -> -> 0 `i `uc ]
-"106
-[; ;maincode.c: 106:             Buzzer_CorrectSound(&buzzer1);
-[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
-"109
-[; ;maincode.c: 109:         }
+"128
+[; ;maincode.c: 128:                     valor1++;
+[e ++ _valor1 -> -> 1 `i `uc ]
+"129
+[; ;maincode.c: 129:                 }
 }
 [e :U 2442 ]
-"111
-[; ;maincode.c: 111:         ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
-"112
-[; ;maincode.c: 112:         ENVIA_CHAR(((contador % 100) / 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"113
-[; ;maincode.c: 113:         ENVIA_CHAR((contador % 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + % _contador -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"115
-[; ;maincode.c: 115:         ESCRIBE_MENSAJE("   ", 3);
-[e ( _ESCRIBE_MENSAJE (2 , :s 6C -> -> 3 `i `uc ]
-"116
-[; ;maincode.c: 116:         Stepper_Step_CW(&motor1);
-[e ( _Stepper_Step_CW (1 &U _motor1 ]
-"117
-[; ;maincode.c: 117:     }
+"131
+[; ;maincode.c: 131:                 while(PORTCbits.RC0 == 0);
+[e $U 2443  ]
+[e :U 2444 ]
+[e :U 2443 ]
+[e $ == -> . . _PORTCbits 0 0 `i -> 0 `i 2444  ]
+[e :U 2445 ]
+"132
+[; ;maincode.c: 132:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"133
+[; ;maincode.c: 133:             }
 }
-[e :U 2437 ]
-[e $U 2438  ]
+[e :U 2440 ]
+"134
+[; ;maincode.c: 134:         }
+}
 [e :U 2439 ]
-"118
-[; ;maincode.c: 118: }
-[e :UE 2436 ]
+"139
+[; ;maincode.c: 139:         if(PORTCbits.RC1 == 0)
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 2446  ]
+"140
+[; ;maincode.c: 140:         {
+{
+"141
+[; ;maincode.c: 141:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"143
+[; ;maincode.c: 143:             if(PORTCbits.RC1 == 0)
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 2447  ]
+"144
+[; ;maincode.c: 144:             {
+{
+"145
+[; ;maincode.c: 145:                 if(posicion == 0)
+[e $ ! == -> _posicion `i -> 0 `i 2448  ]
+"146
+[; ;maincode.c: 146:                 {
+{
+"147
+[; ;maincode.c: 147:                     EEPROM_UpdateByte(0, valor0);
+[e ( _EEPROM_UpdateByte (2 , -> -> 0 `i `us _valor0 ]
+"148
+[; ;maincode.c: 148:                 }
 }
-[a 1C 67 78 89 55 48 32 76 105 98 0 ]
-[a 3C 65 68 67 58 0 ]
-[a 2C 82 65 51 32 47 32 65 78 51 0 ]
-[a 5C 80 97 115 116 105 108 108 97 115 58 32 0 ]
-[a 4C 32 32 32 0 ]
-[a 6C 32 32 32 0 ]
+[e $U 2449  ]
+"149
+[; ;maincode.c: 149:                 else
+[e :U 2448 ]
+"150
+[; ;maincode.c: 150:                 {
+{
+"151
+[; ;maincode.c: 151:                     EEPROM_UpdateByte(1, valor1);
+[e ( _EEPROM_UpdateByte (2 , -> -> 1 `i `us _valor1 ]
+"152
+[; ;maincode.c: 152:                 }
+}
+[e :U 2449 ]
+"154
+[; ;maincode.c: 154:                 BORRAR_LCD();
+[e ( _BORRAR_LCD ..  ]
+"156
+[; ;maincode.c: 156:                 POS_CURSOR(1, 0);
+[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"157
+[; ;maincode.c: 157:                 ESCRIBE_MENSAJE("Dato guardado", 13);
+[e ( _ESCRIBE_MENSAJE (2 , :s 8C -> -> 13 `i `uc ]
+"159
+[; ;maincode.c: 159:                 POS_CURSOR(2, 0);
+[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"160
+[; ;maincode.c: 160:                 ESCRIBE_MENSAJE("Posicion: ", 10);
+[e ( _ESCRIBE_MENSAJE (2 , :s 9C -> -> 10 `i `uc ]
+"161
+[; ;maincode.c: 161:                 ENVIA_CHAR(posicion + 0x30);
+[e ( _ENVIA_CHAR (1 -> + -> _posicion `i -> 48 `i `uc ]
+"163
+[; ;maincode.c: 163:                 _delay((unsigned long)((800)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"164
+[; ;maincode.c: 164:                 BORRAR_LCD();
+[e ( _BORRAR_LCD ..  ]
+"166
+[; ;maincode.c: 166:                 while(PORTCbits.RC1 == 0);
+[e $U 2450  ]
+[e :U 2451 ]
+[e :U 2450 ]
+[e $ == -> . . _PORTCbits 0 1 `i -> 0 `i 2451  ]
+[e :U 2452 ]
+"167
+[; ;maincode.c: 167:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"168
+[; ;maincode.c: 168:             }
+}
+[e :U 2447 ]
+"169
+[; ;maincode.c: 169:         }
+}
+[e :U 2446 ]
+"174
+[; ;maincode.c: 174:         if(PORTCbits.RC3 == 0)
+[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 2453  ]
+"175
+[; ;maincode.c: 175:         {
+{
+"176
+[; ;maincode.c: 176:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"178
+[; ;maincode.c: 178:             if(PORTCbits.RC3 == 0)
+[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 2454  ]
+"179
+[; ;maincode.c: 179:             {
+{
+"180
+[; ;maincode.c: 180:                 if(posicion == 0)
+[e $ ! == -> _posicion `i -> 0 `i 2455  ]
+"181
+[; ;maincode.c: 181:                 {
+{
+"182
+[; ;maincode.c: 182:                     posicion = 1;
+[e = _posicion -> -> 1 `i `uc ]
+"183
+[; ;maincode.c: 183:                 }
+}
+[e $U 2456  ]
+"184
+[; ;maincode.c: 184:                 else
+[e :U 2455 ]
+"185
+[; ;maincode.c: 185:                 {
+{
+"186
+[; ;maincode.c: 186:                     posicion = 0;
+[e = _posicion -> -> 0 `i `uc ]
+"187
+[; ;maincode.c: 187:                 }
+}
+[e :U 2456 ]
+"189
+[; ;maincode.c: 189:                 while(PORTCbits.RC3 == 0);
+[e $U 2457  ]
+[e :U 2458 ]
+[e :U 2457 ]
+[e $ == -> . . _PORTCbits 0 3 `i -> 0 `i 2458  ]
+[e :U 2459 ]
+"190
+[; ;maincode.c: 190:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"191
+[; ;maincode.c: 191:             }
+}
+[e :U 2454 ]
+"192
+[; ;maincode.c: 192:         }
+}
+[e :U 2453 ]
+"193
+[; ;maincode.c: 193:     }
+}
+[e :U 2436 ]
+[e $U 2437  ]
+[e :U 2438 ]
+"194
+[; ;maincode.c: 194: }
+[e :UE 2433 ]
+}
+[a 8C 68 97 116 111 32 103 117 97 114 100 97 100 111 0 ]
+[a 6C 83 69 76 58 0 ]
+[a 4C 32 80 49 58 0 ]
+[a 3C 80 48 58 0 ]
+[a 9C 80 111 115 105 99 105 111 110 58 32 0 ]
+[a 1C 32 32 77 69 77 79 82 73 65 32 69 80 82 79 77 32 32 0 ]
+[a 2C 80 97 114 97 58 32 32 73 83 65 66 69 76 32 32 0 ]
+[a 7C 32 32 71 82 58 67 49 32 32 32 0 ]
+[a 5C 32 0 ]

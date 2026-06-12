@@ -29632,6 +29632,17 @@ unsigned char __t3rd16on(void);
 
 #pragma config CP = OFF
 # 4 "maincode.c" 2
+# 1 "./EPROM_DFM.h" 1
+# 24 "./EPROM_DFM.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 25 "./EPROM_DFM.h" 2
+# 85 "./EPROM_DFM.h"
+void EEPROM_WriteByte(uint16_t address, uint8_t data);
+# 109 "./EPROM_DFM.h"
+uint8_t EEPROM_ReadByte(uint16_t address);
+# 138 "./EPROM_DFM.h"
+void EEPROM_UpdateByte(uint16_t address, uint8_t data);
+# 5 "maincode.c" 2
 # 1 "./LCD.h" 1
 
 
@@ -29652,245 +29663,14 @@ void LEER_LCD(void);
 void BLINK_CURSOR(unsigned char val);
 void GENERACARACTER(const unsigned char *vector,unsigned char pos);
 void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 5 "maincode.c" 2
-# 1 "./CNY70.h" 1
-# 24 "./CNY70.h"
-typedef struct
-{
-    volatile unsigned char *tris_reg;
-    volatile unsigned char *ansel_reg;
-
-    unsigned char pin_mask;
-    unsigned char adc_channel;
-
-} CNY70;
-
-
-
-
-
-void CNY70_ADC_Init_FOSC64(void);
-
-void CNY70_Init(CNY70 *sensor,
-                volatile unsigned char *tris,
-                volatile unsigned char *ansel,
-                unsigned char pin_mask,
-                unsigned char adc_channel);
-
-uint16_t CNY70_Read(CNY70 *sensor);
-
-uint8_t CNY70_IsActive(CNY70 *sensor,
-                       uint16_t threshold,
-                       uint8_t mode);
-
-void CNY70_ResetChannel(void);
 # 6 "maincode.c" 2
-# 1 "./Libbuzzer.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./Libbuzzer.h" 2
-# 91 "./Libbuzzer.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-
-    uint8_t pin_mask;
-
-} Buzzer;
-# 135 "./Libbuzzer.h"
-void Buzzer_Init(Buzzer *buzzer,
-                 volatile uint8_t *lat,
-                 volatile uint8_t *tris,
-                 volatile uint8_t *ansel,
-                 uint8_t pin_mask);
-# 169 "./Libbuzzer.h"
-void Buzzer_Tone(Buzzer *buzzer,
-                 uint16_t freq,
-                 uint16_t time_ms,
-                 uint8_t duty);
-
-
-
-
-
-
-
-void Buzzer_Off(Buzzer *buzzer);
-# 189 "./Libbuzzer.h"
-void Buzzer_ButtonClick(Buzzer *buzzer);
-# 198 "./Libbuzzer.h"
-void Buzzer_FinalCorrectClick(Buzzer *buzzer);
-# 207 "./Libbuzzer.h"
-void Buzzer_CorrectSound(Buzzer *buzzer);
-# 223 "./Libbuzzer.h"
-void Buzzer_WarningSound(Buzzer *buzzer);
-# 233 "./Libbuzzer.h"
-void Buzzer_ErrorSound(Buzzer *buzzer);
-# 7 "maincode.c" 2
-# 1 "./motor_paso.h" 1
-
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "./motor_paso.h" 2
-# 103 "./motor_paso.h"
-typedef struct
-{
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    uint8_t nibble;
-    uint8_t index;
-} Stepper;
-# 150 "./motor_paso.h"
-void Stepper_Init(Stepper *motor,
-                  volatile uint8_t *lat,
-                  volatile uint8_t *tris,
-                  volatile uint8_t *ansel,
-                  uint8_t nibble);
-# 168 "./motor_paso.h"
-void Stepper_Step_CW(Stepper *motor);
-# 182 "./motor_paso.h"
-void Stepper_Step_CCW(Stepper *motor);
-# 202 "./motor_paso.h"
-void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 222 "./motor_paso.h"
-void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
-# 243 "./motor_paso.h"
-void Stepper_fullTurn_CW(Stepper *motor);
-# 264 "./motor_paso.h"
-void Stepper_fullTurn_CCW(Stepper *motor);
-# 281 "./motor_paso.h"
-void Stepper_Off(Stepper *motor);
-# 8 "maincode.c" 2
-
-
-
-
-CNY70 sensorIR;
-Buzzer buzzer1;
-Stepper motor1;
-unsigned int resultado_ADC = 0;
-unsigned int contador = 0;
-
-unsigned char estado_bloqueado = 0;
-unsigned char sistema_listo = 0;
+# 16 "maincode.c"
+unsigned char valor0 = 0;
+unsigned char valor1 = 0;
+unsigned char posicion = 0;
 
 void configuro(void)
 {
-
 
 
 
@@ -29907,16 +29687,17 @@ void configuro(void)
 
 
 
-    CNY70_ADC_Init_FOSC64();
+    TRISCbits.TRISC0 = 1;
+    TRISCbits.TRISC1 = 1;
+    TRISCbits.TRISC3 = 1;
 
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+    ANSELCbits.ANSELC3 = 0;
 
-
-
-
-
-    CNY70_Init(&sensorIR, &TRISA, &ANSELA, 0x08, 0x03);
-    Buzzer_Init(&buzzer1, &LATA, &TRISA, &ANSELA, 0x01);
-    Stepper_Init(&motor1, &LATC, &TRISC, &ANSELC, 0);
+    WPUCbits.WPUC0 = 1;
+    WPUCbits.WPUC1 = 1;
+    WPUCbits.WPUC3 = 1;
 }
 
 void LCD_init(void)
@@ -29932,57 +29713,132 @@ void main(void)
 {
     configuro();
     LCD_init();
-
     POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("CNY70 Lib", 9);
+    ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
+    _delay((unsigned long)((2000)*(64000000UL/4000.0)));
 
-    POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("RA3 / AN3", 9);
 
-    _delay((unsigned long)((1500)*(64000000UL/4000.0)));
+
+    valor0 = EEPROM_ReadByte(0);
+    valor1 = EEPROM_ReadByte(1);
+
+    if(valor0 == 0xFF)
+    {
+        valor0 = 0;
+    }
+
+    if(valor1 == 0xFF)
+    {
+        valor1 = 0;
+    }
+
     BORRAR_LCD();
 
     while(1)
     {
-        resultado_ADC = CNY70_Read(&sensorIR);
+
+
 
         POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("ADC:", 4);
+        ESCRIBE_MENSAJE("P0:", 3);
 
-        ENVIA_CHAR((resultado_ADC / 10000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((resultado_ADC % 100) / 10) + 0x30);
-        ENVIA_CHAR((resultado_ADC % 10) + 0x30);
+        ENVIA_CHAR((valor0 / 100) + 0x30);
+        ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor0 % 10) + 0x30);
 
-        ESCRIBE_MENSAJE("   ", 3);
+        ESCRIBE_MENSAJE(" P1:", 4);
+
+        ENVIA_CHAR((valor1 / 100) + 0x30);
+        ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor1 % 10) + 0x30);
+
+        ESCRIBE_MENSAJE(" ", 1);
 
         POS_CURSOR(2, 0);
+        ESCRIBE_MENSAJE("SEL:", 4);
+        ENVIA_CHAR(posicion + 0x30);
 
-        if(resultado_ADC <= 750)
+        ESCRIBE_MENSAJE("  GR:C1   ", 10);
+
+
+
+
+        if(PORTCbits.RC0 == 0)
         {
-            if((estado_bloqueado == 0) && (sistema_listo == 1))
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
+
+            if(PORTCbits.RC0 == 0)
             {
-                contador++;
-                estado_bloqueado = 1;
+                if(posicion == 0)
+                {
+                    valor0++;
+                }
+                else
+                {
+                    valor1++;
+                }
+
+                while(PORTCbits.RC0 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
             }
-
-            ESCRIBE_MENSAJE("Pastillas: ", 11);
         }
-        else
+
+
+
+
+        if(PORTCbits.RC1 == 0)
         {
-            sistema_listo = 1;
-            estado_bloqueado = 0;
-            Buzzer_CorrectSound(&buzzer1);
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
 
+            if(PORTCbits.RC1 == 0)
+            {
+                if(posicion == 0)
+                {
+                    EEPROM_UpdateByte(0, valor0);
+                }
+                else
+                {
+                    EEPROM_UpdateByte(1, valor1);
+                }
 
+                BORRAR_LCD();
+
+                POS_CURSOR(1, 0);
+                ESCRIBE_MENSAJE("Dato guardado", 13);
+
+                POS_CURSOR(2, 0);
+                ESCRIBE_MENSAJE("Posicion: ", 10);
+                ENVIA_CHAR(posicion + 0x30);
+
+                _delay((unsigned long)((800)*(64000000UL/4000.0)));
+                BORRAR_LCD();
+
+                while(PORTCbits.RC1 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
+            }
         }
 
-        ENVIA_CHAR(((contador % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((contador % 100) / 10) + 0x30);
-        ENVIA_CHAR((contador % 10) + 0x30);
 
-        ESCRIBE_MENSAJE("   ", 3);
-        Stepper_Step_CW(&motor1);
+
+
+        if(PORTCbits.RC3 == 0)
+        {
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
+
+            if(PORTCbits.RC3 == 0)
+            {
+                if(posicion == 0)
+                {
+                    posicion = 1;
+                }
+                else
+                {
+                    posicion = 0;
+                }
+
+                while(PORTCbits.RC3 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
+            }
+        }
     }
 }

@@ -29863,7 +29863,7 @@ void WS2812B_Show(LED_WS2812B *tira)
     }
 # 367 "ws2812b.c"
     LATDbits.LATD0 = 0;
-    _delay((unsigned long)((300)*(48000000UL/4000000.0)));
+    _delay((unsigned long)((300)*(64000000UL/4000000.0)));
 }
 # 383 "ws2812b.c"
 void WS2812B_Clear(LED_WS2812B *tira)

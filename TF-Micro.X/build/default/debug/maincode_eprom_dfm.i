@@ -1,4 +1,4 @@
-# 1 "2sensores.c"
+# 1 "maincode_eprom_dfm.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "2sensores.c" 2
-# 15 "2sensores.c"
+# 1 "maincode_eprom_dfm.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29575,7 +29574,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 16 "2sensores.c" 2
+# 2 "maincode_eprom_dfm.c" 2
 
 # 1 "./cabecera.h" 1
 
@@ -29632,7 +29631,18 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 18 "2sensores.c" 2
+# 4 "maincode_eprom_dfm.c" 2
+# 1 "./EPROM_DFM.h" 1
+# 24 "./EPROM_DFM.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
+# 25 "./EPROM_DFM.h" 2
+# 85 "./EPROM_DFM.h"
+void EEPROM_WriteByte(uint16_t address, uint8_t data);
+# 109 "./EPROM_DFM.h"
+uint8_t EEPROM_ReadByte(uint16_t address);
+# 138 "./EPROM_DFM.h"
+void EEPROM_UpdateByte(uint16_t address, uint8_t data);
+# 5 "maincode_eprom_dfm.c" 2
 # 1 "./LCD.h" 1
 
 
@@ -29653,51 +29663,14 @@ void LEER_LCD(void);
 void BLINK_CURSOR(unsigned char val);
 void GENERACARACTER(const unsigned char *vector,unsigned char pos);
 void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 19 "2sensores.c" 2
-# 1 "./CNY70.h" 1
-# 24 "./CNY70.h"
-typedef struct
-{
-    volatile unsigned char *tris_reg;
-    volatile unsigned char *ansel_reg;
-
-    unsigned char pin_mask;
-    unsigned char adc_channel;
-
-} CNY70;
-
-
-
-
-
-void CNY70_ADC_Init_FOSC64(void);
-
-void CNY70_Init(CNY70 *sensor,
-                volatile unsigned char *tris,
-                volatile unsigned char *ansel,
-                unsigned char pin_mask,
-                unsigned char adc_channel);
-
-uint16_t CNY70_Read(CNY70 *sensor);
-
-uint8_t CNY70_IsActive(CNY70 *sensor,
-                       uint16_t threshold,
-                       uint8_t mode);
-
-void CNY70_ResetChannel(void);
-# 20 "2sensores.c" 2
-
-
-
-CNY70 sensorA3;
-CNY70 sensorA4;
-
-unsigned int valor_A3 = 0;
-unsigned int valor_A4 = 0;
+# 6 "maincode_eprom_dfm.c" 2
+# 16 "maincode_eprom_dfm.c"
+unsigned char valor0 = 0;
+unsigned char valor1 = 0;
+unsigned char posicion = 0;
 
 void configuro(void)
 {
-
 
 
 
@@ -29714,17 +29687,17 @@ void configuro(void)
 
 
 
-    CNY70_ADC_Init_FOSC64();
+    TRISCbits.TRISC0 = 1;
+    TRISCbits.TRISC1 = 1;
+    TRISCbits.TRISC3 = 1;
 
+    ANSELCbits.ANSELC0 = 0;
+    ANSELCbits.ANSELC1 = 0;
+    ANSELCbits.ANSELC3 = 0;
 
-
-
-
-
-    CNY70_Init(&sensorA3, &TRISA, &ANSELA, 0x08, 0x03);
-
-
-    CNY70_Init(&sensorA4, &TRISA, &ANSELA, 0x10, 0x04);
+    WPUCbits.WPUC0 = 1;
+    WPUCbits.WPUC1 = 1;
+    WPUCbits.WPUC3 = 1;
 }
 
 void LCD_init(void)
@@ -29740,14 +29713,25 @@ void main(void)
 {
     configuro();
     LCD_init();
-
     POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("CNY70 x2", 8);
+    ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
+    _delay((unsigned long)((2000)*(64000000UL/4000.0)));
 
-    POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("A3 y A4", 7);
 
-    _delay((unsigned long)((1500)*(64000000UL/4000.0)));
+
+    valor0 = EEPROM_ReadByte(0);
+    valor1 = EEPROM_ReadByte(1);
+
+    if(valor0 == 0xFF)
+    {
+        valor0 = 0;
+    }
+
+    if(valor1 == 0xFF)
+    {
+        valor1 = 0;
+    }
+
     BORRAR_LCD();
 
     while(1)
@@ -29755,43 +29739,106 @@ void main(void)
 
 
 
-        valor_A3 = CNY70_Read(&sensorA3);
-
-
-
-
-
-
-        valor_A4 = CNY70_Read(&sensorA4);
-
-
-
-
         POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("A3:", 3);
+        ESCRIBE_MENSAJE("P0:", 3);
 
-        ENVIA_CHAR((valor_A3 / 10000) + 0x30);
-        ENVIA_CHAR(((valor_A3 % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((valor_A3 % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((valor_A3 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor_A3 % 10) + 0x30);
+        ENVIA_CHAR((valor0 / 100) + 0x30);
+        ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor0 % 10) + 0x30);
 
-        ESCRIBE_MENSAJE("   ", 3);
+        ESCRIBE_MENSAJE(" P1:", 4);
 
+        ENVIA_CHAR((valor1 / 100) + 0x30);
+        ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
+        ENVIA_CHAR((valor1 % 10) + 0x30);
 
-
+        ESCRIBE_MENSAJE(" ", 1);
 
         POS_CURSOR(2, 0);
-        ESCRIBE_MENSAJE("A4:", 3);
+        ESCRIBE_MENSAJE("SEL:", 4);
+        ENVIA_CHAR(posicion + 0x30);
 
-        ENVIA_CHAR((valor_A4 / 10000) + 0x30);
-        ENVIA_CHAR(((valor_A4 % 10000) / 1000) + 0x30);
-        ENVIA_CHAR(((valor_A4 % 1000) / 100) + 0x30);
-        ENVIA_CHAR(((valor_A4 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor_A4 % 10) + 0x30);
+        ESCRIBE_MENSAJE("  GR:C1   ", 10);
 
-        ESCRIBE_MENSAJE("   ", 3);
 
-        _delay((unsigned long)((200)*(64000000UL/4000.0)));
+
+
+        if(PORTCbits.RC0 == 0)
+        {
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
+
+            if(PORTCbits.RC0 == 0)
+            {
+                if(posicion == 0)
+                {
+                    valor0++;
+                }
+                else
+                {
+                    valor1++;
+                }
+
+                while(PORTCbits.RC0 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
+            }
+        }
+
+
+
+
+        if(PORTCbits.RC1 == 0)
+        {
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
+
+            if(PORTCbits.RC1 == 0)
+            {
+                if(posicion == 0)
+                {
+                    EEPROM_UpdateByte(0, valor0);
+                }
+                else
+                {
+                    EEPROM_UpdateByte(1, valor1);
+                }
+
+                BORRAR_LCD();
+
+                POS_CURSOR(1, 0);
+                ESCRIBE_MENSAJE("Dato guardado", 13);
+
+                POS_CURSOR(2, 0);
+                ESCRIBE_MENSAJE("Posicion: ", 10);
+                ENVIA_CHAR(posicion + 0x30);
+
+                _delay((unsigned long)((800)*(64000000UL/4000.0)));
+                BORRAR_LCD();
+
+                while(PORTCbits.RC1 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
+            }
+        }
+
+
+
+
+        if(PORTCbits.RC3 == 0)
+        {
+            _delay((unsigned long)((40)*(64000000UL/4000.0)));
+
+            if(PORTCbits.RC3 == 0)
+            {
+                if(posicion == 0)
+                {
+                    posicion = 1;
+                }
+                else
+                {
+                    posicion = 0;
+                }
+
+                while(PORTCbits.RC3 == 0);
+                _delay((unsigned long)((40)*(64000000UL/4000.0)));
+            }
+        }
     }
 }

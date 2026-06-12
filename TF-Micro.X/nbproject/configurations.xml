@@ -11,6 +11,7 @@
       <itemPath>Libbuzzer.h</itemPath>
       <itemPath>LCD.h</itemPath>
       <itemPath>CNY70.h</itemPath>
+      <itemPath>EPROM_DFM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -28,6 +29,9 @@
         <itemPath>1sensor.c</itemPath>
         <itemPath>2sensores.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f2" displayName="Ejemplos EPROM_DFM" projectFiles="true">
+        <itemPath>maincode_eprom_dfm.c</itemPath>
+      </logicalFolder>
       <itemPath>maincode.c</itemPath>
       <itemPath>ws2812b.c</itemPath>
       <itemPath>motor_paso.c</itemPath>
@@ -35,6 +39,7 @@
       <itemPath>Libbuzzer.c</itemPath>
       <itemPath>LCD.c</itemPath>
       <itemPath>CNY70.c</itemPath>
+      <itemPath>EPROM_DFM.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -84,8 +89,24 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <item path="1sensor.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="2sensores.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <HI-TECH-COMP>
         <property key="additional-warnings" value="true"/>
@@ -203,6 +224,8 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <item path="maincode_eprom_dfm.c" ex="true" overriding="false">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

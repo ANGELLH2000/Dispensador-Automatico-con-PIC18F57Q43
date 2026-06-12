@@ -29701,7 +29701,7 @@ static void Buzzer_DelayUs(uint32_t time_us)
 {
     while(time_us > 0)
     {
-        _delay((unsigned long)((1)*(48000000UL/4000000.0)));
+        _delay((unsigned long)((1)*(64000000UL/4000000.0)));
         time_us--;
     }
 }
@@ -29825,10 +29825,10 @@ void Buzzer_ButtonClick(Buzzer *buzzer)
 void Buzzer_FinalCorrectClick(Buzzer *buzzer)
 {
     Buzzer_Tone(buzzer, 659, 45, 50);
-    _delay((unsigned long)((15)*(48000000UL/4000.0)));
+    _delay((unsigned long)((15)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 784, 65, 50);
-    _delay((unsigned long)((20)*(48000000UL/4000.0)));
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
 
     Buzzer_Off(buzzer);
 }
@@ -29836,16 +29836,16 @@ void Buzzer_FinalCorrectClick(Buzzer *buzzer)
 void Buzzer_CorrectSound(Buzzer *buzzer)
 {
     Buzzer_Tone(buzzer, 523, 80, 50);
-    _delay((unsigned long)((20)*(48000000UL/4000.0)));
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 659, 90, 50);
-    _delay((unsigned long)((20)*(48000000UL/4000.0)));
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 784, 120, 50);
-    _delay((unsigned long)((20)*(48000000UL/4000.0)));
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 1047, 180, 50);
-    _delay((unsigned long)((40)*(48000000UL/4000.0)));
+    _delay((unsigned long)((40)*(64000000UL/4000.0)));
 
     Buzzer_Off(buzzer);
 }
@@ -29853,13 +29853,13 @@ void Buzzer_CorrectSound(Buzzer *buzzer)
 void Buzzer_WarningSound(Buzzer *buzzer)
 {
     Buzzer_Tone(buzzer, 880, 90, 50);
-    _delay((unsigned long)((80)*(48000000UL/4000.0)));
+    _delay((unsigned long)((80)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 880, 90, 50);
-    _delay((unsigned long)((80)*(48000000UL/4000.0)));
+    _delay((unsigned long)((80)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 880, 90, 50);
-    _delay((unsigned long)((100)*(48000000UL/4000.0)));
+    _delay((unsigned long)((100)*(64000000UL/4000.0)));
 
     Buzzer_Off(buzzer);
 }
@@ -29867,13 +29867,13 @@ void Buzzer_WarningSound(Buzzer *buzzer)
 void Buzzer_ErrorSound(Buzzer *buzzer)
 {
     Buzzer_Tone(buzzer, 392, 160, 60);
-    _delay((unsigned long)((40)*(48000000UL/4000.0)));
+    _delay((unsigned long)((40)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 330, 180, 60);
-    _delay((unsigned long)((40)*(48000000UL/4000.0)));
+    _delay((unsigned long)((40)*(64000000UL/4000.0)));
 
     Buzzer_Tone(buzzer, 262, 250, 70);
-    _delay((unsigned long)((60)*(48000000UL/4000.0)));
+    _delay((unsigned long)((60)*(64000000UL/4000.0)));
 
     Buzzer_Off(buzzer);
 }

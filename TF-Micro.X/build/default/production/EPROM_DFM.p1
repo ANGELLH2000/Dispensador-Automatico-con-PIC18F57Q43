@@ -1,112 +1,72 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"122 ./ws2812b.h
-[; ;./ws2812b.h: 122: {
-[s S2431 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
-[n S2431 . num_leds red green blue ]
-"41451 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41451:     struct {
-[s S1948 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1948 . ANSELD0 ANSELD1 ANSELD2 ANSELD3 ANSELD4 ANSELD5 ANSELD6 ANSELD7 ]
-"41450
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41450: typedef union {
-[u S1947 `S1948 1 ]
-[n S1947 . . ]
-"41462
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41462: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0x418)));
-[v _ANSELDbits `VS1947 ~T0 @X0 0 e@1048 ]
-"49337
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49337:     struct {
-[s S2300 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2300 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"49336
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49336: typedef union {
-[u S2299 `S2300 1 ]
-[n S2299 . . ]
-"49348
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49348: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x4C9)));
-[v _TRISDbits `VS2299 ~T0 @X0 0 e@1225 ]
-"48995
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48995:     struct {
-[s S2288 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2288 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"48994
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48994: typedef union {
-[u S2287 `S2288 1 ]
-[n S2287 . . ]
-"49006
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49006: extern volatile LATDbits_t LATDbits __attribute__((address(0x4C1)));
-[v _LATDbits `VS2287 ~T0 @X0 0 e@1217 ]
-"8 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
+"704 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 704: extern volatile unsigned char NVMADRU __attribute__((address(0x045)));
+[v _NVMADRU `Vuc ~T0 @X0 0 e@69 ]
+"634
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 634: extern volatile unsigned char NVMADRH __attribute__((address(0x044)));
+[v _NVMADRH `Vuc ~T0 @X0 0 e@68 ]
+"564
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 564: extern volatile unsigned char NVMADRL __attribute__((address(0x043)));
+[v _NVMADRL `Vuc ~T0 @X0 0 e@67 ]
+"506
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 506:     struct {
+[s S20 :3 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S20 . CMD . WRERR ]
+"511
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 511:     struct {
+[s S21 :3 `uc 1 ]
+[n S21 . NVMCMD ]
+"505
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 505: typedef union {
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
+"515
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 515: extern volatile NVMCON1bits_t NVMCON1bits __attribute__((address(0x041)));
+[v _NVMCON1bits `VS19 ~T0 @X0 0 e@65 ]
+"462
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 462:     struct {
+[s S15 :1 `uc 1 ]
+[n S15 . GO ]
+"465
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 465:     struct {
+[s S16 :1 `uc 1 ]
+[n S16 . NOT_DONE ]
+"468
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 468:     struct {
+[s S17 :1 `uc 1 ]
+[n S17 . nDONE ]
+"471
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 471:     struct {
+[s S18 :1 `uc 1 ]
+[n S18 . NVMGO ]
+"461
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 461: typedef union {
+[u S14 `S15 1 `S16 1 `S17 1 `S18 1 ]
+[n S14 . . . . . ]
+"475
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 475: extern volatile NVMCON0bits_t NVMCON0bits __attribute__((address(0x040)));
+[v _NVMCON0bits `VS14 ~T0 @X0 0 e@64 ]
+"769
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 769: extern volatile unsigned char NVMDATL __attribute__((address(0x046)));
+[v _NVMDATL `Vuc ~T0 @X0 0 e@70 ]
+"49841
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49841:     struct {
+[s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"49850
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49850:     struct {
+[s S2319 :7 `uc 1 :1 `uc 1 ]
+[n S2319 . . GIEH ]
+"49840
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49840: typedef union {
+[u S2317 `S2318 1 `S2319 1 ]
+[n S2317 . . . ]
+"49855
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
+"535
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 535: extern volatile unsigned char NVMLOCK __attribute__((address(0x042)));
+[v _NVMLOCK `Vuc ~T0 @X0 0 e@66 ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2678,455 +2638,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"22 ws2812b.c
-[; ;ws2812b.c: 22: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
-[v _WS2812B_Init `(v ~T0 @X0 1 ef2`*S2431`uc ]
-"23
-[; ;ws2812b.c: 23: {
+"7 EPROM_DFM.c
+[; ;EPROM_DFM.c: 7: static void EEPROM_SetAddress(uint16_t address)
+[v _EEPROM_SetAddress `(v ~T0 @X0 1 sf1`us ]
+"8
+[; ;EPROM_DFM.c: 8: {
 {
-[e :U _WS2812B_Init ]
-"22
-[; ;ws2812b.c: 22: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-[v _num_leds `uc ~T0 @X0 1 r2 ]
-"23
-[; ;ws2812b.c: 23: {
+[e :U _EEPROM_SetAddress ]
+"7
+[; ;EPROM_DFM.c: 7: static void EEPROM_SetAddress(uint16_t address)
+[v _address `us ~T0 @X0 1 r1 ]
+"8
+[; ;EPROM_DFM.c: 8: {
 [f ]
+"9
+[; ;EPROM_DFM.c: 9:     uint32_t real_address = 0x380000UL + address;
+[v _real_address `ul ~T0 @X0 1 a ]
+[e = _real_address + -> 3670016 `ul -> _address `ul ]
+"11
+[; ;EPROM_DFM.c: 11:     NVMADRU = (uint8_t)((real_address >> 16) & 0xFF);
+[e = _NVMADRU -> & >> _real_address -> 16 `i -> -> -> 255 `i `l `ul `uc ]
+"12
+[; ;EPROM_DFM.c: 12:     NVMADRH = (uint8_t)((real_address >> 8) & 0xFF);
+[e = _NVMADRH -> & >> _real_address -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+"13
+[; ;EPROM_DFM.c: 13:     NVMADRL = (uint8_t)(real_address & 0xFF);
+[e = _NVMADRL -> & _real_address -> -> -> 255 `i `l `ul `uc ]
+"14
+[; ;EPROM_DFM.c: 14: }
+[e :UE 2431 ]
+}
+"19
+[; ;EPROM_DFM.c: 19: uint8_t EEPROM_ReadByte(uint16_t address)
+[v _EEPROM_ReadByte `(uc ~T0 @X0 1 ef1`us ]
+"20
+[; ;EPROM_DFM.c: 20: {
+{
+[e :U _EEPROM_ReadByte ]
+"19
+[; ;EPROM_DFM.c: 19: uint8_t EEPROM_ReadByte(uint16_t address)
+[v _address `us ~T0 @X0 1 r1 ]
+"20
+[; ;EPROM_DFM.c: 20: {
+[f ]
+"21
+[; ;EPROM_DFM.c: 21:     if (address >= 1024u)
+[e $ ! >= -> _address `ui -> 1024 `ui 2433  ]
+"22
+[; ;EPROM_DFM.c: 22:     {
+{
+"23
+[; ;EPROM_DFM.c: 23:         return 0xFF;
+[e ) -> -> 255 `i `uc ]
+[e $UE 2432  ]
 "24
-[; ;ws2812b.c: 24:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"29
-[; ;ws2812b.c: 29:     if(num_leds > 30)
-[e $ ! > -> _num_leds `i -> 30 `i 2433  ]
-"30
-[; ;ws2812b.c: 30:     {
-{
-"31
-[; ;ws2812b.c: 31:         tira->num_leds = 30;
-[e = . *U _tira 0 -> -> 30 `i `uc ]
-"32
-[; ;ws2812b.c: 32:     }
+[; ;EPROM_DFM.c: 24:     }
 }
-[e $U 2434  ]
-"33
-[; ;ws2812b.c: 33:     else
 [e :U 2433 ]
-"34
-[; ;ws2812b.c: 34:     {
-{
+"26
+[; ;EPROM_DFM.c: 26:     EEPROM_SetAddress(address);
+[e ( _EEPROM_SetAddress (1 _address ]
+"29
+[; ;EPROM_DFM.c: 29:     NVMCON1bits.NVMCMD = 0b000;
+[e = . . _NVMCON1bits 1 0 -> -> 0 `i `uc ]
+"32
+[; ;EPROM_DFM.c: 32:     NVMCON0bits.GO = 1;
+[e = . . _NVMCON0bits 0 0 -> -> 1 `i `uc ]
 "35
-[; ;ws2812b.c: 35:         tira->num_leds = num_leds;
-[e = . *U _tira 0 _num_leds ]
-"36
-[; ;ws2812b.c: 36:     }
-}
-[e :U 2434 ]
-"49
-[; ;ws2812b.c: 49:     ANSELDbits.ANSELD0 = 0;
-[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
-"62
-[; ;ws2812b.c: 62:     TRISDbits.TRISD0 = 0;
-[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"70
-[; ;ws2812b.c: 70:     LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"78
-[; ;ws2812b.c: 78:     for(i = 0; i < tira->num_leds; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 2438  ]
+[; ;EPROM_DFM.c: 35:     while (NVMCON0bits.GO);
+[e $U 2434  ]
 [e :U 2435 ]
-"79
-[; ;ws2812b.c: 79:     {
-{
-"80
-[; ;ws2812b.c: 80:         tira->red[i] = 0;
-[e = *U + &U . *U _tira 1 * -> _i `ux -> -> # *U &U . *U _tira 1 `ui `ux -> -> 0 `i `uc ]
-"81
-[; ;ws2812b.c: 81:         tira->green[i] = 0;
-[e = *U + &U . *U _tira 2 * -> _i `ux -> -> # *U &U . *U _tira 2 `ui `ux -> -> 0 `i `uc ]
-"82
-[; ;ws2812b.c: 82:         tira->blue[i] = 0;
-[e = *U + &U . *U _tira 3 * -> _i `ux -> -> # *U &U . *U _tira 3 `ui `ux -> -> 0 `i `uc ]
-"83
-[; ;ws2812b.c: 83:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 2438 ]
-[e $ < -> _i `i -> . *U _tira 0 `i 2435  ]
+[e :U 2434 ]
+[e $ != -> . . _NVMCON0bits 0 0 `i -> 0 `i 2435  ]
 [e :U 2436 ]
-}
-"84
-[; ;ws2812b.c: 84: }
+"38
+[; ;EPROM_DFM.c: 38:     return NVMDATL;
+[e ) _NVMDATL ]
+[e $UE 2432  ]
+"39
+[; ;EPROM_DFM.c: 39: }
 [e :UE 2432 ]
 }
-"111
-[; ;ws2812b.c: 111: void WS2812B_SetPixel(LED_WS2812B *tira,
-[v _WS2812B_SetPixel `(v ~T0 @X0 1 ef5`*S2431`uc`uc`uc`uc ]
-"116
-[; ;ws2812b.c: 116: {
+"44
+[; ;EPROM_DFM.c: 44: void EEPROM_WriteByte(uint16_t address, uint8_t data)
+[v _EEPROM_WriteByte `(v ~T0 @X0 1 ef2`us`uc ]
+"45
+[; ;EPROM_DFM.c: 45: {
 {
-[e :U _WS2812B_SetPixel ]
-"111
-[; ;ws2812b.c: 111: void WS2812B_SetPixel(LED_WS2812B *tira,
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-"112
-[; ;ws2812b.c: 112:                       uint8_t led,
-[v _led `uc ~T0 @X0 1 r2 ]
-"113
-[; ;ws2812b.c: 113:                       uint8_t red,
-[v _red `uc ~T0 @X0 1 r3 ]
-"114
-[; ;ws2812b.c: 114:                       uint8_t green,
-[v _green `uc ~T0 @X0 1 r4 ]
-"115
-[; ;ws2812b.c: 115:                       uint8_t blue)
-[v _blue `uc ~T0 @X0 1 r5 ]
-"116
-[; ;ws2812b.c: 116: {
+[e :U _EEPROM_WriteByte ]
+"44
+[; ;EPROM_DFM.c: 44: void EEPROM_WriteByte(uint16_t address, uint8_t data)
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"45
+[; ;EPROM_DFM.c: 45: {
 [f ]
-"127
-[; ;ws2812b.c: 127:     if(led >= tira->num_leds)
-[e $ ! >= -> _led `i -> . *U _tira 0 `i 2440  ]
-"128
-[; ;ws2812b.c: 128:     {
+"46
+[; ;EPROM_DFM.c: 46:     if (address >= 1024u)
+[e $ ! >= -> _address `ui -> 1024 `ui 2438  ]
+"47
+[; ;EPROM_DFM.c: 47:     {
 {
-"129
-[; ;ws2812b.c: 129:         return;
-[e $UE 2439  ]
-"130
-[; ;ws2812b.c: 130:     }
+"48
+[; ;EPROM_DFM.c: 48:         return;
+[e $UE 2437  ]
+"49
+[; ;EPROM_DFM.c: 49:     }
 }
+[e :U 2438 ]
+"51
+[; ;EPROM_DFM.c: 51:     EEPROM_SetAddress(address);
+[e ( _EEPROM_SetAddress (1 _address ]
+"54
+[; ;EPROM_DFM.c: 54:     NVMDATL = data;
+[e = _NVMDATL _data ]
+"57
+[; ;EPROM_DFM.c: 57:     NVMCON1bits.NVMCMD = 0b011;
+[e = . . _NVMCON1bits 1 0 -> -> 3 `i `uc ]
+"60
+[; ;EPROM_DFM.c: 60:     INTCON0bits.GIE = 0;
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
+"63
+[; ;EPROM_DFM.c: 63:     NVMLOCK = 0x55;
+[e = _NVMLOCK -> -> 85 `i `uc ]
+"64
+[; ;EPROM_DFM.c: 64:     NVMLOCK = 0xAA;
+[e = _NVMLOCK -> -> 170 `i `uc ]
+"67
+[; ;EPROM_DFM.c: 67:     NVMCON0bits.GO = 1;
+[e = . . _NVMCON0bits 0 0 -> -> 1 `i `uc ]
+"70
+[; ;EPROM_DFM.c: 70:     while (NVMCON0bits.GO);
+[e $U 2439  ]
 [e :U 2440 ]
-"139
-[; ;ws2812b.c: 139:     tira->red[led] = red;
-[e = *U + &U . *U _tira 1 * -> _led `ux -> -> # *U &U . *U _tira 1 `ui `ux _red ]
-"140
-[; ;ws2812b.c: 140:     tira->green[led] = green;
-[e = *U + &U . *U _tira 2 * -> _led `ux -> -> # *U &U . *U _tira 2 `ui `ux _green ]
-"141
-[; ;ws2812b.c: 141:     tira->blue[led] = blue;
-[e = *U + &U . *U _tira 3 * -> _led `ux -> -> # *U &U . *U _tira 3 `ui `ux _blue ]
-"142
-[; ;ws2812b.c: 142: }
-[e :UE 2439 ]
+[e :U 2439 ]
+[e $ != -> . . _NVMCON0bits 0 0 `i -> 0 `i 2440  ]
+[e :U 2441 ]
+"73
+[; ;EPROM_DFM.c: 73:     INTCON0bits.GIE = 1;
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"76
+[; ;EPROM_DFM.c: 76:     NVMCON1bits.NVMCMD = 0b000;
+[e = . . _NVMCON1bits 1 0 -> -> 0 `i `uc ]
+"77
+[; ;EPROM_DFM.c: 77: }
+[e :UE 2437 ]
 }
-"168
-[; ;ws2812b.c: 168: void WS2812B_SetAll(LED_WS2812B *tira,
-[v _WS2812B_SetAll `(v ~T0 @X0 1 ef4`*S2431`uc`uc`uc ]
-"172
-[; ;ws2812b.c: 172: {
+"83
+[; ;EPROM_DFM.c: 83: void EEPROM_UpdateByte(uint16_t address, uint8_t data)
+[v _EEPROM_UpdateByte `(v ~T0 @X0 1 ef2`us`uc ]
+"84
+[; ;EPROM_DFM.c: 84: {
 {
-[e :U _WS2812B_SetAll ]
-"168
-[; ;ws2812b.c: 168: void WS2812B_SetAll(LED_WS2812B *tira,
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-"169
-[; ;ws2812b.c: 169:                     uint8_t red,
-[v _red `uc ~T0 @X0 1 r2 ]
-"170
-[; ;ws2812b.c: 170:                     uint8_t green,
-[v _green `uc ~T0 @X0 1 r3 ]
-"171
-[; ;ws2812b.c: 171:                     uint8_t blue)
-[v _blue `uc ~T0 @X0 1 r4 ]
-"172
-[; ;ws2812b.c: 172: {
+[e :U _EEPROM_UpdateByte ]
+"83
+[; ;EPROM_DFM.c: 83: void EEPROM_UpdateByte(uint16_t address, uint8_t data)
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"84
+[; ;EPROM_DFM.c: 84: {
 [f ]
-"173
-[; ;ws2812b.c: 173:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"178
-[; ;ws2812b.c: 178:     for(i = 0; i < tira->num_leds; i++)
+"85
+[; ;EPROM_DFM.c: 85:     uint8_t old_data = EEPROM_ReadByte(address);
+[v _old_data `uc ~T0 @X0 1 a ]
+[e = _old_data ( _EEPROM_ReadByte (1 _address ]
+"87
+[; ;EPROM_DFM.c: 87:     if (old_data != data)
+[e $ ! != -> _old_data `i -> _data `i 2443  ]
+"88
+[; ;EPROM_DFM.c: 88:     {
 {
-[e = _i -> -> 0 `i `uc ]
-[e $U 2445  ]
-[e :U 2442 ]
-"179
-[; ;ws2812b.c: 179:     {
-{
-"183
-[; ;ws2812b.c: 183:         WS2812B_SetPixel(tira, i, red, green, blue);
-[e ( _WS2812B_SetPixel (4 , , , , _tira _i _red _green _blue ]
-"184
-[; ;ws2812b.c: 184:     }
+"89
+[; ;EPROM_DFM.c: 89:         EEPROM_WriteByte(address, data);
+[e ( _EEPROM_WriteByte (2 , _address _data ]
+"90
+[; ;EPROM_DFM.c: 90:     }
 }
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 2445 ]
-[e $ < -> _i `i -> . *U _tira 0 `i 2442  ]
 [e :U 2443 ]
-}
-"185
-[; ;ws2812b.c: 185: }
-[e :UE 2441 ]
-}
-"219
-[; ;ws2812b.c: 219: static void WS2812B_SendBit(uint8_t bit_value)
-[v _WS2812B_SendBit `(v ~T0 @X0 1 sf1`uc ]
-"220
-[; ;ws2812b.c: 220: {
-{
-[e :U _WS2812B_SendBit ]
-"219
-[; ;ws2812b.c: 219: static void WS2812B_SendBit(uint8_t bit_value)
-[v _bit_value `uc ~T0 @X0 1 r1 ]
-"220
-[; ;ws2812b.c: 220: {
-[f ]
-"221
-[; ;ws2812b.c: 221:     if(bit_value)
-[e $ ! != -> _bit_value `i -> 0 `i 2447  ]
-"222
-[; ;ws2812b.c: 222:     {
-{
-"228
-[; ;ws2812b.c: 228:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"230
-[; ;ws2812b.c: 230:         __nop();
-[e ( ___nop ..  ]
-"231
-[; ;ws2812b.c: 231:         __nop();
-[e ( ___nop ..  ]
-"232
-[; ;ws2812b.c: 232:         __nop();
-[e ( ___nop ..  ]
-"233
-[; ;ws2812b.c: 233:         __nop();
-[e ( ___nop ..  ]
-"234
-[; ;ws2812b.c: 234:         __nop();
-[e ( ___nop ..  ]
-"235
-[; ;ws2812b.c: 235:         __nop();
-[e ( ___nop ..  ]
-"236
-[; ;ws2812b.c: 236:         __nop();
-[e ( ___nop ..  ]
-"238
-[; ;ws2812b.c: 238:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"240
-[; ;ws2812b.c: 240:         __nop();
-[e ( ___nop ..  ]
-"241
-[; ;ws2812b.c: 241:         __nop();
-[e ( ___nop ..  ]
-"242
-[; ;ws2812b.c: 242:     }
-}
-[e $U 2448  ]
-"243
-[; ;ws2812b.c: 243:     else
-[e :U 2447 ]
-"244
-[; ;ws2812b.c: 244:     {
-{
-"250
-[; ;ws2812b.c: 250:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"252
-[; ;ws2812b.c: 252:         __nop();
-[e ( ___nop ..  ]
-"253
-[; ;ws2812b.c: 253:         __nop();
-[e ( ___nop ..  ]
-"255
-[; ;ws2812b.c: 255:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"257
-[; ;ws2812b.c: 257:         __nop();
-[e ( ___nop ..  ]
-"258
-[; ;ws2812b.c: 258:         __nop();
-[e ( ___nop ..  ]
-"259
-[; ;ws2812b.c: 259:         __nop();
-[e ( ___nop ..  ]
-"260
-[; ;ws2812b.c: 260:         __nop();
-[e ( ___nop ..  ]
-"261
-[; ;ws2812b.c: 261:         __nop();
-[e ( ___nop ..  ]
-"262
-[; ;ws2812b.c: 262:         __nop();
-[e ( ___nop ..  ]
-"263
-[; ;ws2812b.c: 263:     }
-}
-[e :U 2448 ]
-"264
-[; ;ws2812b.c: 264: }
-[e :UE 2446 ]
-}
-"285
-[; ;ws2812b.c: 285: static void WS2812B_SendByte(uint8_t data)
-[v _WS2812B_SendByte `(v ~T0 @X0 1 sf1`uc ]
-"286
-[; ;ws2812b.c: 286: {
-{
-[e :U _WS2812B_SendByte ]
-"285
-[; ;ws2812b.c: 285: static void WS2812B_SendByte(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
-"286
-[; ;ws2812b.c: 286: {
-[f ]
-"287
-[; ;ws2812b.c: 287:     uint8_t mask;
-[v _mask `uc ~T0 @X0 1 a ]
-"298
-[; ;ws2812b.c: 298:     for(mask = 0x80; mask > 0; mask >>= 1)
-{
-[e = _mask -> -> 128 `i `uc ]
-[e $ > -> _mask `i -> 0 `i 2450  ]
-[e $U 2451  ]
-[e :U 2450 ]
-"299
-[; ;ws2812b.c: 299:     {
-{
-"306
-[; ;ws2812b.c: 306:         if(data & mask)
-[e $ ! != & -> _data `i -> _mask `i -> 0 `i 2453  ]
-"307
-[; ;ws2812b.c: 307:         {
-{
-"308
-[; ;ws2812b.c: 308:             WS2812B_SendBit(1);
-[e ( _WS2812B_SendBit (1 -> -> 1 `i `uc ]
-"309
-[; ;ws2812b.c: 309:         }
-}
-[e $U 2454  ]
-"310
-[; ;ws2812b.c: 310:         else
-[e :U 2453 ]
-"311
-[; ;ws2812b.c: 311:         {
-{
-"312
-[; ;ws2812b.c: 312:             WS2812B_SendBit(0);
-[e ( _WS2812B_SendBit (1 -> -> 0 `i `uc ]
-"313
-[; ;ws2812b.c: 313:         }
-}
-[e :U 2454 ]
-"314
-[; ;ws2812b.c: 314:     }
-}
-[e =>> _mask -> -> 1 `i `uc ]
-[e $ > -> _mask `i -> 0 `i 2450  ]
-[e :U 2451 ]
-}
-"315
-[; ;ws2812b.c: 315: }
-[e :UE 2449 ]
-}
-"338
-[; ;ws2812b.c: 338: void WS2812B_Show(LED_WS2812B *tira)
-[v _WS2812B_Show `(v ~T0 @X0 1 ef1`*S2431 ]
-"339
-[; ;ws2812b.c: 339: {
-{
-[e :U _WS2812B_Show ]
-"338
-[; ;ws2812b.c: 338: void WS2812B_Show(LED_WS2812B *tira)
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-"339
-[; ;ws2812b.c: 339: {
-[f ]
-"340
-[; ;ws2812b.c: 340:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"345
-[; ;ws2812b.c: 345:     for(i = 0; i < tira->num_leds; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 2459  ]
-[e :U 2456 ]
-"346
-[; ;ws2812b.c: 346:     {
-{
-"354
-[; ;ws2812b.c: 354:         WS2812B_SendByte(tira->green[i]);
-[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 2 * -> _i `ux -> -> # *U &U . *U _tira 2 `ui `ux ]
-"355
-[; ;ws2812b.c: 355:         WS2812B_SendByte(tira->red[i]);
-[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 1 * -> _i `ux -> -> # *U &U . *U _tira 1 `ui `ux ]
-"356
-[; ;ws2812b.c: 356:         WS2812B_SendByte(tira->blue[i]);
-[e ( _WS2812B_SendByte (1 *U + &U . *U _tira 3 * -> _i `ux -> -> # *U &U . *U _tira 3 `ui `ux ]
-"357
-[; ;ws2812b.c: 357:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 2459 ]
-[e $ < -> _i `i -> . *U _tira 0 `i 2456  ]
-[e :U 2457 ]
-}
-"367
-[; ;ws2812b.c: 367:     LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"368
-[; ;ws2812b.c: 368:     _delay((unsigned long)((300)*(64000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
-"369
-[; ;ws2812b.c: 369: }
-[e :UE 2455 ]
-}
-"383
-[; ;ws2812b.c: 383: void WS2812B_Clear(LED_WS2812B *tira)
-[v _WS2812B_Clear `(v ~T0 @X0 1 ef1`*S2431 ]
-"384
-[; ;ws2812b.c: 384: {
-{
-[e :U _WS2812B_Clear ]
-"383
-[; ;ws2812b.c: 383: void WS2812B_Clear(LED_WS2812B *tira)
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-"384
-[; ;ws2812b.c: 384: {
-[f ]
-"385
-[; ;ws2812b.c: 385:     WS2812B_SetAll(tira, 0, 0, 0);
-[e ( _WS2812B_SetAll (4 , , , _tira -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"386
-[; ;ws2812b.c: 386:     WS2812B_Show(tira);
-[e ( _WS2812B_Show (1 _tira ]
-"387
-[; ;ws2812b.c: 387: }
-[e :UE 2460 ]
-}
-"410
-[; ;ws2812b.c: 410: void WS2812B_RGB(LED_WS2812B *tira,
-[v _WS2812B_RGB `(v ~T0 @X0 1 ef4`*S2431`uc`uc`uc ]
-"414
-[; ;ws2812b.c: 414: {
-{
-[e :U _WS2812B_RGB ]
-"410
-[; ;ws2812b.c: 410: void WS2812B_RGB(LED_WS2812B *tira,
-[v _tira `*S2431 ~T0 @X0 1 r1 ]
-"411
-[; ;ws2812b.c: 411:                  uint8_t red,
-[v _red `uc ~T0 @X0 1 r2 ]
-"412
-[; ;ws2812b.c: 412:                  uint8_t green,
-[v _green `uc ~T0 @X0 1 r3 ]
-"413
-[; ;ws2812b.c: 413:                  uint8_t blue)
-[v _blue `uc ~T0 @X0 1 r4 ]
-"414
-[; ;ws2812b.c: 414: {
-[f ]
-"415
-[; ;ws2812b.c: 415:     WS2812B_SetAll(tira, red, green, blue);
-[e ( _WS2812B_SetAll (4 , , , _tira _red _green _blue ]
-"416
-[; ;ws2812b.c: 416:     WS2812B_Show(tira);
-[e ( _WS2812B_Show (1 _tira ]
-"417
-[; ;ws2812b.c: 417: }
-[e :UE 2461 ]
+"91
+[; ;EPROM_DFM.c: 91: }
+[e :UE 2442 ]
 }

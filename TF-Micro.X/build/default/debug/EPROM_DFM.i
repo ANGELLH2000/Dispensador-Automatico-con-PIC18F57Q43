@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "EPROM_DFM.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "EPROM_DFM.c" 2
+# 1 "./EPROM_DFM.h" 1
+# 22 "./EPROM_DFM.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,278 +29576,109 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 4 "maincode.c" 2
-# 1 "./EPROM_DFM.h" 1
-
-
-
-
+# 23 "./EPROM_DFM.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
-# 7 "./EPROM_DFM.h" 2
-
-
-
-
+# 25 "./EPROM_DFM.h" 2
+# 85 "./EPROM_DFM.h"
 void EEPROM_WriteByte(uint16_t address, uint8_t data);
+# 109 "./EPROM_DFM.h"
 uint8_t EEPROM_ReadByte(uint16_t address);
+# 138 "./EPROM_DFM.h"
 void EEPROM_UpdateByte(uint16_t address, uint8_t data);
-# 5 "maincode.c" 2
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 6 "maincode.c" 2
-# 16 "maincode.c"
-unsigned char valor0 = 0;
-unsigned char valor1 = 0;
-unsigned char posicion = 0;
-
-void configuro(void)
+# 2 "EPROM_DFM.c" 2
+# 24 "EPROM_DFM.c"
+static void EEPROM_SetAddress(uint16_t address)
 {
+    uint32_t real_address = 0x380000UL + address;
 
 
 
-    OSCCON1 = 0x60;
-    OSCFRQ = 0x08;
-    OSCEN = 0x40;
+    NVMADRU = (uint8_t)((real_address >> 16) & 0xFF);
 
 
+    NVMADRH = (uint8_t)((real_address >> 8) & 0xFF);
 
 
-    TRISD = 0x00;
-    ANSELD = 0x00;
-
-
-
-
-    TRISCbits.TRISC0 = 1;
-    TRISCbits.TRISC1 = 1;
-    TRISCbits.TRISC3 = 1;
-
-    ANSELCbits.ANSELC0 = 0;
-    ANSELCbits.ANSELC1 = 0;
-    ANSELCbits.ANSELC3 = 0;
-
-    WPUCbits.WPUC0 = 1;
-    WPUCbits.WPUC1 = 1;
-    WPUCbits.WPUC3 = 1;
+    NVMADRL = (uint8_t)(real_address & 0xFF);
 }
-
-void LCD_init(void)
+# 59 "EPROM_DFM.c"
+uint8_t EEPROM_ReadByte(uint16_t address)
 {
-    LCD_CONFIG();
-    _delay((unsigned long)((16)*(64000000UL/4000.0)));
-    BORRAR_LCD();
-    CURSOR_HOME();
-    CURSOR_ONOFF(1);
-}
-
-void main(void)
-{
-    configuro();
-    LCD_init();
-    POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
-    POS_CURSOR(2, 0);
-    ESCRIBE_MENSAJE("Para:  ISABEL  ", 15);
-    _delay((unsigned long)((2000)*(64000000UL/4000.0)));
 
 
-
-    valor0 = EEPROM_ReadByte(0);
-    valor1 = EEPROM_ReadByte(1);
-
-    if(valor0 == 0xFF)
+    if (address >= 1024u)
     {
-        valor0 = 0;
+        return 0xFF;
     }
 
-    if(valor1 == 0xFF)
+
+    EEPROM_SetAddress(address);
+
+
+
+    NVMCON1bits.NVMCMD = 0b000;
+
+
+    NVMCON0bits.GO = 1;
+
+
+    while (NVMCON0bits.GO);
+
+
+    return NVMDATL;
+}
+# 108 "EPROM_DFM.c"
+void EEPROM_WriteByte(uint16_t address, uint8_t data)
+{
+
+
+    if (address >= 1024u)
     {
-        valor1 = 0;
+        return;
     }
 
-    BORRAR_LCD();
 
-    while(1)
+    EEPROM_SetAddress(address);
+
+
+
+    NVMDATL = data;
+
+
+    NVMCON1bits.NVMCMD = 0b011;
+
+
+
+
+    INTCON0bits.GIE = 0;
+
+
+
+    NVMLOCK = 0x55;
+    NVMLOCK = 0xAA;
+
+
+    NVMCON0bits.GO = 1;
+
+
+    while (NVMCON0bits.GO);
+
+
+    INTCON0bits.GIE = 1;
+
+
+    NVMCON1bits.NVMCMD = 0b000;
+}
+# 171 "EPROM_DFM.c"
+void EEPROM_UpdateByte(uint16_t address, uint8_t data)
+{
+    uint8_t old_data = EEPROM_ReadByte(address);
+
+
+
+    if (old_data != data)
     {
-
-
-
-        POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("P0:", 3);
-
-        ENVIA_CHAR((valor0 / 100) + 0x30);
-        ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor0 % 10) + 0x30);
-
-        ESCRIBE_MENSAJE(" P1:", 4);
-
-        ENVIA_CHAR((valor1 / 100) + 0x30);
-        ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor1 % 10) + 0x30);
-
-        ESCRIBE_MENSAJE(" ", 1);
-
-        POS_CURSOR(2, 0);
-        ESCRIBE_MENSAJE("SEL:", 4);
-        ENVIA_CHAR(posicion + 0x30);
-
-        ESCRIBE_MENSAJE("  GR:C1   ", 10);
-
-
-
-
-        if(PORTCbits.RC0 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC0 == 0)
-            {
-                if(posicion == 0)
-                {
-                    valor0++;
-                }
-                else
-                {
-                    valor1++;
-                }
-
-                while(PORTCbits.RC0 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
-
-
-
-
-        if(PORTCbits.RC1 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC1 == 0)
-            {
-                if(posicion == 0)
-                {
-                    EEPROM_UpdateByte(0, valor0);
-                }
-                else
-                {
-                    EEPROM_UpdateByte(1, valor1);
-                }
-
-                BORRAR_LCD();
-
-                POS_CURSOR(1, 0);
-                ESCRIBE_MENSAJE("Dato guardado", 13);
-
-                POS_CURSOR(2, 0);
-                ESCRIBE_MENSAJE("Posicion: ", 10);
-                ENVIA_CHAR(posicion + 0x30);
-
-                _delay((unsigned long)((800)*(64000000UL/4000.0)));
-                BORRAR_LCD();
-
-                while(PORTCbits.RC1 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
-
-
-
-
-        if(PORTCbits.RC3 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC3 == 0)
-            {
-                if(posicion == 0)
-                {
-                    posicion = 1;
-                }
-                else
-                {
-                    posicion = 0;
-                }
-
-                while(PORTCbits.RC3 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
+        EEPROM_WriteByte(address, data);
     }
 }

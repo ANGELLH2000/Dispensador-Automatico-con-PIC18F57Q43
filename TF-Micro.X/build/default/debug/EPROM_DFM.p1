@@ -1,96 +1,72 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"25 ./CNY70.h
-[; ;./CNY70.h: 25: {
-[s S2431 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2431 . tris_reg ansel_reg pin_mask adc_channel ]
-"92 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 92: {
-[s S2432 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
-[n S2432 . lat tris ansel pin_mask ]
-"104 ./motor_paso.h
-[; ;./motor_paso.h: 104: {
-[s S2433 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
-[n S2433 . lat tris ansel nibble index ]
-"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
-"5390
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5390: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@177 ]
-"5592
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-"49331
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
-[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
-"41445
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"38 ./CNY70.h
-[; ;./CNY70.h: 38: void CNY70_ADC_Init_FOSC64(void);
-[v _CNY70_ADC_Init_FOSC64 `(v ~T0 @X0 0 ef ]
-"40
-[; ;./CNY70.h: 40: void CNY70_Init(CNY70 *sensor,
-[v _CNY70_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`uc`uc ]
-"49145 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49145: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
-[v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
-"39957
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 39957: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
-"135 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
-[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2432`*Vuc`*Vuc`*Vuc`uc ]
-"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
-[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
-"150 ./motor_paso.h
-[; ;./motor_paso.h: 150: void Stepper_Init(Stepper *motor,
-[v _Stepper_Init `(v ~T0 @X0 0 ef5`*S2433`*Vuc`*Vuc`*Vuc`uc ]
-"48927 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48927: extern volatile unsigned char LATC __attribute__((address(0x4C0)));
-[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
-"49269
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49269: extern volatile unsigned char TRISC __attribute__((address(0x4C8)));
-[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
-"40949
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40949: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
-"13 ./LCD.h
-[; ;./LCD.h: 13: void LCD_CONFIG(void);
-[v _LCD_CONFIG `(v ~T0 @X0 0 ef ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"12 ./LCD.h
-[; ;./LCD.h: 12: void BORRAR_LCD(void);
-[v _BORRAR_LCD `(v ~T0 @X0 0 ef ]
-"9
-[; ;./LCD.h: 9: void CURSOR_HOME(void);
-[v _CURSOR_HOME `(v ~T0 @X0 0 ef ]
-"10
-[; ;./LCD.h: 10: void CURSOR_ONOFF(unsigned char estado);
-[v _CURSOR_ONOFF `(v ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"7
-[; ;./LCD.h: 7: void POS_CURSOR(unsigned char fila,unsigned char columna);
-[v _POS_CURSOR `(v ~T0 @X0 0 ef2`uc`uc ]
-"19
-[; ;./LCD.h: 19: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-[v _ESCRIBE_MENSAJE `(v ~T0 @X0 0 ef2`*Cuc`uc ]
-"46 ./CNY70.h
-[; ;./CNY70.h: 46: uint16_t CNY70_Read(CNY70 *sensor);
-[v _CNY70_Read `(us ~T0 @X0 0 ef1`*S2431 ]
-"11 ./LCD.h
-[; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
-[v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"207 ./Libbuzzer.h
-[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
-[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2432 ]
-"168 ./motor_paso.h
-[; ;./motor_paso.h: 168: void Stepper_Step_CW(Stepper *motor);
-[v _Stepper_Step_CW `(v ~T0 @X0 0 ef1`*S2433 ]
+"704 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 704: extern volatile unsigned char NVMADRU __attribute__((address(0x045)));
+[v _NVMADRU `Vuc ~T0 @X0 0 e@69 ]
+"634
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 634: extern volatile unsigned char NVMADRH __attribute__((address(0x044)));
+[v _NVMADRH `Vuc ~T0 @X0 0 e@68 ]
+"564
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 564: extern volatile unsigned char NVMADRL __attribute__((address(0x043)));
+[v _NVMADRL `Vuc ~T0 @X0 0 e@67 ]
+"506
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 506:     struct {
+[s S20 :3 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S20 . CMD . WRERR ]
+"511
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 511:     struct {
+[s S21 :3 `uc 1 ]
+[n S21 . NVMCMD ]
+"505
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 505: typedef union {
+[u S19 `S20 1 `S21 1 ]
+[n S19 . . . ]
+"515
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 515: extern volatile NVMCON1bits_t NVMCON1bits __attribute__((address(0x041)));
+[v _NVMCON1bits `VS19 ~T0 @X0 0 e@65 ]
+"462
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 462:     struct {
+[s S15 :1 `uc 1 ]
+[n S15 . GO ]
+"465
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 465:     struct {
+[s S16 :1 `uc 1 ]
+[n S16 . NOT_DONE ]
+"468
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 468:     struct {
+[s S17 :1 `uc 1 ]
+[n S17 . nDONE ]
+"471
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 471:     struct {
+[s S18 :1 `uc 1 ]
+[n S18 . NVMGO ]
+"461
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 461: typedef union {
+[u S14 `S15 1 `S16 1 `S17 1 `S18 1 ]
+[n S14 . . . . . ]
+"475
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 475: extern volatile NVMCON0bits_t NVMCON0bits __attribute__((address(0x040)));
+[v _NVMCON0bits `VS14 ~T0 @X0 0 e@64 ]
+"769
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 769: extern volatile unsigned char NVMDATL __attribute__((address(0x046)));
+[v _NVMDATL `Vuc ~T0 @X0 0 e@70 ]
+"49841
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49841:     struct {
+[s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"49850
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49850:     struct {
+[s S2319 :7 `uc 1 :1 `uc 1 ]
+[n S2319 . . GIEH ]
+"49840
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49840: typedef union {
+[u S2317 `S2318 1 `S2319 1 ]
+[n S2317 . . . ]
+"49855
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
+"535
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 535: extern volatile unsigned char NVMLOCK __attribute__((address(0x042)));
+[v _NVMLOCK `Vuc ~T0 @X0 0 e@66 ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2662,371 +2638,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
+"24 EPROM_DFM.c
+[; ;EPROM_DFM.c: 24: static void EEPROM_SetAddress(uint16_t address)
+[v _EEPROM_SetAddress `(v ~T0 @X0 1 sf1`us ]
 "25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"12 1sensor.c
-[v _sensorIR `S2431 ~T0 @X0 1 e ]
-"13
-[v _buzzer1 `S2432 ~T0 @X0 1 e ]
-"14
-[v _motor1 `S2433 ~T0 @X0 1 e ]
-"15
-[v _resultado_ADC `ui ~T0 @X0 1 e ]
-[i _resultado_ADC
--> -> 0 `i `ui
-]
-"16
-[v _contador `ui ~T0 @X0 1 e ]
-[i _contador
--> -> 0 `i `ui
-]
-"18
-[v _estado_bloqueado `uc ~T0 @X0 1 e ]
-[i _estado_bloqueado
--> -> 0 `i `uc
-]
-"19
-[v _sistema_listo `uc ~T0 @X0 1 e ]
-[i _sistema_listo
--> -> 0 `i `uc
-]
-"21
-[v _configuro `(v ~T0 @X0 1 ef ]
-"22
+[; ;EPROM_DFM.c: 25: {
 {
-[e :U _configuro ]
+[e :U _EEPROM_SetAddress ]
+"24
+[; ;EPROM_DFM.c: 24: static void EEPROM_SetAddress(uint16_t address)
+[v _address `us ~T0 @X0 1 r1 ]
+"25
+[; ;EPROM_DFM.c: 25: {
 [f ]
-"27
-[e = _OSCCON1 -> -> 96 `i `uc ]
-"28
-[e = _OSCFRQ -> -> 8 `i `uc ]
-"29
-[e = _OSCEN -> -> 64 `i `uc ]
-"34
-[e = _TRISD -> -> 0 `i `uc ]
-"35
-[e = _ANSELD -> -> 0 `i `uc ]
-"40
-[e ( _CNY70_ADC_Init_FOSC64 ..  ]
-"47
-[e ( _CNY70_Init (4 , , , , &U _sensorIR &U _TRISA &U _ANSELA -> -> 8 `i `uc -> -> 3 `i `uc ]
-"48
-[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
-"49
-[e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATC &U _TRISC &U _ANSELC -> -> 0 `i `uc ]
-"50
-[e :UE 2434 ]
+"26
+[; ;EPROM_DFM.c: 26:     uint32_t real_address = 0x380000UL + address;
+[v _real_address `ul ~T0 @X0 1 a ]
+[e = _real_address + -> 3670016 `ul -> _address `ul ]
+"30
+[; ;EPROM_DFM.c: 30:     NVMADRU = (uint8_t)((real_address >> 16) & 0xFF);
+[e = _NVMADRU -> & >> _real_address -> 16 `i -> -> -> 255 `i `l `ul `uc ]
+"33
+[; ;EPROM_DFM.c: 33:     NVMADRH = (uint8_t)((real_address >> 8) & 0xFF);
+[e = _NVMADRH -> & >> _real_address -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+"36
+[; ;EPROM_DFM.c: 36:     NVMADRL = (uint8_t)(real_address & 0xFF);
+[e = _NVMADRL -> & _real_address -> -> -> 255 `i `l `ul `uc ]
+"37
+[; ;EPROM_DFM.c: 37: }
+[e :UE 2431 ]
 }
-"52
-[v _LCD_init `(v ~T0 @X0 1 ef ]
-"53
-{
-[e :U _LCD_init ]
-[f ]
-"54
-[e ( _LCD_CONFIG ..  ]
-"55
-[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"56
-[e ( _BORRAR_LCD ..  ]
-"57
-[e ( _CURSOR_HOME ..  ]
-"58
-[e ( _CURSOR_ONOFF (1 -> -> 1 `i `uc ]
 "59
-[e :UE 2435 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"61
-[v _main `(v ~T0 @X0 1 ef ]
-"62
+[; ;EPROM_DFM.c: 59: uint8_t EEPROM_ReadByte(uint16_t address)
+[v _EEPROM_ReadByte `(uc ~T0 @X0 1 ef1`us ]
+"60
+[; ;EPROM_DFM.c: 60: {
 {
-[e :U _main ]
+[e :U _EEPROM_ReadByte ]
+"59
+[; ;EPROM_DFM.c: 59: uint8_t EEPROM_ReadByte(uint16_t address)
+[v _address `us ~T0 @X0 1 r1 ]
+"60
+[; ;EPROM_DFM.c: 60: {
 [f ]
 "63
-[e ( _configuro ..  ]
+[; ;EPROM_DFM.c: 63:     if (address >= 1024u)
+[e $ ! >= -> _address `ui -> 1024 `ui 2433  ]
 "64
-[e ( _LCD_init ..  ]
+[; ;EPROM_DFM.c: 64:     {
+{
+"65
+[; ;EPROM_DFM.c: 65:         return 0xFF;
+[e ) -> -> 255 `i `uc ]
+[e $UE 2432  ]
 "66
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"67
-[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 9 `i `uc ]
+[; ;EPROM_DFM.c: 66:     }
+}
+[e :U 2433 ]
 "69
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"70
-[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 9 `i `uc ]
-"72
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;EPROM_DFM.c: 69:     EEPROM_SetAddress(address);
+[e ( _EEPROM_SetAddress (1 _address ]
 "73
-[e ( _BORRAR_LCD ..  ]
-"75
-[e :U 2438 ]
+[; ;EPROM_DFM.c: 73:     NVMCON1bits.NVMCMD = 0b000;
+[e = . . _NVMCON1bits 1 0 -> -> 0 `i `uc ]
 "76
-{
-"77
-[e = _resultado_ADC -> ( _CNY70_Read (1 &U _sensorIR `ui ]
+[; ;EPROM_DFM.c: 76:     NVMCON0bits.GO = 1;
+[e = . . _NVMCON0bits 0 0 -> -> 1 `i `uc ]
 "79
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"80
-[e ( _ESCRIBE_MENSAJE (2 , :s 3C -> -> 4 `i `uc ]
+[; ;EPROM_DFM.c: 79:     while (NVMCON0bits.GO);
+[e $U 2434  ]
+[e :U 2435 ]
+[e :U 2434 ]
+[e $ != -> . . _NVMCON0bits 0 0 `i -> 0 `i 2435  ]
+[e :U 2436 ]
 "82
-[e ( _ENVIA_CHAR (1 -> + / _resultado_ADC -> -> 10000 `i `ui -> -> 48 `i `ui `uc ]
+[; ;EPROM_DFM.c: 82:     return NVMDATL;
+[e ) _NVMDATL ]
+[e $UE 2432  ]
 "83
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 10000 `i `ui -> -> 1000 `i `ui -> -> 48 `i `ui `uc ]
-"84
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
-"85
-[e ( _ENVIA_CHAR (1 -> + / % _resultado_ADC -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"86
-[e ( _ENVIA_CHAR (1 -> + % _resultado_ADC -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-"88
-[e ( _ESCRIBE_MENSAJE (2 , :s 4C -> -> 3 `i `uc ]
-"90
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"92
-[e $ ! <= _resultado_ADC -> -> 750 `i `ui 2440  ]
-"93
-{
-"94
-[e $ ! && == -> _estado_bloqueado `i -> 0 `i == -> _sistema_listo `i -> 1 `i 2441  ]
-"95
-{
-"96
-[e ++ _contador -> -> 1 `i `ui ]
-"97
-[e = _estado_bloqueado -> -> 1 `i `uc ]
-"98
+[; ;EPROM_DFM.c: 83: }
+[e :UE 2432 ]
 }
-[e :U 2441 ]
-"100
-[e ( _ESCRIBE_MENSAJE (2 , :s 5C -> -> 11 `i `uc ]
-"101
-}
-[e $U 2442  ]
-"102
-[e :U 2440 ]
-"103
-{
-"104
-[e = _sistema_listo -> -> 1 `i `uc ]
-"105
-[e = _estado_bloqueado -> -> 0 `i `uc ]
-"106
-[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
+"108
+[; ;EPROM_DFM.c: 108: void EEPROM_WriteByte(uint16_t address, uint8_t data)
+[v _EEPROM_WriteByte `(v ~T0 @X0 1 ef2`us`uc ]
 "109
-}
-[e :U 2442 ]
-"111
-[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 1000 `i `ui -> -> 100 `i `ui -> -> 48 `i `ui `uc ]
+[; ;EPROM_DFM.c: 109: {
+{
+[e :U _EEPROM_WriteByte ]
+"108
+[; ;EPROM_DFM.c: 108: void EEPROM_WriteByte(uint16_t address, uint8_t data)
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"109
+[; ;EPROM_DFM.c: 109: {
+[f ]
 "112
-[e ( _ENVIA_CHAR (1 -> + / % _contador -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;EPROM_DFM.c: 112:     if (address >= 1024u)
+[e $ ! >= -> _address `ui -> 1024 `ui 2438  ]
 "113
-[e ( _ENVIA_CHAR (1 -> + % _contador -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;EPROM_DFM.c: 113:     {
+{
+"114
+[; ;EPROM_DFM.c: 114:         return;
+[e $UE 2437  ]
 "115
-[e ( _ESCRIBE_MENSAJE (2 , :s 6C -> -> 3 `i `uc ]
-"116
-[e ( _Stepper_Step_CW (1 &U _motor1 ]
-"117
+[; ;EPROM_DFM.c: 115:     }
 }
-[e :U 2437 ]
-[e $U 2438  ]
-[e :U 2439 ]
+[e :U 2438 ]
 "118
-[e :UE 2436 ]
+[; ;EPROM_DFM.c: 118:     EEPROM_SetAddress(address);
+[e ( _EEPROM_SetAddress (1 _address ]
+"122
+[; ;EPROM_DFM.c: 122:     NVMDATL = data;
+[e = _NVMDATL _data ]
+"125
+[; ;EPROM_DFM.c: 125:     NVMCON1bits.NVMCMD = 0b011;
+[e = . . _NVMCON1bits 1 0 -> -> 3 `i `uc ]
+"130
+[; ;EPROM_DFM.c: 130:     INTCON0bits.GIE = 0;
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
+"134
+[; ;EPROM_DFM.c: 134:     NVMLOCK = 0x55;
+[e = _NVMLOCK -> -> 85 `i `uc ]
+"135
+[; ;EPROM_DFM.c: 135:     NVMLOCK = 0xAA;
+[e = _NVMLOCK -> -> 170 `i `uc ]
+"138
+[; ;EPROM_DFM.c: 138:     NVMCON0bits.GO = 1;
+[e = . . _NVMCON0bits 0 0 -> -> 1 `i `uc ]
+"141
+[; ;EPROM_DFM.c: 141:     while (NVMCON0bits.GO);
+[e $U 2439  ]
+[e :U 2440 ]
+[e :U 2439 ]
+[e $ != -> . . _NVMCON0bits 0 0 `i -> 0 `i 2440  ]
+[e :U 2441 ]
+"144
+[; ;EPROM_DFM.c: 144:     INTCON0bits.GIE = 1;
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"147
+[; ;EPROM_DFM.c: 147:     NVMCON1bits.NVMCMD = 0b000;
+[e = . . _NVMCON1bits 1 0 -> -> 0 `i `uc ]
+"148
+[; ;EPROM_DFM.c: 148: }
+[e :UE 2437 ]
 }
-[a 1C 67 78 89 55 48 32 76 105 98 0 ]
-[a 3C 65 68 67 58 0 ]
-[a 2C 82 65 51 32 47 32 65 78 51 0 ]
-[a 5C 80 97 115 116 105 108 108 97 115 58 32 0 ]
-[a 4C 32 32 32 0 ]
-[a 6C 32 32 32 0 ]
+"171
+[; ;EPROM_DFM.c: 171: void EEPROM_UpdateByte(uint16_t address, uint8_t data)
+[v _EEPROM_UpdateByte `(v ~T0 @X0 1 ef2`us`uc ]
+"172
+[; ;EPROM_DFM.c: 172: {
+{
+[e :U _EEPROM_UpdateByte ]
+"171
+[; ;EPROM_DFM.c: 171: void EEPROM_UpdateByte(uint16_t address, uint8_t data)
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"172
+[; ;EPROM_DFM.c: 172: {
+[f ]
+"173
+[; ;EPROM_DFM.c: 173:     uint8_t old_data = EEPROM_ReadByte(address);
+[v _old_data `uc ~T0 @X0 1 a ]
+[e = _old_data ( _EEPROM_ReadByte (1 _address ]
+"177
+[; ;EPROM_DFM.c: 177:     if (old_data != data)
+[e $ ! != -> _old_data `i -> _data `i 2443  ]
+"178
+[; ;EPROM_DFM.c: 178:     {
+{
+"179
+[; ;EPROM_DFM.c: 179:         EEPROM_WriteByte(address, data);
+[e ( _EEPROM_WriteByte (2 , _address _data ]
+"180
+[; ;EPROM_DFM.c: 180:     }
+}
+[e :U 2443 ]
+"181
+[; ;EPROM_DFM.c: 181: }
+[e :UE 2442 ]
+}

@@ -2703,8 +2703,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Libbuzzer.c: 43:     {
 {
 "44
-[; ;Libbuzzer.c: 44:         _delay((unsigned long)((1)*(48000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `ul `d .4000000.0 `ul ]
+[; ;Libbuzzer.c: 44:         _delay((unsigned long)((1)*(64000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
 "45
 [; ;Libbuzzer.c: 45:         time_us--;
 [e -- _time_us -> -> -> 1 `i `l `ul ]
@@ -2961,14 +2961,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Libbuzzer.c: 225:     Buzzer_Tone(buzzer, 659, 45, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 659 `i `us -> -> 45 `i `us -> -> 50 `i `uc ]
 "226
-[; ;Libbuzzer.c: 226:     _delay((unsigned long)((15)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 226:     _delay((unsigned long)((15)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "228
 [; ;Libbuzzer.c: 228:     Buzzer_Tone(buzzer, 784, 65, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 784 `i `us -> -> 65 `i `us -> -> 50 `i `uc ]
 "229
-[; ;Libbuzzer.c: 229:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 229:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "231
 [; ;Libbuzzer.c: 231:     Buzzer_Off(buzzer);
 [e ( _Buzzer_Off (1 _buzzer ]
@@ -2993,26 +2993,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Libbuzzer.c: 246:     Buzzer_Tone(buzzer, 523, 80, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 523 `i `us -> -> 80 `i `us -> -> 50 `i `uc ]
 "247
-[; ;Libbuzzer.c: 247:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 247:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "249
 [; ;Libbuzzer.c: 249:     Buzzer_Tone(buzzer, 659, 90, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 659 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
 "250
-[; ;Libbuzzer.c: 250:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 250:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "252
 [; ;Libbuzzer.c: 252:     Buzzer_Tone(buzzer, 784, 120, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 784 `i `us -> -> 120 `i `us -> -> 50 `i `uc ]
 "253
-[; ;Libbuzzer.c: 253:     _delay((unsigned long)((20)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 253:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "255
 [; ;Libbuzzer.c: 255:     Buzzer_Tone(buzzer, 1047, 180, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 1047 `i `us -> -> 180 `i `us -> -> 50 `i `uc ]
 "256
-[; ;Libbuzzer.c: 256:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 256:     _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "258
 [; ;Libbuzzer.c: 258:     Buzzer_Off(buzzer);
 [e ( _Buzzer_Off (1 _buzzer ]
@@ -3037,20 +3037,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Libbuzzer.c: 280:     Buzzer_Tone(buzzer, 880, 90, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
 "281
-[; ;Libbuzzer.c: 281:     _delay((unsigned long)((80)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 281:     _delay((unsigned long)((80)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "283
 [; ;Libbuzzer.c: 283:     Buzzer_Tone(buzzer, 880, 90, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
 "284
-[; ;Libbuzzer.c: 284:     _delay((unsigned long)((80)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 284:     _delay((unsigned long)((80)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "286
 [; ;Libbuzzer.c: 286:     Buzzer_Tone(buzzer, 880, 90, 50);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 880 `i `us -> -> 90 `i `us -> -> 50 `i `uc ]
 "287
-[; ;Libbuzzer.c: 287:     _delay((unsigned long)((100)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 287:     _delay((unsigned long)((100)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "289
 [; ;Libbuzzer.c: 289:     Buzzer_Off(buzzer);
 [e ( _Buzzer_Off (1 _buzzer ]
@@ -3075,20 +3075,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Libbuzzer.c: 305:     Buzzer_Tone(buzzer, 392, 160, 60);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 392 `i `us -> -> 160 `i `us -> -> 60 `i `uc ]
 "306
-[; ;Libbuzzer.c: 306:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 306:     _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "308
 [; ;Libbuzzer.c: 308:     Buzzer_Tone(buzzer, 330, 180, 60);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 330 `i `us -> -> 180 `i `us -> -> 60 `i `uc ]
 "309
-[; ;Libbuzzer.c: 309:     _delay((unsigned long)((40)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 309:     _delay((unsigned long)((40)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "311
 [; ;Libbuzzer.c: 311:     Buzzer_Tone(buzzer, 262, 250, 70);
 [e ( _Buzzer_Tone (4 , , , _buzzer -> -> 262 `i `us -> -> 250 `i `us -> -> 70 `i `uc ]
 "312
-[; ;Libbuzzer.c: 312:     _delay((unsigned long)((60)*(48000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 48000000 `ul `d .4000.0 `ul ]
+[; ;Libbuzzer.c: 312:     _delay((unsigned long)((60)*(64000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
 "314
 [; ;Libbuzzer.c: 314:     Buzzer_Off(buzzer);
 [e ( _Buzzer_Off (1 _buzzer ]
