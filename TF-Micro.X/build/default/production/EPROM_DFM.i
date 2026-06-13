@@ -8,9 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "EPROM_DFM.c" 2
 # 1 "./EPROM_DFM.h" 1
-
-
-
+# 22 "./EPROM_DFM.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29578,43 +29576,45 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 5 "./EPROM_DFM.h" 2
+# 23 "./EPROM_DFM.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
-# 7 "./EPROM_DFM.h" 2
-
-
-
-
+# 25 "./EPROM_DFM.h" 2
+# 85 "./EPROM_DFM.h"
 void EEPROM_WriteByte(uint16_t address, uint8_t data);
+# 109 "./EPROM_DFM.h"
 uint8_t EEPROM_ReadByte(uint16_t address);
+# 138 "./EPROM_DFM.h"
 void EEPROM_UpdateByte(uint16_t address, uint8_t data);
 # 2 "EPROM_DFM.c" 2
-
-
-
-
-
+# 24 "EPROM_DFM.c"
 static void EEPROM_SetAddress(uint16_t address)
 {
     uint32_t real_address = 0x380000UL + address;
 
+
+
     NVMADRU = (uint8_t)((real_address >> 16) & 0xFF);
+
+
     NVMADRH = (uint8_t)((real_address >> 8) & 0xFF);
+
+
     NVMADRL = (uint8_t)(real_address & 0xFF);
 }
-
-
-
-
+# 59 "EPROM_DFM.c"
 uint8_t EEPROM_ReadByte(uint16_t address)
 {
+
+
     if (address >= 1024u)
     {
         return 0xFF;
     }
 
+
     EEPROM_SetAddress(address);
+
 
 
     NVMCON1bits.NVMCMD = 0b000;
@@ -29628,18 +29628,19 @@ uint8_t EEPROM_ReadByte(uint16_t address)
 
     return NVMDATL;
 }
-
-
-
-
+# 108 "EPROM_DFM.c"
 void EEPROM_WriteByte(uint16_t address, uint8_t data)
 {
+
+
     if (address >= 1024u)
     {
         return;
     }
 
+
     EEPROM_SetAddress(address);
+
 
 
     NVMDATL = data;
@@ -29648,7 +29649,10 @@ void EEPROM_WriteByte(uint16_t address, uint8_t data)
     NVMCON1bits.NVMCMD = 0b011;
 
 
+
+
     INTCON0bits.GIE = 0;
+
 
 
     NVMLOCK = 0x55;
@@ -29666,14 +29670,12 @@ void EEPROM_WriteByte(uint16_t address, uint8_t data)
 
     NVMCON1bits.NVMCMD = 0b000;
 }
-
-
-
-
-
+# 171 "EPROM_DFM.c"
 void EEPROM_UpdateByte(uint16_t address, uint8_t data)
 {
     uint8_t old_data = EEPROM_ReadByte(address);
+
+
 
     if (old_data != data)
     {

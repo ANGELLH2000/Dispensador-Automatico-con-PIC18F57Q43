@@ -12,6 +12,7 @@
       <itemPath>LCD.h</itemPath>
       <itemPath>CNY70.h</itemPath>
       <itemPath>EPROM_DFM.h</itemPath>
+      <itemPath>keypad4x4.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -32,6 +33,9 @@
       <logicalFolder name="f2" displayName="Ejemplos EPROM_DFM" projectFiles="true">
         <itemPath>maincode_eprom_dfm.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f3" displayName="Ejemplos keypad4x4" projectFiles="true">
+        <itemPath>maincode_kaypad4x4.c</itemPath>
+      </logicalFolder>
       <itemPath>maincode.c</itemPath>
       <itemPath>ws2812b.c</itemPath>
       <itemPath>motor_paso.c</itemPath>
@@ -40,6 +44,7 @@
       <itemPath>LCD.c</itemPath>
       <itemPath>CNY70.c</itemPath>
       <itemPath>EPROM_DFM.c</itemPath>
+      <itemPath>keypad4x4.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -225,6 +230,14 @@
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
       <item path="maincode_eprom_dfm.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
     </conf>
   </confs>

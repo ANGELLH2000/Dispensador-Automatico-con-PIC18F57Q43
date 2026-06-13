@@ -65,14 +65,22 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "119 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
 [v _CNY70_Read CNY70_Read `(us  1 e 2 0 ]
-"7 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+"24 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
 [v _EEPROM_SetAddress EEPROM_SetAddress `(v  1 s 1 EEPROM_SetAddress ]
-"19
+"59
 [v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
-"44
+"108
 [v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
-"83
-[v _EEPROM_UpdateByte EEPROM_UpdateByte `(v  1 e 1 0 ]
+"87 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+[v _Keypad_AllRowsHigh Keypad_AllRowsHigh `(v  1 s 1 Keypad_AllRowsHigh ]
+"113
+[v _Keypad_ActivateRow Keypad_ActivateRow `(v  1 s 1 Keypad_ActivateRow ]
+"142
+[v _Keypad_Scan Keypad_Scan `(uc  1 s 1 Keypad_Scan ]
+"208
+[v _Keypad_Init Keypad_Init `(v  1 e 1 0 ]
+"282
+[v _Keypad_Read Keypad_Read `(uc  1 e 1 0 ]
 "6 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD.c
 [v _POS_CURSOR POS_CURSOR `(v  1 e 1 0 ]
 "30
@@ -103,11 +111,9 @@
 [v _Buzzer_Tone Buzzer_Tone `(v  1 e 1 0 ]
 "192
 [v _Buzzer_Off Buzzer_Off `(v  1 e 1 0 ]
-"20 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+"24 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
 [v _configuro configuro `(v  1 e 1 0 ]
-"51
-[v _LCD_init LCD_init `(v  1 e 1 0 ]
-"60
+"38
 [v _main main `(v  1 e 1 0 ]
 "48 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 [v _Stepper_Write Stepper_Write `(v  1 s 1 Stepper_Write ]
@@ -131,26 +137,26 @@
 [v _WS2812B_SendByte WS2812B_SendByte `(v  1 s 1 WS2812B_SendByte ]
 "338
 [v _WS2812B_Show WS2812B_Show `(v  1 e 1 0 ]
-[s S704 . 1 `uc 1 GO 1 0 :1:0 
+[s S596 . 1 `uc 1 GO 1 0 :1:0 
 ]
 "475 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[s S706 . 1 `uc 1 NOT_DONE 1 0 :1:0 
+[s S598 . 1 `uc 1 NOT_DONE 1 0 :1:0 
 ]
-[s S708 . 1 `uc 1 nDONE 1 0 :1:0 
+[s S600 . 1 `uc 1 nDONE 1 0 :1:0 
 ]
-[s S710 . 1 `uc 1 NVMGO 1 0 :1:0 
+[s S602 . 1 `uc 1 NVMGO 1 0 :1:0 
 ]
-[u S712 . 1 `S704 1 . 1 0 `S706 1 . 1 0 `S708 1 . 1 0 `S710 1 . 1 0 ]
-[v _NVMCON0bits NVMCON0bits `VES712  1 e 1 @64 ]
-[s S688 . 1 `uc 1 CMD 1 0 :3:0 
+[u S604 . 1 `S596 1 . 1 0 `S598 1 . 1 0 `S600 1 . 1 0 `S602 1 . 1 0 ]
+[v _NVMCON0bits NVMCON0bits `VES604  1 e 1 @64 ]
+[s S580 . 1 `uc 1 CMD 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 WRERR 1 0 :1:7 
 ]
 "515
-[s S692 . 1 `uc 1 NVMCMD 1 0 :3:0 
+[s S584 . 1 `uc 1 NVMCMD 1 0 :3:0 
 ]
-[u S694 . 1 `S688 1 . 1 0 `S692 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES694  1 e 1 @65 ]
+[u S586 . 1 `S580 1 . 1 0 `S584 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES586  1 e 1 @65 ]
 "535
 [v _NVMLOCK NVMLOCK `VEuc  1 e 1 @66 ]
 "564
@@ -175,7 +181,7 @@
 [v _ADPCH ADPCH `VEuc  1 e 1 @1004 ]
 "39079
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @1011 ]
-[s S595 . 1 `uc 1 GO 1 0 :1:0 
+[s S487 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -184,7 +190,7 @@
 `uc 1 ON 1 0 :1:7 
 ]
 "39117
-[s S603 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S495 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -193,58 +199,34 @@
 `uc 1 ADON 1 0 :1:7 
 ]
 "39117
-[s S611 . 1 `uc 1 DONE 1 0 :1:0 
+[s S503 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
 "39117
-[s S615 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S507 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
 "39117
-[s S617 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S509 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
 "39117
-[u S621 . 1 `S595 1 . 1 0 `S603 1 . 1 0 `S611 1 . 1 0 `S615 1 . 1 0 `S617 1 . 1 0 ]
+[u S513 . 1 `S487 1 . 1 0 `S495 1 . 1 0 `S503 1 . 1 0 `S507 1 . 1 0 `S509 1 . 1 0 ]
 "39117
 "39117
-[v _ADCON0bits ADCON0bits `VES621  1 e 1 @1011 ]
+[v _ADCON0bits ADCON0bits `VES513  1 e 1 @1011 ]
 "39667
 [v _ADREF ADREF `VEuc  1 e 1 @1016 ]
 "39853
 [v _ADCLK ADCLK `VEuc  1 e 1 @1018 ]
-[s S50 . 1 `uc 1 ANSELC0 1 0 :1:0 
-`uc 1 ANSELC1 1 0 :1:1 
-`uc 1 ANSELC2 1 0 :1:2 
-`uc 1 ANSELC3 1 0 :1:3 
-`uc 1 ANSELC4 1 0 :1:4 
-`uc 1 ANSELC5 1 0 :1:5 
-`uc 1 ANSELC6 1 0 :1:6 
-`uc 1 ANSELC7 1 0 :1:7 
-]
-"40966
-[u S59 . 1 `S50 1 . 1 0 ]
-"40966
-"40966
-[v _ANSELCbits ANSELCbits `VES59  1 e 1 @1040 ]
-[s S71 . 1 `uc 1 WPUC0 1 0 :1:0 
-`uc 1 WPUC1 1 0 :1:1 
-`uc 1 WPUC2 1 0 :1:2 
-`uc 1 WPUC3 1 0 :1:3 
-`uc 1 WPUC4 1 0 :1:4 
-`uc 1 WPUC5 1 0 :1:5 
-`uc 1 WPUC6 1 0 :1:6 
-`uc 1 WPUC7 1 0 :1:7 
-]
-"41028
-[u S80 . 1 `S71 1 . 1 0 ]
-"41028
-"41028
-[v _WPUCbits WPUCbits `VES80  1 e 1 @1041 ]
+"40949
+[v _ANSELC ANSELC `VEuc  1 e 1 @1040 ]
+"41011
+[v _WPUC WPUC `VEuc  1 e 1 @1041 ]
 "41445
 [v _ANSELD ANSELD `VEuc  1 e 1 @1048 ]
-[s S222 . 1 `uc 1 ANSELD0 1 0 :1:0 
+[s S110 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -254,13 +236,15 @@
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "41462
-[u S231 . 1 `S222 1 . 1 0 ]
+[u S119 . 1 `S110 1 . 1 0 ]
 "41462
 "41462
-[v _ANSELDbits ANSELDbits `VES231  1 e 1 @1048 ]
+[v _ANSELDbits ANSELDbits `VES119  1 e 1 @1048 ]
+"48927
+[v _LATC LATC `VEuc  1 e 1 @1216 ]
 "48989
 [v _LATD LATD `VEuc  1 e 1 @1217 ]
-[s S264 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S152 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -270,27 +254,15 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "49006
-[u S273 . 1 `S264 1 . 1 0 ]
+[u S161 . 1 `S152 1 . 1 0 ]
 "49006
 "49006
-[v _LATDbits LATDbits `VES273  1 e 1 @1217 ]
-[s S29 . 1 `uc 1 TRISC0 1 0 :1:0 
-`uc 1 TRISC1 1 0 :1:1 
-`uc 1 TRISC2 1 0 :1:2 
-`uc 1 TRISC3 1 0 :1:3 
-`uc 1 TRISC4 1 0 :1:4 
-`uc 1 TRISC5 1 0 :1:5 
-`uc 1 TRISC6 1 0 :1:6 
-`uc 1 TRISC7 1 0 :1:7 
-]
-"49286
-[u S38 . 1 `S29 1 . 1 0 ]
-"49286
-"49286
-[v _TRISCbits TRISCbits `VES38  1 e 1 @1224 ]
+[v _LATDbits LATDbits `VES161  1 e 1 @1217 ]
+"49269
+[v _TRISC TRISC `VEuc  1 e 1 @1224 ]
 "49331
 [v _TRISD TRISD `VEuc  1 e 1 @1225 ]
-[s S243 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S131 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -300,27 +272,15 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "49348
-[u S252 . 1 `S243 1 . 1 0 ]
+[u S140 . 1 `S131 1 . 1 0 ]
 "49348
 "49348
-[v _TRISDbits TRISDbits `VES252  1 e 1 @1225 ]
-[s S137 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 RC3 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-"49628
-[u S146 . 1 `S137 1 . 1 0 ]
-"49628
-"49628
-[v _PORTCbits PORTCbits `VES146  1 e 1 @1232 ]
+[v _TRISDbits TRISDbits `VES140  1 e 1 @1225 ]
+"49611
+[v _PORTC PORTC `VEuc  1 e 1 @1232 ]
 "49673
 [v _PORTD PORTD `VEuc  1 e 1 @1233 ]
-[s S727 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[s S619 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -329,59 +289,45 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "49855
-[s S735 . 1 `uc 1 . 1 0 :7:0 
+[s S627 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "49855
-[u S738 . 1 `S727 1 . 1 0 `S735 1 . 1 0 ]
+[u S630 . 1 `S619 1 . 1 0 `S627 1 . 1 0 ]
 "49855
 "49855
-[v _INTCON0bits INTCON0bits `VES738  1 e 1 @1238 ]
+[v _INTCON0bits INTCON0bits `VES630  1 e 1 @1238 ]
 "8 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
 [v _cny70_last_channel cny70_last_channel `uc  1 s 1 cny70_last_channel ]
-"16 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-[v _valor0 valor0 `uc  1 e 1 0 ]
-"17
-[v _valor1 valor1 `uc  1 e 1 0 ]
+"15 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+[v _Keypad_RowMasks Keypad_RowMasks `C[4]uc  1 s 4 Keypad_RowMasks ]
+"35
+[v _Keypad_ColumnMasks Keypad_ColumnMasks `C[4]uc  1 s 4 Keypad_ColumnMasks ]
+"72
+[v _Keypad_Map Keypad_Map `C[4][4]uc  1 s 16 Keypad_Map ]
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+"12 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+[v _teclado teclado `S24  1 e 10 0 ]
 "18
-[v _posicion posicion `uc  1 e 1 0 ]
+[v _tecla tecla `uc  1 e 1 0 ]
 "23 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 [v _full_step_sequence full_step_sequence `C[4]uc  1 s 4 full_step_sequence ]
-"60 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+"38 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
 [v _main main `(v  1 e 1 0 ]
 {
-"194
+"86
 } 0
-"20
+"24
 [v _configuro configuro `(v  1 e 1 0 ]
 {
-"49
+"32
 } 0
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
+"72 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD.c
+[v _LCD_CONFIG LCD_CONFIG `(v  1 e 1 0 ]
 {
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
+"91
 } 0
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 12 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 11 ]
-[v ___awdiv@counter counter `uc  1 a 1 10 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 6 ]
-[v ___awdiv@divisor divisor `i  1 p 2 8 ]
-"41
-} 0
-"6 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD.c
+"6
 [v _POS_CURSOR POS_CURSOR `(v  1 e 1 0 ]
 {
 [v POS_CURSOR@fila fila `uc  1 p 1 wreg ]
@@ -391,16 +337,84 @@
 [v POS_CURSOR@fila fila `uc  1 p 1 4 ]
 "16
 } 1
-"51 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-[v _LCD_init LCD_init `(v  1 e 1 0 ]
+"282 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+[v _Keypad_Read Keypad_Read `(uc  1 e 1 0 ]
 {
-"58
+"284
+[v Keypad_Read@detected_key detected_key `uc  1 a 1 28 ]
+"285
+[v Keypad_Read@confirmed_key confirmed_key `uc  1 a 1 27 ]
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+"282
+[v Keypad_Read@keypad keypad `*.39S24  1 p 2 23 ]
+"348
 } 0
-"72 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD.c
-[v _LCD_CONFIG LCD_CONFIG `(v  1 e 1 0 ]
+"142
+[v _Keypad_Scan Keypad_Scan `(uc  1 s 1 Keypad_Scan ]
 {
+"145
+[v Keypad_Scan@column column `uc  1 a 1 22 ]
+"144
+[v Keypad_Scan@row row `uc  1 a 1 21 ]
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+"142
+[v Keypad_Scan@keypad keypad `*.39S24  1 p 2 15 ]
+"202
+} 0
+"113
+[v _Keypad_ActivateRow Keypad_ActivateRow `(v  1 s 1 Keypad_ActivateRow ]
+{
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+[v Keypad_ActivateRow@keypad keypad `*.39S24  1 p 2 6 ]
+[v Keypad_ActivateRow@row row `uc  1 p 1 8 ]
+"126
+} 0
+"208
+[v _Keypad_Init Keypad_Init `(v  1 e 1 0 ]
+{
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+[v Keypad_Init@keypad keypad `*.39S24  1 p 2 6 ]
+"209
+[v Keypad_Init@port port `*.39VEuc  1 p 2 8 ]
+"210
+[v Keypad_Init@lat lat `*.39VEuc  1 p 2 10 ]
+"211
+[v Keypad_Init@tris tris `*.39VEuc  1 p 2 12 ]
+"212
+[v Keypad_Init@ansel ansel `*.39VEuc  1 p 2 14 ]
+"213
+[v Keypad_Init@wpu wpu `*.39VEuc  1 p 2 16 ]
+"276
+} 0
+"87
+[v _Keypad_AllRowsHigh Keypad_AllRowsHigh `(v  1 s 1 Keypad_AllRowsHigh ]
+{
+[s S24 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+[v Keypad_AllRowsHigh@keypad keypad `*.39S24  1 p 2 0 ]
 "91
 } 0
+"41 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD.c
+[v _ESCRIBE_MENSAJE ESCRIBE_MENSAJE `(v  1 e 1 0 ]
+{
+"43
+[v ESCRIBE_MENSAJE@i i `uc  1 a 1 6 ]
+"41
+[v ESCRIBE_MENSAJE@cadena cadena `*.31Cuc  1 p 1 3 ]
+[v ESCRIBE_MENSAJE@tam tam `uc  1 p 1 4 ]
+"48
+} 0
+"50
+[v _ENVIA_CHAR ENVIA_CHAR `(v  1 e 1 0 ]
+{
+[v ENVIA_CHAR@dato dato `uc  1 p 1 wreg ]
+"52
+[v ENVIA_CHAR@aux aux `uc  1 a 1 2 ]
+"50
+[v ENVIA_CHAR@dato dato `uc  1 p 1 wreg ]
+"53
+[v ENVIA_CHAR@dato dato `uc  1 p 1 1 ]
+"65
+} 1
 "35
 [v _CURSOR_ONOFF CURSOR_ONOFF `(v  1 e 1 0 ]
 {
@@ -432,28 +446,6 @@
 [v ENVIA_LCD_CMD@dato dato `uc  1 p 1 1 ]
 "119
 } 1
-"41
-[v _ESCRIBE_MENSAJE ESCRIBE_MENSAJE `(v  1 e 1 0 ]
-{
-"43
-[v ESCRIBE_MENSAJE@i i `uc  1 a 1 19 ]
-"41
-[v ESCRIBE_MENSAJE@cadena cadena `*.31Cuc  1 p 1 16 ]
-[v ESCRIBE_MENSAJE@tam tam `uc  1 p 1 17 ]
-"48
-} 0
-"50
-[v _ENVIA_CHAR ENVIA_CHAR `(v  1 e 1 0 ]
-{
-[v ENVIA_CHAR@dato dato `uc  1 p 1 wreg ]
-"52
-[v ENVIA_CHAR@aux aux `uc  1 a 1 15 ]
-"50
-[v ENVIA_CHAR@dato dato `uc  1 p 1 wreg ]
-"53
-[v ENVIA_CHAR@dato dato `uc  1 p 1 14 ]
-"65
-} 1
 "121
 [v _LEER_LCD LEER_LCD `(v  1 e 1 0 ]
 {
@@ -470,35 +462,3 @@
 [v ENVIA_NIBBLE@dato dato `uc  1 p 1 0 ]
 "102
 } 1
-"83 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-[v _EEPROM_UpdateByte EEPROM_UpdateByte `(v  1 e 1 0 ]
-{
-"85
-[v EEPROM_UpdateByte@old_data old_data `uc  1 a 1 16 ]
-"83
-[v EEPROM_UpdateByte@address address `us  1 p 2 13 ]
-[v EEPROM_UpdateByte@data data `uc  1 p 1 15 ]
-"91
-} 0
-"44
-[v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
-{
-[v EEPROM_WriteByte@address address `us  1 p 2 10 ]
-[v EEPROM_WriteByte@data data `uc  1 p 1 12 ]
-"77
-} 0
-"19
-[v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
-{
-[v EEPROM_ReadByte@address address `us  1 p 2 10 ]
-"39
-} 0
-"7
-[v _EEPROM_SetAddress EEPROM_SetAddress `(v  1 s 1 EEPROM_SetAddress ]
-{
-"9
-[v EEPROM_SetAddress@real_address real_address `ul  1 a 4 6 ]
-"7
-[v EEPROM_SetAddress@address address `us  1 p 2 0 ]
-"14
-} 0

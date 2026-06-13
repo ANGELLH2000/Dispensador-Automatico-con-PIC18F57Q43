@@ -1,4 +1,4 @@
-# 1 "maincode.c"
+# 1 "keypad4x4.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,69 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "maincode.c" 2
+# 1 "keypad4x4.c" 2
+# 1 "./Keypad4x4.h" 1
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29574,123 +29636,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "maincode.c" 2
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 5 "maincode.c" 2
-# 1 "./Keypad4x4.h" 1
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
+# 60 "./cabecera.h" 2
 # 4 "./Keypad4x4.h" 2
 # 81 "./Keypad4x4.h"
 typedef struct
@@ -29711,90 +29657,221 @@ void Keypad_Init(Keypad *keypad,
                  volatile uint8_t *wpu);
 # 171 "./Keypad4x4.h"
 char Keypad_Read(Keypad *keypad);
-# 6 "maincode.c" 2
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 7 "maincode.c" 2
-
-
-
-
-
-Keypad teclado;
-
-
-
-
-
-char tecla;
-
-
-
-
-
-void configuro(void)
+# 2 "keypad4x4.c" 2
+# 15 "keypad4x4.c"
+static const uint8_t Keypad_RowMasks[4] =
 {
-    OSCCON1 = 0x60;
-    OSCFRQ = 0x08;
-    OSCEN = 0x40;
-    TRISD = 0x00;
-    ANSELD = 0x00;
-    LCD_CONFIG();
+    0x01,
+    0x02,
+    0x04,
+    0x08
+};
+# 35 "keypad4x4.c"
+static const uint8_t Keypad_ColumnMasks[4] =
+{
+    0x10,
+    0x20,
+    0x40,
+    0x80
+};
+# 72 "keypad4x4.c"
+static const char Keypad_Map[4][4] =
+{
+    {'1', '2', '3', 'A'},
+    {'4', '5', '6', 'B'},
+    {'7', '8', '9', 'C'},
+    {'*', '0', '#', 'D'}
+};
+# 87 "keypad4x4.c"
+static void Keypad_AllRowsHigh(Keypad *keypad)
+{
+    *(keypad->lat) =
+        (uint8_t)(*(keypad->lat) | 0x0F);
+}
+# 113 "keypad4x4.c"
+static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
+{
+
+
+
+    Keypad_AllRowsHigh(keypad);
+
+
+
+
+    *(keypad->lat) =
+        (uint8_t)(*(keypad->lat) &
+        (uint8_t)(~Keypad_RowMasks[row]));
+}
+# 142 "keypad4x4.c"
+static char Keypad_Scan(Keypad *keypad)
+{
+    uint8_t row;
+    uint8_t column;
+
+
+
+
+    for(row = 0; row < 4; row++)
+    {
+
+
+
+        Keypad_ActivateRow(keypad, row);
+
+
+
+
+
+        _delay((unsigned long)((5)*(64000000UL/4000000.0)));
+
+
+
+
+        for(column = 0; column < 4; column++)
+        {
+
+
+
+
+
+
+
+            if((*(keypad->port) &
+                Keypad_ColumnMasks[column]) == 0)
+            {
+
+
+
+
+                Keypad_AllRowsHigh(keypad);
+
+
+
+
+
+                return Keypad_Map[row][column];
+            }
+        }
+    }
+
+
+
+
+    Keypad_AllRowsHigh(keypad);
+
+
+
+
+    return '\0';
 }
 
 
 
 
 
-void main(void)
+void Keypad_Init(Keypad *keypad,
+                 volatile uint8_t *port,
+                 volatile uint8_t *lat,
+                 volatile uint8_t *tris,
+                 volatile uint8_t *ansel,
+                 volatile uint8_t *wpu)
 {
-    configuro();
 
-    BORRAR_LCD();
-    CURSOR_HOME();
-    CURSOR_ONOFF(1);
-# 61 "maincode.c"
-    Keypad_Init(&teclado,
-                &PORTC,
-                &LATC,
-                &TRISC,
-                &ANSELC,
-                &WPUC);
-    POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("Tecla:", 6);
-    POS_CURSOR(2, 0);
-    ENVIA_CHAR('-');
 
-    while(1)
+
+    keypad->port = port;
+    keypad->lat = lat;
+    keypad->tris = tris;
+    keypad->ansel = ansel;
+    keypad->wpu = wpu;
+# 236 "keypad4x4.c"
+    *(keypad->ansel) =
+        (uint8_t)(*(keypad->ansel) &
+        (uint8_t)(~(0x0F |
+                    0xF0)));
+# 248 "keypad4x4.c"
+    *(keypad->tris) =
+        (uint8_t)(*(keypad->tris) &
+        (uint8_t)(~0x0F));
+
+
+
+
+    *(keypad->tris) =
+        (uint8_t)(*(keypad->tris) |
+                  0xF0);
+# 267 "keypad4x4.c"
+    *(keypad->wpu) =
+        (uint8_t)(*(keypad->wpu) |
+                  0xF0);
+
+
+
+
+
+    Keypad_AllRowsHigh(keypad);
+}
+
+
+
+
+
+char Keypad_Read(Keypad *keypad)
+{
+    char detected_key;
+    char confirmed_key;
+
+
+
+
+    detected_key = Keypad_Scan(keypad);
+
+
+
+
+    if(detected_key == '\0')
     {
-        tecla = Keypad_Read(&teclado);
-
-
-
-
-        if(tecla != '\0')
-        {
-            POS_CURSOR(2, 0);
-            ENVIA_CHAR((unsigned char)tecla);
-            ESCRIBE_MENSAJE("               ", 15);
-        }
+        return '\0';
     }
+
+
+
+
+
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
+
+
+
+
+    confirmed_key = Keypad_Scan(keypad);
+
+
+
+
+
+
+
+    if(confirmed_key != detected_key)
+    {
+        return '\0';
+    }
+# 331 "keypad4x4.c"
+    while(Keypad_Scan(keypad) != '\0')
+    {
+
+
+
+    }
+
+
+
+
+
+    _delay((unsigned long)((20)*(64000000UL/4000.0)));
+
+
+
+
+    return detected_key;
 }
