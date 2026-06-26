@@ -70,5 +70,5 @@
  * Las funciones __delay_ms() y __delay_us() de XC8 utilizan esta constante
  * para calcular los retardos.
  */
-#define _XTAL_FREQ 64000000UL
+#define _XTAL_FREQ 32000000UL
 
