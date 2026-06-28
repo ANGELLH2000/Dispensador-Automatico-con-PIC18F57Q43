@@ -1,8 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"82 ./Keypad4x4.h
-[; ;./Keypad4x4.h: 82: {
-[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 ]
-[n S2431 . port lat tris ansel wpu ]
 "5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
@@ -12,55 +8,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5592
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
 [v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-"49331
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
-[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
-"41445
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"13 ./LCD.h
-[; ;./LCD.h: 13: void LCD_CONFIG(void);
-[v _LCD_CONFIG `(v ~T0 @X0 0 ef ]
-[p mainexit ]
+"10 ./funcionesGenerales.h
+[; ;./funcionesGenerales.h: 10: void config_perifericos(void);
+[v _config_perifericos `(v ~T0 @X0 0 ef ]
 "12
-[; ;./LCD.h: 12: void BORRAR_LCD(void);
-[v _BORRAR_LCD `(v ~T0 @X0 0 ef ]
-"9
-[; ;./LCD.h: 9: void CURSOR_HOME(void);
-[v _CURSOR_HOME `(v ~T0 @X0 0 ef ]
-"10
-[; ;./LCD.h: 10: void CURSOR_ONOFF(unsigned char estado);
-[v _CURSOR_ONOFF `(v ~T0 @X0 0 ef1`uc ]
-"136 ./Keypad4x4.h
-[; ;./Keypad4x4.h: 136: void Keypad_Init(Keypad *keypad,
-[v _Keypad_Init `(v ~T0 @X0 0 ef6`*S2431`*Vuc`*Vuc`*Vuc`*Vuc`*Vuc ]
-"49611 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49611: extern volatile unsigned char PORTC __attribute__((address(0x4D0)));
-[v _PORTC `Vuc ~T0 @X0 0 e@1232 ]
-"48927
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48927: extern volatile unsigned char LATC __attribute__((address(0x4C0)));
-[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
-"49269
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49269: extern volatile unsigned char TRISC __attribute__((address(0x4C8)));
-[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
-"40949
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40949: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
-"41011
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41011: extern volatile unsigned char WPUC __attribute__((address(0x411)));
-[v _WPUC `Vuc ~T0 @X0 0 e@1041 ]
-"7 ./LCD.h
-[; ;./LCD.h: 7: void POS_CURSOR(unsigned char fila,unsigned char columna);
-[v _POS_CURSOR `(v ~T0 @X0 0 ef2`uc`uc ]
-"19
-[; ;./LCD.h: 19: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-[v _ESCRIBE_MENSAJE `(v ~T0 @X0 0 ef2`*Cuc`uc ]
-"11
-[; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
-[v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"171 ./Keypad4x4.h
-[; ;./Keypad4x4.h: 171: char Keypad_Read(Keypad *keypad);
-[v _Keypad_Read `(uc ~T0 @X0 0 ef1`*S2431 ]
+[; ;./funcionesGenerales.h: 12: void verificar_condiciones_iniciales(void);
+[v _verificar_condiciones_iniciales `(v ~T0 @X0 0 ef ]
+[p mainexit ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2696,179 +2650,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"7
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"12 maincode.c
-[; ;maincode.c: 12: Keypad teclado;
-[v _teclado `S2431 ~T0 @X0 1 e ]
-"18
-[; ;maincode.c: 18: char tecla;
-[v _tecla `uc ~T0 @X0 1 e ]
-"24
-[; ;maincode.c: 24: void configuro(void)
+"11 maincode.c
+[; ;maincode.c: 11: void configuro(void)
 [v _configuro `(v ~T0 @X0 1 ef ]
-"25
-[; ;maincode.c: 25: {
+"12
+[; ;maincode.c: 12: {
 {
 [e :U _configuro ]
 [f ]
-"26
-[; ;maincode.c: 26:     OSCCON1 = 0x60;
+"14
+[; ;maincode.c: 14:     OSCCON1 = 0x60;
 [e = _OSCCON1 -> -> 96 `i `uc ]
-"27
-[; ;maincode.c: 27:     OSCFRQ = 0x08;
-[e = _OSCFRQ -> -> 8 `i `uc ]
-"28
-[; ;maincode.c: 28:     OSCEN = 0x40;
+"15
+[; ;maincode.c: 15:     OSCFRQ = 0x06;
+[e = _OSCFRQ -> -> 6 `i `uc ]
+"16
+[; ;maincode.c: 16:     OSCEN = 0x40;
 [e = _OSCEN -> -> 64 `i `uc ]
-"29
-[; ;maincode.c: 29:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"30
-[; ;maincode.c: 30:     ANSELD = 0x00;
-[e = _ANSELD -> -> 0 `i `uc ]
-"31
-[; ;maincode.c: 31:     LCD_CONFIG();
-[e ( _LCD_CONFIG ..  ]
-"32
-[; ;maincode.c: 32: }
-[e :UE 2432 ]
+"19
+[; ;maincode.c: 19:     config_perifericos();
+[e ( _config_perifericos ..  ]
+"22
+[; ;maincode.c: 22:     verificar_condiciones_iniciales();
+[e ( _verificar_condiciones_iniciales ..  ]
+"24
+[; ;maincode.c: 24: }
+[e :UE 2431 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"38
-[; ;maincode.c: 38: void main(void)
+"30
+[; ;maincode.c: 30: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"39
-[; ;maincode.c: 39: {
+"31
+[; ;maincode.c: 31: {
 {
 [e :U _main ]
 [f ]
-"40
-[; ;maincode.c: 40:     configuro();
+"32
+[; ;maincode.c: 32:     configuro();
 [e ( _configuro ..  ]
-"42
-[; ;maincode.c: 42:     BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
-"43
-[; ;maincode.c: 43:     CURSOR_HOME();
-[e ( _CURSOR_HOME ..  ]
-"44
-[; ;maincode.c: 44:     CURSOR_ONOFF(1);
-[e ( _CURSOR_ONOFF (1 -> -> 1 `i `uc ]
-"61
-[; ;maincode.c: 61:     Keypad_Init(&teclado,
-[e ( _Keypad_Init (4 , , , , , &U _teclado &U _PORTC &U _LATC &U _TRISC &U _ANSELC &U _WPUC ]
-"67
-[; ;maincode.c: 67:     POS_CURSOR(1, 0);
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"68
-[; ;maincode.c: 68:     ESCRIBE_MENSAJE("Tecla:", 6);
-[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 6 `i `uc ]
-"69
-[; ;maincode.c: 69:     POS_CURSOR(2, 0);
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"70
-[; ;maincode.c: 70:     ENVIA_CHAR('-');
-[e ( _ENVIA_CHAR (1 -> -> 45 `ui `uc ]
-"72
-[; ;maincode.c: 72:     while(1)
-[e :U 2435 ]
-"73
-[; ;maincode.c: 73:     {
-{
-"74
-[; ;maincode.c: 74:         tecla = Keypad_Read(&teclado);
-[e = _tecla ( _Keypad_Read (1 &U _teclado ]
-"79
-[; ;maincode.c: 79:         if(tecla != '\0')
-[e $ ! != -> _tecla `ui -> 0 `ui 2437  ]
-"80
-[; ;maincode.c: 80:         {
-{
-"81
-[; ;maincode.c: 81:             POS_CURSOR(2, 0);
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"82
-[; ;maincode.c: 82:             ENVIA_CHAR((unsigned char)tecla);
-[e ( _ENVIA_CHAR (1 -> _tecla `uc ]
-"83
-[; ;maincode.c: 83:             ESCRIBE_MENSAJE("               ", 15);
-[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 15 `i `uc ]
-"84
-[; ;maincode.c: 84:         }
-}
-[e :U 2437 ]
-"85
-[; ;maincode.c: 85:     }
-}
+"34
+[; ;maincode.c: 34:     while (1)
 [e :U 2434 ]
-[e $U 2435  ]
-[e :U 2436 ]
-"86
-[; ;maincode.c: 86: }
-[e :UE 2433 ]
+"35
+[; ;maincode.c: 35:     {
+{
+"37
+[; ;maincode.c: 37:     }
 }
-[a 1C 84 101 99 108 97 58 0 ]
-[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[e :U 2433 ]
+[e $U 2434  ]
+[e :U 2435 ]
+"38
+[; ;maincode.c: 38: }
+[e :UE 2432 ]
+}

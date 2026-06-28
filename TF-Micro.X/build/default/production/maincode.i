@@ -29633,118 +29633,14 @@ unsigned char __t3rd16on(void);
 
 #pragma config CP = OFF
 # 5 "maincode.c" 2
-# 1 "./Keypad4x4.h" 1
-
-
-# 1 "./cabecera.h" 1
-
-
-
-
-
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_64
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-
-
-#pragma config BORV = VBOR_1P9
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config DEBUG = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config CP = OFF
-# 4 "./Keypad4x4.h" 2
-# 81 "./Keypad4x4.h"
-typedef struct
-{
-    volatile uint8_t *port;
-    volatile uint8_t *lat;
-    volatile uint8_t *tris;
-    volatile uint8_t *ansel;
-    volatile uint8_t *wpu;
-
-} Keypad;
-# 136 "./Keypad4x4.h"
-void Keypad_Init(Keypad *keypad,
-                 volatile uint8_t *port,
-                 volatile uint8_t *lat,
-                 volatile uint8_t *tris,
-                 volatile uint8_t *ansel,
-                 volatile uint8_t *wpu);
-# 171 "./Keypad4x4.h"
-char Keypad_Read(Keypad *keypad);
+# 1 "./funcionesGenerales.h" 1
+# 10 "./funcionesGenerales.h"
+void config_perifericos(void);
+void config_perifericos_sensores(void);
+void verificar_condiciones_iniciales(void);
+void sistem_error(const char *mensaje);
+void configuro(void);
 # 6 "maincode.c" 2
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 7 "maincode.c" 2
-
-
-
-
-
-Keypad teclado;
-
-
-
-
-
-char tecla;
 
 
 
@@ -29752,12 +29648,17 @@ char tecla;
 
 void configuro(void)
 {
+
     OSCCON1 = 0x60;
-    OSCFRQ = 0x08;
+    OSCFRQ = 0x06;
     OSCEN = 0x40;
-    TRISD = 0x00;
-    ANSELD = 0x00;
-    LCD_CONFIG();
+
+
+    config_perifericos();
+
+
+    verificar_condiciones_iniciales();
+
 }
 
 
@@ -29768,33 +29669,8 @@ void main(void)
 {
     configuro();
 
-    BORRAR_LCD();
-    CURSOR_HOME();
-    CURSOR_ONOFF(1);
-# 61 "maincode.c"
-    Keypad_Init(&teclado,
-                &PORTC,
-                &LATC,
-                &TRISC,
-                &ANSELC,
-                &WPUC);
-    POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("Tecla:", 6);
-    POS_CURSOR(2, 0);
-    ENVIA_CHAR('-');
-
-    while(1)
+    while (1)
     {
-        tecla = Keypad_Read(&teclado);
 
-
-
-
-        if(tecla != '\0')
-        {
-            POS_CURSOR(2, 0);
-            ENVIA_CHAR((unsigned char)tecla);
-            ESCRIBE_MENSAJE("               ", 15);
-        }
     }
 }

@@ -2925,8 +2925,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor_paso.c: 252:         {
 {
 "253
-[; ;motor_paso.c: 253:             _delay((unsigned long)((1)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;motor_paso.c: 253:             _delay((unsigned long)((1)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "254
 [; ;motor_paso.c: 254:         }
 }
@@ -2990,8 +2990,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motor_paso.c: 281:         {
 {
 "282
-[; ;motor_paso.c: 282:             _delay((unsigned long)((1)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;motor_paso.c: 282:             _delay((unsigned long)((1)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "283
 [; ;motor_paso.c: 283:         }
 }

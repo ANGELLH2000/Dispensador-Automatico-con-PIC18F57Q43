@@ -1,4 +1,4 @@
-# 1 "LCD.c"
+# 1 "funcionesGenerales.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD.c" 2
-
+# 1 "funcionesGenerales.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -29575,184 +29574,1054 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 3 "LCD.c" 2
-# 1 "./LCD.h" 1
+# 2 "funcionesGenerales.c" 2
+
+
+# 1 "./motor_paso.h" 1
+
+
+
+# 1 "./cabecera.h" 1
 
 
 
 
 
 
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 4 "LCD.c" 2
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
 
 
-void POS_CURSOR(unsigned char fila,unsigned char columna)
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 5 "./motor_paso.h" 2
+# 103 "./motor_paso.h"
+typedef struct
 {
- if(fila == 1)
- {
-  ENVIA_LCD_CMD(0x80+columna);
- }
- else if(fila == 2)
- {
-  ENVIA_LCD_CMD(0xC0+columna);
- }
+    volatile uint8_t *lat;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+    uint8_t nibble;
+    uint8_t index;
+} Stepper;
+# 150 "./motor_paso.h"
+void Stepper_Init(Stepper *motor,
+                  volatile uint8_t *lat,
+                  volatile uint8_t *tris,
+                  volatile uint8_t *ansel,
+                  uint8_t nibble);
+# 168 "./motor_paso.h"
+void Stepper_Step_CW(Stepper *motor);
+# 182 "./motor_paso.h"
+void Stepper_Step_CCW(Stepper *motor);
+# 202 "./motor_paso.h"
+void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
+# 222 "./motor_paso.h"
+void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms);
+# 243 "./motor_paso.h"
+void Stepper_fullTurn_CW(Stepper *motor);
+# 264 "./motor_paso.h"
+void Stepper_fullTurn_CCW(Stepper *motor);
+# 281 "./motor_paso.h"
+void Stepper_Off(Stepper *motor);
+# 5 "funcionesGenerales.c" 2
+# 1 "./ws2812b.h" 1
+
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 5 "./ws2812b.h" 2
+# 121 "./ws2812b.h"
+typedef struct
+{
+
+
+
+    uint8_t num_leds;
+
+
+
+
+
+
+    uint8_t red[30];
+
+
+
+
+
+
+    uint8_t green[30];
+
+
+
+
+
+
+    uint8_t blue[30];
+
+} LED_WS2812B;
+# 174 "./ws2812b.h"
+void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+# 206 "./ws2812b.h"
+void WS2812B_SetPixel(LED_WS2812B *tira,
+                      uint8_t led,
+                      uint8_t red,
+                      uint8_t green,
+                      uint8_t blue);
+# 237 "./ws2812b.h"
+void WS2812B_SetAll(LED_WS2812B *tira,
+                    uint8_t red,
+                    uint8_t green,
+                    uint8_t blue);
+# 263 "./ws2812b.h"
+void WS2812B_Show(LED_WS2812B *tira);
+# 277 "./ws2812b.h"
+void WS2812B_Clear(LED_WS2812B *tira);
+# 306 "./ws2812b.h"
+void WS2812B_RGB(LED_WS2812B *tira,
+                 uint8_t red,
+                 uint8_t green,
+                 uint8_t blue);
+# 6 "funcionesGenerales.c" 2
+# 1 "./Libbuzzer.h" 1
+
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 5 "./Libbuzzer.h" 2
+# 91 "./Libbuzzer.h"
+typedef struct
+{
+    volatile uint8_t *lat;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+
+    uint8_t pin_mask;
+
+} Buzzer;
+# 135 "./Libbuzzer.h"
+void Buzzer_Init(Buzzer *buzzer,
+                 volatile uint8_t *lat,
+                 volatile uint8_t *tris,
+                 volatile uint8_t *ansel,
+                 uint8_t pin_mask);
+# 169 "./Libbuzzer.h"
+void Buzzer_Tone(Buzzer *buzzer,
+                 uint16_t freq,
+                 uint16_t time_ms,
+                 uint8_t duty);
+
+
+
+
+
+
+
+void Buzzer_Off(Buzzer *buzzer);
+# 189 "./Libbuzzer.h"
+void Buzzer_ButtonClick(Buzzer *buzzer);
+# 198 "./Libbuzzer.h"
+void Buzzer_FinalCorrectClick(Buzzer *buzzer);
+# 207 "./Libbuzzer.h"
+void Buzzer_CorrectSound(Buzzer *buzzer);
+# 223 "./Libbuzzer.h"
+void Buzzer_WarningSound(Buzzer *buzzer);
+# 233 "./Libbuzzer.h"
+void Buzzer_ErrorSound(Buzzer *buzzer);
+# 7 "funcionesGenerales.c" 2
+# 1 "./keypad4x4.h" 1
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 4 "./keypad4x4.h" 2
+# 81 "./keypad4x4.h"
+typedef struct
+{
+    volatile uint8_t *port;
+    volatile uint8_t *lat;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+    volatile uint8_t *wpu;
+
+} Keypad;
+# 136 "./keypad4x4.h"
+void Keypad_Init(Keypad *keypad,
+                 volatile uint8_t *port,
+                 volatile uint8_t *lat,
+                 volatile uint8_t *tris,
+                 volatile uint8_t *ansel,
+                 volatile uint8_t *wpu);
+# 171 "./keypad4x4.h"
+char Keypad_Read(Keypad *keypad);
+# 8 "funcionesGenerales.c" 2
+# 1 "./I2C.h" 1
+# 29 "./I2C.h"
+typedef enum
+{
+    I2C_OK = 0,
+# 42 "./I2C.h"
+    I2C_ERROR_NACK,
+
+
+
+
+    I2C_ERROR_COLLISION,
+
+
+
+
+    I2C_ERROR_BUS_TIMEOUT,
+
+
+
+
+    I2C_ERROR_SOFTWARE_TIMEOUT,
+
+
+
+
+    I2C_ERROR_INVALID_PARAMETER
+
+} I2C_Status;
+# 74 "./I2C.h"
+extern volatile I2C_Status I2C1_LastStatus;
+# 93 "./I2C.h"
+void I2C1_Init(void);
+# 114 "./I2C.h"
+I2C_Status I2C1_Write(
+    uint8_t address7,
+    const uint8_t *data,
+    uint8_t length
+);
+# 129 "./I2C.h"
+I2C_Status I2C1_WriteSingleByte(
+    uint8_t address7,
+    uint8_t data
+);
+# 151 "./I2C.h"
+I2C_Status I2C1_Read(
+    uint8_t address7,
+    uint8_t *data,
+    uint8_t length
+);
+# 9 "funcionesGenerales.c" 2
+# 1 "./LCD_I2C.h" 1
+# 70 "./LCD_I2C.h"
+void LCD_I2C_DelayUs(uint16_t timeUs);
+void LCD_I2C_DelayMs(uint16_t timeMs);
+# 81 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetAddress(uint8_t address7);
+
+
+
+
+
+uint8_t LCD_I2C_GetAddress(void);
+
+
+
+
+
+
+
+I2C_Status LCD_I2C_Init(void);
+
+
+
+
+
+
+I2C_Status LCD_I2C_Command(uint8_t command);
+I2C_Status LCD_I2C_WriteChar(char character);
+
+I2C_Status LCD_I2C_WriteString(const char *text);
+
+I2C_Status LCD_I2C_WriteStringN(
+    const char *text,
+    uint8_t length
+);
+# 122 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetCursor(
+    uint8_t row,
+    uint8_t column
+);
+
+I2C_Status LCD_I2C_Clear(void);
+I2C_Status LCD_I2C_Home(void);
+
+I2C_Status LCD_I2C_Display(uint8_t state);
+I2C_Status LCD_I2C_Cursor(uint8_t state);
+I2C_Status LCD_I2C_Blink(uint8_t state);
+I2C_Status LCD_I2C_Backlight(uint8_t state);
+
+I2C_Status LCD_I2C_CursorShiftLeft(void);
+I2C_Status LCD_I2C_CursorShiftRight(void);
+I2C_Status LCD_I2C_DisplayShiftLeft(void);
+I2C_Status LCD_I2C_DisplayShiftRight(void);
+# 151 "./LCD_I2C.h"
+I2C_Status LCD_I2C_CreateChar(
+    const uint8_t pattern[8],
+    uint8_t position
+);
+
+
+
+
+
+
+I2C_Status LCD_I2C_WriteUInt8(
+    uint8_t number,
+    uint8_t digits
+);
+# 182 "./LCD_I2C.h"
+I2C_Status LCD_I2C_WriteUInt16(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+);
+
+I2C_Status LCD_I2C_WriteDegree(void);
+I2C_Status LCD_I2C_WriteBinary(uint8_t value);
+I2C_Status LCD_I2C_WriteHex(uint8_t value);
+
+I2C_Status LCD_I2C_WriteInt(int16_t value);
+# 10 "funcionesGenerales.c" 2
+# 1 "./DS1307.h" 1
+# 53 "./DS1307.h"
+typedef struct
+{
+    uint8_t seconds;
+    uint8_t minutes;
+    uint8_t hours;
+
+    uint8_t weekday;
+    uint8_t date;
+    uint8_t month;
+    uint16_t year;
+
+
+
+
+
+    uint8_t clock_running;
+
+
+
+
+
+    uint8_t mode_12h;
+
+
+
+
+
+
+
+    uint8_t is_pm;
+
+
+
+
+
+    uint8_t data_valid;
+
+} DS1307_DateTime;
+# 110 "./DS1307.h"
+I2C_Status DS1307_ReadRegisters(
+    uint8_t start_register,
+    uint8_t *data,
+    uint8_t length
+);
+# 130 "./DS1307.h"
+I2C_Status DS1307_ReadRaw(
+    uint8_t raw_data[7u]
+);
+# 147 "./DS1307.h"
+I2C_Status DS1307_ReadDateTime(
+    DS1307_DateTime *date_time
+);
+# 11 "funcionesGenerales.c" 2
+# 1 "./CNY70.h" 1
+# 24 "./CNY70.h"
+typedef struct
+{
+    volatile unsigned char *tris_reg;
+    volatile unsigned char *ansel_reg;
+
+    unsigned char pin_mask;
+    unsigned char adc_channel;
+
+} CNY70;
+
+
+
+
+
+void CNY70_ADC_Init_FOSC64(void);
+
+void CNY70_Init(CNY70 *sensor,
+                volatile unsigned char *tris,
+                volatile unsigned char *ansel,
+                unsigned char pin_mask,
+                unsigned char adc_channel);
+
+uint16_t CNY70_Read(CNY70 *sensor);
+
+uint8_t CNY70_IsActive(CNY70 *sensor,
+                       uint16_t threshold,
+                       uint8_t mode);
+
+void CNY70_ResetChannel(void);
+# 12 "funcionesGenerales.c" 2
+# 1 "./irsensor.h" 1
+
+
+
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+# 5 "./irsensor.h" 2
+# 48 "./irsensor.h"
+typedef struct
+{
+    volatile uint8_t *port;
+    volatile uint8_t *tris;
+    volatile uint8_t *ansel;
+
+    uint8_t pin_mask;
+
+} IRsensor;
+# 101 "./irsensor.h"
+void IRSensor_Init(IRsensor *sensor,
+                   volatile uint8_t *port,
+                   volatile uint8_t *tris,
+                   volatile uint8_t *ansel,
+                   uint8_t pin_mask);
+# 121 "./irsensor.h"
+uint8_t IRSensor_ReadActiveLow(IRsensor *sensor);
+# 137 "./irsensor.h"
+uint8_t IRSensor_ReadActiveHigh(IRsensor *sensor);
+# 13 "funcionesGenerales.c" 2
+# 1 "./funcionesGenerales.h" 1
+# 10 "./funcionesGenerales.h"
+void config_perifericos(void);
+void config_perifericos_sensores(void);
+void verificar_condiciones_iniciales(void);
+void sistem_error(const char *mensaje);
+void configuro(void);
+# 14 "funcionesGenerales.c" 2
+
+
+
+
+
+
+Stepper motor1;
+Stepper motor2;
+Stepper motor3;
+Stepper motor4;
+
+
+LED_WS2812B tira1;
+
+
+Buzzer buzzer1;
+
+
+Keypad teclado;
+
+
+CNY70 sensor1;
+CNY70 sensor2;
+CNY70 sensor3;
+CNY70 sensor4;
+
+
+uint16_t valor_S1 = 0;
+uint16_t valor_S2 = 0;
+uint16_t valor_S3 = 0;
+uint16_t valor_S4 = 0;
+
+
+IRsensor sensor_ir;
+
+
+DS1307_DateTime fechaHora;
+
+
+I2C_Status estado;
+
+
+
+
+
+static void config_motores(void);
+static void config_leds(void);
+static void config_buzzer(void);
+static void config_keypad(void);
+static void config_cny70(void);
+static void config_ir(void);
+static void config_i2c_lcd(void);
+static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor);
+
+
+
+
+
+static void config_motores(void)
+{
+
+
+
+
+
+
+    Stepper_Init(&motor1, &LATA, &TRISA, &ANSELA, 0);
+    Stepper_Init(&motor2, &LATA, &TRISA, &ANSELA, 1);
+
+
+
+
+
+
+
+    Stepper_Init(&motor3, &LATB, &TRISB, &ANSELB, 0);
+    Stepper_Init(&motor4, &LATB, &TRISB, &ANSELB, 1);
 }
 
-void BLINK_CURSOR(unsigned char val)
+
+
+
+
+static void config_leds(void)
 {
- if(val == 1) ENVIA_LCD_CMD(0x0E);
- if(val == 0 ) ENVIA_LCD_CMD(0x0F);
+
+
+
+
+    WS2812B_Init(&tira1, 2);
 }
 
-void DISPLAY_ONOFF(unsigned char estado)
+
+
+
+
+static void config_buzzer(void)
 {
- if(estado == 0) ENVIA_LCD_CMD(0x0F);
- if(estado == 1) ENVIA_LCD_CMD(0x08);
+
+
+
+
+
+    Buzzer_Init(&buzzer1, &LATC, &TRISC, &ANSELC, 0x02);
 }
 
-void CURSOR_HOME(void)
+
+
+
+
+static void config_keypad(void)
 {
- ENVIA_LCD_CMD(0x02);
+
+
+
+
+
+
+    Keypad_Init(&teclado, &PORTD, &LATD, &TRISD, &ANSELD, &WPUD);
 }
 
-void CURSOR_ONOFF(unsigned char estado)
+
+
+
+
+static void config_cny70(void)
 {
- if(estado == 0) ENVIA_LCD_CMD(0x0E);
- if(estado == 1) ENVIA_LCD_CMD(0x0C);
+
+
+
+
+    CNY70_ADC_Init_FOSC64();
+
+
+
+
+
+
+
+    CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
+    CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
+    CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
+    CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
 }
 
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam)
+
+
+
+
+static void config_ir(void)
 {
- unsigned char i = 0;
- for(i = 0; i<tam; i++)
- {
-  ENVIA_CHAR(cadena[i]);
- }
+
+
+
+
+
+    IRSensor_Init(&sensor_ir, &PORTF, &TRISF, &ANSELF, 0x10);
 }
 
-void ENVIA_CHAR(unsigned char dato)
-{
- unsigned char aux;
- LATDbits.LATD0 = 1;
- LEER_LCD();
- TRISD = 0x00;
-        _delay(1200);
 
- LATDbits.LATD1 = 0;
- LATDbits.LATD2 = 0;
- LATDbits.LATD0 = 1;
- aux = dato & 0xF0;
- ENVIA_NIBBLE(aux);
- aux = dato << 4;
- ENVIA_NIBBLE(aux);
+
+
+
+static void config_i2c_lcd(void)
+{
+
+
+
+
+
+    I2C1_Init();
+
+
+
+
+
+    estado = LCD_I2C_SetAddress(0x27u);
+
+
+
+
+    LCD_I2C_Init();
+
+
+
+
+    LCD_I2C_Clear();
 }
 
-void BORRAR_LCD(void)
+
+
+
+
+void config_perifericos(void)
 {
- ENVIA_LCD_CMD(0x01);
+
+
+
+
+    config_motores();
+    config_leds();
+    config_buzzer();
+    config_keypad();
+    config_cny70();
+    config_ir();
+    config_i2c_lcd();
 }
 
-void LCD_CONFIG(void)
+
+
+
+
+static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
 {
- LATDbits.LATD0 = 0;
- LATDbits.LATD1 = 0;
- ENVIA_NIBBLE(0x30);
-        _delay(24000);
-        _delay(24000);
 
 
- ENVIA_NIBBLE(0x30);
 
- _delay(1200);
-        ENVIA_NIBBLE(0x30);
- ENVIA_NIBBLE(0x20);
- ENVIA_LCD_CMD(0x01);
- ENVIA_LCD_CMD(0x28);
- ENVIA_LCD_CMD(0x0F);
- ENVIA_LCD_CMD(0x06);
- ENVIA_LCD_CMD(0x01);
+    LCD_I2C_Clear();
+
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString("Sensor ");
+    LCD_I2C_WriteInt(numero_sensor);
+
+
+
+
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("Valor: ");
+    LCD_I2C_WriteInt(valor);
+
+
+
+
+    _delay((unsigned long)((1000)*(32000000UL/4000.0)));
 }
 
-void ENVIA_NIBBLE(unsigned char dato)
-{
- LATD &= 0x0F;
- dato &= 0xF0;
- LATD|= dato;
- LATDbits.LATD2 = 1;
 
-        _delay(1200);
- LATDbits.LATD2 = 0;
+
+
+
+void lectura_cny70(void)
+{
+
+
+
+
+    valor_S1 = CNY70_Read(&sensor1);
+    mostrar_valor_cny70(1, valor_S1);
+
+
+
+
+    valor_S2 = CNY70_Read(&sensor2);
+    mostrar_valor_cny70(2, valor_S2);
+
+
+
+
+    valor_S3 = CNY70_Read(&sensor3);
+    mostrar_valor_cny70(3, valor_S3);
+
+
+
+
+    valor_S4 = CNY70_Read(&sensor4);
+    mostrar_valor_cny70(4, valor_S4);
 }
 
-void ENVIA_LCD_CMD(unsigned char dato)
-{
- unsigned char aux;
- LATDbits.LATD0 = 0;
- LEER_LCD();
- TRISD = 0b00000000;
 
-        _delay(1200);
-        LATDbits.LATD1 = 0;
- LATDbits.LATD2 = 0;
- LATDbits.LATD0 = 0;
- aux = dato & 0xF0;
- ENVIA_NIBBLE(aux);
- aux = dato<<4;
- ENVIA_NIBBLE(aux);
+
+
+
+void verificar_condiciones_iniciales(void)
+{
+
+
+
+
+    if (estado != I2C_OK)
+    {
+        sistem_error("I2C sin conexion");
+    }
+
+
+
+
+    estado = DS1307_ReadDateTime(&fechaHora);
+
+
+
+
+    if (estado != I2C_OK)
+    {
+        sistem_error("RTC sin conexion");
+    }
+
+
+
+
+
+    if (fechaHora.clock_running == 0)
+    {
+        sistem_error("RTC detenido");
+    }
+
+
+
+
+
+    if (fechaHora.data_valid == 0)
+    {
+        sistem_error("Fecha invalida");
+    }
+# 338 "funcionesGenerales.c"
+    LCD_I2C_Clear();
+
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString("Sistema correcto");
+
+
+
+
+    WS2812B_RGB(&tira1, 0, 200, 0);
+
+    _delay((unsigned long)((1000)*(32000000UL/4000.0)));
 }
 
-void LEER_LCD(void)
+
+
+
+
+void sistem_error(const char *mensaje)
 {
- unsigned char aux;
- TRISD = 0xF8;
- LATDbits.LATD0 = 0;
- LATDbits.LATD1 = 1;
- LATDbits.LATD2 = 1;
-        _delay(1200);
 
- aux = PORTD;
- LATDbits.LATD2 = 0;
-        _delay(1200);
 
- LATDbits.LATD2 = 1;
-        _delay(1200);
 
- LATDbits.LATD2 = 0;
- aux = aux & 0x80;
- while(aux == 0x80)
-        {
-            LATDbits.LATD2 = 1;
-            _delay(1200);
-            aux = PORTD;
-            LATDbits.LATD2 = 0;
-            _delay(1200);
-            LATDbits.LATD2 = 1;
-            _delay(1200);
-            LATDbits.LATD2 = 0;
-            aux = aux & 0x80;
- }
-}
+    LCD_I2C_Clear();
 
-void GENERACARACTER(const unsigned char *vector,unsigned char pos)
-{
- unsigned char i;
- ENVIA_LCD_CMD(0x40+8*pos);
- for(i=0;i<8;i++)
- {
-  ENVIA_CHAR(vector[i]);
- }
- ENVIA_LCD_CMD(0x80);
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString("Error en sistema");
+
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString(mensaje);
+
+
+
+
+    WS2812B_RGB(&tira1, 200, 0, 0);
+
+
+
+
+
+    while (1)
+    {
+        _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+    }
 }

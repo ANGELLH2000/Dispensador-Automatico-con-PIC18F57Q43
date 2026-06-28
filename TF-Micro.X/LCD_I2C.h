@@ -189,7 +189,7 @@ I2C_Status LCD_I2C_WriteDegree(void);
 I2C_Status LCD_I2C_WriteBinary(uint8_t value);
 I2C_Status LCD_I2C_WriteHex(uint8_t value);
 
-
+I2C_Status LCD_I2C_WriteInt(int16_t value);
 #endif /* LCD_I2C_H */
 
 

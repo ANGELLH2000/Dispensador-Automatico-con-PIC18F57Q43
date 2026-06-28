@@ -1,0 +1,570 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"222 DS1307.c
+[; ;DS1307.c: 222: I2C_Status DS1307_ReadRegisters(
+[c E39 0 1 2 3 4 5 .. ]
+[n E39 . I2C_OK I2C_ERROR_NACK I2C_ERROR_COLLISION I2C_ERROR_BUS_TIMEOUT I2C_ERROR_SOFTWARE_TIMEOUT I2C_ERROR_INVALID_PARAMETER  ]
+"129 ./I2C.h
+[; ;./I2C.h: 129: I2C_Status I2C1_WriteSingleByte(
+[v _I2C1_WriteSingleByte `(E39 ~T0 @X0 0 ef2`uc`uc ]
+"151
+[; ;./I2C.h: 151: I2C_Status I2C1_Read(
+[v _I2C1_Read `(E39 ~T0 @X0 0 ef3`uc`*uc`uc ]
+"54 ./DS1307.h
+[; ;./DS1307.h: 54: {
+[s S1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1 . seconds minutes hours weekday date month year clock_running mode_12h is_pm data_valid ]
+"35 DS1307.c
+[; ;DS1307.c: 35: static uint8_t DS1307_BCDToDecimal(uint8_t value_bcd)
+[v _DS1307_BCDToDecimal `(uc ~T0 @X0 1 sf1`uc ]
+"36
+[; ;DS1307.c: 36: {
+{
+[e :U _DS1307_BCDToDecimal ]
+"35
+[; ;DS1307.c: 35: static uint8_t DS1307_BCDToDecimal(uint8_t value_bcd)
+[v _value_bcd `uc ~T0 @X0 1 r1 ]
+"36
+[; ;DS1307.c: 36: {
+[f ]
+"37
+[; ;DS1307.c: 37:     return (uint8_t)(
+[e ) -> + * & -> >> -> _value_bcd `i -> 4 `i `ui -> 15 `ui -> 10 `ui & -> _value_bcd `ui -> 15 `ui `uc ]
+[e $UE 2  ]
+"41
+[; ;DS1307.c: 41: }
+[e :UE 2 ]
+}
+"47
+[; ;DS1307.c: 47: static uint8_t DS1307_IsValidBCD(uint8_t value_bcd)
+[v _DS1307_IsValidBCD `(uc ~T0 @X0 1 sf1`uc ]
+"48
+[; ;DS1307.c: 48: {
+{
+[e :U _DS1307_IsValidBCD ]
+"47
+[; ;DS1307.c: 47: static uint8_t DS1307_IsValidBCD(uint8_t value_bcd)
+[v _value_bcd `uc ~T0 @X0 1 r1 ]
+"48
+[; ;DS1307.c: 48: {
+[f ]
+"49
+[; ;DS1307.c: 49:     uint8_t tens;
+[v _tens `uc ~T0 @X0 1 a ]
+"50
+[; ;DS1307.c: 50:     uint8_t units;
+[v _units `uc ~T0 @X0 1 a ]
+"52
+[; ;DS1307.c: 52:     tens = (uint8_t)(
+[e = _tens -> & -> >> -> _value_bcd `i -> 4 `i `ui -> 15 `ui `uc ]
+"56
+[; ;DS1307.c: 56:     units = (uint8_t)(
+[e = _units -> & -> _value_bcd `ui -> 15 `ui `uc ]
+"60
+[; ;DS1307.c: 60:     if ((tens > 9u) || (units > 9u))
+[e $ ! || > -> _tens `ui -> 9 `ui > -> _units `ui -> 9 `ui 4  ]
+"61
+[; ;DS1307.c: 61:     {
+{
+"62
+[; ;DS1307.c: 62:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 3  ]
+"63
+[; ;DS1307.c: 63:     }
+}
+[e :U 4 ]
+"65
+[; ;DS1307.c: 65:     return 1u;
+[e ) -> -> 1 `ui `uc ]
+[e $UE 3  ]
+"66
+[; ;DS1307.c: 66: }
+[e :UE 3 ]
+}
+"73
+[; ;DS1307.c: 73: static uint8_t DS1307_ValidateRawData(
+[v _DS1307_ValidateRawData `(uc ~T0 @X0 1 sf1`*Cuc ]
+"76
+[; ;DS1307.c: 76: {
+{
+[e :U _DS1307_ValidateRawData ]
+"74
+[; ;DS1307.c: 74:     const uint8_t *raw_data
+[v _raw_data `*Cuc ~T0 @X0 1 r1 ]
+"76
+[; ;DS1307.c: 76: {
+[f ]
+"77
+[; ;DS1307.c: 77:     uint8_t seconds_bcd;
+[v _seconds_bcd `uc ~T0 @X0 1 a ]
+"78
+[; ;DS1307.c: 78:     uint8_t minutes_bcd;
+[v _minutes_bcd `uc ~T0 @X0 1 a ]
+"79
+[; ;DS1307.c: 79:     uint8_t hours_bcd;
+[v _hours_bcd `uc ~T0 @X0 1 a ]
+"80
+[; ;DS1307.c: 80:     uint8_t date_bcd;
+[v _date_bcd `uc ~T0 @X0 1 a ]
+"81
+[; ;DS1307.c: 81:     uint8_t month_bcd;
+[v _month_bcd `uc ~T0 @X0 1 a ]
+"82
+[; ;DS1307.c: 82:     uint8_t year_bcd;
+[v _year_bcd `uc ~T0 @X0 1 a ]
+"84
+[; ;DS1307.c: 84:     uint8_t seconds;
+[v _seconds `uc ~T0 @X0 1 a ]
+"85
+[; ;DS1307.c: 85:     uint8_t minutes;
+[v _minutes `uc ~T0 @X0 1 a ]
+"86
+[; ;DS1307.c: 86:     uint8_t hours;
+[v _hours `uc ~T0 @X0 1 a ]
+"87
+[; ;DS1307.c: 87:     uint8_t date;
+[v _date `uc ~T0 @X0 1 a ]
+"88
+[; ;DS1307.c: 88:     uint8_t month;
+[v _month `uc ~T0 @X0 1 a ]
+"89
+[; ;DS1307.c: 89:     uint8_t weekday;
+[v _weekday `uc ~T0 @X0 1 a ]
+"92
+[; ;DS1307.c: 92:     if (raw_data == ((void*)0))
+[e $ ! == _raw_data -> -> -> 0 `i `*v `*Cuc 6  ]
+"93
+[; ;DS1307.c: 93:     {
+{
+"94
+[; ;DS1307.c: 94:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"95
+[; ;DS1307.c: 95:     }
+}
+[e :U 6 ]
+"101
+[; ;DS1307.c: 101:     seconds_bcd = (uint8_t)(
+[e = _seconds_bcd -> & -> *U + _raw_data * -> -> 0 `i `x -> -> # *U _raw_data `i `x `ui -> 127 `ui `uc ]
+"105
+[; ;DS1307.c: 105:     minutes_bcd = (uint8_t)(
+[e = _minutes_bcd -> & -> *U + _raw_data * -> -> 1 `i `x -> -> # *U _raw_data `i `x `ui -> 127 `ui `uc ]
+"109
+[; ;DS1307.c: 109:     date_bcd = (uint8_t)(
+[e = _date_bcd -> & -> *U + _raw_data * -> -> 4 `i `x -> -> # *U _raw_data `i `x `ui -> 63 `ui `uc ]
+"113
+[; ;DS1307.c: 113:     month_bcd = (uint8_t)(
+[e = _month_bcd -> & -> *U + _raw_data * -> -> 5 `i `x -> -> # *U _raw_data `i `x `ui -> 31 `ui `uc ]
+"117
+[; ;DS1307.c: 117:     year_bcd = raw_data[6];
+[e = _year_bcd *U + _raw_data * -> -> 6 `i `x -> -> # *U _raw_data `i `x ]
+"119
+[; ;DS1307.c: 119:     weekday = (uint8_t)(
+[e = _weekday -> & -> *U + _raw_data * -> -> 3 `i `x -> -> # *U _raw_data `i `x `ui -> 7 `ui `uc ]
+"127
+[; ;DS1307.c: 127:     if ((raw_data[2] & 0x40u) != 0u)
+[e $ ! != & -> *U + _raw_data * -> -> 2 `i `x -> -> # *U _raw_data `i `x `ui -> 64 `ui -> 0 `ui 7  ]
+"128
+[; ;DS1307.c: 128:     {
+{
+"132
+[; ;DS1307.c: 132:         hours_bcd = (uint8_t)(
+[e = _hours_bcd -> & -> *U + _raw_data * -> -> 2 `i `x -> -> # *U _raw_data `i `x `ui -> 31 `ui `uc ]
+"135
+[; ;DS1307.c: 135:     }
+}
+[e $U 8  ]
+"136
+[; ;DS1307.c: 136:     else
+[e :U 7 ]
+"137
+[; ;DS1307.c: 137:     {
+{
+"141
+[; ;DS1307.c: 141:         hours_bcd = (uint8_t)(
+[e = _hours_bcd -> & -> *U + _raw_data * -> -> 2 `i `x -> -> # *U _raw_data `i `x `ui -> 63 `ui `uc ]
+"144
+[; ;DS1307.c: 144:     }
+}
+[e :U 8 ]
+"150
+[; ;DS1307.c: 150:     if ((DS1307_IsValidBCD(seconds_bcd) == 0u) ||
+[e $ ! || || || || || == -> ( _DS1307_IsValidBCD (1 _seconds_bcd `ui -> 0 `ui == -> ( _DS1307_IsValidBCD (1 _minutes_bcd `ui -> 0 `ui == -> ( _DS1307_IsValidBCD (1 _hours_bcd `ui -> 0 `ui == -> ( _DS1307_IsValidBCD (1 _date_bcd `ui -> 0 `ui == -> ( _DS1307_IsValidBCD (1 _month_bcd `ui -> 0 `ui == -> ( _DS1307_IsValidBCD (1 _year_bcd `ui -> 0 `ui 9  ]
+"156
+[; ;DS1307.c: 156:     {
+{
+"157
+[; ;DS1307.c: 157:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"158
+[; ;DS1307.c: 158:     }
+}
+[e :U 9 ]
+"161
+[; ;DS1307.c: 161:     seconds = DS1307_BCDToDecimal(seconds_bcd);
+[e = _seconds ( _DS1307_BCDToDecimal (1 _seconds_bcd ]
+"162
+[; ;DS1307.c: 162:     minutes = DS1307_BCDToDecimal(minutes_bcd);
+[e = _minutes ( _DS1307_BCDToDecimal (1 _minutes_bcd ]
+"163
+[; ;DS1307.c: 163:     hours = DS1307_BCDToDecimal(hours_bcd);
+[e = _hours ( _DS1307_BCDToDecimal (1 _hours_bcd ]
+"164
+[; ;DS1307.c: 164:     date = DS1307_BCDToDecimal(date_bcd);
+[e = _date ( _DS1307_BCDToDecimal (1 _date_bcd ]
+"165
+[; ;DS1307.c: 165:     month = DS1307_BCDToDecimal(month_bcd);
+[e = _month ( _DS1307_BCDToDecimal (1 _month_bcd ]
+"168
+[; ;DS1307.c: 168:     if (seconds > 59u)
+[e $ ! > -> _seconds `ui -> 59 `ui 10  ]
+"169
+[; ;DS1307.c: 169:     {
+{
+"170
+[; ;DS1307.c: 170:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"171
+[; ;DS1307.c: 171:     }
+}
+[e :U 10 ]
+"173
+[; ;DS1307.c: 173:     if (minutes > 59u)
+[e $ ! > -> _minutes `ui -> 59 `ui 11  ]
+"174
+[; ;DS1307.c: 174:     {
+{
+"175
+[; ;DS1307.c: 175:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"176
+[; ;DS1307.c: 176:     }
+}
+[e :U 11 ]
+"182
+[; ;DS1307.c: 182:     if ((raw_data[2] & 0x40u) != 0u)
+[e $ ! != & -> *U + _raw_data * -> -> 2 `i `x -> -> # *U _raw_data `i `x `ui -> 64 `ui -> 0 `ui 12  ]
+"183
+[; ;DS1307.c: 183:     {
+{
+"184
+[; ;DS1307.c: 184:         if ((hours == 0u) || (hours > 12u))
+[e $ ! || == -> _hours `ui -> 0 `ui > -> _hours `ui -> 12 `ui 13  ]
+"185
+[; ;DS1307.c: 185:         {
+{
+"186
+[; ;DS1307.c: 186:             return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"187
+[; ;DS1307.c: 187:         }
+}
+[e :U 13 ]
+"188
+[; ;DS1307.c: 188:     }
+}
+[e $U 14  ]
+"189
+[; ;DS1307.c: 189:     else
+[e :U 12 ]
+"190
+[; ;DS1307.c: 190:     {
+{
+"191
+[; ;DS1307.c: 191:         if (hours > 23u)
+[e $ ! > -> _hours `ui -> 23 `ui 15  ]
+"192
+[; ;DS1307.c: 192:         {
+{
+"193
+[; ;DS1307.c: 193:             return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"194
+[; ;DS1307.c: 194:         }
+}
+[e :U 15 ]
+"195
+[; ;DS1307.c: 195:     }
+}
+[e :U 14 ]
+"198
+[; ;DS1307.c: 198:     if ((weekday == 0u) || (weekday > 7u))
+[e $ ! || == -> _weekday `ui -> 0 `ui > -> _weekday `ui -> 7 `ui 16  ]
+"199
+[; ;DS1307.c: 199:     {
+{
+"200
+[; ;DS1307.c: 200:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"201
+[; ;DS1307.c: 201:     }
+}
+[e :U 16 ]
+"203
+[; ;DS1307.c: 203:     if ((date == 0u) || (date > 31u))
+[e $ ! || == -> _date `ui -> 0 `ui > -> _date `ui -> 31 `ui 17  ]
+"204
+[; ;DS1307.c: 204:     {
+{
+"205
+[; ;DS1307.c: 205:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"206
+[; ;DS1307.c: 206:     }
+}
+[e :U 17 ]
+"208
+[; ;DS1307.c: 208:     if ((month == 0u) || (month > 12u))
+[e $ ! || == -> _month `ui -> 0 `ui > -> _month `ui -> 12 `ui 18  ]
+"209
+[; ;DS1307.c: 209:     {
+{
+"210
+[; ;DS1307.c: 210:         return 0u;
+[e ) -> -> 0 `ui `uc ]
+[e $UE 5  ]
+"211
+[; ;DS1307.c: 211:     }
+}
+[e :U 18 ]
+"214
+[; ;DS1307.c: 214:     return 1u;
+[e ) -> -> 1 `ui `uc ]
+[e $UE 5  ]
+"215
+[; ;DS1307.c: 215: }
+[e :UE 5 ]
+}
+"222
+[; ;DS1307.c: 222: I2C_Status DS1307_ReadRegisters(
+[v _DS1307_ReadRegisters `(E39 ~T0 @X0 1 ef3`uc`*uc`uc ]
+"227
+[; ;DS1307.c: 227: {
+{
+[e :U _DS1307_ReadRegisters ]
+"223
+[; ;DS1307.c: 223:     uint8_t start_register,
+[v _start_register `uc ~T0 @X0 1 r1 ]
+"224
+[; ;DS1307.c: 224:     uint8_t *data,
+[v _data `*uc ~T0 @X0 1 r2 ]
+"225
+[; ;DS1307.c: 225:     uint8_t length
+[v _length `uc ~T0 @X0 1 r3 ]
+"227
+[; ;DS1307.c: 227: {
+[f ]
+"228
+[; ;DS1307.c: 228:     I2C_Status status;
+[v _status `E39 ~T0 @X0 1 a ]
+"231
+[; ;DS1307.c: 231:     if ((start_register > 0x3Fu) ||
+[e $ ! || || > -> _start_register `ui -> 63 `ui == _data -> -> -> 0 `i `*v `*uc == -> _length `ui -> 0 `ui 20  ]
+"234
+[; ;DS1307.c: 234:     {
+{
+"235
+[; ;DS1307.c: 235:         return I2C_ERROR_INVALID_PARAMETER;
+[e ) . `E39 5 ]
+[e $UE 19  ]
+"236
+[; ;DS1307.c: 236:     }
+}
+[e :U 20 ]
+"245
+[; ;DS1307.c: 245:     status = I2C1_WriteSingleByte(
+[e = _status ( _I2C1_WriteSingleByte (2 , -> -> 104 `i `uc _start_register ]
+"251
+[; ;DS1307.c: 251:     if (status != I2C_OK)
+[e $ ! != -> _status `ui -> . `E39 0 `ui 21  ]
+"252
+[; ;DS1307.c: 252:     {
+{
+"253
+[; ;DS1307.c: 253:         return status;
+[e ) _status ]
+[e $UE 19  ]
+"254
+[; ;DS1307.c: 254:     }
+}
+[e :U 21 ]
+"260
+[; ;DS1307.c: 260:     return I2C1_Read(
+[e ) ( _I2C1_Read (3 , , -> -> 104 `i `uc _data _length ]
+[e $UE 19  ]
+"265
+[; ;DS1307.c: 265: }
+[e :UE 19 ]
+}
+"272
+[; ;DS1307.c: 272: I2C_Status DS1307_ReadRaw(
+[v _DS1307_ReadRaw `(E39 ~T0 @X0 1 ef1`*uc ]
+"275
+[; ;DS1307.c: 275: {
+{
+[e :U _DS1307_ReadRaw ]
+"273
+[; ;DS1307.c: 273:     uint8_t raw_data[7u]
+[v _raw_data `*uc ~T0 @X0 1 r1 ]
+"275
+[; ;DS1307.c: 275: {
+[f ]
+"276
+[; ;DS1307.c: 276:     if (raw_data == ((void*)0))
+[e $ ! == _raw_data -> -> -> 0 `i `*v `*uc 23  ]
+"277
+[; ;DS1307.c: 277:     {
+{
+"278
+[; ;DS1307.c: 278:         return I2C_ERROR_INVALID_PARAMETER;
+[e ) . `E39 5 ]
+[e $UE 22  ]
+"279
+[; ;DS1307.c: 279:     }
+}
+[e :U 23 ]
+"282
+[; ;DS1307.c: 282:     return DS1307_ReadRegisters(
+[e ) ( _DS1307_ReadRegisters (3 , , -> -> 0 `ui `uc _raw_data -> -> 7 `ui `uc ]
+[e $UE 22  ]
+"287
+[; ;DS1307.c: 287: }
+[e :UE 22 ]
+}
+"294
+[; ;DS1307.c: 294: I2C_Status DS1307_ReadDateTime(
+[v _DS1307_ReadDateTime `(E39 ~T0 @X0 1 ef1`*S1 ]
+"297
+[; ;DS1307.c: 297: {
+{
+[e :U _DS1307_ReadDateTime ]
+"295
+[; ;DS1307.c: 295:     DS1307_DateTime *date_time
+[v _date_time `*S1 ~T0 @X0 1 r1 ]
+"297
+[; ;DS1307.c: 297: {
+[f ]
+"298
+[; ;DS1307.c: 298:     uint8_t raw_data[7u];
+[v _raw_data `uc ~T0 @X0 -> 7 `i a ]
+"299
+[; ;DS1307.c: 299:     I2C_Status status;
+[v _status `E39 ~T0 @X0 1 a ]
+"302
+[; ;DS1307.c: 302:     if (date_time == ((void*)0))
+[e $ ! == _date_time -> -> -> 0 `i `*v `*S1 25  ]
+"303
+[; ;DS1307.c: 303:     {
+{
+"304
+[; ;DS1307.c: 304:         return I2C_ERROR_INVALID_PARAMETER;
+[e ) . `E39 5 ]
+[e $UE 24  ]
+"305
+[; ;DS1307.c: 305:     }
+}
+[e :U 25 ]
+"311
+[; ;DS1307.c: 311:     date_time->clock_running = 0u;
+[e = . *U _date_time 7 -> -> 0 `ui `uc ]
+"312
+[; ;DS1307.c: 312:     date_time->mode_12h = 0u;
+[e = . *U _date_time 8 -> -> 0 `ui `uc ]
+"313
+[; ;DS1307.c: 313:     date_time->is_pm = 0u;
+[e = . *U _date_time 9 -> -> 0 `ui `uc ]
+"314
+[; ;DS1307.c: 314:     date_time->data_valid = 0u;
+[e = . *U _date_time 10 -> -> 0 `ui `uc ]
+"320
+[; ;DS1307.c: 320:     status = DS1307_ReadRaw(raw_data);
+[e = _status ( _DS1307_ReadRaw (1 &U _raw_data ]
+"323
+[; ;DS1307.c: 323:     if (status != I2C_OK)
+[e $ ! != -> _status `ui -> . `E39 0 `ui 26  ]
+"324
+[; ;DS1307.c: 324:     {
+{
+"325
+[; ;DS1307.c: 325:         return status;
+[e ) _status ]
+[e $UE 24  ]
+"326
+[; ;DS1307.c: 326:     }
+}
+[e :U 26 ]
+"335
+[; ;DS1307.c: 335:     date_time->clock_running =
+[e = . *U _date_time 7 -> ? == & -> *U + &U _raw_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 128 `ui -> 0 `ui : -> 1 `ui -> 0 `ui `uc ]
+"345
+[; ;DS1307.c: 345:     date_time->mode_12h =
+[e = . *U _date_time 8 -> ? != & -> *U + &U _raw_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 64 `ui -> 0 `ui : -> 1 `ui -> 0 `ui `uc ]
+"349
+[; ;DS1307.c: 349:     if (date_time->mode_12h != 0u)
+[e $ ! != -> . *U _date_time 8 `ui -> 0 `ui 27  ]
+"350
+[; ;DS1307.c: 350:     {
+{
+"357
+[; ;DS1307.c: 357:         date_time->is_pm =
+[e = . *U _date_time 9 -> ? != & -> *U + &U _raw_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 32 `ui -> 0 `ui : -> 1 `ui -> 0 `ui `uc ]
+"361
+[; ;DS1307.c: 361:         date_time->hours = DS1307_BCDToDecimal(
+[e = . *U _date_time 2 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 31 `ui `uc ]
+"364
+[; ;DS1307.c: 364:     }
+}
+[e $U 28  ]
+"365
+[; ;DS1307.c: 365:     else
+[e :U 27 ]
+"366
+[; ;DS1307.c: 366:     {
+{
+"367
+[; ;DS1307.c: 367:         date_time->is_pm = 0u;
+[e = . *U _date_time 9 -> -> 0 `ui `uc ]
+"370
+[; ;DS1307.c: 370:         date_time->hours = DS1307_BCDToDecimal(
+[e = . *U _date_time 2 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 2 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 63 `ui `uc ]
+"373
+[; ;DS1307.c: 373:     }
+}
+[e :U 28 ]
+"376
+[; ;DS1307.c: 376:     date_time->seconds = DS1307_BCDToDecimal(
+[e = . *U _date_time 0 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 0 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 127 `ui `uc ]
+"381
+[; ;DS1307.c: 381:     date_time->minutes = DS1307_BCDToDecimal(
+[e = . *U _date_time 1 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 1 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 127 `ui `uc ]
+"386
+[; ;DS1307.c: 386:     date_time->weekday = (uint8_t)(
+[e = . *U _date_time 3 -> & -> *U + &U _raw_data * -> -> -> 3 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 7 `ui `uc ]
+"391
+[; ;DS1307.c: 391:     date_time->date = DS1307_BCDToDecimal(
+[e = . *U _date_time 4 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 4 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 63 `ui `uc ]
+"396
+[; ;DS1307.c: 396:     date_time->month = DS1307_BCDToDecimal(
+[e = . *U _date_time 5 ( _DS1307_BCDToDecimal (1 -> & -> *U + &U _raw_data * -> -> -> 5 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui -> 31 `ui `uc ]
+"401
+[; ;DS1307.c: 401:     date_time->year = (uint16_t)(
+[e = . *U _date_time 6 -> + -> 2000 `ui -> ( _DS1307_BCDToDecimal (1 *U + &U _raw_data * -> -> -> 6 `i `ui `ux -> -> # *U &U _raw_data `ui `ux `ui `us ]
+"411
+[; ;DS1307.c: 411:     date_time->data_valid =
+[e = . *U _date_time 10 ( _DS1307_ValidateRawData (1 -> &U _raw_data `*Cuc ]
+"415
+[; ;DS1307.c: 415:     return I2C_OK;
+[e ) . `E39 0 ]
+[e $UE 24  ]
+"416
+[; ;DS1307.c: 416: }
+[e :UE 24 ]
+}

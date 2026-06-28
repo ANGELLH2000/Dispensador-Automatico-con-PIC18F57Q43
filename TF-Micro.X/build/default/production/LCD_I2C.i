@@ -1,4 +1,4 @@
-# 1 "LCD.c"
+# 1 "LCD_I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,171 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD.c" 2
+# 1 "LCD_I2C.c" 2
+# 10 "LCD_I2C.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stddef.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stddef.h" 2 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long int wchar_t;
+# 128 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned size_t;
+# 138 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stddef.h" 2 3
+# 11 "LCD_I2C.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 1 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned __int24 uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 179 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 215 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
+# 12 "LCD_I2C.c" 2
+# 1 "./cabecera.h" 1
+
+
+
+
+
+
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_64
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+
+
+#pragma config BORV = VBOR_1P9
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config DEBUG = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config CP = OFF
+
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
@@ -20,28 +184,11 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdlib.h" 2 3
 
 int atoi (const char *);
@@ -129,91 +276,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdint.h" 2 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -29575,184 +29638,1088 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 3 "LCD.c" 2
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-# 4 "LCD.c" 2
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna)
+# 60 "./cabecera.h" 2
+# 13 "LCD_I2C.c" 2
+# 1 "./LCD_I2C.h" 1
+# 22 "./LCD_I2C.h"
+# 1 "./I2C.h" 1
+# 29 "./I2C.h"
+typedef enum
 {
- if(fila == 1)
- {
-  ENVIA_LCD_CMD(0x80+columna);
- }
- else if(fila == 2)
- {
-  ENVIA_LCD_CMD(0xC0+columna);
- }
+    I2C_OK = 0,
+# 42 "./I2C.h"
+    I2C_ERROR_NACK,
+
+
+
+
+    I2C_ERROR_COLLISION,
+
+
+
+
+    I2C_ERROR_BUS_TIMEOUT,
+
+
+
+
+    I2C_ERROR_SOFTWARE_TIMEOUT,
+
+
+
+
+    I2C_ERROR_INVALID_PARAMETER
+
+} I2C_Status;
+# 74 "./I2C.h"
+extern volatile I2C_Status I2C1_LastStatus;
+# 93 "./I2C.h"
+void I2C1_Init(void);
+# 114 "./I2C.h"
+I2C_Status I2C1_Write(
+    uint8_t address7,
+    const uint8_t *data,
+    uint8_t length
+);
+# 129 "./I2C.h"
+I2C_Status I2C1_WriteSingleByte(
+    uint8_t address7,
+    uint8_t data
+);
+# 151 "./I2C.h"
+I2C_Status I2C1_Read(
+    uint8_t address7,
+    uint8_t *data,
+    uint8_t length
+);
+# 23 "./LCD_I2C.h" 2
+# 70 "./LCD_I2C.h"
+void LCD_I2C_DelayUs(uint16_t timeUs);
+void LCD_I2C_DelayMs(uint16_t timeMs);
+# 81 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetAddress(uint8_t address7);
+
+
+
+
+
+uint8_t LCD_I2C_GetAddress(void);
+
+
+
+
+
+
+
+I2C_Status LCD_I2C_Init(void);
+
+
+
+
+
+
+I2C_Status LCD_I2C_Command(uint8_t command);
+I2C_Status LCD_I2C_WriteChar(char character);
+
+I2C_Status LCD_I2C_WriteString(const char *text);
+
+I2C_Status LCD_I2C_WriteStringN(
+    const char *text,
+    uint8_t length
+);
+# 122 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetCursor(
+    uint8_t row,
+    uint8_t column
+);
+
+I2C_Status LCD_I2C_Clear(void);
+I2C_Status LCD_I2C_Home(void);
+
+I2C_Status LCD_I2C_Display(uint8_t state);
+I2C_Status LCD_I2C_Cursor(uint8_t state);
+I2C_Status LCD_I2C_Blink(uint8_t state);
+I2C_Status LCD_I2C_Backlight(uint8_t state);
+
+I2C_Status LCD_I2C_CursorShiftLeft(void);
+I2C_Status LCD_I2C_CursorShiftRight(void);
+I2C_Status LCD_I2C_DisplayShiftLeft(void);
+I2C_Status LCD_I2C_DisplayShiftRight(void);
+# 151 "./LCD_I2C.h"
+I2C_Status LCD_I2C_CreateChar(
+    const uint8_t pattern[8],
+    uint8_t position
+);
+
+
+
+
+
+
+I2C_Status LCD_I2C_WriteUInt8(
+    uint8_t number,
+    uint8_t digits
+);
+# 182 "./LCD_I2C.h"
+I2C_Status LCD_I2C_WriteUInt16(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+);
+
+I2C_Status LCD_I2C_WriteDegree(void);
+I2C_Status LCD_I2C_WriteBinary(uint8_t value);
+I2C_Status LCD_I2C_WriteHex(uint8_t value);
+
+I2C_Status LCD_I2C_WriteInt(int16_t value);
+# 14 "LCD_I2C.c" 2
+# 57 "LCD_I2C.c"
+static uint8_t lcdAddress = 0x27u;
+
+
+
+
+
+static uint8_t lcdBacklight = 0x08u;
+# 73 "LCD_I2C.c"
+static uint8_t lcdDisplayControl = 0x04u;
+
+
+
+
+
+
+static I2C_Status LCD_I2C_ExpanderWrite(uint8_t value);
+
+static I2C_Status LCD_I2C_WriteNibble(
+    uint8_t nibble,
+    uint8_t rs
+);
+
+static I2C_Status LCD_I2C_SendByte(
+    uint8_t value,
+    uint8_t rs
+);
+
+static I2C_Status LCD_I2C_UpdateDisplayControl(void);
+
+static I2C_Status LCD_I2C_WriteFixedUnsigned(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+);
+
+static char LCD_I2C_NibbleToHex(uint8_t nibble);
+# 110 "LCD_I2C.c"
+static I2C_Status LCD_I2C_ExpanderWrite(uint8_t value)
+{
+    return I2C1_WriteSingleByte(
+        lcdAddress,
+        value
+    );
+}
+# 128 "LCD_I2C.c"
+static I2C_Status LCD_I2C_WriteNibble(
+    uint8_t nibble,
+    uint8_t rs
+)
+{
+    uint8_t base;
+    uint8_t block[2];
+
+
+
+
+
+    base = (uint8_t)(nibble & 0xF0u);
+
+
+
+
+
+    base |= lcdBacklight;
+
+
+
+
+
+
+    if (rs != 0u)
+    {
+        base |= 0x01u;
+    }
+
+
+
+
+
+
+
+    block[0] = (uint8_t)(base | 0x04u);
+    block[1] = (uint8_t)(base & (uint8_t)(~0x04u));
+
+
+    return I2C1_Write(
+        lcdAddress,
+        block,
+        2u
+    );
 }
 
-void BLINK_CURSOR(unsigned char val)
+
+
+
+
+static I2C_Status LCD_I2C_SendByte(
+    uint8_t value,
+    uint8_t rs
+)
 {
- if(val == 1) ENVIA_LCD_CMD(0x0E);
- if(val == 0 ) ENVIA_LCD_CMD(0x0F);
+    uint8_t control;
+    uint8_t highNibble;
+    uint8_t lowNibble;
+    uint8_t block[4];
+
+
+    control = lcdBacklight;
+
+
+    if (rs != 0u)
+    {
+        control |= 0x01u;
+    }
+
+
+
+
+
+    highNibble = (uint8_t)(value & 0xF0u);
+
+
+
+
+
+    lowNibble = (uint8_t)((value << 4) & 0xF0u);
+
+
+
+
+
+    block[0] = (uint8_t)(
+        highNibble |
+        control |
+        0x04u
+    );
+
+    block[1] = (uint8_t)(
+        highNibble |
+        control
+    );
+
+
+
+
+
+    block[2] = (uint8_t)(
+        lowNibble |
+        control |
+        0x04u
+    );
+
+    block[3] = (uint8_t)(
+        lowNibble |
+        control
+    );
+
+
+
+
+
+
+    return I2C1_Write(
+        lcdAddress,
+        block,
+        4u
+    );
 }
 
-void DISPLAY_ONOFF(unsigned char estado)
+
+
+
+
+static I2C_Status LCD_I2C_UpdateDisplayControl(void)
 {
- if(estado == 0) ENVIA_LCD_CMD(0x0F);
- if(estado == 1) ENVIA_LCD_CMD(0x08);
+    return LCD_I2C_Command(
+        (uint8_t)(
+            0x08u |
+            lcdDisplayControl
+        )
+    );
 }
 
-void CURSOR_HOME(void)
+
+
+
+
+
+I2C_Status LCD_I2C_SetAddress(uint8_t address7)
 {
- ENVIA_LCD_CMD(0x02);
+    if (address7 > 0x7Fu)
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+    lcdAddress = address7;
+
+    return I2C_OK;
 }
 
-void CURSOR_ONOFF(unsigned char estado)
+
+uint8_t LCD_I2C_GetAddress(void)
 {
- if(estado == 0) ENVIA_LCD_CMD(0x0E);
- if(estado == 1) ENVIA_LCD_CMD(0x0C);
+    return lcdAddress;
 }
 
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam)
+
+
+
+
+
+I2C_Status LCD_I2C_Command(uint8_t command)
 {
- unsigned char i = 0;
- for(i = 0; i<tam; i++)
- {
-  ENVIA_CHAR(cadena[i]);
- }
+    I2C_Status status;
+
+
+
+
+
+    status = LCD_I2C_SendByte(
+        command,
+        0u
+    );
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+
+
+
+    if ((command == 0x01u) ||
+        (command == 0x02u))
+    {
+        _delay((unsigned long)((2)*(32000000UL/4000.0)));
+    }
+    else
+    {
+        _delay((unsigned long)((50)*(32000000UL/4000000.0)));
+    }
+
+
+    return I2C_OK;
 }
 
-void ENVIA_CHAR(unsigned char dato)
-{
- unsigned char aux;
- LATDbits.LATD0 = 1;
- LEER_LCD();
- TRISD = 0x00;
-        _delay(1200);
 
- LATDbits.LATD1 = 0;
- LATDbits.LATD2 = 0;
- LATDbits.LATD0 = 1;
- aux = dato & 0xF0;
- ENVIA_NIBBLE(aux);
- aux = dato << 4;
- ENVIA_NIBBLE(aux);
+I2C_Status LCD_I2C_WriteChar(char character)
+{
+    I2C_Status status;
+
+
+
+
+
+    status = LCD_I2C_SendByte(
+        (uint8_t)character,
+        1u
+    );
+
+
+    if (status == I2C_OK)
+    {
+        _delay((unsigned long)((50)*(32000000UL/4000000.0)));
+    }
+
+
+    return status;
 }
 
-void BORRAR_LCD(void)
+
+
+
+
+
+I2C_Status LCD_I2C_Init(void)
 {
- ENVIA_LCD_CMD(0x01);
+    I2C_Status status;
+
+
+
+
+
+    _delay((unsigned long)((50u)*(32000000UL/4000.0)));
+
+
+    lcdBacklight = 0x08u;
+    lcdDisplayControl = 0x04u;
+# 384 "LCD_I2C.c"
+    status = LCD_I2C_ExpanderWrite(lcdBacklight);
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+    _delay((unsigned long)((5u)*(32000000UL/4000.0)));
+
+
+
+
+
+
+    status = LCD_I2C_WriteNibble(0x30u, 0u);
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+    _delay((unsigned long)((5u)*(32000000UL/4000.0)));
+
+
+    status = LCD_I2C_WriteNibble(0x30u, 0u);
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+    _delay((unsigned long)((150)*(32000000UL/4000000.0)));
+
+
+    status = LCD_I2C_WriteNibble(0x30u, 0u);
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+    _delay((unsigned long)((150)*(32000000UL/4000000.0)));
+
+
+
+
+
+    status = LCD_I2C_WriteNibble(0x20u, 0u);
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+    _delay((unsigned long)((150)*(32000000UL/4000000.0)));
+# 454 "LCD_I2C.c"
+    status = LCD_I2C_Command(
+        0x28u
+    );
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+
+
+
+    lcdDisplayControl = 0x00u;
+
+    status = LCD_I2C_UpdateDisplayControl();
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+
+
+
+    status = LCD_I2C_Clear();
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+
+
+
+    status = LCD_I2C_Command(
+        0x06u
+    );
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+
+
+
+
+
+    lcdDisplayControl = 0x04u;
+
+    return LCD_I2C_UpdateDisplayControl();
 }
 
-void LCD_CONFIG(void)
+
+
+
+
+
+I2C_Status LCD_I2C_WriteString(const char *text)
 {
- LATDbits.LATD0 = 0;
- LATDbits.LATD1 = 0;
- ENVIA_NIBBLE(0x30);
-        _delay(24000);
-        _delay(24000);
+    I2C_Status status;
 
 
- ENVIA_NIBBLE(0x30);
+    if (text == ((void*)0))
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
 
- _delay(1200);
-        ENVIA_NIBBLE(0x30);
- ENVIA_NIBBLE(0x20);
- ENVIA_LCD_CMD(0x01);
- ENVIA_LCD_CMD(0x28);
- ENVIA_LCD_CMD(0x0F);
- ENVIA_LCD_CMD(0x06);
- ENVIA_LCD_CMD(0x01);
-}
 
-void ENVIA_NIBBLE(unsigned char dato)
-{
- LATD &= 0x0F;
- dato &= 0xF0;
- LATD|= dato;
- LATDbits.LATD2 = 1;
+    while (*text != '\0')
+    {
+        status = LCD_I2C_WriteChar(*text);
 
-        _delay(1200);
- LATDbits.LATD2 = 0;
-}
 
-void ENVIA_LCD_CMD(unsigned char dato)
-{
- unsigned char aux;
- LATDbits.LATD0 = 0;
- LEER_LCD();
- TRISD = 0b00000000;
-
-        _delay(1200);
-        LATDbits.LATD1 = 0;
- LATDbits.LATD2 = 0;
- LATDbits.LATD0 = 0;
- aux = dato & 0xF0;
- ENVIA_NIBBLE(aux);
- aux = dato<<4;
- ENVIA_NIBBLE(aux);
-}
-
-void LEER_LCD(void)
-{
- unsigned char aux;
- TRISD = 0xF8;
- LATDbits.LATD0 = 0;
- LATDbits.LATD1 = 1;
- LATDbits.LATD2 = 1;
-        _delay(1200);
-
- aux = PORTD;
- LATDbits.LATD2 = 0;
-        _delay(1200);
-
- LATDbits.LATD2 = 1;
-        _delay(1200);
-
- LATDbits.LATD2 = 0;
- aux = aux & 0x80;
- while(aux == 0x80)
+        if (status != I2C_OK)
         {
-            LATDbits.LATD2 = 1;
-            _delay(1200);
-            aux = PORTD;
-            LATDbits.LATD2 = 0;
-            _delay(1200);
-            LATDbits.LATD2 = 1;
-            _delay(1200);
-            LATDbits.LATD2 = 0;
-            aux = aux & 0x80;
- }
+            return status;
+        }
+
+
+        text++;
+    }
+
+
+    return I2C_OK;
 }
 
-void GENERACARACTER(const unsigned char *vector,unsigned char pos)
+
+I2C_Status LCD_I2C_WriteStringN(
+    const char *text,
+    uint8_t length
+)
 {
- unsigned char i;
- ENVIA_LCD_CMD(0x40+8*pos);
- for(i=0;i<8;i++)
- {
-  ENVIA_CHAR(vector[i]);
- }
- ENVIA_LCD_CMD(0x80);
+    uint8_t index;
+    I2C_Status status;
+
+
+    if (text == ((void*)0))
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    for (index = 0u; index < length; index++)
+    {
+        status = LCD_I2C_WriteChar(text[index]);
+
+
+        if (status != I2C_OK)
+        {
+            return status;
+        }
+    }
+
+
+    return I2C_OK;
+}
+
+
+
+
+
+
+I2C_Status LCD_I2C_SetCursor(
+    uint8_t row,
+    uint8_t column
+)
+{
+    uint8_t rowAddress;
+
+
+    switch (row)
+    {
+        case 1u:
+            rowAddress = 0x00u;
+            break;
+
+        case 2u:
+            rowAddress = 0x40u;
+            break;
+
+        case 3u:
+            rowAddress = 0x14u;
+            break;
+
+        case 4u:
+            rowAddress = 0x54u;
+            break;
+
+        default:
+            return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    return LCD_I2C_Command(
+        (uint8_t)(
+            0x80u |
+            (rowAddress + column)
+        )
+    );
+}
+
+
+
+
+
+
+I2C_Status LCD_I2C_Clear(void)
+{
+    return LCD_I2C_Command(0x01u);
+}
+
+
+I2C_Status LCD_I2C_Home(void)
+{
+    return LCD_I2C_Command(0x02u);
+}
+
+
+I2C_Status LCD_I2C_Display(uint8_t state)
+{
+    if (state == 1u)
+    {
+        lcdDisplayControl |= 0x04u;
+    }
+    else if (state == 0u)
+    {
+        lcdDisplayControl &=
+            (uint8_t)(~0x04u);
+    }
+    else
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    return LCD_I2C_UpdateDisplayControl();
+}
+
+
+I2C_Status LCD_I2C_Cursor(uint8_t state)
+{
+    if (state == 1u)
+    {
+        lcdDisplayControl |= 0x02u;
+    }
+    else if (state == 0u)
+    {
+        lcdDisplayControl &=
+            (uint8_t)(~0x02u);
+    }
+    else
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    return LCD_I2C_UpdateDisplayControl();
+}
+
+
+I2C_Status LCD_I2C_Blink(uint8_t state)
+{
+    if (state == 1u)
+    {
+        lcdDisplayControl |= 0x01u;
+    }
+    else if (state == 0u)
+    {
+        lcdDisplayControl &=
+            (uint8_t)(~0x01u);
+    }
+    else
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    return LCD_I2C_UpdateDisplayControl();
+}
+
+
+I2C_Status LCD_I2C_Backlight(uint8_t state)
+{
+    if (state == 1u)
+    {
+        lcdBacklight = 0x08u;
+    }
+    else if (state == 0u)
+    {
+        lcdBacklight = 0x00u;
+    }
+    else
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+
+
+
+    return LCD_I2C_ExpanderWrite(lcdBacklight);
+}
+
+
+
+
+
+
+I2C_Status LCD_I2C_CursorShiftLeft(void)
+{
+    return LCD_I2C_Command(0x10u);
+}
+
+
+I2C_Status LCD_I2C_CursorShiftRight(void)
+{
+    return LCD_I2C_Command(0x14u);
+}
+
+
+I2C_Status LCD_I2C_DisplayShiftLeft(void)
+{
+    return LCD_I2C_Command(0x18u);
+}
+
+
+I2C_Status LCD_I2C_DisplayShiftRight(void)
+{
+    return LCD_I2C_Command(0x1Cu);
+}
+
+
+
+
+
+
+I2C_Status LCD_I2C_CreateChar(
+    const uint8_t pattern[8],
+    uint8_t position
+)
+{
+    uint8_t index;
+    I2C_Status status;
+
+
+    if ((pattern == ((void*)0)) ||
+        (position > 7u))
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+
+
+
+    status = LCD_I2C_Command(
+        (uint8_t)(
+            0x40u |
+            (position << 3)
+        )
+    );
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+    for (index = 0u; index < 8u; index++)
+    {
+        status = LCD_I2C_WriteChar(
+            (char)pattern[index]
+        );
+
+
+        if (status != I2C_OK)
+        {
+            return status;
+        }
+    }
+
+
+
+
+
+    return LCD_I2C_Command(0x80u);
+}
+
+
+
+
+
+
+static I2C_Status LCD_I2C_WriteFixedUnsigned(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+)
+{
+    uint32_t divisor;
+    uint8_t index;
+    uint8_t digit;
+    I2C_Status status;
+
+
+    if ((digits == 0u) ||
+        (digits > 5u) ||
+        (decimals >= digits))
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    divisor = 1u;
+# 843 "LCD_I2C.c"
+    for (index = 1u; index < digits; index++)
+    {
+        divisor *= 10u;
+    }
+
+
+    for (index = 0u; index < digits; index++)
+    {
+
+
+
+
+        if ((decimals != 0u) &&
+            (index == (uint8_t)(digits - decimals)))
+        {
+            status = LCD_I2C_WriteChar('.');
+
+
+            if (status != I2C_OK)
+            {
+                return status;
+            }
+        }
+
+
+        digit = (uint8_t)(
+            ((uint32_t)number / divisor) % 10u
+        );
+
+
+        status = LCD_I2C_WriteChar(
+            (char)('0' + digit)
+        );
+
+
+        if (status != I2C_OK)
+        {
+            return status;
+        }
+
+
+        if (divisor > 1u)
+        {
+            divisor /= 10u;
+        }
+    }
+
+
+    return I2C_OK;
+}
+
+
+I2C_Status LCD_I2C_WriteUInt8(
+    uint8_t number,
+    uint8_t digits
+)
+{
+    if ((digits == 0u) ||
+        (digits > 3u))
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+
+    return LCD_I2C_WriteFixedUnsigned(
+        number,
+        digits,
+        0u
+    );
+}
+
+
+I2C_Status LCD_I2C_WriteUInt16(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+)
+{
+    return LCD_I2C_WriteFixedUnsigned(
+        number,
+        digits,
+        decimals
+    );
+}
+
+
+
+
+
+
+I2C_Status LCD_I2C_WriteDegree(void)
+{
+    return LCD_I2C_WriteChar((char)0xDFu);
+}
+
+
+I2C_Status LCD_I2C_WriteBinary(uint8_t value)
+{
+    uint8_t index;
+    I2C_Status status;
+
+
+    status = LCD_I2C_WriteString("0b");
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+    for (index = 0u; index < 8u; index++)
+    {
+        if (((value >> (7u - index)) & 0x01u) != 0u)
+        {
+            status = LCD_I2C_WriteChar('1');
+        }
+        else
+        {
+            status = LCD_I2C_WriteChar('0');
+        }
+
+
+        if (status != I2C_OK)
+        {
+            return status;
+        }
+    }
+
+
+    return I2C_OK;
+}
+
+
+static char LCD_I2C_NibbleToHex(uint8_t nibble)
+{
+    nibble &= 0x0Fu;
+
+
+    if (nibble < 10u)
+    {
+        return (char)('0' + nibble);
+    }
+
+
+    return (char)('A' + (nibble - 10u));
+}
+
+
+I2C_Status LCD_I2C_WriteHex(uint8_t value)
+{
+    I2C_Status status;
+
+
+    status = LCD_I2C_WriteString("0x");
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+    status = LCD_I2C_WriteChar(
+        LCD_I2C_NibbleToHex(
+            (uint8_t)(value >> 4)
+        )
+    );
+
+
+    if (status != I2C_OK)
+    {
+        return status;
+    }
+
+
+    return LCD_I2C_WriteChar(
+        LCD_I2C_NibbleToHex(value)
+    );
+}
+I2C_Status LCD_I2C_WriteInt(int16_t value)
+{
+    char buf[8];
+    uint16_t u;
+    int pos = 0;
+
+    if (value < 0)
+    {
+        buf[pos++] = '-';
+        u = (uint16_t)(-value);
+    }
+    else
+    {
+        u = (uint16_t)value;
+    }
+
+
+    if (u == 0)
+    {
+        buf[pos++] = '0';
+    }
+    else
+    {
+        char rev[6];
+        int nd = 0;
+        while (u > 0 && nd < (int)sizeof(rev))
+        {
+            rev[nd++] = '0' + (u % 10u);
+            u /= 10u;
+        }
+        while (nd-- > 0)
+        {
+            buf[pos++] = rev[nd];
+        }
+    }
+
+    buf[pos] = '\0';
+    return LCD_I2C_WriteString(buf);
 }

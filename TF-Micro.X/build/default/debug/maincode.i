@@ -29576,6 +29576,7 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 2 "maincode.c" 2
 
+
 # 1 "./cabecera.h" 1
 
 
@@ -29631,214 +29632,45 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 4 "maincode.c" 2
-# 1 "./EPROM_DFM.h" 1
-# 24 "./EPROM_DFM.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include\\c99/stdbool.h" 1 3
-# 25 "./EPROM_DFM.h" 2
-# 85 "./EPROM_DFM.h"
-void EEPROM_WriteByte(uint16_t address, uint8_t data);
-# 109 "./EPROM_DFM.h"
-uint8_t EEPROM_ReadByte(uint16_t address);
-# 138 "./EPROM_DFM.h"
-void EEPROM_UpdateByte(uint16_t address, uint8_t data);
 # 5 "maincode.c" 2
-# 1 "./LCD.h" 1
-
-
-
-
-
-
-void POS_CURSOR(unsigned char fila,unsigned char columna);
-void DISPLAY_ONOFF(unsigned char estado);
-void CURSOR_HOME(void);
-void CURSOR_ONOFF(unsigned char estado);
-void ENVIA_CHAR(unsigned char dato);
-void BORRAR_LCD(void);
-void LCD_CONFIG(void);
-void ENVIA_NIBBLE(unsigned char dato);
-void ENVIA_LCD_CMD(unsigned char dato);
-void LEER_LCD(void);
-void BLINK_CURSOR(unsigned char val);
-void GENERACARACTER(const unsigned char *vector,unsigned char pos);
-void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
+# 1 "./funcionesGenerales.h" 1
+# 10 "./funcionesGenerales.h"
+void config_perifericos(void);
+void config_perifericos_sensores(void);
+void verificar_condiciones_iniciales(void);
+void sistem_error(const char *mensaje);
+void configuro(void);
 # 6 "maincode.c" 2
-# 16 "maincode.c"
-unsigned char valor0 = 0;
-unsigned char valor1 = 0;
-unsigned char posicion = 0;
+
+
+
+
 
 void configuro(void)
 {
 
-
-
     OSCCON1 = 0x60;
-    OSCFRQ = 0x08;
+    OSCFRQ = 0x06;
     OSCEN = 0x40;
 
 
+    config_perifericos();
 
 
-    TRISD = 0x00;
-    ANSELD = 0x00;
+    verificar_condiciones_iniciales();
 
-
-
-
-    TRISCbits.TRISC0 = 1;
-    TRISCbits.TRISC1 = 1;
-    TRISCbits.TRISC3 = 1;
-
-    ANSELCbits.ANSELC0 = 0;
-    ANSELCbits.ANSELC1 = 0;
-    ANSELCbits.ANSELC3 = 0;
-
-    WPUCbits.WPUC0 = 1;
-    WPUCbits.WPUC1 = 1;
-    WPUCbits.WPUC3 = 1;
 }
 
-void LCD_init(void)
-{
-    LCD_CONFIG();
-    _delay((unsigned long)((16)*(64000000UL/4000.0)));
-    BORRAR_LCD();
-    CURSOR_HOME();
-    CURSOR_ONOFF(1);
-}
+
+
+
 
 void main(void)
 {
     configuro();
-    LCD_init();
-    POS_CURSOR(1, 0);
-    ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
-    _delay((unsigned long)((2000)*(64000000UL/4000.0)));
 
-
-
-    valor0 = EEPROM_ReadByte(0);
-    valor1 = EEPROM_ReadByte(1);
-
-    if(valor0 == 0xFF)
-    {
-        valor0 = 0;
-    }
-
-    if(valor1 == 0xFF)
-    {
-        valor1 = 0;
-    }
-
-    BORRAR_LCD();
-
-    while(1)
+    while (1)
     {
 
-
-
-        POS_CURSOR(1, 0);
-        ESCRIBE_MENSAJE("P0:", 3);
-
-        ENVIA_CHAR((valor0 / 100) + 0x30);
-        ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor0 % 10) + 0x30);
-
-        ESCRIBE_MENSAJE(" P1:", 4);
-
-        ENVIA_CHAR((valor1 / 100) + 0x30);
-        ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
-        ENVIA_CHAR((valor1 % 10) + 0x30);
-
-        ESCRIBE_MENSAJE(" ", 1);
-
-        POS_CURSOR(2, 0);
-        ESCRIBE_MENSAJE("SEL:", 4);
-        ENVIA_CHAR(posicion + 0x30);
-
-        ESCRIBE_MENSAJE("  GR:C1   ", 10);
-
-
-
-
-        if(PORTCbits.RC0 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC0 == 0)
-            {
-                if(posicion == 0)
-                {
-                    valor0++;
-                }
-                else
-                {
-                    valor1++;
-                }
-
-                while(PORTCbits.RC0 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
-
-
-
-
-        if(PORTCbits.RC1 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC1 == 0)
-            {
-                if(posicion == 0)
-                {
-                    EEPROM_UpdateByte(0, valor0);
-                }
-                else
-                {
-                    EEPROM_UpdateByte(1, valor1);
-                }
-
-                BORRAR_LCD();
-
-                POS_CURSOR(1, 0);
-                ESCRIBE_MENSAJE("Dato guardado", 13);
-
-                POS_CURSOR(2, 0);
-                ESCRIBE_MENSAJE("Posicion: ", 10);
-                ENVIA_CHAR(posicion + 0x30);
-
-                _delay((unsigned long)((800)*(64000000UL/4000.0)));
-                BORRAR_LCD();
-
-                while(PORTCbits.RC1 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
-
-
-
-
-        if(PORTCbits.RC3 == 0)
-        {
-            _delay((unsigned long)((40)*(64000000UL/4000.0)));
-
-            if(PORTCbits.RC3 == 0)
-            {
-                if(posicion == 0)
-                {
-                    posicion = 1;
-                }
-                else
-                {
-                    posicion = 0;
-                }
-
-                while(PORTCbits.RC3 == 0);
-                _delay((unsigned long)((40)*(64000000UL/4000.0)));
-            }
-        }
     }
 }

@@ -2773,8 +2773,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keypad4x4.c: 155:         Keypad_ActivateRow(keypad, row);
 [e ( _Keypad_ActivateRow (2 , _keypad _row ]
 "161
-[; ;keypad4x4.c: 161:         _delay((unsigned long)((5)*(64000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 64000000 `ul `d .4000000.0 `ul ]
+[; ;keypad4x4.c: 161:         _delay((unsigned long)((5)*(32000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
 "166
 [; ;keypad4x4.c: 166:         for(column = 0; column < 4; column++)
 {
@@ -2926,8 +2926,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 2444 ]
 "304
-[; ;keypad4x4.c: 304:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;keypad4x4.c: 304:     _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "309
 [; ;keypad4x4.c: 309:     confirmed_key = Keypad_Scan(keypad);
 [e = _confirmed_key ( _Keypad_Scan (1 _keypad ]
@@ -2961,8 +2961,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ != -> ( _Keypad_Scan (1 _keypad `ui -> 0 `ui 2447  ]
 [e :U 2448 ]
 "342
-[; ;keypad4x4.c: 342:     _delay((unsigned long)((20)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[; ;keypad4x4.c: 342:     _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "347
 [; ;keypad4x4.c: 347:     return detected_key;
 [e ) _detected_key ]

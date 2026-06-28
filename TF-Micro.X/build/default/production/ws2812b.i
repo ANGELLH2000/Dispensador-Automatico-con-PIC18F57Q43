@@ -29709,9 +29709,9 @@ void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
         tira->num_leds = num_leds;
     }
 # 49 "ws2812b.c"
-    ANSELDbits.ANSELD0 = 0;
+    ANSELCbits.ANSELC0 = 0;
 # 62 "ws2812b.c"
-    TRISDbits.TRISD0 = 0;
+    TRISCbits.TRISC0 = 0;
 
 
 
@@ -29719,7 +29719,7 @@ void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds)
 
 
 
-    LATDbits.LATD0 = 0;
+    LATCbits.LATC0 = 0;
 
 
 
@@ -29780,7 +29780,7 @@ static void WS2812B_SendBit(uint8_t bit_value)
 
 
 
-        LATDbits.LATD0 = 1;
+        LATCbits.LATC0 = 1;
 
         __nop();
         __nop();
@@ -29790,7 +29790,7 @@ static void WS2812B_SendBit(uint8_t bit_value)
         __nop();
         __nop();
 
-        LATDbits.LATD0 = 0;
+        LATCbits.LATC0 = 0;
 
         __nop();
         __nop();
@@ -29802,12 +29802,12 @@ static void WS2812B_SendBit(uint8_t bit_value)
 
 
 
-        LATDbits.LATD0 = 1;
+        LATCbits.LATC0 = 1;
 
         __nop();
         __nop();
 
-        LATDbits.LATD0 = 0;
+        LATCbits.LATC0 = 0;
 
         __nop();
         __nop();
@@ -29862,8 +29862,8 @@ void WS2812B_Show(LED_WS2812B *tira)
         WS2812B_SendByte(tira->blue[i]);
     }
 # 367 "ws2812b.c"
-    LATDbits.LATD0 = 0;
-    _delay((unsigned long)((300)*(64000000UL/4000000.0)));
+    LATCbits.LATC0 = 0;
+    _delay((unsigned long)((300)*(32000000UL/4000000.0)));
 }
 # 383 "ws2812b.c"
 void WS2812B_Clear(LED_WS2812B *tira)

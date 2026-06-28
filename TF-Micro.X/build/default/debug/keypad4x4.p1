@@ -1,95 +1,76 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
-"5390
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5390: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@177 ]
-"5592
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-"49331
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
-[v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
-"41445
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
-"49275
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49275:     struct {
-[s S2298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2298 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"49274
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49274: typedef union {
-[u S2297 `S2298 1 ]
-[n S2297 . . ]
-"49286
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49286: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x4C8)));
-[v _TRISCbits `VS2297 ~T0 @X0 0 e@1224 ]
-"40955
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40955:     struct {
-[s S1932 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1932 . ANSELC0 ANSELC1 ANSELC2 ANSELC3 ANSELC4 ANSELC5 ANSELC6 ANSELC7 ]
-"40954
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40954: typedef union {
-[u S1931 `S1932 1 ]
-[n S1931 . . ]
-"40966
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40966: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x410)));
-[v _ANSELCbits `VS1931 ~T0 @X0 0 e@1040 ]
-"41017
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41017:     struct {
-[s S1934 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1934 . WPUC0 WPUC1 WPUC2 WPUC3 WPUC4 WPUC5 WPUC6 WPUC7 ]
-"41016
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41016: typedef union {
-[u S1933 `S1934 1 ]
-[n S1933 . . ]
-"41028
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41028: extern volatile WPUCbits_t WPUCbits __attribute__((address(0x411)));
-[v _WPUCbits `VS1933 ~T0 @X0 0 e@1041 ]
-"13 ./LCD.h
-[; ;./LCD.h: 13: void LCD_CONFIG(void);
-[v _LCD_CONFIG `(v ~T0 @X0 0 ef ]
+"82 ./Keypad4x4.h
+[; ;./Keypad4x4.h: 82: {
+[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 ]
+[n S2431 . port lat tris ansel wpu ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"12 ./LCD.h
-[; ;./LCD.h: 12: void BORRAR_LCD(void);
-[v _BORRAR_LCD `(v ~T0 @X0 0 ef ]
-"9
-[; ;./LCD.h: 9: void CURSOR_HOME(void);
-[v _CURSOR_HOME `(v ~T0 @X0 0 ef ]
-"10
-[; ;./LCD.h: 10: void CURSOR_ONOFF(unsigned char estado);
-[v _CURSOR_ONOFF `(v ~T0 @X0 0 ef1`uc ]
-[p mainexit ]
-"7
-[; ;./LCD.h: 7: void POS_CURSOR(unsigned char fila,unsigned char columna);
-[v _POS_CURSOR `(v ~T0 @X0 0 ef2`uc`uc ]
+"7 ./cabecera.h
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
 "19
-[; ;./LCD.h: 19: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam);
-[v _ESCRIBE_MENSAJE `(v ~T0 @X0 0 ef2`*Cuc`uc ]
-"109 ./EPROM_DFM.h
-[; ;./EPROM_DFM.h: 109: uint8_t EEPROM_ReadByte(uint16_t address);
-[v _EEPROM_ReadByte `(uc ~T0 @X0 0 ef1`us ]
-"11 ./LCD.h
-[; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
-[v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"49617 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49617:     struct {
-[s S2310 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2310 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"49616
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49616: typedef union {
-[u S2309 `S2310 1 ]
-[n S2309 . . ]
-"49628
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49628: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x4D0)));
-[v _PORTCbits `VS2309 ~T0 @X0 0 e@1232 ]
-"138 ./EPROM_DFM.h
-[; ;./EPROM_DFM.h: 138: void EEPROM_UpdateByte(uint16_t address, uint8_t data);
-[v _EEPROM_UpdateByte `(v ~T0 @X0 0 ef2`us`uc ]
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2661,492 +2642,332 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
-"25
-[p x BORV  =  VBOR_1P9   ]
-"26
-[p x ZCD  =  OFF         ]
-"27
-[p x PPS1WAY  =  ON      ]
-"28
-[p x STVREN  =  ON       ]
-"29
-[p x LVP  =  OFF         ]
-"30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
-"37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"16 maincode_eprom_dfm.c
-[; ;maincode_eprom_dfm.c: 16: unsigned char valor0 = 0;
-[v _valor0 `uc ~T0 @X0 1 e ]
-[i _valor0
--> -> 0 `i `uc
+"15 keypad4x4.c
+[; ;keypad4x4.c: 15: static const uint8_t Keypad_RowMasks[4] =
+[v _Keypad_RowMasks `Cuc ~T0 @X0 -> 4 `i s ]
+[i _Keypad_RowMasks
+:U ..
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 8 `i `uc
+..
 ]
-"17
-[; ;maincode_eprom_dfm.c: 17: unsigned char valor1 = 0;
-[v _valor1 `uc ~T0 @X0 1 e ]
-[i _valor1
--> -> 0 `i `uc
+"35
+[; ;keypad4x4.c: 35: static const uint8_t Keypad_ColumnMasks[4] =
+[v _Keypad_ColumnMasks `Cuc ~T0 @X0 -> 4 `i s ]
+[i _Keypad_ColumnMasks
+:U ..
+-> -> 16 `i `uc
+-> -> 32 `i `uc
+-> -> 64 `i `uc
+-> -> 128 `i `uc
+..
 ]
-"18
-[; ;maincode_eprom_dfm.c: 18: unsigned char posicion = 0;
-[v _posicion `uc ~T0 @X0 1 e ]
-[i _posicion
--> -> 0 `i `uc
+[v F17304 `Cuc ~T0 @X0 -> 4 `i t ]
+"72
+[; ;keypad4x4.c: 72: static const char Keypad_Map[4][4] =
+[v _Keypad_Map `F17304 ~T0 @X0 -> 4 `i s ]
+[i _Keypad_Map
+:U ..
+:U ..
+-> -> 49 `ui `uc
+-> -> 50 `ui `uc
+-> -> 51 `ui `uc
+-> -> 65 `ui `uc
+..
+:U ..
+-> -> 52 `ui `uc
+-> -> 53 `ui `uc
+-> -> 54 `ui `uc
+-> -> 66 `ui `uc
+..
+:U ..
+-> -> 55 `ui `uc
+-> -> 56 `ui `uc
+-> -> 57 `ui `uc
+-> -> 67 `ui `uc
+..
+:U ..
+-> -> 42 `ui `uc
+-> -> 48 `ui `uc
+-> -> 35 `ui `uc
+-> -> 68 `ui `uc
+..
+..
 ]
-"20
-[; ;maincode_eprom_dfm.c: 20: void configuro(void)
-[v _configuro `(v ~T0 @X0 1 ef ]
-"21
-[; ;maincode_eprom_dfm.c: 21: {
+"87
+[; ;keypad4x4.c: 87: static void Keypad_AllRowsHigh(Keypad *keypad)
+[v _Keypad_AllRowsHigh `(v ~T0 @X0 1 sf1`*S2431 ]
+"88
+[; ;keypad4x4.c: 88: {
 {
-[e :U _configuro ]
+[e :U _Keypad_AllRowsHigh ]
+"87
+[; ;keypad4x4.c: 87: static void Keypad_AllRowsHigh(Keypad *keypad)
+[v _keypad `*S2431 ~T0 @X0 1 r1 ]
+"88
+[; ;keypad4x4.c: 88: {
 [f ]
-"25
-[; ;maincode_eprom_dfm.c: 25:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
-"26
-[; ;maincode_eprom_dfm.c: 26:     OSCFRQ = 0x08;
-[e = _OSCFRQ -> -> 8 `i `uc ]
-"27
-[; ;maincode_eprom_dfm.c: 27:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"32
-[; ;maincode_eprom_dfm.c: 32:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"33
-[; ;maincode_eprom_dfm.c: 33:     ANSELD = 0x00;
-[e = _ANSELD -> -> 0 `i `uc ]
-"38
-[; ;maincode_eprom_dfm.c: 38:     TRISCbits.TRISC0 = 1;
-[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
-"39
-[; ;maincode_eprom_dfm.c: 39:     TRISCbits.TRISC1 = 1;
-[e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
-"40
-[; ;maincode_eprom_dfm.c: 40:     TRISCbits.TRISC3 = 1;
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"42
-[; ;maincode_eprom_dfm.c: 42:     ANSELCbits.ANSELC0 = 0;
-[e = . . _ANSELCbits 0 0 -> -> 0 `i `uc ]
-"43
-[; ;maincode_eprom_dfm.c: 43:     ANSELCbits.ANSELC1 = 0;
-[e = . . _ANSELCbits 0 1 -> -> 0 `i `uc ]
-"44
-[; ;maincode_eprom_dfm.c: 44:     ANSELCbits.ANSELC3 = 0;
-[e = . . _ANSELCbits 0 3 -> -> 0 `i `uc ]
-"46
-[; ;maincode_eprom_dfm.c: 46:     WPUCbits.WPUC0 = 1;
-[e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
-"47
-[; ;maincode_eprom_dfm.c: 47:     WPUCbits.WPUC1 = 1;
-[e = . . _WPUCbits 0 1 -> -> 1 `i `uc ]
-"48
-[; ;maincode_eprom_dfm.c: 48:     WPUCbits.WPUC3 = 1;
-[e = . . _WPUCbits 0 3 -> -> 1 `i `uc ]
-"49
-[; ;maincode_eprom_dfm.c: 49: }
-[e :UE 2431 ]
-}
-"51
-[; ;maincode_eprom_dfm.c: 51: void LCD_init(void)
-[v _LCD_init `(v ~T0 @X0 1 ef ]
-"52
-[; ;maincode_eprom_dfm.c: 52: {
-{
-[e :U _LCD_init ]
-[f ]
-"53
-[; ;maincode_eprom_dfm.c: 53:     LCD_CONFIG();
-[e ( _LCD_CONFIG ..  ]
-"54
-[; ;maincode_eprom_dfm.c: 54:     _delay((unsigned long)((16)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 16 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"55
-[; ;maincode_eprom_dfm.c: 55:     BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
-"56
-[; ;maincode_eprom_dfm.c: 56:     CURSOR_HOME();
-[e ( _CURSOR_HOME ..  ]
-"57
-[; ;maincode_eprom_dfm.c: 57:     CURSOR_ONOFF(1);
-[e ( _CURSOR_ONOFF (1 -> -> 1 `i `uc ]
-"58
-[; ;maincode_eprom_dfm.c: 58: }
+"89
+[; ;keypad4x4.c: 89:     *(keypad->lat) =
+[e = *U . *U _keypad 1 -> | -> *U . *U _keypad 1 `i -> 15 `i `uc ]
+"91
+[; ;keypad4x4.c: 91: }
 [e :UE 2432 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"60
-[; ;maincode_eprom_dfm.c: 60: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"61
-[; ;maincode_eprom_dfm.c: 61: {
-{
-[e :U _main ]
-[f ]
-"62
-[; ;maincode_eprom_dfm.c: 62:     configuro();
-[e ( _configuro ..  ]
-"63
-[; ;maincode_eprom_dfm.c: 63:     LCD_init();
-[e ( _LCD_init ..  ]
-"64
-[; ;maincode_eprom_dfm.c: 64:     POS_CURSOR(1, 0);
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"65
-[; ;maincode_eprom_dfm.c: 65:     ESCRIBE_MENSAJE("  MEMORIA EPROM  ", 16);
-[e ( _ESCRIBE_MENSAJE (2 , :s 1C -> -> 16 `i `uc ]
-"66
-[; ;maincode_eprom_dfm.c: 66:     _delay((unsigned long)((2000)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"70
-[; ;maincode_eprom_dfm.c: 70:     valor0 = EEPROM_ReadByte(0);
-[e = _valor0 ( _EEPROM_ReadByte (1 -> -> 0 `i `us ]
-"71
-[; ;maincode_eprom_dfm.c: 71:     valor1 = EEPROM_ReadByte(1);
-[e = _valor1 ( _EEPROM_ReadByte (1 -> -> 1 `i `us ]
-"73
-[; ;maincode_eprom_dfm.c: 73:     if(valor0 == 0xFF)
-[e $ ! == -> _valor0 `i -> 255 `i 2434  ]
-"74
-[; ;maincode_eprom_dfm.c: 74:     {
-{
-"75
-[; ;maincode_eprom_dfm.c: 75:         valor0 = 0;
-[e = _valor0 -> -> 0 `i `uc ]
-"76
-[; ;maincode_eprom_dfm.c: 76:     }
-}
-[e :U 2434 ]
-"78
-[; ;maincode_eprom_dfm.c: 78:     if(valor1 == 0xFF)
-[e $ ! == -> _valor1 `i -> 255 `i 2435  ]
-"79
-[; ;maincode_eprom_dfm.c: 79:     {
-{
-"80
-[; ;maincode_eprom_dfm.c: 80:         valor1 = 0;
-[e = _valor1 -> -> 0 `i `uc ]
-"81
-[; ;maincode_eprom_dfm.c: 81:     }
-}
-[e :U 2435 ]
-"83
-[; ;maincode_eprom_dfm.c: 83:     BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
-"85
-[; ;maincode_eprom_dfm.c: 85:     while(1)
-[e :U 2437 ]
-"86
-[; ;maincode_eprom_dfm.c: 86:     {
-{
-"90
-[; ;maincode_eprom_dfm.c: 90:         POS_CURSOR(1, 0);
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"91
-[; ;maincode_eprom_dfm.c: 91:         ESCRIBE_MENSAJE("P0:", 3);
-[e ( _ESCRIBE_MENSAJE (2 , :s 2C -> -> 3 `i `uc ]
-"93
-[; ;maincode_eprom_dfm.c: 93:         ENVIA_CHAR((valor0 / 100) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / -> _valor0 `i -> 100 `i -> 48 `i `uc ]
-"94
-[; ;maincode_eprom_dfm.c: 94:         ENVIA_CHAR(((valor0 % 100) / 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % -> _valor0 `i -> 100 `i -> 10 `i -> 48 `i `uc ]
-"95
-[; ;maincode_eprom_dfm.c: 95:         ENVIA_CHAR((valor0 % 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + % -> _valor0 `i -> 10 `i -> 48 `i `uc ]
-"97
-[; ;maincode_eprom_dfm.c: 97:         ESCRIBE_MENSAJE(" P1:", 4);
-[e ( _ESCRIBE_MENSAJE (2 , :s 3C -> -> 4 `i `uc ]
-"99
-[; ;maincode_eprom_dfm.c: 99:         ENVIA_CHAR((valor1 / 100) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / -> _valor1 `i -> 100 `i -> 48 `i `uc ]
-"100
-[; ;maincode_eprom_dfm.c: 100:         ENVIA_CHAR(((valor1 % 100) / 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + / % -> _valor1 `i -> 100 `i -> 10 `i -> 48 `i `uc ]
-"101
-[; ;maincode_eprom_dfm.c: 101:         ENVIA_CHAR((valor1 % 10) + 0x30);
-[e ( _ENVIA_CHAR (1 -> + % -> _valor1 `i -> 10 `i -> 48 `i `uc ]
-"103
-[; ;maincode_eprom_dfm.c: 103:         ESCRIBE_MENSAJE(" ", 1);
-[e ( _ESCRIBE_MENSAJE (2 , :s 4C -> -> 1 `i `uc ]
-"105
-[; ;maincode_eprom_dfm.c: 105:         POS_CURSOR(2, 0);
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"106
-[; ;maincode_eprom_dfm.c: 106:         ESCRIBE_MENSAJE("SEL:", 4);
-[e ( _ESCRIBE_MENSAJE (2 , :s 5C -> -> 4 `i `uc ]
-"107
-[; ;maincode_eprom_dfm.c: 107:         ENVIA_CHAR(posicion + 0x30);
-[e ( _ENVIA_CHAR (1 -> + -> _posicion `i -> 48 `i `uc ]
-"109
-[; ;maincode_eprom_dfm.c: 109:         ESCRIBE_MENSAJE("  GR:C1   ", 10);
-[e ( _ESCRIBE_MENSAJE (2 , :s 6C -> -> 10 `i `uc ]
+"113
+[; ;keypad4x4.c: 113: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
+[v _Keypad_ActivateRow `(v ~T0 @X0 1 sf2`*S2431`uc ]
 "114
-[; ;maincode_eprom_dfm.c: 114:         if(PORTCbits.RC0 == 0)
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 2439  ]
-"115
-[; ;maincode_eprom_dfm.c: 115:         {
+[; ;keypad4x4.c: 114: {
 {
-"116
-[; ;maincode_eprom_dfm.c: 116:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+[e :U _Keypad_ActivateRow ]
+"113
+[; ;keypad4x4.c: 113: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
+[v _keypad `*S2431 ~T0 @X0 1 r1 ]
+[v _row `uc ~T0 @X0 1 r2 ]
+"114
+[; ;keypad4x4.c: 114: {
+[f ]
 "118
-[; ;maincode_eprom_dfm.c: 118:             if(PORTCbits.RC0 == 0)
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 2440  ]
-"119
-[; ;maincode_eprom_dfm.c: 119:             {
-{
-"120
-[; ;maincode_eprom_dfm.c: 120:                 if(posicion == 0)
-[e $ ! == -> _posicion `i -> 0 `i 2441  ]
-"121
-[; ;maincode_eprom_dfm.c: 121:                 {
-{
-"122
-[; ;maincode_eprom_dfm.c: 122:                     valor0++;
-[e ++ _valor0 -> -> 1 `i `uc ]
+[; ;keypad4x4.c: 118:     Keypad_AllRowsHigh(keypad);
+[e ( _Keypad_AllRowsHigh (1 _keypad ]
 "123
-[; ;maincode_eprom_dfm.c: 123:                 }
-}
-[e $U 2442  ]
-"124
-[; ;maincode_eprom_dfm.c: 124:                 else
-[e :U 2441 ]
-"125
-[; ;maincode_eprom_dfm.c: 125:                 {
-{
+[; ;keypad4x4.c: 123:     *(keypad->lat) =
+[e = *U . *U _keypad 1 -> & -> *U . *U _keypad 1 `i -> -> ~ -> *U + &U _Keypad_RowMasks * -> _row `ux -> -> # *U &U _Keypad_RowMasks `ui `ux `i `uc `i `uc ]
 "126
-[; ;maincode_eprom_dfm.c: 126:                     valor1++;
-[e ++ _valor1 -> -> 1 `i `uc ]
-"127
-[; ;maincode_eprom_dfm.c: 127:                 }
-}
-[e :U 2442 ]
-"129
-[; ;maincode_eprom_dfm.c: 129:                 while(PORTCbits.RC0 == 0);
-[e $U 2443  ]
-[e :U 2444 ]
-[e :U 2443 ]
-[e $ == -> . . _PORTCbits 0 0 `i -> 0 `i 2444  ]
-[e :U 2445 ]
-"130
-[; ;maincode_eprom_dfm.c: 130:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"131
-[; ;maincode_eprom_dfm.c: 131:             }
-}
-[e :U 2440 ]
-"132
-[; ;maincode_eprom_dfm.c: 132:         }
-}
-[e :U 2439 ]
-"137
-[; ;maincode_eprom_dfm.c: 137:         if(PORTCbits.RC1 == 0)
-[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 2446  ]
-"138
-[; ;maincode_eprom_dfm.c: 138:         {
-{
-"139
-[; ;maincode_eprom_dfm.c: 139:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"141
-[; ;maincode_eprom_dfm.c: 141:             if(PORTCbits.RC1 == 0)
-[e $ ! == -> . . _PORTCbits 0 1 `i -> 0 `i 2447  ]
-"142
-[; ;maincode_eprom_dfm.c: 142:             {
-{
-"143
-[; ;maincode_eprom_dfm.c: 143:                 if(posicion == 0)
-[e $ ! == -> _posicion `i -> 0 `i 2448  ]
-"144
-[; ;maincode_eprom_dfm.c: 144:                 {
-{
-"145
-[; ;maincode_eprom_dfm.c: 145:                     EEPROM_UpdateByte(0, valor0);
-[e ( _EEPROM_UpdateByte (2 , -> -> 0 `i `us _valor0 ]
-"146
-[; ;maincode_eprom_dfm.c: 146:                 }
-}
-[e $U 2449  ]
-"147
-[; ;maincode_eprom_dfm.c: 147:                 else
-[e :U 2448 ]
-"148
-[; ;maincode_eprom_dfm.c: 148:                 {
-{
-"149
-[; ;maincode_eprom_dfm.c: 149:                     EEPROM_UpdateByte(1, valor1);
-[e ( _EEPROM_UpdateByte (2 , -> -> 1 `i `us _valor1 ]
-"150
-[; ;maincode_eprom_dfm.c: 150:                 }
-}
-[e :U 2449 ]
-"152
-[; ;maincode_eprom_dfm.c: 152:                 BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
-"154
-[; ;maincode_eprom_dfm.c: 154:                 POS_CURSOR(1, 0);
-[e ( _POS_CURSOR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"155
-[; ;maincode_eprom_dfm.c: 155:                 ESCRIBE_MENSAJE("Dato guardado", 13);
-[e ( _ESCRIBE_MENSAJE (2 , :s 7C -> -> 13 `i `uc ]
-"157
-[; ;maincode_eprom_dfm.c: 157:                 POS_CURSOR(2, 0);
-[e ( _POS_CURSOR (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"158
-[; ;maincode_eprom_dfm.c: 158:                 ESCRIBE_MENSAJE("Posicion: ", 10);
-[e ( _ESCRIBE_MENSAJE (2 , :s 8C -> -> 10 `i `uc ]
-"159
-[; ;maincode_eprom_dfm.c: 159:                 ENVIA_CHAR(posicion + 0x30);
-[e ( _ENVIA_CHAR (1 -> + -> _posicion `i -> 48 `i `uc ]
-"161
-[; ;maincode_eprom_dfm.c: 161:                 _delay((unsigned long)((800)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"162
-[; ;maincode_eprom_dfm.c: 162:                 BORRAR_LCD();
-[e ( _BORRAR_LCD ..  ]
-"164
-[; ;maincode_eprom_dfm.c: 164:                 while(PORTCbits.RC1 == 0);
-[e $U 2450  ]
-[e :U 2451 ]
-[e :U 2450 ]
-[e $ == -> . . _PORTCbits 0 1 `i -> 0 `i 2451  ]
-[e :U 2452 ]
-"165
-[; ;maincode_eprom_dfm.c: 165:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"166
-[; ;maincode_eprom_dfm.c: 166:             }
-}
-[e :U 2447 ]
-"167
-[; ;maincode_eprom_dfm.c: 167:         }
-}
-[e :U 2446 ]
-"172
-[; ;maincode_eprom_dfm.c: 172:         if(PORTCbits.RC3 == 0)
-[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 2453  ]
-"173
-[; ;maincode_eprom_dfm.c: 173:         {
-{
-"174
-[; ;maincode_eprom_dfm.c: 174:             _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"176
-[; ;maincode_eprom_dfm.c: 176:             if(PORTCbits.RC3 == 0)
-[e $ ! == -> . . _PORTCbits 0 3 `i -> 0 `i 2454  ]
-"177
-[; ;maincode_eprom_dfm.c: 177:             {
-{
-"178
-[; ;maincode_eprom_dfm.c: 178:                 if(posicion == 0)
-[e $ ! == -> _posicion `i -> 0 `i 2455  ]
-"179
-[; ;maincode_eprom_dfm.c: 179:                 {
-{
-"180
-[; ;maincode_eprom_dfm.c: 180:                     posicion = 1;
-[e = _posicion -> -> 1 `i `uc ]
-"181
-[; ;maincode_eprom_dfm.c: 181:                 }
-}
-[e $U 2456  ]
-"182
-[; ;maincode_eprom_dfm.c: 182:                 else
-[e :U 2455 ]
-"183
-[; ;maincode_eprom_dfm.c: 183:                 {
-{
-"184
-[; ;maincode_eprom_dfm.c: 184:                     posicion = 0;
-[e = _posicion -> -> 0 `i `uc ]
-"185
-[; ;maincode_eprom_dfm.c: 185:                 }
-}
-[e :U 2456 ]
-"187
-[; ;maincode_eprom_dfm.c: 187:                 while(PORTCbits.RC3 == 0);
-[e $U 2457  ]
-[e :U 2458 ]
-[e :U 2457 ]
-[e $ == -> . . _PORTCbits 0 3 `i -> 0 `i 2458  ]
-[e :U 2459 ]
-"188
-[; ;maincode_eprom_dfm.c: 188:                 _delay((unsigned long)((40)*(64000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
-"189
-[; ;maincode_eprom_dfm.c: 189:             }
-}
-[e :U 2454 ]
-"190
-[; ;maincode_eprom_dfm.c: 190:         }
-}
-[e :U 2453 ]
-"191
-[; ;maincode_eprom_dfm.c: 191:     }
-}
-[e :U 2436 ]
-[e $U 2437  ]
-[e :U 2438 ]
-"192
-[; ;maincode_eprom_dfm.c: 192: }
+[; ;keypad4x4.c: 126: }
 [e :UE 2433 ]
 }
-[a 7C 68 97 116 111 32 103 117 97 114 100 97 100 111 0 ]
-[a 5C 83 69 76 58 0 ]
-[a 3C 32 80 49 58 0 ]
-[a 2C 80 48 58 0 ]
-[a 8C 80 111 115 105 99 105 111 110 58 32 0 ]
-[a 1C 32 32 77 69 77 79 82 73 65 32 69 80 82 79 77 32 32 0 ]
-[a 6C 32 32 71 82 58 67 49 32 32 32 0 ]
-[a 4C 32 0 ]
+"142
+[; ;keypad4x4.c: 142: static char Keypad_Scan(Keypad *keypad)
+[v _Keypad_Scan `(uc ~T0 @X0 1 sf1`*S2431 ]
+"143
+[; ;keypad4x4.c: 143: {
+{
+[e :U _Keypad_Scan ]
+"142
+[; ;keypad4x4.c: 142: static char Keypad_Scan(Keypad *keypad)
+[v _keypad `*S2431 ~T0 @X0 1 r1 ]
+"143
+[; ;keypad4x4.c: 143: {
+[f ]
+"144
+[; ;keypad4x4.c: 144:     uint8_t row;
+[v _row `uc ~T0 @X0 1 a ]
+"145
+[; ;keypad4x4.c: 145:     uint8_t column;
+[v _column `uc ~T0 @X0 1 a ]
+"150
+[; ;keypad4x4.c: 150:     for(row = 0; row < 4; row++)
+{
+[e = _row -> -> 0 `i `uc ]
+[e $ < -> _row `i -> 4 `i 2435  ]
+[e $U 2436  ]
+[e :U 2435 ]
+"151
+[; ;keypad4x4.c: 151:     {
+{
+"155
+[; ;keypad4x4.c: 155:         Keypad_ActivateRow(keypad, row);
+[e ( _Keypad_ActivateRow (2 , _keypad _row ]
+"161
+[; ;keypad4x4.c: 161:         _delay((unsigned long)((5)*(32000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
+"166
+[; ;keypad4x4.c: 166:         for(column = 0; column < 4; column++)
+{
+[e = _column -> -> 0 `i `uc ]
+[e $ < -> _column `i -> 4 `i 2438  ]
+[e $U 2439  ]
+[e :U 2438 ]
+"167
+[; ;keypad4x4.c: 167:         {
+{
+"175
+[; ;keypad4x4.c: 175:             if((*(keypad->port) &
+[e $ ! == & -> *U . *U _keypad 0 `i -> *U + &U _Keypad_ColumnMasks * -> _column `ux -> -> # *U &U _Keypad_ColumnMasks `ui `ux `i -> 0 `i 2441  ]
+"177
+[; ;keypad4x4.c: 177:             {
+{
+"182
+[; ;keypad4x4.c: 182:                 Keypad_AllRowsHigh(keypad);
+[e ( _Keypad_AllRowsHigh (1 _keypad ]
+"188
+[; ;keypad4x4.c: 188:                 return Keypad_Map[row][column];
+[e ) *U + &U *U + &U _Keypad_Map * -> _row `ux -> * -> # *U &U *U &U _Keypad_Map `ui -> -> 4 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _Keypad_Map * -> _row `ux -> * -> # *U &U *U &U _Keypad_Map `ui -> -> 4 `i `ui `ux `ui `ux ]
+[e $UE 2434  ]
+"189
+[; ;keypad4x4.c: 189:             }
+}
+[e :U 2441 ]
+"190
+[; ;keypad4x4.c: 190:         }
+}
+[e ++ _column -> -> 1 `i `uc ]
+[e $ < -> _column `i -> 4 `i 2438  ]
+[e :U 2439 ]
+}
+"191
+[; ;keypad4x4.c: 191:     }
+}
+[e ++ _row -> -> 1 `i `uc ]
+[e $ < -> _row `i -> 4 `i 2435  ]
+[e :U 2436 ]
+}
+"196
+[; ;keypad4x4.c: 196:     Keypad_AllRowsHigh(keypad);
+[e ( _Keypad_AllRowsHigh (1 _keypad ]
+"201
+[; ;keypad4x4.c: 201:     return '\0';
+[e ) -> -> 0 `ui `uc ]
+[e $UE 2434  ]
+"202
+[; ;keypad4x4.c: 202: }
+[e :UE 2434 ]
+}
+"208
+[; ;keypad4x4.c: 208: void Keypad_Init(Keypad *keypad,
+[v _Keypad_Init `(v ~T0 @X0 1 ef6`*S2431`*Vuc`*Vuc`*Vuc`*Vuc`*Vuc ]
+"214
+[; ;keypad4x4.c: 214: {
+{
+[e :U _Keypad_Init ]
+"208
+[; ;keypad4x4.c: 208: void Keypad_Init(Keypad *keypad,
+[v _keypad `*S2431 ~T0 @X0 1 r1 ]
+"209
+[; ;keypad4x4.c: 209:                  volatile uint8_t *port,
+[v _port `*Vuc ~T0 @X0 1 r2 ]
+"210
+[; ;keypad4x4.c: 210:                  volatile uint8_t *lat,
+[v _lat `*Vuc ~T0 @X0 1 r3 ]
+"211
+[; ;keypad4x4.c: 211:                  volatile uint8_t *tris,
+[v _tris `*Vuc ~T0 @X0 1 r4 ]
+"212
+[; ;keypad4x4.c: 212:                  volatile uint8_t *ansel,
+[v _ansel `*Vuc ~T0 @X0 1 r5 ]
+"213
+[; ;keypad4x4.c: 213:                  volatile uint8_t *wpu)
+[v _wpu `*Vuc ~T0 @X0 1 r6 ]
+"214
+[; ;keypad4x4.c: 214: {
+[f ]
+"218
+[; ;keypad4x4.c: 218:     keypad->port = port;
+[e = . *U _keypad 0 _port ]
+"219
+[; ;keypad4x4.c: 219:     keypad->lat = lat;
+[e = . *U _keypad 1 _lat ]
+"220
+[; ;keypad4x4.c: 220:     keypad->tris = tris;
+[e = . *U _keypad 2 _tris ]
+"221
+[; ;keypad4x4.c: 221:     keypad->ansel = ansel;
+[e = . *U _keypad 3 _ansel ]
+"222
+[; ;keypad4x4.c: 222:     keypad->wpu = wpu;
+[e = . *U _keypad 4 _wpu ]
+"236
+[; ;keypad4x4.c: 236:     *(keypad->ansel) =
+[e = *U . *U _keypad 3 -> & -> *U . *U _keypad 3 `i -> -> ~ | -> 15 `i -> 240 `i `uc `i `uc ]
+"248
+[; ;keypad4x4.c: 248:     *(keypad->tris) =
+[e = *U . *U _keypad 2 -> & -> *U . *U _keypad 2 `i -> -> ~ -> 15 `i `uc `i `uc ]
+"255
+[; ;keypad4x4.c: 255:     *(keypad->tris) =
+[e = *U . *U _keypad 2 -> | -> *U . *U _keypad 2 `i -> 240 `i `uc ]
+"267
+[; ;keypad4x4.c: 267:     *(keypad->wpu) =
+[e = *U . *U _keypad 4 -> | -> *U . *U _keypad 4 `i -> 240 `i `uc ]
+"275
+[; ;keypad4x4.c: 275:     Keypad_AllRowsHigh(keypad);
+[e ( _Keypad_AllRowsHigh (1 _keypad ]
+"276
+[; ;keypad4x4.c: 276: }
+[e :UE 2442 ]
+}
+"282
+[; ;keypad4x4.c: 282: char Keypad_Read(Keypad *keypad)
+[v _Keypad_Read `(uc ~T0 @X0 1 ef1`*S2431 ]
+"283
+[; ;keypad4x4.c: 283: {
+{
+[e :U _Keypad_Read ]
+"282
+[; ;keypad4x4.c: 282: char Keypad_Read(Keypad *keypad)
+[v _keypad `*S2431 ~T0 @X0 1 r1 ]
+"283
+[; ;keypad4x4.c: 283: {
+[f ]
+"284
+[; ;keypad4x4.c: 284:     char detected_key;
+[v _detected_key `uc ~T0 @X0 1 a ]
+"285
+[; ;keypad4x4.c: 285:     char confirmed_key;
+[v _confirmed_key `uc ~T0 @X0 1 a ]
+"290
+[; ;keypad4x4.c: 290:     detected_key = Keypad_Scan(keypad);
+[e = _detected_key ( _Keypad_Scan (1 _keypad ]
+"295
+[; ;keypad4x4.c: 295:     if(detected_key == '\0')
+[e $ ! == -> _detected_key `ui -> 0 `ui 2444  ]
+"296
+[; ;keypad4x4.c: 296:     {
+{
+"297
+[; ;keypad4x4.c: 297:         return '\0';
+[e ) -> -> 0 `ui `uc ]
+[e $UE 2443  ]
+"298
+[; ;keypad4x4.c: 298:     }
+}
+[e :U 2444 ]
+"304
+[; ;keypad4x4.c: 304:     _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"309
+[; ;keypad4x4.c: 309:     confirmed_key = Keypad_Scan(keypad);
+[e = _confirmed_key ( _Keypad_Scan (1 _keypad ]
+"317
+[; ;keypad4x4.c: 317:     if(confirmed_key != detected_key)
+[e $ ! != -> _confirmed_key `i -> _detected_key `i 2445  ]
+"318
+[; ;keypad4x4.c: 318:     {
+{
+"319
+[; ;keypad4x4.c: 319:         return '\0';
+[e ) -> -> 0 `ui `uc ]
+[e $UE 2443  ]
+"320
+[; ;keypad4x4.c: 320:     }
+}
+[e :U 2445 ]
+"331
+[; ;keypad4x4.c: 331:     while(Keypad_Scan(keypad) != '\0')
+[e $U 2446  ]
+[e :U 2447 ]
+"332
+[; ;keypad4x4.c: 332:     {
+{
+"336
+[; ;keypad4x4.c: 336:     }
+}
+[e :U 2446 ]
+"331
+[; ;keypad4x4.c: 331:     while(Keypad_Scan(keypad) != '\0')
+[e $ != -> ( _Keypad_Scan (1 _keypad `ui -> 0 `ui 2447  ]
+[e :U 2448 ]
+"342
+[; ;keypad4x4.c: 342:     _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"347
+[; ;keypad4x4.c: 347:     return detected_key;
+[e ) _detected_key ]
+[e $UE 2443  ]
+"348
+[; ;keypad4x4.c: 348: }
+[e :UE 2443 ]
+}

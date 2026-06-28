@@ -1020,3 +1020,42 @@ I2C_Status LCD_I2C_WriteHex(uint8_t value)
         LCD_I2C_NibbleToHex(value)
     );
 }
+I2C_Status LCD_I2C_WriteInt(int16_t value)
+{
+    char buf[8]; // espacio suficiente: signo + 5 dígitos + '\0'
+    uint16_t u;
+    int pos = 0;
+
+    if (value < 0)
+    {
+        buf[pos++] = '-';
+        u = (uint16_t)(-value);
+    }
+    else
+    {
+        u = (uint16_t)value;
+    }
+
+    // convertir u a decimal sin sprintf
+    if (u == 0)
+    {
+        buf[pos++] = '0';
+    }
+    else
+    {
+        char rev[6];
+        int nd = 0;
+        while (u > 0 && nd < (int)sizeof(rev))
+        {
+            rev[nd++] = '0' + (u % 10u);
+            u /= 10u;
+        }
+        while (nd-- > 0)
+        {
+            buf[pos++] = rev[nd];
+        }
+    }
+
+    buf[pos] = '\0';
+    return LCD_I2C_WriteString(buf);
+}

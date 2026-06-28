@@ -29844,7 +29844,7 @@ void Stepper_Move_CW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
 
         for(j = 0; j < delay_ms; j++)
         {
-            _delay((unsigned long)((1)*(64000000UL/4000.0)));
+            _delay((unsigned long)((1)*(32000000UL/4000.0)));
         }
     }
 }
@@ -29866,7 +29866,7 @@ void Stepper_Move_CCW(Stepper *motor, uint16_t steps, uint16_t delay_ms)
 
         for(j = 0; j < delay_ms; j++)
         {
-            _delay((unsigned long)((1)*(64000000UL/4000.0)));
+            _delay((unsigned long)((1)*(32000000UL/4000.0)));
         }
     }
 }

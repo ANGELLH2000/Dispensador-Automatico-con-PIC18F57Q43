@@ -1,40 +1,145 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"15 ./LCD.h
-[; ;./LCD.h: 15: void ENVIA_LCD_CMD(unsigned char dato);
-[v _ENVIA_LCD_CMD `(v ~T0 @X0 0 ef1`uc ]
-"11
-[; ;./LCD.h: 11: void ENVIA_CHAR(unsigned char dato);
-[v _ENVIA_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"48995 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48995:     struct {
-[s S2288 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2288 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"48994
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48994: typedef union {
-[u S2287 `S2288 1 ]
-[n S2287 . . ]
-"49006
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49006: extern volatile LATDbits_t LATDbits __attribute__((address(0x4C1)));
-[v _LATDbits `VS2287 ~T0 @X0 0 e@1217 ]
-"16 ./LCD.h
-[; ;./LCD.h: 16: void LEER_LCD(void);
-[v _LEER_LCD `(v ~T0 @X0 0 ef ]
-"49331 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+"104 ./motor_paso.h
+[; ;./motor_paso.h: 104: {
+[s S2431 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
+[n S2431 . lat tris ansel nibble index ]
+"122 ./ws2812b.h
+[; ;./ws2812b.h: 122: {
+[s S2432 `uc 1 `uc -> 30 `i `uc -> 30 `i `uc -> 30 `i ]
+[n S2432 . num_leds red green blue ]
+"92 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 92: {
+[s S2433 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
+[n S2433 . lat tris ansel pin_mask ]
+"82 ./keypad4x4.h
+[; ;./keypad4x4.h: 82: {
+[s S2434 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 `*Vuc 1 ]
+[n S2434 . port lat tris ansel wpu ]
+"25 ./CNY70.h
+[; ;./CNY70.h: 25: {
+[s S2436 `*Vuc 1 `*Vuc 1 `uc 1 `uc 1 ]
+[n S2436 . tris_reg ansel_reg pin_mask adc_channel ]
+"49 ./irsensor.h
+[; ;./irsensor.h: 49: {
+[s S2437 `*Vuc 1 `*Vuc 1 `*Vuc 1 `uc 1 ]
+[n S2437 . port tris ansel pin_mask ]
+"54 ./DS1307.h
+[; ;./DS1307.h: 54: {
+[s S2435 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S2435 . seconds minutes hours weekday date month year clock_running mode_12h is_pm data_valid ]
+"53 funcionesGenerales.c
+[; ;funcionesGenerales.c: 53: I2C_Status estado;
+[c E17390 0 1 2 3 4 5 .. ]
+[n E17390 . I2C_OK I2C_ERROR_NACK I2C_ERROR_COLLISION I2C_ERROR_BUS_TIMEOUT I2C_ERROR_SOFTWARE_TIMEOUT I2C_ERROR_INVALID_PARAMETER  ]
+"150 ./motor_paso.h
+[; ;./motor_paso.h: 150: void Stepper_Init(Stepper *motor,
+[v _Stepper_Init `(v ~T0 @X0 0 ef5`*S2431`*Vuc`*Vuc`*Vuc`uc ]
+"48803 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48803: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
+[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"49145
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49145: extern volatile unsigned char TRISA __attribute__((address(0x4C6)));
+[v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
+"39957
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 39957: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
+"48865
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48865: extern volatile unsigned char LATB __attribute__((address(0x4BF)));
+[v _LATB `Vuc ~T0 @X0 0 e@1215 ]
+"49207
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49207: extern volatile unsigned char TRISB __attribute__((address(0x4C7)));
+[v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
+"40453
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40453: extern volatile unsigned char ANSELB __attribute__((address(0x408)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
+"174 ./ws2812b.h
+[; ;./ws2812b.h: 174: void WS2812B_Init(LED_WS2812B *tira, uint8_t num_leds);
+[v _WS2812B_Init `(v ~T0 @X0 0 ef2`*S2432`uc ]
+"135 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 135: void Buzzer_Init(Buzzer *buzzer,
+[v _Buzzer_Init `(v ~T0 @X0 0 ef5`*S2433`*Vuc`*Vuc`*Vuc`uc ]
+"48927 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48927: extern volatile unsigned char LATC __attribute__((address(0x4C0)));
+[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
+"49269
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49269: extern volatile unsigned char TRISC __attribute__((address(0x4C8)));
+[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
+"40949
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 40949: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
+[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
+"136 ./keypad4x4.h
+[; ;./keypad4x4.h: 136: void Keypad_Init(Keypad *keypad,
+[v _Keypad_Init `(v ~T0 @X0 0 ef6`*S2434`*Vuc`*Vuc`*Vuc`*Vuc`*Vuc ]
+"49673 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49673: extern volatile unsigned char PORTD __attribute__((address(0x4D1)));
+[v _PORTD `Vuc ~T0 @X0 0 e@1233 ]
+"48989
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48989: extern volatile unsigned char LATD __attribute__((address(0x4C1)));
+[v _LATD `Vuc ~T0 @X0 0 e@1217 ]
+"49331
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49331: extern volatile unsigned char TRISD __attribute__((address(0x4C9)));
 [v _TRISD `Vuc ~T0 @X0 0 e@1225 ]
+"41445
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41445: extern volatile unsigned char ANSELD __attribute__((address(0x418)));
+[v _ANSELD `Vuc ~T0 @X0 0 e@1048 ]
+"41507
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41507: extern volatile unsigned char WPUD __attribute__((address(0x419)));
+[v _WPUD `Vuc ~T0 @X0 0 e@1049 ]
+"38 ./CNY70.h
+[; ;./CNY70.h: 38: void CNY70_ADC_Init_FOSC64(void);
+[v _CNY70_ADC_Init_FOSC64 `(v ~T0 @X0 0 ef ]
+"40
+[; ;./CNY70.h: 40: void CNY70_Init(CNY70 *sensor,
+[v _CNY70_Init `(v ~T0 @X0 0 ef5`*S2436`*Vuc`*Vuc`uc`uc ]
+"49425 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49425: extern volatile unsigned char TRISF __attribute__((address(0x4CB)));
+[v _TRISF `Vuc ~T0 @X0 0 e@1227 ]
+"41990
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41990: extern volatile unsigned char ANSELF __attribute__((address(0x428)));
+[v _ANSELF `Vuc ~T0 @X0 0 e@1064 ]
+"101 ./irsensor.h
+[; ;./irsensor.h: 101: void IRSensor_Init(IRsensor *sensor,
+[v _IRSensor_Init `(v ~T0 @X0 0 ef5`*S2437`*Vuc`*Vuc`*Vuc`uc ]
+"49773 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49773: extern volatile unsigned char PORTF __attribute__((address(0x4D3)));
+[v _PORTF `Vuc ~T0 @X0 0 e@1235 ]
+"93 ./I2C.h
+[; ;./I2C.h: 93: void I2C1_Init(void);
+[v _I2C1_Init `(v ~T0 @X0 0 ef ]
+"81 ./LCD_I2C.h
+[; ;./LCD_I2C.h: 81: I2C_Status LCD_I2C_SetAddress(uint8_t address7);
+[v _LCD_I2C_SetAddress `(E17390 ~T0 @X0 0 ef1`uc ]
+"95
+[; ;./LCD_I2C.h: 95: I2C_Status LCD_I2C_Init(void);
+[v _LCD_I2C_Init `(E17390 ~T0 @X0 0 ef ]
+"127
+[; ;./LCD_I2C.h: 127: I2C_Status LCD_I2C_Clear(void);
+[v _LCD_I2C_Clear `(E17390 ~T0 @X0 0 ef ]
+"122
+[; ;./LCD_I2C.h: 122: I2C_Status LCD_I2C_SetCursor(
+[v _LCD_I2C_SetCursor `(E17390 ~T0 @X0 0 ef2`uc`uc ]
+"105
+[; ;./LCD_I2C.h: 105: I2C_Status LCD_I2C_WriteString(const char *text);
+[v _LCD_I2C_WriteString `(E17390 ~T0 @X0 0 ef1`*Cuc ]
+"192
+[; ;./LCD_I2C.h: 192: I2C_Status LCD_I2C_WriteInt(int16_t value);
+[v _LCD_I2C_WriteInt `(E17390 ~T0 @X0 0 ef1`s ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"14 ./LCD.h
-[; ;./LCD.h: 14: void ENVIA_NIBBLE(unsigned char dato);
-[v _ENVIA_NIBBLE `(v ~T0 @X0 0 ef1`uc ]
-"48989 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 48989: extern volatile unsigned char LATD __attribute__((address(0x4C1)));
-[v _LATD `Vuc ~T0 @X0 0 e@1217 ]
-"49673
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49673: extern volatile unsigned char PORTD __attribute__((address(0x4D1)));
-[v _PORTD `Vuc ~T0 @X0 0 e@1233 ]
+"46 ./CNY70.h
+[; ;./CNY70.h: 46: uint16_t CNY70_Read(CNY70 *sensor);
+[v _CNY70_Read `(us ~T0 @X0 0 ef1`*S2436 ]
+"13 ./funcionesGenerales.h
+[; ;./funcionesGenerales.h: 13: void sistem_error(const char *mensaje);
+[v _sistem_error `(v ~T0 @X0 0 ef1`*Cuc ]
+"147 ./DS1307.h
+[; ;./DS1307.h: 147: I2C_Status DS1307_ReadDateTime(
+[v _DS1307_ReadDateTime `(E17390 ~T0 @X0 0 ef1`*S2435 ]
+"306 ./ws2812b.h
+[; ;./ws2812b.h: 306: void WS2812B_RGB(LED_WS2812B *tira,
+[v _WS2812B_RGB `(v ~T0 @X0 0 ef4`*S2432`uc`uc`uc ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2606,537 +2711,791 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"6 LCD.c
-[; ;LCD.c: 6: void POS_CURSOR(unsigned char fila,unsigned char columna)
-[v _POS_CURSOR `(v ~T0 @X0 1 ef2`uc`uc ]
-"7
-[; ;LCD.c: 7: {
-{
-[e :U _POS_CURSOR ]
-"6
-[; ;LCD.c: 6: void POS_CURSOR(unsigned char fila,unsigned char columna)
-[v _fila `uc ~T0 @X0 1 r1 ]
-[v _columna `uc ~T0 @X0 1 r2 ]
-"7
-[; ;LCD.c: 7: {
-[f ]
+"7 ./cabecera.h
+[p x FEXTOSC  =  OFF     ]
 "8
-[; ;LCD.c: 8:  if(fila == 1)
-[e $ ! == -> _fila `i -> 1 `i 2432  ]
-"9
-[; ;LCD.c: 9:  {
-{
-"10
-[; ;LCD.c: 10:   ENVIA_LCD_CMD(0x80+columna);
-[e ( _ENVIA_LCD_CMD (1 -> + -> 128 `i -> _columna `i `uc ]
+[p x RSTOSC  =  EXTOSC   ]
 "11
-[; ;LCD.c: 11:  }
-}
-[e $U 2433  ]
+[p x CLKOUTEN  =  OFF    ]
 "12
-[; ;LCD.c: 12:  else if(fila == 2)
-[e :U 2432 ]
-[e $ ! == -> _fila `i -> 2 `i 2434  ]
+[p x PR1WAY  =  ON       ]
 "13
-[; ;LCD.c: 13:  {
-{
+[p x CSWEN  =  ON        ]
 "14
-[; ;LCD.c: 14:   ENVIA_LCD_CMD(0xC0+columna);
-[e ( _ENVIA_LCD_CMD (1 -> + -> 192 `i -> _columna `i `uc ]
-"15
-[; ;LCD.c: 15:  }
-}
-[e :U 2434 ]
-[e :U 2433 ]
-"16
-[; ;LCD.c: 16: }
-[e :UE 2431 ]
-}
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
 "18
-[; ;LCD.c: 18: void BLINK_CURSOR(unsigned char val)
-[v _BLINK_CURSOR `(v ~T0 @X0 1 ef1`uc ]
+[p x PWRTS  =  PWRT_64   ]
 "19
-[; ;LCD.c: 19: {
-{
-[e :U _BLINK_CURSOR ]
-"18
-[; ;LCD.c: 18: void BLINK_CURSOR(unsigned char val)
-[v _val `uc ~T0 @X0 1 r1 ]
-"19
-[; ;LCD.c: 19: {
-[f ]
+[p x MVECEN  =  ON       ]
 "20
-[; ;LCD.c: 20:  if(val == 1) ENVIA_LCD_CMD(0x0E);
-[e $ ! == -> _val `i -> 1 `i 2436  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 14 `i `uc ]
-[e :U 2436 ]
+[p x IVT1WAY  =  ON      ]
 "21
-[; ;LCD.c: 21:  if(val == 0 ) ENVIA_LCD_CMD(0x0F);
-[e $ ! == -> _val `i -> 0 `i 2437  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 15 `i `uc ]
-[e :U 2437 ]
+[p x LPBOREN  =  OFF     ]
 "22
-[; ;LCD.c: 22: }
-[e :UE 2435 ]
-}
-"24
-[; ;LCD.c: 24: void DISPLAY_ONOFF(unsigned char estado)
-[v _DISPLAY_ONOFF `(v ~T0 @X0 1 ef1`uc ]
+[p x BOREN  =  OFF       ]
 "25
-[; ;LCD.c: 25: {
-{
-[e :U _DISPLAY_ONOFF ]
-"24
-[; ;LCD.c: 24: void DISPLAY_ONOFF(unsigned char estado)
-[v _estado `uc ~T0 @X0 1 r1 ]
-"25
-[; ;LCD.c: 25: {
-[f ]
+[p x BORV  =  VBOR_1P9   ]
 "26
-[; ;LCD.c: 26:  if(estado == 0) ENVIA_LCD_CMD(0x0F);
-[e $ ! == -> _estado `i -> 0 `i 2439  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 15 `i `uc ]
-[e :U 2439 ]
+[p x ZCD  =  OFF         ]
 "27
-[; ;LCD.c: 27:  if(estado == 1) ENVIA_LCD_CMD(0x08);
-[e $ ! == -> _estado `i -> 1 `i 2440  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 8 `i `uc ]
-[e :U 2440 ]
+[p x PPS1WAY  =  ON      ]
 "28
-[; ;LCD.c: 28: }
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"7
+[p x FEXTOSC  =  OFF     ]
+"8
+[p x RSTOSC  =  EXTOSC   ]
+"11
+[p x CLKOUTEN  =  OFF    ]
+"12
+[p x PR1WAY  =  ON       ]
+"13
+[p x CSWEN  =  ON        ]
+"14
+[p x FCMEN  =  ON        ]
+"17
+[p x MCLRE  =  EXTMCLR   ]
+"18
+[p x PWRTS  =  PWRT_64   ]
+"19
+[p x MVECEN  =  ON       ]
+"20
+[p x IVT1WAY  =  ON      ]
+"21
+[p x LPBOREN  =  OFF     ]
+"22
+[p x BOREN  =  OFF       ]
+"25
+[p x BORV  =  VBOR_1P9   ]
+"26
+[p x ZCD  =  OFF         ]
+"27
+[p x PPS1WAY  =  ON      ]
+"28
+[p x STVREN  =  ON       ]
+"29
+[p x LVP  =  OFF         ]
+"30
+[p x XINST  =  OFF       ]
+"33
+[p x WDTCPS  =  WDTCPS_31 ]
+"34
+[p x WDTE  =  OFF        ]
+"37
+[p x WDTCWS  =  WDTCWS_7 ]
+"38
+[p x WDTCCS  =  SC       ]
+"41
+[p x BBSIZE  =  BBSIZE_512 ]
+"42
+[p x BBEN  =  OFF        ]
+"43
+[p x SAFEN  =  OFF       ]
+"44
+[p x DEBUG  =  OFF       ]
+"47
+[p x WRTB  =  OFF        ]
+"48
+[p x WRTC  =  OFF        ]
+"49
+[p x WRTD  =  OFF        ]
+"50
+[p x WRTSAF  =  OFF      ]
+"51
+[p x WRTAPP  =  OFF      ]
+"54
+[p x CP  =  OFF          ]
+"20 funcionesGenerales.c
+[; ;funcionesGenerales.c: 20: Stepper motor1;
+[v _motor1 `S2431 ~T0 @X0 1 e ]
+"21
+[; ;funcionesGenerales.c: 21: Stepper motor2;
+[v _motor2 `S2431 ~T0 @X0 1 e ]
+"22
+[; ;funcionesGenerales.c: 22: Stepper motor3;
+[v _motor3 `S2431 ~T0 @X0 1 e ]
+"23
+[; ;funcionesGenerales.c: 23: Stepper motor4;
+[v _motor4 `S2431 ~T0 @X0 1 e ]
+"26
+[; ;funcionesGenerales.c: 26: LED_WS2812B tira1;
+[v _tira1 `S2432 ~T0 @X0 1 e ]
+"29
+[; ;funcionesGenerales.c: 29: Buzzer buzzer1;
+[v _buzzer1 `S2433 ~T0 @X0 1 e ]
+"32
+[; ;funcionesGenerales.c: 32: Keypad teclado;
+[v _teclado `S2434 ~T0 @X0 1 e ]
+"35
+[; ;funcionesGenerales.c: 35: CNY70 sensor1;
+[v _sensor1 `S2436 ~T0 @X0 1 e ]
+"36
+[; ;funcionesGenerales.c: 36: CNY70 sensor2;
+[v _sensor2 `S2436 ~T0 @X0 1 e ]
+"37
+[; ;funcionesGenerales.c: 37: CNY70 sensor3;
+[v _sensor3 `S2436 ~T0 @X0 1 e ]
+"38
+[; ;funcionesGenerales.c: 38: CNY70 sensor4;
+[v _sensor4 `S2436 ~T0 @X0 1 e ]
+"41
+[; ;funcionesGenerales.c: 41: uint16_t valor_S1 = 0;
+[v _valor_S1 `us ~T0 @X0 1 e ]
+[i _valor_S1
+-> -> 0 `i `us
+]
+"42
+[; ;funcionesGenerales.c: 42: uint16_t valor_S2 = 0;
+[v _valor_S2 `us ~T0 @X0 1 e ]
+[i _valor_S2
+-> -> 0 `i `us
+]
+"43
+[; ;funcionesGenerales.c: 43: uint16_t valor_S3 = 0;
+[v _valor_S3 `us ~T0 @X0 1 e ]
+[i _valor_S3
+-> -> 0 `i `us
+]
+"44
+[; ;funcionesGenerales.c: 44: uint16_t valor_S4 = 0;
+[v _valor_S4 `us ~T0 @X0 1 e ]
+[i _valor_S4
+-> -> 0 `i `us
+]
+"47
+[; ;funcionesGenerales.c: 47: IRsensor sensor_ir;
+[v _sensor_ir `S2437 ~T0 @X0 1 e ]
+"50
+[; ;funcionesGenerales.c: 50: DS1307_DateTime fechaHora;
+[v _fechaHora `S2435 ~T0 @X0 1 e ]
+"53
+[; ;funcionesGenerales.c: 53: I2C_Status estado;
+[v _estado `E17390 ~T0 @X0 1 e ]
+"72
+[; ;funcionesGenerales.c: 72: static void config_motores(void)
+[v _config_motores `(v ~T0 @X0 1 sf ]
+"73
+[; ;funcionesGenerales.c: 73: {
+{
+[e :U _config_motores ]
+[f ]
+"80
+[; ;funcionesGenerales.c: 80:     Stepper_Init(&motor1, &LATA, &TRISA, &ANSELA, 0);
+[e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATA &U _TRISA &U _ANSELA -> -> 0 `i `uc ]
+"81
+[; ;funcionesGenerales.c: 81:     Stepper_Init(&motor2, &LATA, &TRISA, &ANSELA, 1);
+[e ( _Stepper_Init (4 , , , , &U _motor2 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
+"89
+[; ;funcionesGenerales.c: 89:     Stepper_Init(&motor3, &LATB, &TRISB, &ANSELB, 0);
+[e ( _Stepper_Init (4 , , , , &U _motor3 &U _LATB &U _TRISB &U _ANSELB -> -> 0 `i `uc ]
+"90
+[; ;funcionesGenerales.c: 90:     Stepper_Init(&motor4, &LATB, &TRISB, &ANSELB, 1);
+[e ( _Stepper_Init (4 , , , , &U _motor4 &U _LATB &U _TRISB &U _ANSELB -> -> 1 `i `uc ]
+"91
+[; ;funcionesGenerales.c: 91: }
 [e :UE 2438 ]
 }
-"30
-[; ;LCD.c: 30: void CURSOR_HOME(void)
-[v _CURSOR_HOME `(v ~T0 @X0 1 ef ]
-"31
-[; ;LCD.c: 31: {
+"97
+[; ;funcionesGenerales.c: 97: static void config_leds(void)
+[v _config_leds `(v ~T0 @X0 1 sf ]
+"98
+[; ;funcionesGenerales.c: 98: {
 {
-[e :U _CURSOR_HOME ]
+[e :U _config_leds ]
 [f ]
-"32
-[; ;LCD.c: 32:  ENVIA_LCD_CMD(0x02);
-[e ( _ENVIA_LCD_CMD (1 -> -> 2 `i `uc ]
-"33
-[; ;LCD.c: 33: }
+"103
+[; ;funcionesGenerales.c: 103:     WS2812B_Init(&tira1, 2);
+[e ( _WS2812B_Init (2 , &U _tira1 -> -> 2 `i `uc ]
+"104
+[; ;funcionesGenerales.c: 104: }
+[e :UE 2439 ]
+}
+"110
+[; ;funcionesGenerales.c: 110: static void config_buzzer(void)
+[v _config_buzzer `(v ~T0 @X0 1 sf ]
+"111
+[; ;funcionesGenerales.c: 111: {
+{
+[e :U _config_buzzer ]
+[f ]
+"117
+[; ;funcionesGenerales.c: 117:     Buzzer_Init(&buzzer1, &LATC, &TRISC, &ANSELC, 0x02);
+[e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATC &U _TRISC &U _ANSELC -> -> 2 `i `uc ]
+"118
+[; ;funcionesGenerales.c: 118: }
+[e :UE 2440 ]
+}
+"124
+[; ;funcionesGenerales.c: 124: static void config_keypad(void)
+[v _config_keypad `(v ~T0 @X0 1 sf ]
+"125
+[; ;funcionesGenerales.c: 125: {
+{
+[e :U _config_keypad ]
+[f ]
+"132
+[; ;funcionesGenerales.c: 132:     Keypad_Init(&teclado, &PORTD, &LATD, &TRISD, &ANSELD, &WPUD);
+[e ( _Keypad_Init (4 , , , , , &U _teclado &U _PORTD &U _LATD &U _TRISD &U _ANSELD &U _WPUD ]
+"133
+[; ;funcionesGenerales.c: 133: }
 [e :UE 2441 ]
 }
-"35
-[; ;LCD.c: 35: void CURSOR_ONOFF(unsigned char estado)
-[v _CURSOR_ONOFF `(v ~T0 @X0 1 ef1`uc ]
-"36
-[; ;LCD.c: 36: {
+"139
+[; ;funcionesGenerales.c: 139: static void config_cny70(void)
+[v _config_cny70 `(v ~T0 @X0 1 sf ]
+"140
+[; ;funcionesGenerales.c: 140: {
 {
-[e :U _CURSOR_ONOFF ]
-"35
-[; ;LCD.c: 35: void CURSOR_ONOFF(unsigned char estado)
-[v _estado `uc ~T0 @X0 1 r1 ]
-"36
-[; ;LCD.c: 36: {
+[e :U _config_cny70 ]
 [f ]
-"37
-[; ;LCD.c: 37:  if(estado == 0) ENVIA_LCD_CMD(0x0E);
-[e $ ! == -> _estado `i -> 0 `i 2443  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 14 `i `uc ]
-[e :U 2443 ]
-"38
-[; ;LCD.c: 38:  if(estado == 1) ENVIA_LCD_CMD(0x0C);
-[e $ ! == -> _estado `i -> 1 `i 2444  ]
-[e ( _ENVIA_LCD_CMD (1 -> -> 12 `i `uc ]
-[e :U 2444 ]
-"39
-[; ;LCD.c: 39: }
+"145
+[; ;funcionesGenerales.c: 145:     CNY70_ADC_Init_FOSC64();
+[e ( _CNY70_ADC_Init_FOSC64 ..  ]
+"153
+[; ;funcionesGenerales.c: 153:     CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
+[e ( _CNY70_Init (4 , , , , &U _sensor1 &U _TRISF &U _ANSELF -> -> 1 `i `uc -> -> 40 `i `uc ]
+"154
+[; ;funcionesGenerales.c: 154:     CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
+[e ( _CNY70_Init (4 , , , , &U _sensor2 &U _TRISF &U _ANSELF -> -> 2 `i `uc -> -> 41 `i `uc ]
+"155
+[; ;funcionesGenerales.c: 155:     CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
+[e ( _CNY70_Init (4 , , , , &U _sensor3 &U _TRISF &U _ANSELF -> -> 4 `i `uc -> -> 42 `i `uc ]
+"156
+[; ;funcionesGenerales.c: 156:     CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
+[e ( _CNY70_Init (4 , , , , &U _sensor4 &U _TRISF &U _ANSELF -> -> 8 `i `uc -> -> 43 `i `uc ]
+"157
+[; ;funcionesGenerales.c: 157: }
 [e :UE 2442 ]
 }
-"41
-[; ;LCD.c: 41: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam)
-[v _ESCRIBE_MENSAJE `(v ~T0 @X0 1 ef2`*Cuc`uc ]
-"42
-[; ;LCD.c: 42: {
+"163
+[; ;funcionesGenerales.c: 163: static void config_ir(void)
+[v _config_ir `(v ~T0 @X0 1 sf ]
+"164
+[; ;funcionesGenerales.c: 164: {
 {
-[e :U _ESCRIBE_MENSAJE ]
-"41
-[; ;LCD.c: 41: void ESCRIBE_MENSAJE(const char *cadena,unsigned char tam)
-[v _cadena `*Cuc ~T0 @X0 1 r1 ]
-[v _tam `uc ~T0 @X0 1 r2 ]
-"42
-[; ;LCD.c: 42: {
+[e :U _config_ir ]
 [f ]
-"43
-[; ;LCD.c: 43:  unsigned char i = 0;
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-"44
-[; ;LCD.c: 44:  for(i = 0; i<tam; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 2449  ]
-[e :U 2446 ]
-"45
-[; ;LCD.c: 45:  {
-{
-"46
-[; ;LCD.c: 46:   ENVIA_CHAR(cadena[i]);
-[e ( _ENVIA_CHAR (1 -> *U + _cadena * -> _i `ux -> -> # *U _cadena `ui `ux `uc ]
-"47
-[; ;LCD.c: 47:  }
+"170
+[; ;funcionesGenerales.c: 170:     IRSensor_Init(&sensor_ir, &PORTF, &TRISF, &ANSELF, 0x10);
+[e ( _IRSensor_Init (4 , , , , &U _sensor_ir &U _PORTF &U _TRISF &U _ANSELF -> -> 16 `i `uc ]
+"171
+[; ;funcionesGenerales.c: 171: }
+[e :UE 2443 ]
 }
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 2449 ]
-[e $ < -> _i `i -> _tam `i 2446  ]
-[e :U 2447 ]
+"177
+[; ;funcionesGenerales.c: 177: static void config_i2c_lcd(void)
+[v _config_i2c_lcd `(v ~T0 @X0 1 sf ]
+"178
+[; ;funcionesGenerales.c: 178: {
+{
+[e :U _config_i2c_lcd ]
+[f ]
+"184
+[; ;funcionesGenerales.c: 184:     I2C1_Init();
+[e ( _I2C1_Init ..  ]
+"190
+[; ;funcionesGenerales.c: 190:     estado = LCD_I2C_SetAddress(0x27u);
+[e = _estado ( _LCD_I2C_SetAddress (1 -> -> 39 `ui `uc ]
+"195
+[; ;funcionesGenerales.c: 195:     LCD_I2C_Init();
+[e ( _LCD_I2C_Init ..  ]
+"200
+[; ;funcionesGenerales.c: 200:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"201
+[; ;funcionesGenerales.c: 201: }
+[e :UE 2444 ]
 }
-"48
-[; ;LCD.c: 48: }
+"207
+[; ;funcionesGenerales.c: 207: void config_perifericos(void)
+[v _config_perifericos `(v ~T0 @X0 1 ef ]
+"208
+[; ;funcionesGenerales.c: 208: {
+{
+[e :U _config_perifericos ]
+[f ]
+"213
+[; ;funcionesGenerales.c: 213:     config_motores();
+[e ( _config_motores ..  ]
+"214
+[; ;funcionesGenerales.c: 214:     config_leds();
+[e ( _config_leds ..  ]
+"215
+[; ;funcionesGenerales.c: 215:     config_buzzer();
+[e ( _config_buzzer ..  ]
+"216
+[; ;funcionesGenerales.c: 216:     config_keypad();
+[e ( _config_keypad ..  ]
+"217
+[; ;funcionesGenerales.c: 217:     config_cny70();
+[e ( _config_cny70 ..  ]
+"218
+[; ;funcionesGenerales.c: 218:     config_ir();
+[e ( _config_ir ..  ]
+"219
+[; ;funcionesGenerales.c: 219:     config_i2c_lcd();
+[e ( _config_i2c_lcd ..  ]
+"220
+[; ;funcionesGenerales.c: 220: }
 [e :UE 2445 ]
 }
-"50
-[; ;LCD.c: 50: void ENVIA_CHAR(unsigned char dato)
-[v _ENVIA_CHAR `(v ~T0 @X0 1 ef1`uc ]
-"51
-[; ;LCD.c: 51: {
+"226
+[; ;funcionesGenerales.c: 226: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
+[v _mostrar_valor_cny70 `(v ~T0 @X0 1 sf2`uc`us ]
+"227
+[; ;funcionesGenerales.c: 227: {
 {
-[e :U _ENVIA_CHAR ]
-"50
-[; ;LCD.c: 50: void ENVIA_CHAR(unsigned char dato)
-[v _dato `uc ~T0 @X0 1 r1 ]
-"51
-[; ;LCD.c: 51: {
+[e :U _mostrar_valor_cny70 ]
+"226
+[; ;funcionesGenerales.c: 226: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
+[v _numero_sensor `uc ~T0 @X0 1 r1 ]
+[v _valor `us ~T0 @X0 1 r2 ]
+"227
+[; ;funcionesGenerales.c: 227: {
 [f ]
-"52
-[; ;LCD.c: 52:  unsigned char aux;
-[v _aux `uc ~T0 @X0 1 a ]
-"53
-[; ;LCD.c: 53:  LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"54
-[; ;LCD.c: 54:  LEER_LCD();
-[e ( _LEER_LCD ..  ]
-"55
-[; ;LCD.c: 55:  TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"56
-[; ;LCD.c: 56:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"58
-[; ;LCD.c: 58:  LATDbits.LATD1 = 0;
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"59
-[; ;LCD.c: 59:  LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"60
-[; ;LCD.c: 60:  LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"61
-[; ;LCD.c: 61:  aux = dato & 0xF0;
-[e = _aux -> & -> _dato `i -> 240 `i `uc ]
-"62
-[; ;LCD.c: 62:  ENVIA_NIBBLE(aux);
-[e ( _ENVIA_NIBBLE (1 _aux ]
-"63
-[; ;LCD.c: 63:  aux = dato << 4;
-[e = _aux -> << -> _dato `i -> 4 `i `uc ]
-"64
-[; ;LCD.c: 64:  ENVIA_NIBBLE(aux);
-[e ( _ENVIA_NIBBLE (1 _aux ]
-"65
-[; ;LCD.c: 65: }
-[e :UE 2450 ]
+"231
+[; ;funcionesGenerales.c: 231:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"233
+[; ;funcionesGenerales.c: 233:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"234
+[; ;funcionesGenerales.c: 234:     LCD_I2C_WriteString("Sensor ");
+[e ( _LCD_I2C_WriteString (1 :s 1C ]
+"235
+[; ;funcionesGenerales.c: 235:     LCD_I2C_WriteInt(numero_sensor);
+[e ( _LCD_I2C_WriteInt (1 -> _numero_sensor `s ]
+"240
+[; ;funcionesGenerales.c: 240:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"241
+[; ;funcionesGenerales.c: 241:     LCD_I2C_WriteString("Valor: ");
+[e ( _LCD_I2C_WriteString (1 :s 2C ]
+"242
+[; ;funcionesGenerales.c: 242:     LCD_I2C_WriteInt(valor);
+[e ( _LCD_I2C_WriteInt (1 -> _valor `s ]
+"247
+[; ;funcionesGenerales.c: 247:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"248
+[; ;funcionesGenerales.c: 248: }
+[e :UE 2446 ]
 }
-"67
-[; ;LCD.c: 67: void BORRAR_LCD(void)
-[v _BORRAR_LCD `(v ~T0 @X0 1 ef ]
-"68
-[; ;LCD.c: 68: {
+"254
+[; ;funcionesGenerales.c: 254: void lectura_cny70(void)
+[v _lectura_cny70 `(v ~T0 @X0 1 ef ]
+"255
+[; ;funcionesGenerales.c: 255: {
 {
-[e :U _BORRAR_LCD ]
+[e :U _lectura_cny70 ]
 [f ]
-"69
-[; ;LCD.c: 69:  ENVIA_LCD_CMD(0x01);
-[e ( _ENVIA_LCD_CMD (1 -> -> 1 `i `uc ]
-"70
-[; ;LCD.c: 70: }
-[e :UE 2451 ]
+"260
+[; ;funcionesGenerales.c: 260:     valor_S1 = CNY70_Read(&sensor1);
+[e = _valor_S1 ( _CNY70_Read (1 &U _sensor1 ]
+"261
+[; ;funcionesGenerales.c: 261:     mostrar_valor_cny70(1, valor_S1);
+[e ( _mostrar_valor_cny70 (2 , -> -> 1 `i `uc _valor_S1 ]
+"266
+[; ;funcionesGenerales.c: 266:     valor_S2 = CNY70_Read(&sensor2);
+[e = _valor_S2 ( _CNY70_Read (1 &U _sensor2 ]
+"267
+[; ;funcionesGenerales.c: 267:     mostrar_valor_cny70(2, valor_S2);
+[e ( _mostrar_valor_cny70 (2 , -> -> 2 `i `uc _valor_S2 ]
+"272
+[; ;funcionesGenerales.c: 272:     valor_S3 = CNY70_Read(&sensor3);
+[e = _valor_S3 ( _CNY70_Read (1 &U _sensor3 ]
+"273
+[; ;funcionesGenerales.c: 273:     mostrar_valor_cny70(3, valor_S3);
+[e ( _mostrar_valor_cny70 (2 , -> -> 3 `i `uc _valor_S3 ]
+"278
+[; ;funcionesGenerales.c: 278:     valor_S4 = CNY70_Read(&sensor4);
+[e = _valor_S4 ( _CNY70_Read (1 &U _sensor4 ]
+"279
+[; ;funcionesGenerales.c: 279:     mostrar_valor_cny70(4, valor_S4);
+[e ( _mostrar_valor_cny70 (2 , -> -> 4 `i `uc _valor_S4 ]
+"280
+[; ;funcionesGenerales.c: 280: }
+[e :UE 2447 ]
 }
-"72
-[; ;LCD.c: 72: void LCD_CONFIG(void)
-[v _LCD_CONFIG `(v ~T0 @X0 1 ef ]
-"73
-[; ;LCD.c: 73: {
+"286
+[; ;funcionesGenerales.c: 286: void verificar_condiciones_iniciales(void)
+[v _verificar_condiciones_iniciales `(v ~T0 @X0 1 ef ]
+"287
+[; ;funcionesGenerales.c: 287: {
 {
-[e :U _LCD_CONFIG ]
+[e :U _verificar_condiciones_iniciales ]
 [f ]
-"74
-[; ;LCD.c: 74:  LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"75
-[; ;LCD.c: 75:  LATDbits.LATD1 = 0;
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"76
-[; ;LCD.c: 76:  ENVIA_NIBBLE(0x30);
-[e ( _ENVIA_NIBBLE (1 -> -> 48 `i `uc ]
-"77
-[; ;LCD.c: 77:         _delay(24000);
-[e ( __delay (1 -> -> -> 24000 `i `l `ul ]
-"78
-[; ;LCD.c: 78:         _delay(24000);
-[e ( __delay (1 -> -> -> 24000 `i `l `ul ]
-"81
-[; ;LCD.c: 81:  ENVIA_NIBBLE(0x30);
-[e ( _ENVIA_NIBBLE (1 -> -> 48 `i `uc ]
-"83
-[; ;LCD.c: 83:  _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"84
-[; ;LCD.c: 84:         ENVIA_NIBBLE(0x30);
-[e ( _ENVIA_NIBBLE (1 -> -> 48 `i `uc ]
-"85
-[; ;LCD.c: 85:  ENVIA_NIBBLE(0x20);
-[e ( _ENVIA_NIBBLE (1 -> -> 32 `i `uc ]
-"86
-[; ;LCD.c: 86:  ENVIA_LCD_CMD(0x01);
-[e ( _ENVIA_LCD_CMD (1 -> -> 1 `i `uc ]
-"87
-[; ;LCD.c: 87:  ENVIA_LCD_CMD(0x28);
-[e ( _ENVIA_LCD_CMD (1 -> -> 40 `i `uc ]
-"88
-[; ;LCD.c: 88:  ENVIA_LCD_CMD(0x0F);
-[e ( _ENVIA_LCD_CMD (1 -> -> 15 `i `uc ]
-"89
-[; ;LCD.c: 89:  ENVIA_LCD_CMD(0x06);
-[e ( _ENVIA_LCD_CMD (1 -> -> 6 `i `uc ]
-"90
-[; ;LCD.c: 90:  ENVIA_LCD_CMD(0x01);
-[e ( _ENVIA_LCD_CMD (1 -> -> 1 `i `uc ]
-"91
-[; ;LCD.c: 91: }
-[e :UE 2452 ]
-}
-"93
-[; ;LCD.c: 93: void ENVIA_NIBBLE(unsigned char dato)
-[v _ENVIA_NIBBLE `(v ~T0 @X0 1 ef1`uc ]
-"94
-[; ;LCD.c: 94: {
+"292
+[; ;funcionesGenerales.c: 292:     if (estado != I2C_OK)
+[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2449  ]
+"293
+[; ;funcionesGenerales.c: 293:     {
 {
-[e :U _ENVIA_NIBBLE ]
-"93
-[; ;LCD.c: 93: void ENVIA_NIBBLE(unsigned char dato)
-[v _dato `uc ~T0 @X0 1 r1 ]
-"94
-[; ;LCD.c: 94: {
+"294
+[; ;funcionesGenerales.c: 294:         sistem_error("I2C sin conexion");
+[e ( _sistem_error (1 :s 3C ]
+"295
+[; ;funcionesGenerales.c: 295:     }
+}
+[e :U 2449 ]
+"300
+[; ;funcionesGenerales.c: 300:     estado = DS1307_ReadDateTime(&fechaHora);
+[e = _estado ( _DS1307_ReadDateTime (1 &U _fechaHora ]
+"305
+[; ;funcionesGenerales.c: 305:     if (estado != I2C_OK)
+[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2450  ]
+"306
+[; ;funcionesGenerales.c: 306:     {
+{
+"307
+[; ;funcionesGenerales.c: 307:         sistem_error("RTC sin conexion");
+[e ( _sistem_error (1 :s 4C ]
+"308
+[; ;funcionesGenerales.c: 308:     }
+}
+[e :U 2450 ]
+"314
+[; ;funcionesGenerales.c: 314:     if (fechaHora.clock_running == 0)
+[e $ ! == -> . _fechaHora 7 `i -> 0 `i 2451  ]
+"315
+[; ;funcionesGenerales.c: 315:     {
+{
+"316
+[; ;funcionesGenerales.c: 316:         sistem_error("RTC detenido");
+[e ( _sistem_error (1 :s 5C ]
+"317
+[; ;funcionesGenerales.c: 317:     }
+}
+[e :U 2451 ]
+"323
+[; ;funcionesGenerales.c: 323:     if (fechaHora.data_valid == 0)
+[e $ ! == -> . _fechaHora 10 `i -> 0 `i 2452  ]
+"324
+[; ;funcionesGenerales.c: 324:     {
+{
+"325
+[; ;funcionesGenerales.c: 325:         sistem_error("Fecha invalida");
+[e ( _sistem_error (1 :s 6C ]
+"326
+[; ;funcionesGenerales.c: 326:     }
+}
+[e :U 2452 ]
+"338
+[; ;funcionesGenerales.c: 338:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"340
+[; ;funcionesGenerales.c: 340:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"341
+[; ;funcionesGenerales.c: 341:     LCD_I2C_WriteString("Sistema correcto");
+[e ( _LCD_I2C_WriteString (1 :s 7C ]
+"346
+[; ;funcionesGenerales.c: 346:     WS2812B_RGB(&tira1, 0, 200, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 200 `i `uc -> -> 0 `i `uc ]
+"348
+[; ;funcionesGenerales.c: 348:     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"349
+[; ;funcionesGenerales.c: 349:     while(1){
+[e :U 2454 ]
+{
+"350
+[; ;funcionesGenerales.c: 350:         lectura_cny70();
+[e ( _lectura_cny70 ..  ]
+"351
+[; ;funcionesGenerales.c: 351:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"352
+[; ;funcionesGenerales.c: 352:     }
+}
+[e :U 2453 ]
+[e $U 2454  ]
+[e :U 2455 ]
+"354
+[; ;funcionesGenerales.c: 354: }
+[e :UE 2448 ]
+}
+"360
+[; ;funcionesGenerales.c: 360: void sistem_error(const char *mensaje)
+[v _sistem_error `(v ~T0 @X0 1 ef1`*Cuc ]
+"361
+[; ;funcionesGenerales.c: 361: {
+{
+[e :U _sistem_error ]
+"360
+[; ;funcionesGenerales.c: 360: void sistem_error(const char *mensaje)
+[v _mensaje `*Cuc ~T0 @X0 1 r1 ]
+"361
+[; ;funcionesGenerales.c: 361: {
 [f ]
-"95
-[; ;LCD.c: 95:  LATD &= 0x0F;
-[e =& _LATD -> -> 15 `i `Vuc ]
-"96
-[; ;LCD.c: 96:  dato &= 0xF0;
-[e =& _dato -> -> 240 `i `uc ]
-"97
-[; ;LCD.c: 97:  LATD|= dato;
-[e =| _LATD -> _dato `Vuc ]
-"98
-[; ;LCD.c: 98:  LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"100
-[; ;LCD.c: 100:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"101
-[; ;LCD.c: 101:  LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"102
-[; ;LCD.c: 102: }
-[e :UE 2453 ]
-}
-"104
-[; ;LCD.c: 104: void ENVIA_LCD_CMD(unsigned char dato)
-[v _ENVIA_LCD_CMD `(v ~T0 @X0 1 ef1`uc ]
-"105
-[; ;LCD.c: 105: {
-{
-[e :U _ENVIA_LCD_CMD ]
-"104
-[; ;LCD.c: 104: void ENVIA_LCD_CMD(unsigned char dato)
-[v _dato `uc ~T0 @X0 1 r1 ]
-"105
-[; ;LCD.c: 105: {
-[f ]
-"106
-[; ;LCD.c: 106:  unsigned char aux;
-[v _aux `uc ~T0 @X0 1 a ]
-"107
-[; ;LCD.c: 107:  LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"108
-[; ;LCD.c: 108:  LEER_LCD();
-[e ( _LEER_LCD ..  ]
-"109
-[; ;LCD.c: 109:  TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"111
-[; ;LCD.c: 111:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"112
-[; ;LCD.c: 112:         LATDbits.LATD1 = 0;
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"113
-[; ;LCD.c: 113:  LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"114
-[; ;LCD.c: 114:  LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"115
-[; ;LCD.c: 115:  aux = dato & 0xF0;
-[e = _aux -> & -> _dato `i -> 240 `i `uc ]
-"116
-[; ;LCD.c: 116:  ENVIA_NIBBLE(aux);
-[e ( _ENVIA_NIBBLE (1 _aux ]
-"117
-[; ;LCD.c: 117:  aux = dato<<4;
-[e = _aux -> << -> _dato `i -> 4 `i `uc ]
-"118
-[; ;LCD.c: 118:  ENVIA_NIBBLE(aux);
-[e ( _ENVIA_NIBBLE (1 _aux ]
-"119
-[; ;LCD.c: 119: }
-[e :UE 2454 ]
-}
-"121
-[; ;LCD.c: 121: void LEER_LCD(void)
-[v _LEER_LCD `(v ~T0 @X0 1 ef ]
-"122
-[; ;LCD.c: 122: {
-{
-[e :U _LEER_LCD ]
-[f ]
-"123
-[; ;LCD.c: 123:  unsigned char aux;
-[v _aux `uc ~T0 @X0 1 a ]
-"124
-[; ;LCD.c: 124:  TRISD = 0xF8;
-[e = _TRISD -> -> 248 `i `uc ]
-"125
-[; ;LCD.c: 125:  LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"126
-[; ;LCD.c: 126:  LATDbits.LATD1 = 1;
-[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"127
-[; ;LCD.c: 127:  LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"128
-[; ;LCD.c: 128:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"130
-[; ;LCD.c: 130:  aux = PORTD;
-[e = _aux _PORTD ]
-"131
-[; ;LCD.c: 131:  LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"132
-[; ;LCD.c: 132:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"134
-[; ;LCD.c: 134:  LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"135
-[; ;LCD.c: 135:         _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"137
-[; ;LCD.c: 137:  LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"138
-[; ;LCD.c: 138:  aux = aux & 0x80;
-[e = _aux -> & -> _aux `i -> 128 `i `uc ]
-"139
-[; ;LCD.c: 139:  while(aux == 0x80)
-[e $U 2456  ]
-[e :U 2457 ]
-"140
-[; ;LCD.c: 140:         {
-{
-"141
-[; ;LCD.c: 141:             LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"142
-[; ;LCD.c: 142:             _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"143
-[; ;LCD.c: 143:             aux = PORTD;
-[e = _aux _PORTD ]
-"144
-[; ;LCD.c: 144:             LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"145
-[; ;LCD.c: 145:             _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"146
-[; ;LCD.c: 146:             LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"147
-[; ;LCD.c: 147:             _delay(1200);
-[e ( __delay (1 -> -> -> 1200 `i `l `ul ]
-"148
-[; ;LCD.c: 148:             LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"149
-[; ;LCD.c: 149:             aux = aux & 0x80;
-[e = _aux -> & -> _aux `i -> 128 `i `uc ]
-"150
-[; ;LCD.c: 150:  }
-}
-[e :U 2456 ]
-"139
-[; ;LCD.c: 139:  while(aux == 0x80)
-[e $ == -> _aux `i -> 128 `i 2457  ]
+"365
+[; ;funcionesGenerales.c: 365:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"367
+[; ;funcionesGenerales.c: 367:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"368
+[; ;funcionesGenerales.c: 368:     LCD_I2C_WriteString("Error en sistema");
+[e ( _LCD_I2C_WriteString (1 :s 8C ]
+"370
+[; ;funcionesGenerales.c: 370:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"371
+[; ;funcionesGenerales.c: 371:     LCD_I2C_WriteString(mensaje);
+[e ( _LCD_I2C_WriteString (1 _mensaje ]
+"376
+[; ;funcionesGenerales.c: 376:     WS2812B_RGB(&tira1, 200, 0, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 200 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"382
+[; ;funcionesGenerales.c: 382:     while (1)
 [e :U 2458 ]
-"151
-[; ;LCD.c: 151: }
-[e :UE 2455 ]
-}
-"153
-[; ;LCD.c: 153: void GENERACARACTER(const unsigned char *vector,unsigned char pos)
-[v _GENERACARACTER `(v ~T0 @X0 1 ef2`*Cuc`uc ]
-"154
-[; ;LCD.c: 154: {
+"383
+[; ;funcionesGenerales.c: 383:     {
 {
-[e :U _GENERACARACTER ]
-"153
-[; ;LCD.c: 153: void GENERACARACTER(const unsigned char *vector,unsigned char pos)
-[v _vector `*Cuc ~T0 @X0 1 r1 ]
-[v _pos `uc ~T0 @X0 1 r2 ]
-"154
-[; ;LCD.c: 154: {
-[f ]
-"155
-[; ;LCD.c: 155:  unsigned char i;
-[v _i `uc ~T0 @X0 1 a ]
-"156
-[; ;LCD.c: 156:  ENVIA_LCD_CMD(0x40+8*pos);
-[e ( _ENVIA_LCD_CMD (1 -> + -> 64 `i * -> 8 `i -> _pos `i `uc ]
-"157
-[; ;LCD.c: 157:  for(i=0;i<8;i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 2460  ]
-[e $U 2461  ]
-[e :U 2460 ]
-"158
-[; ;LCD.c: 158:  {
-{
-"159
-[; ;LCD.c: 159:   ENVIA_CHAR(vector[i]);
-[e ( _ENVIA_CHAR (1 *U + _vector * -> _i `ux -> -> # *U _vector `ui `ux ]
-"160
-[; ;LCD.c: 160:  }
+"384
+[; ;funcionesGenerales.c: 384:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"385
+[; ;funcionesGenerales.c: 385:     }
 }
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 2460  ]
-[e :U 2461 ]
+[e :U 2457 ]
+[e $U 2458  ]
+[e :U 2459 ]
+"386
+[; ;funcionesGenerales.c: 386: }
+[e :UE 2456 ]
 }
-"161
-[; ;LCD.c: 161:  ENVIA_LCD_CMD(0x80);
-[e ( _ENVIA_LCD_CMD (1 -> -> 128 `i `uc ]
-"162
-[; ;LCD.c: 162: }
-[e :UE 2459 ]
-}
+[a 7C 83 105 115 116 101 109 97 32 99 111 114 114 101 99 116 111 0 ]
+[a 5C 82 84 67 32 100 101 116 101 110 105 100 111 0 ]
+[a 4C 82 84 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
+[a 3C 73 50 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
+[a 8C 69 114 114 111 114 32 101 110 32 115 105 115 116 101 109 97 0 ]
+[a 6C 70 101 99 104 97 32 105 110 118 97 108 105 100 97 0 ]
+[a 1C 83 101 110 115 111 114 32 0 ]
+[a 2C 86 97 108 111 114 58 32 0 ]

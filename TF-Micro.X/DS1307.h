@@ -23,7 +23,7 @@
  *
  * La librería I2C agrega automáticamente el bit R/W.
  */
-#define DS1307_I2C_ADDRESS          0x68u
+#define DS1307_I2C_ADDRESS          0x68
 
 
 /**

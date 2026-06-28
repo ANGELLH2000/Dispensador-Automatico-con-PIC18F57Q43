@@ -16,6 +16,7 @@
       <itemPath>I2C.h</itemPath>
       <itemPath>LCD_I2C.h</itemPath>
       <itemPath>DS1307.h</itemPath>
+      <itemPath>funcionesGenerales.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -55,6 +56,7 @@
       <itemPath>I2C.c</itemPath>
       <itemPath>LCD_I2C.c</itemPath>
       <itemPath>DS1307.c</itemPath>
+      <itemPath>funcionesGenerales.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -218,8 +220,28 @@
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
       <item path="I2C_LCD+DS1307.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="I2C_LCD.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="LCD.c" ex="true" overriding="false">
+      </item>
+      <item path="LCD.h" ex="true" overriding="false">
       </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
@@ -244,6 +266,16 @@
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
       <item path="maincode_eprom_dfm.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="maincode_kaypad4x4.c" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
