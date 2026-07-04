@@ -29658,7 +29658,7 @@ void Keypad_Init(Keypad *keypad,
 # 171 "./Keypad4x4.h"
 char Keypad_Read(Keypad *keypad);
 # 2 "keypad4x4.c" 2
-# 15 "keypad4x4.c"
+# 14 "keypad4x4.c"
 static const uint8_t Keypad_RowMasks[4] =
 {
     0x01,
@@ -29666,7 +29666,7 @@ static const uint8_t Keypad_RowMasks[4] =
     0x04,
     0x08
 };
-# 35 "keypad4x4.c"
+# 34 "keypad4x4.c"
 static const uint8_t Keypad_ColumnMasks[4] =
 {
     0x10,
@@ -29674,7 +29674,7 @@ static const uint8_t Keypad_ColumnMasks[4] =
     0x40,
     0x80
 };
-# 72 "keypad4x4.c"
+# 71 "keypad4x4.c"
 static const char Keypad_Map[4][4] =
 {
     {'1', '2', '3', 'A'},
@@ -29682,13 +29682,13 @@ static const char Keypad_Map[4][4] =
     {'7', '8', '9', 'C'},
     {'*', '0', '#', 'D'}
 };
-# 87 "keypad4x4.c"
+# 86 "keypad4x4.c"
 static void Keypad_AllRowsHigh(Keypad *keypad)
 {
     *(keypad->lat) =
         (uint8_t)(*(keypad->lat) | 0x0F);
 }
-# 113 "keypad4x4.c"
+# 112 "keypad4x4.c"
 static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
 {
 
@@ -29703,7 +29703,7 @@ static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
         (uint8_t)(*(keypad->lat) &
         (uint8_t)(~Keypad_RowMasks[row]));
 }
-# 142 "keypad4x4.c"
+# 141 "keypad4x4.c"
 static char Keypad_Scan(Keypad *keypad)
 {
     uint8_t row;
@@ -29745,6 +29745,7 @@ static char Keypad_Scan(Keypad *keypad)
 
 
                 Keypad_AllRowsHigh(keypad);
+
 
 
 

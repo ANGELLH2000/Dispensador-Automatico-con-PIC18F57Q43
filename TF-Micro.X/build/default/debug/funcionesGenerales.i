@@ -30340,8 +30340,11 @@ static void config_i2c_lcd(void);
 static void SubProceso_ResetSistema();
 static void SubProceso_MenuLCD();
 static void SubProceso_VerHorarios();
+static void SubProceso_RegistrarPastillas();
 static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor);
 static void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo);
+static void Detallar_CantPastillas(uint8_t tecla);
+static void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
 
 
 
@@ -30489,6 +30492,10 @@ void config_perifericos(void)
 
 
 
+    TRISEbits.TRISE0=1;
+    WPUEbits.WPUE0=1;
+    ANSELEbits.ANSELE0=0;
+
     config_motores();
     config_leds();
     config_buzzer();
@@ -30497,14 +30504,30 @@ void config_perifericos(void)
     config_ir();
     config_i2c_lcd();
 
-    EEPROM_WriteByte(1, 2);
-    EEPROM_WriteByte(20, 8);
-    EEPROM_WriteByte(21, 9);
-    EEPROM_WriteByte(22, 1);
+    if(PORTEbits.RE0 == 0){
+        LCD_I2C_SetCursor(1, 0);
+        LCD_I2C_WriteString("Presionado");
+        _delay((unsigned long)((500)*(32000000UL/4000.0)));
+        EEPROM_WriteByte(1, 2);
+        EEPROM_WriteByte(2, 1);
+        EEPROM_WriteByte(10, 1);
+        EEPROM_WriteByte(11, 0);
+        EEPROM_WriteByte(12, 0);
+        EEPROM_WriteByte(13, 0);
+        EEPROM_WriteByte(20, 8);
+        EEPROM_WriteByte(21, 9);
+        EEPROM_WriteByte(22, 1);
 
-    EEPROM_WriteByte(25, 9);
-    EEPROM_WriteByte(26, 21);
-    EEPROM_WriteByte(27, 3);
+        EEPROM_WriteByte(25, 9);
+        EEPROM_WriteByte(26, 21);
+        EEPROM_WriteByte(27, 3);
+    }else{
+        LCD_I2C_SetCursor(1, 0);
+        LCD_I2C_WriteString("NO Presionado");
+        _delay((unsigned long)((500)*(32000000UL/4000.0)));
+    }
+
+
 }
 
 
@@ -30593,6 +30616,7 @@ void verificar_condiciones_iniciales(void)
     if (estado != I2C_OK)
     {
         sistem_error("RTC sin conexion");
+        Buzzer_WarningSound(&buzzer1);
     }
 
 
@@ -30602,6 +30626,7 @@ void verificar_condiciones_iniciales(void)
     if (fechaHora.clock_running == 0)
     {
         sistem_error("RTC detenido");
+        Buzzer_WarningSound(&buzzer1);
     }
 
 
@@ -30611,8 +30636,9 @@ void verificar_condiciones_iniciales(void)
     if (fechaHora.data_valid == 0)
     {
         sistem_error("Fecha invalida");
+        Buzzer_WarningSound(&buzzer1);
     }
-# 357 "funcionesGenerales.c"
+# 383 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1, 0);
@@ -30665,7 +30691,7 @@ void sistem_error(const char *mensaje)
         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
     }
 }
-# 418 "funcionesGenerales.c"
+# 444 "funcionesGenerales.c"
 void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
 {
     LCD_I2C_CreateSolidPixel(0);
@@ -30677,7 +30703,7 @@ void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
         _delay((unsigned long)((300)*(32000000UL/4000.0)));
     }
 }
-# 443 "funcionesGenerales.c"
+# 469 "funcionesGenerales.c"
 void SubProceso_ResetSistema(void)
 {
 
@@ -30725,7 +30751,7 @@ void SubProceso_ResetSistema(void)
 
     LCD_I2C_SetCursor(3, 1);
     LCD_I2C_WriteString("Limpiando Variables");
-# 499 "funcionesGenerales.c"
+# 525 "funcionesGenerales.c"
     MostrarAnimacionCarga(4, 10);
 
     LCD_I2C_SetCursor(3, 0);
@@ -30754,7 +30780,7 @@ void SubProceso_ResetSistema(void)
     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
     LCD_I2C_Clear();
 }
-# 543 "funcionesGenerales.c"
+# 569 "funcionesGenerales.c"
 void SubProceso_MenuLCD(void)
 {
 
@@ -30814,6 +30840,7 @@ void SubProceso_MenuLCD(void)
                 switch (tecla)
                 {
                     case '1':
+                        Buzzer_CorrectSound(&buzzer1);
                         LCD_I2C_SetCursor(1, 7);
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 2);
@@ -30822,6 +30849,7 @@ void SubProceso_MenuLCD(void)
                         return;
 
                     case '2':
+                        Buzzer_CorrectSound(&buzzer1);
                         LCD_I2C_SetCursor(1, 7);
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 1);
@@ -30830,23 +30858,27 @@ void SubProceso_MenuLCD(void)
                         return;
 
                     case '3':
+                        Buzzer_CorrectSound(&buzzer1);
                         LCD_I2C_SetCursor(1, 7);
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 4);
                         LCD_I2C_WriteString("Ver Horarios");
                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
                         SubProceso_VerHorarios();
-                        return;
+                        break;
 
                     case '4':
+                        Buzzer_CorrectSound(&buzzer1);
                         LCD_I2C_SetCursor(1, 7);
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 1);
                         LCD_I2C_WriteString("Registrar Pastilla");
                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+                        SubProceso_RegistrarPastillas();
                         return;
 
                     case '*':
+                        Buzzer_CorrectSound(&buzzer1);
                         LCD_I2C_SetCursor(1, 7);
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 3);
@@ -30858,6 +30890,7 @@ void SubProceso_MenuLCD(void)
                     default:
 
 
+                        Buzzer_ErrorSound(&buzzer1);
                         LCD_I2C_SetCursor(2, 2);
                         LCD_I2C_WriteString("Opcion Invalida");
                         _delay((unsigned long)((500)*(32000000UL/4000.0)));
@@ -31032,8 +31065,119 @@ void SubProceso_VerHorarios(void)
         }
 
 
-        while (Keypad_Read(&teclado) != '\0')
+
+
+        switch (tecla)
         {
+            case 'A':
+                Buzzer_ButtonClick(&buzzer1);
+                if (pagina > 0)
+                    pagina--;
+
+                break;
+
+            case 'B':
+                Buzzer_ButtonClick(&buzzer1);
+                if (pagina < paginas_max)
+                    pagina++;
+
+                break;
+
+            case '*':
+                Buzzer_ButtonClick(&buzzer1);
+                return;
+            default:
+                Buzzer_ButtonClick(&buzzer1);
+        }
+    }
+}
+void SubProceso_RegistrarPastillas(void)
+{
+    uint8_t pastillero_selecionado;
+    uint8_t cantidad_a_sumar=0;
+
+    LCD_I2C_Clear();
+
+    LCD_I2C_SetCursor(1, 1);
+    LCD_I2C_WriteString("REG. CANT. PASTILLAS");
+
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("Leyendo Memoria");
+
+    dato_memoria = EEPROM_ReadByte(2);
+
+    MostrarAnimacionCarga(4, 0);
+
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_ClearFile();
+
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("Extrayendo Datos");
+
+    MostrarAnimacionCarga(4, 4);
+
+
+
+
+    if (dato_memoria == 0xFF )
+    {
+        MostrarAnimacionCarga(4, 8);
+
+        LCD_I2C_SetCursor(3, 0);
+        LCD_I2C_ClearFile();
+
+        LCD_I2C_SetCursor(3, 2);
+        LCD_I2C_WriteString("Datos Corruptos");
+
+        _delay((unsigned long)((1500)*(32000000UL/4000.0)));
+        return;
+    }
+
+
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_ClearFile();
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("Pastillas disp: ");
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    MostrarAnimacionCarga(4, 8);
+
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_ClearFile();
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("Preparando sistema..");
+    MostrarAnimacionCarga(4, 12);
+
+    LCD_I2C_Clear();
+
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString(" STOCK PASTILLEROS ");
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("P1:[");
+    dato_memoria = EEPROM_ReadByte(10);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_WriteString("]      P2:[");
+    dato_memoria = EEPROM_ReadByte(11);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_WriteString("]");
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("P3:[");
+    dato_memoria = EEPROM_ReadByte(12);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_WriteString("]      P4:[");
+    dato_memoria = EEPROM_ReadByte(13);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_WriteString("]");
+    LCD_I2C_SetCursor(4, 0);
+    LCD_I2C_WriteString("Seleccione (1-4):[ ]");
+
+
+    while(1)
+    {
+
+        tecla = '\0';
+        while (tecla == '\0')
+        {
+            tecla = Keypad_Read(&teclado);
             _delay((unsigned long)((20)*(32000000UL/4000.0)));
         }
 
@@ -31042,25 +31186,103 @@ void SubProceso_VerHorarios(void)
 
         switch (tecla)
         {
-            case 'A':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+                    Buzzer_ButtonClick(&buzzer1);
+                    pastillero_selecionado=tecla-'0';
 
-                if (pagina > 0)
-                    pagina--;
-
-                break;
-
-            case 'B':
-
-                if (pagina < paginas_max)
-                    pagina++;
-
-                break;
-
-            case '*':
-                SubProceso_MenuLCD();
-                return;
+                    LCD_I2C_SetCursor(4, 18);
+                    LCD_I2C_WriteChar(tecla);
+                    _delay((unsigned long)((50)*(32000000UL/4000.0)));
+                    Detallar_CantPastillas(pastillero_selecionado);
+                    break;
+            default:
+                    Buzzer_WarningSound(&buzzer1);
+                    LCD_I2C_SetCursor(4, 18);
+                    LCD_I2C_WriteString("-");
         }
+
+        while(1)
+        {
+            tecla = '\0';
+            while (tecla == '\0')
+            {
+                tecla = Keypad_Read(&teclado);
+                _delay((unsigned long)((20)*(32000000UL/4000.0)));
+            }
+
+
+
+
+            switch (tecla)
+            {
+                case 'A':
+                case 'B':
+                case 'C':
+                case 'D':
+                        Buzzer_WarningSound(&buzzer1);
+                        break;
+
+                case '*':
+                        Buzzer_ButtonClick(&buzzer1);
+                        return;
+                case '#':
+                        Buzzer_CorrectSound(&buzzer1);
+                        Guardar_CantPastillas(pastillero_selecionado,cantidad_a_sumar);
+                        _delay((unsigned long)((200)*(32000000UL/4000.0)));
+                        return;
+                default:
+                        Buzzer_ButtonClick(&buzzer1);
+                        LCD_I2C_SetCursor(3, 18);
+                        cantidad_a_sumar=tecla - '0';
+                        LCD_I2C_WriteChar(tecla);
+                        break;
+            }
+        }
+
     }
+
+
+
+}
+void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
+{
+    const uint8_t ubicacion_memoria[] = {10, 11, 12, 13};
+    dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
+    EEPROM_UpdateByte(ubicacion_memoria[pastillero_selecionado-1],dato_memoria+cantidad_a_sumar);
+    dato_memoria = EEPROM_ReadByte(2);
+    EEPROM_UpdateByte(2,dato_memoria+ cantidad_a_sumar);
+    LCD_I2C_Clear();
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString("-- RECARGA EXITOSA--");
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("PASTILLERO ");
+    LCD_I2C_WriteUInt8(pastillero_selecionado,1);
+    LCD_I2C_WriteString("LISTO");
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("Total actual: [");
+    dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_WriteString("]");
+}
+void Detallar_CantPastillas(uint8_t tecla)
+{
+    const uint8_t ubicacion_memoria[] = {10, 11, 12, 13};
+    LCD_I2C_Clear();
+    LCD_I2C_SetCursor(1, 0);
+    LCD_I2C_WriteString("-- RECARGA PAST. ");
+    LCD_I2C_WriteUInt16(tecla,2,0);
+    LCD_I2C_WriteString("--");
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("Stock actual   : ");
+    dato_memoria = EEPROM_ReadByte(ubicacion_memoria[tecla-1]);
+    LCD_I2C_WriteUInt8(dato_memoria,2);
+    LCD_I2C_SetCursor(3, 0);
+    LCD_I2C_WriteString("A sumar        : 00");
+    LCD_I2C_SetCursor(4, 0);
+    LCD_I2C_WriteString("Guardar:[#] Salir:*");
 }
 void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo)
 {

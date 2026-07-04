@@ -1,6 +1,5 @@
 #include "Keypad4x4.h"
 
-
 /*
  * Máscaras correspondientes a las filas.
  *
@@ -185,6 +184,7 @@ static char Keypad_Scan(Keypad *keypad)
                  * Retorna el carácter correspondiente a la fila
                  * y columna detectadas.
                  */
+               
                 return Keypad_Map[row][column];
             }
         }

@@ -2642,8 +2642,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"15 keypad4x4.c
-[; ;keypad4x4.c: 15: static const uint8_t Keypad_RowMasks[4] =
+"14 keypad4x4.c
+[; ;keypad4x4.c: 14: static const uint8_t Keypad_RowMasks[4] =
 [v _Keypad_RowMasks `Cuc ~T0 @X0 -> 4 `i s ]
 [i _Keypad_RowMasks
 :U ..
@@ -2653,8 +2653,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 8 `i `uc
 ..
 ]
-"35
-[; ;keypad4x4.c: 35: static const uint8_t Keypad_ColumnMasks[4] =
+"34
+[; ;keypad4x4.c: 34: static const uint8_t Keypad_ColumnMasks[4] =
 [v _Keypad_ColumnMasks `Cuc ~T0 @X0 -> 4 `i s ]
 [i _Keypad_ColumnMasks
 :U ..
@@ -2665,8 +2665,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v F17304 `Cuc ~T0 @X0 -> 4 `i t ]
-"72
-[; ;keypad4x4.c: 72: static const char Keypad_Map[4][4] =
+"71
+[; ;keypad4x4.c: 71: static const char Keypad_Map[4][4] =
 [v _Keypad_Map `F17304 ~T0 @X0 -> 4 `i s ]
 [i _Keypad_Map
 :U ..
@@ -2696,103 +2696,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"87
-[; ;keypad4x4.c: 87: static void Keypad_AllRowsHigh(Keypad *keypad)
+"86
+[; ;keypad4x4.c: 86: static void Keypad_AllRowsHigh(Keypad *keypad)
 [v _Keypad_AllRowsHigh `(v ~T0 @X0 1 sf1`*S2431 ]
-"88
-[; ;keypad4x4.c: 88: {
+"87
+[; ;keypad4x4.c: 87: {
 {
 [e :U _Keypad_AllRowsHigh ]
-"87
-[; ;keypad4x4.c: 87: static void Keypad_AllRowsHigh(Keypad *keypad)
+"86
+[; ;keypad4x4.c: 86: static void Keypad_AllRowsHigh(Keypad *keypad)
 [v _keypad `*S2431 ~T0 @X0 1 r1 ]
-"88
-[; ;keypad4x4.c: 88: {
+"87
+[; ;keypad4x4.c: 87: {
 [f ]
-"89
-[; ;keypad4x4.c: 89:     *(keypad->lat) =
+"88
+[; ;keypad4x4.c: 88:     *(keypad->lat) =
 [e = *U . *U _keypad 1 -> | -> *U . *U _keypad 1 `i -> 15 `i `uc ]
-"91
-[; ;keypad4x4.c: 91: }
+"90
+[; ;keypad4x4.c: 90: }
 [e :UE 2432 ]
 }
-"113
-[; ;keypad4x4.c: 113: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
+"112
+[; ;keypad4x4.c: 112: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
 [v _Keypad_ActivateRow `(v ~T0 @X0 1 sf2`*S2431`uc ]
-"114
-[; ;keypad4x4.c: 114: {
+"113
+[; ;keypad4x4.c: 113: {
 {
 [e :U _Keypad_ActivateRow ]
-"113
-[; ;keypad4x4.c: 113: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
+"112
+[; ;keypad4x4.c: 112: static void Keypad_ActivateRow(Keypad *keypad, uint8_t row)
 [v _keypad `*S2431 ~T0 @X0 1 r1 ]
 [v _row `uc ~T0 @X0 1 r2 ]
-"114
-[; ;keypad4x4.c: 114: {
+"113
+[; ;keypad4x4.c: 113: {
 [f ]
-"118
-[; ;keypad4x4.c: 118:     Keypad_AllRowsHigh(keypad);
+"117
+[; ;keypad4x4.c: 117:     Keypad_AllRowsHigh(keypad);
 [e ( _Keypad_AllRowsHigh (1 _keypad ]
-"123
-[; ;keypad4x4.c: 123:     *(keypad->lat) =
+"122
+[; ;keypad4x4.c: 122:     *(keypad->lat) =
 [e = *U . *U _keypad 1 -> & -> *U . *U _keypad 1 `i -> -> ~ -> *U + &U _Keypad_RowMasks * -> _row `ux -> -> # *U &U _Keypad_RowMasks `ui `ux `i `uc `i `uc ]
-"126
-[; ;keypad4x4.c: 126: }
+"125
+[; ;keypad4x4.c: 125: }
 [e :UE 2433 ]
 }
-"142
-[; ;keypad4x4.c: 142: static char Keypad_Scan(Keypad *keypad)
+"141
+[; ;keypad4x4.c: 141: static char Keypad_Scan(Keypad *keypad)
 [v _Keypad_Scan `(uc ~T0 @X0 1 sf1`*S2431 ]
-"143
-[; ;keypad4x4.c: 143: {
+"142
+[; ;keypad4x4.c: 142: {
 {
 [e :U _Keypad_Scan ]
-"142
-[; ;keypad4x4.c: 142: static char Keypad_Scan(Keypad *keypad)
+"141
+[; ;keypad4x4.c: 141: static char Keypad_Scan(Keypad *keypad)
 [v _keypad `*S2431 ~T0 @X0 1 r1 ]
-"143
-[; ;keypad4x4.c: 143: {
+"142
+[; ;keypad4x4.c: 142: {
 [f ]
-"144
-[; ;keypad4x4.c: 144:     uint8_t row;
+"143
+[; ;keypad4x4.c: 143:     uint8_t row;
 [v _row `uc ~T0 @X0 1 a ]
-"145
-[; ;keypad4x4.c: 145:     uint8_t column;
+"144
+[; ;keypad4x4.c: 144:     uint8_t column;
 [v _column `uc ~T0 @X0 1 a ]
-"150
-[; ;keypad4x4.c: 150:     for(row = 0; row < 4; row++)
+"149
+[; ;keypad4x4.c: 149:     for(row = 0; row < 4; row++)
 {
 [e = _row -> -> 0 `i `uc ]
 [e $ < -> _row `i -> 4 `i 2435  ]
 [e $U 2436  ]
 [e :U 2435 ]
-"151
-[; ;keypad4x4.c: 151:     {
+"150
+[; ;keypad4x4.c: 150:     {
 {
-"155
-[; ;keypad4x4.c: 155:         Keypad_ActivateRow(keypad, row);
+"154
+[; ;keypad4x4.c: 154:         Keypad_ActivateRow(keypad, row);
 [e ( _Keypad_ActivateRow (2 , _keypad _row ]
-"161
-[; ;keypad4x4.c: 161:         _delay((unsigned long)((5)*(32000000UL/4000000.0)));
+"160
+[; ;keypad4x4.c: 160:         _delay((unsigned long)((5)*(32000000UL/4000000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"166
-[; ;keypad4x4.c: 166:         for(column = 0; column < 4; column++)
+"165
+[; ;keypad4x4.c: 165:         for(column = 0; column < 4; column++)
 {
 [e = _column -> -> 0 `i `uc ]
 [e $ < -> _column `i -> 4 `i 2438  ]
 [e $U 2439  ]
 [e :U 2438 ]
-"167
-[; ;keypad4x4.c: 167:         {
+"166
+[; ;keypad4x4.c: 166:         {
 {
-"175
-[; ;keypad4x4.c: 175:             if((*(keypad->port) &
+"174
+[; ;keypad4x4.c: 174:             if((*(keypad->port) &
 [e $ ! == & -> *U . *U _keypad 0 `i -> *U + &U _Keypad_ColumnMasks * -> _column `ux -> -> # *U &U _Keypad_ColumnMasks `ui `ux `i -> 0 `i 2441  ]
-"177
-[; ;keypad4x4.c: 177:             {
+"176
+[; ;keypad4x4.c: 176:             {
 {
-"182
-[; ;keypad4x4.c: 182:                 Keypad_AllRowsHigh(keypad);
+"181
+[; ;keypad4x4.c: 181:                 Keypad_AllRowsHigh(keypad);
 [e ( _Keypad_AllRowsHigh (1 _keypad ]
 "188
 [; ;keypad4x4.c: 188:                 return Keypad_Map[row][column];

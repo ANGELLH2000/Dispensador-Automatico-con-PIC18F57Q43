@@ -115,22 +115,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "127
 [; ;./LCD_I2C.h: 127: I2C_Status LCD_I2C_Clear(void);
 [v _LCD_I2C_Clear `(E17390 ~T0 @X0 0 ef ]
-"85 ./EPROM_DFM.h
-[; ;./EPROM_DFM.h: 85: void EEPROM_WriteByte(uint16_t address, uint8_t data);
-[v _EEPROM_WriteByte `(v ~T0 @X0 0 ef2`us`uc ]
+"49399 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49399:     struct {
+[s S2302 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2302 . TRISE0 TRISE1 TRISE2 ]
+"49398
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49398: typedef union {
+[u S2301 `S2302 1 ]
+[n S2301 . . ]
+"49405
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49405: extern volatile TRISEbits_t TRISEbits __attribute__((address(0x4CA)));
+[v _TRISEbits `VS2301 ~T0 @X0 0 e@1226 ]
+"41793
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41793:     struct {
+[s S1960 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1960 . WPUE0 WPUE1 WPUE2 WPUE3 ]
+"41792
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41792: typedef union {
+[u S1959 `S1960 1 ]
+[n S1959 . . ]
+"41800
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41800: extern volatile WPUEbits_t WPUEbits __attribute__((address(0x421)));
+[v _WPUEbits `VS1959 ~T0 @X0 0 e@1057 ]
+"41761
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41761:     struct {
+[s S1958 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1958 . ANSELE0 ANSELE1 ANSELE2 ]
+"41760
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41760: typedef union {
+[u S1957 `S1958 1 ]
+[n S1957 . . ]
+"41767
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 41767: extern volatile ANSELEbits_t ANSELEbits __attribute__((address(0x420)));
+[v _ANSELEbits `VS1957 ~T0 @X0 0 e@1056 ]
+"49741
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49741:     struct {
+[s S2314 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2314 . RE0 RE1 RE2 RE3 ]
+"49740
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49740: typedef union {
+[u S2313 `S2314 1 ]
+[n S2313 . . ]
+"49748
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49748: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x4D2)));
+[v _PORTEbits `VS2313 ~T0 @X0 0 e@1234 ]
 "122 ./LCD_I2C.h
 [; ;./LCD_I2C.h: 122: I2C_Status LCD_I2C_SetCursor(
 [v _LCD_I2C_SetCursor `(E17390 ~T0 @X0 0 ef2`uc`uc ]
 "105
 [; ;./LCD_I2C.h: 105: I2C_Status LCD_I2C_WriteString(const char *text);
 [v _LCD_I2C_WriteString `(E17390 ~T0 @X0 0 ef1`*Cuc ]
-"192
-[; ;./LCD_I2C.h: 192: I2C_Status LCD_I2C_WriteInt(int16_t value);
-[v _LCD_I2C_WriteInt `(E17390 ~T0 @X0 0 ef1`s ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
+"85 ./EPROM_DFM.h
+[; ;./EPROM_DFM.h: 85: void EEPROM_WriteByte(uint16_t address, uint8_t data);
+[v _EEPROM_WriteByte `(v ~T0 @X0 0 ef2`us`uc ]
+"192 ./LCD_I2C.h
+[; ;./LCD_I2C.h: 192: I2C_Status LCD_I2C_WriteInt(int16_t value);
+[v _LCD_I2C_WriteInt `(E17390 ~T0 @X0 0 ef1`s ]
 "46 ./CNY70.h
 [; ;./CNY70.h: 46: uint16_t CNY70_Read(CNY70 *sensor);
 [v _CNY70_Read `(us ~T0 @X0 0 ef1`*S2436 ]
@@ -140,6 +184,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "147 ./DS1307.h
 [; ;./DS1307.h: 147: I2C_Status DS1307_ReadDateTime(
 [v _DS1307_ReadDateTime `(E17390 ~T0 @X0 0 ef1`*S2435 ]
+"223 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 223: void Buzzer_WarningSound(Buzzer *buzzer);
+[v _Buzzer_WarningSound `(v ~T0 @X0 0 ef1`*S2433 ]
 "306 ./ws2812b.h
 [; ;./ws2812b.h: 306: void WS2812B_RGB(LED_WS2812B *tira,
 [v _WS2812B_RGB `(v ~T0 @X0 0 ef4`*S2432`uc`uc`uc ]
@@ -164,18 +211,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "171 ./keypad4x4.h
 [; ;./keypad4x4.h: 171: char Keypad_Read(Keypad *keypad);
 [v _Keypad_Read `(uc ~T0 @X0 0 ef1`*S2434 ]
+"207 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 207: void Buzzer_CorrectSound(Buzzer *buzzer);
+[v _Buzzer_CorrectSound `(v ~T0 @X0 0 ef1`*S2433 ]
 "73 funcionesGenerales.c
 [; ;funcionesGenerales.c: 73: static void SubProceso_VerHorarios();
 [v _SubProceso_VerHorarios `(v ~T0 @X0 0 s? ]
+"74
+[; ;funcionesGenerales.c: 74: static void SubProceso_RegistrarPastillas();
+[v _SubProceso_RegistrarPastillas `(v ~T0 @X0 0 s? ]
+"233 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 233: void Buzzer_ErrorSound(Buzzer *buzzer);
+[v _Buzzer_ErrorSound `(v ~T0 @X0 0 ef1`*S2433 ]
 "109 ./EPROM_DFM.h
 [; ;./EPROM_DFM.h: 109: uint8_t EEPROM_ReadByte(uint16_t address);
 [v _EEPROM_ReadByte `(uc ~T0 @X0 0 ef1`us ]
-"75 funcionesGenerales.c
-[; ;funcionesGenerales.c: 75: static void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo);
+"76 funcionesGenerales.c
+[; ;funcionesGenerales.c: 76: static void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo);
 [v _Detallar_Horarios `(v ~T0 @X0 0 sf4`uc`us`us`us ]
+"189 ./Libbuzzer.h
+[; ;./Libbuzzer.h: 189: void Buzzer_ButtonClick(Buzzer *buzzer);
+[v _Buzzer_ButtonClick `(v ~T0 @X0 0 ef1`*S2433 ]
 "161 ./LCD_I2C.h
 [; ;./LCD_I2C.h: 161: I2C_Status LCD_I2C_WriteUInt8(
 [v _LCD_I2C_WriteUInt8 `(E17390 ~T0 @X0 0 ef2`uc`uc ]
+"77 funcionesGenerales.c
+[; ;funcionesGenerales.c: 77: static void Detallar_CantPastillas(uint8_t tecla);
+[v _Detallar_CantPastillas `(v ~T0 @X0 0 sf1`uc ]
+"78
+[; ;funcionesGenerales.c: 78: static void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
+[v _Guardar_CantPastillas `(v ~T0 @X0 0 sf2`uc`uc ]
+"138 ./EPROM_DFM.h
+[; ;./EPROM_DFM.h: 138: void EEPROM_UpdateByte(uint16_t address, uint8_t data);
+[v _EEPROM_UpdateByte `(v ~T0 @X0 0 ef2`us`uc ]
+"182 ./LCD_I2C.h
+[; ;./LCD_I2C.h: 182: I2C_Status LCD_I2C_WriteUInt16(
+[v _LCD_I2C_WriteUInt16 `(E17390 ~T0 @X0 0 ef3`us`uc`uc ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -3139,1353 +3210,2003 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [; ;funcionesGenerales.c: 58: uint8_t dato_memoria;
 [v _dato_memoria `uc ~T0 @X0 1 e ]
-"82
-[; ;funcionesGenerales.c: 82: static void config_motores(void)
+"85
+[; ;funcionesGenerales.c: 85: static void config_motores(void)
 [v _config_motores `(v ~T0 @X0 1 sf ]
-"83
-[; ;funcionesGenerales.c: 83: {
+"86
+[; ;funcionesGenerales.c: 86: {
 {
 [e :U _config_motores ]
 [f ]
-"90
-[; ;funcionesGenerales.c: 90:     Stepper_Init(&motor1, &LATA, &TRISA, &ANSELA, 0);
+"93
+[; ;funcionesGenerales.c: 93:     Stepper_Init(&motor1, &LATA, &TRISA, &ANSELA, 0);
 [e ( _Stepper_Init (4 , , , , &U _motor1 &U _LATA &U _TRISA &U _ANSELA -> -> 0 `i `uc ]
-"91
-[; ;funcionesGenerales.c: 91:     Stepper_Init(&motor2, &LATA, &TRISA, &ANSELA, 1);
+"94
+[; ;funcionesGenerales.c: 94:     Stepper_Init(&motor2, &LATA, &TRISA, &ANSELA, 1);
 [e ( _Stepper_Init (4 , , , , &U _motor2 &U _LATA &U _TRISA &U _ANSELA -> -> 1 `i `uc ]
-"99
-[; ;funcionesGenerales.c: 99:     Stepper_Init(&motor3, &LATB, &TRISB, &ANSELB, 0);
+"102
+[; ;funcionesGenerales.c: 102:     Stepper_Init(&motor3, &LATB, &TRISB, &ANSELB, 0);
 [e ( _Stepper_Init (4 , , , , &U _motor3 &U _LATB &U _TRISB &U _ANSELB -> -> 0 `i `uc ]
-"100
-[; ;funcionesGenerales.c: 100:     Stepper_Init(&motor4, &LATB, &TRISB, &ANSELB, 1);
+"103
+[; ;funcionesGenerales.c: 103:     Stepper_Init(&motor4, &LATB, &TRISB, &ANSELB, 1);
 [e ( _Stepper_Init (4 , , , , &U _motor4 &U _LATB &U _TRISB &U _ANSELB -> -> 1 `i `uc ]
-"101
-[; ;funcionesGenerales.c: 101: }
+"104
+[; ;funcionesGenerales.c: 104: }
 [e :UE 2438 ]
 }
-"107
-[; ;funcionesGenerales.c: 107: static void config_leds(void)
+"110
+[; ;funcionesGenerales.c: 110: static void config_leds(void)
 [v _config_leds `(v ~T0 @X0 1 sf ]
-"108
-[; ;funcionesGenerales.c: 108: {
+"111
+[; ;funcionesGenerales.c: 111: {
 {
 [e :U _config_leds ]
 [f ]
-"113
-[; ;funcionesGenerales.c: 113:     WS2812B_Init(&tira1, 2);
+"116
+[; ;funcionesGenerales.c: 116:     WS2812B_Init(&tira1, 2);
 [e ( _WS2812B_Init (2 , &U _tira1 -> -> 2 `i `uc ]
-"114
-[; ;funcionesGenerales.c: 114: }
+"117
+[; ;funcionesGenerales.c: 117: }
 [e :UE 2439 ]
 }
-"120
-[; ;funcionesGenerales.c: 120: static void config_buzzer(void)
+"123
+[; ;funcionesGenerales.c: 123: static void config_buzzer(void)
 [v _config_buzzer `(v ~T0 @X0 1 sf ]
-"121
-[; ;funcionesGenerales.c: 121: {
+"124
+[; ;funcionesGenerales.c: 124: {
 {
 [e :U _config_buzzer ]
 [f ]
-"127
-[; ;funcionesGenerales.c: 127:     Buzzer_Init(&buzzer1, &LATC, &TRISC, &ANSELC, 0x02);
+"130
+[; ;funcionesGenerales.c: 130:     Buzzer_Init(&buzzer1, &LATC, &TRISC, &ANSELC, 0x02);
 [e ( _Buzzer_Init (4 , , , , &U _buzzer1 &U _LATC &U _TRISC &U _ANSELC -> -> 2 `i `uc ]
-"128
-[; ;funcionesGenerales.c: 128: }
+"131
+[; ;funcionesGenerales.c: 131: }
 [e :UE 2440 ]
 }
-"134
-[; ;funcionesGenerales.c: 134: static void config_keypad(void)
+"137
+[; ;funcionesGenerales.c: 137: static void config_keypad(void)
 [v _config_keypad `(v ~T0 @X0 1 sf ]
-"135
-[; ;funcionesGenerales.c: 135: {
+"138
+[; ;funcionesGenerales.c: 138: {
 {
 [e :U _config_keypad ]
 [f ]
-"142
-[; ;funcionesGenerales.c: 142:     Keypad_Init(&teclado, &PORTD, &LATD, &TRISD, &ANSELD, &WPUD);
+"145
+[; ;funcionesGenerales.c: 145:     Keypad_Init(&teclado, &PORTD, &LATD, &TRISD, &ANSELD, &WPUD);
 [e ( _Keypad_Init (4 , , , , , &U _teclado &U _PORTD &U _LATD &U _TRISD &U _ANSELD &U _WPUD ]
-"143
-[; ;funcionesGenerales.c: 143: }
+"146
+[; ;funcionesGenerales.c: 146: }
 [e :UE 2441 ]
 }
-"149
-[; ;funcionesGenerales.c: 149: static void config_cny70(void)
+"152
+[; ;funcionesGenerales.c: 152: static void config_cny70(void)
 [v _config_cny70 `(v ~T0 @X0 1 sf ]
-"150
-[; ;funcionesGenerales.c: 150: {
+"153
+[; ;funcionesGenerales.c: 153: {
 {
 [e :U _config_cny70 ]
 [f ]
-"155
-[; ;funcionesGenerales.c: 155:     CNY70_ADC_Init_FOSC64();
+"158
+[; ;funcionesGenerales.c: 158:     CNY70_ADC_Init_FOSC64();
 [e ( _CNY70_ADC_Init_FOSC64 ..  ]
-"163
-[; ;funcionesGenerales.c: 163:     CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
-[e ( _CNY70_Init (4 , , , , &U _sensor1 &U _TRISF &U _ANSELF -> -> 1 `i `uc -> -> 40 `i `uc ]
-"164
-[; ;funcionesGenerales.c: 164:     CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
-[e ( _CNY70_Init (4 , , , , &U _sensor2 &U _TRISF &U _ANSELF -> -> 2 `i `uc -> -> 41 `i `uc ]
-"165
-[; ;funcionesGenerales.c: 165:     CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
-[e ( _CNY70_Init (4 , , , , &U _sensor3 &U _TRISF &U _ANSELF -> -> 4 `i `uc -> -> 42 `i `uc ]
 "166
-[; ;funcionesGenerales.c: 166:     CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
-[e ( _CNY70_Init (4 , , , , &U _sensor4 &U _TRISF &U _ANSELF -> -> 8 `i `uc -> -> 43 `i `uc ]
+[; ;funcionesGenerales.c: 166:     CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
+[e ( _CNY70_Init (4 , , , , &U _sensor1 &U _TRISF &U _ANSELF -> -> 1 `i `uc -> -> 40 `i `uc ]
 "167
-[; ;funcionesGenerales.c: 167: }
+[; ;funcionesGenerales.c: 167:     CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
+[e ( _CNY70_Init (4 , , , , &U _sensor2 &U _TRISF &U _ANSELF -> -> 2 `i `uc -> -> 41 `i `uc ]
+"168
+[; ;funcionesGenerales.c: 168:     CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
+[e ( _CNY70_Init (4 , , , , &U _sensor3 &U _TRISF &U _ANSELF -> -> 4 `i `uc -> -> 42 `i `uc ]
+"169
+[; ;funcionesGenerales.c: 169:     CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
+[e ( _CNY70_Init (4 , , , , &U _sensor4 &U _TRISF &U _ANSELF -> -> 8 `i `uc -> -> 43 `i `uc ]
+"170
+[; ;funcionesGenerales.c: 170: }
 [e :UE 2442 ]
 }
-"173
-[; ;funcionesGenerales.c: 173: static void config_ir(void)
+"176
+[; ;funcionesGenerales.c: 176: static void config_ir(void)
 [v _config_ir `(v ~T0 @X0 1 sf ]
-"174
-[; ;funcionesGenerales.c: 174: {
+"177
+[; ;funcionesGenerales.c: 177: {
 {
 [e :U _config_ir ]
 [f ]
-"180
-[; ;funcionesGenerales.c: 180:     IRSensor_Init(&sensor_ir, &PORTF, &TRISF, &ANSELF, 0x10);
+"183
+[; ;funcionesGenerales.c: 183:     IRSensor_Init(&sensor_ir, &PORTF, &TRISF, &ANSELF, 0x10);
 [e ( _IRSensor_Init (4 , , , , &U _sensor_ir &U _PORTF &U _TRISF &U _ANSELF -> -> 16 `i `uc ]
-"181
-[; ;funcionesGenerales.c: 181: }
+"184
+[; ;funcionesGenerales.c: 184: }
 [e :UE 2443 ]
 }
-"187
-[; ;funcionesGenerales.c: 187: static void config_i2c_lcd(void)
+"190
+[; ;funcionesGenerales.c: 190: static void config_i2c_lcd(void)
 [v _config_i2c_lcd `(v ~T0 @X0 1 sf ]
-"188
-[; ;funcionesGenerales.c: 188: {
+"191
+[; ;funcionesGenerales.c: 191: {
 {
 [e :U _config_i2c_lcd ]
 [f ]
-"194
-[; ;funcionesGenerales.c: 194:     I2C1_Init();
+"197
+[; ;funcionesGenerales.c: 197:     I2C1_Init();
 [e ( _I2C1_Init ..  ]
-"200
-[; ;funcionesGenerales.c: 200:     estado = LCD_I2C_SetAddress(0x27u);
+"203
+[; ;funcionesGenerales.c: 203:     estado = LCD_I2C_SetAddress(0x27u);
 [e = _estado ( _LCD_I2C_SetAddress (1 -> -> 39 `ui `uc ]
-"205
-[; ;funcionesGenerales.c: 205:     LCD_I2C_Init();
+"208
+[; ;funcionesGenerales.c: 208:     LCD_I2C_Init();
 [e ( _LCD_I2C_Init ..  ]
-"210
-[; ;funcionesGenerales.c: 210:     LCD_I2C_Clear();
+"213
+[; ;funcionesGenerales.c: 213:     LCD_I2C_Clear();
 [e ( _LCD_I2C_Clear ..  ]
-"211
-[; ;funcionesGenerales.c: 211: }
+"214
+[; ;funcionesGenerales.c: 214: }
 [e :UE 2444 ]
 }
-"217
-[; ;funcionesGenerales.c: 217: void config_perifericos(void)
+"220
+[; ;funcionesGenerales.c: 220: void config_perifericos(void)
 [v _config_perifericos `(v ~T0 @X0 1 ef ]
-"218
-[; ;funcionesGenerales.c: 218: {
+"221
+[; ;funcionesGenerales.c: 221: {
 {
 [e :U _config_perifericos ]
 [f ]
-"223
-[; ;funcionesGenerales.c: 223:     config_motores();
-[e ( _config_motores ..  ]
-"224
-[; ;funcionesGenerales.c: 224:     config_leds();
-[e ( _config_leds ..  ]
-"225
-[; ;funcionesGenerales.c: 225:     config_buzzer();
-[e ( _config_buzzer ..  ]
 "226
-[; ;funcionesGenerales.c: 226:     config_keypad();
-[e ( _config_keypad ..  ]
+[; ;funcionesGenerales.c: 226:     TRISEbits.TRISE0=1;
+[e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
 "227
-[; ;funcionesGenerales.c: 227:     config_cny70();
-[e ( _config_cny70 ..  ]
+[; ;funcionesGenerales.c: 227:     WPUEbits.WPUE0=1;
+[e = . . _WPUEbits 0 0 -> -> 1 `i `uc ]
 "228
-[; ;funcionesGenerales.c: 228:     config_ir();
-[e ( _config_ir ..  ]
-"229
-[; ;funcionesGenerales.c: 229:     config_i2c_lcd();
-[e ( _config_i2c_lcd ..  ]
+[; ;funcionesGenerales.c: 228:     ANSELEbits.ANSELE0=0;
+[e = . . _ANSELEbits 0 0 -> -> 0 `i `uc ]
+"230
+[; ;funcionesGenerales.c: 230:     config_motores();
+[e ( _config_motores ..  ]
 "231
-[; ;funcionesGenerales.c: 231:     EEPROM_WriteByte(1, 2);
-[e ( _EEPROM_WriteByte (2 , -> -> 1 `i `us -> -> 2 `i `uc ]
+[; ;funcionesGenerales.c: 231:     config_leds();
+[e ( _config_leds ..  ]
 "232
-[; ;funcionesGenerales.c: 232:     EEPROM_WriteByte(20, 8);
-[e ( _EEPROM_WriteByte (2 , -> -> 20 `i `us -> -> 8 `i `uc ]
+[; ;funcionesGenerales.c: 232:     config_buzzer();
+[e ( _config_buzzer ..  ]
 "233
-[; ;funcionesGenerales.c: 233:     EEPROM_WriteByte(21, 9);
-[e ( _EEPROM_WriteByte (2 , -> -> 21 `i `us -> -> 9 `i `uc ]
+[; ;funcionesGenerales.c: 233:     config_keypad();
+[e ( _config_keypad ..  ]
 "234
-[; ;funcionesGenerales.c: 234:     EEPROM_WriteByte(22, 1);
-[e ( _EEPROM_WriteByte (2 , -> -> 22 `i `us -> -> 1 `i `uc ]
+[; ;funcionesGenerales.c: 234:     config_cny70();
+[e ( _config_cny70 ..  ]
+"235
+[; ;funcionesGenerales.c: 235:     config_ir();
+[e ( _config_ir ..  ]
 "236
-[; ;funcionesGenerales.c: 236:     EEPROM_WriteByte(25, 9);
-[e ( _EEPROM_WriteByte (2 , -> -> 25 `i `us -> -> 9 `i `uc ]
-"237
-[; ;funcionesGenerales.c: 237:     EEPROM_WriteByte(26, 21);
-[e ( _EEPROM_WriteByte (2 , -> -> 26 `i `us -> -> 21 `i `uc ]
+[; ;funcionesGenerales.c: 236:     config_i2c_lcd();
+[e ( _config_i2c_lcd ..  ]
 "238
-[; ;funcionesGenerales.c: 238:     EEPROM_WriteByte(27, 3);
-[e ( _EEPROM_WriteByte (2 , -> -> 27 `i `us -> -> 3 `i `uc ]
+[; ;funcionesGenerales.c: 238:     if(PORTEbits.RE0 == 0){
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2446  ]
+{
 "239
-[; ;funcionesGenerales.c: 239: }
+[; ;funcionesGenerales.c: 239:         LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"240
+[; ;funcionesGenerales.c: 240:         LCD_I2C_WriteString("Presionado");
+[e ( _LCD_I2C_WriteString (1 :s 1C ]
+"241
+[; ;funcionesGenerales.c: 241:         _delay((unsigned long)((500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"242
+[; ;funcionesGenerales.c: 242:         EEPROM_WriteByte(1, 2);
+[e ( _EEPROM_WriteByte (2 , -> -> 1 `i `us -> -> 2 `i `uc ]
+"243
+[; ;funcionesGenerales.c: 243:         EEPROM_WriteByte(2, 1);
+[e ( _EEPROM_WriteByte (2 , -> -> 2 `i `us -> -> 1 `i `uc ]
+"244
+[; ;funcionesGenerales.c: 244:         EEPROM_WriteByte(10, 1);
+[e ( _EEPROM_WriteByte (2 , -> -> 10 `i `us -> -> 1 `i `uc ]
+"245
+[; ;funcionesGenerales.c: 245:         EEPROM_WriteByte(11, 0);
+[e ( _EEPROM_WriteByte (2 , -> -> 11 `i `us -> -> 0 `i `uc ]
+"246
+[; ;funcionesGenerales.c: 246:         EEPROM_WriteByte(12, 0);
+[e ( _EEPROM_WriteByte (2 , -> -> 12 `i `us -> -> 0 `i `uc ]
+"247
+[; ;funcionesGenerales.c: 247:         EEPROM_WriteByte(13, 0);
+[e ( _EEPROM_WriteByte (2 , -> -> 13 `i `us -> -> 0 `i `uc ]
+"248
+[; ;funcionesGenerales.c: 248:         EEPROM_WriteByte(20, 8);
+[e ( _EEPROM_WriteByte (2 , -> -> 20 `i `us -> -> 8 `i `uc ]
+"249
+[; ;funcionesGenerales.c: 249:         EEPROM_WriteByte(21, 9);
+[e ( _EEPROM_WriteByte (2 , -> -> 21 `i `us -> -> 9 `i `uc ]
+"250
+[; ;funcionesGenerales.c: 250:         EEPROM_WriteByte(22, 1);
+[e ( _EEPROM_WriteByte (2 , -> -> 22 `i `us -> -> 1 `i `uc ]
+"252
+[; ;funcionesGenerales.c: 252:         EEPROM_WriteByte(25, 9);
+[e ( _EEPROM_WriteByte (2 , -> -> 25 `i `us -> -> 9 `i `uc ]
+"253
+[; ;funcionesGenerales.c: 253:         EEPROM_WriteByte(26, 21);
+[e ( _EEPROM_WriteByte (2 , -> -> 26 `i `us -> -> 21 `i `uc ]
+"254
+[; ;funcionesGenerales.c: 254:         EEPROM_WriteByte(27, 3);
+[e ( _EEPROM_WriteByte (2 , -> -> 27 `i `us -> -> 3 `i `uc ]
+"255
+[; ;funcionesGenerales.c: 255:     }else{
+}
+[e $U 2447  ]
+[e :U 2446 ]
+{
+"256
+[; ;funcionesGenerales.c: 256:         LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"257
+[; ;funcionesGenerales.c: 257:         LCD_I2C_WriteString("NO Presionado");
+[e ( _LCD_I2C_WriteString (1 :s 2C ]
+"258
+[; ;funcionesGenerales.c: 258:         _delay((unsigned long)((500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"259
+[; ;funcionesGenerales.c: 259:     }
+}
+[e :U 2447 ]
+"262
+[; ;funcionesGenerales.c: 262: }
 [e :UE 2445 ]
 }
-"245
-[; ;funcionesGenerales.c: 245: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
+"268
+[; ;funcionesGenerales.c: 268: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
 [v _mostrar_valor_cny70 `(v ~T0 @X0 1 sf2`uc`us ]
-"246
-[; ;funcionesGenerales.c: 246: {
+"269
+[; ;funcionesGenerales.c: 269: {
 {
 [e :U _mostrar_valor_cny70 ]
-"245
-[; ;funcionesGenerales.c: 245: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
+"268
+[; ;funcionesGenerales.c: 268: static void mostrar_valor_cny70(uint8_t numero_sensor, uint16_t valor)
 [v _numero_sensor `uc ~T0 @X0 1 r1 ]
 [v _valor `us ~T0 @X0 1 r2 ]
-"246
-[; ;funcionesGenerales.c: 246: {
+"269
+[; ;funcionesGenerales.c: 269: {
 [f ]
-"250
-[; ;funcionesGenerales.c: 250:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"252
-[; ;funcionesGenerales.c: 252:     LCD_I2C_SetCursor(1, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"253
-[; ;funcionesGenerales.c: 253:     LCD_I2C_WriteString("Sensor ");
-[e ( _LCD_I2C_WriteString (1 :s 1C ]
-"254
-[; ;funcionesGenerales.c: 254:     LCD_I2C_WriteInt(numero_sensor);
-[e ( _LCD_I2C_WriteInt (1 -> _numero_sensor `s ]
-"259
-[; ;funcionesGenerales.c: 259:     LCD_I2C_SetCursor(2, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"260
-[; ;funcionesGenerales.c: 260:     LCD_I2C_WriteString("Valor: ");
-[e ( _LCD_I2C_WriteString (1 :s 2C ]
-"261
-[; ;funcionesGenerales.c: 261:     LCD_I2C_WriteInt(valor);
-[e ( _LCD_I2C_WriteInt (1 -> _valor `s ]
-"266
-[; ;funcionesGenerales.c: 266:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"267
-[; ;funcionesGenerales.c: 267: }
-[e :UE 2446 ]
-}
 "273
-[; ;funcionesGenerales.c: 273: void lectura_cny70(void)
+[; ;funcionesGenerales.c: 273:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"275
+[; ;funcionesGenerales.c: 275:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"276
+[; ;funcionesGenerales.c: 276:     LCD_I2C_WriteString("Sensor ");
+[e ( _LCD_I2C_WriteString (1 :s 3C ]
+"277
+[; ;funcionesGenerales.c: 277:     LCD_I2C_WriteInt(numero_sensor);
+[e ( _LCD_I2C_WriteInt (1 -> _numero_sensor `s ]
+"282
+[; ;funcionesGenerales.c: 282:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"283
+[; ;funcionesGenerales.c: 283:     LCD_I2C_WriteString("Valor: ");
+[e ( _LCD_I2C_WriteString (1 :s 4C ]
+"284
+[; ;funcionesGenerales.c: 284:     LCD_I2C_WriteInt(valor);
+[e ( _LCD_I2C_WriteInt (1 -> _valor `s ]
+"289
+[; ;funcionesGenerales.c: 289:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"290
+[; ;funcionesGenerales.c: 290: }
+[e :UE 2448 ]
+}
+"296
+[; ;funcionesGenerales.c: 296: void lectura_cny70(void)
 [v _lectura_cny70 `(v ~T0 @X0 1 ef ]
-"274
-[; ;funcionesGenerales.c: 274: {
+"297
+[; ;funcionesGenerales.c: 297: {
 {
 [e :U _lectura_cny70 ]
 [f ]
-"279
-[; ;funcionesGenerales.c: 279:     valor_S1 = CNY70_Read(&sensor1);
+"302
+[; ;funcionesGenerales.c: 302:     valor_S1 = CNY70_Read(&sensor1);
 [e = _valor_S1 ( _CNY70_Read (1 &U _sensor1 ]
-"280
-[; ;funcionesGenerales.c: 280:     mostrar_valor_cny70(1, valor_S1);
+"303
+[; ;funcionesGenerales.c: 303:     mostrar_valor_cny70(1, valor_S1);
 [e ( _mostrar_valor_cny70 (2 , -> -> 1 `i `uc _valor_S1 ]
-"285
-[; ;funcionesGenerales.c: 285:     valor_S2 = CNY70_Read(&sensor2);
+"308
+[; ;funcionesGenerales.c: 308:     valor_S2 = CNY70_Read(&sensor2);
 [e = _valor_S2 ( _CNY70_Read (1 &U _sensor2 ]
-"286
-[; ;funcionesGenerales.c: 286:     mostrar_valor_cny70(2, valor_S2);
+"309
+[; ;funcionesGenerales.c: 309:     mostrar_valor_cny70(2, valor_S2);
 [e ( _mostrar_valor_cny70 (2 , -> -> 2 `i `uc _valor_S2 ]
-"291
-[; ;funcionesGenerales.c: 291:     valor_S3 = CNY70_Read(&sensor3);
+"314
+[; ;funcionesGenerales.c: 314:     valor_S3 = CNY70_Read(&sensor3);
 [e = _valor_S3 ( _CNY70_Read (1 &U _sensor3 ]
-"292
-[; ;funcionesGenerales.c: 292:     mostrar_valor_cny70(3, valor_S3);
+"315
+[; ;funcionesGenerales.c: 315:     mostrar_valor_cny70(3, valor_S3);
 [e ( _mostrar_valor_cny70 (2 , -> -> 3 `i `uc _valor_S3 ]
-"297
-[; ;funcionesGenerales.c: 297:     valor_S4 = CNY70_Read(&sensor4);
+"320
+[; ;funcionesGenerales.c: 320:     valor_S4 = CNY70_Read(&sensor4);
 [e = _valor_S4 ( _CNY70_Read (1 &U _sensor4 ]
-"298
-[; ;funcionesGenerales.c: 298:     mostrar_valor_cny70(4, valor_S4);
+"321
+[; ;funcionesGenerales.c: 321:     mostrar_valor_cny70(4, valor_S4);
 [e ( _mostrar_valor_cny70 (2 , -> -> 4 `i `uc _valor_S4 ]
-"299
-[; ;funcionesGenerales.c: 299: }
-[e :UE 2447 ]
+"322
+[; ;funcionesGenerales.c: 322: }
+[e :UE 2449 ]
 }
-"305
-[; ;funcionesGenerales.c: 305: void verificar_condiciones_iniciales(void)
+"328
+[; ;funcionesGenerales.c: 328: void verificar_condiciones_iniciales(void)
 [v _verificar_condiciones_iniciales `(v ~T0 @X0 1 ef ]
-"306
-[; ;funcionesGenerales.c: 306: {
+"329
+[; ;funcionesGenerales.c: 329: {
 {
 [e :U _verificar_condiciones_iniciales ]
 [f ]
-"311
-[; ;funcionesGenerales.c: 311:     if (estado != I2C_OK)
-[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2449  ]
-"312
-[; ;funcionesGenerales.c: 312:     {
-{
-"313
-[; ;funcionesGenerales.c: 313:         sistem_error("I2C sin conexion");
-[e ( _sistem_error (1 :s 3C ]
-"314
-[; ;funcionesGenerales.c: 314:     }
-}
-[e :U 2449 ]
-"319
-[; ;funcionesGenerales.c: 319:     estado = DS1307_ReadDateTime(&fechaHora);
-[e = _estado ( _DS1307_ReadDateTime (1 &U _fechaHora ]
-"324
-[; ;funcionesGenerales.c: 324:     if (estado != I2C_OK)
-[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2450  ]
-"325
-[; ;funcionesGenerales.c: 325:     {
-{
-"326
-[; ;funcionesGenerales.c: 326:         sistem_error("RTC sin conexion");
-[e ( _sistem_error (1 :s 4C ]
-"327
-[; ;funcionesGenerales.c: 327:     }
-}
-[e :U 2450 ]
-"333
-[; ;funcionesGenerales.c: 333:     if (fechaHora.clock_running == 0)
-[e $ ! == -> . _fechaHora 7 `i -> 0 `i 2451  ]
 "334
-[; ;funcionesGenerales.c: 334:     {
-{
+[; ;funcionesGenerales.c: 334:     if (estado != I2C_OK)
+[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2451  ]
 "335
-[; ;funcionesGenerales.c: 335:         sistem_error("RTC detenido");
-[e ( _sistem_error (1 :s 5C ]
+[; ;funcionesGenerales.c: 335:     {
+{
 "336
-[; ;funcionesGenerales.c: 336:     }
+[; ;funcionesGenerales.c: 336:         sistem_error("I2C sin conexion");
+[e ( _sistem_error (1 :s 5C ]
+"337
+[; ;funcionesGenerales.c: 337:     }
 }
 [e :U 2451 ]
 "342
-[; ;funcionesGenerales.c: 342:     if (fechaHora.data_valid == 0)
-[e $ ! == -> . _fechaHora 10 `i -> 0 `i 2452  ]
-"343
-[; ;funcionesGenerales.c: 343:     {
+[; ;funcionesGenerales.c: 342:     estado = DS1307_ReadDateTime(&fechaHora);
+[e = _estado ( _DS1307_ReadDateTime (1 &U _fechaHora ]
+"347
+[; ;funcionesGenerales.c: 347:     if (estado != I2C_OK)
+[e $ ! != -> _estado `ui -> . `E17390 0 `ui 2452  ]
+"348
+[; ;funcionesGenerales.c: 348:     {
 {
-"344
-[; ;funcionesGenerales.c: 344:         sistem_error("Fecha invalida");
+"349
+[; ;funcionesGenerales.c: 349:         sistem_error("RTC sin conexion");
 [e ( _sistem_error (1 :s 6C ]
-"345
-[; ;funcionesGenerales.c: 345:     }
+"350
+[; ;funcionesGenerales.c: 350:         Buzzer_WarningSound(&buzzer1);
+[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
+"351
+[; ;funcionesGenerales.c: 351:     }
 }
 [e :U 2452 ]
 "357
-[; ;funcionesGenerales.c: 357:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"359
-[; ;funcionesGenerales.c: 359:     LCD_I2C_SetCursor(1, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"360
-[; ;funcionesGenerales.c: 360:     LCD_I2C_WriteString("Sistema correcto");
-[e ( _LCD_I2C_WriteString (1 :s 7C ]
-"365
-[; ;funcionesGenerales.c: 365:     WS2812B_RGB(&tira1, 0, 200, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 200 `i `uc -> -> 0 `i `uc ]
-"367
-[; ;funcionesGenerales.c: 367:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"369
-[; ;funcionesGenerales.c: 369:     SubProceso_MenuLCD();
-[e ( _SubProceso_MenuLCD ..  ]
-"370
-[; ;funcionesGenerales.c: 370:     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"371
-[; ;funcionesGenerales.c: 371:     while(1){
-[e :U 2454 ]
+[; ;funcionesGenerales.c: 357:     if (fechaHora.clock_running == 0)
+[e $ ! == -> . _fechaHora 7 `i -> 0 `i 2453  ]
+"358
+[; ;funcionesGenerales.c: 358:     {
 {
-"372
-[; ;funcionesGenerales.c: 372:         lectura_cny70();
-[e ( _lectura_cny70 ..  ]
-"373
-[; ;funcionesGenerales.c: 373:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"374
-[; ;funcionesGenerales.c: 374:     }
+"359
+[; ;funcionesGenerales.c: 359:         sistem_error("RTC detenido");
+[e ( _sistem_error (1 :s 7C ]
+"360
+[; ;funcionesGenerales.c: 360:         Buzzer_WarningSound(&buzzer1);
+[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
+"361
+[; ;funcionesGenerales.c: 361:     }
 }
 [e :U 2453 ]
-[e $U 2454  ]
-[e :U 2455 ]
-"376
-[; ;funcionesGenerales.c: 376: }
-[e :UE 2448 ]
+"367
+[; ;funcionesGenerales.c: 367:     if (fechaHora.data_valid == 0)
+[e $ ! == -> . _fechaHora 10 `i -> 0 `i 2454  ]
+"368
+[; ;funcionesGenerales.c: 368:     {
+{
+"369
+[; ;funcionesGenerales.c: 369:         sistem_error("Fecha invalida");
+[e ( _sistem_error (1 :s 8C ]
+"370
+[; ;funcionesGenerales.c: 370:         Buzzer_WarningSound(&buzzer1);
+[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
+"371
+[; ;funcionesGenerales.c: 371:     }
 }
-"382
-[; ;funcionesGenerales.c: 382: void sistem_error(const char *mensaje)
-[v _sistem_error `(v ~T0 @X0 1 ef1`*Cuc ]
+[e :U 2454 ]
 "383
-[; ;funcionesGenerales.c: 383: {
+[; ;funcionesGenerales.c: 383:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"385
+[; ;funcionesGenerales.c: 385:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"386
+[; ;funcionesGenerales.c: 386:     LCD_I2C_WriteString("Sistema correcto");
+[e ( _LCD_I2C_WriteString (1 :s 9C ]
+"391
+[; ;funcionesGenerales.c: 391:     WS2812B_RGB(&tira1, 0, 200, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 0 `i `uc -> -> 200 `i `uc -> -> 0 `i `uc ]
+"393
+[; ;funcionesGenerales.c: 393:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"395
+[; ;funcionesGenerales.c: 395:     SubProceso_MenuLCD();
+[e ( _SubProceso_MenuLCD ..  ]
+"396
+[; ;funcionesGenerales.c: 396:     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"397
+[; ;funcionesGenerales.c: 397:     while(1){
+[e :U 2456 ]
+{
+"398
+[; ;funcionesGenerales.c: 398:         lectura_cny70();
+[e ( _lectura_cny70 ..  ]
+"399
+[; ;funcionesGenerales.c: 399:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"400
+[; ;funcionesGenerales.c: 400:     }
+}
+[e :U 2455 ]
+[e $U 2456  ]
+[e :U 2457 ]
+"402
+[; ;funcionesGenerales.c: 402: }
+[e :UE 2450 ]
+}
+"408
+[; ;funcionesGenerales.c: 408: void sistem_error(const char *mensaje)
+[v _sistem_error `(v ~T0 @X0 1 ef1`*Cuc ]
+"409
+[; ;funcionesGenerales.c: 409: {
 {
 [e :U _sistem_error ]
-"382
-[; ;funcionesGenerales.c: 382: void sistem_error(const char *mensaje)
-[v _mensaje `*Cuc ~T0 @X0 1 r1 ]
-"383
-[; ;funcionesGenerales.c: 383: {
-[f ]
-"387
-[; ;funcionesGenerales.c: 387:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"389
-[; ;funcionesGenerales.c: 389:     LCD_I2C_SetCursor(1, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"390
-[; ;funcionesGenerales.c: 390:     LCD_I2C_WriteString("Error en sistema");
-[e ( _LCD_I2C_WriteString (1 :s 8C ]
-"392
-[; ;funcionesGenerales.c: 392:     LCD_I2C_SetCursor(2, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"393
-[; ;funcionesGenerales.c: 393:     LCD_I2C_WriteString(mensaje);
-[e ( _LCD_I2C_WriteString (1 _mensaje ]
-"398
-[; ;funcionesGenerales.c: 398:     WS2812B_RGB(&tira1, 200, 0, 0);
-[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 200 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"404
-[; ;funcionesGenerales.c: 404:     while (1)
-[e :U 2458 ]
-"405
-[; ;funcionesGenerales.c: 405:     {
-{
-"406
-[; ;funcionesGenerales.c: 406:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"407
-[; ;funcionesGenerales.c: 407:     }
-}
-[e :U 2457 ]
-[e $U 2458  ]
-[e :U 2459 ]
 "408
-[; ;funcionesGenerales.c: 408: }
-[e :UE 2456 ]
-}
+[; ;funcionesGenerales.c: 408: void sistem_error(const char *mensaje)
+[v _mensaje `*Cuc ~T0 @X0 1 r1 ]
+"409
+[; ;funcionesGenerales.c: 409: {
+[f ]
+"413
+[; ;funcionesGenerales.c: 413:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"415
+[; ;funcionesGenerales.c: 415:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"416
+[; ;funcionesGenerales.c: 416:     LCD_I2C_WriteString("Error en sistema");
+[e ( _LCD_I2C_WriteString (1 :s 10C ]
 "418
-[; ;funcionesGenerales.c: 418: void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
-[v _MostrarAnimacionCarga `(v ~T0 @X0 1 ef2`uc`uc ]
+[; ;funcionesGenerales.c: 418:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "419
-[; ;funcionesGenerales.c: 419: {
+[; ;funcionesGenerales.c: 419:     LCD_I2C_WriteString(mensaje);
+[e ( _LCD_I2C_WriteString (1 _mensaje ]
+"424
+[; ;funcionesGenerales.c: 424:     WS2812B_RGB(&tira1, 200, 0, 0);
+[e ( _WS2812B_RGB (4 , , , &U _tira1 -> -> 200 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"430
+[; ;funcionesGenerales.c: 430:     while (1)
+[e :U 2460 ]
+"431
+[; ;funcionesGenerales.c: 431:     {
+{
+"432
+[; ;funcionesGenerales.c: 432:         _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"433
+[; ;funcionesGenerales.c: 433:     }
+}
+[e :U 2459 ]
+[e $U 2460  ]
+[e :U 2461 ]
+"434
+[; ;funcionesGenerales.c: 434: }
+[e :UE 2458 ]
+}
+"444
+[; ;funcionesGenerales.c: 444: void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
+[v _MostrarAnimacionCarga `(v ~T0 @X0 1 ef2`uc`uc ]
+"445
+[; ;funcionesGenerales.c: 445: {
 {
 [e :U _MostrarAnimacionCarga ]
-"418
-[; ;funcionesGenerales.c: 418: void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
+"444
+[; ;funcionesGenerales.c: 444: void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
 [v _fila `uc ~T0 @X0 1 r1 ]
 [v _columna `uc ~T0 @X0 1 r2 ]
-"419
-[; ;funcionesGenerales.c: 419: {
+"445
+[; ;funcionesGenerales.c: 445: {
 [f ]
-"420
-[; ;funcionesGenerales.c: 420:     LCD_I2C_CreateSolidPixel(0);
+"446
+[; ;funcionesGenerales.c: 446:     LCD_I2C_CreateSolidPixel(0);
 [e ( _LCD_I2C_CreateSolidPixel (1 -> -> 0 `i `uc ]
-"421
-[; ;funcionesGenerales.c: 421:     LCD_I2C_SetCursor(fila, columna);
+"447
+[; ;funcionesGenerales.c: 447:     LCD_I2C_SetCursor(fila, columna);
 [e ( _LCD_I2C_SetCursor (2 , _fila _columna ]
-"423
-[; ;funcionesGenerales.c: 423:     for (unsigned char index = 0u; index < 4u; index++)
+"449
+[; ;funcionesGenerales.c: 449:     for (unsigned char index = 0u; index < 4u; index++)
 {
 [v _index `uc ~T0 @X0 1 a ]
 [e = _index -> -> 0 `ui `uc ]
-[e $ < -> _index `ui -> 4 `ui 2461  ]
-[e $U 2462  ]
-[e :U 2461 ]
-"424
-[; ;funcionesGenerales.c: 424:     {
+[e $ < -> _index `ui -> 4 `ui 2463  ]
+[e $U 2464  ]
+[e :U 2463 ]
+"450
+[; ;funcionesGenerales.c: 450:     {
 {
-"425
-[; ;funcionesGenerales.c: 425:         LCD_I2C_WriteChar((char)0u);
+"451
+[; ;funcionesGenerales.c: 451:         LCD_I2C_WriteChar((char)0u);
 [e ( _LCD_I2C_WriteChar (1 -> -> 0 `ui `uc ]
-"426
-[; ;funcionesGenerales.c: 426:         _delay((unsigned long)((300)*(32000000UL/4000.0)));
+"452
+[; ;funcionesGenerales.c: 452:         _delay((unsigned long)((300)*(32000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"427
-[; ;funcionesGenerales.c: 427:     }
+"453
+[; ;funcionesGenerales.c: 453:     }
 }
 [e ++ _index -> -> 1 `i `uc ]
-[e $ < -> _index `ui -> 4 `ui 2461  ]
-[e :U 2462 ]
+[e $ < -> _index `ui -> 4 `ui 2463  ]
+[e :U 2464 ]
 }
-"428
-[; ;funcionesGenerales.c: 428: }
-[e :UE 2460 ]
+"454
+[; ;funcionesGenerales.c: 454: }
+[e :UE 2462 ]
 }
-"443
-[; ;funcionesGenerales.c: 443: void SubProceso_ResetSistema(void)
+"469
+[; ;funcionesGenerales.c: 469: void SubProceso_ResetSistema(void)
 [v _SubProceso_ResetSistema `(v ~T0 @X0 1 ef ]
-"444
-[; ;funcionesGenerales.c: 444: {
+"470
+[; ;funcionesGenerales.c: 470: {
 {
 [e :U _SubProceso_ResetSistema ]
 [f ]
-"448
-[; ;funcionesGenerales.c: 448:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"450
-[; ;funcionesGenerales.c: 450:     LCD_I2C_SetCursor(1, 4);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 4 `i `uc ]
-"451
-[; ;funcionesGenerales.c: 451:     LCD_I2C_WriteString("Reiniciando");
-[e ( _LCD_I2C_WriteString (1 :s 9C ]
-"453
-[; ;funcionesGenerales.c: 453:     LCD_I2C_SetCursor(2, 6);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
-"454
-[; ;funcionesGenerales.c: 454:     LCD_I2C_WriteString("Sistema");
-[e ( _LCD_I2C_WriteString (1 :s 10C ]
-"455
-[; ;funcionesGenerales.c: 455:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"460
-[; ;funcionesGenerales.c: 460:     LCD_I2C_SetCursor(3, 4);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
-"461
-[; ;funcionesGenerales.c: 461:     LCD_I2C_WriteString("Apagando Buzzer");
-[e ( _LCD_I2C_WriteString (1 :s 11C ]
-"463
-[; ;funcionesGenerales.c: 463:     Buzzer_Off(&buzzer1);
-[e ( _Buzzer_Off (1 &U _buzzer1 ]
-"465
-[; ;funcionesGenerales.c: 465:     MostrarAnimacionCarga(4, 2);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
-"467
-[; ;funcionesGenerales.c: 467:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"468
-[; ;funcionesGenerales.c: 468:     LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
 "474
-[; ;funcionesGenerales.c: 474:     LCD_I2C_SetCursor(3, 4);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
-"475
-[; ;funcionesGenerales.c: 475:     LCD_I2C_WriteString("Apagando LEDs");
-[e ( _LCD_I2C_WriteString (1 :s 12C ]
+[; ;funcionesGenerales.c: 474:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"476
+[; ;funcionesGenerales.c: 476:     LCD_I2C_SetCursor(1, 4);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 4 `i `uc ]
 "477
-[; ;funcionesGenerales.c: 477:     WS2812B_Clear(&tira1);
-[e ( _WS2812B_Clear (1 &U _tira1 ]
+[; ;funcionesGenerales.c: 477:     LCD_I2C_WriteString("Reiniciando");
+[e ( _LCD_I2C_WriteString (1 :s 11C ]
 "479
-[; ;funcionesGenerales.c: 479:     MostrarAnimacionCarga(4, 6);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 6 `i `uc ]
+[; ;funcionesGenerales.c: 479:     LCD_I2C_SetCursor(2, 6);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"480
+[; ;funcionesGenerales.c: 480:     LCD_I2C_WriteString("Sistema");
+[e ( _LCD_I2C_WriteString (1 :s 12C ]
 "481
-[; ;funcionesGenerales.c: 481:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"482
-[; ;funcionesGenerales.c: 482:     LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"488
-[; ;funcionesGenerales.c: 488:     LCD_I2C_SetCursor(3, 1);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-"489
-[; ;funcionesGenerales.c: 489:     LCD_I2C_WriteString("Limpiando Variables");
-[e ( _LCD_I2C_WriteString (1 :s 13C ]
-"499
-[; ;funcionesGenerales.c: 499:     MostrarAnimacionCarga(4, 10);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 10 `i `uc ]
-"501
-[; ;funcionesGenerales.c: 501:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"502
-[; ;funcionesGenerales.c: 502:     LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"508
-[; ;funcionesGenerales.c: 508:     LCD_I2C_SetCursor(3, 5);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
-"509
-[; ;funcionesGenerales.c: 509:     LCD_I2C_WriteString("Reseteando");
-[e ( _LCD_I2C_WriteString (1 :s 14C ]
-"511
-[; ;funcionesGenerales.c: 511:     MostrarAnimacionCarga(4, 14);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 14 `i `uc ]
-"516
-[; ;funcionesGenerales.c: 516:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"518
-[; ;funcionesGenerales.c: 518:     LCD_I2C_SetCursor(2, 5);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-"519
-[; ;funcionesGenerales.c: 519:     LCD_I2C_WriteString("Sistema");
-[e ( _LCD_I2C_WriteString (1 :s 15C ]
-"521
-[; ;funcionesGenerales.c: 521:     LCD_I2C_SetCursor(3, 4);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
-"522
-[; ;funcionesGenerales.c: 522:     LCD_I2C_WriteString("Reiniciado");
-[e ( _LCD_I2C_WriteString (1 :s 16C ]
-"524
-[; ;funcionesGenerales.c: 524:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[; ;funcionesGenerales.c: 481:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"486
+[; ;funcionesGenerales.c: 486:     LCD_I2C_SetCursor(3, 4);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+"487
+[; ;funcionesGenerales.c: 487:     LCD_I2C_WriteString("Apagando Buzzer");
+[e ( _LCD_I2C_WriteString (1 :s 13C ]
+"489
+[; ;funcionesGenerales.c: 489:     Buzzer_Off(&buzzer1);
+[e ( _Buzzer_Off (1 &U _buzzer1 ]
+"491
+[; ;funcionesGenerales.c: 491:     MostrarAnimacionCarga(4, 2);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
+"493
+[; ;funcionesGenerales.c: 493:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"494
+[; ;funcionesGenerales.c: 494:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"500
+[; ;funcionesGenerales.c: 500:     LCD_I2C_SetCursor(3, 4);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+"501
+[; ;funcionesGenerales.c: 501:     LCD_I2C_WriteString("Apagando LEDs");
+[e ( _LCD_I2C_WriteString (1 :s 14C ]
+"503
+[; ;funcionesGenerales.c: 503:     WS2812B_Clear(&tira1);
+[e ( _WS2812B_Clear (1 &U _tira1 ]
+"505
+[; ;funcionesGenerales.c: 505:     MostrarAnimacionCarga(4, 6);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 6 `i `uc ]
+"507
+[; ;funcionesGenerales.c: 507:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"508
+[; ;funcionesGenerales.c: 508:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"514
+[; ;funcionesGenerales.c: 514:     LCD_I2C_SetCursor(3, 1);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+"515
+[; ;funcionesGenerales.c: 515:     LCD_I2C_WriteString("Limpiando Variables");
+[e ( _LCD_I2C_WriteString (1 :s 15C ]
 "525
-[; ;funcionesGenerales.c: 525:     LCD_I2C_Clear();
+[; ;funcionesGenerales.c: 525:     MostrarAnimacionCarga(4, 10);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 10 `i `uc ]
+"527
+[; ;funcionesGenerales.c: 527:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"528
+[; ;funcionesGenerales.c: 528:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"534
+[; ;funcionesGenerales.c: 534:     LCD_I2C_SetCursor(3, 5);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
+"535
+[; ;funcionesGenerales.c: 535:     LCD_I2C_WriteString("Reseteando");
+[e ( _LCD_I2C_WriteString (1 :s 16C ]
+"537
+[; ;funcionesGenerales.c: 537:     MostrarAnimacionCarga(4, 14);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 14 `i `uc ]
+"542
+[; ;funcionesGenerales.c: 542:     LCD_I2C_Clear();
 [e ( _LCD_I2C_Clear ..  ]
-"526
-[; ;funcionesGenerales.c: 526: }
-[e :UE 2464 ]
-}
-"543
-[; ;funcionesGenerales.c: 543: void SubProceso_MenuLCD(void)
-[v _SubProceso_MenuLCD `(v ~T0 @X0 1 ef ]
 "544
-[; ;funcionesGenerales.c: 544: {
+[; ;funcionesGenerales.c: 544:     LCD_I2C_SetCursor(2, 5);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+"545
+[; ;funcionesGenerales.c: 545:     LCD_I2C_WriteString("Sistema");
+[e ( _LCD_I2C_WriteString (1 :s 17C ]
+"547
+[; ;funcionesGenerales.c: 547:     LCD_I2C_SetCursor(3, 4);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+"548
+[; ;funcionesGenerales.c: 548:     LCD_I2C_WriteString("Reiniciado");
+[e ( _LCD_I2C_WriteString (1 :s 18C ]
+"550
+[; ;funcionesGenerales.c: 550:     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"551
+[; ;funcionesGenerales.c: 551:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"552
+[; ;funcionesGenerales.c: 552: }
+[e :UE 2466 ]
+}
+"569
+[; ;funcionesGenerales.c: 569: void SubProceso_MenuLCD(void)
+[v _SubProceso_MenuLCD `(v ~T0 @X0 1 ef ]
+"570
+[; ;funcionesGenerales.c: 570: {
 {
 [e :U _SubProceso_MenuLCD ]
 [f ]
-"546
-[; ;funcionesGenerales.c: 546:     tecla = '\0';
+"572
+[; ;funcionesGenerales.c: 572:     tecla = '\0';
 [e = _tecla -> -> 0 `ui `uc ]
-"549
-[; ;funcionesGenerales.c: 549:     while (tecla == '\0')
-[e $U 2466  ]
-[e :U 2467 ]
-"550
-[; ;funcionesGenerales.c: 550:     {
-{
-"554
-[; ;funcionesGenerales.c: 554:         LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"556
-[; ;funcionesGenerales.c: 556:         LCD_I2C_SetCursor(1, 5);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-"557
-[; ;funcionesGenerales.c: 557:         LCD_I2C_WriteString("Seleccionar");
-[e ( _LCD_I2C_WriteString (1 :s 17C ]
-"559
-[; ;funcionesGenerales.c: 559:         LCD_I2C_SetCursor(2, 3);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
-"560
-[; ;funcionesGenerales.c: 560:         LCD_I2C_WriteString("Opcion Deseada");
-[e ( _LCD_I2C_WriteString (1 :s 18C ]
-"562
-[; ;funcionesGenerales.c: 562:         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"568
-[; ;funcionesGenerales.c: 568:         LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"570
-[; ;funcionesGenerales.c: 570:         LCD_I2C_SetCursor(1, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"571
-[; ;funcionesGenerales.c: 571:         LCD_I2C_WriteString("1.Agr.Hor  2.Mod.Hor");
-[e ( _LCD_I2C_WriteString (1 :s 19C ]
-"573
-[; ;funcionesGenerales.c: 573:         LCD_I2C_SetCursor(2, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"574
-[; ;funcionesGenerales.c: 574:         LCD_I2C_WriteString("3.Ver horarios");
-[e ( _LCD_I2C_WriteString (1 :s 20C ]
+"575
+[; ;funcionesGenerales.c: 575:     while (tecla == '\0')
+[e $U 2468  ]
+[e :U 2469 ]
 "576
-[; ;funcionesGenerales.c: 576:         LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"577
-[; ;funcionesGenerales.c: 577:         LCD_I2C_WriteString("4.Reg. pastillas");
-[e ( _LCD_I2C_WriteString (1 :s 21C ]
-"579
-[; ;funcionesGenerales.c: 579:         LCD_I2C_SetCursor(4, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+[; ;funcionesGenerales.c: 576:     {
+{
 "580
-[; ;funcionesGenerales.c: 580:         LCD_I2C_WriteString("*.Reset sistema");
-[e ( _LCD_I2C_WriteString (1 :s 22C ]
+[; ;funcionesGenerales.c: 580:         LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"582
+[; ;funcionesGenerales.c: 582:         LCD_I2C_SetCursor(1, 5);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+"583
+[; ;funcionesGenerales.c: 583:         LCD_I2C_WriteString("Seleccionar");
+[e ( _LCD_I2C_WriteString (1 :s 19C ]
+"585
+[; ;funcionesGenerales.c: 585:         LCD_I2C_SetCursor(2, 3);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
+"586
+[; ;funcionesGenerales.c: 586:         LCD_I2C_WriteString("Opcion Deseada");
+[e ( _LCD_I2C_WriteString (1 :s 20C ]
 "588
-[; ;funcionesGenerales.c: 588:         for (unsigned int index = 0; index < 500; index++)
+[; ;funcionesGenerales.c: 588:         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"594
+[; ;funcionesGenerales.c: 594:         LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"596
+[; ;funcionesGenerales.c: 596:         LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"597
+[; ;funcionesGenerales.c: 597:         LCD_I2C_WriteString("1.Agr.Hor  2.Mod.Hor");
+[e ( _LCD_I2C_WriteString (1 :s 21C ]
+"599
+[; ;funcionesGenerales.c: 599:         LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"600
+[; ;funcionesGenerales.c: 600:         LCD_I2C_WriteString("3.Ver horarios");
+[e ( _LCD_I2C_WriteString (1 :s 22C ]
+"602
+[; ;funcionesGenerales.c: 602:         LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"603
+[; ;funcionesGenerales.c: 603:         LCD_I2C_WriteString("4.Reg. pastillas");
+[e ( _LCD_I2C_WriteString (1 :s 23C ]
+"605
+[; ;funcionesGenerales.c: 605:         LCD_I2C_SetCursor(4, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"606
+[; ;funcionesGenerales.c: 606:         LCD_I2C_WriteString("*.Reset sistema");
+[e ( _LCD_I2C_WriteString (1 :s 24C ]
+"614
+[; ;funcionesGenerales.c: 614:         for (unsigned int index = 0; index < 500; index++)
 {
 [v _index `ui ~T0 @X0 1 a ]
 [e = _index -> -> 0 `i `ui ]
-[e $ < _index -> -> 500 `i `ui 2469  ]
-[e $U 2470  ]
-[e :U 2469 ]
-"589
-[; ;funcionesGenerales.c: 589:         {
-{
-"590
-[; ;funcionesGenerales.c: 590:             tecla = Keypad_Read(&teclado);
-[e = _tecla ( _Keypad_Read (1 &U _teclado ]
-"592
-[; ;funcionesGenerales.c: 592:             if (tecla != '\0')
-[e $ ! != -> _tecla `ui -> 0 `ui 2472  ]
-"593
-[; ;funcionesGenerales.c: 593:             {
-{
-"594
-[; ;funcionesGenerales.c: 594:                 LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"599
-[; ;funcionesGenerales.c: 599:                 switch (tecla)
-[e $U 2474  ]
-"600
-[; ;funcionesGenerales.c: 600:                 {
-{
-"601
-[; ;funcionesGenerales.c: 601:                     case '1':
-[e :U 2475 ]
-"602
-[; ;funcionesGenerales.c: 602:                         LCD_I2C_SetCursor(1, 7);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"603
-[; ;funcionesGenerales.c: 603:                         LCD_I2C_WriteString("Opcion");
-[e ( _LCD_I2C_WriteString (1 :s 23C ]
-"604
-[; ;funcionesGenerales.c: 604:                         LCD_I2C_SetCursor(2, 2);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
-"605
-[; ;funcionesGenerales.c: 605:                         LCD_I2C_WriteString("Agregar Horario");
-[e ( _LCD_I2C_WriteString (1 :s 24C ]
-"606
-[; ;funcionesGenerales.c: 606:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"607
-[; ;funcionesGenerales.c: 607:                         return;
-[e $UE 2465  ]
-"609
-[; ;funcionesGenerales.c: 609:                     case '2':
-[e :U 2476 ]
-"610
-[; ;funcionesGenerales.c: 610:                         LCD_I2C_SetCursor(1, 7);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"611
-[; ;funcionesGenerales.c: 611:                         LCD_I2C_WriteString("Opcion");
-[e ( _LCD_I2C_WriteString (1 :s 25C ]
-"612
-[; ;funcionesGenerales.c: 612:                         LCD_I2C_SetCursor(2, 1);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"613
-[; ;funcionesGenerales.c: 613:                         LCD_I2C_WriteString("Modificar Horario");
-[e ( _LCD_I2C_WriteString (1 :s 26C ]
-"614
-[; ;funcionesGenerales.c: 614:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[e $ < _index -> -> 500 `i `ui 2471  ]
+[e $U 2472  ]
+[e :U 2471 ]
 "615
-[; ;funcionesGenerales.c: 615:                         return;
-[e $UE 2465  ]
-"617
-[; ;funcionesGenerales.c: 617:                     case '3':
-[e :U 2477 ]
+[; ;funcionesGenerales.c: 615:         {
+{
+"616
+[; ;funcionesGenerales.c: 616:             tecla = Keypad_Read(&teclado);
+[e = _tecla ( _Keypad_Read (1 &U _teclado ]
 "618
-[; ;funcionesGenerales.c: 618:                         LCD_I2C_SetCursor(1, 7);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+[; ;funcionesGenerales.c: 618:             if (tecla != '\0')
+[e $ ! != -> _tecla `ui -> 0 `ui 2474  ]
 "619
-[; ;funcionesGenerales.c: 619:                         LCD_I2C_WriteString("Opcion");
-[e ( _LCD_I2C_WriteString (1 :s 27C ]
+[; ;funcionesGenerales.c: 619:             {
+{
 "620
-[; ;funcionesGenerales.c: 620:                         LCD_I2C_SetCursor(2, 4);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
-"621
-[; ;funcionesGenerales.c: 621:                         LCD_I2C_WriteString("Ver Horarios");
-[e ( _LCD_I2C_WriteString (1 :s 28C ]
-"622
-[; ;funcionesGenerales.c: 622:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"623
-[; ;funcionesGenerales.c: 623:                         SubProceso_VerHorarios();
-[e ( _SubProceso_VerHorarios ..  ]
-"624
-[; ;funcionesGenerales.c: 624:                         return;
-[e $UE 2465  ]
+[; ;funcionesGenerales.c: 620:                 LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"625
+[; ;funcionesGenerales.c: 625:                 switch (tecla)
+[e $U 2476  ]
 "626
-[; ;funcionesGenerales.c: 626:                     case '4':
-[e :U 2478 ]
+[; ;funcionesGenerales.c: 626:                 {
+{
 "627
-[; ;funcionesGenerales.c: 627:                         LCD_I2C_SetCursor(1, 7);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+[; ;funcionesGenerales.c: 627:                     case '1':
+[e :U 2477 ]
 "628
-[; ;funcionesGenerales.c: 628:                         LCD_I2C_WriteString("Opcion");
-[e ( _LCD_I2C_WriteString (1 :s 29C ]
+[; ;funcionesGenerales.c: 628:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
 "629
-[; ;funcionesGenerales.c: 629:                         LCD_I2C_SetCursor(2, 1);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"630
-[; ;funcionesGenerales.c: 630:                         LCD_I2C_WriteString("Registrar Pastilla");
-[e ( _LCD_I2C_WriteString (1 :s 30C ]
-"631
-[; ;funcionesGenerales.c: 631:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"632
-[; ;funcionesGenerales.c: 632:                         return;
-[e $UE 2465  ]
-"634
-[; ;funcionesGenerales.c: 634:                     case '*':
-[e :U 2479 ]
-"635
-[; ;funcionesGenerales.c: 635:                         LCD_I2C_SetCursor(1, 7);
+[; ;funcionesGenerales.c: 629:                         LCD_I2C_SetCursor(1, 7);
 [e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"636
-[; ;funcionesGenerales.c: 636:                         LCD_I2C_WriteString("Opcion");
-[e ( _LCD_I2C_WriteString (1 :s 31C ]
-"637
-[; ;funcionesGenerales.c: 637:                         LCD_I2C_SetCursor(2, 3);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
-"638
-[; ;funcionesGenerales.c: 638:                         LCD_I2C_WriteString("Reset sistema");
-[e ( _LCD_I2C_WriteString (1 :s 32C ]
-"639
-[; ;funcionesGenerales.c: 639:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"640
-[; ;funcionesGenerales.c: 640:                         SubProceso_ResetSistema();
-[e ( _SubProceso_ResetSistema ..  ]
-"641
-[; ;funcionesGenerales.c: 641:                         return;
-[e $UE 2465  ]
-"643
-[; ;funcionesGenerales.c: 643:                     default:
-[e :U 2480 ]
-"646
-[; ;funcionesGenerales.c: 646:                         LCD_I2C_SetCursor(2, 2);
+"630
+[; ;funcionesGenerales.c: 630:                         LCD_I2C_WriteString("Opcion");
+[e ( _LCD_I2C_WriteString (1 :s 25C ]
+"631
+[; ;funcionesGenerales.c: 631:                         LCD_I2C_SetCursor(2, 2);
 [e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"632
+[; ;funcionesGenerales.c: 632:                         LCD_I2C_WriteString("Agregar Horario");
+[e ( _LCD_I2C_WriteString (1 :s 26C ]
+"633
+[; ;funcionesGenerales.c: 633:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"634
+[; ;funcionesGenerales.c: 634:                         return;
+[e $UE 2467  ]
+"636
+[; ;funcionesGenerales.c: 636:                     case '2':
+[e :U 2478 ]
+"637
+[; ;funcionesGenerales.c: 637:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
+"638
+[; ;funcionesGenerales.c: 638:                         LCD_I2C_SetCursor(1, 7);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"639
+[; ;funcionesGenerales.c: 639:                         LCD_I2C_WriteString("Opcion");
+[e ( _LCD_I2C_WriteString (1 :s 27C ]
+"640
+[; ;funcionesGenerales.c: 640:                         LCD_I2C_SetCursor(2, 1);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"641
+[; ;funcionesGenerales.c: 641:                         LCD_I2C_WriteString("Modificar Horario");
+[e ( _LCD_I2C_WriteString (1 :s 28C ]
+"642
+[; ;funcionesGenerales.c: 642:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"643
+[; ;funcionesGenerales.c: 643:                         return;
+[e $UE 2467  ]
+"645
+[; ;funcionesGenerales.c: 645:                     case '3':
+[e :U 2479 ]
+"646
+[; ;funcionesGenerales.c: 646:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
 "647
-[; ;funcionesGenerales.c: 647:                         LCD_I2C_WriteString("Opcion Invalida");
-[e ( _LCD_I2C_WriteString (1 :s 33C ]
+[; ;funcionesGenerales.c: 647:                         LCD_I2C_SetCursor(1, 7);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
 "648
-[; ;funcionesGenerales.c: 648:                         _delay((unsigned long)((500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;funcionesGenerales.c: 648:                         LCD_I2C_WriteString("Opcion");
+[e ( _LCD_I2C_WriteString (1 :s 29C ]
+"649
+[; ;funcionesGenerales.c: 649:                         LCD_I2C_SetCursor(2, 4);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
 "650
-[; ;funcionesGenerales.c: 650:                         tecla = '\0';
-[e = _tecla -> -> 0 `ui `uc ]
+[; ;funcionesGenerales.c: 650:                         LCD_I2C_WriteString("Ver Horarios");
+[e ( _LCD_I2C_WriteString (1 :s 30C ]
 "651
-[; ;funcionesGenerales.c: 651:                         break;
-[e $U 2473  ]
+[; ;funcionesGenerales.c: 651:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "652
-[; ;funcionesGenerales.c: 652:                 }
-}
-[e $U 2473  ]
-[e :U 2474 ]
-[e [\ _tecla , $ -> -> 49 `ui `i 2475
- , $ -> -> 50 `ui `i 2476
- , $ -> -> 51 `ui `i 2477
- , $ -> -> 52 `ui `i 2478
- , $ -> -> 42 `ui `i 2479
- 2480 ]
-[e :U 2473 ]
+[; ;funcionesGenerales.c: 652:                         SubProceso_VerHorarios();
+[e ( _SubProceso_VerHorarios ..  ]
 "653
-[; ;funcionesGenerales.c: 653:             }
-}
-[e :U 2472 ]
+[; ;funcionesGenerales.c: 653:                         break;
+[e $U 2475  ]
+"655
+[; ;funcionesGenerales.c: 655:                     case '4':
+[e :U 2480 ]
 "656
-[; ;funcionesGenerales.c: 656:             _delay((unsigned long)((10)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;funcionesGenerales.c: 656:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
 "657
-[; ;funcionesGenerales.c: 657:         }
+[; ;funcionesGenerales.c: 657:                         LCD_I2C_SetCursor(1, 7);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"658
+[; ;funcionesGenerales.c: 658:                         LCD_I2C_WriteString("Opcion");
+[e ( _LCD_I2C_WriteString (1 :s 31C ]
+"659
+[; ;funcionesGenerales.c: 659:                         LCD_I2C_SetCursor(2, 1);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"660
+[; ;funcionesGenerales.c: 660:                         LCD_I2C_WriteString("Registrar Pastilla");
+[e ( _LCD_I2C_WriteString (1 :s 32C ]
+"661
+[; ;funcionesGenerales.c: 661:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"662
+[; ;funcionesGenerales.c: 662:                         SubProceso_RegistrarPastillas();
+[e ( _SubProceso_RegistrarPastillas ..  ]
+"663
+[; ;funcionesGenerales.c: 663:                         return;
+[e $UE 2467  ]
+"665
+[; ;funcionesGenerales.c: 665:                     case '*':
+[e :U 2481 ]
+"666
+[; ;funcionesGenerales.c: 666:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
+"667
+[; ;funcionesGenerales.c: 667:                         LCD_I2C_SetCursor(1, 7);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"668
+[; ;funcionesGenerales.c: 668:                         LCD_I2C_WriteString("Opcion");
+[e ( _LCD_I2C_WriteString (1 :s 33C ]
+"669
+[; ;funcionesGenerales.c: 669:                         LCD_I2C_SetCursor(2, 3);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
+"670
+[; ;funcionesGenerales.c: 670:                         LCD_I2C_WriteString("Reset sistema");
+[e ( _LCD_I2C_WriteString (1 :s 34C ]
+"671
+[; ;funcionesGenerales.c: 671:                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"672
+[; ;funcionesGenerales.c: 672:                         SubProceso_ResetSistema();
+[e ( _SubProceso_ResetSistema ..  ]
+"673
+[; ;funcionesGenerales.c: 673:                         return;
+[e $UE 2467  ]
+"675
+[; ;funcionesGenerales.c: 675:                     default:
+[e :U 2482 ]
+"678
+[; ;funcionesGenerales.c: 678:                         Buzzer_ErrorSound(&buzzer1);
+[e ( _Buzzer_ErrorSound (1 &U _buzzer1 ]
+"679
+[; ;funcionesGenerales.c: 679:                         LCD_I2C_SetCursor(2, 2);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"680
+[; ;funcionesGenerales.c: 680:                         LCD_I2C_WriteString("Opcion Invalida");
+[e ( _LCD_I2C_WriteString (1 :s 35C ]
+"681
+[; ;funcionesGenerales.c: 681:                         _delay((unsigned long)((500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"683
+[; ;funcionesGenerales.c: 683:                         tecla = '\0';
+[e = _tecla -> -> 0 `ui `uc ]
+"684
+[; ;funcionesGenerales.c: 684:                         break;
+[e $U 2475  ]
+"685
+[; ;funcionesGenerales.c: 685:                 }
+}
+[e $U 2475  ]
+[e :U 2476 ]
+[e [\ _tecla , $ -> -> 49 `ui `i 2477
+ , $ -> -> 50 `ui `i 2478
+ , $ -> -> 51 `ui `i 2479
+ , $ -> -> 52 `ui `i 2480
+ , $ -> -> 42 `ui `i 2481
+ 2482 ]
+[e :U 2475 ]
+"686
+[; ;funcionesGenerales.c: 686:             }
+}
+[e :U 2474 ]
+"689
+[; ;funcionesGenerales.c: 689:             _delay((unsigned long)((10)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"690
+[; ;funcionesGenerales.c: 690:         }
 }
 [e ++ _index -> -> 1 `i `ui ]
-[e $ < _index -> -> 500 `i `ui 2469  ]
-[e :U 2470 ]
+[e $ < _index -> -> 500 `i `ui 2471  ]
+[e :U 2472 ]
 }
-"658
-[; ;funcionesGenerales.c: 658:     }
+"691
+[; ;funcionesGenerales.c: 691:     }
 }
-[e :U 2466 ]
-"549
-[; ;funcionesGenerales.c: 549:     while (tecla == '\0')
-[e $ == -> _tecla `ui -> 0 `ui 2467  ]
 [e :U 2468 ]
-"659
-[; ;funcionesGenerales.c: 659: }
-[e :UE 2465 ]
+"575
+[; ;funcionesGenerales.c: 575:     while (tecla == '\0')
+[e $ == -> _tecla `ui -> 0 `ui 2469  ]
+[e :U 2470 ]
+"692
+[; ;funcionesGenerales.c: 692: }
+[e :UE 2467 ]
 }
-"660
-[; ;funcionesGenerales.c: 660: void SubProceso_VerHorarios(void)
+"693
+[; ;funcionesGenerales.c: 693: void SubProceso_VerHorarios(void)
 [v _SubProceso_VerHorarios `(v ~T0 @X0 1 ef ]
-"661
-[; ;funcionesGenerales.c: 661: {
+"694
+[; ;funcionesGenerales.c: 694: {
 {
 [e :U _SubProceso_VerHorarios ]
 [f ]
-"665
-[; ;funcionesGenerales.c: 665:     LCD_I2C_Clear();
-[e ( _LCD_I2C_Clear ..  ]
-"667
-[; ;funcionesGenerales.c: 667:     LCD_I2C_SetCursor(1, 6);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
-"668
-[; ;funcionesGenerales.c: 668:     LCD_I2C_WriteString("Horarios");
-[e ( _LCD_I2C_WriteString (1 :s 34C ]
-"670
-[; ;funcionesGenerales.c: 670:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"671
-[; ;funcionesGenerales.c: 671:     LCD_I2C_WriteString("Leyendo Memoria");
-[e ( _LCD_I2C_WriteString (1 :s 35C ]
-"673
-[; ;funcionesGenerales.c: 673:     dato_memoria = EEPROM_ReadByte(1);
-[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 1 `i `us ]
-"675
-[; ;funcionesGenerales.c: 675:     MostrarAnimacionCarga(4, 0);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-"677
-[; ;funcionesGenerales.c: 677:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"678
-[; ;funcionesGenerales.c: 678:     LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"680
-[; ;funcionesGenerales.c: 680:     LCD_I2C_SetCursor(3, 2);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
-"681
-[; ;funcionesGenerales.c: 681:     LCD_I2C_WriteString("Extrayendo Datos");
-[e ( _LCD_I2C_WriteString (1 :s 36C ]
-"683
-[; ;funcionesGenerales.c: 683:     MostrarAnimacionCarga(4, 4);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 4 `i `uc ]
-"688
-[; ;funcionesGenerales.c: 688:     if (dato_memoria == 0xFF || dato_memoria > 6)
-[e $ ! || == -> _dato_memoria `i -> 255 `i > -> _dato_memoria `i -> 6 `i 2482  ]
-"689
-[; ;funcionesGenerales.c: 689:     {
-{
-"690
-[; ;funcionesGenerales.c: 690:         MostrarAnimacionCarga(4, 8);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
-"692
-[; ;funcionesGenerales.c: 692:         LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"693
-[; ;funcionesGenerales.c: 693:         LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"695
-[; ;funcionesGenerales.c: 695:         LCD_I2C_SetCursor(3, 2);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
-"696
-[; ;funcionesGenerales.c: 696:         LCD_I2C_WriteString("Datos Corruptos");
-[e ( _LCD_I2C_WriteString (1 :s 37C ]
 "698
-[; ;funcionesGenerales.c: 698:         _delay((unsigned long)((1500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"699
-[; ;funcionesGenerales.c: 699:         return;
-[e $UE 2481  ]
-"700
-[; ;funcionesGenerales.c: 700:     }
-}
-[e :U 2482 ]
-"702
-[; ;funcionesGenerales.c: 702:     if (dato_memoria == 0)
-[e $ ! == -> _dato_memoria `i -> 0 `i 2483  ]
-"703
-[; ;funcionesGenerales.c: 703:     {
-{
-"704
-[; ;funcionesGenerales.c: 704:         MostrarAnimacionCarga(4, 8);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
-"706
-[; ;funcionesGenerales.c: 706:         LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"707
-[; ;funcionesGenerales.c: 707:         LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"709
-[; ;funcionesGenerales.c: 709:         LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"710
-[; ;funcionesGenerales.c: 710:         LCD_I2C_WriteString("Sin Hor. Registrados");
-[e ( _LCD_I2C_WriteString (1 :s 38C ]
-"712
-[; ;funcionesGenerales.c: 712:         _delay((unsigned long)((1500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"713
-[; ;funcionesGenerales.c: 713:         return;
-[e $UE 2481  ]
-"714
-[; ;funcionesGenerales.c: 714:     }
-}
-[e :U 2483 ]
-"719
-[; ;funcionesGenerales.c: 719:     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"720
-[; ;funcionesGenerales.c: 720:     LCD_I2C_ClearFile();
-[e ( _LCD_I2C_ClearFile ..  ]
-"722
-[; ;funcionesGenerales.c: 722:     LCD_I2C_SetCursor(3, 2);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
-"723
-[; ;funcionesGenerales.c: 723:     LCD_I2C_WriteString("Preparando Datos");
-[e ( _LCD_I2C_WriteString (1 :s 39C ]
-"725
-[; ;funcionesGenerales.c: 725:     MostrarAnimacionCarga(4, 8);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
-"726
-[; ;funcionesGenerales.c: 726:     MostrarAnimacionCarga(4, 12);
-[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
-"731
-[; ;funcionesGenerales.c: 731:     uint8_t cant_horarios = dato_memoria;
-[v _cant_horarios `uc ~T0 @X0 1 a ]
-[e = _cant_horarios _dato_memoria ]
-"732
-[; ;funcionesGenerales.c: 732:     uint8_t pagina = 0;
-[v _pagina `uc ~T0 @X0 1 a ]
-[e = _pagina -> -> 0 `i `uc ]
-"733
-[; ;funcionesGenerales.c: 733:     uint8_t paginas_max = (cant_horarios - 1) / 3;
-[v _paginas_max `uc ~T0 @X0 1 a ]
-[e = _paginas_max -> / - -> _cant_horarios `i -> 1 `i -> 3 `i `uc ]
-"738
-[; ;funcionesGenerales.c: 738:     while (1)
-[e :U 2485 ]
-"739
-[; ;funcionesGenerales.c: 739:     {
-{
-"740
-[; ;funcionesGenerales.c: 740:         LCD_I2C_Clear();
+[; ;funcionesGenerales.c: 698:     LCD_I2C_Clear();
 [e ( _LCD_I2C_Clear ..  ]
+"700
+[; ;funcionesGenerales.c: 700:     LCD_I2C_SetCursor(1, 6);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+"701
+[; ;funcionesGenerales.c: 701:     LCD_I2C_WriteString("Horarios");
+[e ( _LCD_I2C_WriteString (1 :s 36C ]
+"703
+[; ;funcionesGenerales.c: 703:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"704
+[; ;funcionesGenerales.c: 704:     LCD_I2C_WriteString("Leyendo Memoria");
+[e ( _LCD_I2C_WriteString (1 :s 37C ]
+"706
+[; ;funcionesGenerales.c: 706:     dato_memoria = EEPROM_ReadByte(1);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 1 `i `us ]
+"708
+[; ;funcionesGenerales.c: 708:     MostrarAnimacionCarga(4, 0);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"710
+[; ;funcionesGenerales.c: 710:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"711
+[; ;funcionesGenerales.c: 711:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"713
+[; ;funcionesGenerales.c: 713:     LCD_I2C_SetCursor(3, 2);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"714
+[; ;funcionesGenerales.c: 714:     LCD_I2C_WriteString("Extrayendo Datos");
+[e ( _LCD_I2C_WriteString (1 :s 38C ]
+"716
+[; ;funcionesGenerales.c: 716:     MostrarAnimacionCarga(4, 4);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 4 `i `uc ]
+"721
+[; ;funcionesGenerales.c: 721:     if (dato_memoria == 0xFF || dato_memoria > 6)
+[e $ ! || == -> _dato_memoria `i -> 255 `i > -> _dato_memoria `i -> 6 `i 2484  ]
+"722
+[; ;funcionesGenerales.c: 722:     {
+{
+"723
+[; ;funcionesGenerales.c: 723:         MostrarAnimacionCarga(4, 8);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
+"725
+[; ;funcionesGenerales.c: 725:         LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"726
+[; ;funcionesGenerales.c: 726:         LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"728
+[; ;funcionesGenerales.c: 728:         LCD_I2C_SetCursor(3, 2);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"729
+[; ;funcionesGenerales.c: 729:         LCD_I2C_WriteString("Datos Corruptos");
+[e ( _LCD_I2C_WriteString (1 :s 39C ]
+"731
+[; ;funcionesGenerales.c: 731:         _delay((unsigned long)((1500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"732
+[; ;funcionesGenerales.c: 732:         return;
+[e $UE 2483  ]
+"733
+[; ;funcionesGenerales.c: 733:     }
+}
+[e :U 2484 ]
+"735
+[; ;funcionesGenerales.c: 735:     if (dato_memoria == 0)
+[e $ ! == -> _dato_memoria `i -> 0 `i 2485  ]
+"736
+[; ;funcionesGenerales.c: 736:     {
+{
+"737
+[; ;funcionesGenerales.c: 737:         MostrarAnimacionCarga(4, 8);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
+"739
+[; ;funcionesGenerales.c: 739:         LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"740
+[; ;funcionesGenerales.c: 740:         LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
 "742
-[; ;funcionesGenerales.c: 742:         LCD_I2C_SetCursor(1, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;funcionesGenerales.c: 742:         LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
 "743
-[; ;funcionesGenerales.c: 743:         LCD_I2C_WriteString("--- MIS HORARIOS ---");
+[; ;funcionesGenerales.c: 743:         LCD_I2C_WriteString("Sin Hor. Registrados");
 [e ( _LCD_I2C_WriteString (1 :s 40C ]
 "745
-[; ;funcionesGenerales.c: 745:         switch (pagina)
-[e $U 2488  ]
+[; ;funcionesGenerales.c: 745:         _delay((unsigned long)((1500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "746
-[; ;funcionesGenerales.c: 746:         {
-{
+[; ;funcionesGenerales.c: 746:         return;
+[e $UE 2483  ]
 "747
-[; ;funcionesGenerales.c: 747:             case 0:
-[e :U 2489 ]
-"749
-[; ;funcionesGenerales.c: 749:                 if (cant_horarios >= 1)
-[e $ ! >= -> _cant_horarios `i -> 1 `i 2490  ]
-"750
-[; ;funcionesGenerales.c: 750:                 {
-{
-"751
-[; ;funcionesGenerales.c: 751:                     LCD_I2C_SetCursor(2, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+[; ;funcionesGenerales.c: 747:     }
+}
+[e :U 2485 ]
 "752
-[; ;funcionesGenerales.c: 752:                     Detallar_Horarios(1,20,21,22);
-[e ( _Detallar_Horarios (4 , , , -> -> 1 `i `uc -> -> 20 `i `us -> -> 21 `i `us -> -> 22 `i `us ]
-"753
-[; ;funcionesGenerales.c: 753:                 }
-}
-[e :U 2490 ]
-"755
-[; ;funcionesGenerales.c: 755:                 if (cant_horarios >= 2)
-[e $ ! >= -> _cant_horarios `i -> 2 `i 2491  ]
-"756
-[; ;funcionesGenerales.c: 756:                 {
-{
-"757
-[; ;funcionesGenerales.c: 757:                     LCD_I2C_SetCursor(3, 0);
+[; ;funcionesGenerales.c: 752:     LCD_I2C_SetCursor(3, 0);
 [e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"753
+[; ;funcionesGenerales.c: 753:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"755
+[; ;funcionesGenerales.c: 755:     LCD_I2C_SetCursor(3, 2);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"756
+[; ;funcionesGenerales.c: 756:     LCD_I2C_WriteString("Preparando Datos");
+[e ( _LCD_I2C_WriteString (1 :s 41C ]
 "758
-[; ;funcionesGenerales.c: 758:                     Detallar_Horarios(2,25,26,27);
-[e ( _Detallar_Horarios (4 , , , -> -> 2 `i `uc -> -> 25 `i `us -> -> 26 `i `us -> -> 27 `i `us ]
+[; ;funcionesGenerales.c: 758:     MostrarAnimacionCarga(4, 8);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
 "759
-[; ;funcionesGenerales.c: 759:                 }
-}
-[e :U 2491 ]
-"761
-[; ;funcionesGenerales.c: 761:                 if (cant_horarios >= 3)
-[e $ ! >= -> _cant_horarios `i -> 3 `i 2492  ]
-"762
-[; ;funcionesGenerales.c: 762:                 {
-{
-"763
-[; ;funcionesGenerales.c: 763:                     LCD_I2C_SetCursor(4, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+[; ;funcionesGenerales.c: 759:     MostrarAnimacionCarga(4, 12);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
 "764
-[; ;funcionesGenerales.c: 764:                     Detallar_Horarios(3,29,30,31);
-[e ( _Detallar_Horarios (4 , , , -> -> 3 `i `uc -> -> 29 `i `us -> -> 30 `i `us -> -> 31 `i `us ]
+[; ;funcionesGenerales.c: 764:     uint8_t cant_horarios = dato_memoria;
+[v _cant_horarios `uc ~T0 @X0 1 a ]
+[e = _cant_horarios _dato_memoria ]
 "765
-[; ;funcionesGenerales.c: 765:                 }
-}
-[e :U 2492 ]
-"767
-[; ;funcionesGenerales.c: 767:                 break;
-[e $U 2487  ]
-"769
-[; ;funcionesGenerales.c: 769:             case 1:
-[e :U 2493 ]
+[; ;funcionesGenerales.c: 765:     uint8_t pagina = 0;
+[v _pagina `uc ~T0 @X0 1 a ]
+[e = _pagina -> -> 0 `i `uc ]
+"766
+[; ;funcionesGenerales.c: 766:     uint8_t paginas_max = (cant_horarios - 1) / 3;
+[v _paginas_max `uc ~T0 @X0 1 a ]
+[e = _paginas_max -> / - -> _cant_horarios `i -> 1 `i -> 3 `i `uc ]
 "771
-[; ;funcionesGenerales.c: 771:                 if (cant_horarios >= 4)
-[e $ ! >= -> _cant_horarios `i -> 4 `i 2494  ]
+[; ;funcionesGenerales.c: 771:     while (1)
+[e :U 2487 ]
 "772
-[; ;funcionesGenerales.c: 772:                 {
+[; ;funcionesGenerales.c: 772:     {
 {
 "773
-[; ;funcionesGenerales.c: 773:                     LCD_I2C_SetCursor(2, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"774
-[; ;funcionesGenerales.c: 774:                     Detallar_Horarios(4,33,34,35);
-[e ( _Detallar_Horarios (4 , , , -> -> 4 `i `uc -> -> 33 `i `us -> -> 34 `i `us -> -> 35 `i `us ]
+[; ;funcionesGenerales.c: 773:         LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
 "775
-[; ;funcionesGenerales.c: 775:                 }
+[; ;funcionesGenerales.c: 775:         LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"776
+[; ;funcionesGenerales.c: 776:         LCD_I2C_WriteString("--- MIS HORARIOS ---");
+[e ( _LCD_I2C_WriteString (1 :s 42C ]
+"778
+[; ;funcionesGenerales.c: 778:         switch (pagina)
+[e $U 2490  ]
+"779
+[; ;funcionesGenerales.c: 779:         {
+{
+"780
+[; ;funcionesGenerales.c: 780:             case 0:
+[e :U 2491 ]
+"782
+[; ;funcionesGenerales.c: 782:                 if (cant_horarios >= 1)
+[e $ ! >= -> _cant_horarios `i -> 1 `i 2492  ]
+"783
+[; ;funcionesGenerales.c: 783:                 {
+{
+"784
+[; ;funcionesGenerales.c: 784:                     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"785
+[; ;funcionesGenerales.c: 785:                     Detallar_Horarios(1,20,21,22);
+[e ( _Detallar_Horarios (4 , , , -> -> 1 `i `uc -> -> 20 `i `us -> -> 21 `i `us -> -> 22 `i `us ]
+"786
+[; ;funcionesGenerales.c: 786:                 }
+}
+[e :U 2492 ]
+"788
+[; ;funcionesGenerales.c: 788:                 if (cant_horarios >= 2)
+[e $ ! >= -> _cant_horarios `i -> 2 `i 2493  ]
+"789
+[; ;funcionesGenerales.c: 789:                 {
+{
+"790
+[; ;funcionesGenerales.c: 790:                     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"791
+[; ;funcionesGenerales.c: 791:                     Detallar_Horarios(2,25,26,27);
+[e ( _Detallar_Horarios (4 , , , -> -> 2 `i `uc -> -> 25 `i `us -> -> 26 `i `us -> -> 27 `i `us ]
+"792
+[; ;funcionesGenerales.c: 792:                 }
+}
+[e :U 2493 ]
+"794
+[; ;funcionesGenerales.c: 794:                 if (cant_horarios >= 3)
+[e $ ! >= -> _cant_horarios `i -> 3 `i 2494  ]
+"795
+[; ;funcionesGenerales.c: 795:                 {
+{
+"796
+[; ;funcionesGenerales.c: 796:                     LCD_I2C_SetCursor(4, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"797
+[; ;funcionesGenerales.c: 797:                     Detallar_Horarios(3,29,30,31);
+[e ( _Detallar_Horarios (4 , , , -> -> 3 `i `uc -> -> 29 `i `us -> -> 30 `i `us -> -> 31 `i `us ]
+"798
+[; ;funcionesGenerales.c: 798:                 }
 }
 [e :U 2494 ]
-"777
-[; ;funcionesGenerales.c: 777:                 if (cant_horarios >= 5)
-[e $ ! >= -> _cant_horarios `i -> 5 `i 2495  ]
-"778
-[; ;funcionesGenerales.c: 778:                 {
-{
-"779
-[; ;funcionesGenerales.c: 779:                     LCD_I2C_SetCursor(3, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"780
-[; ;funcionesGenerales.c: 780:                     Detallar_Horarios(5,37,38,39);
-[e ( _Detallar_Horarios (4 , , , -> -> 5 `i `uc -> -> 37 `i `us -> -> 38 `i `us -> -> 39 `i `us ]
-"781
-[; ;funcionesGenerales.c: 781:                 }
-}
+"800
+[; ;funcionesGenerales.c: 800:                 break;
+[e $U 2489  ]
+"802
+[; ;funcionesGenerales.c: 802:             case 1:
 [e :U 2495 ]
-"783
-[; ;funcionesGenerales.c: 783:                 if (cant_horarios >= 6)
-[e $ ! >= -> _cant_horarios `i -> 6 `i 2496  ]
-"784
-[; ;funcionesGenerales.c: 784:                 {
+"804
+[; ;funcionesGenerales.c: 804:                 if (cant_horarios >= 4)
+[e $ ! >= -> _cant_horarios `i -> 4 `i 2496  ]
+"805
+[; ;funcionesGenerales.c: 805:                 {
 {
-"785
-[; ;funcionesGenerales.c: 785:                     LCD_I2C_SetCursor(4, 0);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-"786
-[; ;funcionesGenerales.c: 786:                     Detallar_Horarios(6,41,42,43);
-[e ( _Detallar_Horarios (4 , , , -> -> 6 `i `uc -> -> 41 `i `us -> -> 42 `i `us -> -> 43 `i `us ]
-"787
-[; ;funcionesGenerales.c: 787:                 }
+"806
+[; ;funcionesGenerales.c: 806:                     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"807
+[; ;funcionesGenerales.c: 807:                     Detallar_Horarios(4,33,34,35);
+[e ( _Detallar_Horarios (4 , , , -> -> 4 `i `uc -> -> 33 `i `us -> -> 34 `i `us -> -> 35 `i `us ]
+"808
+[; ;funcionesGenerales.c: 808:                 }
 }
 [e :U 2496 ]
-"789
-[; ;funcionesGenerales.c: 789:                 break;
-[e $U 2487  ]
-"790
-[; ;funcionesGenerales.c: 790:         }
-}
-[e $U 2487  ]
-[e :U 2488 ]
-[e [\ _pagina , $ -> 0 `i 2489
- , $ -> 1 `i 2493
- 2487 ]
-[e :U 2487 ]
-"795
-[; ;funcionesGenerales.c: 795:         if (pagina > 0)
-[e $ ! > -> _pagina `i -> 0 `i 2497  ]
-"796
-[; ;funcionesGenerales.c: 796:         {
+"810
+[; ;funcionesGenerales.c: 810:                 if (cant_horarios >= 5)
+[e $ ! >= -> _cant_horarios `i -> 5 `i 2497  ]
+"811
+[; ;funcionesGenerales.c: 811:                 {
 {
-"797
-[; ;funcionesGenerales.c: 797:             LCD_I2C_SetCursor(2, 12);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
-"798
-[; ;funcionesGenerales.c: 798:             LCD_I2C_WriteString("[A]Subir");
-[e ( _LCD_I2C_WriteString (1 :s 41C ]
-"799
-[; ;funcionesGenerales.c: 799:         }
+"812
+[; ;funcionesGenerales.c: 812:                     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"813
+[; ;funcionesGenerales.c: 813:                     Detallar_Horarios(5,37,38,39);
+[e ( _Detallar_Horarios (4 , , , -> -> 5 `i `uc -> -> 37 `i `us -> -> 38 `i `us -> -> 39 `i `us ]
+"814
+[; ;funcionesGenerales.c: 814:                 }
 }
 [e :U 2497 ]
-"801
-[; ;funcionesGenerales.c: 801:         if (pagina < paginas_max)
-[e $ ! < -> _pagina `i -> _paginas_max `i 2498  ]
-"802
-[; ;funcionesGenerales.c: 802:         {
+"816
+[; ;funcionesGenerales.c: 816:                 if (cant_horarios >= 6)
+[e $ ! >= -> _cant_horarios `i -> 6 `i 2498  ]
+"817
+[; ;funcionesGenerales.c: 817:                 {
 {
-"803
-[; ;funcionesGenerales.c: 803:             LCD_I2C_SetCursor(4, 12);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
-"804
-[; ;funcionesGenerales.c: 804:             LCD_I2C_WriteString("[B]Bajar");
-[e ( _LCD_I2C_WriteString (1 :s 42C ]
-"805
-[; ;funcionesGenerales.c: 805:         }
+"818
+[; ;funcionesGenerales.c: 818:                     LCD_I2C_SetCursor(4, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"819
+[; ;funcionesGenerales.c: 819:                     Detallar_Horarios(6,41,42,43);
+[e ( _Detallar_Horarios (4 , , , -> -> 6 `i `uc -> -> 41 `i `us -> -> 42 `i `us -> -> 43 `i `us ]
+"820
+[; ;funcionesGenerales.c: 820:                 }
 }
 [e :U 2498 ]
-"806
-[; ;funcionesGenerales.c: 806:         LCD_I2C_SetCursor(3, 12);
-[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
-"807
-[; ;funcionesGenerales.c: 807:         LCD_I2C_WriteString("[*]Salir");
-[e ( _LCD_I2C_WriteString (1 :s 43C ]
-"811
-[; ;funcionesGenerales.c: 811:         tecla = '\0';
-[e = _tecla -> -> 0 `ui `uc ]
-"813
-[; ;funcionesGenerales.c: 813:         while (tecla == '\0')
-[e $U 2499  ]
-[e :U 2500 ]
-"814
-[; ;funcionesGenerales.c: 814:         {
-{
-"815
-[; ;funcionesGenerales.c: 815:             tecla = Keypad_Read(&teclado);
-[e = _tecla ( _Keypad_Read (1 &U _teclado ]
-"816
-[; ;funcionesGenerales.c: 816:             _delay((unsigned long)((20)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"817
-[; ;funcionesGenerales.c: 817:         }
-}
-[e :U 2499 ]
-"813
-[; ;funcionesGenerales.c: 813:         while (tecla == '\0')
-[e $ == -> _tecla `ui -> 0 `ui 2500  ]
-[e :U 2501 ]
-"820
-[; ;funcionesGenerales.c: 820:         while (Keypad_Read(&teclado) != '\0')
-[e $U 2502  ]
-[e :U 2503 ]
-"821
-[; ;funcionesGenerales.c: 821:         {
-{
 "822
-[; ;funcionesGenerales.c: 822:             _delay((unsigned long)((20)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;funcionesGenerales.c: 822:                 break;
+[e $U 2489  ]
 "823
 [; ;funcionesGenerales.c: 823:         }
 }
-[e :U 2502 ]
-"820
-[; ;funcionesGenerales.c: 820:         while (Keypad_Read(&teclado) != '\0')
-[e $ != -> ( _Keypad_Read (1 &U _teclado `ui -> 0 `ui 2503  ]
-[e :U 2504 ]
+[e $U 2489  ]
+[e :U 2490 ]
+[e [\ _pagina , $ -> 0 `i 2491
+ , $ -> 1 `i 2495
+ 2489 ]
+[e :U 2489 ]
 "828
-[; ;funcionesGenerales.c: 828:         switch (tecla)
-[e $U 2506  ]
+[; ;funcionesGenerales.c: 828:         if (pagina > 0)
+[e $ ! > -> _pagina `i -> 0 `i 2499  ]
 "829
 [; ;funcionesGenerales.c: 829:         {
 {
 "830
-[; ;funcionesGenerales.c: 830:             case 'A':
-[e :U 2507 ]
+[; ;funcionesGenerales.c: 830:             LCD_I2C_SetCursor(2, 12);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
+"831
+[; ;funcionesGenerales.c: 831:             LCD_I2C_WriteString("[A]Subir");
+[e ( _LCD_I2C_WriteString (1 :s 43C ]
 "832
-[; ;funcionesGenerales.c: 832:                 if (pagina > 0)
-[e $ ! > -> _pagina `i -> 0 `i 2508  ]
-"833
-[; ;funcionesGenerales.c: 833:                     pagina--;
-[e -- _pagina -> -> 1 `i `uc ]
-[e :U 2508 ]
+[; ;funcionesGenerales.c: 832:         }
+}
+[e :U 2499 ]
+"834
+[; ;funcionesGenerales.c: 834:         if (pagina < paginas_max)
+[e $ ! < -> _pagina `i -> _paginas_max `i 2500  ]
 "835
-[; ;funcionesGenerales.c: 835:                 break;
-[e $U 2505  ]
+[; ;funcionesGenerales.c: 835:         {
+{
+"836
+[; ;funcionesGenerales.c: 836:             LCD_I2C_SetCursor(4, 12);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
 "837
-[; ;funcionesGenerales.c: 837:             case 'B':
-[e :U 2509 ]
+[; ;funcionesGenerales.c: 837:             LCD_I2C_WriteString("[B]Bajar");
+[e ( _LCD_I2C_WriteString (1 :s 44C ]
+"838
+[; ;funcionesGenerales.c: 838:         }
+}
+[e :U 2500 ]
 "839
-[; ;funcionesGenerales.c: 839:                 if (pagina < paginas_max)
-[e $ ! < -> _pagina `i -> _paginas_max `i 2510  ]
+[; ;funcionesGenerales.c: 839:         LCD_I2C_SetCursor(3, 12);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
 "840
-[; ;funcionesGenerales.c: 840:                     pagina++;
-[e ++ _pagina -> -> 1 `i `uc ]
-[e :U 2510 ]
-"842
-[; ;funcionesGenerales.c: 842:                 break;
-[e $U 2505  ]
+[; ;funcionesGenerales.c: 840:         LCD_I2C_WriteString("[*]Salir");
+[e ( _LCD_I2C_WriteString (1 :s 45C ]
 "844
-[; ;funcionesGenerales.c: 844:             case '*':
-[e :U 2511 ]
-"845
-[; ;funcionesGenerales.c: 845:                 SubProceso_MenuLCD();
-[e ( _SubProceso_MenuLCD ..  ]
+[; ;funcionesGenerales.c: 844:         tecla = '\0';
+[e = _tecla -> -> 0 `ui `uc ]
 "846
-[; ;funcionesGenerales.c: 846:                 return;
-[e $UE 2481  ]
+[; ;funcionesGenerales.c: 846:         while (tecla == '\0')
+[e $U 2501  ]
+[e :U 2502 ]
 "847
-[; ;funcionesGenerales.c: 847:         }
-}
-[e $U 2505  ]
-[e :U 2506 ]
-[e [\ _tecla , $ -> -> 65 `ui `i 2507
- , $ -> -> 66 `ui `i 2509
- , $ -> -> 42 `ui `i 2511
- 2505 ]
-[e :U 2505 ]
+[; ;funcionesGenerales.c: 847:         {
+{
 "848
-[; ;funcionesGenerales.c: 848:     }
-}
-[e :U 2484 ]
-[e $U 2485  ]
-[e :U 2486 ]
+[; ;funcionesGenerales.c: 848:             tecla = Keypad_Read(&teclado);
+[e = _tecla ( _Keypad_Read (1 &U _teclado ]
 "849
-[; ;funcionesGenerales.c: 849: }
-[e :UE 2481 ]
-}
+[; ;funcionesGenerales.c: 849:             _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "850
-[; ;funcionesGenerales.c: 850: void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo)
+[; ;funcionesGenerales.c: 850:         }
+}
+[e :U 2501 ]
+"846
+[; ;funcionesGenerales.c: 846:         while (tecla == '\0')
+[e $ == -> _tecla `ui -> 0 `ui 2502  ]
+[e :U 2503 ]
+"855
+[; ;funcionesGenerales.c: 855:         switch (tecla)
+[e $U 2505  ]
+"856
+[; ;funcionesGenerales.c: 856:         {
+{
+"857
+[; ;funcionesGenerales.c: 857:             case 'A':
+[e :U 2506 ]
+"858
+[; ;funcionesGenerales.c: 858:                 Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"859
+[; ;funcionesGenerales.c: 859:                 if (pagina > 0)
+[e $ ! > -> _pagina `i -> 0 `i 2507  ]
+"860
+[; ;funcionesGenerales.c: 860:                     pagina--;
+[e -- _pagina -> -> 1 `i `uc ]
+[e :U 2507 ]
+"862
+[; ;funcionesGenerales.c: 862:                 break;
+[e $U 2504  ]
+"864
+[; ;funcionesGenerales.c: 864:             case 'B':
+[e :U 2508 ]
+"865
+[; ;funcionesGenerales.c: 865:                 Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"866
+[; ;funcionesGenerales.c: 866:                 if (pagina < paginas_max)
+[e $ ! < -> _pagina `i -> _paginas_max `i 2509  ]
+"867
+[; ;funcionesGenerales.c: 867:                     pagina++;
+[e ++ _pagina -> -> 1 `i `uc ]
+[e :U 2509 ]
+"869
+[; ;funcionesGenerales.c: 869:                 break;
+[e $U 2504  ]
+"871
+[; ;funcionesGenerales.c: 871:             case '*':
+[e :U 2510 ]
+"872
+[; ;funcionesGenerales.c: 872:                 Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"873
+[; ;funcionesGenerales.c: 873:                 return;
+[e $UE 2483  ]
+"874
+[; ;funcionesGenerales.c: 874:             default:
+[e :U 2511 ]
+"875
+[; ;funcionesGenerales.c: 875:                 Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"876
+[; ;funcionesGenerales.c: 876:         }
+}
+[e $U 2504  ]
+[e :U 2505 ]
+[e [\ _tecla , $ -> -> 65 `ui `i 2506
+ , $ -> -> 66 `ui `i 2508
+ , $ -> -> 42 `ui `i 2510
+ 2511 ]
+[e :U 2504 ]
+"877
+[; ;funcionesGenerales.c: 877:     }
+}
+[e :U 2486 ]
+[e $U 2487  ]
+[e :U 2488 ]
+"878
+[; ;funcionesGenerales.c: 878: }
+[e :UE 2483 ]
+}
+"879
+[; ;funcionesGenerales.c: 879: void SubProceso_RegistrarPastillas(void)
+[v _SubProceso_RegistrarPastillas `(v ~T0 @X0 1 ef ]
+"880
+[; ;funcionesGenerales.c: 880: {
+{
+[e :U _SubProceso_RegistrarPastillas ]
+[f ]
+"881
+[; ;funcionesGenerales.c: 881:     uint8_t pastillero_selecionado;
+[v _pastillero_selecionado `uc ~T0 @X0 1 a ]
+"882
+[; ;funcionesGenerales.c: 882:     uint8_t cantidad_a_sumar=0;
+[v _cantidad_a_sumar `uc ~T0 @X0 1 a ]
+[e = _cantidad_a_sumar -> -> 0 `i `uc ]
+"884
+[; ;funcionesGenerales.c: 884:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"886
+[; ;funcionesGenerales.c: 886:     LCD_I2C_SetCursor(1, 1);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"887
+[; ;funcionesGenerales.c: 887:     LCD_I2C_WriteString("REG. CANT. PASTILLAS");
+[e ( _LCD_I2C_WriteString (1 :s 46C ]
+"889
+[; ;funcionesGenerales.c: 889:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"890
+[; ;funcionesGenerales.c: 890:     LCD_I2C_WriteString("Leyendo Memoria");
+[e ( _LCD_I2C_WriteString (1 :s 47C ]
+"892
+[; ;funcionesGenerales.c: 892:     dato_memoria = EEPROM_ReadByte(2);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 2 `i `us ]
+"894
+[; ;funcionesGenerales.c: 894:     MostrarAnimacionCarga(4, 0);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"896
+[; ;funcionesGenerales.c: 896:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"897
+[; ;funcionesGenerales.c: 897:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"899
+[; ;funcionesGenerales.c: 899:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"900
+[; ;funcionesGenerales.c: 900:     LCD_I2C_WriteString("Extrayendo Datos");
+[e ( _LCD_I2C_WriteString (1 :s 48C ]
+"902
+[; ;funcionesGenerales.c: 902:     MostrarAnimacionCarga(4, 4);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 4 `i `uc ]
+"907
+[; ;funcionesGenerales.c: 907:     if (dato_memoria == 0xFF )
+[e $ ! == -> _dato_memoria `i -> 255 `i 2513  ]
+"908
+[; ;funcionesGenerales.c: 908:     {
+{
+"909
+[; ;funcionesGenerales.c: 909:         MostrarAnimacionCarga(4, 8);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
+"911
+[; ;funcionesGenerales.c: 911:         LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"912
+[; ;funcionesGenerales.c: 912:         LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"914
+[; ;funcionesGenerales.c: 914:         LCD_I2C_SetCursor(3, 2);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"915
+[; ;funcionesGenerales.c: 915:         LCD_I2C_WriteString("Datos Corruptos");
+[e ( _LCD_I2C_WriteString (1 :s 49C ]
+"917
+[; ;funcionesGenerales.c: 917:         _delay((unsigned long)((1500)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"918
+[; ;funcionesGenerales.c: 918:         return;
+[e $UE 2512  ]
+"919
+[; ;funcionesGenerales.c: 919:     }
+}
+[e :U 2513 ]
+"922
+[; ;funcionesGenerales.c: 922:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"923
+[; ;funcionesGenerales.c: 923:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"924
+[; ;funcionesGenerales.c: 924:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"925
+[; ;funcionesGenerales.c: 925:     LCD_I2C_WriteString("Pastillas disp: ");
+[e ( _LCD_I2C_WriteString (1 :s 50C ]
+"926
+[; ;funcionesGenerales.c: 926:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"927
+[; ;funcionesGenerales.c: 927:     MostrarAnimacionCarga(4, 8);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 8 `i `uc ]
+"929
+[; ;funcionesGenerales.c: 929:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"930
+[; ;funcionesGenerales.c: 930:     LCD_I2C_ClearFile();
+[e ( _LCD_I2C_ClearFile ..  ]
+"931
+[; ;funcionesGenerales.c: 931:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"932
+[; ;funcionesGenerales.c: 932:     LCD_I2C_WriteString("Preparando sistema..");
+[e ( _LCD_I2C_WriteString (1 :s 51C ]
+"933
+[; ;funcionesGenerales.c: 933:     MostrarAnimacionCarga(4, 12);
+[e ( _MostrarAnimacionCarga (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
+"935
+[; ;funcionesGenerales.c: 935:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"937
+[; ;funcionesGenerales.c: 937:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"938
+[; ;funcionesGenerales.c: 938:     LCD_I2C_WriteString(" STOCK PASTILLEROS ");
+[e ( _LCD_I2C_WriteString (1 :s 52C ]
+"939
+[; ;funcionesGenerales.c: 939:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"940
+[; ;funcionesGenerales.c: 940:     LCD_I2C_WriteString("P1:[");
+[e ( _LCD_I2C_WriteString (1 :s 53C ]
+"941
+[; ;funcionesGenerales.c: 941:     dato_memoria = EEPROM_ReadByte(10);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 10 `i `us ]
+"942
+[; ;funcionesGenerales.c: 942:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"943
+[; ;funcionesGenerales.c: 943:     LCD_I2C_WriteString("]      P2:[");
+[e ( _LCD_I2C_WriteString (1 :s 54C ]
+"944
+[; ;funcionesGenerales.c: 944:     dato_memoria = EEPROM_ReadByte(11);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 11 `i `us ]
+"945
+[; ;funcionesGenerales.c: 945:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"946
+[; ;funcionesGenerales.c: 946:     LCD_I2C_WriteString("]");
+[e ( _LCD_I2C_WriteString (1 :s 55C ]
+"947
+[; ;funcionesGenerales.c: 947:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"948
+[; ;funcionesGenerales.c: 948:     LCD_I2C_WriteString("P3:[");
+[e ( _LCD_I2C_WriteString (1 :s 56C ]
+"949
+[; ;funcionesGenerales.c: 949:     dato_memoria = EEPROM_ReadByte(12);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 12 `i `us ]
+"950
+[; ;funcionesGenerales.c: 950:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"951
+[; ;funcionesGenerales.c: 951:     LCD_I2C_WriteString("]      P4:[");
+[e ( _LCD_I2C_WriteString (1 :s 57C ]
+"952
+[; ;funcionesGenerales.c: 952:     dato_memoria = EEPROM_ReadByte(13);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 13 `i `us ]
+"953
+[; ;funcionesGenerales.c: 953:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"954
+[; ;funcionesGenerales.c: 954:     LCD_I2C_WriteString("]");
+[e ( _LCD_I2C_WriteString (1 :s 58C ]
+"955
+[; ;funcionesGenerales.c: 955:     LCD_I2C_SetCursor(4, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"956
+[; ;funcionesGenerales.c: 956:     LCD_I2C_WriteString("Seleccione (1-4):[ ]");
+[e ( _LCD_I2C_WriteString (1 :s 59C ]
+"959
+[; ;funcionesGenerales.c: 959:     while(1)
+[e :U 2515 ]
+"960
+[; ;funcionesGenerales.c: 960:     {
+{
+"962
+[; ;funcionesGenerales.c: 962:         tecla = '\0';
+[e = _tecla -> -> 0 `ui `uc ]
+"963
+[; ;funcionesGenerales.c: 963:         while (tecla == '\0')
+[e $U 2517  ]
+[e :U 2518 ]
+"964
+[; ;funcionesGenerales.c: 964:         {
+{
+"965
+[; ;funcionesGenerales.c: 965:             tecla = Keypad_Read(&teclado);
+[e = _tecla ( _Keypad_Read (1 &U _teclado ]
+"966
+[; ;funcionesGenerales.c: 966:             _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"967
+[; ;funcionesGenerales.c: 967:         }
+}
+[e :U 2517 ]
+"963
+[; ;funcionesGenerales.c: 963:         while (tecla == '\0')
+[e $ == -> _tecla `ui -> 0 `ui 2518  ]
+[e :U 2519 ]
+"972
+[; ;funcionesGenerales.c: 972:         switch (tecla)
+[e $U 2521  ]
+"973
+[; ;funcionesGenerales.c: 973:         {
+{
+"974
+[; ;funcionesGenerales.c: 974:             case '1':
+[e :U 2522 ]
+"975
+[; ;funcionesGenerales.c: 975:             case '2':
+[e :U 2523 ]
+"976
+[; ;funcionesGenerales.c: 976:             case '3':
+[e :U 2524 ]
+"977
+[; ;funcionesGenerales.c: 977:             case '4':
+[e :U 2525 ]
+"978
+[; ;funcionesGenerales.c: 978:                     Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"979
+[; ;funcionesGenerales.c: 979:                     pastillero_selecionado=tecla-'0';
+[e = _pastillero_selecionado -> - -> _tecla `ui -> 48 `ui `uc ]
+"981
+[; ;funcionesGenerales.c: 981:                     LCD_I2C_SetCursor(4, 18);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 18 `i `uc ]
+"982
+[; ;funcionesGenerales.c: 982:                     LCD_I2C_WriteChar(tecla);
+[e ( _LCD_I2C_WriteChar (1 _tecla ]
+"983
+[; ;funcionesGenerales.c: 983:                     _delay((unsigned long)((50)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"984
+[; ;funcionesGenerales.c: 984:                     Detallar_CantPastillas(pastillero_selecionado);
+[e ( _Detallar_CantPastillas (1 _pastillero_selecionado ]
+"985
+[; ;funcionesGenerales.c: 985:                     break;
+[e $U 2520  ]
+"986
+[; ;funcionesGenerales.c: 986:             default:
+[e :U 2526 ]
+"987
+[; ;funcionesGenerales.c: 987:                     Buzzer_WarningSound(&buzzer1);
+[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
+"988
+[; ;funcionesGenerales.c: 988:                     LCD_I2C_SetCursor(4, 18);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 18 `i `uc ]
+"989
+[; ;funcionesGenerales.c: 989:                     LCD_I2C_WriteString("-");
+[e ( _LCD_I2C_WriteString (1 :s 60C ]
+"990
+[; ;funcionesGenerales.c: 990:         }
+}
+[e $U 2520  ]
+[e :U 2521 ]
+[e [\ _tecla , $ -> -> 49 `ui `i 2522
+ , $ -> -> 50 `ui `i 2523
+ , $ -> -> 51 `ui `i 2524
+ , $ -> -> 52 `ui `i 2525
+ 2526 ]
+[e :U 2520 ]
+"992
+[; ;funcionesGenerales.c: 992:         while(1)
+[e :U 2528 ]
+"993
+[; ;funcionesGenerales.c: 993:         {
+{
+"994
+[; ;funcionesGenerales.c: 994:             tecla = '\0';
+[e = _tecla -> -> 0 `ui `uc ]
+"995
+[; ;funcionesGenerales.c: 995:             while (tecla == '\0')
+[e $U 2530  ]
+[e :U 2531 ]
+"996
+[; ;funcionesGenerales.c: 996:             {
+{
+"997
+[; ;funcionesGenerales.c: 997:                 tecla = Keypad_Read(&teclado);
+[e = _tecla ( _Keypad_Read (1 &U _teclado ]
+"998
+[; ;funcionesGenerales.c: 998:                 _delay((unsigned long)((20)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"999
+[; ;funcionesGenerales.c: 999:             }
+}
+[e :U 2530 ]
+"995
+[; ;funcionesGenerales.c: 995:             while (tecla == '\0')
+[e $ == -> _tecla `ui -> 0 `ui 2531  ]
+[e :U 2532 ]
+"1004
+[; ;funcionesGenerales.c: 1004:             switch (tecla)
+[e $U 2534  ]
+"1005
+[; ;funcionesGenerales.c: 1005:             {
+{
+"1006
+[; ;funcionesGenerales.c: 1006:                 case 'A':
+[e :U 2535 ]
+"1007
+[; ;funcionesGenerales.c: 1007:                 case 'B':
+[e :U 2536 ]
+"1008
+[; ;funcionesGenerales.c: 1008:                 case 'C':
+[e :U 2537 ]
+"1009
+[; ;funcionesGenerales.c: 1009:                 case 'D':
+[e :U 2538 ]
+"1010
+[; ;funcionesGenerales.c: 1010:                         Buzzer_WarningSound(&buzzer1);
+[e ( _Buzzer_WarningSound (1 &U _buzzer1 ]
+"1011
+[; ;funcionesGenerales.c: 1011:                         break;
+[e $U 2533  ]
+"1013
+[; ;funcionesGenerales.c: 1013:                 case '*':
+[e :U 2539 ]
+"1014
+[; ;funcionesGenerales.c: 1014:                         Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"1015
+[; ;funcionesGenerales.c: 1015:                         return;
+[e $UE 2512  ]
+"1016
+[; ;funcionesGenerales.c: 1016:                 case '#':
+[e :U 2540 ]
+"1017
+[; ;funcionesGenerales.c: 1017:                         Buzzer_CorrectSound(&buzzer1);
+[e ( _Buzzer_CorrectSound (1 &U _buzzer1 ]
+"1018
+[; ;funcionesGenerales.c: 1018:                         Guardar_CantPastillas(pastillero_selecionado,cantidad_a_sumar);
+[e ( _Guardar_CantPastillas (2 , _pastillero_selecionado _cantidad_a_sumar ]
+"1019
+[; ;funcionesGenerales.c: 1019:                         _delay((unsigned long)((200)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"1020
+[; ;funcionesGenerales.c: 1020:                         return;
+[e $UE 2512  ]
+"1021
+[; ;funcionesGenerales.c: 1021:                 default:
+[e :U 2541 ]
+"1022
+[; ;funcionesGenerales.c: 1022:                         Buzzer_ButtonClick(&buzzer1);
+[e ( _Buzzer_ButtonClick (1 &U _buzzer1 ]
+"1023
+[; ;funcionesGenerales.c: 1023:                         LCD_I2C_SetCursor(3, 18);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 18 `i `uc ]
+"1024
+[; ;funcionesGenerales.c: 1024:                         cantidad_a_sumar=tecla - '0';
+[e = _cantidad_a_sumar -> - -> _tecla `ui -> 48 `ui `uc ]
+"1025
+[; ;funcionesGenerales.c: 1025:                         LCD_I2C_WriteChar(tecla);
+[e ( _LCD_I2C_WriteChar (1 _tecla ]
+"1026
+[; ;funcionesGenerales.c: 1026:                         break;
+[e $U 2533  ]
+"1027
+[; ;funcionesGenerales.c: 1027:             }
+}
+[e $U 2533  ]
+[e :U 2534 ]
+[e [\ _tecla , $ -> -> 65 `ui `i 2535
+ , $ -> -> 66 `ui `i 2536
+ , $ -> -> 67 `ui `i 2537
+ , $ -> -> 68 `ui `i 2538
+ , $ -> -> 42 `ui `i 2539
+ , $ -> -> 35 `ui `i 2540
+ 2541 ]
+[e :U 2533 ]
+"1028
+[; ;funcionesGenerales.c: 1028:         }
+}
+[e :U 2527 ]
+[e $U 2528  ]
+[e :U 2529 ]
+"1030
+[; ;funcionesGenerales.c: 1030:     }
+}
+[e :U 2514 ]
+[e $U 2515  ]
+[e :U 2516 ]
+"1034
+[; ;funcionesGenerales.c: 1034: }
+[e :UE 2512 ]
+}
+"1035
+[; ;funcionesGenerales.c: 1035: void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
+[v _Guardar_CantPastillas `(v ~T0 @X0 1 ef2`uc`uc ]
+"1036
+[; ;funcionesGenerales.c: 1036: {
+{
+[e :U _Guardar_CantPastillas ]
+"1035
+[; ;funcionesGenerales.c: 1035: void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
+[v _pastillero_selecionado `uc ~T0 @X0 1 r1 ]
+[v _cantidad_a_sumar `uc ~T0 @X0 1 r2 ]
+"1036
+[; ;funcionesGenerales.c: 1036: {
+[f ]
+[v F17612 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F17612
+:U ..
+"1037
+[; ;funcionesGenerales.c: 1037:     const uint8_t ubicacion_memoria[] = {10, 11, 12, 13};
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+..
+]
+[v _ubicacion_memoria `Cuc ~T0 @X0 -> 4 `i a ]
+[e = _ubicacion_memoria F17612 ]
+"1038
+[; ;funcionesGenerales.c: 1038:     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> *U + &U _ubicacion_memoria * -> -> - -> _pastillero_selecionado `i -> 1 `i `ui `ux -> -> # *U &U _ubicacion_memoria `ui `ux `us ]
+"1039
+[; ;funcionesGenerales.c: 1039:     EEPROM_UpdateByte(ubicacion_memoria[pastillero_selecionado-1],dato_memoria+cantidad_a_sumar);
+[e ( _EEPROM_UpdateByte (2 , -> *U + &U _ubicacion_memoria * -> -> - -> _pastillero_selecionado `i -> 1 `i `ui `ux -> -> # *U &U _ubicacion_memoria `ui `ux `us -> + -> _dato_memoria `i -> _cantidad_a_sumar `i `uc ]
+"1040
+[; ;funcionesGenerales.c: 1040:     dato_memoria = EEPROM_ReadByte(2);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> -> 2 `i `us ]
+"1041
+[; ;funcionesGenerales.c: 1041:     EEPROM_UpdateByte(2,dato_memoria+ cantidad_a_sumar);
+[e ( _EEPROM_UpdateByte (2 , -> -> 2 `i `us -> + -> _dato_memoria `i -> _cantidad_a_sumar `i `uc ]
+"1042
+[; ;funcionesGenerales.c: 1042:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"1043
+[; ;funcionesGenerales.c: 1043:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"1044
+[; ;funcionesGenerales.c: 1044:     LCD_I2C_WriteString("-- RECARGA EXITOSA--");
+[e ( _LCD_I2C_WriteString (1 :s 61C ]
+"1045
+[; ;funcionesGenerales.c: 1045:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"1046
+[; ;funcionesGenerales.c: 1046:     LCD_I2C_WriteString("PASTILLERO ");
+[e ( _LCD_I2C_WriteString (1 :s 62C ]
+"1047
+[; ;funcionesGenerales.c: 1047:     LCD_I2C_WriteUInt8(pastillero_selecionado,1);
+[e ( _LCD_I2C_WriteUInt8 (2 , _pastillero_selecionado -> -> 1 `i `uc ]
+"1048
+[; ;funcionesGenerales.c: 1048:     LCD_I2C_WriteString("LISTO");
+[e ( _LCD_I2C_WriteString (1 :s 63C ]
+"1049
+[; ;funcionesGenerales.c: 1049:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"1050
+[; ;funcionesGenerales.c: 1050:     LCD_I2C_WriteString("Total actual: [");
+[e ( _LCD_I2C_WriteString (1 :s 64C ]
+"1051
+[; ;funcionesGenerales.c: 1051:     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> *U + &U _ubicacion_memoria * -> -> - -> _pastillero_selecionado `i -> 1 `i `ui `ux -> -> # *U &U _ubicacion_memoria `ui `ux `us ]
+"1052
+[; ;funcionesGenerales.c: 1052:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"1053
+[; ;funcionesGenerales.c: 1053:     LCD_I2C_WriteString("]");
+[e ( _LCD_I2C_WriteString (1 :s 65C ]
+"1054
+[; ;funcionesGenerales.c: 1054: }
+[e :UE 2542 ]
+}
+"1055
+[; ;funcionesGenerales.c: 1055: void Detallar_CantPastillas(uint8_t tecla)
+[v _Detallar_CantPastillas `(v ~T0 @X0 1 ef1`uc ]
+"1056
+[; ;funcionesGenerales.c: 1056: {
+{
+[e :U _Detallar_CantPastillas ]
+"1055
+[; ;funcionesGenerales.c: 1055: void Detallar_CantPastillas(uint8_t tecla)
+[v _tecla `uc ~T0 @X0 1 r1 ]
+"1056
+[; ;funcionesGenerales.c: 1056: {
+[f ]
+[v F17616 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F17616
+:U ..
+"1057
+[; ;funcionesGenerales.c: 1057:     const uint8_t ubicacion_memoria[] = {10, 11, 12, 13};
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+..
+]
+[v _ubicacion_memoria `Cuc ~T0 @X0 -> 4 `i a ]
+[e = _ubicacion_memoria F17616 ]
+"1058
+[; ;funcionesGenerales.c: 1058:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
+"1059
+[; ;funcionesGenerales.c: 1059:     LCD_I2C_SetCursor(1, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"1060
+[; ;funcionesGenerales.c: 1060:     LCD_I2C_WriteString("-- RECARGA PAST. ");
+[e ( _LCD_I2C_WriteString (1 :s 66C ]
+"1061
+[; ;funcionesGenerales.c: 1061:     LCD_I2C_WriteUInt16(tecla,2,0);
+[e ( _LCD_I2C_WriteUInt16 (3 , , -> _tecla `us -> -> 2 `i `uc -> -> 0 `i `uc ]
+"1062
+[; ;funcionesGenerales.c: 1062:     LCD_I2C_WriteString("--");
+[e ( _LCD_I2C_WriteString (1 :s 67C ]
+"1063
+[; ;funcionesGenerales.c: 1063:     LCD_I2C_SetCursor(2, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"1064
+[; ;funcionesGenerales.c: 1064:     LCD_I2C_WriteString("Stock actual   : ");
+[e ( _LCD_I2C_WriteString (1 :s 68C ]
+"1065
+[; ;funcionesGenerales.c: 1065:     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[tecla-1]);
+[e = _dato_memoria ( _EEPROM_ReadByte (1 -> *U + &U _ubicacion_memoria * -> -> - -> _tecla `i -> 1 `i `ui `ux -> -> # *U &U _ubicacion_memoria `ui `ux `us ]
+"1066
+[; ;funcionesGenerales.c: 1066:     LCD_I2C_WriteUInt8(dato_memoria,2);
+[e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
+"1067
+[; ;funcionesGenerales.c: 1067:     LCD_I2C_SetCursor(3, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"1068
+[; ;funcionesGenerales.c: 1068:     LCD_I2C_WriteString("A sumar        : 00");
+[e ( _LCD_I2C_WriteString (1 :s 69C ]
+"1069
+[; ;funcionesGenerales.c: 1069:     LCD_I2C_SetCursor(4, 0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+"1070
+[; ;funcionesGenerales.c: 1070:     LCD_I2C_WriteString("Guardar:[#] Salir:*");
+[e ( _LCD_I2C_WriteString (1 :s 70C ]
+"1071
+[; ;funcionesGenerales.c: 1071: }
+[e :UE 2543 ]
+}
+"1072
+[; ;funcionesGenerales.c: 1072: void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo)
 [v _Detallar_Horarios `(v ~T0 @X0 1 ef4`uc`us`us`us ]
-"851
-[; ;funcionesGenerales.c: 851: {
+"1073
+[; ;funcionesGenerales.c: 1073: {
 {
 [e :U _Detallar_Horarios ]
-"850
-[; ;funcionesGenerales.c: 850: void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo)
+"1072
+[; ;funcionesGenerales.c: 1072: void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo)
 [v _numero `uc ~T0 @X0 1 r1 ]
 [v _hora `us ~T0 @X0 1 r2 ]
 [v _minuto `us ~T0 @X0 1 r3 ]
 [v _tipo `us ~T0 @X0 1 r4 ]
-"851
-[; ;funcionesGenerales.c: 851: {
+"1073
+[; ;funcionesGenerales.c: 1073: {
 [f ]
-"853
-[; ;funcionesGenerales.c: 853:     LCD_I2C_WriteUInt8(numero,1);
+"1075
+[; ;funcionesGenerales.c: 1075:     LCD_I2C_WriteUInt8(numero,1);
 [e ( _LCD_I2C_WriteUInt8 (2 , _numero -> -> 1 `i `uc ]
-"854
-[; ;funcionesGenerales.c: 854:     LCD_I2C_WriteString(". ");
-[e ( _LCD_I2C_WriteString (1 :s 44C ]
-"855
-[; ;funcionesGenerales.c: 855:     dato_memoria = EEPROM_ReadByte(hora);
+"1076
+[; ;funcionesGenerales.c: 1076:     LCD_I2C_WriteString(". ");
+[e ( _LCD_I2C_WriteString (1 :s 71C ]
+"1077
+[; ;funcionesGenerales.c: 1077:     dato_memoria = EEPROM_ReadByte(hora);
 [e = _dato_memoria ( _EEPROM_ReadByte (1 _hora ]
-"856
-[; ;funcionesGenerales.c: 856:     LCD_I2C_WriteUInt8(dato_memoria,2);
+"1078
+[; ;funcionesGenerales.c: 1078:     LCD_I2C_WriteUInt8(dato_memoria,2);
 [e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
-"857
-[; ;funcionesGenerales.c: 857:     LCD_I2C_WriteString(":");
-[e ( _LCD_I2C_WriteString (1 :s 45C ]
-"858
-[; ;funcionesGenerales.c: 858:     dato_memoria = EEPROM_ReadByte(minuto);
+"1079
+[; ;funcionesGenerales.c: 1079:     LCD_I2C_WriteString(":");
+[e ( _LCD_I2C_WriteString (1 :s 72C ]
+"1080
+[; ;funcionesGenerales.c: 1080:     dato_memoria = EEPROM_ReadByte(minuto);
 [e = _dato_memoria ( _EEPROM_ReadByte (1 _minuto ]
-"859
-[; ;funcionesGenerales.c: 859:     LCD_I2C_WriteUInt8(dato_memoria,2);
+"1081
+[; ;funcionesGenerales.c: 1081:     LCD_I2C_WriteUInt8(dato_memoria,2);
 [e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 2 `i `uc ]
-"860
-[; ;funcionesGenerales.c: 860:     LCD_I2C_WriteString(" P");
-[e ( _LCD_I2C_WriteString (1 :s 46C ]
-"861
-[; ;funcionesGenerales.c: 861:     dato_memoria = EEPROM_ReadByte(tipo);
+"1082
+[; ;funcionesGenerales.c: 1082:     LCD_I2C_WriteString(" P");
+[e ( _LCD_I2C_WriteString (1 :s 73C ]
+"1083
+[; ;funcionesGenerales.c: 1083:     dato_memoria = EEPROM_ReadByte(tipo);
 [e = _dato_memoria ( _EEPROM_ReadByte (1 _tipo ]
-"862
-[; ;funcionesGenerales.c: 862:     LCD_I2C_WriteUInt8(dato_memoria,1);
+"1084
+[; ;funcionesGenerales.c: 1084:     LCD_I2C_WriteUInt8(dato_memoria,1);
 [e ( _LCD_I2C_WriteUInt8 (2 , _dato_memoria -> -> 1 `i `uc ]
-"863
-[; ;funcionesGenerales.c: 863: }
-[e :UE 2512 ]
+"1085
+[; ;funcionesGenerales.c: 1085: }
+[e :UE 2544 ]
 }
-[a 37C 68 97 116 111 115 32 67 111 114 114 117 112 116 111 115 0 ]
-[a 36C 69 120 116 114 97 121 101 110 100 111 32 68 97 116 111 115 0 ]
-[a 39C 80 114 101 112 97 114 97 110 100 111 32 68 97 116 111 115 0 ]
-[a 20C 51 46 86 101 114 32 104 111 114 97 114 105 111 115 0 ]
-[a 28C 86 101 114 32 72 111 114 97 114 105 111 115 0 ]
-[a 34C 72 111 114 97 114 105 111 115 0 ]
-[a 38C 83 105 110 32 72 111 114 46 32 82 101 103 105 115 116 114 97 100 111 115 0 ]
-[a 13C 76 105 109 112 105 97 110 100 111 32 86 97 114 105 97 98 108 101 115 0 ]
-[a 21C 52 46 82 101 103 46 32 112 97 115 116 105 108 108 97 115 0 ]
-[a 12C 65 112 97 103 97 110 100 111 32 76 69 68 115 0 ]
-[a 19C 49 46 65 103 114 46 72 111 114 32 32 50 46 77 111 100 46 72 111 114 0 ]
-[a 43C 91 42 93 83 97 108 105 114 0 ]
-[a 41C 91 65 93 83 117 98 105 114 0 ]
-[a 11C 65 112 97 103 97 110 100 111 32 66 117 122 122 101 114 0 ]
-[a 17C 83 101 108 101 99 99 105 111 110 97 114 0 ]
-[a 42C 91 66 93 66 97 106 97 114 0 ]
-[a 7C 83 105 115 116 101 109 97 32 99 111 114 114 101 99 116 111 0 ]
-[a 24C 65 103 114 101 103 97 114 32 72 111 114 97 114 105 111 0 ]
-[a 26C 77 111 100 105 102 105 99 97 114 32 72 111 114 97 114 105 111 0 ]
-[a 9C 82 101 105 110 105 99 105 97 110 100 111 0 ]
-[a 14C 82 101 115 101 116 101 97 110 100 111 0 ]
-[a 5C 82 84 67 32 100 101 116 101 110 105 100 111 0 ]
-[a 16C 82 101 105 110 105 99 105 97 100 111 0 ]
-[a 4C 82 84 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
-[a 3C 73 50 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
-[a 23C 79 112 99 105 111 110 0 ]
+[a 39C 68 97 116 111 115 32 67 111 114 114 117 112 116 111 115 0 ]
+[a 49C 68 97 116 111 115 32 67 111 114 114 117 112 116 111 115 0 ]
+[a 38C 69 120 116 114 97 121 101 110 100 111 32 68 97 116 111 115 0 ]
+[a 48C 69 120 116 114 97 121 101 110 100 111 32 68 97 116 111 115 0 ]
+[a 41C 80 114 101 112 97 114 97 110 100 111 32 68 97 116 111 115 0 ]
+[a 22C 51 46 86 101 114 32 104 111 114 97 114 105 111 115 0 ]
+[a 30C 86 101 114 32 72 111 114 97 114 105 111 115 0 ]
+[a 36C 72 111 114 97 114 105 111 115 0 ]
+[a 40C 83 105 110 32 72 111 114 46 32 82 101 103 105 115 116 114 97 100 111 115 0 ]
+[a 15C 76 105 109 112 105 97 110 100 111 32 86 97 114 105 97 98 108 101 115 0 ]
+[a 23C 52 46 82 101 103 46 32 112 97 115 116 105 108 108 97 115 0 ]
+[a 14C 65 112 97 103 97 110 100 111 32 76 69 68 115 0 ]
+[a 21C 49 46 65 103 114 46 72 111 114 32 32 50 46 77 111 100 46 72 111 114 0 ]
+[a 45C 91 42 93 83 97 108 105 114 0 ]
+[a 43C 91 65 93 83 117 98 105 114 0 ]
+[a 13C 65 112 97 103 97 110 100 111 32 66 117 122 122 101 114 0 ]
+[a 19C 83 101 108 101 99 99 105 111 110 97 114 0 ]
+[a 44C 91 66 93 66 97 106 97 114 0 ]
+[a 9C 83 105 115 116 101 109 97 32 99 111 114 114 101 99 116 111 0 ]
+[a 26C 65 103 114 101 103 97 114 32 72 111 114 97 114 105 111 0 ]
+[a 28C 77 111 100 105 102 105 99 97 114 32 72 111 114 97 114 105 111 0 ]
+[a 11C 82 101 105 110 105 99 105 97 110 100 111 0 ]
+[a 16C 82 101 115 101 116 101 97 110 100 111 0 ]
+[a 7C 82 84 67 32 100 101 116 101 110 105 100 111 0 ]
+[a 2C 78 79 32 80 114 101 115 105 111 110 97 100 111 0 ]
+[a 1C 80 114 101 115 105 111 110 97 100 111 0 ]
+[a 18C 82 101 105 110 105 99 105 97 100 111 0 ]
+[a 6C 82 84 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
+[a 5C 73 50 67 32 115 105 110 32 99 111 110 101 120 105 111 110 0 ]
 [a 25C 79 112 99 105 111 110 0 ]
 [a 27C 79 112 99 105 111 110 0 ]
 [a 29C 79 112 99 105 111 110 0 ]
 [a 31C 79 112 99 105 111 110 0 ]
-[a 22C 42 46 82 101 115 101 116 32 115 105 115 116 101 109 97 0 ]
-[a 32C 82 101 115 101 116 32 115 105 115 116 101 109 97 0 ]
-[a 8C 69 114 114 111 114 32 101 110 32 115 105 115 116 101 109 97 0 ]
-[a 10C 83 105 115 116 101 109 97 0 ]
-[a 15C 83 105 115 116 101 109 97 0 ]
-[a 30C 82 101 103 105 115 116 114 97 114 32 80 97 115 116 105 108 108 97 0 ]
-[a 35C 76 101 121 101 110 100 111 32 77 101 109 111 114 105 97 0 ]
-[a 6C 70 101 99 104 97 32 105 110 118 97 108 105 100 97 0 ]
-[a 33C 79 112 99 105 111 110 32 73 110 118 97 108 105 100 97 0 ]
-[a 18C 79 112 99 105 111 110 32 68 101 115 101 97 100 97 0 ]
-[a 46C 32 80 0 ]
-[a 45C 58 0 ]
-[a 40C 45 45 45 32 77 73 83 32 72 79 82 65 82 73 79 83 32 45 45 45 0 ]
-[a 1C 83 101 110 115 111 114 32 0 ]
-[a 2C 86 97 108 111 114 58 32 0 ]
-[a 44C 46 32 0 ]
+[a 33C 79 112 99 105 111 110 0 ]
+[a 24C 42 46 82 101 115 101 116 32 115 105 115 116 101 109 97 0 ]
+[a 34C 82 101 115 101 116 32 115 105 115 116 101 109 97 0 ]
+[a 10C 69 114 114 111 114 32 101 110 32 115 105 115 116 101 109 97 0 ]
+[a 12C 83 105 115 116 101 109 97 0 ]
+[a 17C 83 105 115 116 101 109 97 0 ]
+[a 32C 82 101 103 105 115 116 114 97 114 32 80 97 115 116 105 108 108 97 0 ]
+[a 37C 76 101 121 101 110 100 111 32 77 101 109 111 114 105 97 0 ]
+[a 47C 76 101 121 101 110 100 111 32 77 101 109 111 114 105 97 0 ]
+[a 8C 70 101 99 104 97 32 105 110 118 97 108 105 100 97 0 ]
+[a 35C 79 112 99 105 111 110 32 73 110 118 97 108 105 100 97 0 ]
+[a 20C 79 112 99 105 111 110 32 68 101 115 101 97 100 97 0 ]
+[a 59C 83 101 108 101 99 99 105 111 110 101 32 40 49 45 52 41 58 91 32 93 0 ]
+[a 55C 93 0 ]
+[a 58C 93 0 ]
+[a 65C 93 0 ]
+[a 57C 93 32 32 32 32 32 32 80 52 58 91 0 ]
+[a 56C 80 51 58 91 0 ]
+[a 54C 93 32 32 32 32 32 32 80 50 58 91 0 ]
+[a 53C 80 49 58 91 0 ]
+[a 64C 84 111 116 97 108 32 97 99 116 117 97 108 58 32 91 0 ]
+[a 46C 82 69 71 46 32 67 65 78 84 46 32 80 65 83 84 73 76 76 65 83 0 ]
+[a 73C 32 80 0 ]
+[a 63C 76 73 83 84 79 0 ]
+[a 72C 58 0 ]
+[a 69C 65 32 115 117 109 97 114 32 32 32 32 32 32 32 32 58 32 48 48 0 ]
+[a 51C 80 114 101 112 97 114 97 110 100 111 32 115 105 115 116 101 109 97 46 46 0 ]
+[a 61C 45 45 32 82 69 67 65 82 71 65 32 69 88 73 84 79 83 65 45 45 0 ]
+[a 42C 45 45 45 32 77 73 83 32 72 79 82 65 82 73 79 83 32 45 45 45 0 ]
+[a 67C 45 45 0 ]
+[a 60C 45 0 ]
+[a 70C 71 117 97 114 100 97 114 58 91 35 93 32 83 97 108 105 114 58 42 0 ]
+[a 3C 83 101 110 115 111 114 32 0 ]
+[a 52C 32 83 84 79 67 75 32 80 65 83 84 73 76 76 69 82 79 83 32 0 ]
+[a 62C 80 65 83 84 73 76 76 69 82 79 32 0 ]
+[a 4C 86 97 108 111 114 58 32 0 ]
+[a 50C 80 97 115 116 105 108 108 97 115 32 100 105 115 112 58 32 0 ]
+[a 68C 83 116 111 99 107 32 97 99 116 117 97 108 32 32 32 58 32 0 ]
+[a 66C 45 45 32 82 69 67 65 82 71 65 32 80 65 83 84 46 32 0 ]
+[a 71C 46 32 0 ]
