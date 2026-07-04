@@ -4441,5 +4441,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD_I2C.c: 1061: }
 [e :UE 2541 ]
 }
+"1062
+[; ;LCD_I2C.c: 1062: I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position)
+[v _LCD_I2C_CreateSolidPixel `(E17286 ~T0 @X0 1 ef1`uc ]
+"1063
+[; ;LCD_I2C.c: 1063: {
+{
+[e :U _LCD_I2C_CreateSolidPixel ]
+"1062
+[; ;LCD_I2C.c: 1062: I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position)
+[v _cgram_position `uc ~T0 @X0 1 r1 ]
+"1063
+[; ;LCD_I2C.c: 1063: {
+[f ]
+[v F17470 `Cuc ~T0 @X0 -> 8 `i s ]
+[i F17470
+:U ..
+"1064
+[; ;LCD_I2C.c: 1064:     const uint8_t solid_pixel[8] = {
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+-> -> 31 `i `uc
+..
+]
+[v _solid_pixel `Cuc ~T0 @X0 -> 8 `i a ]
+[e = _solid_pixel F17470 ]
+"1075
+[; ;LCD_I2C.c: 1075:     if (cgram_position > 7u)
+[e $ ! > -> _cgram_position `ui -> 7 `ui 2553  ]
+"1076
+[; ;LCD_I2C.c: 1076:     {
+{
+"1077
+[; ;LCD_I2C.c: 1077:         return I2C_ERROR_INVALID_PARAMETER;
+[e ) . `E17286 5 ]
+[e $UE 2552  ]
+"1078
+[; ;LCD_I2C.c: 1078:     }
+}
+[e :U 2553 ]
+"1080
+[; ;LCD_I2C.c: 1080:     return LCD_I2C_CreateChar(
+[e ) ( _LCD_I2C_CreateChar (2 , &U _solid_pixel _cgram_position ]
+[e $UE 2552  ]
+"1084
+[; ;LCD_I2C.c: 1084: }
+[e :UE 2552 ]
+}
+"1085
+[; ;LCD_I2C.c: 1085: I2C_Status LCD_I2C_ClearFile()
+[v _LCD_I2C_ClearFile `(E17286 ~T0 @X0 1 ef ]
+"1086
+[; ;LCD_I2C.c: 1086: {
+{
+[e :U _LCD_I2C_ClearFile ]
+[f ]
+"1087
+[; ;LCD_I2C.c: 1087:     LCD_I2C_WriteStringN("                    ", 20);
+[e ( _LCD_I2C_WriteStringN (2 , :s 3C -> -> 20 `i `uc ]
+"1088
+[; ;LCD_I2C.c: 1088: }
+[e :UE 2554 ]
+}
 [a 2C 48 120 0 ]
 [a 1C 48 98 0 ]
+[a 3C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

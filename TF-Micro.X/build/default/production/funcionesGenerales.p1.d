@@ -10,4 +10,5 @@ LCD_I2C.h  \
 DS1307.h  \
 CNY70.h  \
 irsensor.h  \
+EPROM_DFM.h  \
 funcionesGenerales.h 

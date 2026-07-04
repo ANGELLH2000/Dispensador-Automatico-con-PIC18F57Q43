@@ -190,6 +190,22 @@ I2C_Status LCD_I2C_WriteBinary(uint8_t value);
 I2C_Status LCD_I2C_WriteHex(uint8_t value);
 
 I2C_Status LCD_I2C_WriteInt(int16_t value);
+/**
+ * @brief Crea un píxel sólido lleno (bloque de 5x8 píxeles).
+ *
+ * @param cgram_position Posición en CGRAM (0-7)
+ *
+ * @return I2C_Status
+ *
+ * @example
+ *
+ * LCD_I2C_CreateSolidPixel(0u);
+ *
+ * LCD_I2C_SetCursor(1u, 0u);
+ * LCD_I2C_WriteChar((char)0u);
+ */
+I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position);
+I2C_Status LCD_I2C_ClearFile(void);
 #endif /* LCD_I2C_H */
 
 

@@ -1059,3 +1059,30 @@ I2C_Status LCD_I2C_WriteInt(int16_t value)
     buf[pos] = '\0';
     return LCD_I2C_WriteString(buf);
 }
+I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position)
+{
+    const uint8_t solid_pixel[8] = {
+        0x1F,  /* 0b00011111 - Fila 1: 5 píxeles encendidos */
+        0x1F,  /* Fila 2 */
+        0x1F,  /* Fila 3 */
+        0x1F,  /* Fila 4 */
+        0x1F,  /* Fila 5 */
+        0x1F,  /* Fila 6 */
+        0x1F,  /* Fila 7 */
+        0x1F
+    };
+
+    if (cgram_position > 7u)
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+    return LCD_I2C_CreateChar(
+        solid_pixel,
+        cgram_position
+    );
+}
+I2C_Status LCD_I2C_ClearFile()
+{
+    LCD_I2C_WriteStringN("                    ", 20);
+}

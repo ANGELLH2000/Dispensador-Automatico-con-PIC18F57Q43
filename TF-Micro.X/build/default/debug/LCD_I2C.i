@@ -29772,6 +29772,9 @@ I2C_Status LCD_I2C_WriteBinary(uint8_t value);
 I2C_Status LCD_I2C_WriteHex(uint8_t value);
 
 I2C_Status LCD_I2C_WriteInt(int16_t value);
+# 207 "./LCD_I2C.h"
+I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position);
+I2C_Status LCD_I2C_ClearFile(void);
 # 14 "LCD_I2C.c" 2
 # 57 "LCD_I2C.c"
 static uint8_t lcdAddress = 0x27u;
@@ -30722,4 +30725,31 @@ I2C_Status LCD_I2C_WriteInt(int16_t value)
 
     buf[pos] = '\0';
     return LCD_I2C_WriteString(buf);
+}
+I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position)
+{
+    const uint8_t solid_pixel[8] = {
+        0x1F,
+        0x1F,
+        0x1F,
+        0x1F,
+        0x1F,
+        0x1F,
+        0x1F,
+        0x1F
+    };
+
+    if (cgram_position > 7u)
+    {
+        return I2C_ERROR_INVALID_PARAMETER;
+    }
+
+    return LCD_I2C_CreateChar(
+        solid_pixel,
+        cgram_position
+    );
+}
+I2C_Status LCD_I2C_ClearFile()
+{
+    LCD_I2C_WriteStringN("                    ", 20);
 }
