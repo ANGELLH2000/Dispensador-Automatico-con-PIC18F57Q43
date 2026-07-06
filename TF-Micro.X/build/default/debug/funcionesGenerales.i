@@ -30278,6 +30278,9 @@ void EEPROM_UpdateByte(uint16_t address, uint8_t data);
 void config_perifericos(void);
 void config_perifericos_sensores(void);
 void SubProceso_CondicionesIniciales(void);
+void SubProceso_DispersacionVerificacion(void);
+void SubProceso_MenuLCD(void);
+void PantallaGeneral(void);
 void configuro(void);
 # 15 "funcionesGenerales.c" 2
 
@@ -30337,7 +30340,6 @@ static void config_cny70(void);
 static void config_ir(void);
 static void config_i2c_lcd(void);
 static void SubProceso_ResetSistema();
-static void SubProceso_MenuLCD();
 static void SubProceso_ModificarHorario();
 static void SubProceso_AgregarHorario();
 static void SubProceso_VerHorarios();
@@ -30512,20 +30514,11 @@ void config_perifericos(void)
         LCD_I2C_SetCursor(1, 0);
         LCD_I2C_WriteString("Presionado");
         _delay((unsigned long)((500)*(32000000UL/4000.0)));
-        EEPROM_WriteByte(1, 1);
-        EEPROM_WriteByte(2, 1);
-        EEPROM_WriteByte(10, 1);
-        EEPROM_WriteByte(11, 0);
-        EEPROM_WriteByte(12, 0);
-        EEPROM_WriteByte(13, 0);
-
-        EEPROM_WriteByte(9, 8);
-        EEPROM_WriteByte(10, 45);
-        EEPROM_WriteByte(13, 1);
-
-        EEPROM_WriteByte(14, 0);
-        EEPROM_WriteByte(15, 0);
-        EEPROM_WriteByte(18, 3);
+        for (uint8_t x=0;x<39;x++)
+        {
+            EEPROM_WriteByte(x, 0);
+        }
+        EEPROM_WriteByte(3, 4);
     }else{
         LCD_I2C_SetCursor(1, 0);
         LCD_I2C_WriteString("NO Presionado");
@@ -30594,6 +30587,59 @@ void lectura_cny70(void)
     valor_S4 = CNY70_Read(&sensor4);
     mostrar_valor_cny70(4, valor_S4);
 }
+void PantallaGeneral(void)
+{
+
+
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("Sistema en operacion");
+
+
+    LCD_I2C_SetCursor(4, 0);
+    LCD_I2C_WriteString("--- [#] VER MENU ---");
+
+
+    while(1)
+    {
+        estado = DS1307_ReadDateTime(
+            &fechaHora
+        );
+
+        if ((estado != I2C_OK) ||(fechaHora.clock_running == 0) || (fechaHora.data_valid == 0))
+           SubProceso_ManejoErrores("RTC sin conexion",1);
+
+        LCD_I2C_SetCursor(1, 6);
+        LCD_I2C_WriteUInt8(fechaHora.hours,2);
+        LCD_I2C_WriteString(":");
+        LCD_I2C_SetCursor(1, 9);
+        LCD_I2C_WriteUInt8(fechaHora.minutes,2);
+        LCD_I2C_WriteString(":");
+        LCD_I2C_SetCursor(1, 12);
+        LCD_I2C_WriteUInt8(fechaHora.seconds,2);
+        _delay((unsigned long)((250)*(32000000UL/4000.0)));
+
+        while (1)
+        {
+            tecla = Keypad_Read(&teclado);
+            _delay((unsigned long)((20)*(32000000UL/4000.0)));
+
+            switch (tecla)
+            {
+
+                case '#':
+                    Buzzer_CorrectSound(&buzzer1);
+                    SubProceso_MenuLCD();
+                    break;
+
+                default:
+                    break;
+
+            }
+            break;
+        }
+    }
+
+}
 
 
 
@@ -30652,7 +30698,6 @@ void SubProceso_CondicionesIniciales(void){
     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
     WS2812B_Clear(&tira1);
 
-    SubProceso_MenuLCD();
 
 
 }
@@ -30694,9 +30739,10 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
 
             case 2:
 
-                WS2812B_RGB(&tira1, 200, 200, 0);
+                WS2812B_RGB(&tira1, 250, 200, 0);
                 Buzzer_WarningSound(&buzzer1);
                 _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+                WS2812B_Clear(&tira1);
                 return;
 
             default:
@@ -30709,10 +30755,10 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
 
     LCD_I2C_SetCursor(2, 0);
     LCD_I2C_WriteString("Reiniciar Sistema");
-    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_SetCursor(3, 0);
     LCD_I2C_WriteString("[#]Resetear Sistema");
 
-     while (1)
+    while (1)
     {
         tecla = '\0';
 
@@ -30742,7 +30788,7 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
             break;
     }
 }
-# 486 "funcionesGenerales.c"
+# 529 "funcionesGenerales.c"
 void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
 {
     LCD_I2C_CreateSolidPixel(0);
@@ -30754,7 +30800,7 @@ void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
         _delay((unsigned long)((300)*(32000000UL/4000.0)));
     }
 }
-# 511 "funcionesGenerales.c"
+# 554 "funcionesGenerales.c"
 void SubProceso_ResetSistema(void)
 {
 
@@ -30802,7 +30848,7 @@ void SubProceso_ResetSistema(void)
 
     LCD_I2C_SetCursor(3, 1);
     LCD_I2C_WriteString("Limpiando Variables");
-# 567 "funcionesGenerales.c"
+# 610 "funcionesGenerales.c"
     MostrarAnimacionCarga(4, 10);
 
     LCD_I2C_SetCursor(3, 0);
@@ -30831,7 +30877,7 @@ void SubProceso_ResetSistema(void)
     _delay((unsigned long)((1000)*(32000000UL/4000.0)));
     LCD_I2C_Clear();
 }
-# 611 "funcionesGenerales.c"
+# 654 "funcionesGenerales.c"
 void SubProceso_MenuLCD(void)
 {
 
@@ -30845,10 +30891,10 @@ void SubProceso_MenuLCD(void)
 
         LCD_I2C_Clear();
 
-        LCD_I2C_SetCursor(1, 5);
+        LCD_I2C_SetCursor(2, 5);
         LCD_I2C_WriteString("Seleccionar");
 
-        LCD_I2C_SetCursor(2, 3);
+        LCD_I2C_SetCursor(3, 3);
         LCD_I2C_WriteString("Opcion Deseada");
 
         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
@@ -30863,13 +30909,13 @@ void SubProceso_MenuLCD(void)
         LCD_I2C_WriteString("1.Agr.Hor  2.Mod.Hor");
 
         LCD_I2C_SetCursor(2, 0);
-        LCD_I2C_WriteString("3.Ver horarios");
+        LCD_I2C_WriteString("3.Ver horarios      ");
 
         LCD_I2C_SetCursor(3, 0);
-        LCD_I2C_WriteString("4.Reg. pastillas");
+        LCD_I2C_WriteString("4.Reg. pastillas    ");
 
         LCD_I2C_SetCursor(4, 0);
-        LCD_I2C_WriteString("*.Reset sistema");
+        LCD_I2C_WriteString("*.Salir del menu    ");
 
 
 
@@ -30898,7 +30944,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Agregar Horario");
                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
                         SubProceso_AgregarHorario();
-                        return;
+                        break;
 
                     case '2':
                         Buzzer_CorrectSound(&buzzer1);
@@ -30908,7 +30954,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Modificar Horario");
                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
                         SubProceso_ModificarHorario();
-                        return;
+                        break;
 
                     case '3':
                         Buzzer_CorrectSound(&buzzer1);
@@ -30928,17 +30974,11 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Registrar Pastilla");
                         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
                         SubProceso_RegistrarPastillas();
-                        return;
+                        break;
 
                     case '*':
                         Buzzer_CorrectSound(&buzzer1);
-                        LCD_I2C_SetCursor(1, 7);
-                        LCD_I2C_WriteString("Opcion");
-                        LCD_I2C_SetCursor(2, 3);
-                        LCD_I2C_WriteString("Reset sistema");
-                        _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-                        SubProceso_ResetSistema();
-                        return;
+                        PantallaGeneral();
 
                     default:
 
@@ -30958,7 +30998,7 @@ void SubProceso_MenuLCD(void)
         }
     }
 }
-# 754 "funcionesGenerales.c"
+# 791 "funcionesGenerales.c"
 void SubProceso_VerHorarios(void)
 {
 
@@ -31152,7 +31192,7 @@ void SubProceso_VerHorarios(void)
         }
     }
 }
-# 963 "funcionesGenerales.c"
+# 1000 "funcionesGenerales.c"
 void SubProceso_ModificarHorario(void)
 {
 
@@ -31175,7 +31215,7 @@ void SubProceso_ModificarHorario(void)
 
 
     dato_memoria = EEPROM_ReadByte(1);
-# 997 "funcionesGenerales.c"
+# 1034 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31286,7 +31326,7 @@ void SubProceso_ModificarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1119 "funcionesGenerales.c"
+# 1156 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31447,7 +31487,7 @@ void SubProceso_ModificarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1291 "funcionesGenerales.c"
+# 1328 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31553,7 +31593,7 @@ void SubProceso_ModificarHorario(void)
     EEPROM_UpdateByte(9+(5*(horario_selecionado-1)), (hora_modificada[0]*10)+hora_modificada[1]);
     EEPROM_UpdateByte(10+(5*(horario_selecionado-1)), (hora_modificada[2]*10)+hora_modificada[3]);
     EEPROM_UpdateByte(13+(5*(horario_selecionado-1)), pastillero_modificado);
-# 1408 "funcionesGenerales.c"
+# 1445 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31582,7 +31622,7 @@ void SubProceso_ModificarHorario(void)
 
     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
 }
-# 1451 "funcionesGenerales.c"
+# 1488 "funcionesGenerales.c"
 void SubProceso_AgregarHorario(void)
 {
 
@@ -31605,7 +31645,7 @@ void SubProceso_AgregarHorario(void)
 
 
     index_horarios_ocupados = EEPROM_ReadByte(1);
-# 1485 "funcionesGenerales.c"
+# 1522 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31665,7 +31705,7 @@ void SubProceso_AgregarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1558 "funcionesGenerales.c"
+# 1595 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31879,7 +31919,7 @@ void SubProceso_AgregarHorario(void)
 
     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
 }
-# 1791 "funcionesGenerales.c"
+# 1828 "funcionesGenerales.c"
 void SubProceso_RegistrarPastillas(void)
 {
     uint8_t pastillero_selecionado;

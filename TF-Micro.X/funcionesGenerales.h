@@ -10,6 +10,9 @@
 void config_perifericos(void);
 void config_perifericos_sensores(void);
 void SubProceso_CondicionesIniciales(void);
+void SubProceso_DispersacionVerificacion(void);
+void SubProceso_MenuLCD(void);
+void PantallaGeneral(void);
 void configuro(void);
 
 #endif

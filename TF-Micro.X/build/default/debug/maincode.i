@@ -29638,6 +29638,9 @@ unsigned char __t3rd16on(void);
 void config_perifericos(void);
 void config_perifericos_sensores(void);
 void SubProceso_CondicionesIniciales(void);
+void SubProceso_DispersacionVerificacion(void);
+void SubProceso_MenuLCD(void);
+void PantallaGeneral(void);
 void configuro(void);
 # 6 "maincode.c" 2
 
@@ -29658,6 +29661,8 @@ void configuro(void)
 
     SubProceso_CondicionesIniciales();
 
+
+
 }
 
 
@@ -29670,6 +29675,9 @@ void main(void)
 
     while (1)
     {
+        PantallaGeneral();
+        SubProceso_MenuLCD();
+
 
     }
 }

@@ -21,6 +21,8 @@ void configuro(void)
     /* Verificación inicial */
     SubProceso_CondicionesIniciales();
     
+    
+    
 }
 
 /*==============================================================================
@@ -33,6 +35,8 @@ void main(void)
 
     while (1)
     {
-
+        PantallaGeneral();
+        //SubProceso_DispersacionVerificacion();
+        
     }
 }

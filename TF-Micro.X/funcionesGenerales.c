@@ -69,7 +69,6 @@ static void config_cny70(void);
 static void config_ir(void);
 static void config_i2c_lcd(void);
 static void SubProceso_ResetSistema();
-static void SubProceso_MenuLCD();
 static void SubProceso_ModificarHorario();
 static void SubProceso_AgregarHorario();
 static void SubProceso_VerHorarios();
@@ -317,6 +316,59 @@ void lectura_cny70(void)
     valor_S4 = CNY70_Read(&sensor4);
     mostrar_valor_cny70(4, valor_S4);
 }
+void PantallaGeneral(void)
+{
+     
+
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("Sistema en operacion");
+    //LCD_I2C_SetCursor(3, 0);
+    //LCD_I2C_WriteString("Prox. alarma:  18:00");
+    LCD_I2C_SetCursor(4, 0);
+    LCD_I2C_WriteString("--- [#] VER MENU ---");
+    //Validacion de RTC
+    
+    while(1)
+    {
+        estado = DS1307_ReadDateTime(
+            &fechaHora
+        );
+
+        if ((estado != I2C_OK) ||(fechaHora.clock_running == 0) || (fechaHora.data_valid == 0))
+           SubProceso_ManejoErrores("RTC sin conexion",1);
+
+        LCD_I2C_SetCursor(1, 6);
+        LCD_I2C_WriteUInt8(fechaHora.hours,2);
+        LCD_I2C_WriteString(":"); 
+        LCD_I2C_SetCursor(1, 9);
+        LCD_I2C_WriteUInt8(fechaHora.minutes,2);
+        LCD_I2C_WriteString(":"); 
+        LCD_I2C_SetCursor(1, 12);
+        LCD_I2C_WriteUInt8(fechaHora.seconds,2);
+        __delay_ms(250);
+        
+        while (1)
+        {
+            tecla = Keypad_Read(&teclado);
+            __delay_ms(20);
+
+            switch (tecla)
+            {
+
+                case '#':
+                    Buzzer_CorrectSound(&buzzer1);
+                    SubProceso_MenuLCD();
+                    return;
+                /* Se recibió un número */
+                default:
+                    break;
+
+            }
+            break;
+        }
+    }
+        
+}
 
 /*==============================================================================
  * VERIFICACIÓN DE LAS CONDICIONES INICIALES
@@ -375,7 +427,6 @@ void SubProceso_CondicionesIniciales(void){
     __delay_ms(2000);
     WS2812B_Clear(&tira1);
     
-    SubProceso_MenuLCD();
     
 
 }
@@ -436,7 +487,7 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
     LCD_I2C_SetCursor(3, 0);
     LCD_I2C_WriteString("[#]Resetear Sistema");
     
-     while (1)
+    while (1)
     {
         tecla = KEYPAD_NO_KEY;
 
@@ -613,10 +664,10 @@ void SubProceso_MenuLCD(void)
          *==============================================================*/
         LCD_I2C_Clear();
 
-        LCD_I2C_SetCursor(1, 5);
+        LCD_I2C_SetCursor(2, 5);
         LCD_I2C_WriteString("Seleccionar");
 
-        LCD_I2C_SetCursor(2, 3);
+        LCD_I2C_SetCursor(3, 3);
         LCD_I2C_WriteString("Opcion Deseada");
 
         __delay_ms(2000);
@@ -631,13 +682,13 @@ void SubProceso_MenuLCD(void)
         LCD_I2C_WriteString("1.Agr.Hor  2.Mod.Hor");
 
         LCD_I2C_SetCursor(2, 0);
-        LCD_I2C_WriteString("3.Ver horarios");
+        LCD_I2C_WriteString("3.Ver horarios      ");
 
         LCD_I2C_SetCursor(3, 0);
-        LCD_I2C_WriteString("4.Reg. pastillas");
+        LCD_I2C_WriteString("4.Reg. pastillas    ");
 
         LCD_I2C_SetCursor(4, 0);
-        LCD_I2C_WriteString("*.Reset sistema");
+        LCD_I2C_WriteString("*.Salir del menu    ");
 
 
         /*==============================================================
@@ -700,13 +751,7 @@ void SubProceso_MenuLCD(void)
 
                     case '*':
                         Buzzer_CorrectSound(&buzzer1);
-                        LCD_I2C_SetCursor(1, 7);
-                        LCD_I2C_WriteString("Opcion");
-                        LCD_I2C_SetCursor(2, 3);
-                        LCD_I2C_WriteString("Reset sistema");
-                        __delay_ms(2000);
-                        SubProceso_ResetSistema();
-                        break;
+                        return;
 
                     default:
                         /* Opción inválida: informar al usuario y
@@ -1289,7 +1334,7 @@ void SubProceso_ModificarHorario(void)
     
     LCD_I2C_SetCursor(2,0);
     LCD_I2C_WriteString("Past. Actual:  P_");
-    LCD_I2C_SetCursor(2,15);
+    LCD_I2C_SetCursor(2,16);
     dato_memoria = EEPROM_ReadByte(13+(5*(horario_selecionado-1))); // Pastillero actual
     LCD_I2C_WriteUInt8(dato_memoria,1);
 
