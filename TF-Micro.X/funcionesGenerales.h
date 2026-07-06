@@ -9,8 +9,7 @@
 
 void config_perifericos(void);
 void config_perifericos_sensores(void);
-void verificar_condiciones_iniciales(void);
-void sistem_error(const char *mensaje);
+void SubProceso_CondicionesIniciales(void);
 void configuro(void);
 
 #endif

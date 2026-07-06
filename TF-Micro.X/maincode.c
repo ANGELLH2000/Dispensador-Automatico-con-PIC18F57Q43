@@ -19,7 +19,7 @@ void configuro(void)
     config_perifericos();
 
     /* Verificación inicial */
-    verificar_condiciones_iniciales();
+    SubProceso_CondicionesIniciales();
     
 }
 

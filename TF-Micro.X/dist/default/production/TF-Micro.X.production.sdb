@@ -125,45 +125,49 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
 "171
 [v _EEPROM_UpdateByte EEPROM_UpdateByte `(v  1 e 1 0 ]
-"85 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+"88 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 [v _config_motores config_motores `(v  1 s 1 config_motores ]
-"110
+"113
 [v _config_leds config_leds `(v  1 s 1 config_leds ]
-"123
+"126
 [v _config_buzzer config_buzzer `(v  1 s 1 config_buzzer ]
-"137
+"140
 [v _config_keypad config_keypad `(v  1 s 1 config_keypad ]
-"152
+"155
 [v _config_cny70 config_cny70 `(v  1 s 1 config_cny70 ]
-"176
+"179
 [v _config_ir config_ir `(v  1 s 1 config_ir ]
-"190
+"193
 [v _config_i2c_lcd config_i2c_lcd `(v  1 s 1 config_i2c_lcd ]
-"220
+"223
 [v _config_perifericos config_perifericos `(v  1 e 1 0 ]
-"268
+"265
 [v _mostrar_valor_cny70 mostrar_valor_cny70 `(v  1 s 1 mostrar_valor_cny70 ]
-"296
-[v _lectura_cny70 lectura_cny70 `(v  1 e 1 0 ]
-"328
-[v _verificar_condiciones_iniciales verificar_condiciones_iniciales `(v  1 e 1 0 ]
-"408
-[v _sistem_error sistem_error `(v  1 e 1 0 ]
-"444
+"324
+[v _SubProceso_CondicionesIniciales SubProceso_CondicionesIniciales `(v  1 e 1 0 ]
+"382
+[v _RecorrerEEPROM RecorrerEEPROM `(a  1 e 1 0 ]
+"396
+[v _SubProceso_ManejoErrores SubProceso_ManejoErrores `(v  1 s 1 SubProceso_ManejoErrores ]
+"478
 [v _MostrarAnimacionCarga MostrarAnimacionCarga `(v  1 e 1 0 ]
-"469
+"503
 [v _SubProceso_ResetSistema SubProceso_ResetSistema `(v  1 e 1 0 ]
-"569
+"603
 [v _SubProceso_MenuLCD SubProceso_MenuLCD `(v  1 s 1 SubProceso_MenuLCD ]
-"710
+"746
 [v _SubProceso_VerHorarios SubProceso_VerHorarios `(v  1 s 1 SubProceso_VerHorarios ]
-"933
+"955
+[v _SubProceso_ModificarHorario SubProceso_ModificarHorario `(v  1 s 1 SubProceso_ModificarHorario ]
+"1443
+[v _SubProceso_AgregarHorario SubProceso_AgregarHorario `(v  1 s 1 SubProceso_AgregarHorario ]
+"1783
 [v _SubProceso_RegistrarPastillas SubProceso_RegistrarPastillas `(v  1 s 1 SubProceso_RegistrarPastillas ]
-"1143
+"1993
 [v _Guardar_CantPastillas Guardar_CantPastillas `(v  1 s 1 Guardar_CantPastillas ]
-"1163
+"2013
 [v _Detallar_CantPastillas Detallar_CantPastillas `(v  1 s 1 Detallar_CantPastillas ]
-"1180
+"2030
 [v _Detallar_Horarios Detallar_Horarios `(v  1 s 1 Detallar_Horarios ]
 "72 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 [v _I2C1_ClearFlags I2C1_ClearFlags `(v  1 s 1 I2C1_ClearFlags ]
@@ -770,110 +774,228 @@ I2C_ERROR_INVALID_PARAMETER 5
 {
 "24
 } 0
-"328 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _verificar_condiciones_iniciales verificar_condiciones_iniciales `(v  1 e 1 0 ]
+"223 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_perifericos config_perifericos `(v  1 e 1 0 ]
 {
-"402
+"247
+[v config_perifericos@x x `uc  1 a 1 25 ]
+"259
 } 0
-"408
-[v _sistem_error sistem_error `(v  1 e 1 0 ]
+"88
+[v _config_motores config_motores `(v  1 s 1 config_motores ]
 {
-[v sistem_error@mensaje mensaje `*.32Cuc  1 p 2 23 ]
-"434
+"107
 } 0
-"410 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
-[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
+"103 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
+[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
 {
-[v WS2812B_RGB@tira tira `*.39S42  1 p 2 15 ]
-"411
-[v WS2812B_RGB@red red `uc  1 p 1 17 ]
-"412
-[v WS2812B_RGB@green green `uc  1 p 1 18 ]
-"413
-[v WS2812B_RGB@blue blue `uc  1 p 1 19 ]
-"417
+[s S196 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
+[v Stepper_Init@motor motor `*.39S196  1 p 2 0 ]
+"104
+[v Stepper_Init@lat lat `*.39VEuc  1 p 2 2 ]
+"105
+[v Stepper_Init@tris tris `*.39VEuc  1 p 2 4 ]
+"106
+[v Stepper_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
+"107
+[v Stepper_Init@nibble nibble `uc  1 p 1 8 ]
+"169
 } 0
-"296 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _lectura_cny70 lectura_cny70 `(v  1 e 1 0 ]
+"113 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_leds config_leds `(v  1 s 1 config_leds ]
 {
-"322
+"120
 } 0
-"268
-[v _mostrar_valor_cny70 mostrar_valor_cny70 `(v  1 s 1 mostrar_valor_cny70 ]
+"22 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
 {
-[v mostrar_valor_cny70@numero_sensor numero_sensor `uc  1 p 1 wreg ]
-[v mostrar_valor_cny70@numero_sensor numero_sensor `uc  1 p 1 wreg ]
-[v mostrar_valor_cny70@valor valor `us  1 p 2 46 ]
-"273
-[v mostrar_valor_cny70@numero_sensor numero_sensor `uc  1 p 1 50 ]
-"290
-} 1
-"1023 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_WriteInt LCD_I2C_WriteInt `(E17286  1 e 1 0 ]
-{
-"1046
-[v LCD_I2C_WriteInt@rev rev `[6]uc  1 a 6 26 ]
-"1047
-[v LCD_I2C_WriteInt@nd nd `i  1 a 2 40 ]
-"1025
-[v LCD_I2C_WriteInt@buf buf `[8]uc  1 a 8 32 ]
-"1027
-[v LCD_I2C_WriteInt@pos pos `i  1 a 2 44 ]
-"1026
-[v LCD_I2C_WriteInt@u u `us  1 a 2 42 ]
-"1023
-[v LCD_I2C_WriteInt@value value `s  1 p 2 22 ]
-"1061
+"24
+[v WS2812B_Init@i i `uc  1 a 1 5 ]
+[s S42 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+"22
+[v WS2812B_Init@tira tira `*.39S42  1 p 2 0 ]
+[v WS2812B_Init@num_leds num_leds `uc  1 p 1 2 ]
+"84
 } 0
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"140 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_keypad config_keypad `(v  1 s 1 config_keypad ]
 {
+"149
+} 0
+"208 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+[v _Keypad_Init Keypad_Init `(v  1 e 1 0 ]
+{
+[s S545 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+[v Keypad_Init@keypad keypad `*.39S545  1 p 2 6 ]
+"209
+[v Keypad_Init@port port `*.39VEuc  1 p 2 8 ]
+"210
+[v Keypad_Init@lat lat `*.39VEuc  1 p 2 10 ]
+"211
+[v Keypad_Init@tris tris `*.39VEuc  1 p 2 12 ]
+"212
+[v Keypad_Init@ansel ansel `*.39VEuc  1 p 2 14 ]
+"213
+[v Keypad_Init@wpu wpu `*.39VEuc  1 p 2 16 ]
+"276
+} 0
+"179 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_ir config_ir `(v  1 s 1 config_ir ]
+{
+"187
+} 0
+"9 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
+[v _IRSensor_Init IRSensor_Init `(v  1 e 1 0 ]
+{
+[s S268 . 7 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v IRSensor_Init@sensor sensor `*.39S268  1 p 2 0 ]
 "10
-[v ___lwmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
-[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
-"25
-} 0
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+[v IRSensor_Init@port port `*.39VEuc  1 p 2 2 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 6 ]
-"7
-[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
-"30
+[v IRSensor_Init@tris tris `*.39VEuc  1 p 2 4 ]
+"12
+[v IRSensor_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
+"13
+[v IRSensor_Init@pin_mask pin_mask `uc  1 p 1 8 ]
+"62
 } 0
-"119 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-[v _CNY70_Read CNY70_Read `(us  1 e 2 0 ]
+"193 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_i2c_lcd config_i2c_lcd `(v  1 s 1 config_i2c_lcd ]
 {
-"121
-[v CNY70_Read@result result `us  1 a 2 4 ]
-[s S356 . 6 `*.39VEuc 1 tris_reg 2 0 `*.39VEuc 1 ansel_reg 2 2 `uc 1 pin_mask 1 4 `uc 1 adc_channel 1 5 ]
-"119
-[v CNY70_Read@sensor sensor `*.39S356  1 p 2 0 ]
-"195
+"217
 } 0
-"569 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+"271 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+[v _LCD_I2C_SetAddress LCD_I2C_SetAddress `(E17286  1 e 1 0 ]
+{
+[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 wreg ]
+[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 wreg ]
+"273
+[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 0 ]
+"281
+} 1
+"360
+[v _LCD_I2C_Init LCD_I2C_Init `(E17286  1 e 1 0 ]
+{
+"362
+[v LCD_I2C_Init@status status `E17286  1 a 1 22 ]
+"509
+} 0
+"128
+[v _LCD_I2C_WriteNibble LCD_I2C_WriteNibble `(E17286  1 s 1 LCD_I2C_WriteNibble ]
+{
+"129
+[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 wreg ]
+"134
+[v LCD_I2C_WriteNibble@block block `[2]uc  1 a 2 10 ]
+"133
+[v LCD_I2C_WriteNibble@base base `uc  1 a 1 12 ]
+"129
+[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 wreg ]
+"130
+[v LCD_I2C_WriteNibble@rs rs `uc  1 p 1 8 ]
+"140
+[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 9 ]
+"173
+} 1
+"256
+[v _LCD_I2C_UpdateDisplayControl LCD_I2C_UpdateDisplayControl `(E17286  1 s 1 LCD_I2C_UpdateDisplayControl ]
+{
+"264
+} 0
+"110
+[v _LCD_I2C_ExpanderWrite LCD_I2C_ExpanderWrite `(E17286  1 s 1 LCD_I2C_ExpanderWrite ]
+{
+[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 wreg ]
+[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 wreg ]
+"112
+[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 10 ]
+"116
+} 1
+"415 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+[v _I2C1_Init I2C1_Init `(v  1 e 1 0 ]
+{
+"584
+} 0
+"134
+[v _I2C1_ConfigurePPS I2C1_ConfigurePPS `(v  1 s 1 I2C1_ConfigurePPS ]
+{
+"136
+[v I2C1_ConfigurePPS@previousGie previousGie `uc  1 a 1 0 ]
+"203
+} 0
+"155 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_cny70 config_cny70 `(v  1 s 1 config_cny70 ]
+{
+"173
+} 0
+"64 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+[v _CNY70_Init CNY70_Init `(v  1 e 1 0 ]
+{
+[s S356 . 6 `*.39VEuc 1 tris_reg 2 0 `*.39VEuc 1 ansel_reg 2 2 `uc 1 pin_mask 1 4 `uc 1 adc_channel 1 5 ]
+[v CNY70_Init@sensor sensor `*.39S356  1 p 2 0 ]
+"65
+[v CNY70_Init@tris tris `*.39VEuc  1 p 2 2 ]
+"66
+[v CNY70_Init@ansel ansel `*.39VEuc  1 p 2 4 ]
+"67
+[v CNY70_Init@pin_mask pin_mask `uc  1 p 1 6 ]
+"68
+[v CNY70_Init@adc_channel adc_channel `uc  1 p 1 7 ]
+"97
+} 0
+"14
+[v _CNY70_ADC_Init_FOSC64 CNY70_ADC_Init_FOSC64 `(v  1 e 1 0 ]
+{
+"58
+} 0
+"126 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _config_buzzer config_buzzer `(v  1 s 1 config_buzzer ]
+{
+"134
+} 0
+"56 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+[v _Buzzer_Init Buzzer_Init `(v  1 e 1 0 ]
+{
+[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_Init@buzzer buzzer `*.39S295  1 p 2 7 ]
+"57
+[v Buzzer_Init@lat lat `*.39VEuc  1 p 2 9 ]
+"58
+[v Buzzer_Init@tris tris `*.39VEuc  1 p 2 11 ]
+"59
+[v Buzzer_Init@ansel ansel `*.39VEuc  1 p 2 13 ]
+"60
+[v Buzzer_Init@pin_mask pin_mask `uc  1 p 1 15 ]
+"96
+} 0
+"324 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _SubProceso_CondicionesIniciales SubProceso_CondicionesIniciales `(v  1 e 1 0 ]
+{
+"381
+} 0
+"603
 [v _SubProceso_MenuLCD SubProceso_MenuLCD `(v  1 s 1 SubProceso_MenuLCD ]
 {
-"614
-[v SubProceso_MenuLCD@index index `ui  1 a 2 63 ]
-"692
+"648
+[v SubProceso_MenuLCD@index index `ui  1 a 2 70 ]
+"728
 } 0
-"710
+"746
 [v _SubProceso_VerHorarios SubProceso_VerHorarios `(v  1 s 1 SubProceso_VerHorarios ]
 {
-"781
-[v SubProceso_VerHorarios@cant_horarios cant_horarios `uc  1 a 1 60 ]
-"782
-[v SubProceso_VerHorarios@pagina pagina `uc  1 a 1 59 ]
-"783
-[v SubProceso_VerHorarios@paginas_max paginas_max `uc  1 a 1 58 ]
-"912
+"866
+[v SubProceso_VerHorarios@y y `uc  1 a 1 67 ]
+"849
+[v SubProceso_VerHorarios@x x `uc  1 a 1 66 ]
+"837
+[v SubProceso_VerHorarios@horarios_por_pagina horarios_por_pagina `uc  1 a 1 63 ]
+"818
+[v SubProceso_VerHorarios@pagina pagina `uc  1 a 1 65 ]
+"817
+[v SubProceso_VerHorarios@cant_horarios cant_horarios `uc  1 a 1 64 ]
+"819
+[v SubProceso_VerHorarios@paginas_max paginas_max `uc  1 a 1 62 ]
+"938
 } 0
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -888,7 +1010,7 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"1180 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+"2030 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 [v _Detallar_Horarios Detallar_Horarios `(v  1 s 1 Detallar_Horarios ]
 {
 [v Detallar_Horarios@numero numero `uc  1 p 1 wreg ]
@@ -896,16 +1018,231 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v Detallar_Horarios@hora hora `us  1 p 2 47 ]
 [v Detallar_Horarios@minuto minuto `us  1 p 2 49 ]
 [v Detallar_Horarios@tipo tipo `us  1 p 2 51 ]
-"1183
+"2033
 [v Detallar_Horarios@numero numero `uc  1 p 1 53 ]
-"1193
+"2043
 } 1
-"469
+"503
 [v _SubProceso_ResetSistema SubProceso_ResetSistema `(v  1 e 1 0 ]
 {
-"552
+"586
 } 0
-"383 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
+"1783
+[v _SubProceso_RegistrarPastillas SubProceso_RegistrarPastillas `(v  1 s 1 SubProceso_RegistrarPastillas ]
+{
+"1785
+[v SubProceso_RegistrarPastillas@pastillero_selecionado pastillero_selecionado `uc  1 a 1 60 ]
+"1786
+[v SubProceso_RegistrarPastillas@cantidad_a_sumar cantidad_a_sumar `uc  1 a 1 59 ]
+"1992
+} 0
+"478
+[v _MostrarAnimacionCarga MostrarAnimacionCarga `(v  1 e 1 0 ]
+{
+[v MostrarAnimacionCarga@fila fila `uc  1 p 1 wreg ]
+"483
+[v MostrarAnimacionCarga@index index `uc  1 a 1 38 ]
+"478
+[v MostrarAnimacionCarga@fila fila `uc  1 p 1 wreg ]
+[v MostrarAnimacionCarga@columna columna `uc  1 p 1 34 ]
+"480
+[v MostrarAnimacionCarga@fila fila `uc  1 p 1 37 ]
+"488
+} 1
+"1062 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+[v _LCD_I2C_CreateSolidPixel LCD_I2C_CreateSolidPixel `(E17286  1 e 1 0 ]
+{
+[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 wreg ]
+"1064
+[v LCD_I2C_CreateSolidPixel@solid_pixel solid_pixel `C[8]uc  1 a 8 25 ]
+"1062
+[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 wreg ]
+"1063
+[v LCD_I2C_CreateSolidPixel@F17470 F17470 `C[8]uc  1 s 8 F17470 ]
+[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 33 ]
+"1084
+} 1
+"755
+[v _LCD_I2C_CreateChar LCD_I2C_CreateChar `(E17286  1 e 1 0 ]
+{
+"761
+[v LCD_I2C_CreateChar@status status `E17286  1 a 1 24 ]
+"760
+[v LCD_I2C_CreateChar@index index `uc  1 a 1 23 ]
+"756
+[v LCD_I2C_CreateChar@pattern pattern `*.39Cuc  1 p 2 20 ]
+"757
+[v LCD_I2C_CreateChar@position position `uc  1 p 1 22 ]
+"806
+} 0
+"1085
+[v _LCD_I2C_ClearFile LCD_I2C_ClearFile `(E17286  1 e 1 0 ]
+{
+"1088
+} 0
+"546
+[v _LCD_I2C_WriteStringN LCD_I2C_WriteStringN `(E17286  1 e 1 0 ]
+{
+"551
+[v LCD_I2C_WriteStringN@index index `uc  1 a 1 25 ]
+"552
+[v LCD_I2C_WriteStringN@status status `E17286  1 a 1 24 ]
+"547
+[v LCD_I2C_WriteStringN@text text `*.32Cuc  1 p 2 19 ]
+"548
+[v LCD_I2C_WriteStringN@length length `uc  1 p 1 21 ]
+"574
+} 0
+"1993 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _Guardar_CantPastillas Guardar_CantPastillas `(v  1 s 1 Guardar_CantPastillas ]
+{
+[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 wreg ]
+"1995
+[v Guardar_CantPastillas@ubicacion_memoria ubicacion_memoria `C[4]uc  1 a 4 51 ]
+"1993
+[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 wreg ]
+[v Guardar_CantPastillas@cantidad_a_sumar cantidad_a_sumar `uc  1 p 1 47 ]
+"1994
+[v Guardar_CantPastillas@F17635 F17635 `C[4]uc  1 s 4 F17635 ]
+[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 55 ]
+"2012
+} 1
+"2013
+[v _Detallar_CantPastillas Detallar_CantPastillas `(v  1 s 1 Detallar_CantPastillas ]
+{
+[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 wreg ]
+"2015
+[v Detallar_CantPastillas@ubicacion_memoria ubicacion_memoria `C[4]uc  1 a 4 52 ]
+"2013
+[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 wreg ]
+"2014
+[v Detallar_CantPastillas@F17639 F17639 `C[4]uc  1 s 4 F17639 ]
+[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 56 ]
+"2029
+} 1
+"915 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+[v _LCD_I2C_WriteUInt16 LCD_I2C_WriteUInt16 `(E17286  1 e 1 0 ]
+{
+"916
+[v LCD_I2C_WriteUInt16@number number `us  1 p 2 45 ]
+"917
+[v LCD_I2C_WriteUInt16@digits digits `uc  1 p 1 47 ]
+"918
+[v LCD_I2C_WriteUInt16@decimals decimals `uc  1 p 1 48 ]
+"926
+} 0
+"244 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+[v _Buzzer_CorrectSound Buzzer_CorrectSound `(v  1 e 1 0 ]
+{
+[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_CorrectSound@buzzer buzzer `*.39S295  1 p 2 52 ]
+"259
+} 0
+"955 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _SubProceso_ModificarHorario SubProceso_ModificarHorario `(v  1 s 1 SubProceso_ModificarHorario ]
+{
+"1138
+[v SubProceso_ModificarHorario@x x `uc  1 a 1 63 ]
+"962
+[v SubProceso_ModificarHorario@hora_modificada hora_modificada `[4]uc  1 a 4 59 ]
+"960
+[v SubProceso_ModificarHorario@horario_selecionado horario_selecionado `uc  1 a 1 64 ]
+"961
+[v SubProceso_ModificarHorario@pastillero_modificado pastillero_modificado `uc  1 a 1 58 ]
+"1427
+} 0
+"1443
+[v _SubProceso_AgregarHorario SubProceso_AgregarHorario `(v  1 s 1 SubProceso_AgregarHorario ]
+{
+"1571
+[v SubProceso_AgregarHorario@x x `uc  1 a 1 64 ]
+"1450
+[v SubProceso_AgregarHorario@hora hora `[4]uc  1 a 4 58 ]
+"1449
+[v SubProceso_AgregarHorario@index_horarios_ocupados index_horarios_ocupados `uc  1 a 1 63 ]
+"1448
+[v SubProceso_AgregarHorario@pastillero_selecionado pastillero_selecionado `uc  1 a 1 62 ]
+"1762
+} 0
+"895 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+[v _LCD_I2C_WriteUInt8 LCD_I2C_WriteUInt8 `(E17286  1 e 1 0 ]
+{
+"896
+[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 wreg ]
+[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 wreg ]
+"897
+[v LCD_I2C_WriteUInt8@digits digits `uc  1 p 1 45 ]
+"900
+[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 46 ]
+"912
+} 1
+"813
+[v _LCD_I2C_WriteFixedUnsigned LCD_I2C_WriteFixedUnsigned `(E17286  1 s 1 LCD_I2C_WriteFixedUnsigned ]
+{
+"819
+[v LCD_I2C_WriteFixedUnsigned@divisor divisor `ul  1 a 4 40 ]
+"822
+[v LCD_I2C_WriteFixedUnsigned@status status `E17286  1 a 1 44 ]
+"820
+[v LCD_I2C_WriteFixedUnsigned@index index `uc  1 a 1 39 ]
+"821
+[v LCD_I2C_WriteFixedUnsigned@digit digit `uc  1 a 1 38 ]
+"814
+[v LCD_I2C_WriteFixedUnsigned@number number `us  1 p 2 34 ]
+"815
+[v LCD_I2C_WriteFixedUnsigned@digits digits `uc  1 p 1 36 ]
+"816
+[v LCD_I2C_WriteFixedUnsigned@decimals decimals `uc  1 p 1 37 ]
+"892
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"10
+[v ___llmod@counter counter `uc  1 a 1 33 ]
+"7
+[v ___llmod@dividend dividend `ul  1 p 4 25 ]
+[v ___llmod@divisor divisor `ul  1 p 4 29 ]
+"25
+} 0
+"171 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+[v _EEPROM_UpdateByte EEPROM_UpdateByte `(v  1 e 1 0 ]
+{
+"173
+[v EEPROM_UpdateByte@old_data old_data `uc  1 a 1 16 ]
+"171
+[v EEPROM_UpdateByte@address address `us  1 p 2 13 ]
+[v EEPROM_UpdateByte@data data `uc  1 p 1 15 ]
+"181
+} 0
+"108
+[v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
+{
+[v EEPROM_WriteByte@address address `us  1 p 2 10 ]
+[v EEPROM_WriteByte@data data `uc  1 p 1 12 ]
+"148
+} 0
+"396 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _SubProceso_ManejoErrores SubProceso_ManejoErrores `(v  1 s 1 SubProceso_ManejoErrores ]
+{
+[v SubProceso_ManejoErrores@mensaje mensaje `*.32uc  1 p 2 56 ]
+[v SubProceso_ManejoErrores@nivel_error nivel_error `uc  1 p 1 58 ]
+"468
+} 0
+"410 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
+[v _WS2812B_RGB WS2812B_RGB `(v  1 e 1 0 ]
+{
+[s S42 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
+[v WS2812B_RGB@tira tira `*.39S42  1 p 2 15 ]
+"411
+[v WS2812B_RGB@red red `uc  1 p 1 17 ]
+"412
+[v WS2812B_RGB@green green `uc  1 p 1 18 ]
+"413
+[v WS2812B_RGB@blue blue `uc  1 p 1 19 ]
+"417
+} 0
+"383
 [v _WS2812B_Clear WS2812B_Clear `(v  1 e 1 0 ]
 {
 [s S42 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
@@ -974,72 +1311,80 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v WS2812B_SetPixel@blue blue `uc  1 p 1 5 ]
 "142
 } 0
-"933 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _SubProceso_RegistrarPastillas SubProceso_RegistrarPastillas `(v  1 s 1 SubProceso_RegistrarPastillas ]
+"516 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+[v _LCD_I2C_WriteString LCD_I2C_WriteString `(E17286  1 e 1 0 ]
 {
-"935
-[v SubProceso_RegistrarPastillas@pastillero_selecionado pastillero_selecionado `uc  1 a 1 60 ]
-"936
-[v SubProceso_RegistrarPastillas@cantidad_a_sumar cantidad_a_sumar `uc  1 a 1 59 ]
-"1142
+"518
+[v LCD_I2C_WriteString@status status `E17286  1 a 1 21 ]
+"516
+[v LCD_I2C_WriteString@text text `*.34Cuc  1 p 2 19 ]
+"543
 } 0
-"444
-[v _MostrarAnimacionCarga MostrarAnimacionCarga `(v  1 e 1 0 ]
+"332
+[v _LCD_I2C_WriteChar LCD_I2C_WriteChar `(E17286  1 e 1 0 ]
 {
-[v MostrarAnimacionCarga@fila fila `uc  1 p 1 wreg ]
-"449
-[v MostrarAnimacionCarga@index index `uc  1 a 1 38 ]
-"444
-[v MostrarAnimacionCarga@fila fila `uc  1 p 1 wreg ]
-[v MostrarAnimacionCarga@columna columna `uc  1 p 1 34 ]
-"446
-[v MostrarAnimacionCarga@fila fila `uc  1 p 1 37 ]
-"454
+[v LCD_I2C_WriteChar@character character `uc  1 p 1 wreg ]
+"334
+[v LCD_I2C_WriteChar@status status `E17286  1 a 1 18 ]
+"332
+[v LCD_I2C_WriteChar@character character `uc  1 p 1 wreg ]
+"340
+[v LCD_I2C_WriteChar@character character `uc  1 p 1 17 ]
+"353
 } 1
-"1062 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_CreateSolidPixel LCD_I2C_CreateSolidPixel `(E17286  1 e 1 0 ]
+"581
+[v _LCD_I2C_SetCursor LCD_I2C_SetCursor `(E17286  1 e 1 0 ]
 {
-[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 wreg ]
-"1064
-[v LCD_I2C_CreateSolidPixel@solid_pixel solid_pixel `C[8]uc  1 a 8 25 ]
-"1062
-[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 wreg ]
-"1063
-[v LCD_I2C_CreateSolidPixel@F17470 F17470 `C[8]uc  1 s 8 F17470 ]
-[v LCD_I2C_CreateSolidPixel@cgram_position cgram_position `uc  1 p 1 33 ]
-"1084
+"582
+[v LCD_I2C_SetCursor@row row `uc  1 p 1 wreg ]
+"586
+[v LCD_I2C_SetCursor@rowAddress rowAddress `uc  1 a 1 22 ]
+"582
+[v LCD_I2C_SetCursor@row row `uc  1 p 1 wreg ]
+"583
+[v LCD_I2C_SetCursor@column column `uc  1 p 1 20 ]
+"581
+[v LCD_I2C_SetCursor@row row `uc  1 p 1 21 ]
+"618
 } 1
-"755
-[v _LCD_I2C_CreateChar LCD_I2C_CreateChar `(E17286  1 e 1 0 ]
+"625
+[v _LCD_I2C_Clear LCD_I2C_Clear `(E17286  1 e 1 0 ]
 {
-"761
-[v LCD_I2C_CreateChar@status status `E17286  1 a 1 24 ]
-"760
-[v LCD_I2C_CreateChar@index index `uc  1 a 1 23 ]
-"756
-[v LCD_I2C_CreateChar@pattern pattern `*.39Cuc  1 p 2 20 ]
-"757
-[v LCD_I2C_CreateChar@position position `uc  1 p 1 22 ]
-"806
+"628
 } 0
-"1085
-[v _LCD_I2C_ClearFile LCD_I2C_ClearFile `(E17286  1 e 1 0 ]
+"294
+[v _LCD_I2C_Command LCD_I2C_Command `(E17286  1 e 1 0 ]
 {
-"1088
-} 0
-"546
-[v _LCD_I2C_WriteStringN LCD_I2C_WriteStringN `(E17286  1 e 1 0 ]
+[v LCD_I2C_Command@command command `uc  1 p 1 wreg ]
+"296
+[v LCD_I2C_Command@status status `E17286  1 a 1 18 ]
+"294
+[v LCD_I2C_Command@command command `uc  1 p 1 wreg ]
+"302
+[v LCD_I2C_Command@command command `uc  1 p 1 19 ]
+"329
+} 1
+"179
+[v _LCD_I2C_SendByte LCD_I2C_SendByte `(E17286  1 s 1 LCD_I2C_SendByte ]
 {
-"551
-[v LCD_I2C_WriteStringN@index index `uc  1 a 1 25 ]
-"552
-[v LCD_I2C_WriteStringN@status status `E17286  1 a 1 24 ]
-"547
-[v LCD_I2C_WriteStringN@text text `*.32Cuc  1 p 2 19 ]
-"548
-[v LCD_I2C_WriteStringN@length length `uc  1 p 1 21 ]
-"574
-} 0
+"180
+[v LCD_I2C_SendByte@value value `uc  1 p 1 wreg ]
+"187
+[v LCD_I2C_SendByte@block block `[4]uc  1 a 4 9 ]
+"184
+[v LCD_I2C_SendByte@control control `uc  1 a 1 16 ]
+"186
+[v LCD_I2C_SendByte@lowNibble lowNibble `uc  1 a 1 15 ]
+"185
+[v LCD_I2C_SendByte@highNibble highNibble `uc  1 a 1 14 ]
+"180
+[v LCD_I2C_SendByte@value value `uc  1 p 1 wreg ]
+"181
+[v LCD_I2C_SendByte@rs rs `uc  1 p 1 8 ]
+"190
+[v LCD_I2C_SendByte@value value `uc  1 p 1 13 ]
+"250
+} 1
 "282 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 [v _Keypad_Read Keypad_Read `(uc  1 e 1 0 ]
 {
@@ -1072,100 +1417,12 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v Keypad_ActivateRow@row row `uc  1 p 1 8 ]
 "125
 } 0
-"1143 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _Guardar_CantPastillas Guardar_CantPastillas `(v  1 s 1 Guardar_CantPastillas ]
+"86
+[v _Keypad_AllRowsHigh Keypad_AllRowsHigh `(v  1 s 1 Keypad_AllRowsHigh ]
 {
-[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 wreg ]
-"1145
-[v Guardar_CantPastillas@ubicacion_memoria ubicacion_memoria `C[4]uc  1 a 4 51 ]
-"1143
-[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 wreg ]
-[v Guardar_CantPastillas@cantidad_a_sumar cantidad_a_sumar `uc  1 p 1 47 ]
-"1144
-[v Guardar_CantPastillas@F17612 F17612 `C[4]uc  1 s 4 F17612 ]
-[v Guardar_CantPastillas@pastillero_selecionado pastillero_selecionado `uc  1 p 1 55 ]
-"1162
-} 1
-"171 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-[v _EEPROM_UpdateByte EEPROM_UpdateByte `(v  1 e 1 0 ]
-{
-"173
-[v EEPROM_UpdateByte@old_data old_data `uc  1 a 1 16 ]
-"171
-[v EEPROM_UpdateByte@address address `us  1 p 2 13 ]
-[v EEPROM_UpdateByte@data data `uc  1 p 1 15 ]
-"181
-} 0
-"1163 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _Detallar_CantPastillas Detallar_CantPastillas `(v  1 s 1 Detallar_CantPastillas ]
-{
-[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 wreg ]
-"1165
-[v Detallar_CantPastillas@ubicacion_memoria ubicacion_memoria `C[4]uc  1 a 4 52 ]
-"1163
-[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 wreg ]
-"1164
-[v Detallar_CantPastillas@F17616 F17616 `C[4]uc  1 s 4 F17616 ]
-[v Detallar_CantPastillas@tecla tecla `uc  1 p 1 56 ]
-"1179
-} 1
-"895 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_WriteUInt8 LCD_I2C_WriteUInt8 `(E17286  1 e 1 0 ]
-{
-"896
-[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 wreg ]
-[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 wreg ]
-"897
-[v LCD_I2C_WriteUInt8@digits digits `uc  1 p 1 45 ]
-"900
-[v LCD_I2C_WriteUInt8@number number `uc  1 p 1 46 ]
-"912
-} 1
-"915
-[v _LCD_I2C_WriteUInt16 LCD_I2C_WriteUInt16 `(E17286  1 e 1 0 ]
-{
-"916
-[v LCD_I2C_WriteUInt16@number number `us  1 p 2 45 ]
-"917
-[v LCD_I2C_WriteUInt16@digits digits `uc  1 p 1 47 ]
-"918
-[v LCD_I2C_WriteUInt16@decimals decimals `uc  1 p 1 48 ]
-"926
-} 0
-"813
-[v _LCD_I2C_WriteFixedUnsigned LCD_I2C_WriteFixedUnsigned `(E17286  1 s 1 LCD_I2C_WriteFixedUnsigned ]
-{
-"819
-[v LCD_I2C_WriteFixedUnsigned@divisor divisor `ul  1 a 4 40 ]
-"822
-[v LCD_I2C_WriteFixedUnsigned@status status `E17286  1 a 1 44 ]
-"820
-[v LCD_I2C_WriteFixedUnsigned@index index `uc  1 a 1 39 ]
-"821
-[v LCD_I2C_WriteFixedUnsigned@digit digit `uc  1 a 1 38 ]
-"814
-[v LCD_I2C_WriteFixedUnsigned@number number `us  1 p 2 34 ]
-"815
-[v LCD_I2C_WriteFixedUnsigned@digits digits `uc  1 p 1 36 ]
-"816
-[v LCD_I2C_WriteFixedUnsigned@decimals decimals `uc  1 p 1 37 ]
-"892
-} 0
-"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
-[v ___llmod __llmod `(ul  1 e 4 0 ]
-{
-"10
-[v ___llmod@counter counter `uc  1 a 1 33 ]
-"7
-[v ___llmod@dividend dividend `ul  1 p 4 25 ]
-[v ___llmod@divisor divisor `ul  1 p 4 29 ]
-"25
-} 0
-"59 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-[v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
-{
-[v EEPROM_ReadByte@address address `us  1 p 2 10 ]
-"83
+[s S545 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
+[v Keypad_AllRowsHigh@keypad keypad `*.39S545  1 p 2 0 ]
+"90
 } 0
 "278 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 [v _Buzzer_WarningSound Buzzer_WarningSound `(v  1 e 1 0 ]
@@ -1174,12 +1431,12 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v Buzzer_WarningSound@buzzer buzzer `*.39S295  1 p 2 52 ]
 "290
 } 0
-"244
-[v _Buzzer_CorrectSound Buzzer_CorrectSound `(v  1 e 1 0 ]
+"303
+[v _Buzzer_ErrorSound Buzzer_ErrorSound `(v  1 e 1 0 ]
 {
 [s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v Buzzer_CorrectSound@buzzer buzzer `*.39S295  1 p 2 52 ]
-"259
+[v Buzzer_ErrorSound@buzzer buzzer `*.39S295  1 p 2 52 ]
+"315
 } 0
 "207
 [v _Buzzer_ButtonClick Buzzer_ButtonClick `(v  1 e 1 0 ]
@@ -1187,13 +1444,6 @@ I2C_ERROR_INVALID_PARAMETER 5
 [s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
 [v Buzzer_ButtonClick@buzzer buzzer `*.39S295  1 p 2 52 ]
 "211
-} 0
-"303
-[v _Buzzer_ErrorSound Buzzer_ErrorSound `(v  1 e 1 0 ]
-{
-[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v Buzzer_ErrorSound@buzzer buzzer `*.39S295  1 p 2 52 ]
-"315
 } 0
 "115
 [v _Buzzer_Tone Buzzer_Tone `(v  1 e 1 0 ]
@@ -1260,6 +1510,35 @@ I2C_ERROR_INVALID_PARAMETER 5
 [s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
 [v Buzzer_Off@buzzer buzzer `*.39S295  1 p 2 7 ]
 "195
+} 0
+"22
+[v _Buzzer_PinLow Buzzer_PinLow `(v  1 s 1 Buzzer_PinLow ]
+{
+[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
+[v Buzzer_PinLow@buzzer buzzer `*.39S295  1 p 2 0 ]
+"25
+} 0
+"382 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+[v _RecorrerEEPROM RecorrerEEPROM `(a  1 e 1 0 ]
+{
+"384
+[v RecorrerEEPROM@x x `uc  1 a 1 12 ]
+"390
+} 0
+"59 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+[v _EEPROM_ReadByte EEPROM_ReadByte `(uc  1 e 1 0 ]
+{
+[v EEPROM_ReadByte@address address `us  1 p 2 10 ]
+"83
+} 0
+"24
+[v _EEPROM_SetAddress EEPROM_SetAddress `(v  1 s 1 EEPROM_SetAddress ]
+{
+"26
+[v EEPROM_SetAddress@real_address real_address `ul  1 a 4 6 ]
+"24
+[v EEPROM_SetAddress@address address `us  1 p 2 0 ]
+"37
 } 0
 "294 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\DS1307.c
 [v _DS1307_ReadDateTime DS1307_ReadDateTime `(E39  1 e 1 0 ]
@@ -1351,181 +1630,6 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v DS1307_ReadRegisters@start_register start_register `uc  1 p 1 13 ]
 "265
 } 1
-"755 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-[v _I2C1_Read I2C1_Read `(E17286  1 e 1 0 ]
-{
-"756
-[v I2C1_Read@address7 address7 `uc  1 p 1 wreg ]
-"762
-[v I2C1_Read@status status `E17286  1 a 1 7 ]
-"761
-[v I2C1_Read@index index `uc  1 a 1 6 ]
-"756
-[v I2C1_Read@address7 address7 `uc  1 p 1 wreg ]
-"757
-[v I2C1_Read@data data `*.39uc  1 p 2 2 ]
-"758
-[v I2C1_Read@length length `uc  1 p 1 4 ]
-"769
-[v I2C1_Read@address7 address7 `uc  1 p 1 5 ]
-"899
-} 1
-"383
-[v _I2C1_WaitStopRead I2C1_WaitStopRead `(E17286  1 s 1 I2C1_WaitStopRead ]
-{
-"385
-[v I2C1_WaitStopRead@timeout timeout `us  1 a 2 0 ]
-"408
-} 0
-"290
-[v _I2C1_WaitRxBufferFull I2C1_WaitRxBufferFull `(E17286  1 s 1 I2C1_WaitRxBufferFull ]
-{
-"292
-[v I2C1_WaitRxBufferFull@timeout timeout `us  1 a 2 0 ]
-"326
-} 0
-"220 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_perifericos config_perifericos `(v  1 e 1 0 ]
-{
-"262
-} 0
-"85
-[v _config_motores config_motores `(v  1 s 1 config_motores ]
-{
-"104
-} 0
-"103 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
-[v _Stepper_Init Stepper_Init `(v  1 e 1 0 ]
-{
-[s S196 . 8 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 nibble 1 6 `uc 1 index 1 7 ]
-[v Stepper_Init@motor motor `*.39S196  1 p 2 0 ]
-"104
-[v Stepper_Init@lat lat `*.39VEuc  1 p 2 2 ]
-"105
-[v Stepper_Init@tris tris `*.39VEuc  1 p 2 4 ]
-"106
-[v Stepper_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
-"107
-[v Stepper_Init@nibble nibble `uc  1 p 1 8 ]
-"169
-} 0
-"110 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_leds config_leds `(v  1 s 1 config_leds ]
-{
-"117
-} 0
-"22 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
-[v _WS2812B_Init WS2812B_Init `(v  1 e 1 0 ]
-{
-"24
-[v WS2812B_Init@i i `uc  1 a 1 5 ]
-[s S42 . 91 `uc 1 num_leds 1 0 `[30]uc 1 red 30 1 `[30]uc 1 green 30 31 `[30]uc 1 blue 30 61 ]
-"22
-[v WS2812B_Init@tira tira `*.39S42  1 p 2 0 ]
-[v WS2812B_Init@num_leds num_leds `uc  1 p 1 2 ]
-"84
-} 0
-"137 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_keypad config_keypad `(v  1 s 1 config_keypad ]
-{
-"146
-} 0
-"208 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
-[v _Keypad_Init Keypad_Init `(v  1 e 1 0 ]
-{
-[s S545 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
-[v Keypad_Init@keypad keypad `*.39S545  1 p 2 6 ]
-"209
-[v Keypad_Init@port port `*.39VEuc  1 p 2 8 ]
-"210
-[v Keypad_Init@lat lat `*.39VEuc  1 p 2 10 ]
-"211
-[v Keypad_Init@tris tris `*.39VEuc  1 p 2 12 ]
-"212
-[v Keypad_Init@ansel ansel `*.39VEuc  1 p 2 14 ]
-"213
-[v Keypad_Init@wpu wpu `*.39VEuc  1 p 2 16 ]
-"276
-} 0
-"86
-[v _Keypad_AllRowsHigh Keypad_AllRowsHigh `(v  1 s 1 Keypad_AllRowsHigh ]
-{
-[s S545 . 10 `*.39VEuc 1 port 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 tris 2 4 `*.39VEuc 1 ansel 2 6 `*.39VEuc 1 wpu 2 8 ]
-[v Keypad_AllRowsHigh@keypad keypad `*.39S545  1 p 2 0 ]
-"90
-} 0
-"176 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_ir config_ir `(v  1 s 1 config_ir ]
-{
-"184
-} 0
-"9 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
-[v _IRSensor_Init IRSensor_Init `(v  1 e 1 0 ]
-{
-[s S268 . 7 `*.39VEuc 1 port 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v IRSensor_Init@sensor sensor `*.39S268  1 p 2 0 ]
-"10
-[v IRSensor_Init@port port `*.39VEuc  1 p 2 2 ]
-"11
-[v IRSensor_Init@tris tris `*.39VEuc  1 p 2 4 ]
-"12
-[v IRSensor_Init@ansel ansel `*.39VEuc  1 p 2 6 ]
-"13
-[v IRSensor_Init@pin_mask pin_mask `uc  1 p 1 8 ]
-"62
-} 0
-"190 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_i2c_lcd config_i2c_lcd `(v  1 s 1 config_i2c_lcd ]
-{
-"214
-} 0
-"271 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_SetAddress LCD_I2C_SetAddress `(E17286  1 e 1 0 ]
-{
-[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 wreg ]
-[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 wreg ]
-"273
-[v LCD_I2C_SetAddress@address7 address7 `uc  1 p 1 0 ]
-"281
-} 1
-"360
-[v _LCD_I2C_Init LCD_I2C_Init `(E17286  1 e 1 0 ]
-{
-"362
-[v LCD_I2C_Init@status status `E17286  1 a 1 22 ]
-"509
-} 0
-"128
-[v _LCD_I2C_WriteNibble LCD_I2C_WriteNibble `(E17286  1 s 1 LCD_I2C_WriteNibble ]
-{
-"129
-[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 wreg ]
-"134
-[v LCD_I2C_WriteNibble@block block `[2]uc  1 a 2 10 ]
-"133
-[v LCD_I2C_WriteNibble@base base `uc  1 a 1 12 ]
-"129
-[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 wreg ]
-"130
-[v LCD_I2C_WriteNibble@rs rs `uc  1 p 1 8 ]
-"140
-[v LCD_I2C_WriteNibble@nibble nibble `uc  1 p 1 9 ]
-"173
-} 1
-"256
-[v _LCD_I2C_UpdateDisplayControl LCD_I2C_UpdateDisplayControl `(E17286  1 s 1 LCD_I2C_UpdateDisplayControl ]
-{
-"264
-} 0
-"110
-[v _LCD_I2C_ExpanderWrite LCD_I2C_ExpanderWrite `(E17286  1 s 1 LCD_I2C_ExpanderWrite ]
-{
-[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 wreg ]
-[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 wreg ]
-"112
-[v LCD_I2C_ExpanderWrite@value value `uc  1 p 1 10 ]
-"116
-} 1
 "738 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 [v _I2C1_WriteSingleByte I2C1_WriteSingleByte `(E17286  1 e 1 0 ]
 {
@@ -1538,145 +1642,7 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v I2C1_WriteSingleByte@address7 address7 `uc  1 p 1 9 ]
 "748
 } 1
-"625 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_Clear LCD_I2C_Clear `(E17286  1 e 1 0 ]
-{
-"628
-} 0
-"415 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-[v _I2C1_Init I2C1_Init `(v  1 e 1 0 ]
-{
-"584
-} 0
-"134
-[v _I2C1_ConfigurePPS I2C1_ConfigurePPS `(v  1 s 1 I2C1_ConfigurePPS ]
-{
-"136
-[v I2C1_ConfigurePPS@previousGie previousGie `uc  1 a 1 0 ]
-"203
-} 0
-"152 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_cny70 config_cny70 `(v  1 s 1 config_cny70 ]
-{
-"170
-} 0
-"64 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-[v _CNY70_Init CNY70_Init `(v  1 e 1 0 ]
-{
-[s S356 . 6 `*.39VEuc 1 tris_reg 2 0 `*.39VEuc 1 ansel_reg 2 2 `uc 1 pin_mask 1 4 `uc 1 adc_channel 1 5 ]
-[v CNY70_Init@sensor sensor `*.39S356  1 p 2 0 ]
-"65
-[v CNY70_Init@tris tris `*.39VEuc  1 p 2 2 ]
-"66
-[v CNY70_Init@ansel ansel `*.39VEuc  1 p 2 4 ]
-"67
-[v CNY70_Init@pin_mask pin_mask `uc  1 p 1 6 ]
-"68
-[v CNY70_Init@adc_channel adc_channel `uc  1 p 1 7 ]
-"97
-} 0
-"14
-[v _CNY70_ADC_Init_FOSC64 CNY70_ADC_Init_FOSC64 `(v  1 e 1 0 ]
-{
-"58
-} 0
-"123 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-[v _config_buzzer config_buzzer `(v  1 s 1 config_buzzer ]
-{
-"131
-} 0
-"56 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-[v _Buzzer_Init Buzzer_Init `(v  1 e 1 0 ]
-{
-[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v Buzzer_Init@buzzer buzzer `*.39S295  1 p 2 7 ]
-"57
-[v Buzzer_Init@lat lat `*.39VEuc  1 p 2 9 ]
-"58
-[v Buzzer_Init@tris tris `*.39VEuc  1 p 2 11 ]
-"59
-[v Buzzer_Init@ansel ansel `*.39VEuc  1 p 2 13 ]
-"60
-[v Buzzer_Init@pin_mask pin_mask `uc  1 p 1 15 ]
-"96
-} 0
-"22
-[v _Buzzer_PinLow Buzzer_PinLow `(v  1 s 1 Buzzer_PinLow ]
-{
-[s S295 . 7 `*.39VEuc 1 lat 2 0 `*.39VEuc 1 tris 2 2 `*.39VEuc 1 ansel 2 4 `uc 1 pin_mask 1 6 ]
-[v Buzzer_PinLow@buzzer buzzer `*.39S295  1 p 2 0 ]
-"25
-} 0
-"516 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-[v _LCD_I2C_WriteString LCD_I2C_WriteString `(E17286  1 e 1 0 ]
-{
-"518
-[v LCD_I2C_WriteString@status status `E17286  1 a 1 21 ]
-"516
-[v LCD_I2C_WriteString@text text `*.34Cuc  1 p 2 19 ]
-"543
-} 0
-"332
-[v _LCD_I2C_WriteChar LCD_I2C_WriteChar `(E17286  1 e 1 0 ]
-{
-[v LCD_I2C_WriteChar@character character `uc  1 p 1 wreg ]
-"334
-[v LCD_I2C_WriteChar@status status `E17286  1 a 1 18 ]
-"332
-[v LCD_I2C_WriteChar@character character `uc  1 p 1 wreg ]
-"340
-[v LCD_I2C_WriteChar@character character `uc  1 p 1 17 ]
-"353
-} 1
-"581
-[v _LCD_I2C_SetCursor LCD_I2C_SetCursor `(E17286  1 e 1 0 ]
-{
-"582
-[v LCD_I2C_SetCursor@row row `uc  1 p 1 wreg ]
-"586
-[v LCD_I2C_SetCursor@rowAddress rowAddress `uc  1 a 1 22 ]
-"582
-[v LCD_I2C_SetCursor@row row `uc  1 p 1 wreg ]
-"583
-[v LCD_I2C_SetCursor@column column `uc  1 p 1 20 ]
-"581
-[v LCD_I2C_SetCursor@row row `uc  1 p 1 21 ]
-"618
-} 1
-"294
-[v _LCD_I2C_Command LCD_I2C_Command `(E17286  1 e 1 0 ]
-{
-[v LCD_I2C_Command@command command `uc  1 p 1 wreg ]
-"296
-[v LCD_I2C_Command@status status `E17286  1 a 1 18 ]
-"294
-[v LCD_I2C_Command@command command `uc  1 p 1 wreg ]
-"302
-[v LCD_I2C_Command@command command `uc  1 p 1 19 ]
-"329
-} 1
-"179
-[v _LCD_I2C_SendByte LCD_I2C_SendByte `(E17286  1 s 1 LCD_I2C_SendByte ]
-{
-"180
-[v LCD_I2C_SendByte@value value `uc  1 p 1 wreg ]
-"187
-[v LCD_I2C_SendByte@block block `[4]uc  1 a 4 9 ]
-"184
-[v LCD_I2C_SendByte@control control `uc  1 a 1 16 ]
-"186
-[v LCD_I2C_SendByte@lowNibble lowNibble `uc  1 a 1 15 ]
-"185
-[v LCD_I2C_SendByte@highNibble highNibble `uc  1 a 1 14 ]
-"180
-[v LCD_I2C_SendByte@value value `uc  1 p 1 wreg ]
-"181
-[v LCD_I2C_SendByte@rs rs `uc  1 p 1 8 ]
-"190
-[v LCD_I2C_SendByte@value value `uc  1 p 1 13 ]
-"250
-} 1
-"591 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+"591
 [v _I2C1_Write I2C1_Write `(E17286  1 e 1 0 ]
 {
 "592
@@ -1709,6 +1675,39 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v I2C1_WaitStop@timeout timeout `us  1 a 2 0 ]
 "373
 } 0
+"755
+[v _I2C1_Read I2C1_Read `(E17286  1 e 1 0 ]
+{
+"756
+[v I2C1_Read@address7 address7 `uc  1 p 1 wreg ]
+"762
+[v I2C1_Read@status status `E17286  1 a 1 7 ]
+"761
+[v I2C1_Read@index index `uc  1 a 1 6 ]
+"756
+[v I2C1_Read@address7 address7 `uc  1 p 1 wreg ]
+"757
+[v I2C1_Read@data data `*.39uc  1 p 2 2 ]
+"758
+[v I2C1_Read@length length `uc  1 p 1 4 ]
+"769
+[v I2C1_Read@address7 address7 `uc  1 p 1 5 ]
+"899
+} 1
+"383
+[v _I2C1_WaitStopRead I2C1_WaitStopRead `(E17286  1 s 1 I2C1_WaitStopRead ]
+{
+"385
+[v I2C1_WaitStopRead@timeout timeout `us  1 a 2 0 ]
+"408
+} 0
+"290
+[v _I2C1_WaitRxBufferFull I2C1_WaitRxBufferFull `(E17286  1 s 1 I2C1_WaitRxBufferFull ]
+{
+"292
+[v I2C1_WaitRxBufferFull@timeout timeout `us  1 a 2 0 ]
+"326
+} 0
 "213
 [v _I2C1_WaitBusFree I2C1_WaitBusFree `(E17286  1 s 1 I2C1_WaitBusFree ]
 {
@@ -1725,20 +1724,4 @@ I2C_ERROR_INVALID_PARAMETER 5
 [v _I2C1_ClearFlags I2C1_ClearFlags `(v  1 s 1 I2C1_ClearFlags ]
 {
 "87
-} 0
-"108 C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-[v _EEPROM_WriteByte EEPROM_WriteByte `(v  1 e 1 0 ]
-{
-[v EEPROM_WriteByte@address address `us  1 p 2 10 ]
-[v EEPROM_WriteByte@data data `uc  1 p 1 12 ]
-"148
-} 0
-"24
-[v _EEPROM_SetAddress EEPROM_SetAddress `(v  1 s 1 EEPROM_SetAddress ]
-{
-"26
-[v EEPROM_SetAddress@real_address real_address `ul  1 a 4 6 ]
-"24
-[v EEPROM_SetAddress@address address `us  1 p 2 0 ]
-"37
 } 0

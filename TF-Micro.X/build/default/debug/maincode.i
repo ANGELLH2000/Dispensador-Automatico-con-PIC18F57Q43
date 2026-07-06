@@ -29637,8 +29637,7 @@ unsigned char __t3rd16on(void);
 # 10 "./funcionesGenerales.h"
 void config_perifericos(void);
 void config_perifericos_sensores(void);
-void verificar_condiciones_iniciales(void);
-void sistem_error(const char *mensaje);
+void SubProceso_CondicionesIniciales(void);
 void configuro(void);
 # 6 "maincode.c" 2
 
@@ -29657,7 +29656,7 @@ void configuro(void)
     config_perifericos();
 
 
-    verificar_condiciones_iniciales();
+    SubProceso_CondicionesIniciales();
 
 }
 
