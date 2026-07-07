@@ -18,9 +18,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [; ;./funcionesGenerales.h: 15: void PantallaGeneral(void);
 [v _PantallaGeneral `(v ~T0 @X0 0 ef ]
-"14
-[; ;./funcionesGenerales.h: 14: void SubProceso_MenuLCD(void);
-[v _SubProceso_MenuLCD `(v ~T0 @X0 0 ef ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2705,15 +2702,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;maincode.c: 38:         PantallaGeneral();
 [e ( _PantallaGeneral ..  ]
 "39
-[; ;maincode.c: 39:         SubProceso_MenuLCD();
-[e ( _SubProceso_MenuLCD ..  ]
-"42
-[; ;maincode.c: 42:     }
+[; ;maincode.c: 39:     }
 }
 [e :U 2433 ]
 [e $U 2434  ]
 [e :U 2435 ]
-"43
-[; ;maincode.c: 43: }
+"40
+[; ;maincode.c: 40: }
 [e :UE 2432 ]
 }

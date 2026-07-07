@@ -2701,13 +2701,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;maincode.c: 38:         PantallaGeneral();
 [e ( _PantallaGeneral ..  ]
-"41
-[; ;maincode.c: 41:     }
+"39
+[; ;maincode.c: 39:     }
 }
 [e :U 2433 ]
 [e $U 2434  ]
 [e :U 2435 ]
-"42
-[; ;maincode.c: 42: }
+"40
+[; ;maincode.c: 40: }
 [e :UE 2432 ]
 }
