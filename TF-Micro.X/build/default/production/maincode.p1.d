@@ -1,4 +1,5 @@
 build/default/production/maincode.p1:  \
 maincode.c  \
 cabecera.h  \
-funcionesGenerales.h 
+funcionesGenerales.h  \
+LIB_UART.h 

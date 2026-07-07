@@ -29644,22 +29644,42 @@ void PantallaGeneral(void);
 void configuro(void);
 # 6 "maincode.c" 2
 
+# 1 "./LIB_UART.h" 1
+# 34 "./LIB_UART.h"
+void U1_INIT(unsigned int velocidad);
+
+
+void U1_BYTE_SEND(unsigned char dato);
+
+
+void U1_STRING_SEND(const char *cadena);
+
+
+void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos);
+
+
+void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto);
+
+
+void U1_NEWLINE(void);
+# 8 "maincode.c" 2
 
 
 
 
+void Enviar_Trama_Data(unsigned char *buffer);
 void configuro(void)
 {
 
     OSCCON1 = 0x60;
     OSCFRQ = 0x06;
     OSCEN = 0x40;
-
+    U1_INIT(207);
 
     config_perifericos();
 
 
-    SubProceso_CondicionesIniciales();
+
 
 
 
@@ -29672,9 +29692,49 @@ void configuro(void)
 void main(void)
 {
     configuro();
+    unsigned char datos_prueba[40];
+
+
+    datos_prueba[0] = 4;
+    datos_prueba[1] = 2;
+    datos_prueba[2] = 80;
+    datos_prueba[3] = 3;
+    datos_prueba[4] = 0;
+
+
+    for (int i = 5; i < 40; i++) {
+        datos_prueba[i] = 0;
+    }
 
     while (1)
     {
-        PantallaGeneral();
+
+
+
+
+        U1_BYTE_SEND(b0101 0101);
+        _delay((unsigned long)((2000)*(32000000UL/4000.0)));
     }
+}
+void Enviar_Trama_Data(unsigned char *buffer) {
+    unsigned char checksum = 0;
+
+
+    U1_BYTE_SEND(170);
+    U1_BYTE_SEND(0x55);
+
+
+    U1_BYTE_SEND(0x28);
+
+
+    for (int i = 0; i < 40; i++) {
+        U1_BYTE_SEND(buffer[i]);
+        checksum += buffer[i];
+    }
+
+
+    U1_BYTE_SEND(checksum);
+
+
+    U1_BYTE_SEND(0x0A);
 }

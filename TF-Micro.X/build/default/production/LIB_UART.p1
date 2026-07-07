@@ -1,30 +1,46 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"5152 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5152: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
-"5390
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5390: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@177 ]
-"5592
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 5592: extern volatile unsigned char OSCEN __attribute__((address(0x0B3)));
-[v _OSCEN `Vuc ~T0 @X0 0 e@179 ]
-"34 ./LIB_UART.h
-[; ;./LIB_UART.h: 34: void U1_INIT(unsigned int velocidad);
-[v _U1_INIT `(v ~T0 @X0 0 ef1`ui ]
-"10 ./funcionesGenerales.h
-[; ;./funcionesGenerales.h: 10: void config_perifericos(void);
-[v _config_perifericos `(v ~T0 @X0 0 ef ]
-[p mainexit ]
-"12 maincode.c
-[; ;maincode.c: 12: void Enviar_Trama_Data(unsigned char *buffer);
-[v _Enviar_Trama_Data `(v ~T0 @X0 0 ef1`*uc ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"37 ./LIB_UART.h
-[; ;./LIB_UART.h: 37: void U1_BYTE_SEND(unsigned char dato);
-[v _U1_BYTE_SEND `(v ~T0 @X0 0 ef1`uc ]
+"17623 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17623: extern volatile unsigned char U1BRGH __attribute__((address(0x2AF)));
+[v _U1BRGH `Vuc ~T0 @X0 0 e@687 ]
+"17603
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17603: extern volatile unsigned char U1BRGL __attribute__((address(0x2AE)));
+[v _U1BRGL `Vuc ~T0 @X0 0 e@686 ]
+"17246
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17246: extern volatile unsigned char U1CON0 __attribute__((address(0x2AB)));
+[v _U1CON0 `Vuc ~T0 @X0 0 e@683 ]
+"17374
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17374: extern volatile unsigned char U1CON1 __attribute__((address(0x2AC)));
+[v _U1CON1 `Vuc ~T0 @X0 0 e@684 ]
+"17454
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17454: extern volatile unsigned char U1CON2 __attribute__((address(0x2AD)));
+[v _U1CON2 `Vuc ~T0 @X0 0 e@685 ]
+"10546
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 10546: extern volatile unsigned char RF0PPS __attribute__((address(0x229)));
+[v _RF0PPS `Vuc ~T0 @X0 0 e@553 ]
+"14720
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 14720: extern volatile unsigned char U1RXPPS __attribute__((address(0x272)));
+[v _U1RXPPS `Vuc ~T0 @X0 0 e@626 ]
+"17047
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17047: extern volatile unsigned char U1TXB __attribute__((address(0x2A3)));
+[v _U1TXB `Vuc ~T0 @X0 0 e@675 ]
+"17835
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17835:     struct {
+[s S873 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S873 . TXCIF RXFOIF RXBKIF FERIF CERIF ABDOVF PERIF TXMTIF ]
+"17845
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17845:     struct {
+[s S874 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S874 . U1TXCIF U1RXFOIF U1RXBKIF U1FERIF U1CERIF U1ABDOVF U1PERIF U1TXMTIF ]
+"17834
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17834: typedef union {
+[u S872 `S873 1 `S874 1 ]
+[n S872 . . . ]
+"17856
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17856: extern volatile U1ERRIRbits_t U1ERRIRbits __attribute__((address(0x2B2)));
+[v _U1ERRIRbits `VS872 ~T0 @X0 0 e@690 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/string.h
+[; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "270 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 270: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2596,220 +2612,606 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51113
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 51113: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"7 ./cabecera.h
-[p x FEXTOSC  =  OFF     ]
-"8
-[p x RSTOSC  =  EXTOSC   ]
-"11
-[p x CLKOUTEN  =  OFF    ]
-"12
-[p x PR1WAY  =  ON       ]
-"13
-[p x CSWEN  =  ON        ]
-"14
-[p x FCMEN  =  ON        ]
-"17
-[p x MCLRE  =  EXTMCLR   ]
-"18
-[p x PWRTS  =  PWRT_64   ]
-"19
-[p x MVECEN  =  ON       ]
-"20
-[p x IVT1WAY  =  ON      ]
-"21
-[p x LPBOREN  =  OFF     ]
-"22
-[p x BOREN  =  OFF       ]
+"23 LIB_UART.c
+[; ;LIB_UART.c: 23: void U1_INIT(unsigned int velocidad){
+[v _U1_INIT `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _U1_INIT ]
+[v _velocidad `ui ~T0 @X0 1 r1 ]
+[f ]
 "25
-[p x BORV  =  VBOR_1P9   ]
+[; ;LIB_UART.c: 25:     U1BRGH = (velocidad >>8) & 0x00FF;
+[e = _U1BRGH -> & >> _velocidad -> 8 `i -> -> 255 `i `ui `uc ]
 "26
-[p x ZCD  =  OFF         ]
+[; ;LIB_UART.c: 26:     U1BRGL = velocidad & 0x00FF;
+[e = _U1BRGL -> & _velocidad -> -> 255 `i `ui `uc ]
 "27
-[p x PPS1WAY  =  ON      ]
+[; ;LIB_UART.c: 27:     U1CON0 = 0x30;
+[e = _U1CON0 -> -> 48 `i `uc ]
 "28
-[p x STVREN  =  ON       ]
+[; ;LIB_UART.c: 28:     U1CON1 = 0x80;
+[e = _U1CON1 -> -> 128 `i `uc ]
 "29
-[p x LVP  =  OFF         ]
+[; ;LIB_UART.c: 29:     U1CON2 = 0x00;
+[e = _U1CON2 -> -> 0 `i `uc ]
 "30
-[p x XINST  =  OFF       ]
-"33
-[p x WDTCPS  =  WDTCPS_31 ]
-"34
-[p x WDTE  =  OFF        ]
+[; ;LIB_UART.c: 30:     RF0PPS = 0x20;
+[e = _RF0PPS -> -> 32 `i `uc ]
+"31
+[; ;LIB_UART.c: 31:     U1RXPPS = 0x29;
+[e = _U1RXPPS -> -> 41 `i `uc ]
 "37
-[p x WDTCWS  =  WDTCWS_7 ]
-"38
-[p x WDTCCS  =  SC       ]
-"41
-[p x BBSIZE  =  BBSIZE_512 ]
-"42
-[p x BBEN  =  OFF        ]
-"43
-[p x SAFEN  =  OFF       ]
-"44
-[p x DEBUG  =  OFF       ]
-"47
-[p x WRTB  =  OFF        ]
-"48
-[p x WRTC  =  OFF        ]
-"49
-[p x WRTD  =  OFF        ]
-"50
-[p x WRTSAF  =  OFF      ]
-"51
-[p x WRTAPP  =  OFF      ]
-"54
-[p x CP  =  OFF          ]
-"13 maincode.c
-[; ;maincode.c: 13: void configuro(void)
-[v _configuro `(v ~T0 @X0 1 ef ]
-"14
-[; ;maincode.c: 14: {
-{
-[e :U _configuro ]
-[f ]
-"16
-[; ;maincode.c: 16:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
-"17
-[; ;maincode.c: 17:     OSCFRQ = 0x06;
-[e = _OSCFRQ -> -> 6 `i `uc ]
-"18
-[; ;maincode.c: 18:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"19
-[; ;maincode.c: 19:     U1_INIT(207);
-[e ( _U1_INIT (1 -> -> 207 `i `ui ]
-"21
-[; ;maincode.c: 21:     config_perifericos();
-[e ( _config_perifericos ..  ]
-"28
-[; ;maincode.c: 28: }
-[e :UE 2431 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"34
-[; ;maincode.c: 34: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"35
-[; ;maincode.c: 35: {
-{
-[e :U _main ]
-[f ]
-"36
-[; ;maincode.c: 36:     configuro();
-[e ( _configuro ..  ]
-"37
-[; ;maincode.c: 37:     unsigned char datos_prueba[40];
-[v _datos_prueba `uc ~T0 @X0 -> 40 `i a ]
-"40
-[; ;maincode.c: 40:     datos_prueba[0] = 4;
-[e = *U + &U _datos_prueba * -> -> -> 0 `i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 4 `i `uc ]
-"41
-[; ;maincode.c: 41:     datos_prueba[1] = 2;
-[e = *U + &U _datos_prueba * -> -> -> 1 `i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 2 `i `uc ]
-"42
-[; ;maincode.c: 42:     datos_prueba[2] = 80;
-[e = *U + &U _datos_prueba * -> -> -> 2 `i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 80 `i `uc ]
-"43
-[; ;maincode.c: 43:     datos_prueba[3] = 3;
-[e = *U + &U _datos_prueba * -> -> -> 3 `i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 3 `i `uc ]
-"44
-[; ;maincode.c: 44:     datos_prueba[4] = 0;
-[e = *U + &U _datos_prueba * -> -> -> 4 `i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 0 `i `uc ]
-"47
-[; ;maincode.c: 47:     for (int i = 5; i < 40; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 5 `i ]
-[e $ < _i -> 40 `i 2433  ]
-[e $U 2434  ]
-[e :U 2433 ]
-{
-"48
-[; ;maincode.c: 48:         datos_prueba[i] = 0;
-[e = *U + &U _datos_prueba * -> -> _i `ui `ux -> -> # *U &U _datos_prueba `ui `ux -> -> 0 `i `uc ]
-"49
-[; ;maincode.c: 49:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 40 `i 2433  ]
-[e :U 2434 ]
-}
-"51
-[; ;maincode.c: 51:     while (1)
-[e :U 2437 ]
-"52
-[; ;maincode.c: 52:     {
-{
-"53
-[; ;maincode.c: 53:         Enviar_Trama_Data(datos_prueba);
-[e ( _Enviar_Trama_Data (1 &U _datos_prueba ]
-"57
-[; ;maincode.c: 57:         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"58
-[; ;maincode.c: 58:     }
-}
-[e :U 2436 ]
-[e $U 2437  ]
-[e :U 2438 ]
-"59
-[; ;maincode.c: 59: }
+[; ;LIB_UART.c: 37: }
 [e :UE 2432 ]
 }
-"60
-[; ;maincode.c: 60: void Enviar_Trama_Data(unsigned char *buffer) {
-[v _Enviar_Trama_Data `(v ~T0 @X0 1 ef1`*uc ]
+"40
+[; ;LIB_UART.c: 40: void U1_BYTE_SEND(unsigned char dato){
+[v _U1_BYTE_SEND `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _Enviar_Trama_Data ]
-[v _buffer `*uc ~T0 @X0 1 r1 ]
+[e :U _U1_BYTE_SEND ]
+[v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"61
-[; ;maincode.c: 61:     unsigned char checksum = 0;
-[v _checksum `uc ~T0 @X0 1 a ]
-[e = _checksum -> -> 0 `i `uc ]
-"62
-[; ;maincode.c: 62:     U1_BYTE_SEND(0xFF);
-[e ( _U1_BYTE_SEND (1 -> -> 255 `i `uc ]
-"64
-[; ;maincode.c: 64:     U1_BYTE_SEND(170);
-[e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
-"65
-[; ;maincode.c: 65:     U1_BYTE_SEND(0x55);
-[e ( _U1_BYTE_SEND (1 -> -> 85 `i `uc ]
-"68
-[; ;maincode.c: 68:     U1_BYTE_SEND(0x28);
-[e ( _U1_BYTE_SEND (1 -> -> 40 `i `uc ]
-"71
-[; ;maincode.c: 71:     for (int i = 0; i < 40; i++) {
+"41
+[; ;LIB_UART.c: 41:     U1TXB = dato;
+[e = _U1TXB _dato ]
+"42
+[; ;LIB_UART.c: 42:     while(U1ERRIRbits.TXMTIF == 0);
+[e $U 2434  ]
+[e :U 2435 ]
+[e :U 2434 ]
+[e $ == -> . . _U1ERRIRbits 0 7 `i -> 0 `i 2435  ]
+[e :U 2436 ]
+"43
+[; ;LIB_UART.c: 43: }
+[e :UE 2433 ]
+}
+"46
+[; ;LIB_UART.c: 46: void U1_STRING_SEND(const char *cadena)
+[v _U1_STRING_SEND `(v ~T0 @X0 1 ef1`*Cuc ]
+"47
+[; ;LIB_UART.c: 47: {
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 40 `i 2440  ]
+[e :U _U1_STRING_SEND ]
+"46
+[; ;LIB_UART.c: 46: void U1_STRING_SEND(const char *cadena)
+[v _cadena `*Cuc ~T0 @X0 1 r1 ]
+"47
+[; ;LIB_UART.c: 47: {
+[f ]
+"48
+[; ;LIB_UART.c: 48:     unsigned char tam;
+[v _tam `uc ~T0 @X0 1 a ]
+"49
+[; ;LIB_UART.c: 49:     tam = strlen(cadena);
+[e = _tam -> ( _strlen (1 _cadena `uc ]
+"50
+[; ;LIB_UART.c: 50:  unsigned char i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"51
+[; ;LIB_UART.c: 51:  for(i = 0; i<tam; i++)
+{
+[e = _i -> -> 0 `i `uc ]
 [e $U 2441  ]
-[e :U 2440 ]
+[e :U 2438 ]
+"52
+[; ;LIB_UART.c: 52:  {
 {
-"72
-[; ;maincode.c: 72:         U1_BYTE_SEND(buffer[i]);
-[e ( _U1_BYTE_SEND (1 *U + _buffer * -> _i `x -> -> # *U _buffer `i `x ]
-"73
-[; ;maincode.c: 73:         checksum += buffer[i];
-[e =+ _checksum -> *U + _buffer * -> _i `x -> -> # *U _buffer `i `x `uc ]
-"74
-[; ;maincode.c: 74:     }
+"53
+[; ;LIB_UART.c: 53:   U1_BYTE_SEND(cadena[i]);
+[e ( _U1_BYTE_SEND (1 -> *U + _cadena * -> _i `ux -> -> # *U _cadena `ui `ux `uc ]
+"54
+[; ;LIB_UART.c: 54:  }
 }
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 40 `i 2440  ]
+[e ++ _i -> -> 1 `i `uc ]
 [e :U 2441 ]
+[e $ < -> _i `i -> _tam `i 2438  ]
+[e :U 2439 ]
 }
+"55
+[; ;LIB_UART.c: 55: }
+[e :UE 2437 ]
+}
+"58
+[; ;LIB_UART.c: 58: void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos){
+[v _U1_VAR_CHAR `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _U1_VAR_CHAR ]
+[v _numero `uc ~T0 @X0 1 r1 ]
+[v _n_digitos `uc ~T0 @X0 1 r2 ]
+[f ]
+"59
+[; ;LIB_UART.c: 59:     unsigned char centena, decena, unidad;
+[v _centena `uc ~T0 @X0 1 a ]
+[v _decena `uc ~T0 @X0 1 a ]
+[v _unidad `uc ~T0 @X0 1 a ]
+"60
+[; ;LIB_UART.c: 60:     centena = (numero % 1000) / 100;
+[e = _centena -> / % -> _numero `i -> 1000 `i -> 100 `i `uc ]
+"61
+[; ;LIB_UART.c: 61:     decena = (numero % 100) / 10;
+[e = _decena -> / % -> _numero `i -> 100 `i -> 10 `i `uc ]
+"62
+[; ;LIB_UART.c: 62:     unidad = numero % 10;
+[e = _unidad -> % -> _numero `i -> 10 `i `uc ]
+"63
+[; ;LIB_UART.c: 63:     switch(n_digitos){
+[e $U 2444  ]
+{
+"64
+[; ;LIB_UART.c: 64:         case 1:
+[e :U 2445 ]
+"65
+[; ;LIB_UART.c: 65:             U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"66
+[; ;LIB_UART.c: 66:             break;
+[e $U 2443  ]
+"67
+[; ;LIB_UART.c: 67:         case 2:
+[e :U 2446 ]
+"68
+[; ;LIB_UART.c: 68:             U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"69
+[; ;LIB_UART.c: 69:             U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"70
+[; ;LIB_UART.c: 70:             break;
+[e $U 2443  ]
+"71
+[; ;LIB_UART.c: 71:         case 3:
+[e :U 2447 ]
+"72
+[; ;LIB_UART.c: 72:             U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"73
+[; ;LIB_UART.c: 73:             U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"74
+[; ;LIB_UART.c: 74:             U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"75
+[; ;LIB_UART.c: 75:             break;
+[e $U 2443  ]
+"76
+[; ;LIB_UART.c: 76:     }
+}
+[e $U 2443  ]
+[e :U 2444 ]
+[e [\ _n_digitos , $ -> 1 `i 2445
+ , $ -> 2 `i 2446
+ , $ -> 3 `i 2447
+ 2443 ]
+[e :U 2443 ]
 "77
-[; ;maincode.c: 77:     U1_BYTE_SEND(checksum);
-[e ( _U1_BYTE_SEND (1 _checksum ]
+[; ;LIB_UART.c: 77: }
+[e :UE 2442 ]
+}
 "80
-[; ;maincode.c: 80:     U1_BYTE_SEND(0x0A);
-[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
+[; ;LIB_UART.c: 80: void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto){
+[v _U1_VAR_INT `(v ~T0 @X0 1 ef3`ui`uc`uc ]
+{
+[e :U _U1_VAR_INT ]
+[v _numero `ui ~T0 @X0 1 r1 ]
+[v _n_digitos `uc ~T0 @X0 1 r2 ]
+[v _punto `uc ~T0 @X0 1 r3 ]
+[f ]
 "81
-[; ;maincode.c: 81: }
-[e :UE 2439 ]
+[; ;LIB_UART.c: 81:     unsigned char d_millar, millar, centena, decena, unidad;
+[v _d_millar `uc ~T0 @X0 1 a ]
+[v _millar `uc ~T0 @X0 1 a ]
+[v _centena `uc ~T0 @X0 1 a ]
+[v _decena `uc ~T0 @X0 1 a ]
+[v _unidad `uc ~T0 @X0 1 a ]
+"82
+[; ;LIB_UART.c: 82:     d_millar = numero / 10000;
+[e = _d_millar -> / _numero -> -> 10000 `i `ui `uc ]
+"83
+[; ;LIB_UART.c: 83:     millar = (numero % 10000) / 1000;
+[e = _millar -> / % _numero -> -> 10000 `i `ui -> -> 1000 `i `ui `uc ]
+"84
+[; ;LIB_UART.c: 84:     centena = (numero % 1000) / 100;
+[e = _centena -> / % _numero -> -> 1000 `i `ui -> -> 100 `i `ui `uc ]
+"85
+[; ;LIB_UART.c: 85:     decena = (numero % 100) / 10;
+[e = _decena -> / % _numero -> -> 100 `i `ui -> -> 10 `i `ui `uc ]
+"86
+[; ;LIB_UART.c: 86:     unidad = numero % 10;
+[e = _unidad -> % _numero -> -> 10 `i `ui `uc ]
+"87
+[; ;LIB_UART.c: 87:     switch(n_digitos){
+[e $U 2450  ]
+{
+"88
+[; ;LIB_UART.c: 88:         case 1:
+[e :U 2451 ]
+"89
+[; ;LIB_UART.c: 89:             U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"90
+[; ;LIB_UART.c: 90:             break;
+[e $U 2449  ]
+"91
+[; ;LIB_UART.c: 91:         case 2:
+[e :U 2452 ]
+"92
+[; ;LIB_UART.c: 92:             if(punto == 0){
+[e $ ! == -> _punto `i -> 0 `i 2453  ]
+{
+"93
+[; ;LIB_UART.c: 93:                 U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"94
+[; ;LIB_UART.c: 94:                 U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"95
+[; ;LIB_UART.c: 95:             }
+}
+[e $U 2454  ]
+"96
+[; ;LIB_UART.c: 96:             else if(punto == 1){
+[e :U 2453 ]
+[e $ ! == -> _punto `i -> 1 `i 2455  ]
+{
+"97
+[; ;LIB_UART.c: 97:                 U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"98
+[; ;LIB_UART.c: 98:                 U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"99
+[; ;LIB_UART.c: 99:                 U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"100
+[; ;LIB_UART.c: 100:             }
+}
+[e :U 2455 ]
+[e :U 2454 ]
+"101
+[; ;LIB_UART.c: 101:             break;
+[e $U 2449  ]
+"102
+[; ;LIB_UART.c: 102:         case 3:
+[e :U 2456 ]
+"103
+[; ;LIB_UART.c: 103:             switch(punto){
+[e $U 2458  ]
+{
+"104
+[; ;LIB_UART.c: 104:                 case 0:
+[e :U 2459 ]
+"105
+[; ;LIB_UART.c: 105:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"106
+[; ;LIB_UART.c: 106:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"107
+[; ;LIB_UART.c: 107:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"108
+[; ;LIB_UART.c: 108:                     break;
+[e $U 2457  ]
+"109
+[; ;LIB_UART.c: 109:                 case 1:
+[e :U 2460 ]
+"110
+[; ;LIB_UART.c: 110:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"111
+[; ;LIB_UART.c: 111:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"112
+[; ;LIB_UART.c: 112:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"113
+[; ;LIB_UART.c: 113:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"114
+[; ;LIB_UART.c: 114:                     break;
+[e $U 2457  ]
+"115
+[; ;LIB_UART.c: 115:                 case 2:
+[e :U 2461 ]
+"116
+[; ;LIB_UART.c: 116:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"117
+[; ;LIB_UART.c: 117:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"118
+[; ;LIB_UART.c: 118:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"119
+[; ;LIB_UART.c: 119:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"120
+[; ;LIB_UART.c: 120:                     break;
+[e $U 2457  ]
+"121
+[; ;LIB_UART.c: 121:             }
+}
+[e $U 2457  ]
+[e :U 2458 ]
+[e [\ _punto , $ -> 0 `i 2459
+ , $ -> 1 `i 2460
+ , $ -> 2 `i 2461
+ 2457 ]
+[e :U 2457 ]
+"122
+[; ;LIB_UART.c: 122:             break;
+[e $U 2449  ]
+"123
+[; ;LIB_UART.c: 123:         case 4:
+[e :U 2462 ]
+"124
+[; ;LIB_UART.c: 124:             switch(punto){
+[e $U 2464  ]
+{
+"125
+[; ;LIB_UART.c: 125:                 case 0:
+[e :U 2465 ]
+"126
+[; ;LIB_UART.c: 126:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"127
+[; ;LIB_UART.c: 127:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"128
+[; ;LIB_UART.c: 128:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"129
+[; ;LIB_UART.c: 129:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"130
+[; ;LIB_UART.c: 130:                     break;
+[e $U 2463  ]
+"131
+[; ;LIB_UART.c: 131:                 case 1:
+[e :U 2466 ]
+"132
+[; ;LIB_UART.c: 132:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"133
+[; ;LIB_UART.c: 133:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"134
+[; ;LIB_UART.c: 134:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"135
+[; ;LIB_UART.c: 135:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"136
+[; ;LIB_UART.c: 136:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"137
+[; ;LIB_UART.c: 137:                     break;
+[e $U 2463  ]
+"138
+[; ;LIB_UART.c: 138:                 case 2:
+[e :U 2467 ]
+"139
+[; ;LIB_UART.c: 139:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"140
+[; ;LIB_UART.c: 140:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"141
+[; ;LIB_UART.c: 141:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"142
+[; ;LIB_UART.c: 142:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"143
+[; ;LIB_UART.c: 143:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"144
+[; ;LIB_UART.c: 144:                     break;
+[e $U 2463  ]
+"145
+[; ;LIB_UART.c: 145:                 case 3:
+[e :U 2468 ]
+"146
+[; ;LIB_UART.c: 146:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"147
+[; ;LIB_UART.c: 147:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"148
+[; ;LIB_UART.c: 148:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"149
+[; ;LIB_UART.c: 149:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"150
+[; ;LIB_UART.c: 150:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"151
+[; ;LIB_UART.c: 151:                     break;
+[e $U 2463  ]
+"152
+[; ;LIB_UART.c: 152:             }
+}
+[e $U 2463  ]
+[e :U 2464 ]
+[e [\ _punto , $ -> 0 `i 2465
+ , $ -> 1 `i 2466
+ , $ -> 2 `i 2467
+ , $ -> 3 `i 2468
+ 2463 ]
+[e :U 2463 ]
+"153
+[; ;LIB_UART.c: 153:             break;
+[e $U 2449  ]
+"154
+[; ;LIB_UART.c: 154:         case 5:
+[e :U 2469 ]
+"155
+[; ;LIB_UART.c: 155:             switch(punto){
+[e $U 2471  ]
+{
+"156
+[; ;LIB_UART.c: 156:                 case 0:
+[e :U 2472 ]
+"157
+[; ;LIB_UART.c: 157:                     U1_BYTE_SEND(d_millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _d_millar `i -> 48 `i `uc ]
+"158
+[; ;LIB_UART.c: 158:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"159
+[; ;LIB_UART.c: 159:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"160
+[; ;LIB_UART.c: 160:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"161
+[; ;LIB_UART.c: 161:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"162
+[; ;LIB_UART.c: 162:                     break;
+[e $U 2470  ]
+"163
+[; ;LIB_UART.c: 163:                 case 1:
+[e :U 2473 ]
+"164
+[; ;LIB_UART.c: 164:                     U1_BYTE_SEND(d_millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _d_millar `i -> 48 `i `uc ]
+"165
+[; ;LIB_UART.c: 165:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"166
+[; ;LIB_UART.c: 166:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"167
+[; ;LIB_UART.c: 167:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"168
+[; ;LIB_UART.c: 168:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"169
+[; ;LIB_UART.c: 169:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"170
+[; ;LIB_UART.c: 170:                     break;
+[e $U 2470  ]
+"171
+[; ;LIB_UART.c: 171:                 case 2:
+[e :U 2474 ]
+"172
+[; ;LIB_UART.c: 172:                     U1_BYTE_SEND(d_millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _d_millar `i -> 48 `i `uc ]
+"173
+[; ;LIB_UART.c: 173:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"174
+[; ;LIB_UART.c: 174:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"175
+[; ;LIB_UART.c: 175:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"176
+[; ;LIB_UART.c: 176:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"177
+[; ;LIB_UART.c: 177:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"178
+[; ;LIB_UART.c: 178:                     break;
+[e $U 2470  ]
+"179
+[; ;LIB_UART.c: 179:                 case 3:
+[e :U 2475 ]
+"180
+[; ;LIB_UART.c: 180:                     U1_BYTE_SEND(d_millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _d_millar `i -> 48 `i `uc ]
+"181
+[; ;LIB_UART.c: 181:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"182
+[; ;LIB_UART.c: 182:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"183
+[; ;LIB_UART.c: 183:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"184
+[; ;LIB_UART.c: 184:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"185
+[; ;LIB_UART.c: 185:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"186
+[; ;LIB_UART.c: 186:                     break;
+[e $U 2470  ]
+"187
+[; ;LIB_UART.c: 187:                 case 4:
+[e :U 2476 ]
+"188
+[; ;LIB_UART.c: 188:                     U1_BYTE_SEND(d_millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _d_millar `i -> 48 `i `uc ]
+"189
+[; ;LIB_UART.c: 189:                     U1_BYTE_SEND('.');
+[e ( _U1_BYTE_SEND (1 -> -> 46 `ui `uc ]
+"190
+[; ;LIB_UART.c: 190:                     U1_BYTE_SEND(millar+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _millar `i -> 48 `i `uc ]
+"191
+[; ;LIB_UART.c: 191:                     U1_BYTE_SEND(centena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _centena `i -> 48 `i `uc ]
+"192
+[; ;LIB_UART.c: 192:                     U1_BYTE_SEND(decena+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _decena `i -> 48 `i `uc ]
+"193
+[; ;LIB_UART.c: 193:                     U1_BYTE_SEND(unidad+0x30);
+[e ( _U1_BYTE_SEND (1 -> + -> _unidad `i -> 48 `i `uc ]
+"194
+[; ;LIB_UART.c: 194:                     break;
+[e $U 2470  ]
+"195
+[; ;LIB_UART.c: 195:             }
+}
+[e $U 2470  ]
+[e :U 2471 ]
+[e [\ _punto , $ -> 0 `i 2472
+ , $ -> 1 `i 2473
+ , $ -> 2 `i 2474
+ , $ -> 3 `i 2475
+ , $ -> 4 `i 2476
+ 2470 ]
+[e :U 2470 ]
+"196
+[; ;LIB_UART.c: 196:             break;
+[e $U 2449  ]
+"197
+[; ;LIB_UART.c: 197:     }
+}
+[e $U 2449  ]
+[e :U 2450 ]
+[e [\ _n_digitos , $ -> 1 `i 2451
+ , $ -> 2 `i 2452
+ , $ -> 3 `i 2456
+ , $ -> 4 `i 2462
+ , $ -> 5 `i 2469
+ 2449 ]
+[e :U 2449 ]
+"198
+[; ;LIB_UART.c: 198: }
+[e :UE 2448 ]
+}
+"200
+[; ;LIB_UART.c: 200: void U1_NEWLINE(void){
+[v _U1_NEWLINE `(v ~T0 @X0 1 ef ]
+{
+[e :U _U1_NEWLINE ]
+[f ]
+"201
+[; ;LIB_UART.c: 201:     U1_BYTE_SEND(0x0A);
+[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
+"202
+[; ;LIB_UART.c: 202:     U1_BYTE_SEND(0x0D);
+[e ( _U1_BYTE_SEND (1 -> -> 13 `i `uc ]
+"203
+[; ;LIB_UART.c: 203: }
+[e :UE 2477 ]
 }
