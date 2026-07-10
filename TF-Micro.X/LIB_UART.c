@@ -75,6 +75,28 @@ void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos){
             break;
     }
 }
+void Enviar_Trama_Data(unsigned char *buffer) {
+    unsigned char checksum = 0;
+    U1_BYTE_SEND(0xFF);//
+    // Entrada 1: Enviar los 2 bytes de la cabecera fija (Header)
+    U1_BYTE_SEND(0xAA);//0xAA
+    U1_BYTE_SEND(0x55);
+    
+    // Entrada 2: Enviar el tamaño del contenido (40 bytes -> 0x28 en Hex)
+    U1_BYTE_SEND(0x28); 
+    
+    // Entrada 3: Enviar secuencialmente los 40 datos y acumular el Checksum
+    for (int i = 0; i < 40; i++) {
+        U1_BYTE_SEND(buffer[i]);
+        checksum += buffer[i]; // El desborde de 8 bits realiza el módulo 256 automáticamente
+    }
+    
+    // Entrada 4: Enviar el Checksum calculado
+    U1_BYTE_SEND(checksum);
+    
+    // Entrada 5: Enviar el byte de cierre (Footer)
+    U1_BYTE_SEND(0x0A); // Salto de línea (\n)
+}
 
 /*funcion para visualizar una variable de 16 bits en formato decimal*/
 void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto){

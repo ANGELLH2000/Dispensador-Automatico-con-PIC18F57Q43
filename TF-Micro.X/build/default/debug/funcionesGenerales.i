@@ -30433,6 +30433,7 @@ void SubProceso_CondicionesIniciales(void);
 void SubProceso_DispersacionVerificacion(void);
 void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
+void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 # 15 "funcionesGenerales.c" 2
 
@@ -32420,4 +32421,11 @@ void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tip
     LCD_I2C_WriteString(" P");
     dato_memoria = EEPROM_ReadByte(tipo);
     LCD_I2C_WriteUInt8(dato_memoria,1);
+}
+void DataEEPROM(uint8_t data_memoria[40])
+{
+    for(uint8_t x = 0; x < 40; x++)
+    {
+        data_memoria[x] = EEPROM_ReadByte(x);
+    }
 }

@@ -29652,6 +29652,8 @@ void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punt
 
 
 void U1_NEWLINE(void);
+
+void Enviar_Trama_Data(unsigned char *buffer);
 # 22 "LIB_UART.c" 2
 
 void U1_INIT(unsigned int velocidad){
@@ -29708,6 +29710,28 @@ void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos){
             U1_BYTE_SEND(unidad+0x30);
             break;
     }
+}
+void Enviar_Trama_Data(unsigned char *buffer) {
+    unsigned char checksum = 0;
+    U1_BYTE_SEND(0xFF);
+
+    U1_BYTE_SEND(0xAA);
+    U1_BYTE_SEND(0x55);
+
+
+    U1_BYTE_SEND(0x28);
+
+
+    for (int i = 0; i < 40; i++) {
+        U1_BYTE_SEND(buffer[i]);
+        checksum += buffer[i];
+    }
+
+
+    U1_BYTE_SEND(checksum);
+
+
+    U1_BYTE_SEND(0x0A);
 }
 
 

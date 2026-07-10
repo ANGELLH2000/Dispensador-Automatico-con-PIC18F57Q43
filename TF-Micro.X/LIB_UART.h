@@ -48,4 +48,6 @@ void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punt
 /*Funcion para irse una linea abajo en el terminal*/
 void U1_NEWLINE(void);
 
+void Enviar_Trama_Data(unsigned char *buffer);
+
 #endif	/* XC_HEADER_TEMPLATE_H */

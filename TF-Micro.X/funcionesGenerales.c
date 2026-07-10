@@ -115,7 +115,7 @@ static void config_leds(void)
      * Inicializa una tira WS2812B compuesta por dos LEDs.
      * El pin de comunicación se define en ws2812b.h.
      */
-    WS2812B_Init(&tira1, 2);
+    WS2812B_Init(&tira1, 1);
 }
 
 /*==============================================================================
@@ -241,8 +241,8 @@ void config_perifericos(void)
     config_i2c_lcd();
     //Configuracion de memoria
     if(PORTEbits.RE0 == 0){ 
-        LCD_I2C_SetCursor(1, 0);
-        LCD_I2C_WriteString("Presionado");
+        LCD_I2C_SetCursor(2, 0);
+        LCD_I2C_WriteString("BTN. Config - ON");
         __delay_ms(500);
         for (uint8_t x=0;x<39;x++)
         {
@@ -258,8 +258,10 @@ void config_perifericos(void)
         
         
     }else{
-        LCD_I2C_SetCursor(1, 0);
-        LCD_I2C_WriteString("NO Presionado");
+        LCD_I2C_SetCursor(2, 0);
+        LCD_I2C_WriteString("BTN. Config - OFF");
+        if(!RecorrerEEPROM())
+            SubProceso_ManejoErrores("Mem. Desconfigurada",3);
         __delay_ms(500);
     }
         
@@ -352,8 +354,11 @@ void SubProceso_DispensacionVerificacion(void)
      *----------------------------------------------------------------------*/
     
     /* Si se encoló al menos un pastillero, llamar a la rutina principal */
+    LCD_I2C_SetCursor(2, 0);
+    LCD_I2C_WriteString("aQUI");
     if (dispensar)
         Dispensar(pastillas_por_dispensar, cantidad_horarios_para_dispersar);
+    
 }
 
 void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para_dispersar)
@@ -491,14 +496,14 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
  */
 void PantallaGeneral(void)
 {
-    while(1)
-    {
+    
         /*----------------------------------------------------------------------
          * Monitoreo de dispensación y lectura del RTC.
          *----------------------------------------------------------------------*/
         
         SubProceso_DispensacionVerificacion();
-        
+        LCD_I2C_SetCursor(2, 0);
+        LCD_I2C_WriteString("Sistema en operacion");
         estado = DS1307_ReadDateTime(&fechaHora);
 
         /* Validación de estado de la comunicación y datos del RTC */
@@ -571,7 +576,7 @@ void PantallaGeneral(void)
              */
             break;
         }
-    }        
+           
 }
 /*==============================================================================
  * VERIFICACIÓN DE LAS CONDICIONES INICIALES
@@ -633,6 +638,7 @@ void SubProceso_CondicionesIniciales(void){
     
 
 }
+//dEVUELVE TRUE CUNADO EL RECORRIDO SALIO SIN NING[UN 0XFF]
 bool RecorrerEEPROM()
 {
     for(uint8_t x=0;x<39;x++)
@@ -2198,4 +2204,11 @@ void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tip
     LCD_I2C_WriteString(" P");
     dato_memoria = EEPROM_ReadByte(tipo);//Tipo de compartimento
     LCD_I2C_WriteUInt8(dato_memoria,1);
+}
+void DataEEPROM(uint8_t data_memoria[40])
+{
+    for(uint8_t x = 0; x < 40; x++)
+    {
+        data_memoria[x] = EEPROM_ReadByte(x);
+    }
 }

@@ -29641,6 +29641,7 @@ void SubProceso_CondicionesIniciales(void);
 void SubProceso_DispersacionVerificacion(void);
 void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
+void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 # 6 "maincode.c" 2
 
@@ -29662,12 +29663,13 @@ void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punt
 
 
 void U1_NEWLINE(void);
+
+void Enviar_Trama_Data(unsigned char *buffer);
 # 8 "maincode.c" 2
 
 
 
 
-void Enviar_Trama_Data(unsigned char *buffer);
 void configuro(void)
 {
 
@@ -29691,49 +29693,13 @@ void configuro(void)
 
 void main(void)
 {
+    uint8_t datos[40];
     configuro();
-    unsigned char datos_prueba[40];
-
-
-    datos_prueba[0] = 4;
-    datos_prueba[1] = 2;
-    datos_prueba[2] = 80;
-    datos_prueba[3] = 3;
-    datos_prueba[4] = 0;
-
-
-    for (int i = 5; i < 40; i++) {
-        datos_prueba[i] = 0;
-    }
-
     while (1)
     {
-        Enviar_Trama_Data(datos_prueba);
-
-
-
-        _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+        DataEEPROM(datos);
+        Enviar_Trama_Data(datos);
+        PantallaGeneral();
+        _delay((unsigned long)((500)*(32000000UL/4000.0)));
     }
-}
-void Enviar_Trama_Data(unsigned char *buffer) {
-    unsigned char checksum = 0;
-    U1_BYTE_SEND(0xFF);
-
-    U1_BYTE_SEND(170);
-    U1_BYTE_SEND(0x55);
-
-
-    U1_BYTE_SEND(0x28);
-
-
-    for (int i = 0; i < 40; i++) {
-        U1_BYTE_SEND(buffer[i]);
-        checksum += buffer[i];
-    }
-
-
-    U1_BYTE_SEND(checksum);
-
-
-    U1_BYTE_SEND(0x0A);
 }

@@ -21,9 +21,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51 ./LIB_UART.h
 [; ;./LIB_UART.h: 51: void Enviar_Trama_Data(unsigned char *buffer);
 [v _Enviar_Trama_Data `(v ~T0 @X0 0 ef1`*uc ]
-"15 ./funcionesGenerales.h
-[; ;./funcionesGenerales.h: 15: void PantallaGeneral(void);
-[v _PantallaGeneral `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
@@ -2717,19 +2714,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;maincode.c: 40:         Enviar_Trama_Data(datos);
 [e ( _Enviar_Trama_Data (1 &U _datos ]
-"41
-[; ;maincode.c: 41:         PantallaGeneral();
-[e ( _PantallaGeneral ..  ]
-"42
-[; ;maincode.c: 42:         _delay((unsigned long)((500)*(32000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"43
-[; ;maincode.c: 43:     }
+"44
+[; ;maincode.c: 44:         _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"45
+[; ;maincode.c: 45:     }
 }
 [e :U 2433 ]
 [e $U 2434  ]
 [e :U 2435 ]
-"44
-[; ;maincode.c: 44: }
+"46
+[; ;maincode.c: 46: }
 [e :UE 2432 ]
 }

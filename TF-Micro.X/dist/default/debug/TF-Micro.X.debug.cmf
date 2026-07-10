@@ -11,64 +11,66 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+init CODE 0 1FFFC 1FFFC 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 A 1 1
 $dist/default/debug\TF-Micro.X.debug.o
-cinit CODE 0 10ED6 10ED6 4A 1 2
-text0 CODE 0 10BDC 10BDC 76 1 2
-text1 CODE 0 11136 11136 1E 1 2
+cinit CODE 0 10E66 10E66 4A 1 2
+text0 CODE 0 10FB6 10FB6 3C 1 2
+text1 CODE 0 1116E 1116E 1E 1 2
 text2 CODE 0 103DE 103DE 118 1 2
 text3 CODE 0 10870 10870 A2 1 2
 text4 CODE 0 102AE 102AE 130 1 2
-text5 CODE 0 111B6 111B6 12 1 2
+text5 CODE 0 111EE 111EE 12 1 2
 text6 CODE 0 107CA 107CA A6 1 2
-text7 CODE 0 11024 11024 36 1 2
+text7 CODE 0 1102E 1102E 36 1 2
 text8 CODE 0 10168 10168 146 1 2
-text9 CODE 0 10F6A 10F6A 40 1 2
-text10 CODE 0 110C2 110C2 2A 1 2
+text9 CODE 0 10EFA 10EFA 40 1 2
+text10 CODE 0 110FA 110FA 2A 1 2
 text11 CODE 0 106E2 106E2 E8 1 2
-text12 CODE 0 1118A 1118A 16 1 2
-text13 CODE 0 11116 11116 20 1 2
+text12 CODE 0 111C2 111C2 16 1 2
+text13 CODE 0 1114E 1114E 20 1 2
 text14 CODE 0 10000 10000 168 1 2
-text15 CODE 0 10FAA 10FAA 3E 1 2
-text16 CODE 0 11202 11202 A 1 2
-text17 CODE 0 111D8 111D8 E 1 2
-text18 CODE 0 111A0 111A0 16 1 2
-text19 CODE 0 1120C 1120C 8 1 2
-text20 CODE 0 10E86 10E86 50 1 2
-text21 CODE 0 10FE8 10FE8 3C 1 2
+text15 CODE 0 10F3A 10F3A 3E 1 2
+text16 CODE 0 1123A 1123A A 1 2
+text17 CODE 0 11210 11210 E 1 2
+text18 CODE 0 111D8 111D8 16 1 2
+text19 CODE 0 11244 11244 8 1 2
+text20 CODE 0 10E16 10E16 50 1 2
+text21 CODE 0 10FF2 10FF2 3C 1 2
 text22 CODE 0 109B4 109B4 96 1 2
 text23 CODE 0 10912 10912 A2 1 2
-text24 CODE 0 111C8 111C8 10 1 2
-text25 CODE 0 1105A 1105A 36 1 2
-text26 CODE 0 111E6 111E6 E 1 2
+text24 CODE 0 11200 11200 10 1 2
+text25 CODE 0 11064 11064 36 1 2
+text26 CODE 0 1121E 1121E E 1 2
 text27 CODE 0 104F6 104F6 F6 1 2
-text28 CODE 0 10F20 10F20 4A 1 2
+text28 CODE 0 10EB0 10EB0 4A 1 2
 text29 CODE 0 10A4A 10A4A 90 1 2
-text30 CODE 0 110EC 110EC 2A 1 2
-text31 CODE 0 10D88 10D88 56 1 2
-text32 CODE 0 10CBC 10CBC 66 1 2
-text33 CODE 0 10DDE 10DDE 56 1 2
+text30 CODE 0 11124 11124 2A 1 2
+text31 CODE 0 10D18 10D18 56 1 2
+text32 CODE 0 10C4C 10C4C 66 1 2
+text33 CODE 0 10D6E 10D6E 56 1 2
 text34 CODE 0 105EC 105EC F6 1 2
 text35 CODE 0 10B62 10B62 7A 1 2
 text36 CODE 0 10ADA 10ADA 88 1 2
-text37 CODE 0 10D22 10D22 66 1 2
-text38 CODE 0 111F4 111F4 E 1 2
-text39 CODE 0 11214 11214 8 1 2
-text40 CODE 0 10E34 10E34 52 1 2
-text41 CODE 0 11090 11090 32 1 2
-text42 CODE 0 11154 11154 1E 1 2
-text43 CODE 0 10C52 10C52 6A 1 2
-text44 CODE 0 11172 11172 18 1 2
-idataCOMRAM CODE 0 1121C 1121C 4 1 1
-cstackCOMRAM COMRAM 1 501 501 46 1 1
-bssBANK5 BANK5 1 560 560 61 1 1
+text37 CODE 0 10CB2 10CB2 66 1 2
+text38 CODE 0 1122C 1122C E 1 2
+text39 CODE 0 1124C 1124C 8 1 2
+text40 CODE 0 10DC4 10DC4 52 1 2
+text41 CODE 0 1118C 1118C 1E 1 2
+text42 CODE 0 10BDC 10BDC 70 1 2
+text43 CODE 0 111AA 111AA 18 1 2
+text44 CODE 0 110CC 110CC 2E 1 2
+text45 CODE 0 10F78 10F78 3E 1 2
+text46 CODE 0 1109A 1109A 32 1 2
+idataCOMRAM CODE 0 11254 11254 4 1 1
+cstackCOMRAM COMRAM 1 501 501 44 1 1
+bssBANK5 BANK5 1 560 560 5F 1 1
 bssBANK6 BANK6 1 600 600 5B 1 1
 dataCOMRAM COMRAM 1 55C 55C 4 1 1
-bssCOMRAM COMRAM 1 547 547 15 1 1
+bssCOMRAM COMRAM 1 545 545 17 1 1
 mediumconst MEDIUMCONST 0 FA24 FA24 5DC 1 2
-config CONFIG 4 300000 300000 A 1 1
-$C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-init CODE 0 1FFFC 1FFFC 4 1 2
-reset_vec CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 A 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -76,22 +78,22 @@ config CONFIG 4 300000 300000 A 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 5C1-5FF 1
+RAM 5BF-5FF 1
 RAM 65B-24FF 1
 SFR 0-4FF 1
 SFR 2500-25FF 1
-BANK5 5C1-5FF 1
+BANK5 5BF-5FF 1
 BANK6 65B-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-FA23 1
-CONST 11220-1FFFB 1
+CONST 11258-1FFFB 1
 IDLOC 200000-20003F 1
 SMALLCONST 2600-FA23 1
 SMALLCONST 12600-1FFFB 1
 CODE 4-FA23 1
-CODE 11220-1FFFB 1
+CODE 11258-1FFFB 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -119,7 +121,7 @@ BANK33 2100-21FF 1
 BANK34 2200-22FF 1
 BANK35 2300-23FF 1
 BANK36 2400-24FF 1
-BIGRAM 5C1-5FF 1
+BIGRAM 5BF-5FF 1
 BIGRAM 65B-24FF 1
 BIGSFR 0-4FF 1
 BIGSFR 2500-25FF 1
@@ -141,73 +143,88 @@ MEDIUMCONST 12600-1FFFB 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\TF-Micro.X.debug.o
-11172 text44 CODE >39:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11174 text44 CODE >40:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11178 text44 CODE >41:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11188 text44 CODE >42:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-10C52 text43 CODE >60:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C52 text43 CODE >61:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C54 text43 CODE >64:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C5A text43 CODE >65:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C60 text43 CODE >68:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C66 text43 CODE >71:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C6C text43 CODE >72:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C7E text43 CODE >73:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C8E text43 CODE >74:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10CAE text43 CODE >77:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10CB4 text43 CODE >80:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10CBA text43 CODE >81:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-11154 text42 CODE >23:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11154 text42 CODE >25:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-1115A text42 CODE >26:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-1115E text42 CODE >27:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11162 text42 CODE >28:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11166 text42 CODE >29:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11168 text42 CODE >30:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-1116C text42 CODE >31:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11170 text42 CODE >36:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
-11090 text41 CODE >24:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-11090 text41 CODE >26:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-110B4 text41 CODE >30:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-110B8 text41 CODE >33:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-110BC text41 CODE >36:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-110C0 text41 CODE >37:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E34 text40 CODE >108:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E34 text40 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E4A text40 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E56 text40 CODE >122:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E5A text40 CODE >125:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E64 text40 CODE >130:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E66 text40 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E6A text40 CODE >135:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E6E text40 CODE >138:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E70 text40 CODE >141:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E7E text40 CODE >144:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E80 text40 CODE >147:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-10E84 text40 CODE >148:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
-11214 text39 CODE >72:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11214 text39 CODE >77:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11218 text39 CODE >86:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-1121A text39 CODE >87:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111F4 text38 CODE >99:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111F4 text38 CODE >104:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111F8 text38 CODE >109:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111FC text38 CODE >117:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11200 text38 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D22 text37 CODE >213:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D22 text37 CODE >215:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D2A text37 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D2E text37 CODE >222:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D3C text37 CODE >224:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D42 text37 CODE >225:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D42 text37 CODE >227:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D50 text37 CODE >229:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D56 text37 CODE >232:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D68 text37 CODE >234:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D6E text37 CODE >237:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D74 text37 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D84 text37 CODE >240:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10D86 text37 CODE >241:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1109A text46 CODE >24:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+1109A text46 CODE >26:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+110BE text46 CODE >30:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+110C2 text46 CODE >33:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+110C6 text46 CODE >36:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+110CA text46 CODE >37:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10F78 text45 CODE >59:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10F78 text45 CODE >63:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10F8A text45 CODE >65:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10F90 text45 CODE >69:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10F9C text45 CODE >73:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10FA2 text45 CODE >76:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10FA4 text45 CODE >79:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10FB2 text45 CODE >82:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10FB4 text45 CODE >83:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+110CC text44 CODE >2202:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+110CC text44 CODE >2204:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+110CE text44 CODE >2206:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+110E6 text44 CODE >2207:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+110F8 text44 CODE >2208:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111AA text43 CODE >40:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111AC text43 CODE >41:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111B0 text43 CODE >42:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111C0 text43 CODE >43:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BDC text42 CODE >78:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BDC text42 CODE >79:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BDE text42 CODE >80:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BE4 text42 CODE >82:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BEA text42 CODE >83:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BF0 text42 CODE >86:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BF6 text42 CODE >89:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10BFC text42 CODE >90:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10C0E text42 CODE >91:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10C1E text42 CODE >92:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10C3E text42 CODE >95:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10C44 text42 CODE >98:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10C4A text42 CODE >99:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+1118C text41 CODE >23:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+1118C text41 CODE >25:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+11192 text41 CODE >26:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+11196 text41 CODE >27:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+1119A text41 CODE >28:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+1119E text41 CODE >29:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111A0 text41 CODE >30:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111A4 text41 CODE >31:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+111A8 text41 CODE >37:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LIB_UART.c
+10DC4 text40 CODE >108:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DC4 text40 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DDA text40 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DE6 text40 CODE >122:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DEA text40 CODE >125:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DF4 text40 CODE >130:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DF6 text40 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DFA text40 CODE >135:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10DFE text40 CODE >138:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10E00 text40 CODE >141:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10E0E text40 CODE >144:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10E10 text40 CODE >147:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+10E14 text40 CODE >148:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\EPROM_DFM.c
+1124C text39 CODE >72:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1124C text39 CODE >77:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11250 text39 CODE >86:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11252 text39 CODE >87:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1122C text38 CODE >99:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1122C text38 CODE >104:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11230 text38 CODE >109:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11234 text38 CODE >117:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11238 text38 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CB2 text37 CODE >213:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CB2 text37 CODE >215:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CBA text37 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CBE text37 CODE >222:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CCC text37 CODE >224:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CD2 text37 CODE >225:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CD2 text37 CODE >227:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CE0 text37 CODE >229:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CE6 text37 CODE >232:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CF8 text37 CODE >234:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10CFE text37 CODE >237:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10D04 text37 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10D14 text37 CODE >240:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10D16 text37 CODE >241:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 10ADA text36 CODE >335:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 10ADA text36 CODE >337:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 10AE2 text36 CODE >342:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
@@ -269,55 +286,55 @@ $dist/default/debug\TF-Micro.X.debug.o
 106D4 text34 CODE >724:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 106D8 text34 CODE >728:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
 106E0 text34 CODE >731:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10DDE text33 CODE >179:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DDE text33 CODE >180:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DE0 text33 CODE >190:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DE4 text33 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DF4 text33 CODE >195:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DF6 text33 CODE >202:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DFC text33 CODE >208:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E04 text33 CODE >214:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E0C text33 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E12 text33 CODE >229:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E1A text33 CODE >235:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E20 text33 CODE >245:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10E32 text33 CODE >250:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10CBC text32 CODE >294:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10CBE text32 CODE >302:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10CCA text32 CODE >308:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10CDA text32 CODE >310:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10CE0 text32 CODE >317:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D02 text32 CODE >320:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D12 text32 CODE >321:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D16 text32 CODE >324:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D1E text32 CODE >325:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D1E text32 CODE >328:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D20 text32 CODE >329:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D88 text31 CODE >581:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D88 text31 CODE >582:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D8A text31 CODE >589:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D8E text31 CODE >591:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D8E text31 CODE >592:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D90 text31 CODE >593:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D94 text31 CODE >596:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D98 text31 CODE >597:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10D9C text31 CODE >600:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DA0 text31 CODE >601:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DA4 text31 CODE >604:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DA8 text31 CODE >605:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DAC text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DB0 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DB8 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DC0 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DC8 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DD2 text31 CODE >612:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10DDC text31 CODE >618:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-110EC text30 CODE >332:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-110EE text30 CODE >340:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-110FA text30 CODE >346:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1110A text30 CODE >348:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11112 text30 CODE >352:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11114 text30 CODE >353:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D6E text33 CODE >179:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D6E text33 CODE >180:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D70 text33 CODE >190:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D74 text33 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D84 text33 CODE >195:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D86 text33 CODE >202:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D8C text33 CODE >208:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D94 text33 CODE >214:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D9C text33 CODE >220:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10DA2 text33 CODE >229:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10DAA text33 CODE >235:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10DB0 text33 CODE >245:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10DC2 text33 CODE >250:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C4C text32 CODE >294:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C4E text32 CODE >302:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C5A text32 CODE >308:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C6A text32 CODE >310:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C70 text32 CODE >317:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10C92 text32 CODE >320:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10CA2 text32 CODE >321:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10CA6 text32 CODE >324:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10CAE text32 CODE >325:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10CAE text32 CODE >328:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10CB0 text32 CODE >329:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D18 text31 CODE >581:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D18 text31 CODE >582:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D1A text31 CODE >589:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D1E text31 CODE >591:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D1E text31 CODE >592:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D20 text31 CODE >593:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D24 text31 CODE >596:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D28 text31 CODE >597:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D2C text31 CODE >600:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D30 text31 CODE >601:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D34 text31 CODE >604:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D38 text31 CODE >605:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D3C text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D40 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D48 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D50 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D58 text31 CODE >609:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D62 text31 CODE >612:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10D6C text31 CODE >618:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11124 text30 CODE >332:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11126 text30 CODE >340:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11132 text30 CODE >346:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11142 text30 CODE >348:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1114A text30 CODE >352:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1114C text30 CODE >353:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10A4A text29 CODE >516:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10A4A text29 CODE >521:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10A5C text29 CODE >523:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
@@ -328,9 +345,9 @@ $dist/default/debug\TF-Micro.X.debug.o
 10AA4 text29 CODE >527:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10AD6 text29 CODE >542:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10AD8 text29 CODE >543:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10F20 text28 CODE >22:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-10F20 text28 CODE >24:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-10F68 text28 CODE >25:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+10EB0 text28 CODE >22:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+10EB0 text28 CODE >24:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+10EF8 text28 CODE >25:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 104F6 text27 CODE >56:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 104F6 text27 CODE >65:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 10506 text27 CODE >66:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
@@ -340,19 +357,19 @@ $dist/default/debug\TF-Micro.X.debug.o
 1058E text27 CODE >90:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 105DE text27 CODE >95:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
 105EA text27 CODE >96:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-111E6 text26 CODE >192:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-111E6 text26 CODE >194:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-111F2 text26 CODE >195:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
-1105A text25 CODE >125:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1105A text25 CODE >132:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-11082 text25 CODE >133:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1108E text25 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-111C8 text24 CODE >14:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-111C8 text24 CODE >29:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-111CC text24 CODE >42:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-111D0 text24 CODE >51:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-111D4 text24 CODE >57:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
-111D6 text24 CODE >58:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+1121E text26 CODE >192:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+1121E text26 CODE >194:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+1122A text26 CODE >195:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\Libbuzzer.c
+11064 text25 CODE >125:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+11064 text25 CODE >132:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+1108C text25 CODE >133:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+11098 text25 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+11200 text24 CODE >14:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+11200 text24 CODE >29:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+11204 text24 CODE >42:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+11208 text24 CODE >51:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+1120C text24 CODE >57:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
+1120E text24 CODE >58:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
 10912 text23 CODE >64:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
 10912 text23 CODE >81:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
 10922 text23 CODE >82:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\CNY70.c
@@ -368,69 +385,69 @@ $dist/default/debug\TF-Micro.X.debug.o
 10A00 text22 CODE >171:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 10A24 text22 CODE >172:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 10A48 text22 CODE >173:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-10FE8 text21 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FE8 text21 CODE >141:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FF0 text21 CODE >146:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FF2 text21 CODE >153:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FF8 text21 CODE >154:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FFC text21 CODE >156:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10FFE text21 CODE >166:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11002 text21 CODE >171:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11006 text21 CODE >181:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-1100A text21 CODE >186:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-1100E text21 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11012 text21 CODE >194:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11016 text21 CODE >196:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11018 text21 CODE >202:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-11022 text21 CODE >203:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E86 text20 CODE >415:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E86 text20 CODE >420:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E8A text20 CODE >433:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E8C text20 CODE >434:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E8E text20 CODE >440:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E92 text20 CODE >441:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E94 text20 CODE >450:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E96 text20 CODE >451:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E98 text20 CODE >457:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E9A text20 CODE >458:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10E9C text20 CODE >464:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EA0 text20 CODE >477:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EA6 text20 CODE >478:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EAA text20 CODE >484:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EB2 text20 CODE >485:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EBA text20 CODE >505:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EBE text20 CODE >513:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EC0 text20 CODE >534:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EC2 text20 CODE >551:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EC6 text20 CODE >557:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10EC8 text20 CODE >565:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10ECA text20 CODE >571:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10ECE text20 CODE >577:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10ED2 text20 CODE >583:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-10ED4 text20 CODE >584:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-1120C text19 CODE >625:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1120C text19 CODE >627:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11212 text19 CODE >628:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-111A0 text18 CODE >738:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111A0 text18 CODE >739:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111A2 text18 CODE >743:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111B4 text18 CODE >748:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
-111D8 text17 CODE >110:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-111DA text17 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-111E4 text17 CODE >116:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11202 text16 CODE >256:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11202 text16 CODE >258:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1120A text16 CODE >264:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FAA text15 CODE >128:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FAA text15 CODE >129:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FAC text15 CODE >140:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FB2 text15 CODE >146:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FB6 text15 CODE >153:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FC6 text15 CODE >155:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FC8 text15 CODE >164:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FCE text15 CODE >165:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FD4 text15 CODE >168:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-10FE6 text15 CODE >173:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10FF2 text21 CODE >134:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10FF2 text21 CODE >141:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10FFA text21 CODE >146:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10FFC text21 CODE >153:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11002 text21 CODE >154:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11006 text21 CODE >156:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11008 text21 CODE >166:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1100C text21 CODE >171:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11010 text21 CODE >181:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11014 text21 CODE >186:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11018 text21 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1101C text21 CODE >194:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11020 text21 CODE >196:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11022 text21 CODE >202:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+1102C text21 CODE >203:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E16 text20 CODE >415:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E16 text20 CODE >420:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E1A text20 CODE >433:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E1C text20 CODE >434:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E1E text20 CODE >440:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E22 text20 CODE >441:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E24 text20 CODE >450:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E26 text20 CODE >451:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E28 text20 CODE >457:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E2A text20 CODE >458:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E2C text20 CODE >464:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E30 text20 CODE >477:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E36 text20 CODE >478:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E3A text20 CODE >484:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E42 text20 CODE >485:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E4A text20 CODE >505:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E4E text20 CODE >513:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E50 text20 CODE >534:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E52 text20 CODE >551:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E56 text20 CODE >557:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E58 text20 CODE >565:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E5A text20 CODE >571:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E5E text20 CODE >577:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E62 text20 CODE >583:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+10E64 text20 CODE >584:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11244 text19 CODE >625:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11244 text19 CODE >627:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1124A text19 CODE >628:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+111D8 text18 CODE >738:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+111D8 text18 CODE >739:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+111DA text18 CODE >743:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+111EC text18 CODE >748:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\I2C.c
+11210 text17 CODE >110:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11212 text17 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1121C text17 CODE >116:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1123A text16 CODE >256:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1123A text16 CODE >258:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11242 text16 CODE >264:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F3A text15 CODE >128:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F3A text15 CODE >129:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F3C text15 CODE >140:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F42 text15 CODE >146:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F46 text15 CODE >153:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F56 text15 CODE >155:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F58 text15 CODE >164:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F5E text15 CODE >165:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F64 text15 CODE >168:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+10F76 text15 CODE >173:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10000 text14 CODE >360:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10000 text14 CODE >368:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10018 text14 CODE >371:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
@@ -463,19 +480,19 @@ $dist/default/debug\TF-Micro.X.debug.o
 1015E text14 CODE >506:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10162 text14 CODE >508:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
 10166 text14 CODE >509:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11116 text13 CODE >271:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11118 text13 CODE >273:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11128 text13 CODE >275:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1112E text13 CODE >276:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1112E text13 CODE >278:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11132 text13 CODE >280:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-11134 text13 CODE >281:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
-1118A text12 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1118A text12 CODE >200:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1118E text12 CODE >206:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-11196 text12 CODE >211:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1119A text12 CODE >216:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-1119E text12 CODE >217:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+1114E text13 CODE >271:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11150 text13 CODE >273:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11160 text13 CODE >275:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11166 text13 CODE >276:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+11166 text13 CODE >278:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1116A text13 CODE >280:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+1116C text13 CODE >281:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\LCD_I2C.c
+111C2 text12 CODE >193:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111C2 text12 CODE >200:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111C6 text12 CODE >206:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111CE text12 CODE >211:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111D2 text12 CODE >216:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111D6 text12 CODE >217:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 106E2 text11 CODE >9:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
 106E2 text11 CODE >20:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
 106F2 text11 CODE >27:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
@@ -484,12 +501,12 @@ $dist/default/debug\TF-Micro.X.debug.o
 1072A text11 CODE >50:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
 1077A text11 CODE >61:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
 107C8 text11 CODE >62:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\irsensor.c
-110C2 text10 CODE >179:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-110C2 text10 CODE >186:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-110EA text10 CODE >187:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-10F6A text9 CODE >86:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
-10F6A text9 CODE >88:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
-10FA8 text9 CODE >90:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+110FA text10 CODE >179:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+110FA text10 CODE >186:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+11122 text10 CODE >187:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+10EFA text9 CODE >86:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+10EFA text9 CODE >88:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
+10F38 text9 CODE >90:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 10168 text8 CODE >208:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 10168 text8 CODE >218:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 10178 text8 CODE >219:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
@@ -502,9 +519,9 @@ $dist/default/debug\TF-Micro.X.debug.o
 10262 text8 CODE >267:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 102A0 text8 CODE >275:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
 102AC text8 CODE >276:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\keypad4x4.c
-11024 text7 CODE >140:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-11024 text7 CODE >148:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-11058 text7 CODE >149:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+1102E text7 CODE >140:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+1102E text7 CODE >148:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+11062 text7 CODE >149:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 107CA text6 CODE >22:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
 107CA text6 CODE >29:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
 107DA text6 CODE >31:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
@@ -519,9 +536,9 @@ $dist/default/debug\TF-Micro.X.debug.o
 10838 text6 CODE >82:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
 10852 text6 CODE >83:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
 1086E text6 CODE >84:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\ws2812b.c
-111B6 text5 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-111B6 text5 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-111C6 text5 CODE >119:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111EE text5 CODE >112:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111EE text5 CODE >118:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
+111FE text5 CODE >119:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 102AE text4 CODE >103:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 102AE text4 CODE >113:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
 102BE text4 CODE >114:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\motor_paso.c
@@ -573,63 +590,56 @@ $dist/default/debug\TF-Micro.X.debug.o
 104D0 text2 CODE >262:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 104DC text2 CODE >263:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
 104F4 text2 CODE >267:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\funcionesGenerales.c
-11136 text1 CODE >13:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-11136 text1 CODE >16:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-1113C text1 CODE >17:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-11140 text1 CODE >18:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-11144 text1 CODE >19:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-1114E text1 CODE >21:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-11152 text1 CODE >28:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BDC text0 CODE >34:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BDC text0 CODE >36:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BE0 text0 CODE >40:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BE4 text0 CODE >41:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BE8 text0 CODE >42:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BEC text0 CODE >43:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BF0 text0 CODE >44:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BF2 text0 CODE >47:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10BF8 text0 CODE >48:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C06 text0 CODE >49:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C26 text0 CODE >53:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10C32 text0 CODE >57:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
-10ED6 cinit CODE >22826:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10ED6 cinit CODE >22828:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10ED6 cinit CODE >22831:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10ED6 cinit CODE >22942:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10ED8 cinit CODE >22943:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EDA cinit CODE >22944:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EDC cinit CODE >22945:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EDE cinit CODE >22946:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EE0 cinit CODE >22947:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EE2 cinit CODE >22948:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EE6 cinit CODE >22949:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EEA cinit CODE >22950:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EEA cinit CODE >22951:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EEC cinit CODE >22952:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EF0 cinit CODE >22953:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EF2 cinit CODE >22954:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EF4 cinit CODE >22955:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EF6 cinit CODE >22959:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EFA cinit CODE >22960:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EFC cinit CODE >22961:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EFC cinit CODE >22962:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10EFE cinit CODE >22963:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F00 cinit CODE >22964:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F02 cinit CODE >22967:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F06 cinit CODE >22968:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F08 cinit CODE >22969:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F08 cinit CODE >22970:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F0A cinit CODE >22971:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F0C cinit CODE >22972:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F0E cinit CODE >22975:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F12 cinit CODE >22976:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F14 cinit CODE >22977:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F14 cinit CODE >22978:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F16 cinit CODE >22979:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F18 cinit CODE >22980:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F1A cinit CODE >22986:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F1A cinit CODE >22988:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
-10F1C cinit CODE >22989:C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_1.s
+1116E text1 CODE >12:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+1116E text1 CODE >15:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+11174 text1 CODE >16:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+11178 text1 CODE >17:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+1117C text1 CODE >18:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+11186 text1 CODE >20:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+1118A text1 CODE >27:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10FB6 text0 CODE >33:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10FB6 text0 CODE >36:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10FBA text0 CODE >39:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10FC6 text0 CODE >40:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10FD2 text0 CODE >44:C:\Users\Angel\Desktop\Dispensador-Automatico-con-PIC18F57Q43\TF-Micro.X\maincode.c
+10E66 cinit CODE >22743:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E66 cinit CODE >22745:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E66 cinit CODE >22748:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E66 cinit CODE >22859:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E68 cinit CODE >22860:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E6A cinit CODE >22861:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E6C cinit CODE >22862:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E6E cinit CODE >22863:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E70 cinit CODE >22864:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E72 cinit CODE >22865:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E76 cinit CODE >22866:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E7A cinit CODE >22867:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E7A cinit CODE >22868:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E7C cinit CODE >22869:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E80 cinit CODE >22870:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E82 cinit CODE >22871:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E84 cinit CODE >22872:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E86 cinit CODE >22876:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E8A cinit CODE >22877:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E8C cinit CODE >22878:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E8C cinit CODE >22879:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E8E cinit CODE >22880:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E90 cinit CODE >22881:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E92 cinit CODE >22884:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E96 cinit CODE >22885:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E98 cinit CODE >22886:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E98 cinit CODE >22887:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E9A cinit CODE >22888:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E9C cinit CODE >22889:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10E9E cinit CODE >22892:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EA2 cinit CODE >22893:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EA4 cinit CODE >22894:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EA4 cinit CODE >22895:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EA6 cinit CODE >22896:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EA8 cinit CODE >22897:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EAA cinit CODE >22903:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EAA cinit CODE >22905:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
+10EAC cinit CODE >22906:C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -642,8 +652,8 @@ $dist/default/debug\TF-Micro.X.debug.o
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__end_of_I2C1_WaitBusFree 10D88 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_Clear 11214 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
+__end_of_I2C1_WaitBusFree 10D18 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_Clear 1124C 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
 Buzzer_Init@lat 50A 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Lmediumconst FA24 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 _lcdBacklight 55D 0 COMRAM 1 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -652,12 +662,12 @@ __Hspace_1 65B 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\TF-Micro.X.debug.o
+DataEEPROM@x 50F 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __mediumconst FA24 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_CreateSolidPixel@F17470 FA35 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 __L__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\TF-Micro.X.debug.o
-__end_of_Buzzer_Off 111F4 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
-main@i 545 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
+__end_of_Buzzer_Off 1122C 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SendByte@lowNibble 510 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\TF-Micro.X.debug.o
 _LATA 4BE 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
@@ -665,35 +675,35 @@ _LATB 4BF 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _LATC 4C0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _LATD 4C1 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _WPUD 419 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-_main 10BDC 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
-___stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-___stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-__end_of_config_i2c_lcd 111A0 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
-start 1FFFC 0 CODE 0 init C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+___sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+_main 10FB6 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
+___stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+__end_of_config_i2c_lcd 111D8 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
+start 1FFFC 0 CODE 0 init C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 U1_BYTE_SEND@dato 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __end_of_WS2812B_Init 10870 0 CODE 0 text6 dist/default/debug\TF-Micro.X.debug.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_fechaHora 576 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_fechaHora 574 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 CNY70_Init@sensor 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_I2C1_ConfigurePPS 11024 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
+__end_of_I2C1_ConfigurePPS 1102E 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
 __end_of_IRSensor_Init 107CA 0 CODE 0 text11 dist/default/debug\TF-Micro.X.debug.o
 EEPROM_SetAddress@real_address 507 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_WriteNibble 10FE8 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_WriteNibble 10F78 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
 _CNY70_Init 10912 0 CODE 0 text23 dist/default/debug\TF-Micro.X.debug.o
 Enviar_Trama_Data@buffer 502 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __end_of_Keypad_Init 102AE 0 CODE 0 text8 dist/default/debug\TF-Micro.X.debug.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/debug\TF-Micro.X.debug.o
-_EEPROM_SetAddress 11090 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
-__end_of_Buzzer_PinLow 10F6A 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
+_EEPROM_SetAddress 1109A 0 CODE 0 text46 dist/default/debug\TF-Micro.X.debug.o
+__end_of_Buzzer_PinLow 10EFA 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__accesstop 560 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-intlevel0 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-intlevel1 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-intlevel2 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-intlevel3 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+__accesstop 560 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_Keypad_AllRowsHigh 10FAA 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
+__end_of_Keypad_AllRowsHigh 10F3A 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
 __end_of_LCD_I2C_WriteString 10ADA 0 CODE 0 text29 dist/default/debug\TF-Micro.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteNibble@rs 509 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -702,13 +712,14 @@ Buzzer_Init@ansel 50E 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debu
 Buzzer_Init@tris 50C 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\TF-Micro.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\TF-Micro.X.debug.o
+__end_of_EEPROM_ReadByte 10FB6 0 CODE 0 text45 dist/default/debug\TF-Micro.X.debug.o
 _I2C1_LastStatus 54A 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_config_ir 110EC 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
-__end_of_configuro 11154 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
-__pidataCOMRAM 1121C 0 CODE 0 idataCOMRAM dist/default/debug\TF-Micro.X.debug.o
+__end_of_config_ir 11124 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
+__end_of_configuro 1118C 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
+__pidataCOMRAM 11254 0 CODE 0 idataCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _U1RXPPS 272 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 I2C1_Write@length 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_U1_INIT 11154 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
+_U1_INIT 1118C 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
 _ADCON0 3F3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ADRESH 3EB 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ADRESL 3EA 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
@@ -717,50 +728,51 @@ _ANSELB 408 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ANSELC 410 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ANSELD 418 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ANSELF 428 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-_config_buzzer 1105A 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
+_config_buzzer 11064 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
 _I2C1_WaitTxBufferEmpty 10B62 0 CODE 0 text35 dist/default/debug\TF-Micro.X.debug.o
 WS2812B_Init@tira 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_SetAddress 11136 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+__end_of_LCD_I2C_SetAddress 1116E 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 _I2C1ADB1 28F 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1CON0 294 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1CON1 295 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1CON2 296 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_Keypad_AllRowsHigh 10F6A 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
+_Keypad_AllRowsHigh 10EFA 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\TF-Micro.X.debug.o
 __end_of_CNY70_Init 109B4 0 CODE 0 text23 dist/default/debug\TF-Micro.X.debug.o
-_config_ir 110C2 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
-_configuro 11136 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
-__end_ofGuardar_CantPastillas@F17972 FA45 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
+_config_ir 110FA 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
+_configuro 1116E 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
+__end_ofGuardar_CantPastillas@F17974 FA45 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 I2C1_WriteSingleByte@data 509 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_U1_BYTE_SEND 11172 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
+_U1_BYTE_SEND 111AA 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
 __Hmediumconst 10000 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteNibble@block 50B 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 I2C1_Write@status 508 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_valor_S1 574 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_valor_S1 545 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _valor_S2 572 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 _valor_S3 570 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 _valor_S4 56E 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 Stepper_Init@tris 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 EEPROM_SetAddress@address 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteString@status 516 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_I2C1_ConfigurePPS 10FE8 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_ConfigurePPS 10FF2 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
 _dato_memoria 547 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_config_keypad 11024 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
+_config_keypad 1102E 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SetCursor@rowAddress 517 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 Stepper_Init@lat 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _Buzzer_Init 104F6 0 CODE 0 text27 dist/default/debug\TF-Micro.X.debug.o
 IRSensor_Init@port 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 IRSensor_Init@tris 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_SetAddress 11116 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_SetAddress 1114E 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
+_EEPROM_ReadByte 10F78 0 CODE 0 text45 dist/default/debug\TF-Micro.X.debug.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SetAddress@address7 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _INTCON0bits 4D6 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _WPUEbits 421 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-start_initialization 10ED6 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
-Detallar_CantPastillas@F17976 FA3D 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
+start_initialization 10E66 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
+Detallar_CantPastillas@F17978 FA3D 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 _OSCFRQ B1 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\TF-Micro.X.debug.o
 I2C1_Write@data 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -780,14 +792,14 @@ _U1BRGL 2AE 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _U1CON0 2AB 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _U1CON1 2AC 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _U1CON2 2AD 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-_EEPROM_WriteByte 10E34 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
+_EEPROM_WriteByte 10DC4 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
 U1_INIT@velocidad 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 CNY70_Init@tris 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-isa$xinst 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+isa$xinst 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 Keypad_AllRowsHigh@keypad 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 IRSensor_Init@ansel 507 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_U1_BYTE_SEND 1118A 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
-_sensor_ir 5A2 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+__end_of_U1_BYTE_SEND 111C2 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
+_sensor_ir 5A0 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 __Hbank5 0 0 ABS 0 bank5 dist/default/debug\TF-Micro.X.debug.o
 __Hbank6 0 0 ABS 0 bank6 dist/default/debug\TF-Micro.X.debug.o
 __Hbank7 0 0 ABS 0 bank7 dist/default/debug\TF-Micro.X.debug.o
@@ -895,7 +907,7 @@ __Lrbit 0 0 COMRAM 1 rbit dist/default/debug\TF-Micro.X.debug.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/debug\TF-Micro.X.debug.o
 __Ltemp 0 0 COMRAM 1 temp dist/default/debug\TF-Micro.X.debug.o
 __Ltext 0 0 ABS 0 text dist/default/debug\TF-Micro.X.debug.o
-__end_of_config_buzzer 11090 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
+__end_of_config_buzzer 1109A 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
 Stepper_Init@ansel 507 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 IRSensor_Init@pin_mask 509 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -905,6 +917,7 @@ __S0 20000 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __S1 65B 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __S4 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __S5 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
+_DataEEPROM 110CC 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
 __end_of_I2C1_WaitTxBufferEmpty 10BDC 0 CODE 0 text35 dist/default/debug\TF-Micro.X.debug.o
 _lcdDisplayControl 55C 0 COMRAM 1 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
 Keypad_Init@lat 50B 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -921,20 +934,20 @@ _estado 548 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_Command@command 514 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __end_of_config_perifericos 104F6 0 CODE 0 text2 dist/default/debug\TF-Micro.X.debug.o
 _Stepper_Init 102AE 0 CODE 0 text4 dist/default/debug\TF-Micro.X.debug.o
-__end_of_I2C1_WriteSingleByte 111B6 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
+__end_of_I2C1_WriteSingleByte 111EE 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_Init@status 517 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_EEPROM_WriteByte 10E86 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
-__end_of_config_keypad 1105A 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
+__end_of_EEPROM_WriteByte 10E16 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
+__end_of_config_keypad 11064 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
 _config_cny70 109B4 0 CODE 0 text22 dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_Command 10D22 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_Command 10CB2 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
 _I2C1CON0bits 294 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1CON1bits 295 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1ERRbits 297 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-__end_of_I2C1_ClearFlags 1121C 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
-_config_leds 111B6 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
+__end_of_I2C1_ClearFlags 11254 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
+_config_leds 111EE 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
 __Hramtop 2600 0 RAM 0 ramtop dist/default/debug\TF-Micro.X.debug.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_UpdateDisplayControl 11202 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_UpdateDisplayControl 1123A 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SendByte@block 50A 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __activetblptr 3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SendByte@value 50E 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -985,51 +998,56 @@ __Htext41 0 0 ABS 0 text41 dist/default/debug\TF-Micro.X.debug.o
 __Htext42 0 0 ABS 0 text42 dist/default/debug\TF-Micro.X.debug.o
 __Htext43 0 0 ABS 0 text43 dist/default/debug\TF-Micro.X.debug.o
 __Htext44 0 0 ABS 0 text44 dist/default/debug\TF-Micro.X.debug.o
+__Htext45 0 0 ABS 0 text45 dist/default/debug\TF-Micro.X.debug.o
+__Htext46 0 0 ABS 0 text46 dist/default/debug\TF-Micro.X.debug.o
 CNY70_Init@pin_mask 507 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteString@text 514 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 CNY70_Init@ansel 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_ExpanderWrite 111E6 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
-_motor1 59A 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_motor2 592 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_motor3 58A 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_motor4 582 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_ExpanderWrite 1121E 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
+_motor1 598 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_motor2 590 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_motor3 588 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_motor4 580 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 _RC4I2Cbits 286 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-__ptext10 110C2 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
+__ptext10 110FA 0 CODE 0 text10 dist/default/debug\TF-Micro.X.debug.o
 __ptext11 106E2 0 CODE 0 text11 dist/default/debug\TF-Micro.X.debug.o
-__ptext12 1118A 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
-__ptext13 11116 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
+__ptext12 111C2 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
+__ptext13 1114E 0 CODE 0 text13 dist/default/debug\TF-Micro.X.debug.o
 __ptext14 10000 0 CODE 0 text14 dist/default/debug\TF-Micro.X.debug.o
-__ptext15 10FAA 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
-__ptext16 11202 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
-__ptext17 111D8 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
-__ptext18 111A0 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
-__ptext19 1120C 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
-__ptext20 10E86 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
-__ptext21 10FE8 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
+__ptext15 10F3A 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
+__ptext16 1123A 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
+__ptext17 11210 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
+__ptext18 111D8 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
+__ptext19 11244 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
+__ptext20 10E16 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
+__ptext21 10FF2 0 CODE 0 text21 dist/default/debug\TF-Micro.X.debug.o
 __ptext22 109B4 0 CODE 0 text22 dist/default/debug\TF-Micro.X.debug.o
 __ptext23 10912 0 CODE 0 text23 dist/default/debug\TF-Micro.X.debug.o
-__ptext24 111C8 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
-__ptext25 1105A 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
-__ptext26 111E6 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
+__ptext24 11200 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
+__ptext25 11064 0 CODE 0 text25 dist/default/debug\TF-Micro.X.debug.o
+__ptext26 1121E 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
 __ptext27 104F6 0 CODE 0 text27 dist/default/debug\TF-Micro.X.debug.o
-__ptext28 10F20 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
+__ptext28 10EB0 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
 __ptext29 10A4A 0 CODE 0 text29 dist/default/debug\TF-Micro.X.debug.o
-__ptext30 110EC 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
-__ptext31 10D88 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
-__ptext32 10CBC 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
-__ptext33 10DDE 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
+__ptext30 11124 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
+__ptext31 10D18 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
+__ptext32 10C4C 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
+__ptext33 10D6E 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
 __ptext34 105EC 0 CODE 0 text34 dist/default/debug\TF-Micro.X.debug.o
 __ptext35 10B62 0 CODE 0 text35 dist/default/debug\TF-Micro.X.debug.o
 __ptext36 10ADA 0 CODE 0 text36 dist/default/debug\TF-Micro.X.debug.o
-__ptext37 10D22 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
-__ptext38 111F4 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
-__ptext39 11214 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
-__ptext40 10E34 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
-__ptext41 11090 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
-__ptext42 11154 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
-__ptext43 10C52 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
-__ptext44 11172 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
+__ptext37 10CB2 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
+__ptext38 1122C 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
+__ptext39 1124C 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
+__ptext40 10DC4 0 CODE 0 text40 dist/default/debug\TF-Micro.X.debug.o
+__ptext41 1118C 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
+__ptext42 10BDC 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
+__ptext43 111AA 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
+__ptext44 110CC 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
+__ptext45 10F78 0 CODE 0 text45 dist/default/debug\TF-Micro.X.debug.o
+__ptext46 1109A 0 CODE 0 text46 dist/default/debug\TF-Micro.X.debug.o
 _cny70_last_channel 55F 0 COMRAM 1 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
+DataEEPROM@data_memoria 50D 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _config_perifericos 103DE 0 CODE 0 text2 dist/default/debug\TF-Micro.X.debug.o
 __Lbank10 0 0 ABS 0 bank10 dist/default/debug\TF-Micro.X.debug.o
 __Lbank11 0 0 ABS 0 bank11 dist/default/debug\TF-Micro.X.debug.o
@@ -1061,40 +1079,41 @@ __Lbank36 0 0 ABS 0 bank36 dist/default/debug\TF-Micro.X.debug.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\TF-Micro.X.debug.o
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\TF-Micro.X.debug.o
 __Lbigsfr 0 0 ABS 0 bigsfr dist/default/debug\TF-Micro.X.debug.o
-main@datos_prueba 51D 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
+__end_of_DataEEPROM 110FA 0 CODE 0 text44 dist/default/debug\TF-Micro.X.debug.o
 __Lcomram 0 0 ABS 0 comram dist/default/debug\TF-Micro.X.debug.o
 __Lconfig 0 0 CONFIG 4 config dist/default/debug\TF-Micro.X.debug.o
-__end_of_I2C1_Init 10ED6 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
-__end_ofDetallar_CantPastillas@F17976 FA41 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
+__end_of_I2C1_Init 10E66 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
+__end_ofDetallar_CantPastillas@F17978 FA41 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 _LATCbits 4C0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1SCLPPS 271 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _I2C1SDAPPS 270 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_ExpanderWrite 111D8 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_ExpanderWrite 11210 0 CODE 0 text17 dist/default/debug\TF-Micro.X.debug.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\TF-Micro.X.debug.o
-___inthi_stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-___inthi_stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+main@datos 51D 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _LCD_I2C_Init 10000 0 CODE 0 text14 dist/default/debug\TF-Micro.X.debug.o
-_I2C1_ResetModule 111F4 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_ResetModule 1122C 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\TF-Micro.X.debug.o
-isa$std 1 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-_LCD_I2C_Command 10CBC 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
-_I2C1_ClearFlags 11214 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
-stackhi 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-stacklo 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-Guardar_CantPastillas@F17972 FA41 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
+isa$std 1 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+_LCD_I2C_Command 10C4C 0 CODE 0 text32 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_ClearFlags 1124C 0 CODE 0 text39 dist/default/debug\TF-Micro.X.debug.o
+stackhi 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+Guardar_CantPastillas@F17974 FA41 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 __end_of_Buzzer_Init 105EC 0 CODE 0 text27 dist/default/debug\TF-Micro.X.debug.o
 _RC3I2Cbits 287 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 Keypad_Init@ansel 50F 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _OSCCON1 AD 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteChar@character 512 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_sensor1 5BB 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_sensor2 5B5 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_sensor3 5AF 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
-_sensor4 5A9 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_sensor1 5B9 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_sensor2 5B3 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_sensor3 5AD 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
+_sensor4 5A7 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\TF-Micro.X.debug.o
 _ADCON0bits 3F3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-_I2C1_Init 10E86 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
-__end_of_Enviar_Trama_Data 10CBC 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_Init 10E16 0 CODE 0 text20 dist/default/debug\TF-Micro.X.debug.o
+__end_of_Enviar_Trama_Data 10C4C 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
 __end_of_Stepper_Init 103DE 0 CODE 0 text4 dist/default/debug\TF-Micro.X.debug.o
 I2C1_ConfigurePPS@previousGie 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _Keypad_Init 10168 0 CODE 0 text8 dist/default/debug\TF-Micro.X.debug.o
@@ -1102,17 +1121,17 @@ __Lspace_0 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Lspace_1 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Lspace_2 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Lspace_4 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-__pbssCOMRAM 547 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
+__pbssCOMRAM 545 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _config_motores 10870 0 CODE 0 text3 dist/default/debug\TF-Micro.X.debug.o
 __end_of_config_cny70 10A4A 0 CODE 0 text22 dist/default/debug\TF-Micro.X.debug.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _buzzer1 555 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_Clear 1120C 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_Clear 11244 0 CODE 0 text19 dist/default/debug\TF-Micro.X.debug.o
 Keypad_Init@keypad 507 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-end_of_initialization 10F1A 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
+end_of_initialization 10EAA 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
 I2C1_Write@address7 506 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_WriteChar 11116 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_WriteChar 1114E 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
 _PPSLOCKbits 200 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SetCursor@column 515 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 config_perifericos@x 51A 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -1124,17 +1143,17 @@ __Lramtop 2600 0 RAM 0 ramtop dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SendByte@highNibble 50F 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\TF-Micro.X.debug.o
 _I2C1_Write 105EC 0 CODE 0 text34 dist/default/debug\TF-Micro.X.debug.o
-__pcinit 10ED6 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
-__ptext0 10BDC 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
-__ptext1 11136 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
+__pcinit 10E66 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
+__ptext0 10FB6 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
+__ptext1 1116E 0 CODE 0 text1 dist/default/debug\TF-Micro.X.debug.o
 __ptext2 103DE 0 CODE 0 text2 dist/default/debug\TF-Micro.X.debug.o
 __ptext3 10870 0 CODE 0 text3 dist/default/debug\TF-Micro.X.debug.o
 __ptext4 102AE 0 CODE 0 text4 dist/default/debug\TF-Micro.X.debug.o
-__ptext5 111B6 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
+__ptext5 111EE 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
 __ptext6 107CA 0 CODE 0 text6 dist/default/debug\TF-Micro.X.debug.o
-__ptext7 11024 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
+__ptext7 1102E 0 CODE 0 text7 dist/default/debug\TF-Micro.X.debug.o
 __ptext8 10168 0 CODE 0 text8 dist/default/debug\TF-Micro.X.debug.o
-__ptext9 10F6A 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
+__ptext9 10EFA 0 CODE 0 text9 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SetCursor@row 516 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_SendByte@rs 509 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\TF-Micro.X.debug.o
@@ -1174,12 +1193,14 @@ __Ltext41 0 0 ABS 0 text41 dist/default/debug\TF-Micro.X.debug.o
 __Ltext42 0 0 ABS 0 text42 dist/default/debug\TF-Micro.X.debug.o
 __Ltext43 0 0 ABS 0 text43 dist/default/debug\TF-Micro.X.debug.o
 __Ltext44 0 0 ABS 0 text44 dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_SetCursor 10DDE 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+__Ltext45 0 0 ABS 0 text45 dist/default/debug\TF-Micro.X.debug.o
+__Ltext46 0 0 ABS 0 text46 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_SetCursor 10D6E 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 __end_of_Keypad_RowMasks FA4D 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/debug\TF-Micro.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_SendByte 10DDE 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_SendByte 10D6E 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
 __H__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\TF-Micro.X.debug.o
 Enviar_Trama_Data@checksum 504 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _IRSensor_Init 106E2 0 CODE 0 text11 dist/default/debug\TF-Micro.X.debug.o
@@ -1188,35 +1209,36 @@ __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\TF-Micro.X.debug.o
 __end_of_LCD_I2C_Init 10168 0 CODE 0 text14 dist/default/debug\TF-Micro.X.debug.o
 __end_ofLCD_I2C_CreateSolidPixel@F17470 FA3D 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 __end_of_config_motores 10912 0 CODE 0 text3 dist/default/debug\TF-Micro.X.debug.o
-__end_of_U1_INIT 11172 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
-_I2C1_WaitBusFree 10D22 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
-___heap_hi 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-___heap_lo 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
+__end_of_U1_INIT 111AA 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_WaitBusFree 10CB2 0 CODE 0 text37 dist/default/debug\TF-Micro.X.debug.o
+___heap_hi 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
 __end_of_Keypad_ColumnMasks FA49 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 ___param_bank 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-___intlo_stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-___intlo_stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAsb6o.0\driver_tmp_9.o
-__end_of_I2C1_ResetModule 11202 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\Angel\AppData\Local\Temp\xcAs9ak.0\driver_tmp_9.o
+__end_of_I2C1_ResetModule 1123A 0 CODE 0 text38 dist/default/debug\TF-Micro.X.debug.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\TF-Micro.X.debug.o
-__end_of__initialization 10F1A 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
+__end_of__initialization 10EAA 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
 _full_step_sequence FA4D 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
-_Buzzer_PinLow 10F20 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
+_Buzzer_PinLow 10EB0 0 CODE 0 text28 dist/default/debug\TF-Micro.X.debug.o
 CNY70_Init@adc_channel 508 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\TF-Micro.X.debug.o
 _NVMCON0bits 40 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _NVMCON1bits 41 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __end_of_I2C1_WaitStop 10B62 0 CODE 0 text36 dist/default/debug\TF-Micro.X.debug.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\TF-Micro.X.debug.o
-_Enviar_Trama_Data 10C52 0 CODE 0 text43 dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_UpdateDisplayControl 1120C 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
+EEPROM_ReadByte@address 50B 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
+_Enviar_Trama_Data 10BDC 0 CODE 0 text42 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_UpdateDisplayControl 11244 0 CODE 0 text16 dist/default/debug\TF-Micro.X.debug.o
 __pcstackCOMRAM 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__end_of_CNY70_ADC_Init_FOSC64 111D8 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
+__end_of_CNY70_ADC_Init_FOSC64 11210 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
 Enviar_Trama_Data@i 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __pmediumconst FA24 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_WriteNibble 10FAA 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_WriteNibble 10F3A 0 CODE 0 text15 dist/default/debug\TF-Micro.X.debug.o
 Stepper_Init@nibble 509 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __end_of_I2C1_Write 106E2 0 CODE 0 text34 dist/default/debug\TF-Micro.X.debug.o
-__end_of_main 10C52 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
+__end_of_main 10FF2 0 CODE 0 text0 dist/default/debug\TF-Micro.X.debug.o
 _WS2812B_Init 107CA 0 CODE 0 text6 dist/default/debug\TF-Micro.X.debug.o
 _Keypad_RowMasks FA49 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
 I2C1_WaitBusFree@timeout 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -1225,7 +1247,7 @@ _ADCLK 3FA 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ADPCH 3EC 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ADREF 3F8 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _ODCONCbits 412 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
-_Buzzer_Off 111E6 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
+_Buzzer_Off 1121E 0 CODE 0 text26 dist/default/debug\TF-Micro.X.debug.o
 _OSCEN B3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _PORTD 4D1 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _PORTF 4D3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
@@ -1237,7 +1259,7 @@ _TRISD 4C9 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _TRISF 4CB 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _U1TXB 2A3 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_ExpanderWrite@value 50B 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_WriteChar 110EC 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_WriteChar 11124 0 CODE 0 text30 dist/default/debug\TF-Micro.X.debug.o
 __HRAM 0 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Hbss 0 0 RAM 1 bss dist/default/debug\TF-Micro.X.debug.o
 __Hram 0 0 ABS 0 ram dist/default/debug\TF-Micro.X.debug.o
@@ -1246,28 +1268,28 @@ __LRAM 1 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Lbss 0 0 RAM 1 bss dist/default/debug\TF-Micro.X.debug.o
 __Lram 0 0 ABS 0 ram dist/default/debug\TF-Micro.X.debug.o
 __Lsfr 0 0 ABS 0 sfr dist/default/debug\TF-Micro.X.debug.o
-__end_of_EEPROM_SetAddress 110C2 0 CODE 0 text41 dist/default/debug\TF-Micro.X.debug.o
+__end_of_EEPROM_SetAddress 110CC 0 CODE 0 text46 dist/default/debug\TF-Micro.X.debug.o
 _tecla 549 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _tira1 600 0 BANK6 1 bssBANK6 dist/default/debug\TF-Micro.X.debug.o
 _lcdAddress 55E 0 COMRAM 1 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
-_CNY70_ADC_Init_FOSC64 111C8 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
+_CNY70_ADC_Init_FOSC64 11200 0 CODE 0 text24 dist/default/debug\TF-Micro.X.debug.o
 LCD_I2C_WriteChar@status 513 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 I2C1_WaitStop@timeout 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
 __end_of_Keypad_Map FA35 0 MEDIUMCONST 0 mediumconst dist/default/debug\TF-Micro.X.debug.o
-_config_i2c_lcd 1118A 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
+_config_i2c_lcd 111C2 0 CODE 0 text12 dist/default/debug\TF-Micro.X.debug.o
 _LCD_I2C_WriteString 10A4A 0 CODE 0 text29 dist/default/debug\TF-Micro.X.debug.o
 Buzzer_PinLow@buzzer 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug.o
-__initialization 10ED6 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
+__initialization 10E66 0 CODE 0 cinit dist/default/debug\TF-Micro.X.debug.o
 __pbssBANK5 560 0 BANK5 1 bssBANK5 dist/default/debug\TF-Micro.X.debug.o
 __pbssBANK6 600 0 BANK6 1 bssBANK6 dist/default/debug\TF-Micro.X.debug.o
-__end_of_config_leds 111C8 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
+__end_of_config_leds 11200 0 CODE 0 text5 dist/default/debug\TF-Micro.X.debug.o
 __pdataCOMRAM 55C 0 COMRAM 1 dataCOMRAM dist/default/debug\TF-Micro.X.debug.o
 _PPSLOCK 200 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\TF-Micro.X.debug.o
-_LCD_I2C_SetCursor 10D88 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
-_I2C1_WriteSingleByte 111A0 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
+_LCD_I2C_SetCursor 10D18 0 CODE 0 text31 dist/default/debug\TF-Micro.X.debug.o
+_I2C1_WriteSingleByte 111D8 0 CODE 0 text18 dist/default/debug\TF-Micro.X.debug.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\TF-Micro.X.debug.o
-__end_of_LCD_I2C_SendByte 10E34 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
+__end_of_LCD_I2C_SendByte 10DC4 0 CODE 0 text33 dist/default/debug\TF-Micro.X.debug.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/debug\TF-Micro.X.debug.o
 _U1ERRIRbits 2B2 0 ABS 0 - dist/default/debug\TF-Micro.X.debug.o
 _teclado 54B 0 COMRAM 1 bssCOMRAM dist/default/debug\TF-Micro.X.debug.o
@@ -1300,11 +1322,11 @@ Keypad_Init@tris 50D 0 COMRAM 1 cstackCOMRAM dist/default/debug\TF-Micro.X.debug
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text14 0 10000 10000 1220 1
+text14 0 10000 10000 1258 1
 cstackCOMRAM 1 501 501 5F 1
 init 0 1FFFC 1FFFC 4 1
 reset_vec 0 0 0 4 1
-bssBANK5 1 560 560 61 1
+bssBANK5 1 560 560 5F 1
 bssBANK6 1 600 600 5B 1
 mediumconst 0 FA24 FA24 5DC 1
 # %NOTES Section

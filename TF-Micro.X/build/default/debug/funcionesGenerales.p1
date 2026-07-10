@@ -3499,15 +3499,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _SubProceso_DispensacionVerificacion ]
 [f ]
-[v F17917 `uc ~T0 @X0 -> 6 `i s ]
-[i F17917
+[v F17919 `uc ~T0 @X0 -> 6 `i s ]
+[i F17919
 :U ..
 ..
 ]
 "293
 [; ;funcionesGenerales.c: 293:     uint8_t pastillas_por_dispensar[6] = {};
 [v _pastillas_por_dispensar `uc ~T0 @X0 -> 6 `i a ]
-[e = _pastillas_por_dispensar F17917 ]
+[e = _pastillas_por_dispensar F17919 ]
 "294
 [; ;funcionesGenerales.c: 294:     uint8_t cantidad_horarios_para_dispersar = 0;
 [v _cantidad_horarios_para_dispersar `uc ~T0 @X0 1 a ]
@@ -5175,15 +5175,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1124
 [; ;funcionesGenerales.c: 1124:     uint8_t pastillero_modificado;
 [v _pastillero_modificado `uc ~T0 @X0 1 a ]
-[v F17957 `uc ~T0 @X0 -> 4 `i s ]
-[i F17957
+[v F17959 `uc ~T0 @X0 -> 4 `i s ]
+[i F17959
 :U ..
 ..
 ]
 "1125
 [; ;funcionesGenerales.c: 1125:     uint8_t hora_modificada[4] = {};
 [v _hora_modificada `uc ~T0 @X0 -> 4 `i a ]
-[e = _hora_modificada F17957 ]
+[e = _hora_modificada F17959 ]
 "1130
 [; ;funcionesGenerales.c: 1130:     if (EEPROM_ReadByte(1) == 0)
 [e $ ! == -> ( _EEPROM_ReadByte (1 -> -> 1 `i `us `i -> 0 `i 2593  ]
@@ -6194,15 +6194,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1613
 [; ;funcionesGenerales.c: 1613:     uint8_t index_horarios_ocupados;
 [v _index_horarios_ocupados `uc ~T0 @X0 1 a ]
-[v F17963 `uc ~T0 @X0 -> 4 `i s ]
-[i F17963
+[v F17965 `uc ~T0 @X0 -> 4 `i s ]
+[i F17965
 :U ..
 ..
 ]
 "1614
 [; ;funcionesGenerales.c: 1614:     uint8_t hora[4] = {};
 [v _hora `uc ~T0 @X0 -> 4 `i a ]
-[e = _hora F17963 ]
+[e = _hora F17965 ]
 "1619
 [; ;funcionesGenerales.c: 1619:     if (EEPROM_ReadByte(1) >= 6)
 [e $ ! >= -> ( _EEPROM_ReadByte (1 -> -> 1 `i `us `i -> 6 `i 2693  ]
@@ -7219,8 +7219,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2152
 [; ;funcionesGenerales.c: 2152: {
 [f ]
-[v F17972 `Cuc ~T0 @X0 -> 4 `i s ]
-[i F17972
+[v F17974 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F17974
 :U ..
 "2153
 [; ;funcionesGenerales.c: 2153:     const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
@@ -7231,7 +7231,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _ubicacion_memoria `Cuc ~T0 @X0 -> 4 `i a ]
-[e = _ubicacion_memoria F17972 ]
+[e = _ubicacion_memoria F17974 ]
 "2154
 [; ;funcionesGenerales.c: 2154:     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
 [e = _dato_memoria ( _EEPROM_ReadByte (1 -> *U + &U _ubicacion_memoria * -> -> - -> _pastillero_selecionado `i -> 1 `i `ui `ux -> -> # *U &U _ubicacion_memoria `ui `ux `us ]
@@ -7297,8 +7297,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2172
 [; ;funcionesGenerales.c: 2172: {
 [f ]
-[v F17976 `Cuc ~T0 @X0 -> 4 `i s ]
-[i F17976
+[v F17978 `Cuc ~T0 @X0 -> 4 `i s ]
+[i F17978
 :U ..
 "2173
 [; ;funcionesGenerales.c: 2173:     const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
@@ -7309,7 +7309,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _ubicacion_memoria `Cuc ~T0 @X0 -> 4 `i a ]
-[e = _ubicacion_memoria F17976 ]
+[e = _ubicacion_memoria F17978 ]
 "2174
 [; ;funcionesGenerales.c: 2174:     LCD_I2C_Clear();
 [e ( _LCD_I2C_Clear ..  ]
@@ -7402,6 +7402,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2201
 [; ;funcionesGenerales.c: 2201: }
 [e :UE 2783 ]
+}
+"2202
+[; ;funcionesGenerales.c: 2202: void DataEEPROM(uint8_t data_memoria[40])
+[v _DataEEPROM `(v ~T0 @X0 1 ef1`*uc ]
+"2203
+[; ;funcionesGenerales.c: 2203: {
+{
+[e :U _DataEEPROM ]
+"2202
+[; ;funcionesGenerales.c: 2202: void DataEEPROM(uint8_t data_memoria[40])
+[v _data_memoria `*uc ~T0 @X0 1 r1 ]
+"2203
+[; ;funcionesGenerales.c: 2203: {
+[f ]
+"2204
+[; ;funcionesGenerales.c: 2204:     for(uint8_t x = 0; x < 40; x++)
+{
+[v _x `uc ~T0 @X0 1 a ]
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 40 `i 2785  ]
+[e $U 2786  ]
+[e :U 2785 ]
+"2205
+[; ;funcionesGenerales.c: 2205:     {
+{
+"2206
+[; ;funcionesGenerales.c: 2206:         data_memoria[x] = EEPROM_ReadByte(x);
+[e = *U + _data_memoria * -> _x `ux -> -> # *U _data_memoria `ui `ux ( _EEPROM_ReadByte (1 -> _x `us ]
+"2207
+[; ;funcionesGenerales.c: 2207:     }
+}
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 40 `i 2785  ]
+[e :U 2786 ]
+}
+"2208
+[; ;funcionesGenerales.c: 2208: }
+[e :UE 2784 ]
 }
 [p f _sprintf 8389632 ]
 [a 67C 78 117 101 118 111 32 80 97 115 116 46 32 58 32 32 80 120 0 ]
