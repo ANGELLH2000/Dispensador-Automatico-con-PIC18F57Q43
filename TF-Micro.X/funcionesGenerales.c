@@ -1886,15 +1886,8 @@ void SubProceso_AgregarHorario(void)
     /*----------------------------------------------------------------------
      * Guardar el nuevo horario en EEPROM.
      *----------------------------------------------------------------------*/
-
-    EEPROM_UpdateByte(9 + (index_horarios_ocupados * 5),(hora[0] * 10) + hora[1]);
-
-    EEPROM_UpdateByte(10 + (index_horarios_ocupados * 5),(hora[2] * 10) + hora[3]);
-
-    EEPROM_UpdateByte(13 + (index_horarios_ocupados * 5),pastillero_selecionado);
-
-    /* Actualizar cantidad de horarios almacenados */
-    EEPROM_UpdateByte(1, index_horarios_ocupados + 1);
+    Funcion_AgregarHorario((hora[0] * 10) + hora[1],(hora[2] * 10) + hora[3],pastillero_selecionado,index_horarios_ocupados);
+    
 
     /*----------------------------------------------------------------------
      * Mensaje de confirmación.
@@ -1926,6 +1919,17 @@ void SubProceso_AgregarHorario(void)
     LCD_I2C_WriteString("--------------------");
 
     __delay_ms(2000);
+}
+void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario)
+{
+    EEPROM_UpdateByte(9 + ((horario) * 5),hora);
+
+    EEPROM_UpdateByte(10 + ((horario) * 5),min);
+
+    EEPROM_UpdateByte(13 + ((horario) * 5),pastillero);
+
+    /* Actualizar cantidad de horarios almacenados */
+    EEPROM_UpdateByte(1, (horario) + 1);
 }
 /******************************************************************************
  * Función: SubProceso_RegistrarPastillas
@@ -2154,13 +2158,18 @@ void SubProceso_RegistrarPastillas(void)
         }
     }
 }
-void Guardar_CantPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad_a_sumar)
+void Funcion_AgregarPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad_a_sumar)
 {
     const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);//Leemos el dato de la memoria de -> comportimentx cantidad de pastillas
     EEPROM_UpdateByte(ubicacion_memoria[pastillero_selecionado-1],dato_memoria+cantidad_a_sumar);// Al pastillero indiviadual
     dato_memoria = EEPROM_ReadByte(2);//Leemos el valor de la direccion de -> cantidad de apstillas total
     EEPROM_UpdateByte(2,dato_memoria+ cantidad_a_sumar);// Cantidad de pastillas generales
+}
+void Guardar_CantPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad_a_sumar)
+{
+    const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
+    Funcion_AgregarPastillas(pastillero_selecionado ,cantidad_a_sumar);
     LCD_I2C_Clear();
     LCD_I2C_SetCursor(1, 0);
     LCD_I2C_WriteString("-- RECARGA EXITOSA--");

@@ -29643,6 +29643,8 @@ void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
 void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
+void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);
+void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
 # 6 "maincode.c" 2
 
 # 1 "./LIB_UART.h" 1
@@ -29656,12 +29658,6 @@ void U1_BYTE_SEND(unsigned char dato);
 void U1_STRING_SEND(const char *cadena);
 
 
-void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos);
-
-
-void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto);
-
-
 void U1_NEWLINE(void);
 
 void Enviar_Trama_Data(unsigned char *buffer);
@@ -29669,17 +29665,28 @@ void Enviar_Trama_Data(unsigned char *buffer);
 
 
 
-
+volatile uint8_t rx_buffer[50];
+volatile uint8_t rx_indice = 0;
+volatile uint8_t flag_paquete_listo = 0;
+volatile uint8_t longitud_esperada = 0;
+uint8_t datos[40];
 void configuro(void)
 {
+
+    config_perifericos();
 
     OSCCON1 = 0x60;
     OSCFRQ = 0x06;
     OSCEN = 0x40;
+    ANSELFbits.ANSELF1 = 0;
+    ANSELFbits.ANSELF0 = 0;
+    TRISFbits.TRISF1 = 1;
+    TRISFbits.TRISF0 = 0;
     U1_INIT(207);
 
-    config_perifericos();
-
+    PIE4bits.U1RXIE = 1;
+    PIR4bits.U1RXIF = 0;
+    INTCON0bits.GIE = 1;
 
 
 
@@ -29691,17 +29698,155 @@ void configuro(void)
 
 
 
+void uart_serial(void)
+{
+
+    if (flag_paquete_listo == 1) {
+
+        uint8_t longitud = rx_buffer[2];
+        uint8_t pos_chk = 3 + longitud;
+        uint8_t pos_fin = pos_chk + 1;
+
+
+        if (rx_buffer[pos_fin] == 0x0A)
+        {
+            uint8_t checksum_calculado = 0;
+
+            for(int i = 0; i < longitud; i++)
+            {
+                checksum_calculado += rx_buffer[3 + i];
+            }
+
+
+            if (checksum_calculado == rx_buffer[pos_chk])
+            {
+
+                switch (rx_buffer[1]) {
+
+
+
+
+                    case 0x56:
+
+                        if (rx_buffer[2] == 0x01 && rx_buffer[3] == 0x52) {
+
+                                DataEEPROM(datos);
+                                Enviar_Trama_Data(datos);
+
+                        }
+                        break;
+
+
+
+                    case 0x15:
+
+                        if (rx_buffer[2] == 0x04 ) {
+
+
+                            Funcion_AgregarHorario(rx_buffer[4],rx_buffer[5],rx_buffer[6],rx_buffer[3]-1);
+
+                            U1_BYTE_SEND(rx_buffer[4]); U1_BYTE_SEND(rx_buffer[5]);
+                            U1_BYTE_SEND(rx_buffer[6]); U1_BYTE_SEND(rx_buffer[3]-1);
+                            U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
+                        }
+                        break;
+
+
+
+                    case 0x07:
+
+                        if (rx_buffer[2] == 0x02 ) {
+
+
+                            U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x15);
+                            U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x07);
+                            U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
+                        }
+                        break;
+
+
+
+                    default:
+
+
+
+                        U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x55);
+                        U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x06); U1_BYTE_SEND(0x06);
+                        break;
+                }
+            }
+
+        }
+
+        flag_paquete_listo = 0;
+    }
+}
+
+
+
 void main(void)
 {
-    uint8_t datos[40];
     configuro();
     while (1)
     {
-        DataEEPROM(datos);
-        Enviar_Trama_Data(datos);
+        PantallaGeneral();
+        uart_serial();
+
+    }
+}
 
 
 
-        _delay((unsigned long)((2000)*(32000000UL/4000.0)));
+
+void __attribute__((picinterrupt(("irq(32)")))) U1RX_ISR(void){
+    PIR4bits.U1RXIF = 0;
+    uint8_t dato_entrante = U1RXB;
+
+
+
+    if (flag_paquete_listo) return;
+
+
+    if (rx_indice == 0) {
+        if (dato_entrante == 0xAA ) {
+            rx_buffer[0] = dato_entrante;
+            rx_indice = 1;
+        }
+        return;
+    }
+
+
+    if (rx_indice == 1) {
+        if (dato_entrante == 0x55 ||
+            dato_entrante == 0x56 ||
+            dato_entrante == 0x15 ||
+            dato_entrante == 0x07 ||
+            dato_entrante == 0x26) {
+            rx_buffer[1] = dato_entrante;
+            rx_indice = 2;
+        } else {
+            rx_indice = 0;
+        }
+        return;
+    }
+
+
+    if (rx_indice == 2) {
+        rx_buffer[2] = dato_entrante;
+        longitud_esperada = 5 + dato_entrante;
+
+        if (longitud_esperada > 15) rx_indice = 0;
+        else rx_indice = 3;
+
+        return;
+    }
+
+
+    rx_buffer[rx_indice] = dato_entrante;
+    rx_indice++;
+
+    if (rx_indice >= longitud_esperada) {
+        flag_paquete_listo = 1;
+        rx_indice = 0;
     }
 }

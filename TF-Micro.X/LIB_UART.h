@@ -39,12 +39,6 @@ void U1_BYTE_SEND(unsigned char dato);
 /*Funcion para enviar una cadena de caracteres*/
 void U1_STRING_SEND(const char *cadena);
 
-/*Funcion para visualizar una variable de 8 bits en formato decimal*/
-void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos);
-
-/*Funcion para visualizar una variable de 16 bits en formato decimal*/
-void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto);
-
 /*Funcion para irse una linea abajo en el terminal*/
 void U1_NEWLINE(void);
 

@@ -30435,6 +30435,8 @@ void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
 void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
+void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);
+void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
 # 15 "funcionesGenerales.c" 2
 
 
@@ -32128,15 +32130,8 @@ void SubProceso_AgregarHorario(void)
 
 
 
+    Funcion_AgregarHorario((hora[0] * 10) + hora[1],(hora[2] * 10) + hora[3],pastillero_selecionado,index_horarios_ocupados);
 
-    EEPROM_UpdateByte(9 + (index_horarios_ocupados * 5),(hora[0] * 10) + hora[1]);
-
-    EEPROM_UpdateByte(10 + (index_horarios_ocupados * 5),(hora[2] * 10) + hora[3]);
-
-    EEPROM_UpdateByte(13 + (index_horarios_ocupados * 5),pastillero_selecionado);
-
-
-    EEPROM_UpdateByte(1, index_horarios_ocupados + 1);
 
 
 
@@ -32169,7 +32164,18 @@ void SubProceso_AgregarHorario(void)
 
     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
 }
-# 1950 "funcionesGenerales.c"
+void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario)
+{
+    EEPROM_UpdateByte(9 + ((horario) * 5),hora);
+
+    EEPROM_UpdateByte(10 + ((horario) * 5),min);
+
+    EEPROM_UpdateByte(13 + ((horario) * 5),pastillero);
+
+
+    EEPROM_UpdateByte(1, (horario) + 1);
+}
+# 1954 "funcionesGenerales.c"
 void SubProceso_RegistrarPastillas(void)
 {
     uint8_t pastillero_selecionado;
@@ -32377,13 +32383,18 @@ void SubProceso_RegistrarPastillas(void)
         }
     }
 }
-void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
+void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
 {
     const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);
     EEPROM_UpdateByte(ubicacion_memoria[pastillero_selecionado-1],dato_memoria+cantidad_a_sumar);
     dato_memoria = EEPROM_ReadByte(2);
     EEPROM_UpdateByte(2,dato_memoria+ cantidad_a_sumar);
+}
+void Guardar_CantPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar)
+{
+    const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
+    Funcion_AgregarPastillas(pastillero_selecionado ,cantidad_a_sumar);
     LCD_I2C_Clear();
     LCD_I2C_SetCursor(1, 0);
     LCD_I2C_WriteString("-- RECARGA EXITOSA--");

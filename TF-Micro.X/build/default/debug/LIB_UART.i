@@ -29645,12 +29645,6 @@ void U1_BYTE_SEND(unsigned char dato);
 void U1_STRING_SEND(const char *cadena);
 
 
-void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos);
-
-
-void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto);
-
-
 void U1_NEWLINE(void);
 
 void Enviar_Trama_Data(unsigned char *buffer);
@@ -29665,10 +29659,6 @@ void U1_INIT(unsigned int velocidad){
     U1CON2 = 0x00;
     RF0PPS = 0x20;
     U1RXPPS = 0x29;
-
-
-
-
 
 }
 
@@ -29691,26 +29681,6 @@ void U1_STRING_SEND(const char *cadena)
 }
 
 
-void U1_VAR_CHAR(unsigned char numero, unsigned char n_digitos){
-    unsigned char centena, decena, unidad;
-    centena = (numero % 1000) / 100;
-    decena = (numero % 100) / 10;
-    unidad = numero % 10;
-    switch(n_digitos){
-        case 1:
-            U1_BYTE_SEND(unidad+0x30);
-            break;
-        case 2:
-            U1_BYTE_SEND(decena+0x30);
-            U1_BYTE_SEND(unidad+0x30);
-            break;
-        case 3:
-            U1_BYTE_SEND(centena+0x30);
-            U1_BYTE_SEND(decena+0x30);
-            U1_BYTE_SEND(unidad+0x30);
-            break;
-    }
-}
 void Enviar_Trama_Data(unsigned char *buffer) {
     unsigned char checksum = 0;
     U1_BYTE_SEND(0xFF);
@@ -29735,125 +29705,6 @@ void Enviar_Trama_Data(unsigned char *buffer) {
 }
 
 
-void U1_VAR_INT(unsigned int numero, unsigned char n_digitos, unsigned char punto){
-    unsigned char d_millar, millar, centena, decena, unidad;
-    d_millar = numero / 10000;
-    millar = (numero % 10000) / 1000;
-    centena = (numero % 1000) / 100;
-    decena = (numero % 100) / 10;
-    unidad = numero % 10;
-    switch(n_digitos){
-        case 1:
-            U1_BYTE_SEND(unidad+0x30);
-            break;
-        case 2:
-            if(punto == 0){
-                U1_BYTE_SEND(decena+0x30);
-                U1_BYTE_SEND(unidad+0x30);
-            }
-            else if(punto == 1){
-                U1_BYTE_SEND(decena+0x30);
-                U1_BYTE_SEND('.');
-                U1_BYTE_SEND(unidad+0x30);
-            }
-            break;
-        case 3:
-            switch(punto){
-                case 0:
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 1:
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 2:
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-            }
-            break;
-        case 4:
-            switch(punto){
-                case 0:
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 1:
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 2:
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 3:
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-            }
-            break;
-        case 5:
-            switch(punto){
-                case 0:
-                    U1_BYTE_SEND(d_millar+0x30);
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 1:
-                    U1_BYTE_SEND(d_millar+0x30);
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 2:
-                    U1_BYTE_SEND(d_millar+0x30);
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 3:
-                    U1_BYTE_SEND(d_millar+0x30);
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-                case 4:
-                    U1_BYTE_SEND(d_millar+0x30);
-                    U1_BYTE_SEND('.');
-                    U1_BYTE_SEND(millar+0x30);
-                    U1_BYTE_SEND(centena+0x30);
-                    U1_BYTE_SEND(decena+0x30);
-                    U1_BYTE_SEND(unidad+0x30);
-                    break;
-            }
-            break;
-    }
-}
 
 void U1_NEWLINE(void){
     U1_BYTE_SEND(0x0A);

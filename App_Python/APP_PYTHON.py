@@ -809,17 +809,18 @@ class DashboardPage(ctk.CTkFrame):
             if main_app.backend.is_connected:
                 self.kpi_pic.configure(text="Conectado", text_color=C["green"])
                 self.kpi_pic_strip.configure(fg_color=C["green"])
+                main_app.backend.request_memory_data()
             else:
                 self.kpi_pic.configure(text="Desconectado", text_color=C["red"])
                 self.kpi_pic_strip.configure(fg_color=C["red"])
                 
-        self.after(1000, self._tick_clock)
+        self.after(2000, self._tick_clock)
 
 
 # ============================================================================
 # CLASE / FUNCIÓN: CompartmentsPage
 # ============================================================================
-# Grid 2×2 de tarjetas de compartimento optimizadas (Solo info esencial).
+# Grid 2×2 de tarjetas con modal de RECARGA INCREMENTAL inteligente
 # ============================================================================
 class CompartmentsPage(ctk.CTkFrame):
 
@@ -884,10 +885,13 @@ class CompartmentsPage(ctk.CTkFrame):
         inner.grid(row=0, column=0, padx=16, pady=14, sticky="ew")
         inner.grid_columnconfigure(0, weight=1)
 
-        ctk.CTkLabel(inner, text=f"Compartimento {d['id']}",
+        comp_id = int(d['id'])
+        comp_nombre = NOMBRE_PASTILLA_COMPARTMENTOS[comp_id - 1]
+
+        ctk.CTkLabel(inner, text=f"Compartimento {comp_id}",
                      font=font("small", True), text_color=C["text2"]).grid(row=0, column=0, sticky="w")
         
-        lbl_med = ctk.CTkLabel(inner, text=NOMBRE_PASTILLA_COMPARTMENTOS[int(d['id'])-1], 
+        lbl_med = ctk.CTkLabel(inner, text=comp_nombre, 
                               font=font("body", True), text_color=d["color"])
         lbl_med.grid(row=1, column=0, sticky="w", pady=(4, 0))
 
@@ -914,32 +918,29 @@ class CompartmentsPage(ctk.CTkFrame):
         btn_row.grid(row=4, column=0, sticky="ew", padx=16, pady=10)
         btn_row.grid_columnconfigure(0, weight=1)
 
-        ghost_btn(btn_row, "✏️ Editar").grid(row=0, column=0, sticky="ew")
+        btn_edit = ghost_btn(btn_row, "📥 Recargar", 
+                             command=lambda cid=comp_id, nom=comp_nombre, col=d["color"]: self._abrir_modal_editar(cid, nom, col))
+        btn_edit.grid(row=0, column=0, sticky="ew")
 
         self.tarjetas_referencias.append({
             "qty_lbl"  : lbl_qty_fraction,
             "bar"      : progress_bar,
-            "border_c" : c
+            "border_c" : c,
+            "qty_actual": 0
         })
         return c
 
     # ========================================================================
     # FUNCIÓN: actualizar_compartimentos
     # ========================================================================
-    # Redirige de forma segura los datos al hilo principal de la UI.
-    # ========================================================================
     def actualizar_compartimentos(self, cantidades):
         self.after(0, self._aplicar_valores, cantidades)
 
-    # ========================================================================
-    # FUNCIÓN: _aplicar_valores
-    # ========================================================================
-    # Modifica dinámicamente los textos y la barra de progreso sin parpadeos.
-    # ========================================================================
     def _aplicar_valores(self, cantidades):
         for i in range(4):
             qty = cantidades[i]
             refs = self.tarjetas_referencias[i]
+            refs["qty_actual"] = qty 
             
             porcentaje = min(1.0, max(0.0, qty / CAPACITY_MAX))
             
@@ -954,11 +955,100 @@ class CompartmentsPage(ctk.CTkFrame):
                 colors = [C["accent"], C["green"], C["yellow"], C["red"]]
                 refs["border_c"].configure(border_color=colors[i])
 
+    # ========================================================================
+    # FUNCIÓN: _abrir_modal_editar
+    # ========================================================================
+    def _abrir_modal_editar(self, comp_id, comp_nombre, color_base):
+        modal = ctk.CTkToplevel(self)
+        modal.title(f"Recargar Compartimento {comp_id}")
+        modal.geometry("360x420")
+        modal.resizable(False, False)
+        modal.attributes("-topmost", True)
+        modal.grab_set()
+        modal.configure(fg_color=C["bg"])
+        
+        modal.update_idletasks()
+        x = (modal.winfo_screenwidth() - 360) // 2
+        y = (modal.winfo_screenheight() - 420) // 2
+        modal.geometry(f"+{x}+{y}")
+        
+        ctk.CTkLabel(modal, text="📥 Recargar Inventario", font=font("sub", True), text_color=C["text"]).pack(pady=(20, 10))
+        
+        form = ctk.CTkFrame(modal, fg_color="transparent")
+        form.pack(padx=30, pady=10, fill="both", expand=True)
+        
+        ctk.CTkLabel(form, text=f"Compartimento {comp_id} - {comp_nombre}", font=font("small", True), text_color=color_base).pack(anchor="w", pady=(0, 15))
+        
+        cantidad_actual_memoria = self.tarjetas_referencias[comp_id - 1]["qty_actual"]
+        espacio_disponible = CAPACITY_MAX - cantidad_actual_memoria
+        
+        ctk.CTkLabel(form, text=f"Inventario Actual: {cantidad_actual_memoria} / {CAPACITY_MAX} pastillas", font=font("small"), text_color=C["text2"]).pack(anchor="w", pady=(0, 10))
+        
+        # Generamos la lista del 0 hasta el espacio disponible
+        if espacio_disponible > 0:
+            ctk.CTkLabel(form, text=f"¿Cuántas pastillas nuevas vas a ingresar? (Máx {espacio_disponible}):", font=font("small"), text_color=C["text2"]).pack(anchor="w", pady=(5, 5))
+            
+            opciones_cantidad = [str(i) for i in range(0, espacio_disponible + 1)]
+            qty_cb = ctk.CTkComboBox(form, values=opciones_cantidad, button_color=color_base, button_hover_color=color_base)
+            qty_cb.pack(fill="x", pady=(0, 20))
+            qty_cb.set("0")
+        else:
+            ctk.CTkLabel(form, text="¡El compartimento está totalmente lleno!", font=font("small", True), text_color=C["green"]).pack(anchor="w", pady=(15, 20))
+            qty_cb = None
+        
+        def guardar_recarga():
+            if qty_cb is None:
+                modal.destroy()
+                return
+            try:
+                # 📢 ¡AQUÍ ESTÁ LA CORRECCIÓN! 
+                # Tomamos la cantidad PURA que el usuario seleccionó de la lista
+                cantidad_a_agregar = int(qty_cb.get())
+                
+                if cantidad_a_agregar < 0 or cantidad_a_agregar > espacio_disponible:
+                    self._mostrar_alerta("Límite Excedido", f"Solo puedes agregar hasta {espacio_disponible} pastillas en este momento.")
+                    return
+                
+                # Enviamos el número limpio. El PIC se encargará de sumarlo.
+                main_app = self.winfo_toplevel()
+                if hasattr(main_app, "backend") and main_app.backend.is_connected:
+                    main_app.backend.write_pillbox_data(cantidad_a_agregar, comp_id)
+                
+                modal.destroy()
+            except ValueError:
+                self._mostrar_alerta("Entrada Inválida", "Por favor, ingrese únicamente números enteros.")
 
+        
+
+        if espacio_disponible > 0:
+            accent_btn(modal, "💾  Confirmar Recarga", command=guardar_recarga, fg_color=color_base).pack(fill="x", padx=30, pady=(10, 10))
+            
+        
+
+    # ========================================================================
+    # FUNCIÓN: _mostrar_alerta
+    # ========================================================================
+    def _mostrar_alerta(self, titulo, mensaje):
+        alerta = ctk.CTkToplevel(self)
+        alerta.title(titulo)
+        alerta.geometry("350x180")
+        alerta.resizable(False, False)
+        alerta.attributes("-topmost", True)
+        alerta.grab_set()
+        alerta.configure(fg_color=C["bg"])
+        
+        alerta.update_idletasks()
+        x = (alerta.winfo_screenwidth() - 350) // 2
+        y = (alerta.winfo_screenheight() - 180) // 2
+        alerta.geometry(f"+{x}+{y}")
+        
+        ctk.CTkLabel(alerta, text="⚠️", font=ctk.CTkFont(size=30)).pack(pady=(20, 5))
+        ctk.CTkLabel(alerta, text=mensaje, font=font("body"), text_color=C["text"], wraplength=300).pack()
+        ghost_btn(alerta, "Aceptar", command=alerta.destroy, width=120).pack(pady=(15, 0))
 # ============================================================================
 # CLASE / FUNCIÓN: SchedulePage
 # ============================================================================
-# Tabla de horarios fija con actualización de texto sin parpadeo.
+# Tabla de horarios fija con asignación automática del siguiente espacio libre.
 # ============================================================================
 class SchedulePage(ctk.CTkFrame):
 
@@ -966,6 +1056,10 @@ class SchedulePage(ctk.CTkFrame):
         super().__init__(parent, fg_color=C["bg"], corner_radius=0)
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=1)
+        
+        # Guardamos el estado local para saber qué espacios están libres
+        self.estado_horarios = [{"estado": "Espacio Vacío"} for _ in range(6)]
+        
         self._build()
 
     # ========================================================================
@@ -976,8 +1070,10 @@ class SchedulePage(ctk.CTkFrame):
         hdr.grid(row=0, column=0, sticky="ew", padx=32, pady=(32, 16))
         ctk.CTkLabel(hdr, text="⏰  Horarios de Dispensación",
                      font=font("sub", True), text_color=C["text"]).pack(side="left")
+        
         accent_btn(hdr, "+ Nuevo Horario", height=36,
-                   font=font("small", True), width=160).pack(side="right")
+                   font=font("small", True), width=160,
+                   command=self._abrir_modal_horario).pack(side="right")
 
         tbl = card(self)
         tbl.grid(row=1, column=0, sticky="nsew", padx=32, pady=(0, 32))
@@ -1005,9 +1101,7 @@ class SchedulePage(ctk.CTkFrame):
         scroll.grid(row=2, column=0, sticky="nsew", padx=16, pady=(0, 16))
         scroll.grid_columnconfigure(0, weight=1)
 
-        # ----------------------------------------------------------------------
-        # Filas Fijas (Instanciadas una sola vez)
-        # ----------------------------------------------------------------------
+        # Filas Fijas
         self.filas_labels = [] 
 
         for idx in range(6):
@@ -1042,16 +1136,13 @@ class SchedulePage(ctk.CTkFrame):
     # FUNCIÓN: actualizar_tabla
     # ========================================================================
     def actualizar_tabla(self, lista_horarios):
+        # Guardamos la lista en la memoria de la clase para saber qué IDs están libres
+        self.estado_horarios = lista_horarios
         self.after(0, self._aplicar_cambios_texto, lista_horarios)
 
-    # ========================================================================
-    # FUNCIÓN: _aplicar_cambios_texto
-    # ========================================================================
     def _aplicar_cambios_texto(self, lista_horarios):
         for idx, datos in enumerate(lista_horarios):
-            if idx >= len(self.filas_labels): 
-                break 
-                
+            if idx >= len(self.filas_labels): break 
             widgets = self.filas_labels[idx]
             
             if datos["estado"] == "Espacio Vacío":
@@ -1067,7 +1158,107 @@ class SchedulePage(ctk.CTkFrame):
             widgets["time"].configure(text=datos["time"], text_color=color_time)
             widgets["estado"].configure(text=datos["estado"], text_color=color_est)
 
+    # ========================================================================
+    # FUNCIÓN: _abrir_modal_horario
+    # ========================================================================
+    def _abrir_modal_horario(self):
+        # 1. Búsqueda automática del primer ID libre (1 al 6)
+        siguiente_id = None
+        for idx, horario in enumerate(self.estado_horarios):
+            if horario.get("estado") == "Espacio Vacío":
+                siguiente_id = idx + 1
+                break
+                
+        # 2. Seguro contra memoria llena
+        if siguiente_id is None:
+            self._mostrar_alerta("Memoria Llena", "Ya se han programado los 6 horarios máximos permitidos.")
+            return
 
+        # 3. Construcción del modal
+        modal = ctk.CTkToplevel(self)
+        modal.title("Configurar Horario")
+        modal.geometry("400x420")
+        modal.resizable(False, False)
+        modal.attributes("-topmost", True)
+        modal.grab_set() 
+        modal.configure(fg_color=C["bg"])
+        
+        modal.update_idletasks()
+        x = (modal.winfo_screenwidth() - 400) // 2
+        y = (modal.winfo_screenheight() - 420) // 2
+        modal.geometry(f"+{x}+{y}")
+        
+        ctk.CTkLabel(modal, text="⚙️ Nuevo Horario", font=font("sub", True), text_color=C["text"]).pack(pady=(20, 10))
+        
+        form = ctk.CTkFrame(modal, fg_color="transparent")
+        form.pack(padx=30, pady=10, fill="both", expand=True)
+        
+        # Etiqueta estática con el ID auto-asignado en lugar del SegmentedButton
+        ctk.CTkLabel(form, text="Horario Asignado Automáticamente:", font=font("small"), text_color=C["text2"]).pack(anchor="w", pady=(10, 0))
+        ctk.CTkLabel(form, text=f"Espacio #{siguiente_id}", font=font("title", True), text_color=C["accent"]).pack(anchor="w", pady=(0, 15))
+        
+        time_frame = ctk.CTkFrame(form, fg_color="transparent")
+        time_frame.pack(fill="x", pady=10)
+        time_frame.grid_columnconfigure(0, weight=1)
+        time_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(time_frame, text="Hora (0-23):", font=font("small"), text_color=C["text2"]).grid(row=0, column=0, sticky="w")
+        hora_cb = ctk.CTkComboBox(time_frame, values=[f"{i:02d}" for i in range(24)], width=120)
+        hora_cb.grid(row=1, column=0, sticky="w")
+        hora_cb.set("08")
+        
+        ctk.CTkLabel(time_frame, text="Minuto (0-59):", font=font("small"), text_color=C["text2"]).grid(row=0, column=1, sticky="w", padx=(10,0))
+        min_cb = ctk.CTkComboBox(time_frame, values=[f"{i:02d}" for i in range(60)], width=120)
+        min_cb.grid(row=1, column=1, sticky="w", padx=(10,0))
+        min_cb.set("00")
+        
+        ctk.CTkLabel(form, text="Medicamento / Compartimento:", font=font("small"), text_color=C["text2"]).pack(anchor="w", pady=(15, 0))
+        comp_opts = [
+            "1 - " + NOMBRE_PASTILLA_COMPARTMENTOS[0], 
+            "2 - " + NOMBRE_PASTILLA_COMPARTMENTOS[1], 
+            "3 - " + NOMBRE_PASTILLA_COMPARTMENTOS[2], 
+            "4 - " + NOMBRE_PASTILLA_COMPARTMENTOS[3]
+        ]
+        comp_cb = ctk.CTkComboBox(form, values=comp_opts)
+        comp_cb.pack(fill="x", pady=(5, 20))
+        comp_cb.set(comp_opts[0])
+        
+        def guardar():
+            try:
+                h_hora = int(hora_cb.get())
+                h_min = int(min_cb.get())
+                h_comp = int(comp_cb.get().split(" - ")[0])
+                
+                main_app = self.winfo_toplevel()
+                if hasattr(main_app, "backend") and main_app.backend.is_connected:
+                    main_app.backend.write_schedule_data(siguiente_id, h_hora, h_min, h_comp)
+                
+                modal.destroy()
+            except ValueError:
+                pass
+
+        accent_btn(modal, "💾  Guardar en el PIC", command=guardar).pack(fill="x", padx=30, pady=(10, 20))
+
+    # ========================================================================
+    # FUNCIÓN: _mostrar_alerta
+    # ========================================================================
+    def _mostrar_alerta(self, titulo, mensaje):
+        alerta = ctk.CTkToplevel(self)
+        alerta.title(titulo)
+        alerta.geometry("350x180")
+        alerta.resizable(False, False)
+        alerta.attributes("-topmost", True)
+        alerta.grab_set()
+        alerta.configure(fg_color=C["bg"])
+        
+        alerta.update_idletasks()
+        x = (alerta.winfo_screenwidth() - 350) // 2
+        y = (alerta.winfo_screenheight() - 180) // 2
+        alerta.geometry(f"+{x}+{y}")
+        
+        ctk.CTkLabel(alerta, text="⚠️", font=ctk.CTkFont(size=30)).pack(pady=(20, 5))
+        ctk.CTkLabel(alerta, text=mensaje, font=font("body"), text_color=C["text"], wraplength=300).pack()
+        ghost_btn(alerta, "Aceptar", command=alerta.destroy, width=120).pack(pady=(15, 0))
 # ============================================================================
 # CLASE / FUNCIÓN: LogsPage
 # ============================================================================
