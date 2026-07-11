@@ -422,6 +422,7 @@ class Sidebar(ctk.CTkFrame):
         ("dashboard",    "📊", "Dashboard"),
         ("schedule",     "⏰", "Horarios"),
         ("compartments", "💊", "Compartimentos"),
+        ("diagnostic",   "🛠️", "Diagnóstico"),
         ("logs",         "📋", "Logs"),
     ]
 
@@ -793,14 +794,6 @@ class DashboardPage(ctk.CTkFrame):
     # ========================================================================
     # FUNCIÓN: _tick_clock
     # ========================================================================
-    # Bucle secundario que se ejecuta cada 1 segundo.
-    #
-    # Flujo:
-    #  1. Actualiza la hora en la etiqueta de la pantalla.
-    #  2. Consulta al backend si la conexión sigue viva.
-    #  3. Actualiza el KPI de conexión.
-    #  4. Reprograma su ejecución en 1000ms.
-    # ========================================================================
     def _tick_clock(self):
         self._clock.configure(text=datetime.now().strftime("%H:%M:%S"))
         main_app = self.winfo_toplevel()
@@ -809,13 +802,18 @@ class DashboardPage(ctk.CTkFrame):
             if main_app.backend.is_connected:
                 self.kpi_pic.configure(text="Conectado", text_color=C["green"])
                 self.kpi_pic_strip.configure(fg_color=C["green"])
-                main_app.backend.request_memory_data()
+                
+                # 📢 LA CONDICIÓN CLAVE:
+                # Solo pedimos los 40 bytes de memoria general si la pestaña 
+                # activa NO es la de diagnóstico.
+                if hasattr(main_app, "_sidebar") and main_app._sidebar._active != "diagnostic":
+                    main_app.backend.request_memory_data()
+                    
             else:
                 self.kpi_pic.configure(text="Desconectado", text_color=C["red"])
                 self.kpi_pic_strip.configure(fg_color=C["red"])
                 
         self.after(2000, self._tick_clock)
-
 
 # ============================================================================
 # CLASE / FUNCIÓN: CompartmentsPage
@@ -1299,7 +1297,66 @@ class LogsPage(ctk.CTkFrame):
                                scrollbar_button_color=C["border"])
         self.term.grid(row=0, column=0, sticky="nsew", padx=16, pady=16)
 
+# ============================================================================
+# CLASE / FUNCIÓN: DiagnosticPage
+# ============================================================================
+class DiagnosticPage(ctk.CTkFrame):
+    def __init__(self, parent):
+        super().__init__(parent, fg_color=C["bg"], corner_radius=0)
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(1, weight=1)
+        self._build()
+        self._tick()
 
+    def _build(self):
+        hdr = ctk.CTkFrame(self, fg_color="transparent")
+        hdr.grid(row=0, column=0, sticky="ew", padx=32, pady=(32, 16))
+        ctk.CTkLabel(hdr, text="🛠️  Diagnóstico de Sensores", font=font("sub", True), text_color=C["text"]).pack(side="left")
+
+        panel = card(self)
+        panel.grid(row=1, column=0, sticky="nsew", padx=32, pady=(0, 32))
+        panel.grid_columnconfigure((0,1), weight=1)
+
+        # Tarjetas CNY70
+        ctk.CTkLabel(panel, text="Sensores CNY70 (Ópticos Reflexivos)", font=font("body", True), text_color=C["text"]).grid(row=0, column=0, columnspan=2, pady=20)
+        
+        self.lbl_cny = []
+        for i in range(4):
+            r, c = divmod(i, 2)
+            crd = ctk.CTkFrame(panel, fg_color=C["input"], corner_radius=8)
+            crd.grid(row=r+1, column=c, padx=10, pady=10, sticky="ew")
+            ctk.CTkLabel(crd, text=f"CNY70 N° {i+1}", font=font("small"), text_color=C["muted"]).pack(pady=(10,0))
+            lbl = ctk.CTkLabel(crd, text="--", font=font("title", True), text_color=C["accent"])
+            lbl.pack(pady=(0,10))
+            self.lbl_cny.append(lbl)
+
+        sep(panel).grid(row=3, column=0, columnspan=2, sticky="ew", padx=20, pady=20)
+
+        # Tarjeta Sensor IR
+        ctk.CTkLabel(panel, text="Sensor Infrarrojo (Vaso/Presencia)", font=font("body", True), text_color=C["text"]).grid(row=4, column=0, columnspan=2)
+        ir_crd = ctk.CTkFrame(panel, fg_color=C["input"], corner_radius=8)
+        ir_crd.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
+        self.lbl_ir = ctk.CTkLabel(ir_crd, text="--", font=font("title", True), text_color=C["purple"])
+        self.lbl_ir.pack(padx=40, pady=15)
+
+    def _tick(self):
+        main_app = self.winfo_toplevel()
+        # SOLO solicita datos si el usuario está viendo esta pantalla
+        if hasattr(main_app, "_sidebar") and main_app._sidebar._active == "diagnostic":
+            if hasattr(main_app, "backend") and main_app.backend.is_connected:
+                main_app.backend.request_diagnostic_data()
+                
+        self.after(500, self._tick) # Pide datos cada medio segundo
+
+    def actualizar_sensores(self, c1, c2, c3, c4, ir):
+        self.after(0, self._aplicar_datos, c1, c2, c3, c4, ir)
+        
+    def _aplicar_datos(self, c1, c2, c3, c4, ir):
+        valores = [c1, c2, c3, c4]
+        for idx, lbl in enumerate(self.lbl_cny):
+            lbl.configure(text=str(valores[idx]))
+        
+        self.lbl_ir.configure(text="ACTIVO" if ir == 1 else "INACTIVO")
 # ============================================================================
 # CLASE / FUNCIÓN: App
 # ============================================================================
@@ -1567,6 +1624,22 @@ class App(ctk.CTk):
                             
                             dash.dash_bars[i].set(porcentaje_flotante)
                             dash.dash_pcts[i].configure(text=f"{int(porcentaje_flotante * 100)}%")
+        elif len(packet) == 9:
+            main_app = self if hasattr(self, "_pages") else globals().get('app')
+            if main_app and "diagnostic" in main_app._pages:
+                diag_page = main_app._pages["diagnostic"]
+                
+                # Reconstruimos los valores de 16 bits uniendo el High y el Low
+                # Operación: (Byte_Alto multiplicado por 256) + Byte_Bajo
+                c1_16bit = (packet[0] << 8) | packet[1]
+                c2_16bit = (packet[2] << 8) | packet[3]
+                c3_16bit = (packet[4] << 8) | packet[5]
+                c4_16bit = (packet[6] << 8) | packet[7]
+                
+                ir_8bit  = packet[8]
+                
+                # Enviamos los valores reales a la pantalla
+                diag_page.actualizar_sensores(c1_16bit, c2_16bit, c3_16bit, c4_16bit, ir_8bit)
                 
     # ========================================================================
     # FUNCIONES DE CONTROL PRINCIPAL Y NAVEGACIÓN
@@ -1623,6 +1696,7 @@ class App(ctk.CTk):
             "dashboard"   : DashboardPage(self._content),
             "compartments": CompartmentsPage(self._content),
             "schedule"    : SchedulePage(self._content),
+            "diagnostic"  : DiagnosticPage(self._content),
             "logs"        : LogsPage(self._content),
         }
 

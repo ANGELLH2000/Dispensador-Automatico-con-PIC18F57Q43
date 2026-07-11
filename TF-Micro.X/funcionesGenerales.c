@@ -115,7 +115,7 @@ static void config_leds(void)
      * Inicializa una tira WS2812B compuesta por dos LEDs.
      * El pin de comunicación se define en ws2812b.h.
      */
-    WS2812B_Init(&tira1, 1);
+    WS2812B_Init(&tira1, 10);
 }
 
 /*==============================================================================
@@ -161,13 +161,14 @@ static void config_cny70(void)
     CNY70_ADC_Init_FOSC64();
 
     /*
-     * Sensor 1: RF0 / ANF0.
-     * Sensor 2: RF1 / ANF1.
-     * Sensor 3: RF2 / ANF2.
-     * Sensor 4: RF3 / ANF3.
+     * Sensor 1: RF5 / ANF0. /2D
+     * Sensor 2: RF6 / ANF1. /2E
+     * Sensor 3: RF2 / ANF2. /2A   
+     * Sensor 4: RF3 / ANF3. /2B
      */
-    CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
-    CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
+    CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x2D);
+    CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x2E);
+    
     CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
     CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
 }
@@ -292,7 +293,7 @@ void SubProceso_DispensacionVerificacion(void)
     /*
      * Variables locales
      */
-    uint8_t pastillas_por_dispensar[6] = {};
+    uint8_t pastillas_por_dispensar[6];
     uint8_t cantidad_horarios_para_dispersar = 0;
     uint8_t cant_horarios = EEPROM_ReadByte(1);
     bool dispensar = false;
@@ -353,31 +354,44 @@ void SubProceso_DispensacionVerificacion(void)
      * Ejecución de la dispensación física
      *----------------------------------------------------------------------*/
     
-    /* Si se encoló al menos un pastillero, llamar a la rutina principal */
-    LCD_I2C_SetCursor(2, 0);
-    LCD_I2C_WriteString("aQUI");
     if (dispensar)
         Dispensar(pastillas_por_dispensar, cantidad_horarios_para_dispersar);
     
 }
-
+void Sensores(uint16_t lectura_sensores[4])
+{
+    lectura_sensores[0] = CNY70_Read(&sensor1);
+    lectura_sensores[1] = CNY70_Read(&sensor2);
+    lectura_sensores[2] = CNY70_Read(&sensor3);
+    lectura_sensores[3] = CNY70_Read(&sensor4);
+}
 void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para_dispersar)
 {
     bool error=false;
     bool dispensado;
-    uint16_t lectura_sensor;
+    uint16_t lectura_sensor=0;
     
+    /*
+    uint8_t sensorir=1;
+    
+    for (uint8_t z=0; z<4;z++)
+    {
+        sensorir=IRSensor_ReadActiveLow(&sensor_ir);
+        if (sensorir==1)
+            break;
+        __delay_ms(100);
+    }
     //Sensor del vaso
-    if(IRSensor_ReadActiveHigh(&sensor_ir))
+    if(sensorir==1)
     {
         SubProceso_ManejoErrores("Colocar el Vaso",2);
         error=true;
     }
-    
+    */
     //Cantidad Necesaria
     for (uint8_t x=0; x<cantidad_horarios_para_dispersar;x++)
     {
-        if(EEPROM_ReadByte(4+(pastillas_por_dispensar[x]))==0)
+        if(EEPROM_ReadByte(5+(pastillas_por_dispensar[x]))==0)
         {   
             char mensaje[20];
 
@@ -399,15 +413,16 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
             
             LCD_I2C_SetCursor(3, 0);
             LCD_I2C_WriteString("Entregando: Past. ");
-            LCD_I2C_WriteUInt8(pastillas_por_dispensar[x],1);
-            
+            LCD_I2C_WriteUInt8(pastillas_por_dispensar[x+1],1);
+            __delay_ms(2000);
             uint8_t intentos=4;
+            lectura_sensor=0;
             while(1)
             {
                                
                 for(uint16_t y=0; y<2048;y++)
                 {
-                    switch (pastillas_por_dispensar[x])
+                    switch (pastillas_por_dispensar[x+1])
                     {
 
                         case 1:
@@ -431,8 +446,6 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
                             break;
 
                     }
-                    LCD_I2C_SetCursor(4, 0);
-                    LCD_I2C_WriteInt(lectura_sensor);
                     if(lectura_sensor>1000)
                     {
                         Stepper_Off(&motor1);

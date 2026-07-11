@@ -30437,6 +30437,7 @@ void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);
 void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
+void Sensores(uint16_t lectura_sensores[4]);
 # 15 "funcionesGenerales.c" 2
 
 
@@ -30541,7 +30542,7 @@ static void config_leds(void)
 
 
 
-    WS2812B_Init(&tira1, 1);
+    WS2812B_Init(&tira1, 10);
 }
 
 
@@ -30592,8 +30593,9 @@ static void config_cny70(void)
 
 
 
-    CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x28);
-    CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x29);
+    CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x2D);
+    CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x2E);
+
     CNY70_Init(&sensor3, &TRISF, &ANSELF, 0x04, 0x2A);
     CNY70_Init(&sensor4, &TRISF, &ANSELF, 0x08, 0x2B);
 }
@@ -30693,13 +30695,13 @@ void config_perifericos(void)
 
 
 }
-# 290 "funcionesGenerales.c"
+# 291 "funcionesGenerales.c"
 void SubProceso_DispensacionVerificacion(void)
 {
 
 
 
-    uint8_t pastillas_por_dispensar[6] = {};
+    uint8_t pastillas_por_dispensar[6];
     uint8_t cantidad_horarios_para_dispersar = 0;
     uint8_t cant_horarios = EEPROM_ReadByte(1);
     _Bool dispensar = 0;
@@ -30760,31 +30762,26 @@ void SubProceso_DispensacionVerificacion(void)
 
 
 
-
-    LCD_I2C_SetCursor(2, 0);
-    LCD_I2C_WriteString("aQUI");
     if (dispensar)
         Dispensar(pastillas_por_dispensar, cantidad_horarios_para_dispersar);
 
 }
-
+void Sensores(uint16_t lectura_sensores[4])
+{
+    lectura_sensores[0] = CNY70_Read(&sensor1);
+    lectura_sensores[1] = CNY70_Read(&sensor2);
+    lectura_sensores[2] = CNY70_Read(&sensor3);
+    lectura_sensores[3] = CNY70_Read(&sensor4);
+}
 void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para_dispersar)
 {
     _Bool error=0;
     _Bool dispensado;
-    uint16_t lectura_sensor;
-
-
-    if(IRSensor_ReadActiveHigh(&sensor_ir))
-    {
-        SubProceso_ManejoErrores("Colocar el Vaso",2);
-        error=1;
-    }
-
-
+    uint16_t lectura_sensor=0;
+# 392 "funcionesGenerales.c"
     for (uint8_t x=0; x<cantidad_horarios_para_dispersar;x++)
     {
-        if(EEPROM_ReadByte(4+(pastillas_por_dispensar[x]))==0)
+        if(EEPROM_ReadByte(5+(pastillas_por_dispensar[x]))==0)
         {
             char mensaje[20];
 
@@ -30806,15 +30803,16 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
 
             LCD_I2C_SetCursor(3, 0);
             LCD_I2C_WriteString("Entregando: Past. ");
-            LCD_I2C_WriteUInt8(pastillas_por_dispensar[x],1);
-
+            LCD_I2C_WriteUInt8(pastillas_por_dispensar[x+1],1);
+            _delay((unsigned long)((2000)*(32000000UL/4000.0)));
             uint8_t intentos=4;
+            lectura_sensor=0;
             while(1)
             {
 
                 for(uint16_t y=0; y<2048;y++)
                 {
-                    switch (pastillas_por_dispensar[x])
+                    switch (pastillas_por_dispensar[x+1])
                     {
 
                         case 1:
@@ -30838,8 +30836,6 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
                             break;
 
                     }
-                    LCD_I2C_SetCursor(4, 0);
-                    LCD_I2C_WriteInt(lectura_sensor);
                     if(lectura_sensor>1000)
                     {
                         Stepper_Off(&motor1);
@@ -30885,7 +30881,7 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
     }
 
 }
-# 497 "funcionesGenerales.c"
+# 510 "funcionesGenerales.c"
 void PantallaGeneral(void)
 {
 
@@ -30903,7 +30899,7 @@ void PantallaGeneral(void)
         {
             SubProceso_ManejoErrores("RTC sin conexion", 1);
         }
-# 526 "funcionesGenerales.c"
+# 539 "funcionesGenerales.c"
         LCD_I2C_SetCursor(2, 0);
         LCD_I2C_WriteString("Sistema en operacion");
 
@@ -31119,7 +31115,7 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
             break;
     }
 }
-# 750 "funcionesGenerales.c"
+# 763 "funcionesGenerales.c"
 void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
 {
     LCD_I2C_CreateSolidPixel(0);
@@ -31131,7 +31127,7 @@ void MostrarAnimacionCarga(unsigned char fila, unsigned char columna)
         _delay((unsigned long)((300)*(32000000UL/4000.0)));
     }
 }
-# 778 "funcionesGenerales.c"
+# 791 "funcionesGenerales.c"
 void SubProceso_MenuLCD(void)
 {
 
@@ -31252,7 +31248,7 @@ void SubProceso_MenuLCD(void)
         }
     }
 }
-# 915 "funcionesGenerales.c"
+# 928 "funcionesGenerales.c"
 void SubProceso_VerHorarios(void)
 {
 
@@ -31446,7 +31442,7 @@ void SubProceso_VerHorarios(void)
         }
     }
 }
-# 1124 "funcionesGenerales.c"
+# 1137 "funcionesGenerales.c"
 void SubProceso_ModificarHorario(void)
 {
 
@@ -31469,7 +31465,7 @@ void SubProceso_ModificarHorario(void)
 
 
     dato_memoria = EEPROM_ReadByte(1);
-# 1158 "funcionesGenerales.c"
+# 1171 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31580,7 +31576,7 @@ void SubProceso_ModificarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1280 "funcionesGenerales.c"
+# 1293 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31741,7 +31737,7 @@ void SubProceso_ModificarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1452 "funcionesGenerales.c"
+# 1465 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31848,7 +31844,7 @@ void SubProceso_ModificarHorario(void)
     EEPROM_UpdateByte(10+(5*(horario_selecionado-1)), (hora_modificada[2]*10)+hora_modificada[3]);
     EEPROM_UpdateByte(13+(5*(horario_selecionado-1)), pastillero_modificado);
     EEPROM_UpdateByte(11+(5*(horario_selecionado-1)), 0);
-# 1570 "funcionesGenerales.c"
+# 1583 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31877,7 +31873,7 @@ void SubProceso_ModificarHorario(void)
 
     _delay((unsigned long)((2000)*(32000000UL/4000.0)));
 }
-# 1613 "funcionesGenerales.c"
+# 1626 "funcionesGenerales.c"
 void SubProceso_AgregarHorario(void)
 {
 
@@ -31900,7 +31896,7 @@ void SubProceso_AgregarHorario(void)
 
 
     index_horarios_ocupados = EEPROM_ReadByte(1);
-# 1647 "funcionesGenerales.c"
+# 1660 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -31960,7 +31956,7 @@ void SubProceso_AgregarHorario(void)
         if (tecla != '\0')
             break;
     }
-# 1720 "funcionesGenerales.c"
+# 1733 "funcionesGenerales.c"
     LCD_I2C_Clear();
 
     LCD_I2C_SetCursor(1,0);
@@ -32175,7 +32171,7 @@ void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t
 
     EEPROM_UpdateByte(1, (horario) + 1);
 }
-# 1954 "funcionesGenerales.c"
+# 1967 "funcionesGenerales.c"
 void SubProceso_RegistrarPastillas(void)
 {
     uint8_t pastillero_selecionado;

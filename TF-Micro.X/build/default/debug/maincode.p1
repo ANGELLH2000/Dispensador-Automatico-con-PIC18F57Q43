@@ -73,6 +73,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49855
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
 [v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
+"12 ./funcionesGenerales.h
+[; ;./funcionesGenerales.h: 12: void SubProceso_CondicionesIniciales(void);
+[v _SubProceso_CondicionesIniciales `(v ~T0 @X0 0 ef ]
+"43 maincode.c
+[; ;maincode.c: 43:     LCD_I2C_Clear();
+[c E17313 0 1 2 3 4 5 .. ]
+[n E17313 . I2C_OK I2C_ERROR_NACK I2C_ERROR_COLLISION I2C_ERROR_BUS_TIMEOUT I2C_ERROR_SOFTWARE_TIMEOUT I2C_ERROR_INVALID_PARAMETER  ]
+"127 ./LCD_I2C.h
+[; ;./LCD_I2C.h: 127: I2C_Status LCD_I2C_Clear(void);
+[v _LCD_I2C_Clear `(E17313 ~T0 @X0 0 ef ]
+"20 ./funcionesGenerales.h
+[; ;./funcionesGenerales.h: 20: void Sensores(uint16_t lectura_sensores[4]);
+[v _Sensores `(v ~T0 @X0 0 ef1`*us ]
+"122 ./LCD_I2C.h
+[; ;./LCD_I2C.h: 122: I2C_Status LCD_I2C_SetCursor(
+[v _LCD_I2C_SetCursor `(E17313 ~T0 @X0 0 ef2`uc`uc ]
+"105
+[; ;./LCD_I2C.h: 105: I2C_Status LCD_I2C_WriteString(const char *text);
+[v _LCD_I2C_WriteString `(E17313 ~T0 @X0 0 ef1`*Cuc ]
+"192
+[; ;./LCD_I2C.h: 192: I2C_Status LCD_I2C_WriteInt(int16_t value);
+[v _LCD_I2C_WriteInt `(E17313 ~T0 @X0 0 ef1`s ]
 "16 ./funcionesGenerales.h
 [; ;./funcionesGenerales.h: 16: void DataEEPROM(uint8_t data_memoria[40]);
 [v _DataEEPROM `(v ~T0 @X0 0 ef1`*uc ]
@@ -85,8 +107,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37 ./LIB_UART.h
 [; ;./LIB_UART.h: 37: void U1_BYTE_SEND(unsigned char dato);
 [v _U1_BYTE_SEND `(v ~T0 @X0 0 ef1`uc ]
+"19 ./funcionesGenerales.h
+[; ;./funcionesGenerales.h: 19: void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
+[v _Funcion_AgregarPastillas `(v ~T0 @X0 0 ef2`uc`uc ]
 [p mainexit ]
-"15 ./funcionesGenerales.h
+"15
 [; ;./funcionesGenerales.h: 15: void PantallaGeneral(void);
 [v _PantallaGeneral `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
@@ -2729,424 +2754,586 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WRTAPP  =  OFF      ]
 "54
 [p x CP  =  OFF          ]
-"11 maincode.c
-[; ;maincode.c: 11: volatile uint8_t rx_buffer[50];
+"12 maincode.c
+[; ;maincode.c: 12: volatile uint8_t rx_buffer[50];
 [v _rx_buffer `Vuc ~T0 @X0 -> 50 `i e ]
-"12
-[; ;maincode.c: 12: volatile uint8_t rx_indice = 0;
+"13
+[; ;maincode.c: 13: volatile uint8_t rx_indice = 0;
 [v _rx_indice `Vuc ~T0 @X0 1 e ]
 [i _rx_indice
 -> -> 0 `i `uc
 ]
-"13
-[; ;maincode.c: 13: volatile uint8_t flag_paquete_listo = 0;
+"14
+[; ;maincode.c: 14: volatile uint8_t flag_paquete_listo = 0;
 [v _flag_paquete_listo `Vuc ~T0 @X0 1 e ]
 [i _flag_paquete_listo
 -> -> 0 `i `uc
 ]
-"14
-[; ;maincode.c: 14: volatile uint8_t longitud_esperada = 0;
+"15
+[; ;maincode.c: 15: volatile uint8_t longitud_esperada = 0;
 [v _longitud_esperada `Vuc ~T0 @X0 1 e ]
 [i _longitud_esperada
 -> -> 0 `i `uc
 ]
-"15
-[; ;maincode.c: 15: uint8_t datos[40];
-[v _datos `uc ~T0 @X0 -> 40 `i e ]
 "16
-[; ;maincode.c: 16: void configuro(void)
-[v _configuro `(v ~T0 @X0 1 ef ]
+[; ;maincode.c: 16: uint8_t datos[40];
+[v _datos `uc ~T0 @X0 -> 40 `i e ]
 "17
-[; ;maincode.c: 17: {
+[; ;maincode.c: 17: void configuro(void)
+[v _configuro `(v ~T0 @X0 1 ef ]
+"18
+[; ;maincode.c: 18: {
 {
 [e :U _configuro ]
 [f ]
-"19
-[; ;maincode.c: 19:     config_perifericos();
+"20
+[; ;maincode.c: 20:     config_perifericos();
 [e ( _config_perifericos ..  ]
-"21
-[; ;maincode.c: 21:     OSCCON1 = 0x60;
-[e = _OSCCON1 -> -> 96 `i `uc ]
 "22
-[; ;maincode.c: 22:     OSCFRQ = 0x06;
-[e = _OSCFRQ -> -> 6 `i `uc ]
+[; ;maincode.c: 22:     OSCCON1 = 0x60;
+[e = _OSCCON1 -> -> 96 `i `uc ]
 "23
-[; ;maincode.c: 23:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
+[; ;maincode.c: 23:     OSCFRQ = 0x06;
+[e = _OSCFRQ -> -> 6 `i `uc ]
 "24
-[; ;maincode.c: 24:     ANSELFbits.ANSELF1 = 0;
-[e = . . _ANSELFbits 0 1 -> -> 0 `i `uc ]
+[; ;maincode.c: 24:     OSCEN = 0x40;
+[e = _OSCEN -> -> 64 `i `uc ]
 "25
-[; ;maincode.c: 25:     ANSELFbits.ANSELF0 = 0;
-[e = . . _ANSELFbits 0 0 -> -> 0 `i `uc ]
+[; ;maincode.c: 25:     ANSELFbits.ANSELF1 = 0;
+[e = . . _ANSELFbits 0 1 -> -> 0 `i `uc ]
 "26
-[; ;maincode.c: 26:     TRISFbits.TRISF1 = 1;
-[e = . . _TRISFbits 0 1 -> -> 1 `i `uc ]
+[; ;maincode.c: 26:     ANSELFbits.ANSELF0 = 0;
+[e = . . _ANSELFbits 0 0 -> -> 0 `i `uc ]
 "27
-[; ;maincode.c: 27:     TRISFbits.TRISF0 = 0;
-[e = . . _TRISFbits 0 0 -> -> 0 `i `uc ]
+[; ;maincode.c: 27:     TRISFbits.TRISF1 = 1;
+[e = . . _TRISFbits 0 1 -> -> 1 `i `uc ]
 "28
-[; ;maincode.c: 28:     U1_INIT(207);
+[; ;maincode.c: 28:     TRISFbits.TRISF0 = 0;
+[e = . . _TRISFbits 0 0 -> -> 0 `i `uc ]
+"29
+[; ;maincode.c: 29:     U1_INIT(207);
 [e ( _U1_INIT (1 -> -> 207 `i `ui ]
-"30
-[; ;maincode.c: 30:     PIE4bits.U1RXIE = 1;
-[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
 "31
-[; ;maincode.c: 31:     PIR4bits.U1RXIF = 0;
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[; ;maincode.c: 31:     PIE4bits.U1RXIE = 1;
+[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
 "32
-[; ;maincode.c: 32:     INTCON0bits.GIE = 1;
+[; ;maincode.c: 32:     PIR4bits.U1RXIF = 0;
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+"33
+[; ;maincode.c: 33:     INTCON0bits.GIE = 1;
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 "38
-[; ;maincode.c: 38: }
+[; ;maincode.c: 38:     SubProceso_CondicionesIniciales();
+[e ( _SubProceso_CondicionesIniciales ..  ]
+"39
+[; ;maincode.c: 39: }
 [e :UE 2431 ]
 }
+"40
+[; ;maincode.c: 40: void sensores_en_pantalla (void)
+[v _sensores_en_pantalla `(v ~T0 @X0 1 ef ]
+"41
+[; ;maincode.c: 41: {
+{
+[e :U _sensores_en_pantalla ]
+[f ]
+"42
+[; ;maincode.c: 42:     uint16_t valor_de_sensores[4];
+[v _valor_de_sensores `us ~T0 @X0 -> 4 `i a ]
+"43
+[; ;maincode.c: 43:     LCD_I2C_Clear();
+[e ( _LCD_I2C_Clear ..  ]
 "44
-[; ;maincode.c: 44: void uart_serial(void)
-[v _uart_serial `(v ~T0 @X0 1 ef ]
+[; ;maincode.c: 44:     while(1)
+[e :U 2434 ]
 "45
-[; ;maincode.c: 45: {
+[; ;maincode.c: 45:     {
+{
+"46
+[; ;maincode.c: 46:         Sensores(valor_de_sensores);
+[e ( _Sensores (1 &U _valor_de_sensores ]
+"47
+[; ;maincode.c: 47:         LCD_I2C_SetCursor(2,0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"48
+[; ;maincode.c: 48:         LCD_I2C_WriteString("S1:");
+[e ( _LCD_I2C_WriteString (1 :s 1C ]
+"49
+[; ;maincode.c: 49:         LCD_I2C_WriteInt(valor_de_sensores[0]);
+[e ( _LCD_I2C_WriteInt (1 -> *U + &U _valor_de_sensores * -> -> -> 0 `i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `s ]
+"50
+[; ;maincode.c: 50:         LCD_I2C_WriteString(" S2:");
+[e ( _LCD_I2C_WriteString (1 :s 2C ]
+"51
+[; ;maincode.c: 51:         LCD_I2C_WriteInt(valor_de_sensores[1]);
+[e ( _LCD_I2C_WriteInt (1 -> *U + &U _valor_de_sensores * -> -> -> 1 `i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `s ]
+"52
+[; ;maincode.c: 52:         LCD_I2C_SetCursor(3,0);
+[e ( _LCD_I2C_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"53
+[; ;maincode.c: 53:         LCD_I2C_WriteString("S3:");
+[e ( _LCD_I2C_WriteString (1 :s 3C ]
+"54
+[; ;maincode.c: 54:         LCD_I2C_WriteInt(valor_de_sensores[2]);
+[e ( _LCD_I2C_WriteInt (1 -> *U + &U _valor_de_sensores * -> -> -> 2 `i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `s ]
+"55
+[; ;maincode.c: 55:         LCD_I2C_WriteString(" S4:");
+[e ( _LCD_I2C_WriteString (1 :s 4C ]
+"56
+[; ;maincode.c: 56:         LCD_I2C_WriteInt(valor_de_sensores[3]);
+[e ( _LCD_I2C_WriteInt (1 -> *U + &U _valor_de_sensores * -> -> -> 3 `i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `s ]
+"58
+[; ;maincode.c: 58:     }
+}
+[e :U 2433 ]
+[e $U 2434  ]
+[e :U 2435 ]
+"61
+[; ;maincode.c: 61: }
+[e :UE 2432 ]
+}
+"66
+[; ;maincode.c: 66: void uart_serial(void)
+[v _uart_serial `(v ~T0 @X0 1 ef ]
+"67
+[; ;maincode.c: 67: {
 {
 [e :U _uart_serial ]
 [f ]
-"47
-[; ;maincode.c: 47:     if (flag_paquete_listo == 1) {
-[e $ ! == -> _flag_paquete_listo `i -> 1 `i 2433  ]
+"69
+[; ;maincode.c: 69:     if (flag_paquete_listo == 1) {
+[e $ ! == -> _flag_paquete_listo `i -> 1 `i 2437  ]
 {
-"49
-[; ;maincode.c: 49:         uint8_t longitud = rx_buffer[2];
+"71
+[; ;maincode.c: 71:         uint8_t longitud = rx_buffer[2];
 [v _longitud `uc ~T0 @X0 1 a ]
 [e = _longitud *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
-"50
-[; ;maincode.c: 50:         uint8_t pos_chk = 3 + longitud;
+"72
+[; ;maincode.c: 72:         uint8_t pos_chk = 3 + longitud;
 [v _pos_chk `uc ~T0 @X0 1 a ]
 [e = _pos_chk -> + -> 3 `i -> _longitud `i `uc ]
-"51
-[; ;maincode.c: 51:         uint8_t pos_fin = pos_chk + 1;
+"73
+[; ;maincode.c: 73:         uint8_t pos_fin = pos_chk + 1;
 [v _pos_fin `uc ~T0 @X0 1 a ]
 [e = _pos_fin -> + -> _pos_chk `i -> 1 `i `uc ]
-"54
-[; ;maincode.c: 54:         if (rx_buffer[pos_fin] == 0x0A)
-[e $ ! == -> *U + &U _rx_buffer * -> _pos_fin `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 10 `i 2434  ]
-"55
-[; ;maincode.c: 55:         {
+"76
+[; ;maincode.c: 76:         if (rx_buffer[pos_fin] == 0x0A)
+[e $ ! == -> *U + &U _rx_buffer * -> _pos_fin `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 10 `i 2438  ]
+"77
+[; ;maincode.c: 77:         {
 {
-"56
-[; ;maincode.c: 56:             uint8_t checksum_calculado = 0;
+"78
+[; ;maincode.c: 78:             uint8_t checksum_calculado = 0;
 [v _checksum_calculado `uc ~T0 @X0 1 a ]
 [e = _checksum_calculado -> -> 0 `i `uc ]
-"58
-[; ;maincode.c: 58:             for(int i = 0; i < longitud; i++)
+"80
+[; ;maincode.c: 80:             for(int i = 0; i < longitud; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 2438  ]
-[e :U 2435 ]
-"59
-[; ;maincode.c: 59:             {
+[e $U 2442  ]
+[e :U 2439 ]
+"81
+[; ;maincode.c: 81:             {
 {
-"60
-[; ;maincode.c: 60:                 checksum_calculado += rx_buffer[3 + i];
+"82
+[; ;maincode.c: 82:                 checksum_calculado += rx_buffer[3 + i];
 [e =+ _checksum_calculado -> *U + &U _rx_buffer * -> -> + -> 3 `i _i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `uc ]
-"61
-[; ;maincode.c: 61:             }
+"83
+[; ;maincode.c: 83:             }
 }
 [e ++ _i -> 1 `i ]
-[e :U 2438 ]
-[e $ < _i -> _longitud `i 2435  ]
-[e :U 2436 ]
-}
-"64
-[; ;maincode.c: 64:             if (checksum_calculado == rx_buffer[pos_chk])
-[e $ ! == -> _checksum_calculado `i -> *U + &U _rx_buffer * -> _pos_chk `ux -> -> # *U &U _rx_buffer `ui `ux `i 2439  ]
-"65
-[; ;maincode.c: 65:             {
-{
-"67
-[; ;maincode.c: 67:                 switch (rx_buffer[1]) {
-[e $U 2441  ]
-{
-"72
-[; ;maincode.c: 72:                     case 0x56:
 [e :U 2442 ]
-"74
-[; ;maincode.c: 74:                         if (rx_buffer[2] == 0x01 && rx_buffer[3] == 0x52) {
-[e $ ! && == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i == -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 82 `i 2443  ]
-{
-"76
-[; ;maincode.c: 76:                                 DataEEPROM(datos);
-[e ( _DataEEPROM (1 &U _datos ]
-"77
-[; ;maincode.c: 77:                                 Enviar_Trama_Data(datos);
-[e ( _Enviar_Trama_Data (1 &U _datos ]
-"79
-[; ;maincode.c: 79:                         }
+[e $ < _i -> _longitud `i 2439  ]
+[e :U 2440 ]
 }
-[e :U 2443 ]
-"80
-[; ;maincode.c: 80:                         break;
-[e $U 2440  ]
-"84
-[; ;maincode.c: 84:                     case 0x15:
-[e :U 2444 ]
 "86
-[; ;maincode.c: 86:                         if (rx_buffer[2] == 0x04 ) {
-[e $ ! == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 4 `i 2445  ]
+[; ;maincode.c: 86:             if (checksum_calculado == rx_buffer[pos_chk])
+[e $ ! == -> _checksum_calculado `i -> *U + &U _rx_buffer * -> _pos_chk `ux -> -> # *U &U _rx_buffer `ui `ux `i 2443  ]
+"87
+[; ;maincode.c: 87:             {
 {
 "89
-[; ;maincode.c: 89:                             Funcion_AgregarHorario(rx_buffer[4],rx_buffer[5],rx_buffer[6],rx_buffer[3]-1);
-[e ( _Funcion_AgregarHorario (4 , , , *U + &U _rx_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux *U + &U _rx_buffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux *U + &U _rx_buffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux -> - -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i `uc ]
-"91
-[; ;maincode.c: 91:                             U1_BYTE_SEND(rx_buffer[4]); U1_BYTE_SEND(rx_buffer[5]);
-[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
-[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
-"92
-[; ;maincode.c: 92:                             U1_BYTE_SEND(rx_buffer[6]); U1_BYTE_SEND(rx_buffer[3]-1);
-[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
-[e ( _U1_BYTE_SEND (1 -> - -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i `uc ]
-"93
-[; ;maincode.c: 93:                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
-[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
-[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
-"94
-[; ;maincode.c: 94:                         }
-}
-[e :U 2445 ]
-"95
-[; ;maincode.c: 95:                         break;
-[e $U 2440  ]
-"99
-[; ;maincode.c: 99:                     case 0x07:
-[e :U 2446 ]
-"101
-[; ;maincode.c: 101:                         if (rx_buffer[2] == 0x02 ) {
-[e $ ! == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 2 `i 2447  ]
+[; ;maincode.c: 89:                 switch (rx_buffer[1]) {
+[e $U 2445  ]
 {
-"104
-[; ;maincode.c: 104:                             U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x15);
-[e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
-[e ( _U1_BYTE_SEND (1 -> -> 21 `i `uc ]
-"105
-[; ;maincode.c: 105:                             U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x07);
-[e ( _U1_BYTE_SEND (1 -> -> 1 `i `uc ]
-[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
-"106
-[; ;maincode.c: 106:                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
-[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
-[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
-"107
-[; ;maincode.c: 107:                         }
+"94
+[; ;maincode.c: 94:                     case 0x56:
+[e :U 2446 ]
+"96
+[; ;maincode.c: 96:                         if (rx_buffer[2] == 0x01 && rx_buffer[3] == 0x52) {
+[e $ ! && == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i == -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 82 `i 2447  ]
+{
+"98
+[; ;maincode.c: 98:                                 DataEEPROM(datos);
+[e ( _DataEEPROM (1 &U _datos ]
+"99
+[; ;maincode.c: 99:                                 Enviar_Trama_Data(datos);
+[e ( _Enviar_Trama_Data (1 &U _datos ]
+"101
+[; ;maincode.c: 101:                         }
 }
 [e :U 2447 ]
-"108
-[; ;maincode.c: 108:                         break;
-[e $U 2440  ]
-"112
-[; ;maincode.c: 112:                     default:
+"102
+[; ;maincode.c: 102:                         break;
+[e $U 2444  ]
+"106
+[; ;maincode.c: 106:                     case 0x15:
 [e :U 2448 ]
+"108
+[; ;maincode.c: 108:                         if (rx_buffer[2] == 0x04 ) {
+[e $ ! == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 4 `i 2449  ]
+{
+"111
+[; ;maincode.c: 111:                             Funcion_AgregarHorario(rx_buffer[4],rx_buffer[5],rx_buffer[6],rx_buffer[3]-1);
+[e ( _Funcion_AgregarHorario (4 , , , *U + &U _rx_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux *U + &U _rx_buffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux *U + &U _rx_buffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux -> - -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i `uc ]
+"113
+[; ;maincode.c: 113:                             U1_BYTE_SEND(rx_buffer[4]); U1_BYTE_SEND(rx_buffer[5]);
+[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
+[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 5 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
+"114
+[; ;maincode.c: 114:                             U1_BYTE_SEND(rx_buffer[6]); U1_BYTE_SEND(rx_buffer[3]-1);
+[e ( _U1_BYTE_SEND (1 *U + &U _rx_buffer * -> -> -> 6 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
+[e ( _U1_BYTE_SEND (1 -> - -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i `uc ]
+"115
+[; ;maincode.c: 115:                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
+[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
+[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
 "116
-[; ;maincode.c: 116:                         U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x55);
+[; ;maincode.c: 116:                         }
+}
+[e :U 2449 ]
+"117
+[; ;maincode.c: 117:                         break;
+[e $U 2444  ]
+"121
+[; ;maincode.c: 121:                     case 0x07:
+[e :U 2450 ]
+"123
+[; ;maincode.c: 123:                         if (rx_buffer[2] == 0x02 ) {
+[e $ ! == -> *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 2 `i 2451  ]
+{
+"126
+[; ;maincode.c: 126:                             Funcion_AgregarPastillas(rx_buffer[4],rx_buffer[3]);
+[e ( _Funcion_AgregarPastillas (2 , *U + &U _rx_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux ]
+"128
+[; ;maincode.c: 128:                             U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x15);
+[e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
+[e ( _U1_BYTE_SEND (1 -> -> 21 `i `uc ]
+"129
+[; ;maincode.c: 129:                             U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x07);
+[e ( _U1_BYTE_SEND (1 -> -> 1 `i `uc ]
+[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
+"130
+[; ;maincode.c: 130:                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
+[e ( _U1_BYTE_SEND (1 -> -> 7 `i `uc ]
+[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
+"131
+[; ;maincode.c: 131:                         }
+}
+[e :U 2451 ]
+"132
+[; ;maincode.c: 132:                         break;
+[e $U 2444  ]
+"136
+[; ;maincode.c: 136:                     case 0x26:
+[e :U 2452 ]
+"137
+[; ;maincode.c: 137:                         if (longitud == 1 && rx_buffer[3] == 0x01) {
+[e $ ! && == -> _longitud `i -> 1 `i == -> *U + &U _rx_buffer * -> -> -> 3 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux `i -> 1 `i 2453  ]
+{
+"140
+[; ;maincode.c: 140:                             uint16_t valor_de_sensores[4];
+[v _valor_de_sensores `us ~T0 @X0 -> 4 `i a ]
+"141
+[; ;maincode.c: 141:                             uint8_t valor_sensor_ir = 0;
+[v _valor_sensor_ir `uc ~T0 @X0 1 a ]
+[e = _valor_sensor_ir -> -> 0 `i `uc ]
+"142
+[; ;maincode.c: 142:                             Sensores(valor_de_sensores);
+[e ( _Sensores (1 &U _valor_de_sensores ]
+"145
+[; ;maincode.c: 145:                             U1_BYTE_SEND(0xAA);
+[e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
+"146
+[; ;maincode.c: 146:                             U1_BYTE_SEND(0x55);
+[e ( _U1_BYTE_SEND (1 -> -> 85 `i `uc ]
+"147
+[; ;maincode.c: 147:                             U1_BYTE_SEND(0x09);
+[e ( _U1_BYTE_SEND (1 -> -> 9 `i `uc ]
+"149
+[; ;maincode.c: 149:                             uint8_t checksum_out = 0;
+[v _checksum_out `uc ~T0 @X0 1 a ]
+[e = _checksum_out -> -> 0 `i `uc ]
+"152
+[; ;maincode.c: 152:                             for(int i = 0; i < 4; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 2454  ]
+[e $U 2455  ]
+[e :U 2454 ]
+{
+"153
+[; ;maincode.c: 153:                                 uint8_t high_byte = (valor_de_sensores[i] >> 8) & 0xFF;
+[v _high_byte `uc ~T0 @X0 1 a ]
+[e = _high_byte -> & >> -> *U + &U _valor_de_sensores * -> -> _i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `ui -> 8 `i -> -> 255 `i `ui `uc ]
+"154
+[; ;maincode.c: 154:                                 uint8_t low_byte = valor_de_sensores[i] & 0xFF;
+[v _low_byte `uc ~T0 @X0 1 a ]
+[e = _low_byte -> & -> *U + &U _valor_de_sensores * -> -> _i `ui `ux -> -> # *U &U _valor_de_sensores `ui `ux `ui -> -> 255 `i `ui `uc ]
+"156
+[; ;maincode.c: 156:                                 U1_BYTE_SEND(high_byte);
+[e ( _U1_BYTE_SEND (1 _high_byte ]
+"157
+[; ;maincode.c: 157:                                 U1_BYTE_SEND(low_byte);
+[e ( _U1_BYTE_SEND (1 _low_byte ]
+"159
+[; ;maincode.c: 159:                                 checksum_out += high_byte;
+[e =+ _checksum_out -> _high_byte `uc ]
+"160
+[; ;maincode.c: 160:                                 checksum_out += low_byte;
+[e =+ _checksum_out -> _low_byte `uc ]
+"161
+[; ;maincode.c: 161:                             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 2454  ]
+[e :U 2455 ]
+}
+"164
+[; ;maincode.c: 164:                             U1_BYTE_SEND(valor_sensor_ir);
+[e ( _U1_BYTE_SEND (1 _valor_sensor_ir ]
+"165
+[; ;maincode.c: 165:                             checksum_out += valor_sensor_ir;
+[e =+ _checksum_out -> _valor_sensor_ir `uc ]
+"168
+[; ;maincode.c: 168:                             U1_BYTE_SEND(checksum_out);
+[e ( _U1_BYTE_SEND (1 _checksum_out ]
+"169
+[; ;maincode.c: 169:                             U1_BYTE_SEND(0x0A);
+[e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
+"170
+[; ;maincode.c: 170:                             sensores_en_pantalla();
+[e ( _sensores_en_pantalla ..  ]
+"171
+[; ;maincode.c: 171:                         }
+}
+[e :U 2453 ]
+"172
+[; ;maincode.c: 172:                         break;
+[e $U 2444  ]
+"176
+[; ;maincode.c: 176:                     default:
+[e :U 2457 ]
+"180
+[; ;maincode.c: 180:                         U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x55);
 [e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
 [e ( _U1_BYTE_SEND (1 -> -> 85 `i `uc ]
-"117
-[; ;maincode.c: 117:                         U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x06); U1_BYTE_SEND(0x06);
+"181
+[; ;maincode.c: 181:                         U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x06); U1_BYTE_SEND(0x06);
 [e ( _U1_BYTE_SEND (1 -> -> 1 `i `uc ]
 [e ( _U1_BYTE_SEND (1 -> -> 6 `i `uc ]
 [e ( _U1_BYTE_SEND (1 -> -> 6 `i `uc ]
-"118
-[; ;maincode.c: 118:                         break;
-[e $U 2440  ]
-"119
-[; ;maincode.c: 119:                 }
+"182
+[; ;maincode.c: 182:                         break;
+[e $U 2444  ]
+"183
+[; ;maincode.c: 183:                 }
 }
-[e $U 2440  ]
-[e :U 2441 ]
-[e [\ *U + &U _rx_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux , $ -> 86 `i 2442
- , $ -> 21 `i 2444
- , $ -> 7 `i 2446
- 2448 ]
-[e :U 2440 ]
-"120
-[; ;maincode.c: 120:             }
+[e $U 2444  ]
+[e :U 2445 ]
+[e [\ *U + &U _rx_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux , $ -> 86 `i 2446
+ , $ -> 21 `i 2448
+ , $ -> 7 `i 2450
+ , $ -> 38 `i 2452
+ 2457 ]
+[e :U 2444 ]
+"184
+[; ;maincode.c: 184:             }
 }
-[e :U 2439 ]
-"122
-[; ;maincode.c: 122:         }
+[e :U 2443 ]
+"186
+[; ;maincode.c: 186:         }
 }
-[e :U 2434 ]
-"124
-[; ;maincode.c: 124:         flag_paquete_listo = 0;
+[e :U 2438 ]
+"188
+[; ;maincode.c: 188:         flag_paquete_listo = 0;
 [e = _flag_paquete_listo -> -> 0 `i `uc ]
-"125
-[; ;maincode.c: 125:     }
+"189
+[; ;maincode.c: 189:     }
 }
-[e :U 2433 ]
-"126
-[; ;maincode.c: 126: }
-[e :UE 2432 ]
+[e :U 2437 ]
+"190
+[; ;maincode.c: 190: }
+[e :UE 2436 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"130
-[; ;maincode.c: 130: void main(void)
+"194
+[; ;maincode.c: 194: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"131
-[; ;maincode.c: 131: {
+"195
+[; ;maincode.c: 195: {
 {
 [e :U _main ]
 [f ]
-"132
-[; ;maincode.c: 132:     configuro();
+"196
+[; ;maincode.c: 196:     configuro();
 [e ( _configuro ..  ]
-"133
-[; ;maincode.c: 133:     while (1)
-[e :U 2451 ]
-"134
-[; ;maincode.c: 134:     {
+"197
+[; ;maincode.c: 197:     while (1)
+[e :U 2460 ]
+"198
+[; ;maincode.c: 198:     {
 {
-"135
-[; ;maincode.c: 135:         PantallaGeneral();
+"199
+[; ;maincode.c: 199:         PantallaGeneral();
 [e ( _PantallaGeneral ..  ]
-"136
-[; ;maincode.c: 136:         uart_serial();
+"201
+[; ;maincode.c: 201:         uart_serial();
 [e ( _uart_serial ..  ]
-"138
-[; ;maincode.c: 138:     }
+"203
+[; ;maincode.c: 203:     }
 }
-[e :U 2450 ]
-[e $U 2451  ]
-[e :U 2452 ]
-"139
-[; ;maincode.c: 139: }
-[e :UE 2449 ]
+[e :U 2459 ]
+[e $U 2460  ]
+[e :U 2461 ]
+"204
+[; ;maincode.c: 204: }
+[e :UE 2458 ]
 }
 [v $root$_U1RX_ISR `(v ~T0 @X0 0 e ]
-"144
-[; ;maincode.c: 144: void __attribute__((picinterrupt(("irq(32)")))) U1RX_ISR(void){
+"209
+[; ;maincode.c: 209: void __attribute__((picinterrupt(("irq(32)")))) U1RX_ISR(void){
 [v _U1RX_ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _U1RX_ISR ]
 [f ]
-"145
-[; ;maincode.c: 145:     PIR4bits.U1RXIF = 0;
+"210
+[; ;maincode.c: 210:     PIR4bits.U1RXIF = 0;
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-"146
-[; ;maincode.c: 146:     uint8_t dato_entrante = U1RXB;
+"211
+[; ;maincode.c: 211:     uint8_t dato_entrante = U1RXB;
 [v _dato_entrante `uc ~T0 @X0 1 a ]
 [e = _dato_entrante _U1RXB ]
-"150
-[; ;maincode.c: 150:     if (flag_paquete_listo) return;
-[e $ ! != -> _flag_paquete_listo `i -> 0 `i 2454  ]
-[e $UE 2453  ]
-[e :U 2454 ]
-"153
-[; ;maincode.c: 153:     if (rx_indice == 0) {
-[e $ ! == -> _rx_indice `i -> 0 `i 2455  ]
-{
-"154
-[; ;maincode.c: 154:         if (dato_entrante == 0xAA ) {
-[e $ ! == -> _dato_entrante `i -> 170 `i 2456  ]
-{
-"155
-[; ;maincode.c: 155:             rx_buffer[0] = dato_entrante;
-[e = *U + &U _rx_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
-"156
-[; ;maincode.c: 156:             rx_indice = 1;
-[e = _rx_indice -> -> 1 `i `uc ]
-"157
-[; ;maincode.c: 157:         }
-}
-[e :U 2456 ]
-"158
-[; ;maincode.c: 158:         return;
-[e $UE 2453  ]
-"159
-[; ;maincode.c: 159:     }
-}
-[e :U 2455 ]
-"162
-[; ;maincode.c: 162:     if (rx_indice == 1) {
-[e $ ! == -> _rx_indice `i -> 1 `i 2457  ]
-{
-"163
-[; ;maincode.c: 163:         if (dato_entrante == 0x55 ||
-[e $ ! || || || || == -> _dato_entrante `i -> 85 `i == -> _dato_entrante `i -> 86 `i == -> _dato_entrante `i -> 21 `i == -> _dato_entrante `i -> 7 `i == -> _dato_entrante `i -> 38 `i 2458  ]
-"167
-[; ;maincode.c: 167:             dato_entrante == 0x26) {
-{
-"168
-[; ;maincode.c: 168:             rx_buffer[1] = dato_entrante;
-[e = *U + &U _rx_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
-"169
-[; ;maincode.c: 169:             rx_indice = 2;
-[e = _rx_indice -> -> 2 `i `uc ]
-"170
-[; ;maincode.c: 170:         } else {
-}
-[e $U 2459  ]
-[e :U 2458 ]
-{
-"171
-[; ;maincode.c: 171:             rx_indice = 0;
-[e = _rx_indice -> -> 0 `i `uc ]
-"172
-[; ;maincode.c: 172:         }
-}
-[e :U 2459 ]
-"173
-[; ;maincode.c: 173:         return;
-[e $UE 2453  ]
-"174
-[; ;maincode.c: 174:     }
-}
-[e :U 2457 ]
-"177
-[; ;maincode.c: 177:     if (rx_indice == 2) {
-[e $ ! == -> _rx_indice `i -> 2 `i 2460  ]
-{
-"178
-[; ;maincode.c: 178:         rx_buffer[2] = dato_entrante;
-[e = *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
-"179
-[; ;maincode.c: 179:         longitud_esperada = 5 + dato_entrante;
-[e = _longitud_esperada -> + -> 5 `i -> _dato_entrante `i `uc ]
-"181
-[; ;maincode.c: 181:         if (longitud_esperada > 15) rx_indice = 0;
-[e $ ! > -> _longitud_esperada `i -> 15 `i 2461  ]
-[e = _rx_indice -> -> 0 `i `uc ]
-[e $U 2462  ]
-"182
-[; ;maincode.c: 182:         else rx_indice = 3;
-[e :U 2461 ]
-[e = _rx_indice -> -> 3 `i `uc ]
-[e :U 2462 ]
-"184
-[; ;maincode.c: 184:         return;
-[e $UE 2453  ]
-"185
-[; ;maincode.c: 185:     }
-}
-[e :U 2460 ]
-"188
-[; ;maincode.c: 188:     rx_buffer[rx_indice] = dato_entrante;
-[e = *U + &U _rx_buffer * -> _rx_indice `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
-"189
-[; ;maincode.c: 189:     rx_indice++;
-[e ++ _rx_indice -> -> 1 `i `Vuc ]
-"191
-[; ;maincode.c: 191:     if (rx_indice >= longitud_esperada) {
-[e $ ! >= -> _rx_indice `i -> _longitud_esperada `i 2463  ]
-{
-"192
-[; ;maincode.c: 192:         flag_paquete_listo = 1;
-[e = _flag_paquete_listo -> -> 1 `i `uc ]
-"193
-[; ;maincode.c: 193:         rx_indice = 0;
-[e = _rx_indice -> -> 0 `i `uc ]
-"194
-[; ;maincode.c: 194:     }
-}
+"215
+[; ;maincode.c: 215:     if (flag_paquete_listo) return;
+[e $ ! != -> _flag_paquete_listo `i -> 0 `i 2463  ]
+[e $UE 2462  ]
 [e :U 2463 ]
-"195
-[; ;maincode.c: 195: }
-[e :UE 2453 ]
+"218
+[; ;maincode.c: 218:     if (rx_indice == 0) {
+[e $ ! == -> _rx_indice `i -> 0 `i 2464  ]
+{
+"219
+[; ;maincode.c: 219:         if (dato_entrante == 0xAA ) {
+[e $ ! == -> _dato_entrante `i -> 170 `i 2465  ]
+{
+"220
+[; ;maincode.c: 220:             rx_buffer[0] = dato_entrante;
+[e = *U + &U _rx_buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
+"221
+[; ;maincode.c: 221:             rx_indice = 1;
+[e = _rx_indice -> -> 1 `i `uc ]
+"222
+[; ;maincode.c: 222:         }
 }
+[e :U 2465 ]
+"223
+[; ;maincode.c: 223:         return;
+[e $UE 2462  ]
+"224
+[; ;maincode.c: 224:     }
+}
+[e :U 2464 ]
+"227
+[; ;maincode.c: 227:     if (rx_indice == 1) {
+[e $ ! == -> _rx_indice `i -> 1 `i 2466  ]
+{
+"228
+[; ;maincode.c: 228:         if (dato_entrante == 0x55 ||
+[e $ ! || || || || == -> _dato_entrante `i -> 85 `i == -> _dato_entrante `i -> 86 `i == -> _dato_entrante `i -> 21 `i == -> _dato_entrante `i -> 7 `i == -> _dato_entrante `i -> 38 `i 2467  ]
+"232
+[; ;maincode.c: 232:             dato_entrante == 0x26) {
+{
+"233
+[; ;maincode.c: 233:             rx_buffer[1] = dato_entrante;
+[e = *U + &U _rx_buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
+"234
+[; ;maincode.c: 234:             rx_indice = 2;
+[e = _rx_indice -> -> 2 `i `uc ]
+"235
+[; ;maincode.c: 235:         } else {
+}
+[e $U 2468  ]
+[e :U 2467 ]
+{
+"236
+[; ;maincode.c: 236:             rx_indice = 0;
+[e = _rx_indice -> -> 0 `i `uc ]
+"237
+[; ;maincode.c: 237:         }
+}
+[e :U 2468 ]
+"238
+[; ;maincode.c: 238:         return;
+[e $UE 2462  ]
+"239
+[; ;maincode.c: 239:     }
+}
+[e :U 2466 ]
+"242
+[; ;maincode.c: 242:     if (rx_indice == 2) {
+[e $ ! == -> _rx_indice `i -> 2 `i 2469  ]
+{
+"243
+[; ;maincode.c: 243:         rx_buffer[2] = dato_entrante;
+[e = *U + &U _rx_buffer * -> -> -> 2 `i `ui `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
+"244
+[; ;maincode.c: 244:         longitud_esperada = 5 + dato_entrante;
+[e = _longitud_esperada -> + -> 5 `i -> _dato_entrante `i `uc ]
+"246
+[; ;maincode.c: 246:         if (longitud_esperada > 15) rx_indice = 0;
+[e $ ! > -> _longitud_esperada `i -> 15 `i 2470  ]
+[e = _rx_indice -> -> 0 `i `uc ]
+[e $U 2471  ]
+"247
+[; ;maincode.c: 247:         else rx_indice = 3;
+[e :U 2470 ]
+[e = _rx_indice -> -> 3 `i `uc ]
+[e :U 2471 ]
+"249
+[; ;maincode.c: 249:         return;
+[e $UE 2462  ]
+"250
+[; ;maincode.c: 250:     }
+}
+[e :U 2469 ]
+"253
+[; ;maincode.c: 253:     rx_buffer[rx_indice] = dato_entrante;
+[e = *U + &U _rx_buffer * -> _rx_indice `ux -> -> # *U &U _rx_buffer `ui `ux _dato_entrante ]
+"254
+[; ;maincode.c: 254:     rx_indice++;
+[e ++ _rx_indice -> -> 1 `i `Vuc ]
+"256
+[; ;maincode.c: 256:     if (rx_indice >= longitud_esperada) {
+[e $ ! >= -> _rx_indice `i -> _longitud_esperada `i 2472  ]
+{
+"257
+[; ;maincode.c: 257:         flag_paquete_listo = 1;
+[e = _flag_paquete_listo -> -> 1 `i `uc ]
+"258
+[; ;maincode.c: 258:         rx_indice = 0;
+[e = _rx_indice -> -> 0 `i `uc ]
+"259
+[; ;maincode.c: 259:     }
+}
+[e :U 2472 ]
+"260
+[; ;maincode.c: 260: }
+[e :UE 2462 ]
+}
+[a 4C 32 83 52 58 0 ]
+[a 3C 83 51 58 0 ]
+[a 2C 32 83 50 58 0 ]
+[a 1C 83 49 58 0 ]

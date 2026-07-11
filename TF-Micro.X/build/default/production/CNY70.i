@@ -29627,7 +29627,7 @@ void CNY70_ADC_Init_FOSC64(void)
 # 29 "CNY70.c"
     ADREF = 0x00;
 # 42 "CNY70.c"
-    ADCLK = 0b011111;
+    ADCLK = 0b000111;
 # 51 "CNY70.c"
     ADCON0 = 0x84;
 

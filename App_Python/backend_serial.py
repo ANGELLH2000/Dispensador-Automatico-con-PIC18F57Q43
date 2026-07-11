@@ -37,7 +37,7 @@ class PICSerialBackend:
             self.read_thread.start()
             
             # 2. Pequeña pausa para estabilizar la apertura del puerto COM
-            time.sleep(0.1) 
+            time.sleep(1) 
             
             
             
@@ -108,50 +108,52 @@ class PICSerialBackend:
     # FUNCIÓN DE RECEPCIÓN (PIC -> PC)
     # ========================================================================
     
+    def request_diagnostic_data(self):
+        """Envía 0xAA 0x26 0x01 0x01 [CHK] 0x0A para pedir los sensores."""
+        self._send_frame(0x26, [0x01])
+
+    # ========================================================================
+    # FUNCIÓN DE RECEPCIÓN (PIC -> PC)
+    # ========================================================================
+    
     def _read_loop(self):
         """Bucle asíncrono que implementa la máquina de estados de validación."""
         while self.running:
             if self.ser and self.ser.is_open:
                 try:
-                    # 1. Buscar la cabecera (AA 55) bloqueante en el flujo entrante
                     if self.ser.read(1) == b'\xAA':
                         if self.ser.read(1) == b'\x55':
                             
-                            # 2. Leer la longitud (1 byte)
+                            # Leer longitud dinámicamente
                             longitud_byte = self.ser.read(1)
                             if not longitud_byte: continue
                             longitud = longitud_byte[0]
                             
-                            if longitud == 40:
-                                # 3. Leer los 40 bytes de Payload (Datos)
-                                payload = self.ser.read(40)
-                                if len(payload) < 40: continue
-                                
-                                # 4. Leer el Checksum enviado por el PIC (1 byte)
-                                checksum_pic_byte = self.ser.read(1)
-                                if not checksum_pic_byte: continue
-                                checksum_pic = checksum_pic_byte[0]
-                                
-                                # Leer el salto de línea residual (0x0A) para limpiar el buffer
-                                self.ser.read(1)
-                                
-                                # 5. Tu validación matemática de integridad
-                                checksum_calculado = sum(payload) % 256
-                                
-                                if checksum_calculado == checksum_pic:
-                                    # Desempaquetar los 40 bytes en una tupla de enteros (0-255)
-                                    datos_puros = struct.unpack('<40B', payload)
-                                    
-                                    # Enviamos la tupla limpia a la interfaz gráfica
-                                    if self.data_callback:
-                                        self.data_callback(datos_puros)
-                                else:
-                                    print(f"[ERROR CHECKSUM]: PIC: {hex(checksum_pic)} | PC: {hex(checksum_calculado)}")
+                            # ¡NUEVO!: Leer exactamente la cantidad de bytes que diga 'longitud'
+                            payload = self.ser.read(longitud)
+                            if len(payload) < longitud: continue
+                            
+                            # Leer Checksum
+                            checksum_pic_byte = self.ser.read(1)
+                            if not checksum_pic_byte: continue
+                            checksum_pic = checksum_pic_byte[0]
+                            
+                            # Leer 0x0A final
+                            self.ser.read(1)
+                            
+                            # Validar Checksum
+                            checksum_calculado = sum(payload) % 256
+                            
+                            if checksum_calculado == checksum_pic:
+                                # Convertimos el payload a una tupla estándar
+                                datos_puros = tuple(payload)
+                                if self.data_callback:
+                                    self.data_callback(datos_puros)
                             else:
-                                print(f"[ERROR LONGITUD]: Se esperaban 40, llegó {longitud}")
+                                print(f"[ERROR CHECKSUM]: PIC: {hex(checksum_pic)} | PC: {hex(checksum_calculado)}")
                                 
                 except Exception as e:
                     print(f"[ERROR LECTURA]: Canal interrumpido. {e}")
                     self.disconnect()
                     break
-            time.sleep(0.002) # Mantiene la CPU descansada
+            time.sleep(0.5)

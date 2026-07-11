@@ -5,6 +5,7 @@
 #include "funcionesGenerales.h"
     
 #include "LIB_UART.h"
+#include "LCD_I2C.h"
 /*==============================================================================
  * CONFIGURACIÓN GENERAL DEL MICROCONTROLADOR
  *============================================================================*/
@@ -25,7 +26,7 @@ void configuro(void)
     ANSELFbits.ANSELF0 = 0; // RF0 (TX) Digital
     TRISFbits.TRISF1 = 1;   // RX como Entrada
     TRISFbits.TRISF0 = 0;   // TX como Salida
-    U1_INIT(BAUD_9600);
+    U1_INIT(207);
      //configuracion de las interrupciones
     PIE4bits.U1RXIE = 1;
     PIR4bits.U1RXIF = 0;
@@ -34,9 +35,30 @@ void configuro(void)
     
    
     /* Verificación inicial */
-    //SubProceso_CondicionesIniciales();
+    SubProceso_CondicionesIniciales();
 }
-
+void sensores_en_pantalla (void)
+{   
+    uint16_t valor_de_sensores[4];
+    LCD_I2C_Clear();
+    while(1)
+    {
+        Sensores(valor_de_sensores);
+        LCD_I2C_SetCursor(2,0);
+        LCD_I2C_WriteString("S1:");
+        LCD_I2C_WriteInt(valor_de_sensores[0]);
+        LCD_I2C_WriteString(" S2:");
+        LCD_I2C_WriteInt(valor_de_sensores[1]);
+        LCD_I2C_SetCursor(3,0);
+        LCD_I2C_WriteString("S3:");
+        LCD_I2C_WriteInt(valor_de_sensores[2]);
+        LCD_I2C_WriteString(" S4:");
+        LCD_I2C_WriteInt(valor_de_sensores[3]);
+    
+    }
+    
+    
+}
 
 /*==============================================================================
  * PROCESAMIENTO DEL PAQUETE (Usando Switch-Case)
@@ -109,6 +131,46 @@ void uart_serial(void)
                         }
                         break; // Fin del caso 0x15  
                     // =======================================================
+                    // CASO: DIAGNÓSTICO DE SENSORES (0xAA 0x26)
+                    // =======================================================
+                    case 0x26:
+                        if (longitud == 1 && rx_buffer[3] == 0x01) {
+                            
+                            // 1. Obtener lecturas reales de 16 bits
+                            uint16_t valor_de_sensores[4];
+                            uint8_t valor_sensor_ir = 0; // Lee tu IR real aquí
+                            Sensores(valor_de_sensores);
+                            
+                            // 2. Transmitir Trama de Respuesta
+                            U1_BYTE_SEND(0xAA); 
+                            U1_BYTE_SEND(0x55); 
+                            U1_BYTE_SEND(0x09); // ¡NUEVA LONGITUD!: 9 bytes de datos
+                            
+                            uint8_t checksum_out = 0;
+
+                            // 3. Bucle para separar y enviar los 16 bits de los 4 sensores
+                            for(int i = 0; i < 4; i++) {
+                                uint8_t high_byte = (valor_de_sensores[i] >> 8) & 0xFF; // Extrae los 8 bits más significativos
+                                uint8_t low_byte  = valor_de_sensores[i] & 0xFF;        // Extrae los 8 bits menos significativos
+                                
+                                U1_BYTE_SEND(high_byte);
+                                U1_BYTE_SEND(low_byte);
+                                
+                                checksum_out += high_byte;
+                                checksum_out += low_byte;
+                            }
+                            
+                            // 4. Enviar Sensor IR
+                            U1_BYTE_SEND(valor_sensor_ir);
+                            checksum_out += valor_sensor_ir;
+                            
+                            // 5. Finalizar Trama
+                            U1_BYTE_SEND(checksum_out);
+                            U1_BYTE_SEND(0x0A); 
+                            sensores_en_pantalla();
+                        }
+                        break;
+                    // =======================================================
                     // POR DEFECTO: CABECERA DESCONOCIDA
                     // =======================================================
                     default:
@@ -135,6 +197,7 @@ void main(void)
     while (1)
     {
         PantallaGeneral();
+        //Sensores();
         uart_serial();
         
     }

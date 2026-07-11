@@ -29645,6 +29645,7 @@ void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);
 void Funcion_AgregarPastillas(uint8_t pastillero_selecionado , uint8_t cantidad_a_sumar);
+void Sensores(uint16_t lectura_sensores[4]);
 # 6 "maincode.c" 2
 
 # 1 "./LIB_UART.h" 1
@@ -29662,6 +29663,142 @@ void U1_NEWLINE(void);
 
 void Enviar_Trama_Data(unsigned char *buffer);
 # 8 "maincode.c" 2
+# 1 "./LCD_I2C.h" 1
+# 22 "./LCD_I2C.h"
+# 1 "./I2C.h" 1
+# 29 "./I2C.h"
+typedef enum
+{
+    I2C_OK = 0,
+# 42 "./I2C.h"
+    I2C_ERROR_NACK,
+
+
+
+
+    I2C_ERROR_COLLISION,
+
+
+
+
+    I2C_ERROR_BUS_TIMEOUT,
+
+
+
+
+    I2C_ERROR_SOFTWARE_TIMEOUT,
+
+
+
+
+    I2C_ERROR_INVALID_PARAMETER
+
+} I2C_Status;
+# 74 "./I2C.h"
+extern volatile I2C_Status I2C1_LastStatus;
+# 93 "./I2C.h"
+void I2C1_Init(void);
+# 114 "./I2C.h"
+I2C_Status I2C1_Write(
+    uint8_t address7,
+    const uint8_t *data,
+    uint8_t length
+);
+# 129 "./I2C.h"
+I2C_Status I2C1_WriteSingleByte(
+    uint8_t address7,
+    uint8_t data
+);
+# 151 "./I2C.h"
+I2C_Status I2C1_Read(
+    uint8_t address7,
+    uint8_t *data,
+    uint8_t length
+);
+# 23 "./LCD_I2C.h" 2
+# 70 "./LCD_I2C.h"
+void LCD_I2C_DelayUs(uint16_t timeUs);
+void LCD_I2C_DelayMs(uint16_t timeMs);
+# 81 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetAddress(uint8_t address7);
+
+
+
+
+
+uint8_t LCD_I2C_GetAddress(void);
+
+
+
+
+
+
+
+I2C_Status LCD_I2C_Init(void);
+
+
+
+
+
+
+I2C_Status LCD_I2C_Command(uint8_t command);
+I2C_Status LCD_I2C_WriteChar(char character);
+
+I2C_Status LCD_I2C_WriteString(const char *text);
+
+I2C_Status LCD_I2C_WriteStringN(
+    const char *text,
+    uint8_t length
+);
+# 122 "./LCD_I2C.h"
+I2C_Status LCD_I2C_SetCursor(
+    uint8_t row,
+    uint8_t column
+);
+
+I2C_Status LCD_I2C_Clear(void);
+I2C_Status LCD_I2C_Home(void);
+
+I2C_Status LCD_I2C_Display(uint8_t state);
+I2C_Status LCD_I2C_Cursor(uint8_t state);
+I2C_Status LCD_I2C_Blink(uint8_t state);
+I2C_Status LCD_I2C_Backlight(uint8_t state);
+
+I2C_Status LCD_I2C_CursorShiftLeft(void);
+I2C_Status LCD_I2C_CursorShiftRight(void);
+I2C_Status LCD_I2C_DisplayShiftLeft(void);
+I2C_Status LCD_I2C_DisplayShiftRight(void);
+# 151 "./LCD_I2C.h"
+I2C_Status LCD_I2C_CreateChar(
+    const uint8_t pattern[8],
+    uint8_t position
+);
+
+
+
+
+
+
+I2C_Status LCD_I2C_WriteUInt8(
+    uint8_t number,
+    uint8_t digits
+);
+# 182 "./LCD_I2C.h"
+I2C_Status LCD_I2C_WriteUInt16(
+    uint16_t number,
+    uint8_t digits,
+    uint8_t decimals
+);
+
+I2C_Status LCD_I2C_WriteDegree(void);
+I2C_Status LCD_I2C_WriteBinary(uint8_t value);
+I2C_Status LCD_I2C_WriteHex(uint8_t value);
+
+I2C_Status LCD_I2C_WriteInt(int16_t value);
+# 207 "./LCD_I2C.h"
+I2C_Status LCD_I2C_CreateSolidPixel(uint8_t cgram_position);
+I2C_Status LCD_I2C_ClearFile(void);
+# 9 "maincode.c" 2
 
 
 
@@ -29691,9 +29828,30 @@ void configuro(void)
 
 
 
+    SubProceso_CondicionesIniciales();
+}
+void sensores_en_pantalla (void)
+{
+    uint16_t valor_de_sensores[4];
+    LCD_I2C_Clear();
+    while(1)
+    {
+        Sensores(valor_de_sensores);
+        LCD_I2C_SetCursor(2,0);
+        LCD_I2C_WriteString("S1:");
+        LCD_I2C_WriteInt(valor_de_sensores[0]);
+        LCD_I2C_WriteString(" S2:");
+        LCD_I2C_WriteInt(valor_de_sensores[1]);
+        LCD_I2C_SetCursor(3,0);
+        LCD_I2C_WriteString("S3:");
+        LCD_I2C_WriteInt(valor_de_sensores[2]);
+        LCD_I2C_WriteString(" S4:");
+        LCD_I2C_WriteInt(valor_de_sensores[3]);
+
+    }
+
 
 }
-
 
 
 
@@ -29758,9 +29916,51 @@ void uart_serial(void)
                         if (rx_buffer[2] == 0x02 ) {
 
 
+                            Funcion_AgregarPastillas(rx_buffer[4],rx_buffer[3]);
+
                             U1_BYTE_SEND(0xAA); U1_BYTE_SEND(0x15);
                             U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x07);
                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);
+                        }
+                        break;
+
+
+
+                    case 0x26:
+                        if (longitud == 1 && rx_buffer[3] == 0x01) {
+
+
+                            uint16_t valor_de_sensores[4];
+                            uint8_t valor_sensor_ir = 0;
+                            Sensores(valor_de_sensores);
+
+
+                            U1_BYTE_SEND(0xAA);
+                            U1_BYTE_SEND(0x55);
+                            U1_BYTE_SEND(0x09);
+
+                            uint8_t checksum_out = 0;
+
+
+                            for(int i = 0; i < 4; i++) {
+                                uint8_t high_byte = (valor_de_sensores[i] >> 8) & 0xFF;
+                                uint8_t low_byte = valor_de_sensores[i] & 0xFF;
+
+                                U1_BYTE_SEND(high_byte);
+                                U1_BYTE_SEND(low_byte);
+
+                                checksum_out += high_byte;
+                                checksum_out += low_byte;
+                            }
+
+
+                            U1_BYTE_SEND(valor_sensor_ir);
+                            checksum_out += valor_sensor_ir;
+
+
+                            U1_BYTE_SEND(checksum_out);
+                            U1_BYTE_SEND(0x0A);
+                            sensores_en_pantalla();
                         }
                         break;
 
@@ -29790,6 +29990,7 @@ void main(void)
     while (1)
     {
         PantallaGeneral();
+
         uart_serial();
 
     }
