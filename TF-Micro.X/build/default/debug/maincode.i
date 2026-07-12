@@ -29585,7 +29585,7 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
+#pragma config RSTOSC = HFINTOSC_1MHZ
 
 
 #pragma config CLKOUTEN = OFF
@@ -29604,9 +29604,9 @@ unsigned char __t3rd16on(void);
 
 #pragma config BORV = VBOR_1P9
 #pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
+#pragma config PPS1WAY = OFF
 #pragma config STVREN = ON
-#pragma config LVP = OFF
+#pragma config LVP = ON
 #pragma config XINST = OFF
 
 
@@ -29641,6 +29641,7 @@ void SubProceso_CondicionesIniciales(void);
 void SubProceso_DispersacionVerificacion(void);
 void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
+void PantallaSensores(void);
 void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);
@@ -29810,48 +29811,43 @@ uint8_t datos[40];
 void configuro(void)
 {
 
-    config_perifericos();
 
     OSCCON1 = 0x60;
     OSCFRQ = 0x06;
     OSCEN = 0x40;
-    ANSELFbits.ANSELF1 = 0;
+    while(OSCSTATbits.HFOR == 0);
+
+
+
     ANSELFbits.ANSELF0 = 0;
-    TRISFbits.TRISF1 = 1;
+
     TRISFbits.TRISF0 = 0;
+
+
     U1_INIT(207);
+
+    config_perifericos();
+
+    U1_BYTE_SEND('H');
+    U1_BYTE_SEND('O');
+    U1_BYTE_SEND('L');
+    U1_BYTE_SEND('A');
+    U1_NEWLINE();
+
 
     PIE4bits.U1RXIE = 1;
     PIR4bits.U1RXIF = 0;
+    INTCON0bits.GIEL = 1;
     INTCON0bits.GIE = 1;
 
 
 
 
     SubProceso_CondicionesIniciales();
-}
-void sensores_en_pantalla (void)
-{
-    uint16_t valor_de_sensores[4];
-    LCD_I2C_Clear();
-    while(1)
-    {
-        Sensores(valor_de_sensores);
-        LCD_I2C_SetCursor(2,0);
-        LCD_I2C_WriteString("S1:");
-        LCD_I2C_WriteInt(valor_de_sensores[0]);
-        LCD_I2C_WriteString(" S2:");
-        LCD_I2C_WriteInt(valor_de_sensores[1]);
-        LCD_I2C_SetCursor(3,0);
-        LCD_I2C_WriteString("S3:");
-        LCD_I2C_WriteInt(valor_de_sensores[2]);
-        LCD_I2C_WriteString(" S4:");
-        LCD_I2C_WriteInt(valor_de_sensores[3]);
-
-    }
 
 
 }
+
 
 
 
@@ -29960,9 +29956,13 @@ void uart_serial(void)
 
                             U1_BYTE_SEND(checksum_out);
                             U1_BYTE_SEND(0x0A);
-                            sensores_en_pantalla();
+                        }
+                        if (longitud == 1 && rx_buffer[3] == 0x02) {
+
+                            PantallaSensores();
                         }
                         break;
+
 
 
 
@@ -29987,16 +29987,20 @@ void uart_serial(void)
 void main(void)
 {
     configuro();
+    ANSELFbits.ANSELF1 = 0;
+    TRISFbits.TRISF1 = 1;
+    WPUFbits.WPUF1 = 1;
+    U1_BYTE_SEND('O');
+    U1_BYTE_SEND('K');
+    U1_NEWLINE();
+
     while (1)
     {
         PantallaGeneral();
-
         uart_serial();
 
     }
 }
-
-
 
 
 void __attribute__((picinterrupt(("irq(32)")))) U1RX_ISR(void){

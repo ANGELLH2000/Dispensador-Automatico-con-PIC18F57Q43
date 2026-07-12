@@ -12,53 +12,48 @@
 volatile uint8_t rx_buffer[50]; 
 volatile uint8_t rx_indice = 0; 
 volatile uint8_t flag_paquete_listo = 0; 
-volatile uint8_t longitud_esperada = 0; // ¡Nueva variable para hacer el sistema dinámico!
+volatile uint8_t longitud_esperada = 0; // 
 uint8_t datos[40];
 void configuro(void)
 {
-    /* Inicialización de periféricos */
-    config_perifericos();
-    /* Configuración del oscilador interno a 64 MHz */
+    
+    /* Configuración del oscilador interno a 32 MHz */
     OSCCON1 = 0x60;
     OSCFRQ  = 0x06;
     OSCEN   = 0x40;
-    ANSELFbits.ANSELF1 = 0; // RF1 (RX) Digital
+    while(OSCSTATbits.HFOR == 0);
+    /* Inicialización de periféricos */
+    
+    
     ANSELFbits.ANSELF0 = 0; // RF0 (TX) Digital
-    TRISFbits.TRISF1 = 1;   // RX como Entrada
+    
     TRISFbits.TRISF0 = 0;   // TX como Salida
+    
+    
     U1_INIT(207);
+    
+    config_perifericos();
+    
+    U1_BYTE_SEND('H'); 
+    U1_BYTE_SEND('O');
+    U1_BYTE_SEND('L');
+    U1_BYTE_SEND('A');
+    U1_NEWLINE();
+    
      //configuracion de las interrupciones
     PIE4bits.U1RXIE = 1;
     PIR4bits.U1RXIF = 0;
+    INTCON0bits.GIEL = 1;
     INTCON0bits.GIE = 1;
     
     
    
     /* Verificación inicial */
     SubProceso_CondicionesIniciales();
-}
-void sensores_en_pantalla (void)
-{   
-    uint16_t valor_de_sensores[4];
-    LCD_I2C_Clear();
-    while(1)
-    {
-        Sensores(valor_de_sensores);
-        LCD_I2C_SetCursor(2,0);
-        LCD_I2C_WriteString("S1:");
-        LCD_I2C_WriteInt(valor_de_sensores[0]);
-        LCD_I2C_WriteString(" S2:");
-        LCD_I2C_WriteInt(valor_de_sensores[1]);
-        LCD_I2C_SetCursor(3,0);
-        LCD_I2C_WriteString("S3:");
-        LCD_I2C_WriteInt(valor_de_sensores[2]);
-        LCD_I2C_WriteString(" S4:");
-        LCD_I2C_WriteInt(valor_de_sensores[3]);
-    
-    }
-    
+  
     
 }
+
 
 /*==============================================================================
  * PROCESAMIENTO DEL PAQUETE (Usando Switch-Case)
@@ -89,7 +84,7 @@ void uart_serial(void)
                 switch (rx_buffer[1]) {
 
                     // =======================================================
-                    // CASO 1: COMANDO EEPROM (Cabecera 0xAA)
+                    // CASO 1: COMANDO EEPROM (Cabecera 0x56)
                     // =======================================================
                     case 0x56:
                         // Confirmamos el segundo byte
@@ -99,7 +94,7 @@ void uart_serial(void)
                                 Enviar_Trama_Data(datos);
 
                         }
-                        break; // Fin del caso AA
+                        break; // Fin del caso 0x56
                     // =======================================================
                     // CASO 2: COMANDO ESCRITURA DE HORARIOS (Cabecera 0x15)
                     // =======================================================
@@ -129,7 +124,7 @@ void uart_serial(void)
                             U1_BYTE_SEND(0x01); U1_BYTE_SEND(0x07);  
                             U1_BYTE_SEND(0x07); U1_BYTE_SEND(0x0A);  
                         }
-                        break; // Fin del caso 0x15  
+                        break; // Fin del caso 0x07 
                     // =======================================================
                     // CASO: DIAGNÓSTICO DE SENSORES (0xAA 0x26)
                     // =======================================================
@@ -167,9 +162,13 @@ void uart_serial(void)
                             // 5. Finalizar Trama
                             U1_BYTE_SEND(checksum_out);
                             U1_BYTE_SEND(0x0A); 
-                            sensores_en_pantalla();
+                        }
+                        if (longitud == 1 && rx_buffer[3] == 0x02) {
+                            
+                            PantallaSensores();
                         }
                         break;
+                   
                     // =======================================================
                     // POR DEFECTO: CABECERA DESCONOCIDA
                     // =======================================================
@@ -194,18 +193,22 @@ void uart_serial(void)
 void main(void)
 {
     configuro();
+    ANSELFbits.ANSELF1 = 0; // RF1 (RX) Digital
+    TRISFbits.TRISF1 = 1;   // RX como Entrada
+    WPUFbits.WPUF1 = 1;
+    U1_BYTE_SEND('O'); // Confirmación visual rápida
+    U1_BYTE_SEND('K');
+    U1_NEWLINE();
+    
     while (1)
     {
         PantallaGeneral();
-        //Sensores();
         uart_serial();
         
     }
 }
 
-/*==============================================================================
- * RUTINA DE INTERRUPCIÓN (Atrapa bytes al vuelo)
- *============================================================================*/
+
 void __interrupt(irq(IRQ_U1RX)) U1RX_ISR(void){
     PIR4bits.U1RXIF = 0;
     uint8_t dato_entrante = U1RXB;
@@ -258,3 +261,4 @@ void __interrupt(irq(IRQ_U1RX)) U1RX_ISR(void){
         rx_indice = 0;          
     }
 }
+ 

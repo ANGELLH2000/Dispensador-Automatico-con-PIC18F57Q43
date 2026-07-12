@@ -29657,8 +29657,21 @@ void U1_INIT(unsigned int velocidad){
     U1CON0 = 0x30;
     U1CON1 = 0x80;
     U1CON2 = 0x00;
+
+
+    INTCON0bits.GIE = 0;
+    PPSLOCK = 0x55;
+    PPSLOCK = 0xAA;
+    PPSLOCKbits.PPSLOCKED = 0;
+
+
     RF0PPS = 0x20;
     U1RXPPS = 0x29;
+
+
+    PPSLOCK = 0x55;
+    PPSLOCK = 0xAA;
+    PPSLOCKbits.PPSLOCKED = 1;
 
 }
 

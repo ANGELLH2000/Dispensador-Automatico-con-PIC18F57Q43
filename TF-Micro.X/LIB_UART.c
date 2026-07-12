@@ -27,9 +27,22 @@ void U1_INIT(unsigned int velocidad){
     U1CON0 = 0x30;          //TX enabled, RX enabled
     U1CON1 = 0x80;
     U1CON2 = 0x00;
+    
+    // 2. SECUENCIA DE DESBLOQUEO OBLIGATORIO DEL PPS
+    INTCON0bits.GIE = 0;    // Deshabilitar interrupciones globalmente por seguridad
+    PPSLOCK = 0x55;         // Primer byte de la clave de desbloqueo
+    PPSLOCK = 0xAA;         // Segundo byte de la clave de desbloqueo
+    PPSLOCKbits.PPSLOCKED = 0; // Desbloquear el PPS explicitamente
+      
+    
     RF0PPS = 0x20;           //RF0 esta conectado a UART1TX
     U1RXPPS = 0x29;             //RF1 esta conectado a UART1RX
    
+    // 4. SECUENCIA DE BLOQUEO DEL PPS (Para proteger los pines)
+    PPSLOCK = 0x55;         
+    PPSLOCK = 0xAA;         
+    PPSLOCKbits.PPSLOCKED = 1; // Volver a bloquear el PPS
+    
 }
 
 /*funcion para enviar un dato de 8 bits*/

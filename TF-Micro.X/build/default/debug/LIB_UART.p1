@@ -14,6 +14,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17454
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 17454: extern volatile unsigned char U1CON2 __attribute__((address(0x2AD)));
 [v _U1CON2 `Vuc ~T0 @X0 0 e@685 ]
+"49841
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49841:     struct {
+[s S2318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2318 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
+"49850
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49850:     struct {
+[s S2319 :7 `uc 1 :1 `uc 1 ]
+[n S2319 . . GIEH ]
+"49840
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49840: typedef union {
+[u S2317 `S2318 1 `S2319 1 ]
+[n S2317 . . . ]
+"49855
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 49855: extern volatile INTCON0bits_t INTCON0bits __attribute__((address(0x4D6)));
+[v _INTCON0bits `VS2317 ~T0 @X0 0 e@1238 ]
+"8566
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 8566: extern volatile unsigned char PPSLOCK __attribute__((address(0x200)));
+[v _PPSLOCK `Vuc ~T0 @X0 0 e@512 ]
+"8572
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 8572:     struct {
+[s S403 :1 `uc 1 ]
+[n S403 . PPSLOCKED ]
+"8571
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 8571: typedef union {
+[u S402 `S403 1 ]
+[n S402 . . ]
+"8576
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 8576: extern volatile PPSLOCKbits_t PPSLOCKbits __attribute__((address(0x200)));
+[v _PPSLOCKbits `VS402 ~T0 @X0 0 e@512 ]
 "10546
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f57q43.h: 10546: extern volatile unsigned char RF0PPS __attribute__((address(0x229)));
 [v _RF0PPS `Vuc ~T0 @X0 0 e@553 ]
@@ -2634,109 +2663,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29
 [; ;LIB_UART.c: 29:     U1CON2 = 0x00;
 [e = _U1CON2 -> -> 0 `i `uc ]
-"30
-[; ;LIB_UART.c: 30:     RF0PPS = 0x20;
-[e = _RF0PPS -> -> 32 `i `uc ]
-"31
-[; ;LIB_UART.c: 31:     U1RXPPS = 0x29;
-[e = _U1RXPPS -> -> 41 `i `uc ]
+"32
+[; ;LIB_UART.c: 32:     INTCON0bits.GIE = 0;
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
 "33
-[; ;LIB_UART.c: 33: }
+[; ;LIB_UART.c: 33:     PPSLOCK = 0x55;
+[e = _PPSLOCK -> -> 85 `i `uc ]
+"34
+[; ;LIB_UART.c: 34:     PPSLOCK = 0xAA;
+[e = _PPSLOCK -> -> 170 `i `uc ]
+"35
+[; ;LIB_UART.c: 35:     PPSLOCKbits.PPSLOCKED = 0;
+[e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
+"38
+[; ;LIB_UART.c: 38:     RF0PPS = 0x20;
+[e = _RF0PPS -> -> 32 `i `uc ]
+"39
+[; ;LIB_UART.c: 39:     U1RXPPS = 0x29;
+[e = _U1RXPPS -> -> 41 `i `uc ]
+"42
+[; ;LIB_UART.c: 42:     PPSLOCK = 0x55;
+[e = _PPSLOCK -> -> 85 `i `uc ]
+"43
+[; ;LIB_UART.c: 43:     PPSLOCK = 0xAA;
+[e = _PPSLOCK -> -> 170 `i `uc ]
+"44
+[; ;LIB_UART.c: 44:     PPSLOCKbits.PPSLOCKED = 1;
+[e = . . _PPSLOCKbits 0 0 -> -> 1 `i `uc ]
+"46
+[; ;LIB_UART.c: 46: }
 [e :UE 2432 ]
 }
-"36
-[; ;LIB_UART.c: 36: void U1_BYTE_SEND(unsigned char dato){
+"49
+[; ;LIB_UART.c: 49: void U1_BYTE_SEND(unsigned char dato){
 [v _U1_BYTE_SEND `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _U1_BYTE_SEND ]
 [v _dato `uc ~T0 @X0 1 r1 ]
 [f ]
-"37
-[; ;LIB_UART.c: 37:     U1TXB = dato;
+"50
+[; ;LIB_UART.c: 50:     U1TXB = dato;
 [e = _U1TXB _dato ]
-"38
-[; ;LIB_UART.c: 38:     while(U1ERRIRbits.TXMTIF == 0);
+"51
+[; ;LIB_UART.c: 51:     while(U1ERRIRbits.TXMTIF == 0);
 [e $U 2434  ]
 [e :U 2435 ]
 [e :U 2434 ]
 [e $ == -> . . _U1ERRIRbits 0 7 `i -> 0 `i 2435  ]
 [e :U 2436 ]
-"39
-[; ;LIB_UART.c: 39: }
+"52
+[; ;LIB_UART.c: 52: }
 [e :UE 2433 ]
 }
-"42
-[; ;LIB_UART.c: 42: void U1_STRING_SEND(const char *cadena)
+"55
+[; ;LIB_UART.c: 55: void U1_STRING_SEND(const char *cadena)
 [v _U1_STRING_SEND `(v ~T0 @X0 1 ef1`*Cuc ]
-"43
-[; ;LIB_UART.c: 43: {
+"56
+[; ;LIB_UART.c: 56: {
 {
 [e :U _U1_STRING_SEND ]
-"42
-[; ;LIB_UART.c: 42: void U1_STRING_SEND(const char *cadena)
+"55
+[; ;LIB_UART.c: 55: void U1_STRING_SEND(const char *cadena)
 [v _cadena `*Cuc ~T0 @X0 1 r1 ]
-"43
-[; ;LIB_UART.c: 43: {
+"56
+[; ;LIB_UART.c: 56: {
 [f ]
-"44
-[; ;LIB_UART.c: 44:     unsigned char tam;
+"57
+[; ;LIB_UART.c: 57:     unsigned char tam;
 [v _tam `uc ~T0 @X0 1 a ]
-"45
-[; ;LIB_UART.c: 45:     tam = strlen(cadena);
+"58
+[; ;LIB_UART.c: 58:     tam = strlen(cadena);
 [e = _tam -> ( _strlen (1 _cadena `uc ]
-"46
-[; ;LIB_UART.c: 46:  unsigned char i = 0;
+"59
+[; ;LIB_UART.c: 59:  unsigned char i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"47
-[; ;LIB_UART.c: 47:  for(i = 0; i<tam; i++)
+"60
+[; ;LIB_UART.c: 60:  for(i = 0; i<tam; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 2441  ]
 [e :U 2438 ]
-"48
-[; ;LIB_UART.c: 48:  {
+"61
+[; ;LIB_UART.c: 61:  {
 {
-"49
-[; ;LIB_UART.c: 49:   U1_BYTE_SEND(cadena[i]);
+"62
+[; ;LIB_UART.c: 62:   U1_BYTE_SEND(cadena[i]);
 [e ( _U1_BYTE_SEND (1 -> *U + _cadena * -> _i `ux -> -> # *U _cadena `ui `ux `uc ]
-"50
-[; ;LIB_UART.c: 50:  }
+"63
+[; ;LIB_UART.c: 63:  }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 2441 ]
 [e $ < -> _i `i -> _tam `i 2438  ]
 [e :U 2439 ]
 }
-"51
-[; ;LIB_UART.c: 51: }
+"64
+[; ;LIB_UART.c: 64: }
 [e :UE 2437 ]
 }
-"54
-[; ;LIB_UART.c: 54: void Enviar_Trama_Data(unsigned char *buffer) {
+"67
+[; ;LIB_UART.c: 67: void Enviar_Trama_Data(unsigned char *buffer) {
 [v _Enviar_Trama_Data `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _Enviar_Trama_Data ]
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [f ]
-"55
-[; ;LIB_UART.c: 55:     unsigned char checksum = 0;
+"68
+[; ;LIB_UART.c: 68:     unsigned char checksum = 0;
 [v _checksum `uc ~T0 @X0 1 a ]
 [e = _checksum -> -> 0 `i `uc ]
-"56
-[; ;LIB_UART.c: 56:     U1_BYTE_SEND(0xFF);
+"69
+[; ;LIB_UART.c: 69:     U1_BYTE_SEND(0xFF);
 [e ( _U1_BYTE_SEND (1 -> -> 255 `i `uc ]
-"58
-[; ;LIB_UART.c: 58:     U1_BYTE_SEND(0xAA);
+"71
+[; ;LIB_UART.c: 71:     U1_BYTE_SEND(0xAA);
 [e ( _U1_BYTE_SEND (1 -> -> 170 `i `uc ]
-"59
-[; ;LIB_UART.c: 59:     U1_BYTE_SEND(0x55);
+"72
+[; ;LIB_UART.c: 72:     U1_BYTE_SEND(0x55);
 [e ( _U1_BYTE_SEND (1 -> -> 85 `i `uc ]
-"62
-[; ;LIB_UART.c: 62:     U1_BYTE_SEND(0x28);
+"75
+[; ;LIB_UART.c: 75:     U1_BYTE_SEND(0x28);
 [e ( _U1_BYTE_SEND (1 -> -> 40 `i `uc ]
-"65
-[; ;LIB_UART.c: 65:     for (int i = 0; i < 40; i++) {
+"78
+[; ;LIB_UART.c: 78:     for (int i = 0; i < 40; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -2744,42 +2794,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 2444  ]
 [e :U 2443 ]
 {
-"66
-[; ;LIB_UART.c: 66:         U1_BYTE_SEND(buffer[i]);
+"79
+[; ;LIB_UART.c: 79:         U1_BYTE_SEND(buffer[i]);
 [e ( _U1_BYTE_SEND (1 *U + _buffer * -> _i `x -> -> # *U _buffer `i `x ]
-"67
-[; ;LIB_UART.c: 67:         checksum += buffer[i];
+"80
+[; ;LIB_UART.c: 80:         checksum += buffer[i];
 [e =+ _checksum -> *U + _buffer * -> _i `x -> -> # *U _buffer `i `x `uc ]
-"68
-[; ;LIB_UART.c: 68:     }
+"81
+[; ;LIB_UART.c: 81:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 40 `i 2443  ]
 [e :U 2444 ]
 }
-"71
-[; ;LIB_UART.c: 71:     U1_BYTE_SEND(checksum);
+"84
+[; ;LIB_UART.c: 84:     U1_BYTE_SEND(checksum);
 [e ( _U1_BYTE_SEND (1 _checksum ]
-"74
-[; ;LIB_UART.c: 74:     U1_BYTE_SEND(0x0A);
+"87
+[; ;LIB_UART.c: 87:     U1_BYTE_SEND(0x0A);
 [e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
-"75
-[; ;LIB_UART.c: 75: }
+"88
+[; ;LIB_UART.c: 88: }
 [e :UE 2442 ]
 }
-"79
-[; ;LIB_UART.c: 79: void U1_NEWLINE(void){
+"92
+[; ;LIB_UART.c: 92: void U1_NEWLINE(void){
 [v _U1_NEWLINE `(v ~T0 @X0 1 ef ]
 {
 [e :U _U1_NEWLINE ]
 [f ]
-"80
-[; ;LIB_UART.c: 80:     U1_BYTE_SEND(0x0A);
+"93
+[; ;LIB_UART.c: 93:     U1_BYTE_SEND(0x0A);
 [e ( _U1_BYTE_SEND (1 -> -> 10 `i `uc ]
-"81
-[; ;LIB_UART.c: 81:     U1_BYTE_SEND(0x0D);
+"94
+[; ;LIB_UART.c: 94:     U1_BYTE_SEND(0x0D);
 [e ( _U1_BYTE_SEND (1 -> -> 13 `i `uc ]
-"82
-[; ;LIB_UART.c: 82: }
+"95
+[; ;LIB_UART.c: 95: }
 [e :UE 2446 ]
 }

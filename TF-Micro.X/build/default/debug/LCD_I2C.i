@@ -121,7 +121,7 @@ typedef uint32_t uint_fast32_t;
 
 
 #pragma config FEXTOSC = OFF
-#pragma config RSTOSC = EXTOSC
+#pragma config RSTOSC = HFINTOSC_1MHZ
 
 
 #pragma config CLKOUTEN = OFF
@@ -140,9 +140,9 @@ typedef uint32_t uint_fast32_t;
 
 #pragma config BORV = VBOR_1P9
 #pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
+#pragma config PPS1WAY = OFF
 #pragma config STVREN = ON
-#pragma config LVP = OFF
+#pragma config LVP = ON
 #pragma config XINST = OFF
 
 

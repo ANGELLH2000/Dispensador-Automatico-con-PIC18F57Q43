@@ -39,7 +39,7 @@ void CNY70_ADC_Init_FOSC64(void)
      * FADC = 64 MHz / 64
      * FADC = 1 MHz
      */
-    ADCLK = 0b000111;     // FOSC/64
+    ADCLK = 0b000011;     // FOSC/64
 
     /*
      * ADCON0 = 0x84

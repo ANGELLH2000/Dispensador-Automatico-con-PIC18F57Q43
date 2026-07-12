@@ -74,7 +74,7 @@ static void SubProceso_VerHorarios();
 static void SubProceso_RegistrarPastillas();
 static void SubProceso_DispensacionVerificacion();
 static void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error);
-static void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para_dispersar);
+static void Dispensar(uint8_t horarios_a_dispensar[6],uint8_t pastillas_por_dispensar[6],uint8_t cantidad_pastilleros_para_dispersar);
 static void Detallar_Horarios(uint8_t numero,uint16_t hora,uint16_t minuto,uint16_t tipo);
 static void Detallar_CantPastillas(uint8_t  tecla);
 static void Guardar_CantPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad_a_sumar);
@@ -161,10 +161,10 @@ static void config_cny70(void)
     CNY70_ADC_Init_FOSC64();
 
     /*
-     * Sensor 1: RF5 / ANF0. /2D
-     * Sensor 2: RF6 / ANF1. /2E
-     * Sensor 3: RF2 / ANF2. /2A   
-     * Sensor 4: RF3 / ANF3. /2B
+     * Sensor 1: RF5 / ANF5. /2D   F5 A1
+     * Sensor 2: RF6 / ANF6. /2E   F6 A2
+     * Sensor 3: RF2 / ANF2. /2A   F2 A3
+     * Sensor 4: RF3 / ANF3. /2B   F3 A4
      */
     CNY70_Init(&sensor1, &TRISF, &ANSELF, 0x01, 0x2D);
     CNY70_Init(&sensor2, &TRISF, &ANSELF, 0x02, 0x2E);
@@ -185,6 +185,8 @@ static void config_ir(void)
      * 0x10 = 0b00010000.
      */
     IRSensor_Init(&sensor_ir, &PORTF, &TRISF, &ANSELF, 0x10);
+    WPUFbits.WPUF4=1;
+    
 }
 
 /*==============================================================================
@@ -293,8 +295,11 @@ void SubProceso_DispensacionVerificacion(void)
     /*
      * Variables locales
      */
-    uint8_t pastillas_por_dispensar[6];
+    uint8_t pastillas_por_dispensar[6] = {0};
+    uint8_t horarios_a_dispensar[6] = {0};
     uint8_t cantidad_horarios_para_dispersar = 0;
+    uint8_t hora_reloj;
+    uint8_t minuto_reloj;
     uint8_t cant_horarios = EEPROM_ReadByte(1);
     bool dispensar = false;
 
@@ -309,7 +314,8 @@ void SubProceso_DispensacionVerificacion(void)
     {
         SubProceso_ManejoErrores("RTC sin conexion", 1);
     }
-       
+    hora_reloj=fechaHora.hours;
+    minuto_reloj=fechaHora.minutes;
     /*----------------------------------------------------------------------
      * Búsqueda de coincidencias de horarios programados
      *----------------------------------------------------------------------*/
@@ -320,34 +326,28 @@ void SubProceso_DispensacionVerificacion(void)
          * 9 + ((x-1)*5) = Dirección de la hora 
          * 10 + ((x-1)*5) = Dirección de los minutos 
          */
-        if (EEPROM_ReadByte(9 + ((x - 1) * 5)) == fechaHora.hours && EEPROM_ReadByte(10 + ((x - 1) * 5)) == fechaHora.minutes)
+        if (EEPROM_ReadByte(9 + ((x - 1) * 5)) == hora_reloj && EEPROM_ReadByte(10 + ((x - 1) * 5)) == minuto_reloj)
         {
-            /* * Bandera de dispensación (11 + offset). 
+            /* * Bandera de 'ejecutado' (11 + offset). 
              * Si es 0, significa que todavía no se ha dispensado en este minuto.
              */
             if (EEPROM_ReadByte(11 + ((x - 1) * 5)) == 0)
             {
                 /* Guardar el número del pastillero a dispensar (13 + offset) */
-                pastillas_por_dispensar[x - 1] = EEPROM_ReadByte(13 + ((x - 1) * 5));
+                pastillas_por_dispensar[cantidad_horarios_para_dispersar] = EEPROM_ReadByte(13 + ((x - 1) * 5));
+
+                horarios_a_dispensar[cantidad_horarios_para_dispersar] = x;
+
                 cantidad_horarios_para_dispersar++;
                 dispensar = true;
             }
             
         }
-        else
+        if (EEPROM_ReadByte(9 + ((x - 1) * 5)) != hora_reloj || EEPROM_ReadByte(10 + ((x - 1) * 5)) != minuto_reloj)
         {
-            /* * Si la hora no coincide (ya pasó el minuto de activación), 
-             * nos aseguramos de resetear las banderas de "ya dispensado" a 0
-             * para todos los slots (11, 16, 21, 26, 31, 36) para que estén 
-             * listos para el día siguiente.
-             */
-            EEPROM_UpdateByte(11, 0);
-            EEPROM_UpdateByte(16, 0);
-            EEPROM_UpdateByte(21, 0);
-            EEPROM_UpdateByte(26, 0);
-            EEPROM_UpdateByte(31, 0);
-            EEPROM_UpdateByte(36, 0);
-        }  
+            EEPROM_UpdateByte(11 + ((x - 1) * 5), 0);
+        }
+         
     }
 
     /*----------------------------------------------------------------------
@@ -355,8 +355,7 @@ void SubProceso_DispensacionVerificacion(void)
      *----------------------------------------------------------------------*/
     
     if (dispensar)
-        Dispensar(pastillas_por_dispensar, cantidad_horarios_para_dispersar);
-    
+        Dispensar(horarios_a_dispensar,pastillas_por_dispensar,cantidad_horarios_para_dispersar);
 }
 void Sensores(uint16_t lectura_sensores[4])
 {
@@ -365,12 +364,14 @@ void Sensores(uint16_t lectura_sensores[4])
     lectura_sensores[2] = CNY70_Read(&sensor3);
     lectura_sensores[3] = CNY70_Read(&sensor4);
 }
-void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para_dispersar)
+//pastillas por dispensar = [1,2,4]
+//cantidad_horarios_para_dispersar=3
+void Dispensar(uint8_t horarios_a_dispensar[6],uint8_t pastillas_por_dispensar[6],uint8_t cantidad_pastilleros_para_dispersar)
 {
     bool error=false;
     bool dispensado;
     uint16_t lectura_sensor=0;
-    
+
     /*
     uint8_t sensorir=1;
     
@@ -388,10 +389,11 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
         error=true;
     }
     */
-    //Cantidad Necesaria
-    for (uint8_t x=0; x<cantidad_horarios_para_dispersar;x++)
+    //Revision de que haya pastillas para dispensar
+    for (uint8_t x=0; x<cantidad_pastilleros_para_dispersar;x++)
     {
-        if(EEPROM_ReadByte(5+(pastillas_por_dispensar[x]))==0)
+        //pastillas por dispensar = [1,2,4]
+        if(EEPROM_ReadByte(5+(pastillas_por_dispensar[x]-1))==0)
         {   
             char mensaje[20];
 
@@ -407,24 +409,30 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
         LCD_I2C_SetCursor(2, 0);
         LCD_I2C_WriteString("! HORA DE LA DOSIS !");
         Buzzer_Off(&buzzer1);
-        for (uint8_t x=0; x<cantidad_horarios_para_dispersar;x++)
+        //cantidad_pastilleros_para_dispersar = 1
+        for (uint8_t z=0; z<cantidad_pastilleros_para_dispersar;z++)
         {
+            uint8_t intentos=10;
             dispensado = false;
             
             LCD_I2C_SetCursor(3, 0);
             LCD_I2C_WriteString("Entregando: Past. ");
-            LCD_I2C_WriteUInt8(pastillas_por_dispensar[x+1],1);
-            __delay_ms(2000);
-            uint8_t intentos=4;
-            lectura_sensor=0;
+            //pastillas por dispensar = [1,2,4]
+            LCD_I2C_WriteUInt8(pastillas_por_dispensar[z],1);
+            __delay_ms(1000);
+            
+            
+            
             while(1)
             {
                                
                 for(uint16_t y=0; y<2048;y++)
-                {
-                    switch (pastillas_por_dispensar[x+1])
+                {   
+                    
+                    //Sensores(valor_de_sensores);
+                    //pastillas por dispensar = [1,2,4]
+                    switch (pastillas_por_dispensar[z])
                     {
-
                         case 1:
                             lectura_sensor=CNY70_Read(&sensor1);
                             Stepper_Step_CW(&motor1);
@@ -441,12 +449,18 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
                             lectura_sensor=CNY70_Read(&sensor4);
                             Stepper_Step_CW(&motor4);
                             break;
-                        /* Se recibió un número */
                         default:
                             break;
 
                     }
-                    if(lectura_sensor>1000)
+                    //Indica el valro del sensor, ciertas veces , para no relentizar o perder pasos del motor
+                    // al escribir en el lcd
+                    
+                    LCD_I2C_SetCursor(4,0);
+                    LCD_I2C_WriteString("Sensor: ");
+                    LCD_I2C_WriteInt(lectura_sensor);
+                    
+                    if(lectura_sensor>1100)
                     {
                         Stepper_Off(&motor1);
                         Stepper_Off(&motor2);
@@ -457,24 +471,35 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
                     }
                     
                 }
+                
                 if (dispensado)
                 {
-                    //Disminur cantida de pastillas
-                    EEPROM_UpdateByte(4+(pastillas_por_dispensar[x]),EEPROM_ReadByte(4+(pastillas_por_dispensar[x]))-1);
-                    EEPROM_UpdateByte(11+(x*5),1);
+                    //Disminur cantida de pastillas en el pastillero
+                    //pastillas por dispensar = [1,2,4]
+                    uint8_t cantidad_pastillas;
+                    cantidad_pastillas = EEPROM_ReadByte(5+(pastillas_por_dispensar[z]-1));
+                    EEPROM_UpdateByte(5+(pastillas_por_dispensar[z]-1),cantidad_pastillas-1);
+                    
+                    //Activar basdera de ejecutado
+                    //pastillas por dispensar = [1,2,4]
+                    EEPROM_UpdateByte(11 + ((horarios_a_dispensar[z] - 1) * 5), 1);
                     Buzzer_FinalCorrectClick(&buzzer1);
                     WS2812B_RGB(&tira1,0,200,0);
                     __delay_ms(500);
                     WS2812B_Clear(&tira1);
+                    
                     break;
                     
                 }
+                else
+                {
+                    intentos--;
+                    //Buzzer_WarningSound(&buzzer1);
+                    WS2812B_RGB(&tira1,240,200,0);
+                     __delay_ms(500);
+                    WS2812B_Clear(&tira1);
+                }
                 
-                intentos--;
-                Buzzer_WarningSound(&buzzer1);
-                WS2812B_RGB(&tira1,240,200,0);
-                __delay_ms(500);
-                WS2812B_Clear(&tira1);
                 if(intentos==0)
                 {
                     SubProceso_ManejoErrores("No se pudo dispensar",3);
@@ -484,9 +509,6 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
                 
             }
             
-            
-
-
         }
     }
     
@@ -507,6 +529,61 @@ void Dispensar(uint8_t pastillas_por_dispensar[6],uint8_t cantidad_horarios_para
  * 6. Monitorea el teclado de forma no bloqueante buscando la tecla '#'.
  * ============================================================================
  */
+void PantallaSensores(void)
+{
+    uint16_t valor_de_sensores[4];
+    uint8_t valor_sensor_ir;
+    LCD_I2C_Clear();
+    while(1)
+    {   
+        valor_sensor_ir=PORTFbits.RF4;
+        Sensores(valor_de_sensores);
+        LCD_I2C_SetCursor(1,0);
+        LCD_I2C_ClearFile();
+        LCD_I2C_SetCursor(1,0);
+        LCD_I2C_WriteString("Sensor IR: ");
+        LCD_I2C_WriteUInt8(valor_sensor_ir,1);
+        LCD_I2C_SetCursor(2,0);
+        LCD_I2C_ClearFile();
+        LCD_I2C_SetCursor(2,0);
+        LCD_I2C_WriteString("S1:");
+        LCD_I2C_WriteInt(valor_de_sensores[0]);
+        LCD_I2C_WriteString(" S2:");
+        LCD_I2C_WriteInt(valor_de_sensores[1]);
+        LCD_I2C_SetCursor(3,0);
+        LCD_I2C_ClearFile();
+        LCD_I2C_SetCursor(3,0);
+        LCD_I2C_WriteString("S3:");
+        LCD_I2C_WriteInt(valor_de_sensores[2]);
+        LCD_I2C_WriteString(" S4:");
+        LCD_I2C_WriteInt(valor_de_sensores[3]);
+        LCD_I2C_SetCursor(4, 0);
+        LCD_I2C_WriteString("--- [#] VOLVER  ----");
+        
+        while (1)
+        {
+            tecla = Keypad_Read(&teclado);
+            __delay_ms(20);
+
+            switch (tecla)
+            {
+                /* Ingresar al menú de opciones */
+                case '#':
+                    Buzzer_CorrectSound(&buzzer1);
+                    return;
+
+                /* Teclas ignoradas y estado inactivo (NO_KEY) */
+                default:
+                    break;
+            }
+            
+            /* * Se rompe el bucle de lectura inmediatamente para permitir 
+             * que el bucle principal continúe y actualice el reloj cada 250ms.
+             */
+            break;
+        }
+    }
+}
 void PantallaGeneral(void)
 {
     
@@ -515,8 +592,11 @@ void PantallaGeneral(void)
          *----------------------------------------------------------------------*/
         
         SubProceso_DispensacionVerificacion();
+        
+        
         LCD_I2C_SetCursor(2, 0);
         LCD_I2C_WriteString("Sistema en operacion");
+        
         estado = DS1307_ReadDateTime(&fechaHora);
 
         /* Validación de estado de la comunicación y datos del RTC */
@@ -535,7 +615,7 @@ void PantallaGeneral(void)
             
             --- [#] VER MENU ---
         */
-
+        LCD_I2C_Clear();
         LCD_I2C_SetCursor(2, 0);
         LCD_I2C_WriteString("Sistema en operacion");
         
@@ -597,14 +677,7 @@ void PantallaGeneral(void)
 void SubProceso_CondicionesIniciales(void){
     
     //Bandera de Error=0
-    
-    /*
-     * Verifica que la dirección del LCD se haya configurado
-     * correctamente.
-     */
-    if (estado != I2C_OK)
-        SubProceso_ManejoErrores("I2C sin conexion",1);
-    
+       
     //Lee la fecha y la hora almacenadas en el DS1307.
     estado = DS1307_ReadDateTime(&fechaHora);
 
@@ -651,7 +724,7 @@ void SubProceso_CondicionesIniciales(void){
     
 
 }
-//dEVUELVE TRUE CUNADO EL RECORRIDO SALIO SIN NING[UN 0XFF]
+//dEVUELVE TRUE CUANDO EL RECORRIDO SALIO SIN NINGUN 0XFF
 bool RecorrerEEPROM()
 {
     for(uint8_t x=0;x<39;x++)
@@ -680,6 +753,7 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
     
     //Critico - 1 
     //Alerta - 2
+    //Mantenimiento - 2
     switch (nivel_error)
         {
             case 1: 
@@ -712,7 +786,7 @@ void SubProceso_ManejoErrores(char *mensaje,uint8_t nivel_error){
                 break;
                
         }
-    __delay_ms(3000);
+    __delay_ms(2000);
     
     LCD_I2C_Clear();
 
@@ -807,7 +881,7 @@ void SubProceso_MenuLCD(void)
         LCD_I2C_SetCursor(3, 3);
         LCD_I2C_WriteString("Opcion Deseada");
 
-        __delay_ms(2000);
+        __delay_ms(1500);
 
 
         /*==============================================================
@@ -852,7 +926,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 2);
                         LCD_I2C_WriteString("Agregar Horario");
-                        __delay_ms(2000);
+                        __delay_ms(1500);
                         SubProceso_AgregarHorario();
                         break;
 
@@ -862,7 +936,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 1);
                         LCD_I2C_WriteString("Modificar Horario");
-                        __delay_ms(2000);
+                        __delay_ms(1500);
                         SubProceso_ModificarHorario();
                         break;
 
@@ -872,7 +946,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 4);
                         LCD_I2C_WriteString("Ver Horarios");
-                        __delay_ms(2000);
+                        __delay_ms(1500);
                         SubProceso_VerHorarios();
                         break;
 
@@ -882,7 +956,7 @@ void SubProceso_MenuLCD(void)
                         LCD_I2C_WriteString("Opcion");
                         LCD_I2C_SetCursor(2, 1);
                         LCD_I2C_WriteString("Registrar Pastilla");
-                        __delay_ms(2000);
+                        __delay_ms(1500);
                         SubProceso_RegistrarPastillas();
                         break;
 
@@ -939,17 +1013,6 @@ void SubProceso_VerHorarios(void)
     LCD_I2C_WriteString("Leyendo Memoria");
 
     dato_memoria = EEPROM_ReadByte(1);
-
-    MostrarAnimacionCarga(4,0);
-
-    LCD_I2C_SetCursor(3,0);
-    LCD_I2C_ClearFile();
-
-    LCD_I2C_SetCursor(3,2);
-    LCD_I2C_WriteString("Extrayendo Datos");
-
-    MostrarAnimacionCarga(4,4);
-
     /*==============================================================
      * Validar información almacenada
      *==============================================================*/
@@ -980,6 +1043,18 @@ void SubProceso_VerHorarios(void)
         __delay_ms(1500);
         return;
     }
+
+    MostrarAnimacionCarga(4,0);
+
+    LCD_I2C_SetCursor(3,0);
+    LCD_I2C_ClearFile();
+
+    LCD_I2C_SetCursor(3,2);
+    LCD_I2C_WriteString("Extrayendo Datos");
+
+    MostrarAnimacionCarga(4,4);
+
+    
 
     /*==============================================================
      * Preparar información para mostrarla en pantalla
@@ -1498,11 +1573,12 @@ void SubProceso_ModificarHorario(void)
             case '2':
             case '3':
             case '4':
+                Buzzer_ButtonClick(&buzzer1);
                 pastillero_modificado = tecla - '0';
                 LCD_I2C_SetCursor(3,16);
                 LCD_I2C_WriteChar(tecla);
                 __delay_ms(500);
-                break; // <-- BREAK AÑADIDO AQUI
+                break; 
                 
             case '*':
 
@@ -1980,21 +2056,13 @@ void SubProceso_RegistrarPastillas(void)
     LCD_I2C_SetCursor(3,0);
     LCD_I2C_WriteString("Leyendo Memoria");
 
-    dato_memoria = EEPROM_ReadByte(2);
-
     MostrarAnimacionCarga(4,0);
-
-    LCD_I2C_SetCursor(3,0);
-    LCD_I2C_ClearFile();
-
-    LCD_I2C_SetCursor(3,0);
-    LCD_I2C_WriteString("Extrayendo Datos");
-
-    MostrarAnimacionCarga(4,4);
-
+    
     /*==============================================================
      * Validar datos leídos
      *==============================================================*/
+    dato_memoria = EEPROM_ReadByte(2);
+
     if (dato_memoria == 0xFF)
     {
         MostrarAnimacionCarga(4,8);
@@ -2005,9 +2073,19 @@ void SubProceso_RegistrarPastillas(void)
         LCD_I2C_SetCursor(3,2);
         LCD_I2C_WriteString("Datos Corruptos");
 
-        __delay_ms(1500);
+        __delay_ms(1000);
         return;
     }
+    
+    LCD_I2C_SetCursor(3,0);
+    LCD_I2C_ClearFile();
+
+    LCD_I2C_SetCursor(3,0);
+    LCD_I2C_WriteString("Extrayendo Datos");
+
+    MostrarAnimacionCarga(4,4);
+
+    
 
     /*==============================================================
      * Mostrar stock total disponible
@@ -2151,8 +2229,6 @@ void SubProceso_RegistrarPastillas(void)
                 Buzzer_CorrectSound(&buzzer1);
 
                 Guardar_CantPastillas(pastillero_selecionado,cantidad_a_sumar);
-                __delay_ms(200);
-
                 return;
 
             /*------------------------------------------
@@ -2176,7 +2252,7 @@ void Funcion_AgregarPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad
     const uint8_t ubicacion_memoria[] = {5, 6, 7, 8};
     dato_memoria = EEPROM_ReadByte(ubicacion_memoria[pastillero_selecionado-1]);//Leemos el dato de la memoria de -> comportimentx cantidad de pastillas
     EEPROM_UpdateByte(ubicacion_memoria[pastillero_selecionado-1],dato_memoria+cantidad_a_sumar);// Al pastillero indiviadual
-    dato_memoria = EEPROM_ReadByte(2);//Leemos el valor de la direccion de -> cantidad de apstillas total
+    dato_memoria = EEPROM_ReadByte(2);//Leemos el valor de la direccion de -> cantidad de pastillas total
     EEPROM_UpdateByte(2,dato_memoria+ cantidad_a_sumar);// Cantidad de pastillas generales
 }
 void Guardar_CantPastillas(uint8_t  pastillero_selecionado , uint8_t cantidad_a_sumar)

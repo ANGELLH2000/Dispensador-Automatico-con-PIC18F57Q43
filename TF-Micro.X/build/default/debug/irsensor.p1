@@ -6,7 +6,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./cabecera.h
 [p x FEXTOSC  =  OFF     ]
 "8
-[p x RSTOSC  =  EXTOSC   ]
+[p x RSTOSC  =  HFINTOSC_1MHZ   ]
 "11
 [p x CLKOUTEN  =  OFF    ]
 "12
@@ -32,11 +32,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26
 [p x ZCD  =  OFF         ]
 "27
-[p x PPS1WAY  =  ON      ]
+[p x PPS1WAY  =  OFF      ]
 "28
 [p x STVREN  =  ON       ]
 "29
-[p x LVP  =  OFF         ]
+[p x LVP  =  ON        ]
 "30
 [p x XINST  =  OFF       ]
 "33

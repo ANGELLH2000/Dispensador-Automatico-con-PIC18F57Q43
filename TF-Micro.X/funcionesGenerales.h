@@ -13,6 +13,7 @@ void SubProceso_CondicionesIniciales(void);
 void SubProceso_DispersacionVerificacion(void);
 void SubProceso_MenuLCD(void);
 void PantallaGeneral(void);
+void PantallaSensores(void);
 void DataEEPROM(uint8_t data_memoria[40]);
 void configuro(void);
 void Funcion_AgregarHorario(uint8_t hora,uint8_t min, uint8_t pastillero,uint8_t horario);

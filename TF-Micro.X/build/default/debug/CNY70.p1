@@ -2637,8 +2637,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;CNY70.c: 29:     ADREF = 0x00;
 [e = _ADREF -> -> 0 `i `uc ]
 "42
-[; ;CNY70.c: 42:     ADCLK = 0b000111;
-[e = _ADCLK -> -> 7 `i `uc ]
+[; ;CNY70.c: 42:     ADCLK = 0b000011;
+[e = _ADCLK -> -> 3 `i `uc ]
 "51
 [; ;CNY70.c: 51:     ADCON0 = 0x84;
 [e = _ADCON0 -> -> 132 `i `uc ]
